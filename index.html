@@ -34,8 +34,11 @@
 
   <!-- Full-screen Banner -->
   <div class="home-banner">
-    <img src="assets/home-banner.jpg" alt="भगवद्गीता"
-      onerror="if(!this.src.endsWith('.jpeg')){this.src='assets/home-banner.jpeg'}else if(!this.src.endsWith('.png')){this.src='assets/home-banner.png'}else{this.style.display='none'}">
+    <picture>
+      <source media="(max-width: 768px)" srcset="assets/home-banner-potrait.jpg">
+      <source media="(min-width: 769px)" srcset="assets/home-banner-landscape.png">
+      <img src="assets/home-banner-landscape.png" alt="भगवद्गीता">
+    </picture>
     <div class="home-banner-overlay">
       <div class="banner-om">🕉️</div>
       <div class="banner-title">भगवद्गीता</div>
