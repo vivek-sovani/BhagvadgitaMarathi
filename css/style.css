@@ -494,7 +494,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: clamp(260px, 45vh, 520px);
+  min-height: clamp(320px, 60vh, 600px);
   background: #f0ede8;
   overflow: hidden;
 }
