@@ -59,8 +59,12 @@
   summaryImg.alt = `अध्याय ${adhyay.number} सारांश`;
   summaryImg.src = assetPath('summary.jpg');
   summaryImg.onerror = function () {
-    this.style.display = 'none';
-    summaryPH.style.display = '';
+    if (!this.src.endsWith('.jpeg')) {
+      this.src = assetPath('summary.jpeg');
+    } else {
+      this.style.display = 'none';
+      summaryPH.style.display = '';
+    }
   };
 
   // ── Render concept pills ──────────────────────────────────────
@@ -214,14 +218,18 @@
     summarySection.style.display = 'none';
     conceptView.classList.add('visible');
 
-    // Concept image
+    // Concept image — try .jpg first, fallback to .jpeg
     conceptPHEmoji.textContent = concept.emoji;
     conceptImg.style.display = '';
     conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
     conceptImg.alt = concept.name;
     conceptImg.onerror = function () {
-      this.style.display = 'none';
-      conceptPH.style.display = '';
+      if (!this.src.endsWith('.jpeg')) {
+        this.src = assetPath(`concept-${concept.id}.jpeg`);
+      } else {
+        this.style.display = 'none';
+        conceptPH.style.display = '';
+      }
     };
     conceptPH.style.display = 'none';
 
@@ -231,9 +239,11 @@
     conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${concept.id}`;
     renderConceptText(String(adhyay.id), String(concept.id));
 
-    // Load concept PDF
+    // Load concept PDF — wait one frame so the grid layout is computed first
     pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;
-    carousel.load(assetPath(`concept-${concept.id}.pdf`));
+    requestAnimationFrame(() => {
+      carousel.load(assetPath(`concept-${concept.id}.pdf`));
+    });
   }
 
   // ── Handle browser back/forward ───────────────────────────────

@@ -76,7 +76,7 @@ class PDFCarousel {
 
   async load(url) {
     if (!url) { this._showPlaceholder('📂', 'PDF उपलब्ध नाही'); return; }
-    if (this.currentUrl === url) return;
+    if (this.currentUrl === url && this.pdfDoc) return; // only skip if already loaded OK
     this.currentUrl = url;
 
     this._showLoading();
@@ -84,12 +84,15 @@ class PDFCarousel {
     this.pageNum = 1;
 
     try {
-      const loadingTask = pdfjsLib.getDocument(url);
+      const loadingTask = pdfjsLib.getDocument({ url, cMapPacked: true });
       this.pdfDoc    = await loadingTask.promise;
       this.pageCount = this.pdfDoc.numPages;
+      // Wait for layout to be fully computed before rendering
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
       await this._renderPage(this.pageNum);
     } catch (err) {
-      console.warn('PDF load error:', err);
+      console.error('PDF load error:', url, err);
+      this.currentUrl = null; // allow retry
       this._showPlaceholder('⚠️', 'PDF उघडता आला नाही');
     }
   }
