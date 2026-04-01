@@ -88,7 +88,11 @@
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
   // ── Concept image title ───────────────────────────────────────
-  const conceptImgTitle = document.getElementById('concept-img-title');
+  const conceptImgTitle  = document.getElementById('concept-img-title');
+  const prevConceptBtn   = document.getElementById('prev-concept-btn');
+  const nextConceptBtn   = document.getElementById('next-concept-btn');
+  const summaryAdhyayNum = document.getElementById('summary-adhyay-num');
+  const summaryAdhyayName= document.getElementById('summary-adhyay-name');
 
 
   // ── Helpers ───────────────────────────────────────────────────
@@ -110,11 +114,16 @@
   }
 
   // ── Render header ─────────────────────────────────────────────
-  document.title = `भगवद्गीता — अध्याय ${adhyay.number} | ${adhyay.name}`;
+  document.title = `श्रीमद्भगवद्गीता — अध्याय ${adhyay.number} | ${adhyay.name}`;
   headerLabel.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
+
+  // Header adhyay label → go back to cover page
+  headerLabel.addEventListener('click', goToCoverPage);
 
   // ── Render adhyay summary image ───────────────────────────────
   summaryPHText.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
+  if (summaryAdhyayNum)  summaryAdhyayNum.textContent  = `अध्याय ${adhyay.number}`;
+  if (summaryAdhyayName) summaryAdhyayName.textContent = adhyay.name;
   summaryImg.alt = `अध्याय ${adhyay.number} सारांश`;
   summaryImg.style.display = '';
   summaryPH.style.display = 'none';
@@ -263,7 +272,32 @@
     if (body) body.scrollTop = 0;
   }
 
+  // ── Go to cover page ──────────────────────────────────────────
+  function goToCoverPage() {
+    conceptView.classList.remove('visible');
+    summarySection.style.display = '';
+    pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
+    pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
+    pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+    pendingPdfUrl = assetPath('adhyay.pdf');
+    renderThumb(pendingPdfUrl);
+    const url = new URL(window.location.href);
+    url.searchParams.delete('concept');
+    history.pushState({ adhyayId }, '', url);
+  }
+
+  // ── Prev / Next concept ────────────────────────────────────────
+  if (prevConceptBtn) prevConceptBtn.addEventListener('click', () => {
+    const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
+    if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
+  });
+  if (nextConceptBtn) nextConceptBtn.addEventListener('click', () => {
+    const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
+    if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
+  });
+
   // ── Select concept ─────────────────────────────────────────────
+  let currentConceptId = null;
   function selectConcept(cid) {
     const concept = adhyay.concepts.find(c => c.id === cid);
     if (!concept) return;
@@ -300,8 +334,12 @@
     };
     conceptPH.style.display = 'none';
 
-    // Concept image title
+    // Concept image title + prev/next state
+    currentConceptId = cid;
     if (conceptImgTitle) conceptImgTitle.textContent = `${concept.emoji} ${concept.name}`;
+    const idx = adhyay.concepts.findIndex(c => c.id === cid);
+    if (prevConceptBtn) prevConceptBtn.disabled = idx <= 0;
+    if (nextConceptBtn) nextConceptBtn.disabled = idx >= adhyay.concepts.length - 1;
 
     // Concept info panel
     conceptInfoEmoji.textContent = concept.emoji;
@@ -322,14 +360,7 @@
     if (s && s.conceptId) {
       selectConcept(s.conceptId);
     } else {
-      // Back to adhyay view
-      conceptView.classList.remove('visible');
-      summarySection.style.display = '';
-      pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
-      pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
-      pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
-      pendingPdfUrl = assetPath('adhyay.pdf');
-      renderThumb(pendingPdfUrl);
+      goToCoverPage();
     }
   });
 

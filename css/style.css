@@ -87,7 +87,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: 1rem;
   color: var(--muted);
   font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
 }
+.header-adhyay-label:hover { background: var(--surface-2); color: var(--primary); }
 
 /* ===== HOME: SIDEBAR ===== */
 .sidebar-toggle {
@@ -313,6 +318,38 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .adhyay-summary-img .img-placeholder span { font-size: 3rem; }
 
+/* Summary title overlay — centred on cover image */
+.adhyay-summary-img { position: relative; }
+.summary-title-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  text-align: center;
+  padding: 16px;
+  pointer-events: none;
+}
+.summary-adhyay-num {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  font-weight: 600;
+  color: #FDE68A;
+  letter-spacing: 0.08em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  margin-bottom: 6px;
+}
+.summary-adhyay-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: #FFFBEB;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
+  line-height: 1.2;
+}
+
 /* ===== CONCEPT SELECTOR ===== */
 .concept-selector-section {
   background: var(--surface);
@@ -403,15 +440,43 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   min-height: clamp(200px, 30vh, 9999px);
 }
-.concept-img-title {
+/* Concept nav bar — prev / title / next */
+.concept-nav-bar {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
   background: var(--surface);
-  padding: 10px 16px;
+  border-bottom: 2px solid var(--primary-lt);
+}
+.concept-nav-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+.concept-nav-btn:disabled { color: var(--border); cursor: default; }
+.concept-nav-btn:not(:disabled):hover { background: var(--primary-lt); }
+.concept-nav-btn svg { width: 14px; height: 14px; }
+.concept-img-title {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
   font-family: var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   color: var(--text);
-  border-bottom: 2px solid var(--primary-lt);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .concept-img-wrap img {
   flex: 1;

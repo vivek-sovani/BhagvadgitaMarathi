@@ -13,7 +13,7 @@
     <span class="om">🕉️</span>
     <a class="title" href="index.html">श्रीमद्भगवद्गीता</a>
     <span class="header-spacer"></span>
-    <span class="header-adhyay-label" id="header-adhyay-label"></span>
+    <button class="header-adhyay-label" id="header-adhyay-label" title="मुख्यपानावर परत जा"></button>
   </header>
 
   <div class="adhyay-body" id="adhyay-body">
@@ -33,12 +33,26 @@
         <span>🕉️</span>
         <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
       </div>
+      <div class="summary-title-overlay">
+        <div class="summary-adhyay-num" id="summary-adhyay-num"></div>
+        <div class="summary-adhyay-name" id="summary-adhyay-name"></div>
+      </div>
     </div>
 
     <!-- Concept view: image (left) + info (right) — shown when concept selected -->
     <div class="concept-view" id="concept-view">
       <div class="concept-img-wrap">
-        <div class="concept-img-title" id="concept-img-title"></div>
+        <div class="concept-nav-bar">
+          <button class="concept-nav-btn" id="prev-concept-btn" disabled aria-label="मागील संकल्पना">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            मागील
+          </button>
+          <div class="concept-img-title" id="concept-img-title"></div>
+          <button class="concept-nav-btn" id="next-concept-btn" disabled aria-label="पुढील संकल्पना">
+            पुढील
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
         <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
         <div class="img-placeholder" id="concept-placeholder">
           <span id="concept-placeholder-emoji">🌅</span>
