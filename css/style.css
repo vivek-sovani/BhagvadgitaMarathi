@@ -180,16 +180,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== HOME: BANNER (FULL SCREEN) ===== */
 .home-banner {
   width: 100%;
-  height: calc(100dvh - 60px);
-  overflow: hidden;
   position: relative;
-  background: linear-gradient(135deg, #1a0a00 0%, #3d1f00 50%, #1a0a00 100%);
+  background: #000;
 }
 .home-banner img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
+  display: block;
 }
 .home-banner-overlay {
   position: absolute;
