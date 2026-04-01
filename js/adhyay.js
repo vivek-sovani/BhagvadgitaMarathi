@@ -88,12 +88,14 @@
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
   // ── Back to summary ───────────────────────────────────────────
+  const backToSummaryBar   = document.getElementById('back-to-summary-bar');
   const backToSummaryBtn   = document.getElementById('back-to-summary-btn');
   const backToSummaryLabel = document.getElementById('back-to-summary-label');
   if (backToSummaryLabel) backToSummaryLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
   if (backToSummaryBtn) {
     backToSummaryBtn.addEventListener('click', () => {
       conceptView.classList.remove('visible');
+      if (backToSummaryBar) backToSummaryBar.style.display = 'none';
       summarySection.style.display = '';
       pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
       pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
@@ -296,8 +298,9 @@
     const activePill = pillsTrack.querySelector('.concept-pill.active');
     if (activePill) activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
 
-    // Hide adhyay summary image, show concept view
+    // Hide adhyay summary image, show concept view + back bar
     summarySection.style.display = 'none';
+    if (backToSummaryBar) backToSummaryBar.style.display = '';
     conceptView.classList.add('visible');
 
     // Concept image — try .jpg → .jpeg → .png
@@ -338,6 +341,7 @@
     } else {
       // Back to adhyay view
       conceptView.classList.remove('visible');
+      if (backToSummaryBar) backToSummaryBar.style.display = 'none';
       summarySection.style.display = '';
       pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
       pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;

@@ -10,12 +10,6 @@
 
   <!-- Site Header -->
   <header class="site-header">
-    <a class="header-back" href="index.html" aria-label="मुख्यपानावर परत जा">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"/>
-      </svg>
-      मुख्यपान
-    </a>
     <span class="om">🕉️</span>
     <a class="title" href="index.html">श्रीमद्भगवद्गीता</a>
     <span class="header-spacer"></span>
@@ -41,15 +35,19 @@
       </div>
     </div>
 
+    <!-- Back to summary bar — shown when concept selected -->
+    <div class="back-to-summary-bar" id="back-to-summary-bar" style="display:none">
+      <button class="back-to-summary-btn" id="back-to-summary-btn" aria-label="सारांशावर परत जा">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        <span id="back-to-summary-label">सारांश</span>
+      </button>
+    </div>
+
     <!-- Concept view: image (left) + info (right) — shown when concept selected -->
     <div class="concept-view" id="concept-view">
       <div class="concept-img-wrap">
-        <button class="back-to-summary-btn" id="back-to-summary-btn" aria-label="सारांशावर परत जा">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"/>
-          </svg>
-          <span id="back-to-summary-label">सारांश</span>
-        </button>
         <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
         <div class="img-placeholder" id="concept-placeholder">
           <span id="concept-placeholder-emoji">🌅</span>
