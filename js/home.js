@@ -17,7 +17,6 @@
         <span class="item-number">अध्याय ${adhyay.number}</span>
         <span class="item-name">${adhyay.name}</span>
       </div>
-      ${adhyay.available ? '' : '<span class="coming-soon-badge">लवकरच</span>'}
     `;
     list.appendChild(item);
   });
