@@ -59,6 +59,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .site-header .title {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 2.5vw, 1.3rem);
+  text-decoration: none;
+  color: inherit;
   font-weight: 700;
   color: var(--text);
 }
@@ -368,6 +370,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 10px;
 }
 .concept-info .info-emoji { font-size: 1.8rem; flex-shrink: 0; }
+.back-to-summary-btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: inherit;
+  color: var(--text-2);
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+.back-to-summary-btn svg { width: 14px; height: 14px; }
+.back-to-summary-btn:hover { background: var(--surface); color: var(--primary); border-color: var(--primary); }
 .concept-info-header-text { display: flex; flex-direction: column; gap: 2px; }
 .concept-info .info-name {
   font-family: var(--font-serif);

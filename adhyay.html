@@ -17,27 +17,27 @@
       मुख्यपान
     </a>
     <span class="om">🕉️</span>
-    <span class="title">भगवद्गीता</span>
+    <a class="title" href="index.html">भगवद्गीता</a>
     <span class="header-spacer"></span>
     <span class="header-adhyay-label" id="header-adhyay-label"></span>
   </header>
 
   <div class="adhyay-body" id="adhyay-body">
 
-    <!-- Adhyay summary image (shown when no concept selected) -->
-    <div class="adhyay-summary-img" id="summary-img-section">
-      <img id="summary-img" src="" alt="अध्याय सारांश">
-      <div class="img-placeholder" id="summary-placeholder">
-        <span>🕉️</span>
-        <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
-      </div>
-    </div>
-
     <!-- Concept selector (always visible on adhyay page) -->
     <div class="concept-selector-section" id="concept-selector-section" style="display:none">
       <div class="concept-selector-label">संकल्पना निवडा</div>
       <div class="concept-pills-track" id="concept-pills-track">
         <!-- Rendered by adhyay.js -->
+      </div>
+    </div>
+
+    <!-- Adhyay summary image + PDF (shown when no concept selected) -->
+    <div class="adhyay-summary-img" id="summary-img-section">
+      <img id="summary-img" src="" alt="अध्याय सारांश">
+      <div class="img-placeholder" id="summary-placeholder">
+        <span>🕉️</span>
+        <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
       </div>
     </div>
 
@@ -57,6 +57,12 @@
             <div class="info-name" id="concept-info-name"></div>
             <div class="info-meta" id="concept-info-meta"></div>
           </div>
+          <button class="back-to-summary-btn" id="back-to-summary-btn" aria-label="सारांशावर परत जा">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            सारांश
+          </button>
         </div>
         <div class="concept-info-body">
           <div class="concept-text" id="concept-text-content"></div>
@@ -97,7 +103,6 @@
   <!-- PDF.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
-    // Set worker path before any PDF loading
     if (typeof pdfjsLib !== 'undefined') {
       pdfjsLib.GlobalWorkerOptions.workerSrc =
         'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';

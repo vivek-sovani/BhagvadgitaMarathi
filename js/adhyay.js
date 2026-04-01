@@ -88,6 +88,23 @@
   pdfModalClose.addEventListener('click', closePdfModal);
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
+  // ── Back to summary ───────────────────────────────────────────
+  const backToSummaryBtn = document.getElementById('back-to-summary-btn');
+  if (backToSummaryBtn) {
+    backToSummaryBtn.addEventListener('click', () => {
+      conceptView.classList.remove('visible');
+      summarySection.style.display = '';
+      pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
+      pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
+      pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+      pendingPdfUrl = assetPath('adhyay.pdf');
+      renderThumb(pendingPdfUrl);
+      const url = new URL(window.location.href);
+      url.searchParams.delete('concept');
+      history.pushState({ adhyayId }, '', url);
+    });
+  }
+
   // Re-render PDF when screen rotates or resizes
   let resizeTimer;
   window.addEventListener('resize', () => {
