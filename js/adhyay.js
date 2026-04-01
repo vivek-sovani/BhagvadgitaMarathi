@@ -28,9 +28,39 @@
   const conceptTextContent = document.getElementById('concept-text-content');
   const pdfLabel         = document.getElementById('pdf-label');
   const pdfContainer     = document.getElementById('pdf-carousel-container');
+  const pdfOpenBtn       = document.getElementById('pdf-open-btn');
+  const pdfModal         = document.getElementById('pdf-modal');
+  const pdfModalTitle    = document.getElementById('pdf-modal-title');
+  const pdfModalClose    = document.getElementById('pdf-modal-close');
+  const pdfModalBackdrop = document.getElementById('pdf-modal-backdrop');
 
   // ── PDF carousel ─────────────────────────────────────────────
   const carousel = new PDFCarousel(pdfContainer);
+
+  // ── Modal open/close ──────────────────────────────────────────
+  let pendingPdfUrl = null;
+
+  function openPdfModal(title) {
+    pdfModalTitle.textContent = title;
+    pdfModal.classList.add('open');
+    pdfModalBackdrop.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Render PDF now that modal is visible and has real dimensions
+    if (pendingPdfUrl) {
+      carousel.currentUrl = null; // force re-render at new size
+      requestAnimationFrame(() => requestAnimationFrame(() => carousel.load(pendingPdfUrl)));
+    }
+  }
+
+  function closePdfModal() {
+    pdfModal.classList.remove('open');
+    pdfModalBackdrop.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  pdfOpenBtn.addEventListener('click', () => openPdfModal(pdfModalTitle.textContent));
+  pdfModalClose.addEventListener('click', closePdfModal);
+  pdfModalBackdrop.addEventListener('click', closePdfModal);
 
   // ── Helpers ───────────────────────────────────────────────────
   function assetPath(file) {
@@ -87,7 +117,8 @@
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
   pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
-  carousel.load(assetPath('adhyay.pdf'));
+  pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+  pendingPdfUrl = assetPath('adhyay.pdf');
 
   // ── Render concept text ────────────────────────────────────────
   function renderConceptText(adhyayIdStr, conceptIdStr) {
@@ -239,11 +270,10 @@
     conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${concept.id}`;
     renderConceptText(String(adhyay.id), String(concept.id));
 
-    // Load concept PDF — wait one frame so the grid layout is computed first
+    // Store concept PDF url — loaded when modal opens
     pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;
-    requestAnimationFrame(() => {
-      carousel.load(assetPath(`concept-${concept.id}.pdf`));
-    });
+    pdfModalTitle.textContent = `संकल्पना ${concept.id} — ${concept.name}`;
+    pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
   }
 
   // ── Handle browser back/forward ───────────────────────────────
@@ -257,7 +287,8 @@
       summarySection.style.display = '';
       pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
       pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
-      carousel.load(assetPath('adhyay.pdf'));
+      pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+      pendingPdfUrl = assetPath('adhyay.pdf');
     }
   });
 
