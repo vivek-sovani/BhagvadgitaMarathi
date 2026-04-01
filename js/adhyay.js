@@ -89,7 +89,9 @@
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
   // ── Back to summary ───────────────────────────────────────────
-  const backToSummaryBtn = document.getElementById('back-to-summary-btn');
+  const backToSummaryBtn   = document.getElementById('back-to-summary-btn');
+  const backToSummaryLabel = document.getElementById('back-to-summary-label');
+  if (backToSummaryLabel) backToSummaryLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
   if (backToSummaryBtn) {
     backToSummaryBtn.addEventListener('click', () => {
       conceptView.classList.remove('visible');

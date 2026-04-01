@@ -3,19 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>भगवद्गीता — मराठीत</title>
-  <meta name="description" content="भगवद्गीता मराठीत — अध्याय व संकल्पना">
+  <title>भगवद्गीता</title>
+  <meta name="description" content="भगवद्गीता — अध्याय व संकल्पना">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="home-page">
 
   <!-- Site Header -->
   <header class="site-header">
+    <button class="sidebar-toggle" id="sidebar-toggle" aria-label="अध्याय मेनू">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6"  x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
     <span class="om">🕉️</span>
     <span class="title">भगवद्गीता</span>
   </header>
 
-  <!-- Home Banner -->
+  <!-- Left Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span class="sidebar-title">अध्याय निवडा</span>
+      <button class="sidebar-close" id="sidebar-close" aria-label="बंद करा">✕</button>
+    </div>
+    <div class="sidebar-list" id="adhyay-list"></div>
+  </div>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <!-- Full-screen Banner -->
   <div class="home-banner">
     <img src="assets/home-banner.jpg" alt="भगवद्गीता"
       onerror="if(!this.src.endsWith('.jpeg')){this.src='assets/home-banner.jpeg'}else if(!this.src.endsWith('.png')){this.src='assets/home-banner.png'}else{this.style.display='none'}">
@@ -25,14 +42,6 @@
       <div class="banner-sub">श्रीकृष्णाचा दिव्य संदेश</div>
     </div>
   </div>
-
-  <!-- Adhyay Grid -->
-  <main class="home-content">
-    <div class="section-label">अध्याय निवडा</div>
-    <div class="adhyay-grid" id="adhyay-grid">
-      <!-- Rendered by home.js -->
-    </div>
-  </main>
 
   <script src="js/data.js"></script>
   <script src="js/home.js"></script>

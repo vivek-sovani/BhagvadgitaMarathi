@@ -1,27 +1,32 @@
 (function () {
-  const grid = document.getElementById('adhyay-grid');
-  if (!grid) return;
+  const list    = document.getElementById('adhyay-list');
+  const toggle  = document.getElementById('sidebar-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const close   = document.getElementById('sidebar-close');
+  const backdrop= document.getElementById('sidebar-backdrop');
 
+  // ── Render adhyay list ────────────────────────────────────────
   GITA_DATA.adhyays.forEach(adhyay => {
-    const card = document.createElement('div');
-    card.className = 'adhyay-card' + (adhyay.available ? '' : ' unavailable');
-    card.setAttribute('role', adhyay.available ? 'button' : 'presentation');
-    card.setAttribute('tabindex', adhyay.available ? '0' : '-1');
-    card.setAttribute('aria-label', `अध्याय ${adhyay.number} — ${adhyay.name}`);
-
-    card.innerHTML = `
-      <div class="card-emoji">${adhyay.emoji}</div>
-      <div class="card-number">अध्याय ${adhyay.number}</div>
-      <div class="card-name">${adhyay.name}</div>
-      ${!adhyay.available ? '<span class="coming-soon-badge">लवकरच</span>' : ''}
+    const item = document.createElement(adhyay.available ? 'a' : 'div');
+    item.className = 'sidebar-adhyay-item' + (adhyay.available ? '' : ' unavailable');
+    if (adhyay.available) item.href = `adhyay.html?id=${adhyay.id}`;
+    item.setAttribute('aria-label', `अध्याय ${adhyay.number} — ${adhyay.name}`);
+    item.innerHTML = `
+      <span class="item-emoji">${adhyay.emoji}</span>
+      <div class="item-text">
+        <span class="item-number">अध्याय ${adhyay.number}</span>
+        <span class="item-name">${adhyay.name}</span>
+      </div>
+      ${adhyay.available ? '' : '<span class="coming-soon-badge">लवकरच</span>'}
     `;
-
-    if (adhyay.available) {
-      const go = () => { window.location.href = `adhyay.html?id=${adhyay.id}`; };
-      card.addEventListener('click', go);
-      card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-    }
-
-    grid.appendChild(card);
+    list.appendChild(item);
   });
+
+  // ── Sidebar open/close ────────────────────────────────────────
+  function openSidebar()  { sidebar.classList.add('open'); backdrop.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeSidebar() { sidebar.classList.remove('open'); backdrop.classList.remove('open'); document.body.style.overflow = ''; }
+
+  toggle.addEventListener('click', openSidebar);
+  close.addEventListener('click', closeSidebar);
+  backdrop.addEventListener('click', closeSidebar);
 })();

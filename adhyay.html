@@ -44,6 +44,12 @@
     <!-- Concept view: image (left) + info (right) — shown when concept selected -->
     <div class="concept-view" id="concept-view">
       <div class="concept-img-wrap">
+        <button class="back-to-summary-btn" id="back-to-summary-btn" aria-label="सारांशावर परत जा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          <span id="back-to-summary-label">सारांश</span>
+        </button>
         <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
         <div class="img-placeholder" id="concept-placeholder">
           <span id="concept-placeholder-emoji">🌅</span>
@@ -57,12 +63,6 @@
             <div class="info-name" id="concept-info-name"></div>
             <div class="info-meta" id="concept-info-meta"></div>
           </div>
-          <button class="back-to-summary-btn" id="back-to-summary-btn" aria-label="सारांशावर परत जा">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
-            सारांश
-          </button>
         </div>
         <div class="concept-info-body">
           <div class="concept-text" id="concept-text-content"></div>
