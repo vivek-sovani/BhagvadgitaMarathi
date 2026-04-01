@@ -70,10 +70,10 @@
     document.body.style.overflow = 'hidden';
     // Request landscape orientation (best-effort — not supported on iOS)
     try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
-    // Render PDF after layout is fully computed
+    // Render PDF after layout is fully computed (200ms for mobile)
     if (pendingPdfUrl) {
       carousel.currentUrl = null;
-      setTimeout(() => carousel.load(pendingPdfUrl), 80);
+      setTimeout(() => carousel.load(pendingPdfUrl), 200);
     }
   }
 

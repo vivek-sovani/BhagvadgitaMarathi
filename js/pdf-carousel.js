@@ -106,10 +106,10 @@ class PDFCarousel {
 
       // Scale to fit container — respect both width and height
       const btnMargin  = window.innerWidth < 480 ? 16 : 80;
-      const containerW = this.inner.clientWidth - btnMargin;
-      const containerH = this.inner.clientHeight || window.innerHeight * 0.8;
+      const containerW = this.inner.clientWidth  || window.innerWidth  - btnMargin;
+      const containerH = this.inner.clientHeight || window.innerHeight - 100;
       const viewport0  = page.getViewport({ scale: 1 });
-      const scaleW     = containerW / viewport0.width;
+      const scaleW     = (containerW - btnMargin) / viewport0.width;
       const scaleH     = containerH / viewport0.height;
       const scale      = Math.min(scaleW, scaleH, 2.5);
       const viewport   = page.getViewport({ scale });
