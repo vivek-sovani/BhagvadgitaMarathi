@@ -124,12 +124,15 @@
   // ── Render adhyay summary image ───────────────────────────────
   summaryPHText.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
   summaryImg.alt = `अध्याय ${adhyay.number} सारांश`;
-  summaryImg.src = assetPath('summary.jpg');
+  summaryImg.style.display = '';
+  summaryPH.style.display = 'none';
+  const summaryExts = ['jpg', 'jpeg', 'png'];
+  let summaryExtIdx = 0;
+  summaryImg.src = assetPath(`summary.${summaryExts[summaryExtIdx]}`);
   summaryImg.onerror = function () {
-    if (!this.src.endsWith('.jpeg')) {
-      this.src = assetPath('summary.jpeg');
-    } else if (!this.src.endsWith('.png')) {
-      this.src = assetPath('summary.png');
+    summaryExtIdx++;
+    if (summaryExtIdx < summaryExts.length) {
+      this.src = assetPath(`summary.${summaryExts[summaryExtIdx]}`);
     } else {
       this.style.display = 'none';
       summaryPH.style.display = '';
