@@ -88,19 +88,19 @@
 
   </div>
 
-  <!-- PDF Modal -->
+  <!-- PDF Modal (desktop: iframe; mobile: new tab) -->
   <div class="pdf-modal" id="pdf-modal" role="dialog" aria-modal="true" aria-label="PDF दर्शक">
     <div class="pdf-modal-header">
       <span class="pdf-modal-title" id="pdf-modal-title">PDF</span>
       <button class="pdf-modal-close" id="pdf-modal-close" aria-label="बंद करा">✕</button>
     </div>
     <div class="pdf-modal-body">
-      <div id="pdf-carousel-container"></div>
+      <iframe id="pdf-iframe" src="" title="PDF दर्शक" allowfullscreen></iframe>
     </div>
   </div>
   <div class="pdf-modal-backdrop" id="pdf-modal-backdrop"></div>
 
-  <!-- PDF.js CDN -->
+  <!-- PDF.js (only for thumbnail preview) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     if (typeof pdfjsLib !== 'undefined') {
@@ -110,7 +110,6 @@
   </script>
   <script src="js/data.js"></script>
   <script src="js/content.js"></script>
-  <script src="js/pdf-carousel.js"></script>
   <script src="js/adhyay.js"></script>
 </body>
 </html>

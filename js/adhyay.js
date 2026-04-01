@@ -33,9 +33,7 @@
   const pdfModalTitle    = document.getElementById('pdf-modal-title');
   const pdfModalClose    = document.getElementById('pdf-modal-close');
   const pdfModalBackdrop = document.getElementById('pdf-modal-backdrop');
-
-  // ── PDF carousel ─────────────────────────────────────────────
-  const carousel = new PDFCarousel(pdfContainer);
+  const pdfIframe        = document.getElementById('pdf-iframe');
 
   // ── PDF thumbnail ─────────────────────────────────────────────
   let pendingPdfUrl = null;
@@ -64,24 +62,25 @@
   // ── Modal open/close ──────────────────────────────────────────
 
   function openPdfModal(title) {
+    if (!pendingPdfUrl) return;
+    // Mobile: open in new tab using native PDF viewer
+    if (window.innerWidth < 768) {
+      window.open(pendingPdfUrl, '_blank');
+      return;
+    }
+    // Desktop: show in iframe modal
     pdfModalTitle.textContent = title;
+    pdfIframe.src = pendingPdfUrl;
     pdfModal.classList.add('open');
     pdfModalBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
-    // Request landscape orientation (best-effort — not supported on iOS)
-    try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
-    // Render PDF after layout is fully computed (200ms for mobile)
-    if (pendingPdfUrl) {
-      carousel.currentUrl = null;
-      setTimeout(() => carousel.load(pendingPdfUrl), 200);
-    }
   }
 
   function closePdfModal() {
     pdfModal.classList.remove('open');
     pdfModalBackdrop.classList.remove('open');
     document.body.style.overflow = '';
-    try { screen.orientation.unlock(); } catch(e) {}
+    pdfIframe.src = ''; // stop loading PDF when closed
   }
 
   pdfOpenBtn.addEventListener('click', () => openPdfModal(pdfModalTitle.textContent));
@@ -107,16 +106,6 @@
     });
   }
 
-  // Re-render PDF when screen rotates or resizes
-  let resizeTimer;
-  window.addEventListener('resize', () => {
-    if (!pdfModal.classList.contains('open') || !pendingPdfUrl) return;
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      carousel.currentUrl = null;
-      carousel.load(pendingPdfUrl);
-    }, 150);
-  });
 
   // ── Helpers ───────────────────────────────────────────────────
   function assetPath(file) {
