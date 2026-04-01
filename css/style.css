@@ -669,13 +669,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .pdf-modal-body {
   flex: 1;
   min-height: 0;
+  position: relative;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
+/* Stretch carousel container to fill modal body using absolute inset */
 .pdf-modal-body #pdf-carousel-container {
-  flex: 1;
-  min-height: 0;
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
 }
@@ -686,11 +686,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   border: none;
   border-radius: 0;
+  box-shadow: none;
 }
 .pdf-modal-body .pdf-carousel-inner {
   flex: 1;
-  min-height: 0;
-  height: auto;
+  min-height: 0 !important;
+  overflow: hidden;
 }
 .pdf-modal-body .pdf-carousel-footer { flex-shrink: 0; }
 

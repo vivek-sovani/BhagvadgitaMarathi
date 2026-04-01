@@ -70,10 +70,10 @@
     document.body.style.overflow = 'hidden';
     // Request landscape orientation (best-effort — not supported on iOS)
     try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
-    // Render PDF now that modal is visible and has real dimensions
+    // Render PDF after layout is fully computed
     if (pendingPdfUrl) {
-      carousel.currentUrl = null; // force re-render at new size
-      requestAnimationFrame(() => requestAnimationFrame(() => carousel.load(pendingPdfUrl)));
+      carousel.currentUrl = null;
+      setTimeout(() => carousel.load(pendingPdfUrl), 80);
     }
   }
 
@@ -96,7 +96,7 @@
     resizeTimer = setTimeout(() => {
       carousel.currentUrl = null;
       carousel.load(pendingPdfUrl);
-    }, 300);
+    }, 150);
   });
 
   // ── Helpers ───────────────────────────────────────────────────
