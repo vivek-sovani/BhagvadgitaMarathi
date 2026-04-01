@@ -391,10 +391,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .concept-info-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 
 /* Concept text rendering */
-.concept-text { font-size: clamp(0.78rem, 1.3vw, 0.88rem); line-height: 1.75; color: var(--text-2); }
+.concept-text { font-size: clamp(0.92rem, 1.5vw, 1.02rem); line-height: 1.8; color: var(--text-2); }
 .concept-text .ct-header {
   font-family: var(--font-serif);
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(1.05rem, 1.8vw, 1.15rem);
   font-weight: 700;
   color: var(--text);
   margin-bottom: 10px;
@@ -408,7 +408,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 14px;
   margin: 10px 0;
   font-family: var(--font-serif);
-  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
   color: var(--text);
   line-height: 1.9;
 }
@@ -427,7 +427,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 14px;
   margin: 10px 0;
   font-family: var(--font-serif);
-  font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
   color: #92400E;
   line-height: 1.85;
 }
@@ -447,7 +447,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 8px 0;
   font-style: italic;
   color: var(--primary-dk);
-  font-size: clamp(0.75rem, 1.2vw, 0.83rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
 }
 .concept-text .ct-para { margin-bottom: 8px; }
 .concept-text .ct-sankalp {
@@ -456,7 +456,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 10px 14px;
   margin: 10px 0;
-  font-size: clamp(0.75rem, 1.2vw, 0.83rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
   color: #065f46;
 }
 .concept-text .ct-label {
@@ -569,29 +569,58 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ===== PDF OPEN BUTTON ===== */
+/* ===== PDF THUMBNAIL CARD ===== */
 .pdf-open-bar {
-  padding: 12px clamp(16px, 4vw, 48px) 20px;
+  padding: 16px clamp(16px, 4vw, 48px) 24px;
   background: var(--surface-2);
   border-top: 1px solid var(--border);
 }
-.pdf-open-btn {
+.pdf-thumb-card {
   display: inline-flex;
+  flex-direction: column;
+  border: none;
+  background: var(--surface);
+  border-radius: 10px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: box-shadow 0.2s, transform 0.15s;
+  width: clamp(140px, 22vw, 200px);
+}
+.pdf-thumb-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.18); transform: translateY(-2px); }
+.pdf-thumb-preview {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #f0ede8;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.pdf-thumb-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.pdf-thumb-placeholder {
+  font-size: 3rem;
+  color: var(--muted);
+}
+.pdf-thumb-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
   background: var(--primary);
   color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
+  font-size: 0.8rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
 }
-.pdf-open-btn svg { width: 18px; height: 18px; }
-.pdf-open-btn:hover { background: var(--primary-dark, #b45309); }
+.pdf-thumb-footer svg { width: 14px; height: 14px; flex-shrink: 0; }
 
 /* ===== PDF MODAL ===== */
 .pdf-modal-backdrop {

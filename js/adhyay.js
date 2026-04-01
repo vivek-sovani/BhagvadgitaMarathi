@@ -37,8 +37,31 @@
   // ── PDF carousel ─────────────────────────────────────────────
   const carousel = new PDFCarousel(pdfContainer);
 
-  // ── Modal open/close ──────────────────────────────────────────
+  // ── PDF thumbnail ─────────────────────────────────────────────
   let pendingPdfUrl = null;
+  const thumbCanvas = document.getElementById('pdf-thumb-canvas');
+  const thumbPH     = document.getElementById('pdf-thumb-placeholder');
+
+  async function renderThumb(url) {
+    if (!url || !thumbCanvas) return;
+    try {
+      const pdf      = await pdfjsLib.getDocument({ url }).promise;
+      const page     = await pdf.getPage(1);
+      const vp0      = page.getViewport({ scale: 1 });
+      const scale    = thumbCanvas.parentElement.clientWidth / vp0.width || 1;
+      const vp       = page.getViewport({ scale });
+      thumbCanvas.width  = vp.width;
+      thumbCanvas.height = vp.height;
+      await page.render({ canvasContext: thumbCanvas.getContext('2d'), viewport: vp }).promise;
+      thumbCanvas.style.display = 'block';
+      thumbPH.style.display = 'none';
+    } catch (e) {
+      thumbCanvas.style.display = 'none';
+      thumbPH.style.display = '';
+    }
+  }
+
+  // ── Modal open/close ──────────────────────────────────────────
 
   function openPdfModal(title) {
     pdfModalTitle.textContent = title;
@@ -119,6 +142,7 @@
   pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
   pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
   pendingPdfUrl = assetPath('adhyay.pdf');
+  renderThumb(pendingPdfUrl);
 
   // ── Render concept text ────────────────────────────────────────
   function renderConceptText(adhyayIdStr, conceptIdStr) {
@@ -274,6 +298,7 @@
     pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;
     pdfModalTitle.textContent = `संकल्पना ${concept.id} — ${concept.name}`;
     pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
+    renderThumb(pendingPdfUrl);
   }
 
   // ── Handle browser back/forward ───────────────────────────────
@@ -289,6 +314,7 @@
       pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
       pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
       pendingPdfUrl = assetPath('adhyay.pdf');
+      renderThumb(pendingPdfUrl);
     }
   });
 
