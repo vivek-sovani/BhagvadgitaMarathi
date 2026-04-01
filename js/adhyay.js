@@ -88,6 +88,17 @@
   pdfModalClose.addEventListener('click', closePdfModal);
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
+  // Re-render PDF when screen rotates or resizes
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    if (!pdfModal.classList.contains('open') || !pendingPdfUrl) return;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      carousel.currentUrl = null;
+      carousel.load(pendingPdfUrl);
+    }, 300);
+  });
+
   // ── Helpers ───────────────────────────────────────────────────
   function assetPath(file) {
     return `assets/adhyay-${adhyay.id}/${file}`;
