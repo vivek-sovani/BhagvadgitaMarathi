@@ -104,11 +104,14 @@ class PDFCarousel {
     try {
       const page = await this.pdfDoc.getPage(num);
 
-      // Scale to fit container width (nav buttons are absolute, don't subtract much)
+      // Scale to fit container — respect both width and height
       const btnMargin  = window.innerWidth < 480 ? 16 : 80;
       const containerW = this.inner.clientWidth - btnMargin;
+      const containerH = this.inner.clientHeight || window.innerHeight * 0.8;
       const viewport0  = page.getViewport({ scale: 1 });
-      const scale      = Math.min(containerW / viewport0.width, 2.5);
+      const scaleW     = containerW / viewport0.width;
+      const scaleH     = containerH / viewport0.height;
+      const scale      = Math.min(scaleW, scaleH, 2.5);
       const viewport   = page.getViewport({ scale });
 
       let canvas = this.canvasArea.querySelector('canvas');

@@ -18,7 +18,8 @@
 
   <!-- Home Banner -->
   <div class="home-banner">
-    <img src="assets/home-banner.jpg" alt="भगवद्गीता" onerror="this.style.display='none'">
+    <img src="assets/home-banner.jpg" alt="भगवद्गीता"
+      onerror="if(!this.src.endsWith('.jpeg')){this.src='assets/home-banner.jpeg'}else if(!this.src.endsWith('.png')){this.src='assets/home-banner.png'}else{this.style.display='none'}">
     <div class="home-banner-overlay">
       <div class="banner-om">🕉️</div>
       <div class="banner-title">भगवद्गीता</div>

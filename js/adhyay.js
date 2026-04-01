@@ -68,6 +68,8 @@
     pdfModal.classList.add('open');
     pdfModalBackdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
+    // Request landscape orientation (best-effort — not supported on iOS)
+    try { screen.orientation.lock('landscape').catch(() => {}); } catch(e) {}
     // Render PDF now that modal is visible and has real dimensions
     if (pendingPdfUrl) {
       carousel.currentUrl = null; // force re-render at new size
@@ -79,6 +81,7 @@
     pdfModal.classList.remove('open');
     pdfModalBackdrop.classList.remove('open');
     document.body.style.overflow = '';
+    try { screen.orientation.unlock(); } catch(e) {}
   }
 
   pdfOpenBtn.addEventListener('click', () => openPdfModal(pdfModalTitle.textContent));
@@ -114,6 +117,8 @@
   summaryImg.onerror = function () {
     if (!this.src.endsWith('.jpeg')) {
       this.src = assetPath('summary.jpeg');
+    } else if (!this.src.endsWith('.png')) {
+      this.src = assetPath('summary.png');
     } else {
       this.style.display = 'none';
       summaryPH.style.display = '';
@@ -273,7 +278,7 @@
     summarySection.style.display = 'none';
     conceptView.classList.add('visible');
 
-    // Concept image — try .jpg first, fallback to .jpeg
+    // Concept image — try .jpg → .jpeg → .png
     conceptPHEmoji.textContent = concept.emoji;
     conceptImg.style.display = '';
     conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
@@ -281,6 +286,8 @@
     conceptImg.onerror = function () {
       if (!this.src.endsWith('.jpeg')) {
         this.src = assetPath(`concept-${concept.id}.jpeg`);
+      } else if (!this.src.endsWith('.png')) {
+        this.src = assetPath(`concept-${concept.id}.png`);
       } else {
         this.style.display = 'none';
         conceptPH.style.display = '';
