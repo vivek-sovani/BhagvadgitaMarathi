@@ -12,10 +12,14 @@
 
   <!-- Site Header -->
   <header class="site-header">
+    <a class="header-home-btn" href="index.html" title="मुख्यपान">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
+      होम
+    </a>
+    <span class="header-sep">|</span>
     <span class="om">🕉️</span>
-    <a class="title" href="index.html">गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन</a>
     <span class="header-spacer"></span>
-    <button class="header-adhyay-label" id="header-adhyay-label" title="मुख्यपानावर परत जा"></button>
+    <button class="header-adhyay-label" id="header-adhyay-label" title="अध्याय पानावर परत जा"></button>
   </header>
 
   <div class="adhyay-body" id="adhyay-body">
@@ -38,6 +42,11 @@
 
     <!-- Current concept title bar — shown above concept view -->
     <div class="concept-title-bar" id="concept-title-bar" style="display:none">
+      <button class="ctb-back" id="ctb-back-btn" title="अध्याय पानावर परत जा">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        अध्याय
+      </button>
+      <span class="ctb-divider"></span>
       <span class="ctb-meta" id="ctb-meta"></span>
       <span class="ctb-name" id="ctb-name"></span>
     </div>

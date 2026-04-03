@@ -69,6 +69,27 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--muted);
   margin-left: 4px;
 }
+.header-home-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.header-home-btn:hover { background: var(--primary-lt); }
+.header-home-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+.header-sep {
+  color: var(--border);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
 .header-back {
   display: flex;
   align-items: center;
@@ -84,15 +105,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .header-back svg { width: 16px; height: 16px; }
 .header-spacer { flex: 1; }
 .header-adhyay-label {
-  font-size: 1rem;
-  color: var(--muted);
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
-  transition: background var(--transition), color var(--transition);
+  padding: 5px 12px;
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.header-adhyay-label:hover { background: var(--surface-2); color: var(--primary); }
+.header-adhyay-label:hover { background: var(--primary-lt); color: var(--primary-dk); border-color: var(--primary); }
 
 /* ===== HOME: SIDEBAR ===== */
 .sidebar-toggle {
@@ -415,6 +445,30 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--primary-dk);
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.ctb-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.18);
+  border: none;
+  border-radius: 999px;
+  padding: 4px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+.ctb-back:hover { background: rgba(0,0,0,0.3); }
+.ctb-back svg { width: 13px; height: 13px; }
+.ctb-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255,255,255,0.3);
+  flex-shrink: 0;
 }
 .ctb-meta {
   font-size: 0.75rem;

@@ -116,11 +116,15 @@
   }
 
   // ── Render header ─────────────────────────────────────────────
-  document.title = `श्रीमद्भगवद्गीता — अध्याय ${adhyay.number} | ${adhyay.name}`;
-  headerLabel.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
+  document.title = `गीता-ज्ञानेश्वरी — अध्याय ${adhyay.number} | ${adhyay.name}`;
+  headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number}`;
 
   // Header adhyay label → go back to cover page
   headerLabel.addEventListener('click', goToCoverPage);
+
+  // Concept title bar back button → go back to cover page
+  const ctbBackBtn = document.getElementById('ctb-back-btn');
+  if (ctbBackBtn) ctbBackBtn.addEventListener('click', goToCoverPage);
 
   // ── Render adhyay summary image ───────────────────────────────
   summaryPHText.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
@@ -310,6 +314,7 @@
   if (prevConceptBtn) prevConceptBtn.addEventListener('click', () => {
     const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
     if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
+    else goToCoverPage(); // first concept → back to chapter cover
   });
   if (nextConceptBtn) nextConceptBtn.addEventListener('click', () => {
     if (currentConceptId === null) {
@@ -340,13 +345,16 @@
     }
 
     // Update bottom nav with prev/next concept names
+    // On first concept: prev shows "← अध्याय" and goes to cover page
     const prevConcept = idx > 0 ? adhyay.concepts[idx - 1] : null;
     const nextConcept = idx < adhyay.concepts.length - 1 ? adhyay.concepts[idx + 1] : null;
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
     if (prevBtn) {
-      prevBtn.disabled = !prevConcept;
-      if (bnavPrevName) bnavPrevName.textContent = prevConcept ? `${prevConcept.emoji} ${prevConcept.name}` : '';
+      prevBtn.disabled = false;
+      if (bnavPrevName) bnavPrevName.textContent = prevConcept
+        ? `${prevConcept.emoji} ${prevConcept.name}`
+        : `अध्याय ${adhyay.number}`;
     }
     if (nextBtn) {
       nextBtn.disabled = !nextConcept;
