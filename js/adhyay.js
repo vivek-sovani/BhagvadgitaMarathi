@@ -324,12 +324,15 @@
 
     // Set handlers BEFORE src so cached images still trigger onload
     conceptImg.onload = function () {
+      // Only adjust columns on desktop — mobile uses CSS single-column layout
+      if (window.innerWidth <= 767) return;
       const navBarEl = conceptView.querySelector('.concept-nav-bar');
       const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
       const availH   = conceptView.offsetHeight - navBarH;
+      if (!availH || !this.naturalWidth || !this.naturalHeight) return;
       const aspect   = this.naturalWidth / this.naturalHeight;
       const idealW   = Math.round(availH * aspect);
-      const minW     = 240;
+      const minW     = 280;
       const maxW     = Math.round(window.innerWidth * 0.55);
       const colW     = Math.max(minW, Math.min(idealW, maxW));
       conceptView.style.gridTemplateColumns = `${colW}px 1fr`;
@@ -342,7 +345,9 @@
       } else {
         this.style.display = 'none';
         conceptPH.style.display = '';
-        conceptView.style.gridTemplateColumns = '280px 1fr';
+        if (window.innerWidth > 767) {
+          conceptView.style.gridTemplateColumns = '50% 1fr';
+        }
       }
     };
     conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
@@ -370,13 +375,17 @@
 
   // ── Recalculate column width on window resize ─────────────────
   window.addEventListener('resize', () => {
+    if (window.innerWidth <= 767) {
+      conceptView.style.gridTemplateColumns = '';  // let CSS media query take over
+      return;
+    }
     if (conceptImg.naturalWidth && conceptImg.naturalHeight && conceptView.classList.contains('visible')) {
       const navBarEl = conceptView.querySelector('.concept-nav-bar');
       const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
       const availH   = conceptView.offsetHeight - navBarH;
       const aspect   = conceptImg.naturalWidth / conceptImg.naturalHeight;
       const idealW   = Math.round(availH * aspect);
-      const minW     = 240;
+      const minW     = 280;
       const maxW     = Math.round(window.innerWidth * 0.55);
       const colW     = Math.max(minW, Math.min(idealW, maxW));
       conceptView.style.gridTemplateColumns = `${colW}px 1fr`;

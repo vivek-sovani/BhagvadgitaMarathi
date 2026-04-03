@@ -416,7 +416,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Concept image + info row */
 .concept-view {
   display: none;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 50% 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
   /* Fill the viewport below the sticky header (60px) + pills bar (~72px) */
@@ -438,8 +438,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   background: #ffffff;
   position: relative;
-  min-width: 240px;
-  max-width: 55vw;
   min-height: clamp(200px, 30vh, 9999px);
 }
 /* Concept nav bar — prev / title / next */
@@ -485,7 +483,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   width: 100%;
   min-height: 0;
   object-fit: contain;
-  object-position: top center;
+  object-position: center;
   transition: opacity 0.3s ease;
 }
 .concept-img-wrap .img-placeholder {
