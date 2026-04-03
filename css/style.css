@@ -350,61 +350,104 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   line-height: 1.2;
 }
 
-/* ===== CONCEPT SELECTOR ===== */
-.concept-selector-section {
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 14px clamp(16px, 4vw, 48px);
+/* ===== ADHYAY SUMMARY TEXT ===== */
+.adhyay-summary-text {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 48px) clamp(80px, 10vw, 100px);
 }
-.concept-selector-label {
-  font-size: 0.75rem;
-  font-weight: 600;
+.summary-adhyay-label {
+  font-size: 0.78rem;
+  font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 10px;
+  color: var(--primary);
+  margin-bottom: 12px;
 }
-.concept-pills-track {
+.summary-adhyay-desc {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+.summary-concept-list {
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 2px;
-  -webkit-overflow-scrolling: touch;
 }
-.concept-pills-track::-webkit-scrollbar { display: none; }
-.concept-pill {
+.summary-concept-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--primary-lt);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-left-color var(--transition), box-shadow var(--transition);
+}
+.summary-concept-item:hover {
+  border-left-color: var(--primary);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.summary-concept-item .sci-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 18px;
+}
+.summary-concept-item .sci-emoji { font-size: 1.2rem; }
+.summary-concept-item .sci-name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ===== STICKY BOTTOM CONCEPT NAV ===== */
+.bottom-concept-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 54px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  z-index: 80;
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
+}
+.bnav-btn {
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 7px 14px;
-  border-radius: 999px;
-  border: 1.5px solid var(--border);
-  background: var(--surface);
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-2);
+  gap: 5px;
+  padding: 0 clamp(12px, 3vw, 24px);
+  height: 100%;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: none;
+  border: none;
   cursor: pointer;
-  transition: border-color var(--transition), background var(--transition), color var(--transition);
+  transition: background var(--transition);
   white-space: nowrap;
 }
-.concept-pill:hover {
-  border-color: var(--primary);
-  color: var(--primary-dk);
-}
-.concept-pill.active {
-  border-color: var(--primary);
-  background: var(--primary-lt);
-  color: var(--primary-dk);
+.bnav-btn:disabled { color: var(--border); cursor: default; }
+.bnav-btn:not(:disabled):hover { background: var(--primary-lt); }
+.bnav-btn svg { width: 14px; height: 14px; }
+.bnav-center {
+  flex: 1;
+  text-align: center;
+  font-size: clamp(0.78rem, 2vw, 0.92rem);
   font-weight: 600;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 8px;
 }
-.concept-pill .pill-emoji { font-size: 1rem; }
-.concept-pill .pill-num {
-  font-size: 0.75rem;
-  color: var(--muted);
-  font-weight: 400;
-}
+.bnav-next { flex-direction: row-reverse; }
 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
@@ -419,8 +462,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   grid-template-columns: 50% 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  /* Fill the viewport below the sticky header (60px) + pills bar (~72px) */
-  height: calc(100svh - 60px - 72px);
+  /* Fill the viewport below the sticky header (60px) + bottom nav (54px) */
+  height: calc(100svh - 60px - 54px);
   min-height: 360px;
 }
 .concept-view.visible { display: grid; }
@@ -856,7 +899,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== RESPONSIVE TWEAKS ===== */
 @media (max-width: 479px) {
-  .concept-pill { padding: 6px 10px; font-size: 0.75rem; }
   .pdf-nav-btn { width: 32px; height: 32px; }
   .pdf-nav-btn.prev { left: 6px; }
   .pdf-nav-btn.next { right: 6px; }

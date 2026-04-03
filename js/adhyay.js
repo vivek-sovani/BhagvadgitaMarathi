@@ -16,8 +16,12 @@
   const summaryImg       = document.getElementById('summary-img');
   const summaryPH        = document.getElementById('summary-placeholder');
   const summaryPHText    = document.getElementById('summary-placeholder-text');
-  const conceptSection   = document.getElementById('concept-selector-section');
-  const pillsTrack       = document.getElementById('concept-pills-track');
+  const summaryTextEl    = document.getElementById('adhyay-summary-text');
+  const summaryLabelEl   = document.getElementById('summary-adhyay-label');
+  const summaryDescEl    = document.getElementById('summary-adhyay-desc');
+  const summaryConceptListEl = document.getElementById('summary-concept-list');
+  const bnavEl           = document.getElementById('bottom-concept-nav');
+  const bnavCenter       = document.getElementById('bnav-center');
   const conceptView      = document.getElementById('concept-view');
   const conceptImg       = document.getElementById('concept-img');
   const conceptPH        = document.getElementById('concept-placeholder');
@@ -87,12 +91,6 @@
   pdfModalClose.addEventListener('click', closePdfModal);
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
-  // ── Concept image title ───────────────────────────────────────
-  const conceptImgTitle  = document.getElementById('concept-img-title');
-  const prevConceptBtn   = document.getElementById('prev-concept-btn');
-  const nextConceptBtn   = document.getElementById('next-concept-btn');
-  const summaryAdhyayNum = document.getElementById('summary-adhyay-num');
-  const summaryAdhyayName= document.getElementById('summary-adhyay-name');
 
 
   // ── Helpers ───────────────────────────────────────────────────
@@ -140,22 +138,29 @@
     }
   };
 
-  // ── Render concept pills ──────────────────────────────────────
-  if (adhyay.concepts.length > 0) {
-    conceptSection.style.display = '';
+  // ── Render summary text + concept list ───────────────────────
+  if (adhyay.summary && summaryTextEl) {
+    summaryLabelEl.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
+    summaryDescEl.textContent  = adhyay.summary;
+    summaryConceptListEl.innerHTML = '';
     adhyay.concepts.forEach(concept => {
-      const pill = document.createElement('button');
-      pill.className = 'concept-pill';
-      pill.dataset.conceptId = concept.id;
-      pill.setAttribute('aria-label', `संकल्पना ${concept.id}: ${concept.name}`);
-      pill.innerHTML = `
-        <span class="pill-emoji">${concept.emoji}</span>
-        <span class="pill-num">${concept.id}.</span>
-        <span>${concept.name}</span>
+      const item = document.createElement('div');
+      item.className = 'summary-concept-item';
+      item.innerHTML = `
+        <span class="sci-num">${concept.id}.</span>
+        <span class="sci-emoji">${concept.emoji}</span>
+        <span class="sci-name">${concept.name}</span>
       `;
-      pill.addEventListener('click', () => selectConcept(concept.id));
-      pillsTrack.appendChild(pill);
+      item.addEventListener('click', () => selectConcept(concept.id));
+      summaryConceptListEl.appendChild(item);
     });
+    summaryTextEl.style.display = '';
+  }
+
+  // ── Show bottom nav ───────────────────────────────────────────
+  if (adhyay.concepts.length > 0 && bnavEl) {
+    bnavEl.style.display = '';
+    bnavCenter.textContent = 'वाचायला सुरुवात करा';
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
@@ -274,9 +279,14 @@
 
   // ── Go to cover page ──────────────────────────────────────────
   function goToCoverPage() {
+    currentConceptId = null;
     conceptView.classList.remove('visible');
     summarySection.style.display = '';
-    pillsTrack.querySelectorAll('.concept-pill').forEach(p => p.classList.remove('active'));
+    if (bnavCenter) bnavCenter.textContent = 'वाचायला सुरुवात करा';
+    const prevBtn = document.getElementById('prev-concept-btn');
+    const nextBtn = document.getElementById('next-concept-btn');
+    if (prevBtn) prevBtn.disabled = true;
+    if (nextBtn) nextBtn.disabled = false;
     pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
     pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
     pendingPdfUrl = assetPath('adhyay.pdf');
@@ -287,13 +297,19 @@
   }
 
   // ── Prev / Next concept ────────────────────────────────────────
+  const prevConceptBtn = document.getElementById('prev-concept-btn');
+  const nextConceptBtn = document.getElementById('next-concept-btn');
   if (prevConceptBtn) prevConceptBtn.addEventListener('click', () => {
     const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
     if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
   });
   if (nextConceptBtn) nextConceptBtn.addEventListener('click', () => {
-    const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
-    if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
+    if (currentConceptId === null) {
+      selectConcept(adhyay.concepts[0].id);
+    } else {
+      const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
+      if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
+    }
   });
 
   // ── Select concept ─────────────────────────────────────────────
@@ -307,12 +323,13 @@
     url.searchParams.set('concept', cid);
     history.pushState({ adhyayId, conceptId: cid }, '', url);
 
-    // Highlight active pill & scroll into view
-    pillsTrack.querySelectorAll('.concept-pill').forEach(p => {
-      p.classList.toggle('active', parseInt(p.dataset.conceptId) === cid);
-    });
-    const activePill = pillsTrack.querySelector('.concept-pill.active');
-    if (activePill) activePill.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    // Update bottom nav
+    if (bnavCenter) bnavCenter.textContent = `${concept.emoji} ${concept.id}. ${concept.name}`;
+    const idx = adhyay.concepts.findIndex(c => c.id === cid);
+    const prevBtn = document.getElementById('prev-concept-btn');
+    const nextBtn = document.getElementById('next-concept-btn');
+    if (prevBtn) prevBtn.disabled = idx <= 0;
+    if (nextBtn) nextBtn.disabled = idx >= adhyay.concepts.length - 1;
 
     summarySection.style.display = 'none';
     conceptView.classList.add('visible');
@@ -326,9 +343,7 @@
     conceptImg.onload = function () {
       // Only adjust columns on desktop — mobile uses CSS single-column layout
       if (window.innerWidth <= 767) return;
-      const navBarEl = conceptView.querySelector('.concept-nav-bar');
-      const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
-      const availH   = conceptView.offsetHeight - navBarH;
+      const availH   = conceptView.offsetHeight;
       if (!availH || !this.naturalWidth || !this.naturalHeight) return;
       const aspect   = this.naturalWidth / this.naturalHeight;
       const idealW   = Math.round(availH * aspect);
@@ -353,12 +368,7 @@
     conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
     conceptPH.style.display = 'none';
 
-    // Concept image title + prev/next state
     currentConceptId = cid;
-    if (conceptImgTitle) conceptImgTitle.textContent = `${concept.emoji} ${concept.name}`;
-    const idx = adhyay.concepts.findIndex(c => c.id === cid);
-    if (prevConceptBtn) prevConceptBtn.disabled = idx <= 0;
-    if (nextConceptBtn) nextConceptBtn.disabled = idx >= adhyay.concepts.length - 1;
 
     // Concept info panel
     conceptInfoEmoji.textContent = concept.emoji;
@@ -380,9 +390,7 @@
       return;
     }
     if (conceptImg.naturalWidth && conceptImg.naturalHeight && conceptView.classList.contains('visible')) {
-      const navBarEl = conceptView.querySelector('.concept-nav-bar');
-      const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
-      const availH   = conceptView.offsetHeight - navBarH;
+      const availH   = conceptView.offsetHeight;
       const aspect   = conceptImg.naturalWidth / conceptImg.naturalHeight;
       const idealW   = Math.round(availH * aspect);
       const minW     = 280;

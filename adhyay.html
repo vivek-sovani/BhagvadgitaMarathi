@@ -20,37 +20,25 @@
 
   <div class="adhyay-body" id="adhyay-body">
 
-    <!-- Concept selector (always visible on adhyay page) -->
-    <div class="concept-selector-section" id="concept-selector-section" style="display:none">
-      <div class="concept-selector-label">संकल्पना निवडा</div>
-      <div class="concept-pills-track" id="concept-pills-track">
-        <!-- Rendered by adhyay.js -->
+    <!-- Adhyay summary image + text (shown when no concept selected) -->
+    <div id="summary-img-section">
+      <div class="adhyay-summary-img">
+        <img id="summary-img" src="" alt="अध्याय सारांश">
+        <div class="img-placeholder" id="summary-placeholder">
+          <span>🕉️</span>
+          <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
+        </div>
       </div>
-    </div>
-
-    <!-- Adhyay summary image + PDF (shown when no concept selected) -->
-    <div class="adhyay-summary-img" id="summary-img-section">
-      <img id="summary-img" src="" alt="अध्याय सारांश">
-      <div class="img-placeholder" id="summary-placeholder">
-        <span>🕉️</span>
-        <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
+      <div class="adhyay-summary-text" id="adhyay-summary-text" style="display:none">
+        <div class="summary-adhyay-label" id="summary-adhyay-label"></div>
+        <p class="summary-adhyay-desc" id="summary-adhyay-desc"></p>
+        <div class="summary-concept-list" id="summary-concept-list"></div>
       </div>
     </div>
 
     <!-- Concept view: image (left) + info (right) — shown when concept selected -->
     <div class="concept-view" id="concept-view">
       <div class="concept-img-wrap">
-        <div class="concept-nav-bar">
-          <button class="concept-nav-btn" id="prev-concept-btn" disabled aria-label="मागील संकल्पना">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            मागील
-          </button>
-          <div class="concept-img-title" id="concept-img-title"></div>
-          <button class="concept-nav-btn" id="next-concept-btn" disabled aria-label="पुढील संकल्पना">
-            पुढील
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          </button>
-        </div>
         <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
         <div class="img-placeholder" id="concept-placeholder">
           <span id="concept-placeholder-emoji">🌅</span>
@@ -109,6 +97,19 @@
         'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
   </script>
+  <!-- Sticky bottom concept navigation -->
+  <nav class="bottom-concept-nav" id="bottom-concept-nav" style="display:none">
+    <button class="bnav-btn" id="prev-concept-btn" disabled aria-label="मागील संकल्पना">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      मागील
+    </button>
+    <div class="bnav-center" id="bnav-center"></div>
+    <button class="bnav-btn bnav-next" id="next-concept-btn" aria-label="पुढील संकल्पना">
+      पुढील
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </nav>
+
   <script src="js/data.js"></script>
   <script src="js/content.js"></script>
   <script src="js/adhyay.js"></script>
