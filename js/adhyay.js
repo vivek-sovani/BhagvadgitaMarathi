@@ -290,6 +290,8 @@
   // ── Go to cover page ──────────────────────────────────────────
   function goToCoverPage() {
     currentConceptId = null;
+    const adhyayBodyEl = document.getElementById('adhyay-body');
+    if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
@@ -333,6 +335,8 @@
   function selectConcept(cid) {
     const concept = adhyay.concepts.find(c => c.id === cid);
     if (!concept) return;
+    const adhyayBodyEl = document.getElementById('adhyay-body');
+    if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
 
     // Update URL without full page reload
     const url = new URL(window.location.href);

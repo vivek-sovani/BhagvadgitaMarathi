@@ -330,14 +330,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ===== ADHYAY PAGE LAYOUT ===== */
-.adhyay-page { min-height: 100vh; display: flex; flex-direction: column; }
+.adhyay-page { height: 100svh; overflow: hidden; display: flex; flex-direction: column; }
+@media (max-width: 767px) { .adhyay-page { height: auto; overflow: visible; } }
 
 /* ===== ADHYAY SUMMARY — 2-COLUMN LAYOUT ===== */
 #summary-img-section {
+  flex-shrink: 0;
   display: grid;
   grid-template-columns: clamp(260px, 42%, 520px) 1fr;
   height: calc(100svh - 70px - 54px);
-  overflow: hidden;
 }
 @media (max-width: 767px) {
   #summary-img-section {
@@ -349,7 +350,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== ADHYAY SUMMARY IMAGE ===== */
 .adhyay-summary-img {
-  height: 100%;
   background: #fff;
   position: relative;
   overflow: hidden;
@@ -377,41 +377,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 }
 
-/* Summary title overlay — centred on cover image */
-.adhyay-summary-img { position: relative; }
-.summary-title-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0,0,0,0.35);
-  text-align: center;
-  padding: 16px;
-  pointer-events: none;
-}
-.summary-adhyay-num {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 3vw, 1.4rem);
-  font-weight: 600;
-  color: #FDE68A;
-  letter-spacing: 0.08em;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
-  margin-bottom: 6px;
-}
-.summary-adhyay-name {
-  font-family: var(--font-serif);
-  font-size: clamp(1.4rem, 5vw, 2.8rem);
-  font-weight: 700;
-  color: #FFFBEB;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
-  line-height: 1.2;
-}
-
 /* ===== ADHYAY SUMMARY TEXT ===== */
 .adhyay-summary-text {
-  height: 100%;
   overflow-y: auto;
   padding: clamp(20px, 3vw, 36px) clamp(20px, 4vw, 44px);
   display: flex;
@@ -596,12 +563,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 /* Concept image + info row */
 .concept-view {
+  flex-shrink: 0;
   display: none;
   grid-template-columns: 50% 1fr;
   gap: 0;
