@@ -330,7 +330,19 @@
       } else {
         this.style.display = 'none';
         conceptPH.style.display = '';
+        conceptView.style.gridTemplateColumns = '280px 1fr';
       }
+    };
+    conceptImg.onload = function () {
+      const navBarEl = conceptView.querySelector('.concept-nav-bar');
+      const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
+      const availH   = conceptView.offsetHeight - navBarH;
+      const aspect   = this.naturalWidth / this.naturalHeight;
+      const idealW   = Math.round(availH * aspect);
+      const minW     = 240;
+      const maxW     = Math.round(window.innerWidth * 0.55);
+      const colW     = Math.max(minW, Math.min(idealW, maxW));
+      conceptView.style.gridTemplateColumns = `${colW}px 1fr`;
     };
     conceptPH.style.display = 'none';
 
@@ -353,6 +365,21 @@
     pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
     renderThumb(pendingPdfUrl);
   }
+
+  // ── Recalculate column width on window resize ─────────────────
+  window.addEventListener('resize', () => {
+    if (conceptImg.naturalWidth && conceptImg.naturalHeight && conceptView.classList.contains('visible')) {
+      const navBarEl = conceptView.querySelector('.concept-nav-bar');
+      const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
+      const availH   = conceptView.offsetHeight - navBarH;
+      const aspect   = conceptImg.naturalWidth / conceptImg.naturalHeight;
+      const idealW   = Math.round(availH * aspect);
+      const minW     = 240;
+      const maxW     = Math.round(window.innerWidth * 0.55);
+      const colW     = Math.max(minW, Math.min(idealW, maxW));
+      conceptView.style.gridTemplateColumns = `${colW}px 1fr`;
+    }
+  });
 
   // ── Handle browser back/forward ───────────────────────────────
   window.addEventListener('popstate', (e) => {
