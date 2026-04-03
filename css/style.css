@@ -69,26 +69,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--muted);
   margin-left: 4px;
 }
-.header-home-btn {
+.header-app-link {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--primary);
+  gap: 8px;
   text-decoration: none;
-  padding: 6px 10px;
+  color: inherit;
+  flex-shrink: 0;
+  padding: 4px 6px;
   border-radius: var(--radius-sm);
   transition: background var(--transition);
-  white-space: nowrap;
-  flex-shrink: 0;
 }
-.header-home-btn:hover { background: var(--primary-lt); }
-.header-home-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-.header-sep {
-  color: var(--border);
-  font-size: 1.1rem;
-  flex-shrink: 0;
+.header-app-link:hover { background: var(--surface-2); }
+.header-app-link .om { font-size: 1.7rem; line-height: 1; }
+.header-app-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.header-app-link .title {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text);
+}
+.header-app-link .subtitle {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
 .header-back {
   display: flex;
@@ -324,20 +332,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== ADHYAY PAGE LAYOUT ===== */
 .adhyay-page { min-height: 100vh; display: flex; flex-direction: column; }
 
+/* ===== ADHYAY SUMMARY — 2-COLUMN LAYOUT ===== */
+#summary-img-section {
+  display: grid;
+  grid-template-columns: clamp(260px, 42%, 520px) 1fr;
+  height: calc(100svh - 70px - 54px);
+  overflow: hidden;
+}
+@media (max-width: 767px) {
+  #summary-img-section {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+}
+
 /* ===== ADHYAY SUMMARY IMAGE ===== */
 .adhyay-summary-img {
-  width: 100%;
+  height: 100%;
   background: #fff;
   position: relative;
+  overflow: hidden;
 }
 .adhyay-summary-img img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
 }
 .adhyay-summary-img .img-placeholder {
-  min-height: 180px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -347,6 +371,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 8px;
 }
 .adhyay-summary-img .img-placeholder span { font-size: 3rem; }
+@media (max-width: 767px) {
+  .adhyay-summary-img {
+    height: clamp(160px, 44vw, 280px);
+  }
+}
 
 /* Summary title overlay — centred on cover image */
 .adhyay-summary-img { position: relative; }
@@ -382,57 +411,85 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== ADHYAY SUMMARY TEXT ===== */
 .adhyay-summary-text {
-  max-width: 780px;
-  margin: 0 auto;
-  padding: clamp(20px, 4vw, 40px) clamp(20px, 5vw, 48px) clamp(80px, 10vw, 100px);
+  height: 100%;
+  overflow-y: auto;
+  padding: clamp(20px, 3vw, 36px) clamp(20px, 4vw, 44px);
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 767px) {
+  .adhyay-summary-text {
+    height: auto;
+    overflow-y: visible;
+    padding: 20px 16px 80px;
+  }
 }
 .summary-adhyay-label {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .summary-adhyay-desc {
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-size: clamp(0.95rem, 1.8vw, 1.08rem);
   line-height: 1.85;
   color: var(--text);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+}
+
+/* ===== CONCEPT MENU LIST ===== */
+.summary-concept-list-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
 }
 .summary-concept-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex: 1;
 }
 .summary-concept-item {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--primary-lt);
-  border-radius: 8px;
+  gap: 10px;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
   cursor: pointer;
-  transition: border-left-color var(--transition), box-shadow var(--transition);
+  transition: background 0.15s, color 0.15s;
+  background: var(--surface);
+  text-decoration: none;
 }
-.summary-concept-item:hover {
-  border-left-color: var(--primary);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-}
+.summary-concept-item:last-child { border-bottom: none; }
+.summary-concept-item:hover { background: var(--primary-lt); }
 .summary-concept-item .sci-num {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  color: var(--muted);
-  min-width: 18px;
+  color: var(--primary);
+  min-width: 22px;
+  text-align: right;
+  flex-shrink: 0;
 }
-.summary-concept-item .sci-emoji { font-size: 1.2rem; }
+.summary-concept-item .sci-emoji { font-size: 1.1rem; flex-shrink: 0; }
 .summary-concept-item .sci-name {
-  font-size: 0.92rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--text);
+  flex: 1;
+}
+.summary-concept-item::after {
+  content: "›";
+  color: var(--muted);
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
 /* ===== CONCEPT TITLE BAR ===== */
@@ -549,8 +606,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   grid-template-columns: 50% 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  /* Fill the viewport: header(60) + title bar(52) + bottom nav(54) */
-  height: calc(100svh - 60px - 52px - 54px);
+  /* Fill the viewport: header(70) + title bar(52) + bottom nav(54) */
+  height: calc(100svh - 70px - 52px - 54px);
   min-height: 360px;
 }
 .concept-view.visible { display: grid; }

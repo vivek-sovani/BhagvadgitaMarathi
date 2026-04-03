@@ -117,7 +117,8 @@
 
   // ── Render header ─────────────────────────────────────────────
   document.title = `गीता-ज्ञानेश्वरी — अध्याय ${adhyay.number} | ${adhyay.name}`;
-  headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number}`;
+  // Cover page: show chapter name as informational label
+  headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
 
   // Header adhyay label → go back to cover page
   headerLabel.addEventListener('click', goToCoverPage);
@@ -303,6 +304,8 @@
     pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
     pendingPdfUrl = assetPath('adhyay.pdf');
     renderThumb(pendingPdfUrl);
+    // Restore header label to chapter name (no back arrow)
+    headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
     const url = new URL(window.location.href);
     url.searchParams.delete('concept');
     history.pushState({ adhyayId }, '', url);
@@ -335,6 +338,9 @@
     const url = new URL(window.location.href);
     url.searchParams.set('concept', cid);
     history.pushState({ adhyayId, conceptId: cid }, '', url);
+
+    // Update header label to show back-to-chapter affordance
+    headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number}`;
 
     // Update concept title bar
     const idx = adhyay.concepts.findIndex(c => c.id === cid);
