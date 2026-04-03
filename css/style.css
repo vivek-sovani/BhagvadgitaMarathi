@@ -416,7 +416,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* Concept image + info row */
 .concept-view {
   display: none;
-  grid-template-columns: 55fr 45fr;
+  grid-template-columns: minmax(280px, 40%) 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
   /* Fill the viewport below the sticky header (60px) + pills bar (~72px) */
