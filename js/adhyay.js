@@ -120,8 +120,6 @@
 
   // ── Render adhyay summary image ───────────────────────────────
   summaryPHText.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
-  if (summaryAdhyayNum)  summaryAdhyayNum.textContent  = `अध्याय ${adhyay.number}`;
-  if (summaryAdhyayName) summaryAdhyayName.textContent = adhyay.name;
   summaryImg.alt = `अध्याय ${adhyay.number} सारांश`;
   summaryImg.style.display = '';
   summaryPH.style.display = 'none';
