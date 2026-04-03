@@ -36,6 +36,12 @@
       </div>
     </div>
 
+    <!-- Current concept title bar — shown above concept view -->
+    <div class="concept-title-bar" id="concept-title-bar" style="display:none">
+      <span class="ctb-meta" id="ctb-meta"></span>
+      <span class="ctb-name" id="ctb-name"></span>
+    </div>
+
     <!-- Concept view: image (left) + info (right) — shown when concept selected -->
     <div class="concept-view" id="concept-view">
       <div class="concept-img-wrap">
@@ -99,13 +105,13 @@
   </script>
   <!-- Sticky bottom concept navigation -->
   <nav class="bottom-concept-nav" id="bottom-concept-nav" style="display:none">
-    <button class="bnav-btn" id="prev-concept-btn" disabled aria-label="मागील संकल्पना">
+    <button class="bnav-btn bnav-prev" id="prev-concept-btn" disabled aria-label="मागील संकल्पना">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      मागील
+      <span id="bnav-prev-name"></span>
     </button>
-    <div class="bnav-center" id="bnav-center"></div>
-    <button class="bnav-btn bnav-next" id="next-concept-btn" aria-label="पुढील संकल्पना">
-      पुढील
+    <div class="bnav-divider"></div>
+    <button class="bnav-btn bnav-next" id="next-concept-btn" disabled aria-label="पुढील संकल्पना">
+      <span id="bnav-next-name"></span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </nav>

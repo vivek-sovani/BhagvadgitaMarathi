@@ -405,6 +405,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: var(--text);
 }
 
+/* ===== CONCEPT TITLE BAR ===== */
+.concept-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 clamp(16px, 3vw, 32px);
+  height: 44px;
+  background: var(--primary-lt);
+  border-bottom: 2px solid var(--primary);
+  flex-shrink: 0;
+}
+.ctb-meta {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ctb-name {
+  font-family: var(--font-serif);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-weight: 700;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* ===== STICKY BOTTOM CONCEPT NAV ===== */
 .bottom-concept-nav {
   position: fixed;
@@ -413,41 +441,45 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--surface);
   border-top: 1px solid var(--border);
   display: flex;
-  align-items: center;
+  align-items: stretch;
   z-index: 80;
   box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
 }
 .bnav-btn {
-  flex-shrink: 0;
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 0 clamp(12px, 3vw, 24px);
+  gap: 6px;
+  padding: 0 clamp(10px, 2vw, 20px);
   height: 100%;
-  font-size: 0.88rem;
+  font-size: clamp(0.78rem, 1.8vw, 0.88rem);
   font-weight: 600;
   color: var(--primary);
   background: none;
   border: none;
   cursor: pointer;
   transition: background var(--transition);
-  white-space: nowrap;
+  overflow: hidden;
+  min-width: 0;
 }
-.bnav-btn:disabled { color: var(--border); cursor: default; }
-.bnav-btn:not(:disabled):hover { background: var(--primary-lt); }
-.bnav-btn svg { width: 14px; height: 14px; }
-.bnav-center {
-  flex: 1;
-  text-align: center;
-  font-size: clamp(0.78rem, 2vw, 0.92rem);
-  font-weight: 600;
-  color: var(--text);
+.bnav-btn span {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  padding: 0 8px;
+  min-width: 0;
 }
-.bnav-next { flex-direction: row-reverse; }
+.bnav-btn:disabled { color: var(--muted); cursor: default; }
+.bnav-btn:not(:disabled):hover { background: var(--primary-lt); }
+.bnav-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.bnav-prev { text-align: left; }
+.bnav-next { text-align: right; justify-content: flex-end; }
+.bnav-divider {
+  width: 1px;
+  background: var(--border);
+  flex-shrink: 0;
+  align-self: stretch;
+  margin: 10px 0;
+}
 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
@@ -462,8 +494,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   grid-template-columns: 50% 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  /* Fill the viewport below the sticky header (60px) + bottom nav (54px) */
-  height: calc(100svh - 60px - 54px);
+  /* Fill the viewport: header(60) + title bar(44) + bottom nav(54) */
+  height: calc(100svh - 60px - 44px - 54px);
   min-height: 360px;
 }
 .concept-view.visible { display: grid; }

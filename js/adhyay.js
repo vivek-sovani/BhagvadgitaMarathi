@@ -21,7 +21,11 @@
   const summaryDescEl    = document.getElementById('summary-adhyay-desc');
   const summaryConceptListEl = document.getElementById('summary-concept-list');
   const bnavEl           = document.getElementById('bottom-concept-nav');
-  const bnavCenter       = document.getElementById('bnav-center');
+  const bnavPrevName     = document.getElementById('bnav-prev-name');
+  const bnavNextName     = document.getElementById('bnav-next-name');
+  const conceptTitleBar  = document.getElementById('concept-title-bar');
+  const ctbMeta          = document.getElementById('ctb-meta');
+  const ctbName          = document.getElementById('ctb-name');
   const conceptView      = document.getElementById('concept-view');
   const conceptImg       = document.getElementById('concept-img');
   const conceptPH        = document.getElementById('concept-placeholder');
@@ -155,10 +159,13 @@
     summaryTextEl.style.display = '';
   }
 
-  // ── Show bottom nav ───────────────────────────────────────────
+  // ── Show bottom nav (cover page: start reading state) ────────
   if (adhyay.concepts.length > 0 && bnavEl) {
     bnavEl.style.display = '';
-    bnavCenter.textContent = 'वाचायला सुरुवात करा';
+    if (bnavPrevName) bnavPrevName.textContent = '';
+    if (bnavNextName) bnavNextName.textContent = 'वाचायला सुरुवात करा';
+    const prevBtn = document.getElementById('prev-concept-btn');
+    if (prevBtn) prevBtn.disabled = true;
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
@@ -279,8 +286,11 @@
   function goToCoverPage() {
     currentConceptId = null;
     conceptView.classList.remove('visible');
+    if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
-    if (bnavCenter) bnavCenter.textContent = 'वाचायला सुरुवात करा';
+    // Reset bottom nav to "start reading" state
+    if (bnavPrevName) bnavPrevName.textContent = '';
+    if (bnavNextName) bnavNextName.textContent = 'वाचायला सुरुवात करा';
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
     if (prevBtn) prevBtn.disabled = true;
@@ -321,13 +331,27 @@
     url.searchParams.set('concept', cid);
     history.pushState({ adhyayId, conceptId: cid }, '', url);
 
-    // Update bottom nav
-    if (bnavCenter) bnavCenter.textContent = `${concept.emoji} ${concept.id}. ${concept.name}`;
+    // Update concept title bar
     const idx = adhyay.concepts.findIndex(c => c.id === cid);
+    if (conceptTitleBar) {
+      conceptTitleBar.style.display = '';
+      ctbMeta.textContent = `${concept.emoji}  संकल्पना ${concept.id}`;
+      ctbName.textContent = concept.name;
+    }
+
+    // Update bottom nav with prev/next concept names
+    const prevConcept = idx > 0 ? adhyay.concepts[idx - 1] : null;
+    const nextConcept = idx < adhyay.concepts.length - 1 ? adhyay.concepts[idx + 1] : null;
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
-    if (prevBtn) prevBtn.disabled = idx <= 0;
-    if (nextBtn) nextBtn.disabled = idx >= adhyay.concepts.length - 1;
+    if (prevBtn) {
+      prevBtn.disabled = !prevConcept;
+      if (bnavPrevName) bnavPrevName.textContent = prevConcept ? `${prevConcept.emoji} ${prevConcept.name}` : '';
+    }
+    if (nextBtn) {
+      nextBtn.disabled = !nextConcept;
+      if (bnavNextName) bnavNextName.textContent = nextConcept ? `${nextConcept.emoji} ${nextConcept.name}` : '';
+    }
 
     summarySection.style.display = 'none';
     conceptView.classList.add('visible');
