@@ -10,6 +10,12 @@
     return;
   }
 
+  // ── Prev / Next available chapter ────────────────────────────
+  const availableAdhyays = GITA_DATA.adhyays.filter(a => a.available);
+  const currentAdhyayIdx = availableAdhyays.findIndex(a => a.id === adhyayId);
+  const prevAdhyay = currentAdhyayIdx > 0 ? availableAdhyays[currentAdhyayIdx - 1] : null;
+  const nextAdhyay = currentAdhyayIdx < availableAdhyays.length - 1 ? availableAdhyays[currentAdhyayIdx + 1] : null;
+
   // ── Element refs ─────────────────────────────────────────────
   const headerLabel      = document.getElementById('header-adhyay-label');
   const summarySection   = document.getElementById('summary-img-section');
@@ -164,13 +170,15 @@
     summaryTextEl.style.display = '';
   }
 
-  // ── Show bottom nav (cover page: start reading state) ────────
-  if (adhyay.concepts.length > 0 && bnavEl) {
+  // ── Show bottom nav (cover page: chapter navigation) ─────────
+  if (bnavEl) {
     bnavEl.style.display = '';
-    if (bnavPrevName) bnavPrevName.textContent = '';
-    if (bnavNextName) bnavNextName.textContent = 'वाचायला सुरुवात करा';
     const prevBtn = document.getElementById('prev-concept-btn');
-    if (prevBtn) prevBtn.disabled = true;
+    const nextBtn = document.getElementById('next-concept-btn');
+    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? `अध्याय ${prevAdhyay.number} — ${prevAdhyay.name}` : '';
+    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
+    if (prevBtn) prevBtn.disabled = !prevAdhyay;
+    if (nextBtn) nextBtn.disabled = !nextAdhyay;
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
@@ -295,13 +303,13 @@
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
-    // Reset bottom nav to "start reading" state
-    if (bnavPrevName) bnavPrevName.textContent = '';
-    if (bnavNextName) bnavNextName.textContent = 'वाचायला सुरुवात करा';
+    // Restore chapter nav in bottom nav
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
-    if (prevBtn) prevBtn.disabled = true;
-    if (nextBtn) nextBtn.disabled = false;
+    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? `अध्याय ${prevAdhyay.number} — ${prevAdhyay.name}` : '';
+    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
+    if (prevBtn) prevBtn.disabled = !prevAdhyay;
+    if (nextBtn) nextBtn.disabled = !nextAdhyay;
     pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
     pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
     pendingPdfUrl = assetPath('adhyay.pdf');
@@ -317,14 +325,22 @@
   const prevConceptBtn = document.getElementById('prev-concept-btn');
   const nextConceptBtn = document.getElementById('next-concept-btn');
   if (prevConceptBtn) prevConceptBtn.addEventListener('click', () => {
-    const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
-    if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
-    else goToCoverPage(); // first concept → back to chapter cover
+    if (currentConceptId === null) {
+      // Cover page → navigate to prev chapter
+      if (prevAdhyay) window.location.href = `adhyay.html?id=${prevAdhyay.id}`;
+    } else {
+      // Concept page → prev concept (or back to cover)
+      const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
+      if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
+      else goToCoverPage();
+    }
   });
   if (nextConceptBtn) nextConceptBtn.addEventListener('click', () => {
     if (currentConceptId === null) {
-      selectConcept(adhyay.concepts[0].id);
+      // Cover page → navigate to next chapter
+      if (nextAdhyay) window.location.href = `adhyay.html?id=${nextAdhyay.id}`;
     } else {
+      // Concept page → next concept
       const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
       if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
     }

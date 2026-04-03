@@ -34,13 +34,16 @@
   </div>
   <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
 
-  <!-- Full-screen Banner -->
-  <div class="home-banner">
-    <picture>
-      <source media="(max-width: 768px)" srcset="assets/home-banner-potrait.jpg">
-      <source media="(min-width: 769px)" srcset="assets/home-banner-landscape.jpg">
-      <img src="assets/home-banner-landscape.jpg" alt="श्रीमद्भगवद्गीता" fetchpriority="high">
-    </picture>
+  <!-- Home: 2-column layout (portrait image + adhyay menu) -->
+  <div class="home-layout">
+    <div class="home-portrait">
+      <img src="assets/home-banner-potrait.jpg" alt="श्रीमद्भगवद्गीता" fetchpriority="high">
+    </div>
+    <div class="home-adhyay-panel" id="home-adhyay-panel">
+      <div class="home-panel-label">भगवद्गीता · ज्ञानेश्वरी</div>
+      <div class="home-panel-title">आधुनिक जीवनात गीतेचा प्रत्यक्ष उपयोग</div>
+      <div class="home-adhyay-list" id="home-adhyay-list"></div>
+    </div>
   </div>
 
   <script src="js/data.js"></script>
