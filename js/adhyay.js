@@ -320,19 +320,9 @@
     // Concept image — try .jpg → .jpeg → .png
     conceptPHEmoji.textContent = concept.emoji;
     conceptImg.style.display = '';
-    conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
     conceptImg.alt = concept.name;
-    conceptImg.onerror = function () {
-      if (!this.src.endsWith('.jpeg')) {
-        this.src = assetPath(`concept-${concept.id}.jpeg`);
-      } else if (!this.src.endsWith('.png')) {
-        this.src = assetPath(`concept-${concept.id}.png`);
-      } else {
-        this.style.display = 'none';
-        conceptPH.style.display = '';
-        conceptView.style.gridTemplateColumns = '280px 1fr';
-      }
-    };
+
+    // Set handlers BEFORE src so cached images still trigger onload
     conceptImg.onload = function () {
       const navBarEl = conceptView.querySelector('.concept-nav-bar');
       const navBarH  = navBarEl ? navBarEl.offsetHeight : 44;
@@ -344,6 +334,18 @@
       const colW     = Math.max(minW, Math.min(idealW, maxW));
       conceptView.style.gridTemplateColumns = `${colW}px 1fr`;
     };
+    conceptImg.onerror = function () {
+      if (!this.src.endsWith('.jpeg')) {
+        this.src = assetPath(`concept-${concept.id}.jpeg`);
+      } else if (!this.src.endsWith('.png')) {
+        this.src = assetPath(`concept-${concept.id}.png`);
+      } else {
+        this.style.display = 'none';
+        conceptPH.style.display = '';
+        conceptView.style.gridTemplateColumns = '280px 1fr';
+      }
+    };
+    conceptImg.src = assetPath(`concept-${concept.id}.jpg`);
     conceptPH.style.display = 'none';
 
     // Concept image title + prev/next state
