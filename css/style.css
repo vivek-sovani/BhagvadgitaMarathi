@@ -409,25 +409,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .concept-title-bar {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 0 clamp(16px, 3vw, 32px);
-  height: 44px;
-  background: var(--primary-lt);
-  border-bottom: 2px solid var(--primary);
+  height: 52px;
+  background: var(--primary-dk);
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 .ctb-meta {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
   white-space: nowrap;
   flex-shrink: 0;
+  letter-spacing: 0.04em;
 }
 .ctb-name {
   font-family: var(--font-serif);
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   font-weight: 700;
-  color: var(--text);
+  color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -494,8 +495,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   grid-template-columns: 50% 1fr;
   gap: 0;
   border-bottom: 1px solid var(--border);
-  /* Fill the viewport: header(60) + title bar(44) + bottom nav(54) */
-  height: calc(100svh - 60px - 44px - 54px);
+  /* Fill the viewport: header(60) + title bar(52) + bottom nav(54) */
+  height: calc(100svh - 60px - 52px - 54px);
   min-height: 360px;
 }
 .concept-view.visible { display: grid; }
