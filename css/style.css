@@ -63,11 +63,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: inherit;
   font-weight: 700;
   color: var(--text);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   min-width: 0;
   flex-shrink: 1;
+}
+@media (max-width: 767px) {
+  .home-page .site-header {
+    height: auto;
+    min-height: 70px;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .home-page .site-header .om { font-size: 1.6rem; }
+  .home-page .site-header .title { font-size: 1rem; flex: 1; }
+  .home-page .header-spacer { display: none; }
+  .home-page .header-suchi-btn { width: 100%; justify-content: center; border-radius: var(--radius-sm); }
 }
 .site-header .subtitle {
   font-size: 0.8rem;
@@ -80,28 +90,36 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 8px;
   text-decoration: none;
   color: inherit;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
   padding: 4px 6px;
   border-radius: var(--radius-sm);
   transition: background var(--transition);
 }
 .header-app-link:hover { background: var(--surface-2); }
-.header-app-link .om { font-size: 1.7rem; line-height: 1; }
+.header-app-link .om { font-size: 1.7rem; line-height: 1; flex-shrink: 0; }
 .header-app-text {
   display: flex;
   flex-direction: column;
-  line-height: 1.2;
+  line-height: 1.5;
+  min-width: 0;
 }
 .header-app-link .title {
   font-family: var(--font-serif);
   font-size: clamp(1rem, 2vw, 1.25rem);
   font-weight: 700;
   color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .header-app-link .subtitle {
   font-size: 0.68rem;
   color: var(--muted);
   letter-spacing: 0.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .header-back {
   display: flex;

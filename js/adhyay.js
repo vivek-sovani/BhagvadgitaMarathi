@@ -326,6 +326,7 @@
     currentConceptId = null;
     const adhyayBodyEl = document.getElementById('adhyay-body');
     if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
+    window.scrollTo(0, 0);
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
@@ -380,6 +381,7 @@
     if (!concept) return;
     const adhyayBodyEl = document.getElementById('adhyay-body');
     if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
+    window.scrollTo(0, 0);
     if (suchiBtn) suchiBtn.style.display = 'none';
 
     // Update URL without full page reload
