@@ -63,6 +63,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: inherit;
   font-weight: 700;
   color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
 }
 .site-header .subtitle {
   font-size: 0.8rem;
@@ -131,6 +136,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-overflow: ellipsis;
 }
 .header-adhyay-label:hover { background: var(--primary-lt); color: var(--primary-dk); border-color: var(--primary); }
+
+.header-suchi-btn {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-lt);
+  border: 1px solid var(--primary);
+  padding: 5px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background var(--transition), color var(--transition);
+  flex-shrink: 0;
+}
+.header-suchi-btn:hover { background: var(--primary); color: #fff; }
+@media (min-width: 768px) {
+  .home-page .header-suchi-btn { display: none; }
+}
 
 /* ===== HOME: SIDEBAR ===== */
 .sidebar-toggle {
@@ -246,7 +269,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: block;
 }
 @media (max-width: 767px) {
-  .home-portrait { height: clamp(200px, 55vw, 320px); }
+  .home-portrait { height: auto; }
+  .home-portrait img { flex: none; height: auto; object-fit: unset; }
 }
 .home-adhyay-panel {
   overflow-y: auto;
@@ -292,7 +316,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .home-adhyay-item:last-child { border-bottom: none; }
 .home-adhyay-item:hover { background: var(--primary-lt); }
 .home-adhyay-item.unavailable { opacity: 0.45; cursor: default; pointer-events: none; }
-.home-adhyay-item .hai-num { font-size: 0.7rem; font-weight: 700; color: var(--primary); min-width: 28px; flex-shrink: 0; }
+.home-adhyay-item .hai-num { font-size: 0.7rem; font-weight: 700; color: var(--primary); min-width: 64px; flex-shrink: 0; }
 .home-adhyay-item .hai-emoji { font-size: 1.1rem; flex-shrink: 0; }
 .home-adhyay-item .hai-name { font-size: 0.9rem; font-weight: 500; flex: 1; }
 .home-adhyay-item::after { content: "›"; color: var(--muted); font-size: 1.1rem; flex-shrink: 0; }
@@ -387,9 +411,77 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .adhyay-summary-img .img-placeholder span { font-size: 3rem; }
 @media (max-width: 767px) {
-  .adhyay-summary-img {
-    height: clamp(200px, 55vw, 320px);
+  .adhyay-summary-img { height: auto; }
+  .adhyay-summary-img img { flex: none; height: auto; object-fit: unset; }
+}
+
+/* ===== ADHYAY COVER TITLE ===== */
+.adhyay-cover-title {
+  position: relative;
+  order: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px 14px;
+  background: var(--primary);
+  gap: 3px;
+  flex-shrink: 0;
+}
+.act-num {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.78);
+  text-transform: uppercase;
+}
+.act-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ===== ADHYAY COVER HOME LINK ===== */
+.cover-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 4px 0 12px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+  align-self: flex-start;
+}
+.cover-home-link:hover { opacity: 1; }
+.cover-home-link svg { width: 13px; height: 13px; }
+/* Mobile: hide the desktop home link inside summary-text panel */
+@media (max-width: 767px) {
+  .cover-home-link { display: none; }
+}
+/* Mobile-only home link shown above the image section */
+.cover-home-link-mobile {
+  display: none;
+}
+@media (max-width: 767px) {
+  .cover-home-link-mobile {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    padding: 10px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
   }
+  .cover-home-link-mobile svg { width: 14px; height: 14px; }
 }
 
 /* ===== ADHYAY SUMMARY TEXT ===== */

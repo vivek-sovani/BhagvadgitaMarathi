@@ -126,8 +126,34 @@
   // Cover page: show chapter name as informational label
   headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
 
+  // ── Render cover title overlay ────────────────────────────────
+  const actNum = document.getElementById('act-num');
+  const actName = document.getElementById('act-name');
+  if (actNum) actNum.textContent = `अध्याय ${adhyay.number}`;
+  if (actName) actName.textContent = adhyay.name;
+
   // Header adhyay label → go back to cover page
   headerLabel.addEventListener('click', goToCoverPage);
+
+  // Header सूची button → go to cover page and scroll to concept list
+  const suchiBtn = document.getElementById('header-suchi-btn');
+  if (suchiBtn) {
+    suchiBtn.addEventListener('click', () => {
+      if (currentConceptId !== null) goToCoverPage();
+      setTimeout(() => {
+        const conceptList = document.getElementById('summary-concept-list');
+        if (!conceptList) return;
+        const adhyayBodyEl = document.getElementById('adhyay-body');
+        // Desktop: adhyay-body scrolls internally; Mobile: window scrolls
+        if (adhyayBodyEl && adhyayBodyEl.scrollHeight > adhyayBodyEl.clientHeight) {
+          adhyayBodyEl.scrollTo({ top: conceptList.offsetTop, behavior: 'smooth' });
+        } else {
+          const rect = conceptList.getBoundingClientRect();
+          window.scrollTo({ top: window.scrollY + rect.top - 70, behavior: 'smooth' });
+        }
+      }, 100);
+    });
+  }
 
   // Concept title bar back button → go back to cover page
   const ctbBackBtn = document.getElementById('ctb-back-btn');
@@ -303,6 +329,7 @@
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
+    if (suchiBtn) suchiBtn.style.display = '';
     // Restore chapter nav in bottom nav
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
@@ -353,6 +380,7 @@
     if (!concept) return;
     const adhyayBodyEl = document.getElementById('adhyay-body');
     if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
+    if (suchiBtn) suchiBtn.style.display = 'none';
 
     // Update URL without full page reload
     const url = new URL(window.location.href);
