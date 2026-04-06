@@ -383,24 +383,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ===== ADHYAY PAGE LAYOUT ===== */
-.adhyay-page { height: 100svh; overflow: hidden; display: flex; flex-direction: column; }
-@media (max-width: 767px) { .adhyay-page { height: auto; overflow: visible; } }
+.adhyay-page { height: auto; overflow: visible; display: flex; flex-direction: column; }
 
 /* ===== ADHYAY SUMMARY — 2-COLUMN LAYOUT ===== */
 #summary-img-section {
   flex-shrink: 0;
   display: grid;
   grid-template-columns: clamp(260px, 42%, 520px) 1fr;
-  grid-template-rows: 1fr;
-  height: calc(100svh - 70px - 54px);
-  overflow: hidden;
 }
 @media (max-width: 767px) {
-  #summary-img-section {
-    grid-template-columns: 1fr;
-    height: auto;
-    overflow: visible;
-  }
+  #summary-img-section { grid-template-columns: 1fr; }
 }
 
 /* ===== ADHYAY SUMMARY IMAGE ===== */
@@ -506,18 +498,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== ADHYAY SUMMARY TEXT ===== */
 .adhyay-summary-text {
-  overflow-y: auto;
-  min-height: 0;
   padding: clamp(20px, 3vw, 36px) clamp(20px, 4vw, 44px);
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 767px) {
-  .adhyay-summary-text {
-    height: auto;
-    overflow-y: visible;
-    padding: 20px 16px 80px;
-  }
+  .adhyay-summary-text { padding: 20px 16px 80px; }
 }
 .summary-adhyay-label {
   font-size: 0.75rem;
@@ -690,10 +676,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
   flex: 1;
-  min-height: 0;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
 }
 
 /* Concept image + info row */
