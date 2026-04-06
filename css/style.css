@@ -505,6 +505,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 /* ===== ADHYAY SUMMARY TEXT ===== */
 .adhyay-summary-text {
   overflow-y: auto;
+  min-height: 0;
   padding: clamp(20px, 3vw, 36px) clamp(20px, 4vw, 44px);
   display: flex;
   flex-direction: column;
