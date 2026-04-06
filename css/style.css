@@ -184,10 +184,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .adhyay-page .header-spacer { display: none; }
   .adhyay-page .header-adhyay-label { flex-shrink: 0; }
   .adhyay-page .header-suchi-btn {
-    width: 100%;
-    justify-content: center;
+    margin-left: auto;
     order: 10;
-    border-radius: var(--radius-sm);
   }
 }
 

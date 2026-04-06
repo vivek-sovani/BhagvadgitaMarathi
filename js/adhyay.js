@@ -143,14 +143,10 @@
       setTimeout(() => {
         const conceptList = document.getElementById('summary-concept-list');
         if (!conceptList) return;
-        const adhyayBodyEl = document.getElementById('adhyay-body');
-        // Desktop: adhyay-body scrolls internally; Mobile: window scrolls
-        if (adhyayBodyEl && adhyayBodyEl.scrollHeight > adhyayBodyEl.clientHeight) {
-          adhyayBodyEl.scrollTo({ top: conceptList.offsetTop, behavior: 'smooth' });
-        } else {
-          const rect = conceptList.getBoundingClientRect();
-          window.scrollTo({ top: window.scrollY + rect.top - 70, behavior: 'smooth' });
-        }
+        const header = document.querySelector('.site-header');
+        const headerH = header ? header.offsetHeight : 70;
+        const rect = conceptList.getBoundingClientRect();
+        window.scrollTo({ top: window.scrollY + rect.top - headerH - 8, behavior: 'smooth' });
       }, 100);
     });
   }
