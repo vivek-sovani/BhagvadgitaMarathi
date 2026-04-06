@@ -21,7 +21,12 @@
     suchiLink.addEventListener('click', (e) => {
       e.preventDefault();
       const target = document.getElementById('home-adhyay-list');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) {
+        const header = document.querySelector('.site-header');
+        const headerH = header ? header.offsetHeight : 70;
+        const rect = target.getBoundingClientRect();
+        window.scrollTo({ top: window.scrollY + rect.top - headerH - 8, behavior: 'smooth' });
+      }
     });
   }
 })();
