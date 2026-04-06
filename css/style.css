@@ -383,7 +383,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* ===== ADHYAY PAGE LAYOUT ===== */
-.adhyay-page { height: auto; overflow: visible; display: flex; flex-direction: column; }
+.adhyay-page { display: block; }
 
 /* ===== ADHYAY SUMMARY — 2-COLUMN LAYOUT ===== */
 #summary-img-section {
@@ -675,9 +675,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 /* Concept image + info row */
