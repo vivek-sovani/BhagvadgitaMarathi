@@ -390,7 +390,7 @@
     history.pushState({ adhyayId, conceptId: cid }, '', url);
 
     // Update header label to show back-to-chapter affordance
-    headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number}`;
+    headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number} · ${adhyay.name}`;
 
     // Update concept title bar
     const idx = adhyay.concepts.findIndex(c => c.id === cid);

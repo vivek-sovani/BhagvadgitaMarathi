@@ -172,6 +172,24 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 @media (min-width: 768px) {
   .home-page .header-suchi-btn { display: none; }
 }
+@media (max-width: 767px) {
+  .adhyay-page .site-header {
+    height: auto;
+    min-height: 70px;
+    flex-wrap: wrap;
+    padding: 8px 16px;
+    row-gap: 6px;
+  }
+  .adhyay-page .header-app-link { flex: 1; min-width: 0; }
+  .adhyay-page .header-spacer { display: none; }
+  .adhyay-page .header-adhyay-label { flex-shrink: 0; }
+  .adhyay-page .header-suchi-btn {
+    width: 100%;
+    justify-content: center;
+    order: 10;
+    border-radius: var(--radius-sm);
+  }
+}
 
 /* ===== HOME: SIDEBAR ===== */
 .sidebar-toggle {
@@ -387,9 +405,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== ADHYAY SUMMARY — 2-COLUMN LAYOUT ===== */
 #summary-img-section {
-  flex-shrink: 0;
   display: grid;
   grid-template-columns: clamp(260px, 42%, 520px) 1fr;
+  align-items: start;
 }
 @media (max-width: 767px) {
   #summary-img-section { grid-template-columns: 1fr; }
@@ -404,12 +422,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
 }
 .adhyay-summary-img img {
-  flex: 1;
   width: 100%;
-  min-height: 0;
-  object-fit: contain;
-  object-position: center top;
+  height: auto;
   display: block;
+  flex: none;
 }
 .adhyay-summary-img .img-placeholder {
   flex: 1;
@@ -422,10 +438,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   gap: 8px;
 }
 .adhyay-summary-img .img-placeholder span { font-size: 3rem; }
-@media (max-width: 767px) {
-  .adhyay-summary-img { height: auto; }
-  .adhyay-summary-img img { flex: none; height: auto; object-fit: unset; }
-}
 
 /* ===== ADHYAY COVER TITLE ===== */
 .adhyay-cover-title {
