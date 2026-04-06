@@ -19,39 +19,52 @@
     <a class="header-suchi-btn" href="#home-adhyay-list">अध्याय सूची</a>
   </header>
 
-  <!-- Home: 2-column layout (portrait image + adhyay menu) -->
-  <div class="home-layout">
-    <div class="home-portrait">
-      <img src="assets/home-banner-potrait.jpg" alt="श्रीमद्भगवद्गीता" fetchpriority="high">
+  <!-- Hero: full-width landscape image with title overlay -->
+  <div class="home-hero">
+    <img src="assets/home-banner-landscape.jpg" alt="श्रीमद्भगवद्गीता" fetchpriority="high">
+    <div class="home-hero-overlay">
+      <div class="home-hero-label">भगवद्गीता · ज्ञानेश्वरी</div>
+      <div class="home-hero-title">आधुनिक जीवनात गीतेचा प्रत्यक्ष उपयोग</div>
     </div>
-    <div class="home-adhyay-panel" id="home-adhyay-panel">
-      <div class="home-panel-label">भगवद्गीता · ज्ञानेश्वरी</div>
-      <div class="home-panel-title">आधुनिक जीवनात गीतेचा प्रत्यक्ष उपयोग</div>
-      <div class="home-intro">
-        <div class="home-intro-block">
-          <span class="home-intro-icon">📖</span>
-          <div>
-            <div class="home-intro-head">भगवद्गीता</div>
-            <p>महाभारतातील कुरुक्षेत्राच्या रणांगणावर श्रीकृष्णाने अर्जुनाला दिलेला हा ७०० श्लोकांचा अमर उपदेश आहे. कर्म, भक्ती आणि ज्ञान — या तीन मार्गांद्वारे जीवन कसे जगावे हे गीता शिकवते.</p>
-          </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="home-content">
+
+    <!-- Intro: 3 cards in a row (desktop) / stacked (mobile) -->
+    <div class="home-intro">
+      <div class="home-intro-block">
+        <span class="home-intro-icon">📖</span>
+        <div>
+          <div class="home-intro-head">भगवद्गीता</div>
+          <p>महाभारतातील कुरुक्षेत्राच्या रणांगणावर श्रीकृष्णाने अर्जुनाला दिलेला हा ७०० श्लोकांचा अमर उपदेश आहे. कर्म, भक्ती आणि ज्ञान — या तीन मार्गांद्वारे जीवन कसे जगावे हे गीता शिकवते.</p>
         </div>
-        <div class="home-intro-block">
-          <span class="home-intro-icon">🪔</span>
-          <div>
-            <div class="home-intro-head">ज्ञानेश्वरी</div>
-            <p>संत ज्ञानेश्वरांनी इ.स. १२९० मध्ये गीतेवर मराठीत लिहिलेला हा ओवीबद्ध ग्रंथ सामान्य माणसापर्यंत गीतेचे तत्त्वज्ञान पोहोचवतो. मराठी साहित्यातील हे अमूल्य रत्न आहे.</p>
-          </div>
+      </div>
+      <div class="home-intro-block">
+        <span class="home-intro-icon">🪔</span>
+        <div>
+          <div class="home-intro-head">ज्ञानेश्वरी</div>
+          <p>संत ज्ञानेश्वरांनी इ.स. १२९० मध्ये गीतेवर मराठीत लिहिलेला हा ओवीबद्ध ग्रंथ सामान्य माणसापर्यंत गीतेचे तत्त्वज्ञान पोहोचवतो. मराठी साहित्यातील हे अमूल्य रत्न आहे.</p>
         </div>
-        <div class="home-intro-block">
-          <span class="home-intro-icon">🌐</span>
-          <div>
-            <div class="home-intro-head">या अॅपबद्दल</div>
-            <p>गीतेतील प्रत्येक अध्यायाच्या प्रमुख संकल्पना आधुनिक जीवनाशी जोडल्या आहेत. कार्यालयातील ताण, नातेसंबंध, निर्णयक्षमता — या सर्व क्षेत्रांत गीतेचे ज्ञान प्रत्यक्ष कसे उपयोगी पडते हे येथे स्पष्ट केले आहे.</p>
-          </div>
+      </div>
+      <div class="home-intro-block">
+        <span class="home-intro-icon">🌐</span>
+        <div>
+          <div class="home-intro-head">या अॅपबद्दल</div>
+          <p>गीतेतील प्रत्येक अध्यायाच्या प्रमुख संकल्पना आधुनिक जीवनाशी जोडल्या आहेत. कार्यालयातील ताण, नातेसंबंध, निर्णयक्षमता — या सर्व क्षेत्रांत गीतेचे ज्ञान प्रत्यक्ष कसे उपयोगी पडते हे येथे स्पष्ट केले आहे.</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Chapter list section -->
+    <div class="home-adhyay-section">
+      <div class="home-adhyay-header">
+        <h2 class="home-section-title">अध्याय सूची</h2>
+        <span class="home-adhyay-count" id="home-adhyay-count"></span>
       </div>
       <div class="home-adhyay-list" id="home-adhyay-list"></div>
     </div>
+
   </div>
 
   <script src="js/data.js"></script>

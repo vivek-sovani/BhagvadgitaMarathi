@@ -15,6 +15,11 @@
     if (homeList) homeList.appendChild(hItem);
   });
 
+  // Inject available chapter count badge
+  const available = GITA_DATA.adhyays.filter(a => a.available).length;
+  const countEl = document.getElementById('home-adhyay-count');
+  if (countEl) countEl.textContent = `${available} उपलब्ध`;
+
   // अध्याय सूची link → scroll to chapter list
   const suchiLink = document.querySelector('.header-suchi-btn');
   if (suchiLink) {
