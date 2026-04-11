@@ -353,9 +353,10 @@
       // Cover page → navigate to prev chapter
       if (prevAdhyay) window.location.href = `adhyay.html?id=${prevAdhyay.id}`;
     } else {
-      // Concept page → prev concept (or back to cover)
+      // Concept page → prev concept (or prev adhyay, or cover)
       const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
       if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
+      else if (prevAdhyay) window.location.href = `adhyay.html?id=${prevAdhyay.id}`;
       else goToCoverPage();
     }
   });
@@ -364,9 +365,10 @@
       // Cover page → navigate to next chapter
       if (nextAdhyay) window.location.href = `adhyay.html?id=${nextAdhyay.id}`;
     } else {
-      // Concept page → next concept
+      // Concept page → next concept (or next adhyay)
       const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
       if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
+      else if (nextAdhyay) window.location.href = `adhyay.html?id=${nextAdhyay.id}`;
     }
   });
 
@@ -397,7 +399,6 @@
     }
 
     // Update bottom nav with prev/next concept names
-    // On first concept: prev shows "← अध्याय" and goes to cover page
     const prevConcept = idx > 0 ? adhyay.concepts[idx - 1] : null;
     const nextConcept = idx < adhyay.concepts.length - 1 ? adhyay.concepts[idx + 1] : null;
     const prevBtn = document.getElementById('prev-concept-btn');
@@ -406,11 +407,13 @@
       prevBtn.disabled = false;
       if (bnavPrevName) bnavPrevName.textContent = prevConcept
         ? `${prevConcept.emoji} ${prevConcept.name}`
-        : `अध्याय ${adhyay.number}`;
+        : prevAdhyay ? `${prevAdhyay.emoji} ${prevAdhyay.name}` : `अध्याय ${adhyay.number}`;
     }
     if (nextBtn) {
-      nextBtn.disabled = !nextConcept;
-      if (bnavNextName) bnavNextName.textContent = nextConcept ? `${nextConcept.emoji} ${nextConcept.name}` : '';
+      nextBtn.disabled = !nextConcept && !nextAdhyay;
+      if (bnavNextName) bnavNextName.textContent = nextConcept
+        ? `${nextConcept.emoji} ${nextConcept.name}`
+        : nextAdhyay ? `${nextAdhyay.emoji} ${nextAdhyay.name}` : '';
     }
 
     summarySection.style.display = 'none';
