@@ -407,13 +407,13 @@
       prevBtn.disabled = false;
       if (bnavPrevName) bnavPrevName.textContent = prevConcept
         ? `${prevConcept.emoji} ${prevConcept.name}`
-        : prevAdhyay ? `${prevAdhyay.emoji} ${prevAdhyay.name}` : `अध्याय ${adhyay.number}`;
+        : prevAdhyay ? `अध्याय ${prevAdhyay.number} · ${prevAdhyay.emoji} ${prevAdhyay.name}` : `अध्याय ${adhyay.number}`;
     }
     if (nextBtn) {
       nextBtn.disabled = !nextConcept && !nextAdhyay;
       if (bnavNextName) bnavNextName.textContent = nextConcept
         ? `${nextConcept.emoji} ${nextConcept.name}`
-        : nextAdhyay ? `${nextAdhyay.emoji} ${nextAdhyay.name}` : '';
+        : nextAdhyay ? `अध्याय ${nextAdhyay.number} · ${nextAdhyay.emoji} ${nextAdhyay.name}` : '';
     }
 
     summarySection.style.display = 'none';
