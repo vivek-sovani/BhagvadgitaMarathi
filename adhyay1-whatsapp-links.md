@@ -12,7 +12,7 @@ WhatsApp Posts — प्रतिदिन एक संकल्पना
 _गीतेचा पहिला शब्द "धर्म." धृतराष्ट्राचे "मामकाः" — "माझे" हा भेद केल्यामुळेच महायुद्ध घडले. हा भाव आपल्या जीवनातही संघर्षाचे मूळ आहे._
 
 👉 खाली दिलेली लिंक उघडा:
-https://vivek-sovani.github.io/BhagvadgitaMarathi/c/1/1/
+https://vivek-sovani.github.io/BhagvadgitaMarathi/c/1/1/v2/
 
 ━━━━━━━━━━━━━━━━━━━━━━━
 
