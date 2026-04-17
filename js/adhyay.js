@@ -50,26 +50,44 @@
   const pdfIframe        = document.getElementById('pdf-iframe');
 
   // ── PDF thumbnail ─────────────────────────────────────────────
-  let pendingPdfUrl = null;
-  const thumbCanvas = document.getElementById('pdf-thumb-canvas');
-  const thumbPH     = document.getElementById('pdf-thumb-placeholder');
+  let pendingPdfUrl  = null;
+  let thumbRequestId = 0;           // incremented on every renderThumb call
+  const thumbCanvas  = document.getElementById('pdf-thumb-canvas');
+  const thumbPH      = document.getElementById('pdf-thumb-placeholder');
 
   async function renderThumb(url) {
     if (!url || !thumbCanvas) return;
+    // Claim this render slot; any earlier in-flight render will see a stale id
+    const myId = ++thumbRequestId;
+    // Reset canvas while loading
+    thumbCanvas.style.display = 'none';
+    thumbPH.style.display     = '';
     try {
-      const pdf      = await pdfjsLib.getDocument({ url }).promise;
-      const page     = await pdf.getPage(1);
-      const vp0      = page.getViewport({ scale: 1 });
-      const scale    = thumbCanvas.parentElement.clientWidth / vp0.width || 1;
-      const vp       = page.getViewport({ scale });
+      const pdf  = await pdfjsLib.getDocument({ url }).promise;
+      if (myId !== thumbRequestId) return;             // stale — a newer call won
+
+      const page = await pdf.getPage(1);
+      if (myId !== thumbRequestId) return;
+
+      // Respect page rotation stored in PDF metadata
+      const rotation = page.rotate || 0;
+      const vp0      = page.getViewport({ scale: 1, rotation });
+      const containerW = thumbCanvas.parentElement.clientWidth || 200;
+      const scale    = containerW / vp0.width;
+      const vp       = page.getViewport({ scale, rotation });
+
       thumbCanvas.width  = vp.width;
       thumbCanvas.height = vp.height;
+      thumbCanvas.style.transform = '';               // clear any previous rotation
       await page.render({ canvasContext: thumbCanvas.getContext('2d'), viewport: vp }).promise;
+      if (myId !== thumbRequestId) return;            // stale after slow render
+
       thumbCanvas.style.display = 'block';
-      thumbPH.style.display = 'none';
+      thumbPH.style.display     = 'none';
     } catch (e) {
+      if (myId !== thumbRequestId) return;
       thumbCanvas.style.display = 'none';
-      thumbPH.style.display = '';
+      thumbPH.style.display     = '';
     }
   }
 
@@ -204,10 +222,17 @@
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
-  pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
+  pdfLabel.textContent      = `अध्याय ${adhyay.number} PDF`;
   pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
   pendingPdfUrl = assetPath('adhyay.pdf');
-  renderThumb(pendingPdfUrl);
+  // Only render adhyay thumb now if no concept will be selected immediately;
+  // otherwise selectConcept() below will call renderThumb(concept.pdf) and
+  // the two async renders would race — the adhyay thumb could overwrite the
+  // concept thumb if it resolves later.
+  const initialConceptId = parseInt(params.get('concept'), 10) || null;
+  if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
+    renderThumb(pendingPdfUrl);
+  }
 
   // ── Render concept text ────────────────────────────────────────
   function renderConceptText(adhyayIdStr, conceptIdStr) {
