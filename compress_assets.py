@@ -27,14 +27,17 @@ PDF compression  (requires: pip3 install pikepdf)
 Summary.jpg / summary.png  are processed the same as concept images.
 """
 
-import os, subprocess, shutil
+import os, subprocess, shutil, shlex
 
 # ── tuneable thresholds ───────────────────────────────────────────────────────
 JPEG_MAX_PX  = 2048    # max width or height for infographic images
 JPEG_QUALITY = 85      # sips quality for infographic images (higher than OG)
 JPEG_MAX_KB  = 800     # re-compress existing JPEGs above this size (KB)
-PDF_MAX_KB   = 800     # compress PDFs above this size (KB)
+PDF_MAX_KB   = 500     # compress PDFs above this size (KB)
 # ─────────────────────────────────────────────────────────────────────────────
+
+# Ghostscript path (installed via brew)
+GS = shutil.which("gs") or "/opt/homebrew/bin/gs"
 
 PROJECT      = os.path.dirname(os.path.abspath(__file__))
 ASSETS_ROOT  = os.path.join(PROJECT, "assets")
@@ -57,24 +60,47 @@ def sips_to_jpeg(src, dst, max_px=JPEG_MAX_PX, quality=JPEG_QUALITY):
 
 
 def compress_pdf(path):
-    """Compress PDF in-place using pikepdf. Returns (before_kb, after_kb)."""
-    import pikepdf
+    """Compress PDF in-place using Ghostscript. Returns (before_kb, after_kb).
+    Falls back to pikepdf if gs is not available."""
     before = os.path.getsize(path) // 1024
     tmp = path + ".tmp.pdf"
-    with pikepdf.open(path) as pdf:
-        pdf.save(
-            tmp,
-            compress_streams=True,
-            object_stream_mode=pikepdf.ObjectStreamMode.generate,
-            linearize=False,
-        )
+
+    if GS and os.path.isfile(GS):
+        # Ghostscript — resamples embedded images to 150 dpi, preserves text/vectors
+        result = subprocess.run([
+            GS,
+            "-q", "-dBATCH", "-dNOPAUSE", "-dSAFER",
+            "-sDEVICE=pdfwrite",
+            "-dCompatibilityLevel=1.5",
+            "-dPDFSETTINGS=/ebook",   # 150 dpi images — good quality, smaller size
+            "-dEmbedAllFonts=true",
+            "-dSubsetFonts=true",
+            "-dColorImageDownsampleType=/Bicubic",
+            "-dColorImageResolution=150",
+            "-dGrayImageDownsampleType=/Bicubic",
+            "-dGrayImageResolution=150",
+            "-dMonoImageDownsampleType=/Bicubic",
+            "-dMonoImageResolution=150",
+            f"-sOutputFile={tmp}",
+            path,
+        ], capture_output=True)
+        if result.returncode != 0:
+            if os.path.exists(tmp): os.remove(tmp)
+            raise RuntimeError(result.stderr.decode())
+    else:
+        # Fallback: pikepdf (stream compression only — won't resample images)
+        import pikepdf
+        with pikepdf.open(path) as pdf:
+            pdf.save(tmp, compress_streams=True,
+                     object_stream_mode=pikepdf.ObjectStreamMode.generate)
+
     after = os.path.getsize(tmp) // 1024
-    # Only replace if we actually saved space (>=5% reduction)
+    # Only replace if we saved at least 5%
     if after < before * 0.95:
         os.replace(tmp, path)
     else:
         os.remove(tmp)
-        after = before  # no change
+        after = before
     return before, after
 
 
