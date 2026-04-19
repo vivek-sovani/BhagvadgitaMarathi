@@ -39,7 +39,9 @@
   const conceptInfoEmoji   = document.getElementById('concept-info-emoji');
   const conceptInfoName    = document.getElementById('concept-info-name');
   const conceptInfoMeta    = document.getElementById('concept-info-meta');
-  const conceptTextContent = document.getElementById('concept-text-content');
+  const conceptTextContent  = document.getElementById('concept-text-content');
+  const conceptTabs         = document.getElementById('concept-tabs');
+  const conceptStoryContent = document.getElementById('concept-story-content');
   const pdfLabel         = document.getElementById('pdf-label');
   const pdfContainer     = document.getElementById('pdf-carousel-container');
   const pdfOpenBtn       = document.getElementById('pdf-open-btn');
@@ -342,6 +344,116 @@
     if (body) body.scrollTop = 0;
   }
 
+  // ── Story tab helpers ─────────────────────────────────────────
+
+  function showConceptTab(tab) {
+    if (conceptTabs) {
+      conceptTabs.querySelectorAll('.ctab-btn').forEach(b =>
+        b.classList.toggle('ctab-active', b.dataset.tab === tab));
+    }
+    if (conceptTextContent)   conceptTextContent.style.display   = tab === 'vivechan' ? '' : 'none';
+    if (conceptStoryContent)  conceptStoryContent.style.display  = tab === 'katha'    ? '' : 'none';
+  }
+
+  // Wire tab click events once (at init)
+  if (conceptTabs) {
+    conceptTabs.querySelectorAll('.ctab-btn').forEach(btn => {
+      btn.addEventListener('click', () => showConceptTab(btn.dataset.tab));
+    });
+  }
+
+  function renderStory(adhyayIdStr, conceptIdStr) {
+    const el = conceptStoryContent;
+    if (!el) return false;
+    const entry = (typeof GITA_STORIES !== 'undefined')
+      && GITA_STORIES[parseInt(adhyayIdStr)]
+      && GITA_STORIES[parseInt(adhyayIdStr)][conceptIdStr];
+    if (!entry) { el.innerHTML = ''; return false; }
+
+    const { shloka, conceptSummary, story } = entry;
+    let html = '';
+
+    // ── Shloka card ───────────────────────────────────────────
+    if (shloka) {
+      html += `<div class="story-shloka-card">
+        <div class="story-shloka-label">मूळ श्लोक · ${shloka.ref}</div>
+        <div class="story-shloka-text">${shloka.text.replace(/\n/g, '<br>')}</div>
+        <div class="story-shloka-meaning">${shloka.meaning}</div>
+      </div>`;
+    }
+
+    // ── Concept summary ───────────────────────────────────────
+    if (conceptSummary) {
+      html += `<div class="story-concept-summary">${conceptSummary}</div>`;
+    }
+
+    // ── Story card ────────────────────────────────────────────
+    html += `<div class="story-card">`;
+
+    // Scene strip
+    html += `<div class="story-scene-strip">
+      <div class="story-scene-label">परिस्थिती · Setting</div>
+      <div class="story-scene-title">${story.scene.title}</div>
+      <div class="story-scene-subtitle">${story.scene.subtitle}</div>
+    </div>`;
+
+    // Story body
+    html += `<div class="story-body">`;
+    html += `<div class="story-ornament">· · ·</div>`;
+
+    // Characters
+    if (story.characters && story.characters.length) {
+      html += `<div class="story-characters">`;
+      story.characters.forEach(c => {
+        html += `<span class="story-char-tag">${c.emoji} <strong>${c.role}</strong> — ${c.desc}</span>`;
+      });
+      html += `</div>`;
+    }
+
+    // Paragraphs + dialogues
+    story.body.forEach(item => {
+      if (item.type === 'para') {
+        html += `<p class="story-para">${item.text}</p>`;
+      } else if (item.type === 'dialogue') {
+        html += `<div class="story-dialogue">
+          <div class="story-dialogue-speaker">${item.speaker}</div>
+          <div class="story-dialogue-text">${item.text}</div>
+        </div>`;
+      }
+    });
+
+    // Turning point
+    html += `<div class="story-turning-point">
+      <div class="story-tp-label">कथेचा वळणबिंदू · The Gita Moment</div>
+      <div class="story-tp-text">${story.turningPoint}</div>
+    </div>`;
+
+    html += `</div>`; // end .story-body
+
+    // Gita connect
+    html += `<div class="story-gita-connect">
+      <div class="story-gc-label">🕉️ गीता संदेश · The Gita Parallel</div>
+      <div class="story-gc-text">${story.gitaConnect}</div>
+    </div>`;
+
+    // Reflection + sankalp
+    html += `<div class="story-reflection-sankalp">
+      <div class="story-reflection">
+        <div class="story-rs-label">💔 स्वतःला विचारा</div>
+        <div class="story-rs-text">${story.reflection}</div>
+      </div>
+      <div class="story-sankalp">
+        <div class="story-rs-label">🌱 आजचा संकल्प</div>
+        <div class="story-rs-text">${story.sankalp}</div>
+      </div>
+    </div>`;
+
+    html += `</div>`; // end .story-card
+
+    el.innerHTML = html;
+    return true;
+  }
+
   // ── Go to cover page ──────────────────────────────────────────
   function goToCoverPage() {
     currentConceptId = null;
@@ -485,6 +597,9 @@
     conceptInfoName.textContent  = concept.name;
     conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${concept.id}`;
     renderConceptText(String(adhyay.id), String(concept.id));
+    const hasStory = renderStory(String(adhyay.id), String(concept.id));
+    if (conceptTabs) conceptTabs.style.display = hasStory ? '' : 'none';
+    showConceptTab('vivechan'); // always land on विवेचन when switching concepts
 
     // Store concept PDF url — loaded when modal opens
     pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;

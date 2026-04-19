@@ -85,7 +85,13 @@
           </div>
         </div>
         <div class="concept-info-body">
+          <!-- Tab bar — hidden until JS finds a story for this concept -->
+          <div class="concept-tabs" id="concept-tabs" style="display:none">
+            <button class="ctab-btn ctab-active" data-tab="vivechan">विवेचन</button>
+            <button class="ctab-btn" data-tab="katha">📖 कथा</button>
+          </div>
           <div class="concept-text" id="concept-text-content"></div>
+          <div class="concept-story" id="concept-story-content" style="display:none"></div>
         </div>
       </div>
     </div>
@@ -143,6 +149,7 @@
 
   <script src="js/data.js"></script>
   <script src="js/content.js"></script>
+  <script src="js/stories.js"></script>
   <script src="js/adhyay.js"></script>
 </body>
 </html>
