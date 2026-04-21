@@ -410,7 +410,7 @@
       html += `</div>`;
     }
 
-    // Paragraphs + dialogues
+    // Body items — para, dialogue + rich adhyay-2 types
     story.body.forEach(item => {
       if (item.type === 'para') {
         html += `<p class="story-para">${item.text}</p>`;
@@ -418,6 +418,84 @@
         html += `<div class="story-dialogue">
           <div class="story-dialogue-speaker">${item.speaker}</div>
           <div class="story-dialogue-text">${item.text}</div>
+        </div>`;
+      } else if (item.type === 'inner-thought') {
+        html += `<div class="story-inner-thought">
+          <div class="story-it-speaker">${item.speaker}</div>
+          <div class="story-it-text">${item.text}</div>
+        </div>`;
+      } else if (item.type === 'hbox') {
+        html += `<div class="story-hbox story-hbox-${item.variant || 'gold'}">
+          <div class="story-hbox-label">${item.label}</div>
+          <div class="story-hbox-text">${item.text}</div>
+        </div>`;
+      } else if (item.type === 'contrast') {
+        html += `<div class="story-contrast">`;
+        item.items.forEach(ci => {
+          html += `<div class="story-contrast-item story-contrast-${ci.side}">
+            <span class="story-contrast-icon">${ci.icon}</span>
+            <div class="story-contrast-label">${ci.label}</div>
+            <div class="story-contrast-text">${ci.text}</div>
+          </div>`;
+        });
+        html += `</div>`;
+      } else if (item.type === 'diary') {
+        html += `<div class="story-diary">
+          <div class="story-diary-label">${item.label}</div>
+          <div class="story-diary-text">${item.text}</div>
+        </div>`;
+      } else if (item.type === 'layers') {
+        html += `<div class="story-layers"><div class="story-layers-header">${item.header}</div>`;
+        item.items.forEach(li => {
+          html += `<div class="story-layer-row">
+            <div class="story-layer-num">${li.num}</div>
+            <div class="story-layer-content">
+              <div class="story-layer-title">${li.title}</div>
+              ${li.gita ? `<div class="story-layer-gita">${li.gita}</div>` : ''}
+              <div class="story-layer-story">${li.story}</div>
+            </div>
+          </div>`;
+        });
+        html += `</div>`;
+      } else if (item.type === 'grid') {
+        html += `<div class="story-grid">`;
+        if (item.header) html += `<div class="story-grid-header">${item.header}</div>`;
+        html += `<div class="story-grid-cells story-grid-cols-${item.cols || 2}">`;
+        item.items.forEach(gi => {
+          html += `<div class="story-grid-cell">
+            <span class="story-grid-icon">${gi.icon}</span>
+            <div class="story-grid-label">${gi.label}</div>
+            ${gi.shloka ? `<div class="story-grid-shloka">${gi.shloka}</div>` : ''}
+            <div class="story-grid-text">${gi.text}</div>
+          </div>`;
+        });
+        html += `</div></div>`;
+      } else if (item.type === 'traits') {
+        html += `<div class="story-traits"><div class="story-traits-header">${item.header}</div>`;
+        item.items.forEach(ti => {
+          html += `<div class="story-trait-row">
+            <span class="story-trait-emoji">${ti.emoji}</span>
+            <div class="story-trait-text">${ti.text}</div>
+          </div>`;
+        });
+        html += `</div>`;
+      } else if (item.type === 'vastra') {
+        html += `<div class="story-vastra">
+          <div class="story-vastra-header">${item.header}</div>
+          <div class="story-vastra-grid">
+            <div class="story-vastra-side">
+              <span class="story-vastra-icon">${item.left.icon}</span>
+              <div class="story-vastra-label story-vastra-left-label">${item.left.label}</div>
+              <div class="story-vastra-text">${item.left.text}</div>
+            </div>
+            <div class="story-vastra-arrow">→</div>
+            <div class="story-vastra-side">
+              <span class="story-vastra-icon">${item.right.icon}</span>
+              <div class="story-vastra-label story-vastra-right-label">${item.right.label}</div>
+              <div class="story-vastra-text">${item.right.text}</div>
+            </div>
+          </div>
+          <div class="story-vastra-footer">${item.footer}</div>
         </div>`;
       }
     });
@@ -429,6 +507,19 @@
     </div>`;
 
     html += `</div>`; // end .story-body
+
+    // Optional adhyay-end summary strip (last concept of an adhyay)
+    if (story.adhyayEnd) {
+      html += `<div class="story-adhyay-end"><div class="story-ae-label">${story.adhyayEnd.label}</div>`;
+      story.adhyayEnd.items.forEach(ai => {
+        html += `<div class="story-ae-row">
+          <div class="story-ae-num">${ai.num}</div>
+          <span class="story-ae-emoji">${ai.emoji}</span>
+          <div class="story-ae-text">${ai.text}</div>
+        </div>`;
+      });
+      html += `</div>`;
+    }
 
     // Gita connect
     html += `<div class="story-gita-connect">
