@@ -1368,30 +1368,54 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .story-vastra-arrow { transform: rotate(90deg); margin: 4px auto; }
 }
 
-/* ── Story PDF card (PDF-mode कथा tab) ────────────────────────── */
-.story-pdf-card {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  background: linear-gradient(135deg, #FFF8EE, #FDF2DC);
-  border: 1.5px solid rgba(201,150,58,0.45);
+/* ── Story PDF inline viewer (PDF-mode कथा tab) ─────────────────── */
+.story-pdf-viewer {
   border-radius: 12px;
-  padding: 14px 18px;
+  overflow: hidden;
+  border: 1px solid rgba(201,150,58,0.3);
   margin-bottom: 14px;
-  cursor: pointer;
-  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
-  user-select: none;
+  background: #110800;
 }
-.story-pdf-card:hover {
-  border-color: #E8730A;
-  background: linear-gradient(135deg, #FFF3E0, #FDECC8);
-  box-shadow: 0 2px 14px rgba(232,115,10,0.14);
+.story-pdf-viewer-label {
+  padding: 8px 14px;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #E8730A;
 }
-.story-pdf-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
-.story-pdf-text { flex: 1; min-width: 0; }
-.story-pdf-title { font-size: 0.88rem; font-weight: 700; color: #3D2512; }
-.story-pdf-sub   { font-size: 0.74rem; color: rgba(61,37,18,0.58); margin-top: 2px; }
-.story-pdf-arrow { font-size: 1.1rem; color: #E8730A; font-weight: 700; flex-shrink: 0; }
+.story-pdf-pages {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 0 12px 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(201,150,58,0.4) transparent;
+}
+.story-pdf-pages::-webkit-scrollbar       { height: 4px; }
+.story-pdf-pages::-webkit-scrollbar-thumb { background: rgba(201,150,58,0.4); border-radius: 4px; }
+.story-pdf-page {
+  flex-shrink: 0;
+  height: 360px;
+  width: auto;
+  border-radius: 6px;
+  scroll-snap-align: start;
+  display: block;
+}
+.story-pdf-loading {
+  padding: 28px 14px;
+  font-size: 0.8rem;
+  color: rgba(253,246,232,0.45);
+  text-align: center;
+}
+.story-pdf-error {
+  padding: 20px 14px;
+  font-size: 0.8rem;
+  color: #E8730A;
+  text-align: center;
+}
 
 /* ===== PDF CAROUSEL ===== */
 .pdf-section {

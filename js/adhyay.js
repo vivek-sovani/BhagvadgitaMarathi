@@ -128,6 +128,32 @@
     openPdfModal(title);
   }
 
+  // Renders all pages of a PDF as horizontal canvases inside containerId
+  async function renderStoryPdfPages(url, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container || typeof pdfjsLib === 'undefined') return;
+    try {
+      const pdf = await pdfjsLib.getDocument({ url }).promise;
+      container.innerHTML = ''; // clear loading spinner
+      const TARGET_H = 360;    // rendered page height in px
+      for (let p = 1; p <= pdf.numPages; p++) {
+        const page = await pdf.getPage(p);
+        const rotation = page.rotate || 0;
+        const vp0   = page.getViewport({ scale: 1, rotation });
+        const scale = TARGET_H / vp0.height;
+        const vp    = page.getViewport({ scale, rotation });
+        const canvas = document.createElement('canvas');
+        canvas.width  = vp.width;
+        canvas.height = vp.height;
+        canvas.className = 'story-pdf-page';
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        container.appendChild(canvas);
+      }
+    } catch (e) {
+      container.innerHTML = '<div class="story-pdf-error">PDF लोड होऊ शकले नाही</div>';
+    }
+  }
+
 
 
   // ── Helpers ───────────────────────────────────────────────────
@@ -378,19 +404,16 @@
     if (!entry) { el.innerHTML = ''; return false; }
 
     const { shloka, conceptSummary, story } = entry;
+    const pdfPagesId = `spdf-${adhyayIdStr}-${conceptIdStr}`;
     let html = '';
 
-    // ── PDF card (shown when a story PDF is available) ────────
+    // ── Inline PDF viewer (horizontally scrollable pages) ─────
     if (entry.pdfUrl) {
-      html += `<div class="story-pdf-card" role="button" tabindex="0"
-        onclick="openStoryPdf('${entry.pdfUrl}', 'कथा PDF')"
-        onkeydown="if(event.key==='Enter')openStoryPdf('${entry.pdfUrl}','कथा PDF')">
-        <div class="story-pdf-icon">📄</div>
-        <div class="story-pdf-text">
-          <div class="story-pdf-title">सविस्तर PDF कथा</div>
-          <div class="story-pdf-sub">संपूर्ण कथा PDF स्वरूपात वाचा</div>
+      html += `<div class="story-pdf-viewer">
+        <div class="story-pdf-viewer-label">📄 कथा PDF</div>
+        <div class="story-pdf-pages" id="${pdfPagesId}">
+          <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
-        <div class="story-pdf-arrow">↗</div>
       </div>`;
     }
 
@@ -427,6 +450,7 @@
       </div>`;
       html += `</div>`; // end .story-card
       el.innerHTML = html;
+      renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
       return true;
     }
 
