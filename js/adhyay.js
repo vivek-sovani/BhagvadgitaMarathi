@@ -43,6 +43,7 @@
   const conceptTabs         = document.getElementById('concept-tabs');
   const conceptStoryContent = document.getElementById('concept-story-content');
   const pdfLabel         = document.getElementById('pdf-label');
+  const pdfOpenBar       = document.querySelector('.pdf-open-bar');
   const pdfContainer     = document.getElementById('pdf-carousel-container');
   const pdfOpenBtn       = document.getElementById('pdf-open-btn');
   const pdfModal         = document.getElementById('pdf-modal');
@@ -633,6 +634,7 @@
     pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
     pendingPdfUrl = assetPath('adhyay.pdf');
     renderThumb(pendingPdfUrl);
+    if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore thumbnail for adhyay-level PDF
     // Restore header label to chapter name (no back arrow)
     headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
     const url = new URL(window.location.href);
@@ -755,15 +757,28 @@
     conceptInfoName.textContent  = concept.name;
     conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${concept.id}`;
     renderConceptText(String(adhyay.id), String(concept.id));
+
+    // Inject inline PDF viewer at bottom of vivechan content
+    const cpdfId = `cpdf-${adhyay.id}-${cid}`;
+    const pdfViewerEl = document.createElement('div');
+    pdfViewerEl.className = 'story-pdf-viewer concept-pdf-viewer';
+    pdfViewerEl.innerHTML = `
+      <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} PDF</div>
+      <div class="story-pdf-pages" id="${cpdfId}">
+        <div class="story-pdf-loading">PDF लोड होत आहे…</div>
+      </div>`;
+    conceptTextContent.appendChild(pdfViewerEl);
+
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
     if (conceptTabs) conceptTabs.style.display = hasStory ? '' : 'none';
     showConceptTab('vivechan'); // always land on विवेचन when switching concepts
 
-    // Store concept PDF url — loaded when modal opens
+    // Concept PDF — inline viewer replaces the thumbnail card
+    if (pdfOpenBar) pdfOpenBar.style.display = 'none';
     pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;
     pdfModalTitle.textContent = `संकल्पना ${concept.id} — ${concept.name}`;
     pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
-    renderThumb(pendingPdfUrl);
+    renderStoryPdfPages(pendingPdfUrl, cpdfId);
   }
 
   // ── Recalculate column width on window resize ─────────────────
