@@ -423,7 +423,7 @@
     // ── Inline PDF viewer (horizontally scrollable pages) ─────
     if (entry.pdfUrl) {
       html += `<div class="story-pdf-viewer">
-        <div class="story-pdf-viewer-label">📄 कथा PDF</div>
+        <div class="story-pdf-viewer-label">📖 कथा</div>
         <div class="story-pdf-pages" id="${pdfPagesId}">
           <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
@@ -775,7 +775,7 @@
     const pdfViewerEl = document.createElement('div');
     pdfViewerEl.className = 'story-pdf-viewer concept-pdf-viewer';
     pdfViewerEl.innerHTML = `
-      <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} PDF</div>
+      <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} सादरीकरण</div>
       <div class="story-pdf-pages" id="${cpdfId}">
         <div class="story-pdf-loading">PDF लोड होत आहे…</div>
       </div>`;
