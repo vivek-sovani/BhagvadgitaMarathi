@@ -121,6 +121,13 @@
   pdfModalClose.addEventListener('click', closePdfModal);
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
+  // Opens a story-PDF in the same modal used for vivechan PDFs
+  function openStoryPdf(url, title) {
+    pendingPdfUrl = url;
+    pdfModalTitle.textContent = title;
+    openPdfModal(title);
+  }
+
 
 
   // ── Helpers ───────────────────────────────────────────────────
@@ -373,6 +380,20 @@
     const { shloka, conceptSummary, story } = entry;
     let html = '';
 
+    // ── PDF card (shown when a story PDF is available) ────────
+    if (entry.pdfUrl) {
+      html += `<div class="story-pdf-card" role="button" tabindex="0"
+        onclick="openStoryPdf('${entry.pdfUrl}', 'कथा PDF')"
+        onkeydown="if(event.key==='Enter')openStoryPdf('${entry.pdfUrl}','कथा PDF')">
+        <div class="story-pdf-icon">📄</div>
+        <div class="story-pdf-text">
+          <div class="story-pdf-title">सविस्तर PDF कथा</div>
+          <div class="story-pdf-sub">संपूर्ण कथा PDF स्वरूपात वाचा</div>
+        </div>
+        <div class="story-pdf-arrow">↗</div>
+      </div>`;
+    }
+
     // ── Shloka card ───────────────────────────────────────────
     if (shloka) {
       html += `<div class="story-shloka-card">
@@ -387,7 +408,29 @@
       html += `<div class="story-concept-summary">${conceptSummary}</div>`;
     }
 
-    // ── Story card ────────────────────────────────────────────
+    if (entry.pdfUrl) {
+      // ── PDF MODE: skip narrative; show only Gita connect + reflection/sankalp ──
+      html += `<div class="story-card">`;
+      html += `<div class="story-gita-connect">
+        <div class="story-gc-label">🕉️ गीता संदेश · The Gita Parallel</div>
+        <div class="story-gc-text">${story.gitaConnect}</div>
+      </div>`;
+      html += `<div class="story-reflection-sankalp">
+        <div class="story-reflection">
+          <div class="story-rs-label">💔 स्वतःला विचारा</div>
+          <div class="story-rs-text">${story.reflection}</div>
+        </div>
+        <div class="story-sankalp">
+          <div class="story-rs-label">🌱 आजचा संकल्प</div>
+          <div class="story-rs-text">${story.sankalp}</div>
+        </div>
+      </div>`;
+      html += `</div>`; // end .story-card
+      el.innerHTML = html;
+      return true;
+    }
+
+    // ── HTML MODE: full story card ────────────────────────────
     html += `<div class="story-card">`;
 
     // Scene strip

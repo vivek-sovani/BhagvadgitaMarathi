@@ -1368,6 +1368,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .story-vastra-arrow { transform: rotate(90deg); margin: 4px auto; }
 }
 
+/* ── Story PDF card (PDF-mode कथा tab) ────────────────────────── */
+.story-pdf-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #FFF8EE, #FDF2DC);
+  border: 1.5px solid rgba(201,150,58,0.45);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  user-select: none;
+}
+.story-pdf-card:hover {
+  border-color: #E8730A;
+  background: linear-gradient(135deg, #FFF3E0, #FDECC8);
+  box-shadow: 0 2px 14px rgba(232,115,10,0.14);
+}
+.story-pdf-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.story-pdf-text { flex: 1; min-width: 0; }
+.story-pdf-title { font-size: 0.88rem; font-weight: 700; color: #3D2512; }
+.story-pdf-sub   { font-size: 0.74rem; color: rgba(61,37,18,0.58); margin-top: 2px; }
+.story-pdf-arrow { font-size: 1.1rem; color: #E8730A; font-weight: 700; flex-shrink: 0; }
+
 /* ===== PDF CAROUSEL ===== */
 .pdf-section {
   background: var(--surface-2);
