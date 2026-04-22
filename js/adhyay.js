@@ -136,12 +136,15 @@
     try {
       const pdf = await pdfjsLib.getDocument({ url }).promise;
       container.innerHTML = ''; // clear loading spinner
-      const TARGET_H = 360;    // rendered page height in px
+      // Scale each page to fill the full container width → one complete page per slide
+      const targetW = container.clientWidth > 0
+        ? container.clientWidth
+        : (window.innerWidth > 768 ? 420 : window.innerWidth - 32);
       for (let p = 1; p <= pdf.numPages; p++) {
         const page = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        const scale = TARGET_H / vp0.height;
+        const scale = targetW / vp0.width;
         const vp    = page.getViewport({ scale, rotation });
         const canvas = document.createElement('canvas');
         canvas.width  = vp.width;
