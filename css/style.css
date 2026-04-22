@@ -906,6 +906,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .concept-info-body {
   flex: 1;
+  min-height: 0;        /* lets flex item shrink so overflow-y: auto actually scrolls */
   overflow-y: auto;
   padding: clamp(12px, 2vw, 20px) clamp(14px, 2.5vw, 24px);
   scrollbar-width: thin;
