@@ -136,23 +136,27 @@
     try {
       const pdf = await pdfjsLib.getDocument({ url }).promise;
       container.innerHTML = ''; // clear loading spinner
-      // Fit each page within the container's bounded rectangle (width AND height)
-      // so the full page is visible without clipping or nested-scroll conflicts.
+      const dpr     = window.devicePixelRatio || 1;
+      // Logical (CSS) pixel dimensions the slide is displayed at
       const targetW = container.clientWidth  > 0 ? container.clientWidth  : Math.max(300, window.innerWidth  - 32);
       const targetH = container.clientHeight > 0 ? container.clientHeight : Math.round(window.innerHeight * 0.52);
       for (let p = 1; p <= pdf.numPages; p++) {
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        // "contain" scale — fit the whole page inside (targetW × targetH)
-        const scale = Math.min(targetW / vp0.width, targetH / vp0.height);
-        const vp    = page.getViewport({ scale, rotation });
+        // Logical "contain" scale — whole page fits within (targetW × targetH)
+        const logicalScale = Math.min(targetW / vp0.width, targetH / vp0.height);
+        // Render at dpr× for sharp text on retina/high-dpi screens
+        const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
         const canvas = document.createElement('canvas');
-        canvas.width  = vp.width;
+        canvas.width  = vp.width;   // physical px (e.g. 3× on iPhone)
         canvas.height = vp.height;
+        // CSS size stays at logical px so the canvas isn't displayed bigger than rendered
+        canvas.style.width  = Math.round(vp.width  / dpr) + 'px';
+        canvas.style.height = Math.round(vp.height / dpr) + 'px';
         canvas.className = 'story-pdf-page';
         await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-        // Wrap in a slide div so scroll-snap snaps one full page at a time
+        // Wrap in a slide div — scroll-snap snaps exactly one full page at a time
         const slide = document.createElement('div');
         slide.className = 'story-pdf-slide';
         slide.appendChild(canvas);

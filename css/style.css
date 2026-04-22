@@ -1391,7 +1391,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow-y: hidden;
   height: 52vh;                     /* bounded height — parent scroll still works */
   scroll-snap-type: x mandatory;
-  touch-action: pan-x;              /* let vertical pan pass to parent scroller */
+  touch-action: pan-x pan-y;        /* allow both: strip swipes horiz, page scrolls vert */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(201,150,58,0.4) transparent;
@@ -1409,12 +1409,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   scroll-snap-align: start;
 }
 .story-pdf-page {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
   display: block;
-  border-radius: 4px;
+  /* width/height set explicitly by JS (logical px) — do not override */
 }
 .story-pdf-loading {
   padding: 28px 14px;
