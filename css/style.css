@@ -783,6 +783,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     height: auto;
     min-height: unset;
   }
+  /* On mobile the page scrolls at window level — remove intermediate
+     overflow containers that swallow iOS vertical touch events */
+  .concept-info {
+    height: auto;
+    overflow: visible;
+  }
+  .concept-info-body {
+    overflow-y: visible;
+    min-height: unset;
+  }
 }
 
 .concept-img-wrap {
