@@ -792,6 +792,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .concept-info-body {
     overflow-y: visible;
     min-height: unset;
+    padding-bottom: 72px; /* clear fixed bottom-concept-nav (54px) + breathing room */
   }
 }
 
