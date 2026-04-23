@@ -740,6 +740,22 @@
 
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
     if (conceptTabs) conceptTabs.style.display = hasStory ? '' : 'none';
+
+    // ── कथा prompt card at bottom of विवेचन (only when story exists) ──
+    if (hasStory) {
+      const kathaPrompt = document.createElement('div');
+      kathaPrompt.className = 'katha-prompt-card';
+      kathaPrompt.innerHTML = `
+        <div class="katha-prompt-icon">📖</div>
+        <div class="katha-prompt-text">
+          <div class="katha-prompt-title">कथा वाचा</div>
+          <div class="katha-prompt-sub">या संकल्पनेशी संबंधित जीवनकथा</div>
+        </div>
+        <div class="katha-prompt-arrow">→</div>`;
+      kathaPrompt.addEventListener('click', () => showConceptTab('katha'));
+      conceptTextContent.appendChild(kathaPrompt);
+    }
+
     showConceptTab('vivechan'); // always land on विवेचन when switching concepts
 
     // Concept PDF — inline viewer replaces the thumbnail card
