@@ -1388,6 +1388,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin-bottom: 14px;
   background: #110800;
 }
+/* On mobile: use overflow:clip so border-radius still clips visually
+   but no scroll-chain boundary is created (iOS won't swallow touches) */
+@media (max-width: 767px) {
+  .story-pdf-viewer {
+    overflow: clip;
+  }
+}
 .story-pdf-viewer-label {
   padding: 8px 14px;
   font-size: 0.68rem;
@@ -1402,10 +1409,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow-y: hidden;
   height: 52vh;                     /* bounded height — parent scroll still works */
   scroll-snap-type: x mandatory;
-  touch-action: pan-x pan-y;        /* allow both: strip swipes horiz, page scrolls vert */
+  touch-action: pan-x pan-y;        /* desktop: allow both directions */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(201,150,58,0.4) transparent;
+}
+/* On mobile: only claim horizontal panning — vertical propagates to window */
+@media (max-width: 767px) {
+  .story-pdf-pages {
+    touch-action: pan-x;
+  }
 }
 .story-pdf-pages::-webkit-scrollbar       { height: 4px; }
 .story-pdf-pages::-webkit-scrollbar-thumb { background: rgba(201,150,58,0.4); border-radius: 4px; }
