@@ -1448,6 +1448,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   color: #E8730A;
   text-align: center;
 }
+.story-pdf-swipe-hint {
+  text-align: center;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: rgba(232,115,10,0.65);
+  padding: 5px 14px 8px;
+}
 
 /* ===== PDF CAROUSEL ===== */
 .pdf-section {
@@ -1555,6 +1562,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 16px clamp(16px, 4vw, 48px) 24px;
   background: var(--surface-2);
   border-top: 1px solid var(--border);
+}
+/* On mobile the bottom-concept-nav is fixed (54px) — push content clear of it */
+@media (max-width: 767px) {
+  .pdf-open-bar {
+    padding-bottom: 84px;
+  }
 }
 .pdf-thumb-card {
   display: flex;

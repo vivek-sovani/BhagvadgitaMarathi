@@ -383,6 +383,7 @@
         <div class="story-pdf-pages" id="${pdfPagesId}">
           <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
+        <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
       </div>`;
     }
 
@@ -733,7 +734,8 @@
       <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} सादरीकरण</div>
       <div class="story-pdf-pages" id="${cpdfId}">
         <div class="story-pdf-loading">PDF लोड होत आहे…</div>
-      </div>`;
+      </div>
+      <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>`;
     conceptTextContent.appendChild(pdfViewerEl);
 
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
