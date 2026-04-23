@@ -752,7 +752,19 @@
           <div class="katha-prompt-sub">या संकल्पनेशी संबंधित जीवनकथा</div>
         </div>
         <div class="katha-prompt-arrow">→</div>`;
-      kathaPrompt.addEventListener('click', () => showConceptTab('katha'));
+      kathaPrompt.addEventListener('click', () => {
+        showConceptTab('katha');
+        // Scroll to top of कथा content
+        const infoBody = document.querySelector('.concept-info-body');
+        if (!infoBody) return;
+        if (window.innerWidth < 768) {
+          // Mobile: window-level scroll — position tabs just below sticky header (70px)
+          const top = infoBody.getBoundingClientRect().top + window.scrollY - 72;
+          window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+        } else {
+          infoBody.scrollTop = 0;
+        }
+      });
       conceptTextContent.appendChild(kathaPrompt);
     }
 
