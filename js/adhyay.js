@@ -44,55 +44,14 @@
   const conceptStoryContent = document.getElementById('concept-story-content');
   const pdfLabel         = document.getElementById('pdf-label');
   const pdfOpenBar       = document.querySelector('.pdf-open-bar');
-  const pdfContainer     = document.getElementById('pdf-carousel-container');
-  const pdfOpenBtn       = document.getElementById('pdf-open-btn');
   const pdfModal         = document.getElementById('pdf-modal');
   const pdfModalTitle    = document.getElementById('pdf-modal-title');
   const pdfModalClose    = document.getElementById('pdf-modal-close');
   const pdfModalBackdrop = document.getElementById('pdf-modal-backdrop');
   const pdfIframe        = document.getElementById('pdf-iframe');
 
-  // ── PDF thumbnail ─────────────────────────────────────────────
-  let pendingPdfUrl  = null;
-  let thumbRequestId = 0;           // incremented on every renderThumb call
-  const thumbCanvas  = document.getElementById('pdf-thumb-canvas');
-  const thumbPH      = document.getElementById('pdf-thumb-placeholder');
-
-  async function renderThumb(url) {
-    if (!url || !thumbCanvas) return;
-    // Claim this render slot; any earlier in-flight render will see a stale id
-    const myId = ++thumbRequestId;
-    // Reset canvas while loading
-    thumbCanvas.style.display = 'none';
-    thumbPH.style.display     = '';
-    try {
-      const pdf  = await pdfjsLib.getDocument({ url }).promise;
-      if (myId !== thumbRequestId) return;             // stale — a newer call won
-
-      const page = await pdf.getPage(1);
-      if (myId !== thumbRequestId) return;
-
-      // Respect page rotation stored in PDF metadata
-      const rotation = page.rotate || 0;
-      const vp0      = page.getViewport({ scale: 1, rotation });
-      const containerW = thumbCanvas.parentElement.clientWidth || 200;
-      const scale    = containerW / vp0.width;
-      const vp       = page.getViewport({ scale, rotation });
-
-      thumbCanvas.width  = vp.width;
-      thumbCanvas.height = vp.height;
-      thumbCanvas.style.transform = '';               // clear any previous rotation
-      await page.render({ canvasContext: thumbCanvas.getContext('2d'), viewport: vp }).promise;
-      if (myId !== thumbRequestId) return;            // stale after slow render
-
-      thumbCanvas.style.display = 'block';
-      thumbPH.style.display     = 'none';
-    } catch (e) {
-      if (myId !== thumbRequestId) return;
-      thumbCanvas.style.display = 'none';
-      thumbPH.style.display     = '';
-    }
-  }
+  // ── Adhyay PDF inline viewer ──────────────────────────────────
+  let pendingPdfUrl = null;
 
   // ── Modal open/close ──────────────────────────────────────────
 
@@ -118,7 +77,7 @@
     pdfIframe.src = ''; // stop loading PDF when closed
   }
 
-  pdfOpenBtn.addEventListener('click', () => openPdfModal(pdfModalTitle.textContent));
+  // pdf-open-btn removed — adhyay PDF now uses inline viewer (renderStoryPdfPages)
   pdfModalClose.addEventListener('click', closePdfModal);
   pdfModalBackdrop.addEventListener('click', closePdfModal);
 
@@ -270,16 +229,13 @@
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
-  pdfLabel.textContent      = `अध्याय ${adhyay.number} PDF`;
-  pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+  pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
   pendingPdfUrl = assetPath('adhyay.pdf');
-  // Only render adhyay thumb now if no concept will be selected immediately;
-  // otherwise selectConcept() below will call renderThumb(concept.pdf) and
-  // the two async renders would race — the adhyay thumb could overwrite the
-  // concept thumb if it resolves later.
+  // Only render now if no concept will be selected immediately
+  // (avoids racing with the concept PDF render in selectConcept)
   const initialConceptId = parseInt(params.get('concept'), 10) || null;
   if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
-    renderThumb(pendingPdfUrl);
+    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages');
   }
 
   // ── Render concept text ────────────────────────────────────────
@@ -642,11 +598,10 @@
     if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
     if (prevBtn) prevBtn.disabled = !prevAdhyay;
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
-    pdfLabel.textContent = `अध्याय ${adhyay.number} PDF`;
-    pdfModalTitle.textContent = `अध्याय ${adhyay.number} PDF`;
+    pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
-    renderThumb(pendingPdfUrl);
-    if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore thumbnail for adhyay-level PDF
+    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages');
+    if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF viewer
     // Restore header label to chapter name (no back arrow)
     headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
     const url = new URL(window.location.href);
@@ -787,7 +742,7 @@
 
     // Concept PDF — inline viewer replaces the thumbnail card
     if (pdfOpenBar) pdfOpenBar.style.display = 'none';
-    pdfLabel.textContent = `संकल्पना ${concept.id} PDF`;
+    pdfLabel.textContent = `📄 संकल्पना ${concept.id} सादरीकरण`;
     pdfModalTitle.textContent = `संकल्पना ${concept.id} — ${concept.name}`;
     pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
     renderStoryPdfPages(pendingPdfUrl, cpdfId);

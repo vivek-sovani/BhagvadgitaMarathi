@@ -96,20 +96,14 @@
       </div>
     </div>
 
-    <!-- PDF thumbnail card -->
+    <!-- Adhyay PDF inline viewer -->
     <div class="pdf-open-bar">
-      <button class="pdf-thumb-card" id="pdf-open-btn" aria-label="PDF पहा">
-        <div class="pdf-thumb-preview" id="pdf-thumb-preview">
-          <canvas id="pdf-thumb-canvas" class="pdf-thumb-canvas" style="display:none"></canvas>
-          <div class="pdf-thumb-placeholder" id="pdf-thumb-placeholder">📄</div>
+      <div class="story-pdf-viewer adhyay-pdf-viewer">
+        <div class="story-pdf-viewer-label" id="pdf-label">📄 अध्याय सादरीकरण</div>
+        <div class="story-pdf-pages" id="adhyay-pdf-pages">
+          <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
-        <div class="pdf-thumb-footer">
-          <span id="pdf-label">PDF पहा</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </div>
-      </button>
+      </div>
     </div>
 
   </div>
