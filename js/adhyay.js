@@ -374,6 +374,9 @@
 
   // ── Section-menu navigation ──────────────────────────────────
 
+  // Flag: true while popstate is restoring a view — prevents double history push
+  let _historyRestore = false;
+
   const SECTION_LABELS = {
     vivechan:    'ज्ञानेश्वर महाराज काय म्हणतात',
     katha:       'आयुष्यातील क्षण',
@@ -412,6 +415,14 @@
       const el = document.getElementById(`section-${s}`);
       if (el) el.style.display = s === name ? 'block' : 'none';
     });
+    // Push history so mobile back returns to section menu (skip when restoring)
+    if (!_historyRestore && currentConceptId !== null) {
+      history.pushState(
+        { adhyayId, conceptId: currentConceptId, section: name },
+        '',
+        window.location.href
+      );
+    }
     scrollInfoToTop();
   }
 
@@ -423,7 +434,7 @@
     const menuPill = document.createElement('button');
     menuPill.className = 'snav-pill snav-pill-menu';
     menuPill.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg> मागे`;
-    menuPill.addEventListener('click', showSectionMenu);
+    menuPill.addEventListener('click', () => history.back());
     navEl.appendChild(menuPill);
     // Cross-section jump pills (skip current section)
     [
@@ -446,9 +457,9 @@
       card.addEventListener('click', () => showSection(card.dataset.section));
     });
   }
-  // Wire section back button
+  // Wire section back button — use history.back() for consistency with browser back
   const sectionBackBtnEl = document.getElementById('section-back-btn');
-  if (sectionBackBtnEl) sectionBackBtnEl.addEventListener('click', showSectionMenu);
+  if (sectionBackBtnEl) sectionBackBtnEl.addEventListener('click', () => history.back());
 
   function renderStory(adhyayIdStr, conceptIdStr) {
     const el = conceptStoryContent;
@@ -909,8 +920,22 @@
   // ── Handle browser back/forward ───────────────────────────────
   window.addEventListener('popstate', (e) => {
     const s = e.state;
-    if (s && s.conceptId) {
-      selectConcept(s.conceptId);
+    if (s && s.section && s.conceptId) {
+      // Back/forward to a section within the current concept
+      if (currentConceptId === s.conceptId) {
+        _historyRestore = true;
+        showSection(s.section);
+        _historyRestore = false;
+      } else {
+        selectConcept(s.conceptId);
+      }
+    } else if (s && s.conceptId) {
+      // Back to concept section menu (no specific section)
+      if (currentConceptId === s.conceptId) {
+        showSectionMenu();   // concept already rendered — just show the menu
+      } else {
+        selectConcept(s.conceptId);
+      }
     } else {
       goToCoverPage();
     }
