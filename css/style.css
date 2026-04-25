@@ -1444,7 +1444,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
-  height: 52vh;                     /* bounded height — parent scroll still works */
+  height: 38vh;                     /* bounded height — parent scroll still works */
   scroll-snap-type: x mandatory;
   touch-action: pan-x pan-y;        /* desktop: allow both directions */
   -webkit-overflow-scrolling: touch;
@@ -1491,6 +1491,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 0.1em;
   color: rgba(232,115,10,0.65);
   padding: 5px 14px 8px;
+}
+
+/* ── कथा scroll hint — mobile nudge to scroll below PDF ── */
+.katha-scroll-hint {
+  display: none; /* desktop: not needed — right panel is fixed height */
+}
+@media (max-width: 767px) {
+  .katha-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--primary-dk);
+    background: linear-gradient(135deg, #FFF8EE, #FDF2DC);
+    border: 1px solid rgba(217,119,6,0.25);
+    border-radius: 20px;
+    padding: 8px 18px;
+    margin: 10px auto 4px;
+    width: fit-content;
+    animation: hint-bob 2s ease-in-out 1s 3;
+  }
+  @keyframes hint-bob {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(4px); }
+  }
 }
 
 /* ===== PDF CAROUSEL ===== */

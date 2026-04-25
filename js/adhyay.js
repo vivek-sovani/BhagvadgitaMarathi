@@ -124,7 +124,7 @@
       const dpr     = window.devicePixelRatio || 1;
       // Logical (CSS) pixel dimensions the slide is displayed at
       const targetW = container.clientWidth  > 0 ? container.clientWidth  : Math.max(300, window.innerWidth  - 32);
-      const targetH = container.clientHeight > 0 ? container.clientHeight : Math.round(window.innerHeight * 0.52);
+      const targetH = container.clientHeight > 0 ? container.clientHeight : Math.round(window.innerHeight * 0.38);
       for (let p = 1; p <= pdf.numPages; p++) {
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
@@ -477,7 +477,8 @@
           <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
         <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
-      </div>`;
+      </div>
+      <div class="katha-scroll-hint">↓ खाली स्क्रोल करा — श्लोक, गीता संदेश व संकल्प</div>`;
     }
 
     // ── Shloka card ───────────────────────────────────────────
@@ -853,6 +854,7 @@
 
     // Inject concept PDF viewer into सादरीकरण section
     const cpdfId = `cpdf-${adhyay.id}-${cid}`;
+    const conceptPdfUrl = assetPath(`concept-${concept.id}.pdf`);
     const sadarikaranContent = document.getElementById('sadarikaran-content');
     if (sadarikaranContent) {
       sadarikaranContent.innerHTML = `
@@ -866,11 +868,14 @@
           </div>
           <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
         </div>`;
-      // Wire full-view button — pendingPdfUrl is set just below so it's ready before click
+      // Wire full-view button — always capture conceptPdfUrl in closure (not pendingPdfUrl)
+      // so opening कथा PDF first does not corrupt this button's target
       const fullViewBtn = sadarikaranContent.querySelector('.pdf-fullview-btn');
       if (fullViewBtn) {
-        fullViewBtn.addEventListener('click', () =>
-          openPdfModal(`संकल्पना ${concept.id} — चित्ररूपी सादरीकरण`));
+        fullViewBtn.addEventListener('click', () => {
+          pendingPdfUrl = conceptPdfUrl;
+          openPdfModal(`संकल्पना ${concept.id} — चित्ररूपी सादरीकरण`);
+        });
       }
     }
 
@@ -884,7 +889,7 @@
     showSectionMenu();
 
     if (pdfOpenBar) pdfOpenBar.style.display = 'none';
-    pendingPdfUrl = assetPath(`concept-${concept.id}.pdf`);
+    pendingPdfUrl = conceptPdfUrl;
     renderStoryPdfPages(pendingPdfUrl, cpdfId);
   }
 
