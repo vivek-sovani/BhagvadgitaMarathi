@@ -1493,6 +1493,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 5px 14px 8px;
 }
 
+/* ── Story image viewer (image-mode कथा section) ── */
+.story-img-viewer {
+  border-radius: 12px;
+  border: 1px solid rgba(201,150,58,0.3);
+  overflow: hidden;
+  background: #1a1008;
+  margin-bottom: 4px;
+}
+.story-katha-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 /* ── कथा scroll hint — mobile nudge to scroll below PDF ── */
 .katha-scroll-hint {
   display: none; /* desktop: not needed — right panel is fixed height */

@@ -473,8 +473,11 @@
     const pdfPagesId = `spdf-${adhyayIdStr}-${conceptIdStr}`;
     let html = '';
 
-    // ── Inline PDF viewer (horizontally scrollable pages) ─────
-    if (entry.pdfUrl) {
+    const hasPdf = !!entry.pdfUrl;
+    const hasImg = !!entry.imageUrl;
+
+    // ── Inline media viewer (PDF scrollable or full image) ────
+    if (hasPdf) {
       html += `<div class="story-pdf-viewer">
         <div class="story-pdf-viewer-header">
           <div class="story-pdf-viewer-label">📖 आयुष्यातील क्षण</div>
@@ -484,6 +487,15 @@
           <div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
         <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
+      </div>
+      <div class="katha-scroll-hint">↓ खाली स्क्रोल करा — श्लोक, गीता संदेश व संकल्प</div>`;
+    } else if (hasImg) {
+      html += `<div class="story-img-viewer">
+        <div class="story-pdf-viewer-header">
+          <div class="story-pdf-viewer-label">📖 आयुष्यातील क्षण</div>
+          <button class="pdf-fullview-btn">🔍 मोठे करा</button>
+        </div>
+        <img class="story-katha-img" src="${entry.imageUrl}" alt="आयुष्यातील क्षण" loading="lazy">
       </div>
       <div class="katha-scroll-hint">↓ खाली स्क्रोल करा — श्लोक, गीता संदेश व संकल्प</div>`;
     }
@@ -502,8 +514,8 @@
       html += `<div class="story-concept-summary">${conceptSummary}</div>`;
     }
 
-    if (entry.pdfUrl) {
-      // ── PDF MODE: skip narrative; show only Gita connect + reflection/sankalp ──
+    if (hasPdf || hasImg) {
+      // ── MEDIA MODE: skip narrative; show only Gita connect + reflection/sankalp ──
       html += `<div class="story-card">`;
       html += `<div class="story-gita-connect">
         <div class="story-gc-label">🕉️ गीता संदेश · The Gita Parallel</div>
@@ -521,13 +533,18 @@
       </div>`;
       html += `</div>`; // end .story-card
       el.innerHTML = html;
-      // Wire मोठे करा button — opens in iframe (desktop) or new tab (mobile)
+      // Wire मोठे करा button
       const kathaFullViewBtn = el.querySelector('.pdf-fullview-btn');
       if (kathaFullViewBtn) {
-        kathaFullViewBtn.addEventListener('click', () =>
-          openStoryPdf(entry.pdfUrl, 'आयुष्यातील क्षण'));
+        if (hasPdf) {
+          kathaFullViewBtn.addEventListener('click', () =>
+            openStoryPdf(entry.pdfUrl, 'आयुष्यातील क्षण'));
+        } else {
+          kathaFullViewBtn.addEventListener('click', () =>
+            window.open(entry.imageUrl, '_blank'));
+        }
       }
-      renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
+      if (hasPdf) renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
       return true;
     }
 

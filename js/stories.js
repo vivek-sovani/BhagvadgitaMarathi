@@ -286,7 +286,7 @@ const GITA_STORIES = {
 
   // ── Concept 1 ──────────────────────────────────────────────────
   "1": {
-    pdfUrl: "assets/adhyay-2/concept-1-katha.pdf",
+    imageUrl: "assets/adhyay-2/concept-1-katha.jpg",
     shloka: {
       ref: "गीता २.३",
       text: "क्लैब्यं मा स्म गमः पार्थ नैतत्त्वय्युपपद्यते ।\nक्षुद्रं हृदयदौर्बल्यं त्यक्त्वोत्तिष्ठ परन्तप ।।",
