@@ -83,15 +83,82 @@
             <div class="info-name" id="concept-info-name"></div>
             <div class="info-meta" id="concept-info-meta"></div>
           </div>
+          <!-- Font size control -->
+          <div class="font-size-ctrl" id="font-size-ctrl">
+            <button class="fsc-btn" data-size="normal" title="सामान्य">A</button>
+            <button class="fsc-btn" data-size="large"  title="मोठा">A+</button>
+            <button class="fsc-btn" data-size="xlarge" title="अधिक मोठा">A++</button>
+          </div>
         </div>
         <div class="concept-info-body">
-          <!-- Tab bar — hidden until JS finds a story for this concept -->
-          <div class="concept-tabs" id="concept-tabs" style="display:none">
-            <button class="ctab-btn ctab-active" data-tab="vivechan">विवेचन</button>
-            <button class="ctab-btn" data-tab="katha">📖 कथा</button>
+
+          <!-- ── Section menu (4 cards) — default view when concept selected ── -->
+          <div class="section-menu" id="section-menu" style="display:none">
+            <p class="smenu-summary" id="smenu-summary" style="display:none"></p>
+            <button class="smenu-card" data-section="vivechan">
+              <div class="smenu-icon-wrap">🪔</div>
+              <div class="smenu-text">
+                <div class="smenu-title">ज्ञानेश्वर महाराज काय म्हणतात</div>
+                <div class="smenu-sub">श्लोक व ज्ञानेश्वरी विवेचन</div>
+              </div>
+              <div class="smenu-arrow">→</div>
+            </button>
+            <button class="smenu-card smenu-katha" id="smenu-katha-card" data-section="katha" style="display:none">
+              <div class="smenu-icon-wrap">🌿</div>
+              <div class="smenu-text">
+                <div class="smenu-title">आयुष्यातील क्षण</div>
+                <div class="smenu-sub">जीवनकथेद्वारा</div>
+              </div>
+              <div class="smenu-arrow">→</div>
+            </button>
+            <button class="smenu-card" data-section="sadarikaran">
+              <div class="smenu-icon-wrap">🖼️</div>
+              <div class="smenu-text">
+                <div class="smenu-title">चित्ररूपी सादरीकरण</div>
+                <div class="smenu-sub">संकल्पना PDF</div>
+              </div>
+              <div class="smenu-arrow">→</div>
+            </button>
+            <button class="smenu-card smenu-disabled" disabled>
+              <div class="smenu-icon-wrap">🎧</div>
+              <div class="smenu-text">
+                <div class="smenu-title">श्रवण</div>
+                <div class="smenu-sub">लवकरच येत आहे…</div>
+              </div>
+            </button>
           </div>
-          <div class="concept-text" id="concept-text-content"></div>
-          <div class="concept-story" id="concept-story-content" style="display:none"></div>
+
+          <!-- ── Back bar — shown when a section content is active ── -->
+          <div class="section-back-bar" id="section-back-bar" style="display:none">
+            <button class="sbb-back" id="section-back-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+              मागे
+            </button>
+            <span class="sbb-title" id="section-back-title"></span>
+          </div>
+
+          <!-- ── Section content panels ── -->
+          <div class="section-content" id="section-vivechan" style="display:none">
+            <div class="concept-text" id="concept-text-content"></div>
+            <div class="section-bottom-nav" id="snav-vivechan"></div>
+          </div>
+          <div class="section-content" id="section-katha" style="display:none">
+            <div class="concept-story" id="concept-story-content"></div>
+            <div class="section-bottom-nav" id="snav-katha"></div>
+          </div>
+          <div class="section-content" id="section-sadarikaran" style="display:none">
+            <div id="sadarikaran-content"></div>
+            <div class="section-bottom-nav" id="snav-sadarikaran"></div>
+          </div>
+          <div class="section-content" id="section-shravan" style="display:none">
+            <div class="shravan-coming-soon">
+              <div class="scs-icon">🔊</div>
+              <div class="scs-title">श्रवण</div>
+              <div class="scs-sub">ऑडिओ सामग्री लवकरच येत आहे…</div>
+            </div>
+            <div class="section-bottom-nav" id="snav-shravan"></div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -145,6 +212,7 @@
   <script src="js/data.js"></script>
   <script src="js/content.js"></script>
   <script src="js/stories.js"></script>
+  <script src="js/triggers.js"></script>
   <script src="js/adhyay.js"></script>
 </body>
 </html>

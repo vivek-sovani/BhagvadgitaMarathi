@@ -930,7 +930,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .concept-text { font-size: clamp(0.92rem, 1.5vw, 1.02rem); line-height: 1.8; color: var(--text-2); }
 .concept-text .ct-header {
   font-family: var(--font-serif);
-  font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+  font-size: 1.12em;
   font-weight: 700;
   color: var(--text);
   margin-bottom: 10px;
@@ -944,7 +944,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 14px;
   margin: 10px 0;
   font-family: var(--font-serif);
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-size: 0.97em;
   color: var(--text);
   line-height: 1.9;
 }
@@ -963,7 +963,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 10px 14px;
   margin: 10px 0;
   font-family: var(--font-serif);
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-size: 0.97em;
   color: #92400E;
   line-height: 1.85;
 }
@@ -983,7 +983,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   margin: 8px 0;
   font-style: italic;
   color: var(--primary-dk);
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-size: 0.96em;
 }
 .concept-text .ct-para { margin-bottom: 8px; }
 .concept-text .ct-sankalp {
@@ -992,7 +992,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   padding: 10px 14px;
   margin: 10px 0;
-  font-size: clamp(0.9rem, 1.4vw, 1rem);
+  font-size: 0.96em;
   color: #065f46;
 }
 .concept-text .ct-label {
@@ -1719,4 +1719,352 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .pdf-nav-btn { width: 32px; height: 32px; }
   .pdf-nav-btn.prev { left: 6px; }
   .pdf-nav-btn.next { right: 6px; }
+}
+
+/* ===== SECTION-MENU NAVIGATION ===== */
+
+/* Font size control (in concept-info-header) */
+.font-size-ctrl {
+  margin-left: auto;
+  display: flex;
+  gap: 3px;
+  flex-shrink: 0;
+}
+.fsc-btn {
+  padding: 4px 7px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-family: var(--font-sans);
+  color: var(--muted);
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.fsc-btn[data-size="normal"] { font-size: 0.68rem; }
+.fsc-btn[data-size="large"]  { font-size: 0.78rem; }
+.fsc-btn[data-size="xlarge"] { font-size: 0.88rem; }
+.fsc-btn.fsc-active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+.fsc-btn:not(.fsc-active):hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* 4-card section menu */
+.section-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.smenu-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: var(--font-sans);
+  color: var(--text);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+}
+.smenu-card:not([disabled]):hover {
+  border-color: var(--primary);
+  box-shadow: 0 2px 12px rgba(217,119,6,0.12);
+  transform: translateY(-1px);
+}
+.smenu-card:not([disabled]):active { transform: scale(0.985); }
+
+/* Square icon container — neutral, no per-section colours */
+.smenu-icon-wrap {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.smenu-text  { flex: 1; min-width: 0; }
+.smenu-title { font-size: 0.92rem; font-weight: 700; color: var(--text); line-height: 1.25; }
+.smenu-sub   { font-size: 0.74rem; color: var(--muted); margin-top: 2px; }
+.smenu-arrow { font-size: 1rem; color: var(--muted); font-weight: 700; flex-shrink: 0; }
+.smenu-disabled { opacity: 0.38; cursor: not-allowed; }
+
+/* Section back bar (breadcrumb inside concept-info-body) */
+.section-back-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.sbb-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 16px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.15s, color 0.15s;
+}
+.sbb-back:hover { border-color: var(--primary); color: var(--primary); }
+.sbb-back svg   { width: 13px; height: 13px; }
+.sbb-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Section content panels — each shown one at a time by JS */
+.section-content { display: none; }
+
+/* Bottom nav pill row inside each section */
+.section-bottom-nav {
+  margin-top: 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.snav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 22px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.snav-pill:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 2px 8px rgba(217,119,6,0.15);
+}
+.snav-pill-menu {
+  color: var(--text-2);
+  border-color: var(--text-2);
+}
+.snav-pill-menu:hover {
+  border-color: var(--text);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Shravan coming soon */
+.shravan-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px;
+  text-align: center;
+  gap: 6px;
+}
+.scs-icon  { font-size: 2.4rem; }
+.scs-title { font-size: 1.05rem; font-weight: 700; color: var(--text); margin-top: 6px; }
+.scs-sub   { font-size: 0.82rem; color: var(--muted); }
+
+/* ── Concept trigger block (section menu landing) ── */
+.smenu-summary { margin: 0; }
+
+.smenu-trigger {
+  padding: 2px 2px 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.smenu-trigger-para {
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  line-height: 1.88;
+  color: var(--text-2);
+  font-style: italic;
+  margin-bottom: 7px;
+}
+.smenu-trigger-para:last-of-type { margin-bottom: 0; }
+.smenu-trigger-para strong {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--text);
+}
+.smenu-trigger-para em { font-style: normal; }
+.smenu-trigger-cta {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--primary-dk);
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* ── Font size overrides (A / A+ / A++) ───────────────────────────── */
+body[data-fontsize="large"]  .smenu-trigger-para { font-size: 0.97rem; }
+body[data-fontsize="large"]  .smenu-trigger-cta  { font-size: 0.9rem; }
+body[data-fontsize="xlarge"] .smenu-trigger-para { font-size: 1.07rem; }
+body[data-fontsize="xlarge"] .smenu-trigger-cta  { font-size: 0.99rem; }
+
+body[data-fontsize="large"] .concept-text {
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+/* विवेचन body elements */
+body[data-fontsize="large"] .story-para                { font-size: 0.98rem; }
+body[data-fontsize="large"] .story-dialogue-text,
+body[data-fontsize="large"] .story-it-text,
+body[data-fontsize="large"] .story-hbox-text,
+body[data-fontsize="large"] .story-diary-text          { font-size: 0.97rem; }
+body[data-fontsize="large"] .story-tp-text,
+body[data-fontsize="large"] .story-gc-text             { font-size: 0.96rem; }
+body[data-fontsize="large"] .story-concept-summary     { font-size: 1.0rem; }
+body[data-fontsize="large"] .story-shloka-text         { font-size: 1.05rem; }
+body[data-fontsize="large"] .story-shloka-meaning      { font-size: 0.91rem; }
+body[data-fontsize="large"] .story-rs-text             { font-size: 0.88rem; }
+body[data-fontsize="large"] .story-layer-story,
+body[data-fontsize="large"] .story-trait-text,
+body[data-fontsize="large"] .story-vastra-text,
+body[data-fontsize="large"] .story-vastra-footer,
+body[data-fontsize="large"] .story-contrast-text       { font-size: 0.92rem; }
+body[data-fontsize="large"] .story-grid-text           { font-size: 0.9rem; }
+body[data-fontsize="large"] .story-scene-subtitle      { font-size: 0.86rem; }
+
+body[data-fontsize="xlarge"] .concept-text {
+  font-size: 1.22rem;
+  line-height: 2.0;
+}
+body[data-fontsize="xlarge"] .story-para               { font-size: 1.08rem; }
+body[data-fontsize="xlarge"] .story-dialogue-text,
+body[data-fontsize="xlarge"] .story-it-text,
+body[data-fontsize="xlarge"] .story-hbox-text,
+body[data-fontsize="xlarge"] .story-diary-text         { font-size: 1.07rem; }
+body[data-fontsize="xlarge"] .story-tp-text,
+body[data-fontsize="xlarge"] .story-gc-text            { font-size: 1.06rem; }
+body[data-fontsize="xlarge"] .story-concept-summary    { font-size: 1.1rem; }
+body[data-fontsize="xlarge"] .story-shloka-text        { font-size: 1.15rem; }
+body[data-fontsize="xlarge"] .story-shloka-meaning     { font-size: 1.0rem; }
+body[data-fontsize="xlarge"] .story-rs-text            { font-size: 0.96rem; }
+body[data-fontsize="xlarge"] .story-layer-story,
+body[data-fontsize="xlarge"] .story-trait-text,
+body[data-fontsize="xlarge"] .story-vastra-text,
+body[data-fontsize="xlarge"] .story-vastra-footer,
+body[data-fontsize="xlarge"] .story-contrast-text      { font-size: 1.01rem; }
+body[data-fontsize="xlarge"] .story-grid-text          { font-size: 0.98rem; }
+body[data-fontsize="xlarge"] .story-scene-subtitle     { font-size: 0.94rem; }
+
+/* ── Mobile padding fix — must come after the desktop .concept-info-body rule
+   which uses the `padding` shorthand and would otherwise override padding-bottom ── */
+@media (max-width: 767px) {
+  .concept-info-body {
+    padding-bottom: 84px; /* clear fixed bottom-concept-nav (54px) + section nav + breathing room */
+  }
+}
+
+/* ── कथा card pulse — draws eye when story is available ─────────────
+   Targets the कथा card in the section menu.
+   Animation stops automatically once JS adds .katha-seen (on first visit). ── */
+@keyframes katha-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217,119,6,0.5); }
+  55%       { box-shadow: 0 0 0 8px rgba(217,119,6,0); }
+}
+#smenu-katha-card:not(.katha-seen) {
+  border-color: var(--primary);
+  animation: katha-pulse 2.2s ease-out infinite;
+}
+
+/* ── कथा prompt card — shown at bottom of विवेचन section ── */
+.katha-prompt-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, #FFF8EE, #FDF2DC);
+  border: 1.5px solid var(--primary);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+  user-select: none;
+  width: 100%;
+  text-align: left;
+}
+.katha-prompt-card:hover {
+  background: linear-gradient(135deg, #FFF3E0, #FDECC8);
+  box-shadow: 0 4px 16px rgba(217,119,6,0.2);
+  transform: translateY(-1px);
+}
+.katha-prompt-icon { font-size: 1.6rem; line-height: 1; flex-shrink: 0; }
+.katha-prompt-text { flex: 1; min-width: 0; }
+.katha-prompt-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #3D2512;
+}
+.katha-prompt-sub {
+  font-size: 0.74rem;
+  color: rgba(61,37,18,0.6);
+  margin-top: 2px;
+}
+.katha-prompt-arrow {
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── PDF full-view button (inside सादरीकरण section) ── */
+.story-pdf-viewer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.story-pdf-viewer-header .story-pdf-viewer-label {
+  margin-bottom: 0;
+}
+.pdf-fullview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  border: 1.5px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.pdf-fullview-btn:hover {
+  background: var(--primary);
+  color: #fff;
 }
