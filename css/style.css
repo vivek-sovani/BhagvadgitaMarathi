@@ -2014,17 +2014,6 @@ body[data-fontsize="xlarge"] .story-scene-subtitle     { font-size: 0.94rem; }
   }
 }
 
-/* ── कथा card pulse — draws eye when story is available ─────────────
-   Targets the कथा card in the section menu.
-   Animation stops automatically once JS adds .katha-seen (on first visit). ── */
-@keyframes katha-pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(217,119,6,0.5); }
-  55%       { box-shadow: 0 0 0 8px rgba(217,119,6,0); }
-}
-#smenu-katha-card:not(.katha-seen) {
-  border-color: var(--primary);
-  animation: katha-pulse 2.2s ease-out infinite;
-}
 
 /* ── कथा prompt card — shown at bottom of विवेचन section ── */
 .katha-prompt-card {

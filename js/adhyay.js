@@ -412,10 +412,6 @@
       const el = document.getElementById(`section-${s}`);
       if (el) el.style.display = s === name ? 'block' : 'none';
     });
-    // Mark कथा as seen — stops the pulse animation on the menu card
-    if (name === 'katha' && smenuKathaCard) {
-      smenuKathaCard.classList.add('katha-seen');
-    }
     scrollInfoToTop();
   }
 
