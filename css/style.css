@@ -1468,9 +1468,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
   width: 100%;
   height: auto;
-  overflow: hidden;           /* centre-crop the 1.3× canvas to slide width */
+  overflow: hidden;           /* clip the 2× canvas — flex-end shows right side where content is */
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
   scroll-snap-align: start;
 }

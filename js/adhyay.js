@@ -625,7 +625,7 @@
         }
       }
       if (hasPdf) {
-        renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 1.3);
+        renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 2.0);
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
         if (pagesEl) attachPdfZoom(pagesEl);
       }
