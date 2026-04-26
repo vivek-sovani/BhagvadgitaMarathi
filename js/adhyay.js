@@ -154,6 +154,85 @@
 
 
 
+  // ── PDF pinch-to-zoom ─────────────────────────────────────────
+  // Attach natural pinch-to-zoom (and Ctrl+scroll on desktop) to a
+  // .story-pdf-pages container after its canvas pages are rendered.
+  function attachPdfZoom(pagesEl) {
+    let scale = 1, tx = 0, ty = 0;
+    let pinchDist0 = 0, scale0 = 1;
+    let panX0 = 0, panY0 = 0, tx0 = 0, ty0 = 0;
+    let isPanning = false, lastTap = 0;
+
+    function activeCanvas() {
+      const i = Math.round(pagesEl.scrollLeft / pagesEl.clientWidth);
+      return pagesEl.querySelectorAll('.story-pdf-slide')[i]
+                    ?.querySelector('.story-pdf-page') || null;
+    }
+    // Clamp translate so the canvas never moves past its edges
+    function clamp(s, x, y) {
+      const mx = pagesEl.clientWidth  * (s - 1) / (2 * s);
+      const my = pagesEl.clientHeight * (s - 1) / (2 * s);
+      return [Math.max(-mx, Math.min(mx, x)), Math.max(-my, Math.min(my, y))];
+    }
+    function apply() {
+      const cv = activeCanvas(); if (!cv) return;
+      cv.style.transform = scale <= 1 ? '' : `scale(${scale}) translate(${tx}px,${ty}px)`;
+      pagesEl.classList.toggle('pdf-zoom-in', scale > 1);
+    }
+    function reset() { scale = 1; tx = 0; ty = 0; apply(); isPanning = false; }
+
+    pagesEl.addEventListener('touchstart', e => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        pinchDist0 = Math.hypot(e.touches[1].clientX - e.touches[0].clientX,
+                                e.touches[1].clientY - e.touches[0].clientY);
+        scale0 = scale; isPanning = false;
+      } else if (e.touches.length === 1) {
+        const now = Date.now();
+        if (now - lastTap < 300) { reset(); }  // double-tap → reset zoom
+        lastTap = now;
+        if (scale > 1) {
+          e.preventDefault();
+          isPanning = true;
+          panX0 = e.touches[0].clientX; panY0 = e.touches[0].clientY;
+          tx0 = tx; ty0 = ty;
+        }
+      }
+    }, { passive: false });
+
+    pagesEl.addEventListener('touchmove', e => {
+      if (e.touches.length === 2) {
+        e.preventDefault();
+        const d = Math.hypot(e.touches[1].clientX - e.touches[0].clientX,
+                             e.touches[1].clientY - e.touches[0].clientY);
+        scale = Math.max(1, Math.min(4, scale0 * d / pinchDist0));
+        [tx, ty] = clamp(scale, tx, ty);
+        apply();
+      } else if (e.touches.length === 1 && isPanning) {
+        e.preventDefault();
+        const dx = (e.touches[0].clientX - panX0) / scale;
+        const dy = (e.touches[0].clientY - panY0) / scale;
+        [tx, ty] = clamp(scale, tx0 + dx, ty0 + dy);
+        apply();
+      }
+    }, { passive: false });
+
+    pagesEl.addEventListener('touchend', e => {
+      if (e.touches.length < 2) isPanning = false;
+      if (scale < 1.08) reset();  // snap back if barely pinched
+    });
+
+    // Desktop: Ctrl+scroll or trackpad pinch (browser sends wheel + ctrlKey)
+    pagesEl.addEventListener('wheel', e => {
+      if (!e.ctrlKey && !e.metaKey) return;
+      e.preventDefault();
+      scale = Math.max(1, Math.min(4, scale * (1 - e.deltaY * 0.008)));
+      [tx, ty] = clamp(scale, tx, ty);
+      if (scale < 1.08) reset(); else apply();
+    }, { passive: false });
+  }
+
+
   // ── Helpers ───────────────────────────────────────────────────
   function assetPath(file) {
     return `assets/adhyay-${adhyay.id}/${file}`;
@@ -544,7 +623,11 @@
             window.open(entry.imageUrl, '_blank'));
         }
       }
-      if (hasPdf) renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
+      if (hasPdf) {
+        renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
+        const pagesEl = el.querySelector(`#${pdfPagesId}`);
+        if (pagesEl) attachPdfZoom(pagesEl);
+      }
       return true;
     }
 
@@ -915,6 +998,8 @@
     if (pdfOpenBar) pdfOpenBar.style.display = 'none';
     pendingPdfUrl = conceptPdfUrl;
     renderStoryPdfPages(pendingPdfUrl, cpdfId);
+    const cpdfPagesEl = sadarikaranContent.querySelector(`#${cpdfId}`);
+    if (cpdfPagesEl) attachPdfZoom(cpdfPagesEl);
   }
 
   // ── Recalculate column width on window resize ─────────────────

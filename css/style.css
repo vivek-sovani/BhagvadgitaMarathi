@@ -1459,6 +1459,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .story-pdf-pages::-webkit-scrollbar       { height: 4px; }
 .story-pdf-pages::-webkit-scrollbar-thumb { background: rgba(201,150,58,0.4); border-radius: 4px; }
+/* Zoomed state — JS adds this class; disables scroll/snap while user pans */
+.story-pdf-pages.pdf-zoom-in {
+  overflow: hidden;
+  scroll-snap-type: none;
+}
 /* Each slide = one page, fills the container width */
 .story-pdf-slide {
   flex-shrink: 0;
@@ -1472,6 +1477,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */
+  transform-origin: center center; /* pinch-to-zoom scales around canvas centre */
+  will-change: transform;
 }
 .story-pdf-loading {
   padding: 28px 14px;
@@ -1495,17 +1502,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ── Story image viewer (image-mode कथा section) ── */
 .story-img-viewer {
-  border-radius: 12px;
-  border: 1px solid rgba(201,150,58,0.3);
-  overflow: hidden;
-  background: #1a1008;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
+}
+.story-img-viewer .story-pdf-viewer-header {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0;
 }
 .story-katha-img {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 10px 10px;
 }
 
 /* ── कथा scroll hint — mobile nudge to scroll below PDF ── */
