@@ -115,7 +115,7 @@
   }
 
   // Renders all pages of a PDF as horizontal canvases inside containerId
-  async function renderStoryPdfPages(url, containerId) {
+  async function renderStoryPdfPages(url, containerId, zoom = 1.0) {
     const container = document.getElementById(containerId);
     if (!container || typeof pdfjsLib === 'undefined') return;
     try {
@@ -131,7 +131,7 @@
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
         // Logical "contain" scale — whole page fits within (targetW × targetH)
-        const logicalScale = Math.min(targetW / vp0.width, targetH / vp0.height);
+        const logicalScale = Math.min(targetW / vp0.width, targetH / vp0.height) * zoom;
         // Render at dpr× for sharp text on retina/high-dpi screens
         const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
         const canvas = document.createElement('canvas');
@@ -625,7 +625,7 @@
         }
       }
       if (hasPdf) {
-        renderStoryPdfPages(entry.pdfUrl, pdfPagesId);
+        renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 1.3);
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
         if (pagesEl) attachPdfZoom(pagesEl);
       }
