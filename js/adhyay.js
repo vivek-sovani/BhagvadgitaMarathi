@@ -114,13 +114,17 @@
     openPdfModal(title);
   }
 
-  // Renders all pages of a PDF as horizontal canvases inside containerId
+  // Renders all pages of a PDF as horizontal canvases inside containerId.
+  // If the container already has slides (e.g. an imageUrl pre-slide), they are
+  // preserved — only the loading spinner is removed before appending PDF pages.
   async function renderStoryPdfPages(url, containerId, zoom = 1.0) {
     const container = document.getElementById(containerId);
     if (!container || typeof pdfjsLib === 'undefined') return;
     try {
       const pdf = await pdfjsLib.getDocument({ url }).promise;
-      container.innerHTML = ''; // clear loading spinner
+      // Remove the loading spinner but keep any pre-rendered slides (imageUrl slide)
+      const spinner = container.querySelector('.story-pdf-loading');
+      if (spinner) spinner.remove();
       const dpr     = window.devicePixelRatio || 1;
       // Logical (CSS) pixel dimensions the slide is displayed at
       const targetW = container.clientWidth  > 0 ? container.clientWidth  : Math.max(300, window.innerWidth  - 32);
@@ -130,11 +134,17 @@
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        // Adaptive zoom: cover page fits full width; content pages zoom up to `zoom` cap
-        // adaptiveZoom scales with container — 2× on 360px mobile, ~1× on 750px+ desktop
-        const isCover      = (p === 1);
+        // isCover: page 1 of a PDF without a pre-slide uses fit-to-width (no extra zoom)
+        // If an imageUrl slide is already in the container, treat ALL PDF pages as content
+        const hasPreSlide  = !!container.querySelector('.story-pdf-slide');
+        const isCover      = (p === 1) && !hasPreSlide;
         const fitScale     = Math.min(targetW / vp0.width, targetH / vp0.height);
-        const adaptiveZoom = Math.max(1.0, Math.min(zoom, 750 / targetW));
+        // adaptiveZoom: scales with container width so text is readable on mobile
+        // but is also capped so the canvas height never exceeds ~68 vh —
+        // this keeps the katha scroll hint visible below the PDF viewer
+        const widthZoom    = 750 / targetW;
+        const heightZoom   = (window.innerHeight * 0.68) / (vp0.height * fitScale);
+        const adaptiveZoom = Math.max(1.0, Math.min(zoom, widthZoom, heightZoom));
         const logicalScale = fitScale * (isCover ? 1.0 : adaptiveZoom);
         // Render at dpr× for sharp text on retina/high-dpi screens
         const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
@@ -146,8 +156,7 @@
         canvas.style.height = Math.round(vp.height / dpr) + 'px';
         canvas.className = 'story-pdf-page';
         await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-        // Wrap in a slide div — scroll-snap snaps exactly one full page at a time
-        // Cover page centres; content pages align flush-right (flex-end shows right-side text)
+        // Cover: centred (fit-to-width image). Content: centred so images AND text are visible.
         const slide = document.createElement('div');
         slide.className = 'story-pdf-slide ' + (isCover ? 'pdf-slide-cover' : 'pdf-slide-content');
         slide.appendChild(canvas);
@@ -563,13 +572,18 @@
 
     // ── Inline media viewer (PDF scrollable or full image) ────
     if (hasPdf) {
+      // If imageUrl is also set, inject it as the first slide so the user sees
+      // the story image immediately; PDF pages are appended after by renderStoryPdfPages.
+      const imgSlide = hasImg
+        ? `<div class="story-pdf-slide pdf-slide-cover"><img class="story-pdf-img-slide" src="${entry.imageUrl}" alt="कथा चित्र" loading="eager"></div>`
+        : '';
       html += `<div class="story-pdf-viewer">
         <div class="story-pdf-viewer-header">
           <div class="story-pdf-viewer-label">📖 आयुष्यातील क्षण</div>
           <button class="pdf-fullview-btn">🔍 मोठे करा</button>
         </div>
         <div class="story-pdf-pages" id="${pdfPagesId}">
-          <div class="story-pdf-loading">PDF लोड होत आहे…</div>
+          ${imgSlide}<div class="story-pdf-loading">PDF लोड होत आहे…</div>
         </div>
         <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
       </div>

@@ -1476,8 +1476,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 /* Cover (title) page: centred so full page is visible at fit-to-width */
 .story-pdf-slide.pdf-slide-cover  { justify-content: center; }
-/* Content pages: flush-right so the text column (right side of landscape page) is visible */
-.story-pdf-slide.pdf-slide-content { justify-content: flex-end; }
+/* Content pages: centred so both images and text columns are visible;
+   users can pinch-zoom to reach the far-right edge if needed */
+.story-pdf-slide.pdf-slide-content { justify-content: center; }
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */
@@ -1485,6 +1486,13 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   will-change: transform;
   /* Boost contrast so raster text appears crisper and darker */
   filter: contrast(1.25) brightness(0.96);
+}
+/* imageUrl pre-slide injected before PDF canvas pages */
+.story-pdf-img-slide {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
 }
 .story-pdf-loading {
   padding: 28px 14px;
