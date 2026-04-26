@@ -1988,48 +1988,49 @@ body[data-fontsize="large"] .concept-text {
   font-size: 1.08rem;
   line-height: 1.9;
 }
-/* विवेचन body elements */
-body[data-fontsize="large"] .story-para                { font-size: 0.98rem; }
+/* कथा body elements — scaled at same proportion as concept-text (nirupan):
+   large = base × 1.174  (+17.4%)   xlarge = base × 1.326  (+32.6%)        */
+body[data-fontsize="large"] .story-para                { font-size: 1.06rem; }  /* 0.90 × 1.174 */
+body[data-fontsize="large"] .story-concept-summary     { font-size: 1.06rem; }  /* 0.90 × 1.174 */
 body[data-fontsize="large"] .story-dialogue-text,
 body[data-fontsize="large"] .story-it-text,
 body[data-fontsize="large"] .story-hbox-text,
-body[data-fontsize="large"] .story-diary-text          { font-size: 0.97rem; }
+body[data-fontsize="large"] .story-diary-text,
 body[data-fontsize="large"] .story-tp-text,
-body[data-fontsize="large"] .story-gc-text             { font-size: 0.96rem; }
-body[data-fontsize="large"] .story-concept-summary     { font-size: 1.0rem; }
-body[data-fontsize="large"] .story-shloka-text         { font-size: 1.05rem; }
-body[data-fontsize="large"] .story-shloka-meaning      { font-size: 0.91rem; }
-body[data-fontsize="large"] .story-rs-text             { font-size: 0.88rem; }
+body[data-fontsize="large"] .story-gc-text             { font-size: 1.03rem; }  /* 0.88 × 1.174 */
+body[data-fontsize="large"] .story-shloka-text         { font-size: 1.12rem; }  /* 0.95 × 1.174 */
+body[data-fontsize="large"] .story-shloka-meaning      { font-size: 0.96rem; }  /* 0.82 × 1.174 */
+body[data-fontsize="large"] .story-rs-text             { font-size: 0.94rem; }  /* 0.80 × 1.174 */
 body[data-fontsize="large"] .story-layer-story,
 body[data-fontsize="large"] .story-trait-text,
-body[data-fontsize="large"] .story-vastra-text,
-body[data-fontsize="large"] .story-vastra-footer,
-body[data-fontsize="large"] .story-contrast-text       { font-size: 0.92rem; }
-body[data-fontsize="large"] .story-grid-text           { font-size: 0.9rem; }
-body[data-fontsize="large"] .story-scene-subtitle      { font-size: 0.86rem; }
+body[data-fontsize="large"] .story-vastra-footer       { font-size: 0.97rem; }  /* 0.83 × 1.174 */
+body[data-fontsize="large"] .story-vastra-text         { font-size: 0.94rem; }  /* 0.80 × 1.174 */
+body[data-fontsize="large"] .story-contrast-text       { font-size: 0.96rem; }  /* 0.82 × 1.174 */
+body[data-fontsize="large"] .story-grid-text           { font-size: 0.94rem; }  /* 0.80 × 1.174 */
+body[data-fontsize="large"] .story-scene-subtitle      { font-size: 0.92rem; }  /* 0.78 × 1.174 */
 
 body[data-fontsize="xlarge"] .concept-text {
   font-size: 1.22rem;
   line-height: 2.0;
 }
-body[data-fontsize="xlarge"] .story-para               { font-size: 1.08rem; }
+body[data-fontsize="xlarge"] .story-para               { font-size: 1.19rem; }  /* 0.90 × 1.326 */
+body[data-fontsize="xlarge"] .story-concept-summary    { font-size: 1.19rem; }  /* 0.90 × 1.326 */
 body[data-fontsize="xlarge"] .story-dialogue-text,
 body[data-fontsize="xlarge"] .story-it-text,
 body[data-fontsize="xlarge"] .story-hbox-text,
-body[data-fontsize="xlarge"] .story-diary-text         { font-size: 1.07rem; }
+body[data-fontsize="xlarge"] .story-diary-text,
 body[data-fontsize="xlarge"] .story-tp-text,
-body[data-fontsize="xlarge"] .story-gc-text            { font-size: 1.06rem; }
-body[data-fontsize="xlarge"] .story-concept-summary    { font-size: 1.1rem; }
-body[data-fontsize="xlarge"] .story-shloka-text        { font-size: 1.15rem; }
-body[data-fontsize="xlarge"] .story-shloka-meaning     { font-size: 1.0rem; }
-body[data-fontsize="xlarge"] .story-rs-text            { font-size: 0.96rem; }
+body[data-fontsize="xlarge"] .story-gc-text            { font-size: 1.17rem; }  /* 0.88 × 1.326 */
+body[data-fontsize="xlarge"] .story-shloka-text        { font-size: 1.26rem; }  /* 0.95 × 1.326 */
+body[data-fontsize="xlarge"] .story-shloka-meaning     { font-size: 1.09rem; }  /* 0.82 × 1.326 */
+body[data-fontsize="xlarge"] .story-rs-text            { font-size: 1.06rem; }  /* 0.80 × 1.326 */
 body[data-fontsize="xlarge"] .story-layer-story,
 body[data-fontsize="xlarge"] .story-trait-text,
-body[data-fontsize="xlarge"] .story-vastra-text,
-body[data-fontsize="xlarge"] .story-vastra-footer,
-body[data-fontsize="xlarge"] .story-contrast-text      { font-size: 1.01rem; }
-body[data-fontsize="xlarge"] .story-grid-text          { font-size: 0.98rem; }
-body[data-fontsize="xlarge"] .story-scene-subtitle     { font-size: 0.94rem; }
+body[data-fontsize="xlarge"] .story-vastra-footer      { font-size: 1.10rem; }  /* 0.83 × 1.326 */
+body[data-fontsize="xlarge"] .story-vastra-text        { font-size: 1.06rem; }  /* 0.80 × 1.326 */
+body[data-fontsize="xlarge"] .story-contrast-text      { font-size: 1.09rem; }  /* 0.82 × 1.326 */
+body[data-fontsize="xlarge"] .story-grid-text          { font-size: 1.06rem; }  /* 0.80 × 1.326 */
+body[data-fontsize="xlarge"] .story-scene-subtitle     { font-size: 1.03rem; }  /* 0.78 × 1.326 */
 
 /* ── Mobile padding fix — must come after the desktop .concept-info-body rule
    which uses the `padding` shorthand and would otherwise override padding-bottom ── */
