@@ -1421,9 +1421,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .story-pdf-viewer {
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(201,150,58,0.3);
+  border: 1px solid var(--border);
   margin-bottom: 14px;
-  background: #110800;
 }
 /* On mobile: use overflow:clip so border-radius still clips visually
    but no scroll-chain boundary is created (iOS won't swallow touches) */
@@ -1443,8 +1442,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  overflow-y: hidden;
-  height: 38vh;                     /* bounded height — parent scroll still works */
+  overflow-y: visible;
+  height: auto;                      /* wraps canvas exactly — no letterbox padding */
   scroll-snap-type: x mandatory;
   touch-action: pan-x pan-y;        /* desktop: allow both directions */
   -webkit-overflow-scrolling: touch;
@@ -1464,14 +1463,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   scroll-snap-type: none;
 }
-/* Each slide = one page, fills the container width */
+/* Each slide = one page, wraps the canvas exactly */
 .story-pdf-slide {
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   scroll-snap-align: start;
 }
 .story-pdf-page {

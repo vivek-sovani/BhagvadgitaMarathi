@@ -124,7 +124,8 @@
       const dpr     = window.devicePixelRatio || 1;
       // Logical (CSS) pixel dimensions the slide is displayed at
       const targetW = container.clientWidth  > 0 ? container.clientWidth  : Math.max(300, window.innerWidth  - 32);
-      const targetH = container.clientHeight > 0 ? container.clientHeight : Math.round(window.innerHeight * 0.38);
+      // Use a tall fallback so portrait PDFs are always width-limited (no vertical clipping)
+      const targetH = Math.round(window.innerHeight * 1.5);
       for (let p = 1; p <= pdf.numPages; p++) {
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
