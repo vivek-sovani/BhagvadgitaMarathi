@@ -130,8 +130,12 @@
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        // Logical "contain" scale — whole page fits within (targetW × targetH)
-        const logicalScale = Math.min(targetW / vp0.width, targetH / vp0.height) * zoom;
+        // Adaptive zoom: cover page fits full width; content pages zoom up to `zoom` cap
+        // adaptiveZoom scales with container — 2× on 360px mobile, ~1× on 750px+ desktop
+        const isCover      = (p === 1);
+        const fitScale     = Math.min(targetW / vp0.width, targetH / vp0.height);
+        const adaptiveZoom = Math.max(1.0, Math.min(zoom, 750 / targetW));
+        const logicalScale = fitScale * (isCover ? 1.0 : adaptiveZoom);
         // Render at dpr× for sharp text on retina/high-dpi screens
         const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
         const canvas = document.createElement('canvas');
@@ -143,8 +147,9 @@
         canvas.className = 'story-pdf-page';
         await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
         // Wrap in a slide div — scroll-snap snaps exactly one full page at a time
+        // Cover page centres; content pages align flush-right (flex-end shows right-side text)
         const slide = document.createElement('div');
-        slide.className = 'story-pdf-slide';
+        slide.className = 'story-pdf-slide ' + (isCover ? 'pdf-slide-cover' : 'pdf-slide-content');
         slide.appendChild(canvas);
         container.appendChild(slide);
       }

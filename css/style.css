@@ -1468,17 +1468,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-shrink: 0;
   width: 100%;
   height: auto;
-  overflow: hidden;           /* clip the 2× canvas — flex-end shows right side where content is */
+  overflow: hidden;           /* clip zoomed canvas to slide width */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;    /* default — overridden by cover/content classes below */
   align-items: flex-start;
   scroll-snap-align: start;
 }
+/* Cover (title) page: centred so full page is visible at fit-to-width */
+.story-pdf-slide.pdf-slide-cover  { justify-content: center; }
+/* Content pages: flush-right so the text column (right side of landscape page) is visible */
+.story-pdf-slide.pdf-slide-content { justify-content: flex-end; }
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */
   transform-origin: center center; /* pinch-to-zoom scales around canvas centre */
   will-change: transform;
+  /* Boost contrast so raster text appears crisper and darker */
+  filter: contrast(1.25) brightness(0.96);
 }
 .story-pdf-loading {
   padding: 28px 14px;
