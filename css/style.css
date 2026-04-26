@@ -1495,7 +1495,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-align: center;
   font-size: 0.62rem;
   letter-spacing: 0.1em;
-  color: rgba(253,246,232,0.8);
+  color: var(--muted);
   padding: 5px 14px 8px;
 }
 
