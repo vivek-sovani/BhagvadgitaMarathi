@@ -2060,6 +2060,20 @@ body[data-fontsize="xlarge"] .story-contrast-text      { font-size: 1.09rem; }  
 body[data-fontsize="xlarge"] .story-grid-text          { font-size: 1.06rem; }  /* 0.80 × 1.326 */
 body[data-fontsize="xlarge"] .story-scene-subtitle     { font-size: 1.03rem; }  /* 0.78 × 1.326 */
 
+/* ── कथा carousel: font-size preference does not apply to PDF summary slides ──
+   Override large/xlarge scaling back to baseline values so slide content
+   always fits regardless of the user's font-size setting.              */
+body[data-fontsize="large"]  .pdf-slide-summary .story-shloka-text,
+body[data-fontsize="xlarge"] .pdf-slide-summary .story-shloka-text   { font-size: 0.95rem; }
+body[data-fontsize="large"]  .pdf-slide-summary .story-shloka-meaning,
+body[data-fontsize="xlarge"] .pdf-slide-summary .story-shloka-meaning { font-size: 0.82rem; }
+body[data-fontsize="large"]  .pdf-slide-summary .story-concept-summary,
+body[data-fontsize="xlarge"] .pdf-slide-summary .story-concept-summary { font-size: 0.9rem; }
+body[data-fontsize="large"]  .pdf-slide-summary .story-gc-text,
+body[data-fontsize="xlarge"] .pdf-slide-summary .story-gc-text       { font-size: 0.88rem; }
+body[data-fontsize="large"]  .pdf-slide-summary .story-rs-text,
+body[data-fontsize="xlarge"] .pdf-slide-summary .story-rs-text       { font-size: 0.8rem; }
+
 /* ── Mobile padding fix — must come after the desktop .concept-info-body rule
    which uses the `padding` shorthand and would otherwise override padding-bottom ── */
 @media (max-width: 767px) {
