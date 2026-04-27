@@ -677,44 +677,31 @@
       }
       if (hasPdf) {
         renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 2.0, () => {
-          // On mobile: move text cards into carousel as the last swipeable slide
+          // On mobile: split text into 2 horizontal carousel slides after PDF pages
           if (window.innerWidth < 768) {
             const pagesEl = el.querySelector(`#${pdfPagesId}`);
             if (!pagesEl) return;
-            const summarySlide = document.createElement('div');
-            summarySlide.className = 'story-pdf-slide pdf-slide-summary';
-            ['story-shloka-card', 'story-concept-summary', 'story-card'].forEach(cls => {
+
+            // Slide A — श्लोक + संकल्पना सारांश
+            const slideA = document.createElement('div');
+            slideA.className = 'story-pdf-slide pdf-slide-summary';
+            let hasA = false;
+            ['story-shloka-card', 'story-concept-summary'].forEach(cls => {
               const elem = el.querySelector(`.${cls}`);
-              if (elem) summarySlide.appendChild(elem);
+              if (elem) { slideA.appendChild(elem); hasA = true; }
             });
-            pagesEl.appendChild(summarySlide);
-            // Hide scroll-down hint — nothing left below the carousel
+            if (hasA) pagesEl.appendChild(slideA);
+
+            // Slide B — गीता संदेश + स्वतःला विचारा + संकल्प
+            const slideB = document.createElement('div');
+            slideB.className = 'story-pdf-slide pdf-slide-summary';
+            const storyCard = el.querySelector('.story-card');
+            if (storyCard) slideB.appendChild(storyCard);
+            pagesEl.appendChild(slideB);
+
+            // Hide scroll-down hint — everything is now in the carousel
             const hint = el.querySelector('.katha-scroll-hint');
             if (hint) hint.style.display = 'none';
-
-            // ── Manual vertical scroll for the summary slide ─────────────
-            // The carousel has touch-action:pan-x which blocks native CSS
-            // vertical scroll inside children. We drive scrollTop via JS:
-            // vertical gestures scroll the slide; horizontal gestures still
-            // propagate to the carousel for swipe-back navigation.
-            let _tx0 = 0, _ty0 = 0, _st0 = 0, _dir = null;
-            summarySlide.addEventListener('touchstart', e => {
-              _tx0 = e.touches[0].clientX;
-              _ty0 = e.touches[0].clientY;
-              _st0 = summarySlide.scrollTop;
-              _dir  = null;
-            }, { passive: true });
-            summarySlide.addEventListener('touchmove', e => {
-              const dx = Math.abs(e.touches[0].clientX - _tx0);
-              const dy = e.touches[0].clientY - _ty0;
-              if (!_dir) _dir = Math.abs(dy) > dx ? 'v' : 'h';
-              if (_dir === 'v') {
-                summarySlide.scrollTop = _st0 - dy;
-                e.preventDefault(); // stop page from also scrolling
-              }
-              // 'h': let native carousel pan handle it
-            }, { passive: false });
-            summarySlide.addEventListener('touchend',  () => { _dir = null; }, { passive: true });
           }
         });
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
