@@ -117,7 +117,7 @@
   // Renders all pages of a PDF as horizontal canvases inside containerId.
   // If the container already has slides (e.g. an imageUrl pre-slide), they are
   // preserved — only the loading spinner is removed before appending PDF pages.
-  async function renderStoryPdfPages(url, containerId, zoom = 1.0) {
+  async function renderStoryPdfPages(url, containerId, zoom = 1.0, onDone = null) {
     const container = document.getElementById(containerId);
     if (!container || typeof pdfjsLib === 'undefined') return;
     try {
@@ -193,6 +193,7 @@
           container.appendChild(txtSlide);
         }
       }
+      if (onDone) onDone();
     } catch (e) {
       container.innerHTML = '<div class="story-pdf-error">PDF लोड होऊ शकले नाही</div>';
     }
@@ -675,7 +676,23 @@
         }
       }
       if (hasPdf) {
-        renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 2.0);
+        renderStoryPdfPages(entry.pdfUrl, pdfPagesId, 2.0, () => {
+          // On mobile: move text cards into carousel as the last swipeable slide
+          if (window.innerWidth < 768) {
+            const pagesEl = el.querySelector(`#${pdfPagesId}`);
+            if (!pagesEl) return;
+            const summarySlide = document.createElement('div');
+            summarySlide.className = 'story-pdf-slide pdf-slide-summary';
+            ['story-shloka-card', 'story-concept-summary', 'story-card'].forEach(cls => {
+              const elem = el.querySelector(`.${cls}`);
+              if (elem) summarySlide.appendChild(elem);
+            });
+            pagesEl.appendChild(summarySlide);
+            // Hide scroll-down hint — nothing left below the carousel
+            const hint = el.querySelector('.katha-scroll-hint');
+            if (hint) hint.style.display = 'none';
+          }
+        });
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
         if (pagesEl) attachPdfZoom(pagesEl);
       }

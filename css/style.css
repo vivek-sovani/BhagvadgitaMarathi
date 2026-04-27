@@ -1480,6 +1480,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .story-pdf-slide.pdf-slide-image  { justify-content: flex-start; }
 /* Text slide: right-aligned → shows the text/right column of the landscape page */
 .story-pdf-slide.pdf-slide-text   { justify-content: flex-end; }
+/* Summary slide: last slide on mobile — holds shloka, गीता संदेश, संकल्प */
+@media (max-width: 767px) {
+  .story-pdf-slide.pdf-slide-summary {
+    flex-direction: column;
+    align-items: stretch;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 68vh;
+    padding: 12px 10px;
+    background: var(--surface-1);
+    scroll-snap-align: start;
+  }
+}
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */
