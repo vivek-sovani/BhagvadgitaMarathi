@@ -1070,9 +1070,9 @@
     const shravanContent  = document.getElementById('shravan-content');
     const shravanCard     = document.getElementById('smenu-shravan-card');
     const shravanSubEl    = document.getElementById('smenu-shravan-sub');
-    const storyEntry = (typeof ADHYAY_STORIES !== 'undefined')
-      && ADHYAY_STORIES[adhyay.id]
-      && ADHYAY_STORIES[adhyay.id][String(cid)];
+    const storyEntry = (typeof GITA_STORIES !== 'undefined')
+      && GITA_STORIES[adhyay.id]
+      && GITA_STORIES[adhyay.id][String(cid)];
     const audioUrl = storyEntry && storyEntry.audioUrl;
     if (shravanContent) {
       if (audioUrl) {
