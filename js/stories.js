@@ -328,6 +328,7 @@ const GITA_STORIES = {
   // ── Concept 2 ──────────────────────────────────────────────────
   "2": {
     pdfUrl: "assets/adhyay-2/concept-2-katha.pdf",
+    audioUrl: "assets/adhyay-2/concept-2-shravan.m4a",
     shloka: {
       ref: "गीता २.११",
       text: "अशोच्यानन्वशोचस्त्वं प्रज्ञावादांश्च भाषसे ।\nगतासूनगतासूंश्च नानुशोचन्ति पण्डिताः ।।",

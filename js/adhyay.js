@@ -1066,6 +1066,35 @@
       }
     }
 
+    // ── Render श्रवण section ──────────────────────────────────────
+    const shravanContent = document.getElementById('shravan-content');
+    if (shravanContent) {
+      const storyEntry = (typeof ADHYAY_STORIES !== 'undefined')
+        && ADHYAY_STORIES[adhyay.id]
+        && ADHYAY_STORIES[adhyay.id][String(cid)];
+      const audioUrl = storyEntry && storyEntry.audioUrl;
+      if (audioUrl) {
+        shravanContent.innerHTML = `
+          <div class="shravan-player">
+            <div class="shravan-player-header">
+              <span class="shravan-player-icon">🔊</span>
+              <span class="shravan-player-title">श्रवण · ऑडिओ</span>
+            </div>
+            <audio class="shravan-audio" controls preload="metadata">
+              <source src="${audioUrl}" type="audio/mp4">
+              तुमचा ब्राउझर ऑडिओ प्लेयर सपोर्ट करत नाही.
+            </audio>
+          </div>`;
+      } else {
+        shravanContent.innerHTML = `
+          <div class="shravan-coming-soon">
+            <div class="scs-icon">🔊</div>
+            <div class="scs-title">श्रवण</div>
+            <div class="scs-sub">ऑडिओ सामग्री लवकरच येत आहे…</div>
+          </div>`;
+      }
+    }
+
     // Build bottom nav for all sections
     buildSectionNav('vivechan',    hasStory);
     buildSectionNav('katha',       hasStory);
