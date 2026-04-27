@@ -691,6 +691,30 @@
             // Hide scroll-down hint — nothing left below the carousel
             const hint = el.querySelector('.katha-scroll-hint');
             if (hint) hint.style.display = 'none';
+
+            // ── Manual vertical scroll for the summary slide ─────────────
+            // The carousel has touch-action:pan-x which blocks native CSS
+            // vertical scroll inside children. We drive scrollTop via JS:
+            // vertical gestures scroll the slide; horizontal gestures still
+            // propagate to the carousel for swipe-back navigation.
+            let _tx0 = 0, _ty0 = 0, _st0 = 0, _dir = null;
+            summarySlide.addEventListener('touchstart', e => {
+              _tx0 = e.touches[0].clientX;
+              _ty0 = e.touches[0].clientY;
+              _st0 = summarySlide.scrollTop;
+              _dir  = null;
+            }, { passive: true });
+            summarySlide.addEventListener('touchmove', e => {
+              const dx = Math.abs(e.touches[0].clientX - _tx0);
+              const dy = e.touches[0].clientY - _ty0;
+              if (!_dir) _dir = Math.abs(dy) > dx ? 'v' : 'h';
+              if (_dir === 'v') {
+                summarySlide.scrollTop = _st0 - dy;
+                e.preventDefault(); // stop page from also scrolling
+              }
+              // 'h': let native carousel pan handle it
+            }, { passive: false });
+            summarySlide.addEventListener('touchend',  () => { _dir = null; }, { passive: true });
           }
         });
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
