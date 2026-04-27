@@ -1067,12 +1067,14 @@
     }
 
     // ── Render श्रवण section ──────────────────────────────────────
-    const shravanContent = document.getElementById('shravan-content');
+    const shravanContent  = document.getElementById('shravan-content');
+    const shravanCard     = document.getElementById('smenu-shravan-card');
+    const shravanSubEl    = document.getElementById('smenu-shravan-sub');
+    const storyEntry = (typeof ADHYAY_STORIES !== 'undefined')
+      && ADHYAY_STORIES[adhyay.id]
+      && ADHYAY_STORIES[adhyay.id][String(cid)];
+    const audioUrl = storyEntry && storyEntry.audioUrl;
     if (shravanContent) {
-      const storyEntry = (typeof ADHYAY_STORIES !== 'undefined')
-        && ADHYAY_STORIES[adhyay.id]
-        && ADHYAY_STORIES[adhyay.id][String(cid)];
-      const audioUrl = storyEntry && storyEntry.audioUrl;
       if (audioUrl) {
         shravanContent.innerHTML = `
           <div class="shravan-player">
@@ -1085,6 +1087,8 @@
               तुमचा ब्राउझर ऑडिओ प्लेयर सपोर्ट करत नाही.
             </audio>
           </div>`;
+        if (shravanCard)  shravanCard.classList.remove('smenu-disabled');
+        if (shravanSubEl) shravanSubEl.textContent = 'ऑडिओ उपलब्ध';
       } else {
         shravanContent.innerHTML = `
           <div class="shravan-coming-soon">
@@ -1092,6 +1096,8 @@
             <div class="scs-title">श्रवण</div>
             <div class="scs-sub">ऑडिओ सामग्री लवकरच येत आहे…</div>
           </div>`;
+        if (shravanCard)  shravanCard.classList.add('smenu-disabled');
+        if (shravanSubEl) shravanSubEl.textContent = 'लवकरच येत आहे…';
       }
     }
 
