@@ -1485,10 +1485,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .story-pdf-slide.pdf-slide-summary {
     flex-direction: column;
     align-items: stretch;
-    overflow-y: auto;
+    overflow-y: auto;             /* allow internal vertical scroll */
     overflow-x: hidden;
-    height: 68vh;
-    padding: 12px 10px;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;          /* override parent pan-x so vertical scroll works */
+    height: 68vh;                 /* match PDF slide height — content scrolls within */
+    padding: 12px 10px 24px;
     background: var(--surface-1);
     scroll-snap-align: start;
   }
