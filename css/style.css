@@ -1474,11 +1474,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   align-items: flex-start;
   scroll-snap-align: start;
 }
-/* Cover (title) page: centred so full page is visible at fit-to-width */
+/* Cover (title) page: centred — full page visible at fit-to-width */
 .story-pdf-slide.pdf-slide-cover  { justify-content: center; }
-/* Content pages: centred so both images and text columns are visible;
-   users can pinch-zoom to reach the far-right edge if needed */
-.story-pdf-slide.pdf-slide-content { justify-content: center; }
+/* Image slide: left-aligned → shows the image/left column of the landscape page */
+.story-pdf-slide.pdf-slide-image  { justify-content: flex-start; }
+/* Text slide: right-aligned → shows the text/right column of the landscape page */
+.story-pdf-slide.pdf-slide-text   { justify-content: flex-end; }
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */

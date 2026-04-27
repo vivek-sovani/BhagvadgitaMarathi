@@ -134,33 +134,58 @@
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        // isCover: page 1 of a PDF without a pre-slide uses fit-to-width (no extra zoom)
-        // If an imageUrl slide is already in the container, treat ALL PDF pages as content
+        // isCover: page 1 without a pre-slide → single centred slide at fit-to-width
         const hasPreSlide  = !!container.querySelector('.story-pdf-slide');
         const isCover      = (p === 1) && !hasPreSlide;
         const fitScale     = Math.min(targetW / vp0.width, targetH / vp0.height);
-        // adaptiveZoom: scales with container width so text is readable on mobile
-        // but is also capped so the canvas height never exceeds ~68 vh —
-        // this keeps the katha scroll hint visible below the PDF viewer
+        // adaptiveZoom capped by viewport height so scroll hint stays visible below viewer
         const widthZoom    = 750 / targetW;
         const heightZoom   = (window.innerHeight * 0.68) / (vp0.height * fitScale);
         const adaptiveZoom = Math.max(1.0, Math.min(zoom, widthZoom, heightZoom));
         const logicalScale = fitScale * (isCover ? 1.0 : adaptiveZoom);
         // Render at dpr× for sharp text on retina/high-dpi screens
         const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
-        const canvas = document.createElement('canvas');
-        canvas.width  = vp.width;   // physical px (e.g. 3× on iPhone)
-        canvas.height = vp.height;
-        // CSS size stays at logical px so the canvas isn't displayed bigger than rendered
-        canvas.style.width  = Math.round(vp.width  / dpr) + 'px';
-        canvas.style.height = Math.round(vp.height / dpr) + 'px';
-        canvas.className = 'story-pdf-page';
-        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-        // Cover: centred (fit-to-width image). Content: centred so images AND text are visible.
-        const slide = document.createElement('div');
-        slide.className = 'story-pdf-slide ' + (isCover ? 'pdf-slide-cover' : 'pdf-slide-content');
-        slide.appendChild(canvas);
-        container.appendChild(slide);
+        const cssW  = Math.round(vp.width  / dpr) + 'px';
+        const cssH  = Math.round(vp.height / dpr) + 'px';
+
+        if (isCover) {
+          // ── Cover: single centred slide ──────────────────────────
+          const canvas = document.createElement('canvas');
+          canvas.width = vp.width; canvas.height = vp.height;
+          canvas.style.width = cssW; canvas.style.height = cssH;
+          canvas.className = 'story-pdf-page';
+          await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+          const slide = document.createElement('div');
+          slide.className = 'story-pdf-slide pdf-slide-cover';
+          slide.appendChild(canvas);
+          container.appendChild(slide);
+        } else {
+          // ── Content: render once → two slides (image left, text right) ──
+          // Render into a primary canvas, copy to a second canvas for the image view.
+          // This way the user swipes: [image half] → [text half] for each page.
+          const primary = document.createElement('canvas');
+          primary.width = vp.width; primary.height = vp.height;
+          await page.render({ canvasContext: primary.getContext('2d'), viewport: vp }).promise;
+
+          // Image slide — flex-start shows the left (image) column
+          const imgCanvas = document.createElement('canvas');
+          imgCanvas.width = vp.width; imgCanvas.height = vp.height;
+          imgCanvas.style.width = cssW; imgCanvas.style.height = cssH;
+          imgCanvas.className = 'story-pdf-page';
+          imgCanvas.getContext('2d').drawImage(primary, 0, 0);
+          const imgSlide = document.createElement('div');
+          imgSlide.className = 'story-pdf-slide pdf-slide-image';
+          imgSlide.appendChild(imgCanvas);
+          container.appendChild(imgSlide);
+
+          // Text slide — flex-end shows the right (text) column
+          primary.style.width = cssW; primary.style.height = cssH;
+          primary.className = 'story-pdf-page';
+          const txtSlide = document.createElement('div');
+          txtSlide.className = 'story-pdf-slide pdf-slide-text';
+          txtSlide.appendChild(primary);
+          container.appendChild(txtSlide);
+        }
       }
     } catch (e) {
       container.innerHTML = '<div class="story-pdf-error">PDF लोड होऊ शकले नाही</div>';
