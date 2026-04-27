@@ -1562,6 +1562,39 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   }
 }
 
+/* ===== DESKTOP कथा — 2-COLUMN GRID ===== */
+/* On PC: PDF viewer sits left, shloka/gita-connect/sankalp sit right.
+   Everything is visible without vertical scrolling.
+   Mobile (< 768 px): normal single-column stack (no change). */
+@media (min-width: 768px) {
+
+  /* Constrain story width on large monitors for comfortable reading */
+  .concept-story {
+    max-width: 860px;
+  }
+
+  /* 2-column grid — only when a PDF/image viewer is present */
+  .concept-story.katha-pdf-mode {
+    display: grid;
+    grid-template-columns: minmax(0, 54%) minmax(0, 1fr);
+    column-gap: 18px;
+    align-items: start;
+  }
+
+  /* Left column — media viewer */
+  .concept-story.katha-pdf-mode > .story-pdf-viewer,
+  .concept-story.katha-pdf-mode > .story-img-viewer {
+    grid-column: 1;
+  }
+
+  /* Right column — text cards */
+  .concept-story.katha-pdf-mode > .story-shloka-card,
+  .concept-story.katha-pdf-mode > .story-concept-summary,
+  .concept-story.katha-pdf-mode > .story-card {
+    grid-column: 2;
+  }
+}
+
 /* ===== PDF CAROUSEL ===== */
 .pdf-section {
   background: var(--surface-2);

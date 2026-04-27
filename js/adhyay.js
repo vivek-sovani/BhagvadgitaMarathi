@@ -656,6 +656,8 @@
         </div>
       </div>`;
       html += `</div>`; // end .story-card
+      // Desktop 2-column grid — PDF/image left, text cards right
+      el.classList.add('katha-pdf-mode');
       el.innerHTML = html;
       // Wire मोठे करा button
       const kathaFullViewBtn = el.querySelector('.pdf-fullview-btn');
@@ -830,6 +832,8 @@
 
     html += `</div>`; // end .story-card
 
+    // HTML-story mode — no PDF, no grid
+    el.classList.remove('katha-pdf-mode');
     el.innerHTML = html;
     return true;
   }
