@@ -371,6 +371,7 @@ const GITA_STORIES = {
   // ── Concept 3 ──────────────────────────────────────────────────
   "3": {
     pdfUrl: "assets/adhyay-2/concept-3-katha.pdf",
+    audioUrl: "assets/adhyay-2/concept-3-shravan.m4a",
     shloka: {
       ref: "गीता २.२३–२४",
       text: "नैनं छिन्दन्ति शस्त्राणि नैनं दहति पावकः ।\nन चैनं क्लेदयन्त्यापो न शोषयति मारुतः ।।",
