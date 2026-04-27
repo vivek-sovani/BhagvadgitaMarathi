@@ -125,7 +125,8 @@
       // Remove the loading spinner but keep any pre-rendered slides (imageUrl slide)
       const spinner = container.querySelector('.story-pdf-loading');
       if (spinner) spinner.remove();
-      const dpr     = window.devicePixelRatio || 1;
+      const dpr       = window.devicePixelRatio || 1;
+      const isDesktop = window.innerWidth >= 768;
       // Logical (CSS) pixel dimensions the slide is displayed at
       const targetW = container.clientWidth  > 0 ? container.clientWidth  : Math.max(300, window.innerWidth  - 32);
       // Use a tall fallback so portrait PDFs are always width-limited (no vertical clipping)
@@ -134,22 +135,28 @@
         const page  = await pdf.getPage(p);
         const rotation = page.rotate || 0;
         const vp0   = page.getViewport({ scale: 1, rotation });
-        // isCover: page 1 without a pre-slide → single centred slide at fit-to-width
+        // isCover: page 1 without a pre-slide → single centred slide
         const hasPreSlide  = !!container.querySelector('.story-pdf-slide');
         const isCover      = (p === 1) && !hasPreSlide;
         const fitScale     = Math.min(targetW / vp0.width, targetH / vp0.height);
-        // adaptiveZoom capped by viewport height so scroll hint stays visible below viewer
         const widthZoom    = 750 / targetW;
-        const heightZoom   = (window.innerHeight * 0.68) / (vp0.height * fitScale);
-        const adaptiveZoom = Math.max(1.0, Math.min(zoom, widthZoom, heightZoom));
-        const logicalScale = fitScale * (isCover ? 1.0 : adaptiveZoom);
+        // Desktop: cap height to ~40% viewport so text cards fit below without scrolling.
+        // Mobile: cap to 68% viewport so the scroll hint remains visible.
+        const viewFraction = isDesktop ? 0.40 : 0.68;
+        const minZoom      = isDesktop ? 0.5  : 1.0;
+        const heightZoom   = (window.innerHeight * viewFraction) / (vp0.height * fitScale);
+        const adaptiveZoom = Math.max(minZoom, Math.min(zoom, widthZoom, heightZoom));
+        // Cover on mobile: fit full width (no height cap); all desktop pages: height-capped
+        const logicalScale = fitScale * (isCover && !isDesktop ? 1.0 : adaptiveZoom);
         // Render at dpr× for sharp text on retina/high-dpi screens
         const vp    = page.getViewport({ scale: logicalScale * dpr, rotation });
         const cssW  = Math.round(vp.width  / dpr) + 'px';
         const cssH  = Math.round(vp.height / dpr) + 'px';
 
-        if (isCover) {
-          // ── Cover: single centred slide ──────────────────────────
+        if (isCover || isDesktop) {
+          // ── Single centred slide ─────────────────────────────────
+          // Cover on mobile / ALL pages on desktop: show the full landscape page
+          // in one slide so image + text are both visible simultaneously.
           const canvas = document.createElement('canvas');
           canvas.width = vp.width; canvas.height = vp.height;
           canvas.style.width = cssW; canvas.style.height = cssH;
@@ -160,14 +167,13 @@
           slide.appendChild(canvas);
           container.appendChild(slide);
         } else {
-          // ── Content: render once → two slides (image left, text right) ──
-          // Render into a primary canvas, copy to a second canvas for the image view.
-          // This way the user swipes: [image half] → [text half] for each page.
+          // ── Mobile content pages: render once → two slides ───────
+          // User swipes: [image half → left] then [text half → right]
           const primary = document.createElement('canvas');
           primary.width = vp.width; primary.height = vp.height;
           await page.render({ canvasContext: primary.getContext('2d'), viewport: vp }).promise;
 
-          // Image slide — flex-start shows the left (image) column
+          // Image slide — flex-start reveals the left (image) column
           const imgCanvas = document.createElement('canvas');
           imgCanvas.width = vp.width; imgCanvas.height = vp.height;
           imgCanvas.style.width = cssW; imgCanvas.style.height = cssH;
@@ -178,7 +184,7 @@
           imgSlide.appendChild(imgCanvas);
           container.appendChild(imgSlide);
 
-          // Text slide — flex-end shows the right (text) column
+          // Text slide — flex-end reveals the right (text) column
           primary.style.width = cssW; primary.style.height = cssH;
           primary.className = 'story-pdf-page';
           const txtSlide = document.createElement('div');
@@ -656,8 +662,6 @@
         </div>
       </div>`;
       html += `</div>`; // end .story-card
-      // Desktop 2-column grid — PDF/image left, text cards right
-      el.classList.add('katha-pdf-mode');
       el.innerHTML = html;
       // Wire मोठे करा button
       const kathaFullViewBtn = el.querySelector('.pdf-fullview-btn');
@@ -832,8 +836,7 @@
 
     html += `</div>`; // end .story-card
 
-    // HTML-story mode — no PDF, no grid
-    el.classList.remove('katha-pdf-mode');
+    // HTML-story mode — no PDF
     el.innerHTML = html;
     return true;
   }
