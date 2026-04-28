@@ -1492,6 +1492,31 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     height: auto;
   }
 }
+
+/* Desktop/tablet कथा: one 2-column description slide after PDF pages */
+@media (min-width: 768px) {
+  .story-pdf-slide.pdf-slide-summary {
+    display: grid;                       /* overrides base display:flex */
+    grid-template-columns: 1fr 1fr;
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px 14px 20px;
+    background: var(--surface-1);
+    overflow: visible;                   /* columns manage their own scroll */
+  }
+  .summary-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 38vh;                    /* ~matches 40vh PDF slide height cap */
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,150,58,0.4) transparent;
+  }
+  .summary-col::-webkit-scrollbar       { width: 4px; }
+  .summary-col::-webkit-scrollbar-thumb { background: rgba(201,150,58,0.4); border-radius: 4px; }
+}
+
 .story-pdf-page {
   display: block;
   /* width/height set explicitly by JS (logical px) — do not override */

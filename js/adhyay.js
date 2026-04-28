@@ -702,6 +702,35 @@
             // Hide scroll-down hint — everything is now in the carousel
             const hint = el.querySelector('.katha-scroll-hint');
             if (hint) hint.style.display = 'none';
+          } else {
+            // Desktop/tablet: one slide with 2-column grid layout
+            const pagesEl = el.querySelector(`#${pdfPagesId}`);
+            if (!pagesEl) return;
+
+            const slide = document.createElement('div');
+            slide.className = 'story-pdf-slide pdf-slide-summary';
+
+            // Left column — श्लोक + संकल्पना सारांश
+            const colLeft = document.createElement('div');
+            colLeft.className = 'summary-col';
+            ['story-shloka-card', 'story-concept-summary'].forEach(cls => {
+              const elem = el.querySelector(`.${cls}`);
+              if (elem) colLeft.appendChild(elem);
+            });
+
+            // Right column — गीता संदेश + स्वतःला विचारा + संकल्प
+            const colRight = document.createElement('div');
+            colRight.className = 'summary-col';
+            const storyCard = el.querySelector('.story-card');
+            if (storyCard) colRight.appendChild(storyCard);
+
+            slide.appendChild(colLeft);
+            slide.appendChild(colRight);
+            pagesEl.appendChild(slide);
+
+            // Hide scroll-down hint — content is now in carousel
+            const hint = el.querySelector('.katha-scroll-hint');
+            if (hint) hint.style.display = 'none';
           }
         });
         const pagesEl = el.querySelector(`#${pdfPagesId}`);
