@@ -2016,6 +2016,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   outline: none;
 }
 
+/* ── Shravan floating round button (on concept image) ── */
+.shravan-fab {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(217, 119, 6, 0.90);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.22);
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.65);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  z-index: 10;
+}
+.shravan-fab:hover {
+  background: var(--primary);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(217,119,6,0.40);
+}
+.shravan-fab:active { transform: scale(0.94); }
+
 /* ── Concept trigger block (section menu landing) ── */
 .smenu-summary { margin: 0; }
 

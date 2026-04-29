@@ -55,6 +55,7 @@
   const sectionBackBar   = document.getElementById('section-back-bar');
   const sectionBackTitle = document.getElementById('section-back-title');
   const smenuKathaCard   = document.getElementById('smenu-katha-card');
+  const shravanFab       = document.getElementById('shravan-fab');
   const fontSizeCtrl     = document.getElementById('font-size-ctrl');
 
   // ── Adhyay PDF inline viewer ──────────────────────────────────
@@ -586,6 +587,8 @@
   // Wire section back button — use history.back() for consistency with browser back
   const sectionBackBtnEl = document.getElementById('section-back-btn');
   if (sectionBackBtnEl) sectionBackBtnEl.addEventListener('click', () => history.back());
+  // Wire shravan round FAB — navigates to shravan section
+  if (shravanFab) shravanFab.addEventListener('click', () => showSection('shravan'));
 
   function renderStory(adhyayIdStr, conceptIdStr) {
     const el = conceptStoryContent;
@@ -1097,8 +1100,6 @@
 
     // ── Render श्रवण section ──────────────────────────────────────
     const shravanContent  = document.getElementById('shravan-content');
-    const shravanCard     = document.getElementById('smenu-shravan-card');
-    const shravanSubEl    = document.getElementById('smenu-shravan-sub');
     const storyEntry = (typeof GITA_STORIES !== 'undefined')
       && GITA_STORIES[adhyay.id]
       && GITA_STORIES[adhyay.id][String(cid)];
@@ -1116,19 +1117,11 @@
               तुमचा ब्राउझर ऑडिओ प्लेयर सपोर्ट करत नाही.
             </audio>
           </div>`;
-        if (shravanCard)  shravanCard.classList.remove('smenu-disabled');
-        if (shravanSubEl) shravanSubEl.textContent = 'ऑडिओ उपलब्ध';
       } else {
-        shravanContent.innerHTML = `
-          <div class="shravan-coming-soon">
-            <div class="scs-icon">🔊</div>
-            <div class="scs-title">श्रवण</div>
-            <div class="scs-sub">ऑडिओ सामग्री लवकरच येत आहे…</div>
-          </div>`;
-        if (shravanCard)  shravanCard.classList.add('smenu-disabled');
-        if (shravanSubEl) shravanSubEl.textContent = 'लवकरच येत आहे…';
+        shravanContent.innerHTML = '';
       }
     }
+    if (shravanFab) shravanFab.style.display = audioUrl ? '' : 'none';
 
     // Build bottom nav for all sections
     buildSectionNav('vivechan',    hasStory);
