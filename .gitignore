@@ -3,3 +3,4 @@
 assets/**/*o.pdf
 assets/**/*o.jpeg
 assets/**/*o.jpg
+__pycache__/
