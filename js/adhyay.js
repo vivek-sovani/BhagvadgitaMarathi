@@ -387,7 +387,10 @@
   // (avoids racing with the concept PDF render in selectConcept)
   const initialConceptId = parseInt(params.get('concept'), 10) || null;
   if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
-    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, null, false);
+    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, () => {
+      const pagesEl = document.getElementById('adhyay-pdf-pages');
+      if (pagesEl) attachPdfZoom(pagesEl);
+    }, false);
   }
 
   // ── Render concept text ────────────────────────────────────────
@@ -919,6 +922,8 @@
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
     pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
+    const adhyayPdfEl = document.getElementById('adhyay-pdf-pages');
+    if (adhyayPdfEl) adhyayPdfEl.innerHTML = '<div class="story-pdf-loading">PDF लोड होत आहे…</div>';
     renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, null, false);
     if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF viewer
     // Restore header label to chapter name (no back arrow)
