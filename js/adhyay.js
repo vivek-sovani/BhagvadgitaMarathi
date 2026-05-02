@@ -118,7 +118,7 @@
   // Renders all pages of a PDF as horizontal canvases inside containerId.
   // If the container already has slides (e.g. an imageUrl pre-slide), they are
   // preserved — only the loading spinner is removed before appending PDF pages.
-  async function renderStoryPdfPages(url, containerId, zoom = 1.0, onDone = null) {
+  async function renderStoryPdfPages(url, containerId, zoom = 1.0, onDone = null, splitPages = true) {
     const container = document.getElementById(containerId);
     if (!container || typeof pdfjsLib === 'undefined') return;
     try {
@@ -154,10 +154,9 @@
         const cssW  = Math.round(vp.width  / dpr) + 'px';
         const cssH  = Math.round(vp.height / dpr) + 'px';
 
-        if (isCover || isDesktop) {
+        if (isCover || isDesktop || !splitPages) {
           // ── Single centred slide ─────────────────────────────────
-          // Cover on mobile / ALL pages on desktop: show the full landscape page
-          // in one slide so image + text are both visible simultaneously.
+          // Cover on mobile / ALL pages on desktop / presentation PDFs: one slide per page.
           const canvas = document.createElement('canvas');
           canvas.width = vp.width; canvas.height = vp.height;
           canvas.style.width = cssW; canvas.style.height = cssH;
@@ -168,7 +167,7 @@
           slide.appendChild(canvas);
           container.appendChild(slide);
         } else {
-          // ── Mobile content pages: render once → two slides ───────
+          // ── Mobile katha pages: render once → two slides ─────────
           // User swipes: [image half → left] then [text half → right]
           const primary = document.createElement('canvas');
           primary.width = vp.width; primary.height = vp.height;
@@ -388,7 +387,7 @@
   // (avoids racing with the concept PDF render in selectConcept)
   const initialConceptId = parseInt(params.get('concept'), 10) || null;
   if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
-    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages');
+    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, null, false);
   }
 
   // ── Render concept text ────────────────────────────────────────
@@ -920,7 +919,7 @@
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
     pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
-    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages');
+    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, null, false);
     if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF viewer
     // Restore header label to chapter name (no back arrow)
     headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
@@ -1134,7 +1133,7 @@
 
     if (pdfOpenBar) pdfOpenBar.style.display = 'none';
     pendingPdfUrl = conceptPdfUrl;
-    renderStoryPdfPages(pendingPdfUrl, cpdfId);
+    renderStoryPdfPages(pendingPdfUrl, cpdfId, 1.0, null, false);
     const cpdfPagesEl = sadarikaranContent.querySelector(`#${cpdfId}`);
     if (cpdfPagesEl) attachPdfZoom(cpdfPagesEl);
   }
