@@ -72,15 +72,15 @@ def compress_pdf(path):
             "-q", "-dBATCH", "-dNOPAUSE", "-dSAFER",
             "-sDEVICE=pdfwrite",
             "-dCompatibilityLevel=1.5",
-            "-dPDFSETTINGS=/ebook",   # 150 dpi images — good quality, smaller size
+            "-dPDFSETTINGS=/printer",  # 200 dpi images — high quality
             "-dEmbedAllFonts=true",
             "-dSubsetFonts=true",
             "-dColorImageDownsampleType=/Bicubic",
-            "-dColorImageResolution=150",
+            "-dColorImageResolution=200",
             "-dGrayImageDownsampleType=/Bicubic",
-            "-dGrayImageResolution=150",
+            "-dGrayImageResolution=200",
             "-dMonoImageDownsampleType=/Bicubic",
-            "-dMonoImageResolution=150",
+            "-dMonoImageResolution=200",
             f"-sOutputFile={tmp}",
             path,
         ], capture_output=True)
