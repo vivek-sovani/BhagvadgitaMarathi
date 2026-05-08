@@ -508,7 +508,7 @@
 
   const SECTION_LABELS = {
     vivechan:    'ज्ञानेश्वर महाराज काय म्हणतात',
-    katha:       'आयुष्यातील क्षण',
+    katha:       adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण',
     sadarikaran: 'चित्ररूपी सादरीकरण',
     shravan:     'श्रवण',
   };
@@ -568,7 +568,7 @@
     // Cross-section jump pills (skip current section)
     [
       { id: 'vivechan',    icon: '📖', label: 'ज्ञानेश्वर',       show: true },
-      { id: 'katha',       icon: '📚', label: 'आयुष्यातील क्षण', show: hasStory },
+      { id: 'katha',       icon: '📚', label: adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण', show: hasStory },
       { id: 'sadarikaran', icon: '📄', label: 'चित्ररूपी',        show: true },
     ].forEach(s => {
       if (!s.show || s.id === sectionId) return;
@@ -1052,7 +1052,15 @@
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
 
     // Show/hide कथा card in section menu
-    if (smenuKathaCard) smenuKathaCard.style.display = hasStory ? '' : 'none';
+    if (smenuKathaCard) {
+      smenuKathaCard.style.display = hasStory ? '' : 'none';
+      if (adhyayId === 4) {
+        const t = smenuKathaCard.querySelector('.smenu-title');
+        const s = smenuKathaCard.querySelector('.smenu-sub');
+        if (t) t.textContent = 'आधुनिक योगी';
+        if (s) s.textContent = 'वास्तविक जीवनकथा';
+      }
+    }
 
     // ── Concept trigger text in section menu ──
     const smenuSummaryEl = document.getElementById('smenu-summary');
