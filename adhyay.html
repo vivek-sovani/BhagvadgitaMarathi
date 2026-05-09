@@ -93,7 +93,7 @@
         </div>
         <div class="concept-info-body">
 
-          <!-- ── Section menu (4 cards) — default view when concept selected ── -->
+          <!-- ── Section menu (3 cards) — default view when concept selected ── -->
           <div class="section-menu" id="section-menu" style="display:none">
             <p class="smenu-summary" id="smenu-summary" style="display:none"></p>
             <button class="smenu-card" data-section="vivechan">
@@ -112,14 +112,8 @@
               </div>
               <div class="smenu-arrow">→</div>
             </button>
-            <button class="smenu-card" data-section="sadarikaran">
-              <div class="smenu-icon-wrap">🖼️</div>
-              <div class="smenu-text">
-                <div class="smenu-title">चित्ररूपी सादरीकरण</div>
-                <div class="smenu-sub">संकल्पना PDF</div>
-              </div>
-              <div class="smenu-arrow">→</div>
-            </button>
+            <!-- Presentation PDF embedded inline on concept landing page -->
+            <div id="smenu-presentation"></div>
           </div>
 
           <!-- ── Back bar — shown when a section content is active ── -->
@@ -139,10 +133,6 @@
           <div class="section-content" id="section-katha" style="display:none">
             <div class="concept-story" id="concept-story-content"></div>
             <div class="section-bottom-nav" id="snav-katha"></div>
-          </div>
-          <div class="section-content" id="section-sadarikaran" style="display:none">
-            <div id="sadarikaran-content"></div>
-            <div class="section-bottom-nav" id="snav-sadarikaran"></div>
           </div>
           <div class="section-content" id="section-shravan" style="display:none">
             <div id="shravan-content"></div>
