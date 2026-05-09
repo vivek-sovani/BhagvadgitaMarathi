@@ -509,7 +509,6 @@
   const SECTION_LABELS = {
     vivechan:    'ज्ञानेश्वर महाराज काय म्हणतात',
     katha:       adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण',
-    sadarikaran: 'चित्ररूपी सादरीकरण',
     shravan:     'श्रवण',
   };
 
@@ -527,7 +526,7 @@
   function showSectionMenu() {
     if (sectionMenu)    sectionMenu.style.display    = '';
     if (sectionBackBar) sectionBackBar.style.display = 'none';
-    ['vivechan', 'katha', 'sadarikaran', 'shravan'].forEach(s => {
+    ['vivechan', 'katha', 'shravan'].forEach(s => {
       const el = document.getElementById(`section-${s}`);
       if (el) el.style.display = 'none';
     });
@@ -540,7 +539,7 @@
       sectionBackBar.style.display = '';
       if (sectionBackTitle) sectionBackTitle.textContent = SECTION_LABELS[name] || name;
     }
-    ['vivechan', 'katha', 'sadarikaran', 'shravan'].forEach(s => {
+    ['vivechan', 'katha', 'shravan'].forEach(s => {
       const el = document.getElementById(`section-${s}`);
       if (el) el.style.display = s === name ? 'block' : 'none';
     });
@@ -567,9 +566,8 @@
     navEl.appendChild(menuPill);
     // Cross-section jump pills (skip current section)
     [
-      { id: 'vivechan',    icon: '📖', label: 'ज्ञानेश्वर',       show: true },
-      { id: 'katha',       icon: '📚', label: adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण', show: hasStory },
-      { id: 'sadarikaran', icon: '📄', label: 'चित्ररूपी',        show: true },
+      { id: 'vivechan', icon: '📖', label: 'ज्ञानेश्वर',       show: true },
+      { id: 'katha',    icon: '📚', label: adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण', show: hasStory },
     ].forEach(s => {
       if (!s.show || s.id === sectionId) return;
       const pill = document.createElement('button');
@@ -1083,12 +1081,12 @@
       }
     }
 
-    // Inject concept PDF viewer into सादरीकरण section
+    // Inject concept PDF viewer directly into संकल्पना landing page
     const cpdfId = `cpdf-${adhyay.id}-${cid}`;
     const conceptPdfUrl = assetPath(`concept-${concept.id}.pdf`);
-    const sadarikaranContent = document.getElementById('sadarikaran-content');
-    if (sadarikaranContent) {
-      sadarikaranContent.innerHTML = `
+    const smenuPresentation = document.getElementById('smenu-presentation');
+    if (smenuPresentation) {
+      smenuPresentation.innerHTML = `
         <div class="story-pdf-viewer concept-pdf-viewer">
           <div class="story-pdf-viewer-header">
             <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} सादरीकरण</div>
@@ -1099,9 +1097,7 @@
           </div>
           <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
         </div>`;
-      // Wire full-view button — always capture conceptPdfUrl in closure (not pendingPdfUrl)
-      // so opening कथा PDF first does not corrupt this button's target
-      const fullViewBtn = sadarikaranContent.querySelector('.pdf-fullview-btn');
+      const fullViewBtn = smenuPresentation.querySelector('.pdf-fullview-btn');
       if (fullViewBtn) {
         fullViewBtn.addEventListener('click', () => {
           pendingPdfUrl = conceptPdfUrl;
@@ -1136,10 +1132,9 @@
     if (shravanFab) shravanFab.style.display = audioUrl ? '' : 'none';
 
     // Build bottom nav for all sections
-    buildSectionNav('vivechan',    hasStory);
-    buildSectionNav('katha',       hasStory);
-    buildSectionNav('sadarikaran', hasStory);
-    buildSectionNav('shravan',     hasStory);
+    buildSectionNav('vivechan', hasStory);
+    buildSectionNav('katha',    hasStory);
+    buildSectionNav('shravan',  hasStory);
 
     // Show section menu as the landing view for this concept
     showSectionMenu();
@@ -1147,7 +1142,7 @@
     if (pdfOpenBar) pdfOpenBar.style.display = 'none';
     pendingPdfUrl = conceptPdfUrl;
     renderStoryPdfPages(pendingPdfUrl, cpdfId, 1.0, null, false);
-    const cpdfPagesEl = sadarikaranContent.querySelector(`#${cpdfId}`);
+    const cpdfPagesEl = smenuPresentation && smenuPresentation.querySelector(`#${cpdfId}`);
     if (cpdfPagesEl) attachPdfZoom(cpdfPagesEl);
   }
 
