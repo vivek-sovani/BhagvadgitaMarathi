@@ -276,8 +276,21 @@ def process_pdf(src: Path, dst: Path, dry_run: bool, compare: bool) -> bool:
         return False
 
     dst.parent.mkdir(parents=True, exist_ok=True)
-    doc.save(str(dst), garbage=4, deflate=True, clean=True)
-    doc.close()
+    # PyMuPDF forbids non-incremental in-place saves; always write to a temp
+    # file and atomically replace the destination.
+    import tempfile, os
+    with tempfile.NamedTemporaryFile(
+        suffix=".pdf", dir=dst.parent, delete=False
+    ) as tmp:
+        tmp_path = Path(tmp.name)
+    try:
+        doc.save(str(tmp_path), garbage=4, deflate=True, clean=True)
+        doc.close()
+        os.replace(tmp_path, dst)
+    except Exception:
+        doc.close()
+        tmp_path.unlink(missing_ok=True)
+        raise
     print(f"  [OK] {src.name} → {dst}")
     return True
 
