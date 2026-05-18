@@ -56,12 +56,12 @@ except ImportError as e:
 # Watermark geometry constants (expressed as fractions of image dimensions)
 # Tuned on NotebookLM slide exports (1376×768 PDF pages, 1143×2048 JPEGs).
 # ---------------------------------------------------------------------------
-WM_HEIGHT_FRAC = 0.04   # bottom 4 % of image height
-WM_WIDTH_FRAC  = 0.20   # rightmost 20 % of image width
-WM_MIN_H = 20           # never go below this many pixels tall
-WM_MAX_H = 60           # cap to avoid eating real content
+WM_HEIGHT_FRAC = 0.07   # bottom 7 % of image height
+WM_WIDTH_FRAC  = 0.22   # rightmost 22 % of image width
+WM_MIN_H = 30           # never go below this many pixels tall
+WM_MAX_H = 130          # cap to avoid eating real content
 WM_MIN_W = 150          # minimum width of fill region
-WM_MAX_W = 320          # maximum width of fill region
+WM_MAX_W = 350          # maximum width of fill region
 
 # Patterns that identify a NotebookLM text-layer watermark (text PDFs only)
 _WM_PATTERNS = [
