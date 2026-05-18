@@ -55,13 +55,20 @@ except ImportError as e:
 # ---------------------------------------------------------------------------
 # Watermark geometry constants (expressed as fractions of image dimensions)
 # Tuned on NotebookLM slide exports (1376×768 PDF pages, 1143×2048 JPEGs).
+#
+# The badge ("🔔 NotebookLM") sits in the bottom-right corner.
+# Measured positions across all slide types:
+#   concept slides 1143×2048 : badge bottom edge ≈  9–15 px from image bottom
+#   summary slides 1143×2048 : badge bottom edge ≈ 46 px from image bottom
+#   PDF pages      1376×768  : badge bottom edge ≈ 11–20 px from image bottom
+# → 55 px height safely covers all cases without reaching slide text.
 # ---------------------------------------------------------------------------
-WM_HEIGHT_FRAC = 0.07   # bottom 7 % of image height
-WM_WIDTH_FRAC  = 0.22   # rightmost 22 % of image width
-WM_MIN_H = 30           # never go below this many pixels tall
-WM_MAX_H = 130          # cap to avoid eating real content
-WM_MIN_W = 150          # minimum width of fill region
-WM_MAX_W = 350          # maximum width of fill region
+WM_HEIGHT_FRAC = 0.055  # bottom 5.5 % of image height
+WM_WIDTH_FRAC  = 0.15   # rightmost 15 % of image width
+WM_MIN_H = 30           # floor (px)
+WM_MAX_H = 55           # ceiling — keeps fill away from real content
+WM_MIN_W = 130          # floor (px)
+WM_MAX_W = 230          # ceiling (px)
 
 # Patterns that identify a NotebookLM text-layer watermark (text PDFs only)
 _WM_PATTERNS = [
@@ -82,32 +89,15 @@ def _wm_bounds(h: int, w: int) -> tuple[int, int, int, int]:
     return h - wm_h, h, w - wm_w, w
 
 
-def _sample_background(arr: np.ndarray, y0: int, y1: int, x0: int, x1: int,
-                        margin: int = 20) -> np.ndarray:
+def _sample_background(arr: np.ndarray, x0: int, x1: int) -> np.ndarray:
     """
-    Estimate the background colour by sampling rows above, below, and to the
-    left of the watermark bounding box.
+    Estimate the slide background colour by sampling the very last 5 rows of
+    the image in the watermark column range.  Those rows are always clean
+    background — no badge text ever reaches the absolute bottom edge.
     """
-    h, w, nc = arr.shape
-    bands: list[np.ndarray] = []
-
-    above = arr[max(0, y0 - margin): y0, x0: x1]
-    if above.size > 0:
-        bands.append(above.reshape(-1, nc))
-
-    below = arr[y1: min(h, y1 + margin), x0: x1]
-    if below.size > 0:
-        bands.append(below.reshape(-1, nc))
-
-    left = arr[y0: y1, max(0, x0 - margin): x0]
-    if left.size > 0:
-        bands.append(left.reshape(-1, nc))
-
-    if not bands:
-        return np.zeros(nc, dtype=np.uint8)
-
-    all_px = np.concatenate(bands, axis=0)
-    return np.median(all_px, axis=0).astype(np.uint8)
+    h, nc = arr.shape[0], arr.shape[2]
+    strip = arr[max(0, h - 5): h, x0: x1]
+    return np.median(strip.reshape(-1, nc), axis=0).astype(np.uint8)
 
 
 def _remove_watermark(arr: np.ndarray) -> np.ndarray:
@@ -119,7 +109,7 @@ def _remove_watermark(arr: np.ndarray) -> np.ndarray:
     nc = arr.shape[2] if arr.ndim == 3 else 1
 
     y0, y1, x0, x1 = _wm_bounds(h, w)
-    bg = _sample_background(arr, y0, y1, x0, x1)
+    bg = _sample_background(arr, x0, x1)
 
     out = arr.copy()
     out[y0:y1, x0:x1] = bg
@@ -128,18 +118,14 @@ def _remove_watermark(arr: np.ndarray) -> np.ndarray:
 
 def _has_watermark_content(arr: np.ndarray) -> bool:
     """
-    Heuristic: return True if the watermark region differs noticeably from
-    its surroundings (i.e. there is something in the corner to remove).
+    Return True if the fill region differs from the background by more than
+    a small threshold (i.e. there is badge content to erase).
     """
     h, w = arr.shape[:2]
     y0, y1, x0, x1 = _wm_bounds(h, w)
-
     region = arr[y0:y1, x0:x1].astype(float)
-    bg = _sample_background(arr, y0, y1, x0, x1).astype(float)
-
-    # Mean absolute difference between corner region and background estimate
-    diff = np.abs(region - bg).mean()
-    return bool(diff > 8)   # 8/255 threshold
+    bg = _sample_background(arr, x0, x1).astype(float)
+    return bool(np.abs(region - bg).mean() > 8)
 
 
 # ---------------------------------------------------------------------------
