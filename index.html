@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन</title>
   <meta name="description" content="गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#8B1A1A">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="गीता-ज्ञानेश्वरी">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="css/style.css">
@@ -69,5 +76,10 @@
 
   <script src="js/data.js"></script>
   <script src="js/home.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
 </body>
 </html>
