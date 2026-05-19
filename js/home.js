@@ -23,7 +23,7 @@
     const available = adhyay.available;
     const el = document.createElement(available ? 'a' : 'div');
     el.className = 'chapter' + (available ? '' : ' unavailable');
-    if (available) el.href = `/adhyay?id=${adhyay.id}`;
+    if (available) el.href = `./adhyay?id=${adhyay.id}`;
 
     el.innerHTML = `
       <div class="num-block">
@@ -72,7 +72,7 @@
   if (scRef)     scRef.textContent = `आजची संकल्पना · अध्याय ${adhyay.number} · ${concept.emoji} ${concept.name}`;
   if (scShlok)   scShlok.textContent = concept.tagline;
   if (scOvi)     scOvi.innerHTML = trigger.paras[0];
-  const conceptUrl = `/adhyay?id=${adhyay.id}&concept=${concept.id}`;
+  const conceptUrl = `./adhyay?id=${adhyay.id}&concept=${concept.id}`;
   const ctaLinked = trigger.cta.replace(
     /हे वाचा/g,
     `<a href="${conceptUrl}" style="color:var(--saffron);font-weight:600;text-decoration:underline;text-underline-offset:3px;">हे वाचा →</a>`

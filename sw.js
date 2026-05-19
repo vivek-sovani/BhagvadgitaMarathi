@@ -1,23 +1,23 @@
-const CACHE = 'gita-v7';
+const CACHE = 'gita-v8';
 
 const PRECACHE = [
-  '/',
-  '/adhyay',
-  '/concept',
-  '/css/style.css',
-  '/js/data.js',
-  '/js/home.js',
-  '/js/adhyay.js',
-  '/js/content.js',
-  '/js/stories.js',
-  '/js/triggers.js',
-  '/js/pdf-carousel.js',
-  '/js/pdf.worker.min.js',
-  '/assets/home-banner-landscape.jpg',
-  '/assets/home-banner-potrait.jpg',
-  '/assets/icons/icon-192.png',
-  '/assets/icons/icon-512.png',
-  '/manifest.json'
+  './',
+  './adhyay',
+  './concept',
+  './css/style.css',
+  './js/data.js',
+  './js/home.js',
+  './js/adhyay.js',
+  './js/content.js',
+  './js/stories.js',
+  './js/triggers.js',
+  './js/pdf-carousel.js',
+  './js/pdf.worker.min.js',
+  './assets/home-banner-landscape.jpg',
+  './assets/home-banner-potrait.jpg',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png',
+  './manifest.json'
 ];
 
 self.addEventListener('install', e => {
