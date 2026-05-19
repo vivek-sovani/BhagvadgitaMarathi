@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन</title>
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#8B1A1A">
+  <meta name="theme-color" content="#9c4a10">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -17,24 +17,46 @@
 </head>
 <body class="adhyay-page">
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <a class="header-app-link" href="index.html" title="मुख्यपान">
-      <span class="om">🕉️</span>
-      <div class="header-app-text">
-        <span class="title">गीता-ज्ञानेश्वरी</span>
-        <span class="subtitle">आधुनिक जीवनदर्शन</span>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">ॐ</span>
+        <span>गीता-ज्ञानेश्वरी</span>
+      </a>
+      <nav class="nav-links">
+        <a href="/">होम</a>
+        <a href="/#chapters" class="on">अध्याय</a>
+        <a href="concept.html">संकल्पना</a>
+        <button class="header-suchi-btn nav-cta" id="header-suchi-btn" style="border:0;cursor:pointer;font-family:inherit;font-size:14.5px;font-weight:500;">संकल्पना सूची</button>
+      </nav>
+      <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <div class="wrap">
+        <a href="/">होम</a>
+        <a href="/#chapters">अध्याय</a>
+        <a href="/concept">संकल्पना</a>
+        <button class="header-suchi-btn" id="mobile-suchi-btn" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:15px;color:var(--ink-soft);padding:12px 0;text-align:left;width:100%;">संकल्पना सूची</button>
       </div>
-    </a>
-    <span class="header-spacer"></span>
-    <button class="header-suchi-btn" id="header-suchi-btn" title="संकल्पना सूची">संकल्पना सूची</button>
-    <button class="header-adhyay-label" id="header-adhyay-label" title="अध्याय पानावर परत जा"></button>
+    </div>
+    <div class="wrap" style="padding-top:6px;padding-bottom:6px;border-top:1px solid color-mix(in oklab, var(--rule) 60%, transparent);">
+      <div class="crumb" style="margin:0;" id="adhyay-crumb">
+        <a href="/">होम</a>
+        <span class="sep">/</span>
+        <a href="/#chapters">अध्याय</a>
+        <span class="sep">/</span>
+        <span class="now" id="header-adhyay-label"></span>
+      </div>
+    </div>
   </header>
 
   <div class="adhyay-body" id="adhyay-body">
 
     <!-- Mobile-only home link (above image) -->
-    <a class="cover-home-link-mobile" href="index.html" aria-label="मुख्यपानावर जा">
+    <a class="cover-home-link-mobile" href="/" aria-label="मुख्यपानावर जा">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
       मुख्यपान
     </a>
@@ -53,7 +75,7 @@
         </div>
       </div>
       <div class="adhyay-summary-text" id="adhyay-summary-text" style="display:none">
-        <a class="cover-home-link" href="index.html" aria-label="मुख्यपानावर जा">
+        <a class="cover-home-link" href="/" aria-label="मुख्यपानावर जा">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
           मुख्यपान
         </a>
@@ -203,6 +225,30 @@
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js');
+    }
+    // Hamburger menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const nav = menuBtn && menuBtn.closest('.nav');
+    if (menuBtn && nav) {
+      menuBtn.addEventListener('click', () => {
+        const open = nav.classList.toggle('menu-open');
+        menuBtn.setAttribute('aria-expanded', open);
+      });
+      document.addEventListener('click', e => {
+        if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+          nav.classList.remove('menu-open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Mobile "संकल्पना सूची" button wires to the existing header-suchi-btn logic
+      const mobileSuchi = document.getElementById('mobile-suchi-btn');
+      const desktopSuchi = document.getElementById('header-suchi-btn');
+      if (mobileSuchi && desktopSuchi) {
+        mobileSuchi.addEventListener('click', () => {
+          nav.classList.remove('menu-open');
+          desktopSuchi.click();
+        });
+      }
     }
   </script>
 </body>

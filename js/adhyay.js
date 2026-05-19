@@ -6,7 +6,7 @@
 
   const adhyay = GITA_DATA.adhyays.find(a => a.id === adhyayId);
   if (!adhyay || !adhyay.available) {
-    window.location.replace('index.html');
+    window.location.replace('/');
     return;
   }
 
@@ -937,24 +937,24 @@
   if (prevConceptBtn) prevConceptBtn.addEventListener('click', () => {
     if (currentConceptId === null) {
       // Cover page → navigate to prev chapter
-      if (prevAdhyay) window.location.href = `adhyay.html?id=${prevAdhyay.id}`;
+      if (prevAdhyay) window.location.href = `/adhyay?id=${prevAdhyay.id}`;
     } else {
       // Concept page → prev concept (or prev adhyay, or cover)
       const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
       if (idx > 0) selectConcept(adhyay.concepts[idx - 1].id);
-      else if (prevAdhyay) window.location.href = `adhyay.html?id=${prevAdhyay.id}`;
+      else if (prevAdhyay) window.location.href = `/adhyay?id=${prevAdhyay.id}`;
       else goToCoverPage();
     }
   });
   if (nextConceptBtn) nextConceptBtn.addEventListener('click', () => {
     if (currentConceptId === null) {
       // Cover page → navigate to next chapter
-      if (nextAdhyay) window.location.href = `adhyay.html?id=${nextAdhyay.id}`;
+      if (nextAdhyay) window.location.href = `/adhyay?id=${nextAdhyay.id}`;
     } else {
       // Concept page → next concept (or next adhyay)
       const idx = adhyay.concepts.findIndex(c => c.id === currentConceptId);
       if (idx < adhyay.concepts.length - 1) selectConcept(adhyay.concepts[idx + 1].id);
-      else if (nextAdhyay) window.location.href = `adhyay.html?id=${nextAdhyay.id}`;
+      else if (nextAdhyay) window.location.href = `/adhyay?id=${nextAdhyay.id}`;
     }
   });
 

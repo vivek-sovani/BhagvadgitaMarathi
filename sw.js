@@ -1,8 +1,9 @@
-const CACHE = 'gita-v2';
+const CACHE = 'gita-v6';
 
 const PRECACHE = [
-  '/index.html',
-  '/adhyay.html',
+  '/',
+  '/adhyay',
+  '/concept',
   '/css/style.css',
   '/js/data.js',
   '/js/home.js',
@@ -39,6 +40,10 @@ self.addEventListener('fetch', e => {
 
   // Only handle same-origin requests
   if (url.origin !== location.origin) return;
+
+  // Let the browser handle HTML page navigation directly — avoids ERR_FAILED
+  // caused by server .html → clean-URL redirects conflicting with SW interception
+  if (request.mode === 'navigate') return;
 
   // PDFs: network-first, fall back to cache
   if (url.pathname.endsWith('.pdf')) {
