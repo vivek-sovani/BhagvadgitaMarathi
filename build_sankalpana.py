@@ -107,18 +107,24 @@ def paragraphs_html(text, cls="body"):
 
 
 def parse_md_table(text):
-    """Parse a markdown table into list of row dicts. Returns (headers, rows)."""
-    lines = [l for l in text.strip().split('\n') if l.strip() and not re.match(r'^\|[-| :]+\|$', l.strip())]
-    if not lines:
+    """Parse a markdown table — only reads lines starting with '|', preserving empty cells."""
+    table_lines = [l.strip() for l in text.split('\n')
+                   if l.strip().startswith('|') and not re.match(r'^\|[-:| ]+\|$', l.strip())]
+    if not table_lines:
         return [], []
-    headers = [c.strip() for c in lines[0].split('|') if c.strip()]
-    rows = []
-    for line in lines[1:]:
-        cells = [c.strip() for c in line.split('|') if c.strip() is not None]
-        # pad or trim
-        while len(cells) < len(headers):
-            cells.append('')
-        rows.append(cells[:len(headers)])
+
+    def split_row(line):
+        cells = line.split('|')
+        if cells and cells[0].strip() == '':
+            cells = cells[1:]
+        if cells and cells[-1].strip() == '':
+            cells = cells[:-1]
+        return [c.strip() for c in cells]
+
+    headers = split_row(table_lines[0])
+    rows = [split_row(l) for l in table_lines[1:]]
+    ncols = len(headers)
+    rows = [r[:ncols] + [''] * max(0, ncols - len(r)) for r in rows]
     return headers, rows
 
 
@@ -189,18 +195,32 @@ def parse_file(path):
     arth_key = 'संकल्पनेचा अर्थ'
     data['arth_body'] = sections.get(arth_key, '')
 
-    # ── Comparison (vs) table ──
+    # ── Comparison table (vs / तुलना / multi-part) ──
+    SKIP_FOR_COMPARE = ('गीतेची केंद्रीय संकल्पना', 'संकल्पनेचा अर्थ',
+                        'ज्ञानेश्वरी विवेचन', 'आधुनिक प्रसंग',
+                        'गैरसमज', 'सार', 'केंद्रीय श्लोक',
+                        'पुढे वाचा', 'रोजच्या जीवनात')
     compare_key = next((k for k in sections if ' vs ' in k), None)
+    if not compare_key:
+        # Also match तुलना and any non-standard section whose body contains a table
+        for k in sections:
+            if any(k.startswith(s) for s in SKIP_FOR_COMPARE):
+                continue
+            h, r = parse_md_table(sections[k])
+            if len(h) >= 2 and r:
+                compare_key = k
+                break
     if compare_key:
         cb = sections[compare_key]
         headers, rows = parse_md_table(cb)
-        # headers[1] = left col title, headers[2] = right col title
+        data['compare_headers'] = headers   # full list including empty label column
         data['compare_left_title'] = headers[1] if len(headers) > 1 else ''
         data['compare_right_title'] = headers[2] if len(headers) > 2 else ''
         data['compare_rows'] = rows
         data['compare_key'] = compare_key
     else:
         data['compare_key'] = None
+        data['compare_headers'] = []
 
     # ── ज्ञानेश्वरी विवेचन ──
     vivechan_key = 'ज्ञानेश्वरी विवेचन'
@@ -298,12 +318,13 @@ def parse_file(path):
     saar_key = 'सार'
     if saar_key in sections:
         sb2 = sections[saar_key]
-        # Extract blockquote shloka
-        bq_lines = [l[2:].strip() for l in sb2.split('\n') if l.strip().startswith('> ')]
-        data['saar_quote'] = ' '.join(bq_lines).strip()
-        # Bold meaning line
-        bold_m = re.search(r'\*\*(.+?)\*\*', sb2)
-        data['saar_meaning'] = bold_m.group(1).strip() if bold_m else ''
+        # All blockquote lines
+        bq_lines = [l.lstrip('>').strip() for l in sb2.split('\n') if l.strip().startswith('>')]
+        # Sanskrit/italic lines (not bold **) form the quote; bold lines form the meaning
+        quote_lines = [l for l in bq_lines if l and not l.startswith('**')]
+        meaning_lines = [re.sub(r'\*\*', '', l).strip() for l in bq_lines if l.startswith('**')]
+        data['saar_quote'] = ' '.join(quote_lines).strip()
+        data['saar_meaning'] = meaning_lines[0] if meaning_lines else ''
     else:
         data['saar_quote'] = ''
         data['saar_meaning'] = ''
@@ -550,21 +571,24 @@ def render_compare(data):
     if not data.get('compare_key'):
         return ''
     rows = data['compare_rows']
-    left_title = data['compare_left_title']
-    right_title = data['compare_right_title']
-    # Build bullet lists for each column
-    left_items = []
-    right_items = []
-    for row in rows:
-        if len(row) >= 3:
-            label = re.sub(r'\*\*', '', row[0]).strip()
-            left_val = parse_inline(row[1])
-            right_val = parse_inline(row[2])
-            left_items.append(f'<li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">{label}</strong><br/>{left_val}</li>')
-            right_items.append(f'<li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">{label}</strong><br/>{right_val}</li>')
-    left_list = '<ul style="margin:0 0 0 16px;padding:0;">' + ''.join(left_items) + '</ul>' if left_items else ''
-    right_list = '<ul style="margin:0 0 0 16px;padding:0;">' + ''.join(right_items) + '</ul>' if right_items else ''
-    return f'''
+    headers = data.get('compare_headers', [])
+    n_content = len(headers) - 1  # first col is empty label column
+
+    # 2-column: dark/light card layout
+    if n_content == 2:
+        left_title = headers[1] if len(headers) > 1 else ''
+        right_title = headers[2] if len(headers) > 2 else ''
+        left_items, right_items = [], []
+        for row in rows:
+            if len(row) >= 3:
+                label = re.sub(r'\*\*', '', row[0]).strip()
+                left_val = parse_inline(row[1])
+                right_val = parse_inline(row[2])
+                left_items.append(f'<li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">{label}</strong><br/>{left_val}</li>')
+                right_items.append(f'<li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">{label}</strong><br/>{right_val}</li>')
+        left_list = '<ul style="margin:0 0 0 16px;padding:0;">' + ''.join(left_items) + '</ul>' if left_items else ''
+        right_list = '<ul style="margin:0 0 0 16px;padding:0;">' + ''.join(right_items) + '</ul>' if right_items else ''
+        return f'''
       <div class="compare">
         <div class="compare-col">
           <h5>{left_title}</h5>
@@ -574,6 +598,25 @@ def render_compare(data):
           <h5>{right_title}</h5>
           {right_list}
         </div>
+      </div>'''
+
+    # 3+ columns: styled HTML table
+    col_titles = headers[1:]  # skip empty label column
+    th_cells = ''.join(f'<th style="font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--saffron-deep);padding:10px 14px;text-align:left;border-bottom:1px solid var(--rule);">{t}</th>' for t in col_titles)
+    table_rows = ''
+    for row in rows:
+        label = parse_inline(re.sub(r'\*\*', '', row[0]).strip()) if row else ''
+        td_cells = ''.join(
+            f'<td style="font-family:var(--serif-dev);font-size:15px;line-height:1.5;color:var(--ink-soft);padding:10px 14px;border-bottom:1px solid var(--rule);">{parse_inline(row[i]) if i < len(row) else ""}</td>'
+            for i in range(1, len(headers))
+        )
+        table_rows += f'<tr><td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;">{label}</td>{td_cells}</tr>'
+    return f'''
+      <div style="overflow-x:auto;margin-top:32px;">
+        <table style="width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden;">
+          <thead><tr><th style="padding:10px 14px;border-bottom:1px solid var(--rule);"></th>{th_cells}</tr></thead>
+          <tbody>{table_rows}</tbody>
+        </table>
       </div>'''
 
 
@@ -680,10 +723,10 @@ def generate_html(data, catalog):
     saar_quote = data['saar_quote']
     saar_meaning = data['saar_meaning']
     saar_html = ''
-    if saar_quote or saar_meaning:
-        saar_html = f'<p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;">"{parse_inline(saar_quote)}"</p>'
-        if saar_meaning:
-            saar_html += f'<p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0;">{parse_inline(saar_meaning)}</p>'
+    if saar_quote:
+        saar_html = f'<p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;">{parse_inline(saar_quote)}</p>'
+    if saar_meaning:
+        saar_html += f'<p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0 0 28px;">{saar_meaning}</p>'
 
     return f'''<!doctype html>
 <html lang="mr">
