@@ -6,6 +6,12 @@ Run from project root: python3 build_sankalpana.py
 import os, re
 from pathlib import Path
 
+DEV_DIGITS = str.maketrans('०१२३४५६७८९', '0123456789')
+
+def dev_to_int(s):
+    """Convert Devanagari numeral string to int (e.g. '१२' → 12)."""
+    return int(s.translate(DEV_DIGITS))
+
 SOURCE_DIR = Path("content/sankalpana")
 OUTPUT_DIR = Path("sankalpana")
 
@@ -167,6 +173,10 @@ def parse_file(path):
         sb = sections[shloka_key]
         codes = extract_code_blocks(sb)
         data['shloka_header'] = shloka_key.replace('केंद्रीय श्लोक · ', '').strip()
+        # Extract adhyay number for linking (e.g. "अध्याय २, श्लोक ४७" → 2)
+        chap_m = re.search(r'अध्याय\s+([०-९]+)', data['shloka_header'])
+        data['adhyay_num'] = dev_to_int(chap_m.group(1)) if chap_m else None
+        data['adhyay_dev'] = chap_m.group(1) if chap_m else None  # keep Devanagari for display
         data['shloka_sanskrit'] = codes[0] if len(codes) > 0 else ''
         data['shloka_ovi'] = codes[1] if len(codes) > 1 else ''
         # अर्थ paragraph
@@ -190,6 +200,8 @@ def parse_file(path):
         data['shloka_arth'] = ''
         data['ovi_label'] = 'ज्ञानेश्वरी ओवी'
         data['shloka_source'] = ''
+        data['adhyay_num'] = None
+        data['adhyay_dev'] = None
 
     # ── संकल्पनेचा अर्थ ──
     arth_key = 'संकल्पनेचा अर्थ'
@@ -686,6 +698,10 @@ def render_myth(data):
 
 def generate_html(data, catalog):
     title = data['title']
+    adhyay_num = data.get('adhyay_num')
+    adhyay_dev = data.get('adhyay_dev')
+    adhyay_url = f'../adhyay?id={adhyay_num}' if adhyay_num else '../adhyay'
+    adhyay_label = f'अध्याय {adhyay_dev} वाचा' if adhyay_dev else 'अध्याय वाचा'
     # Split title for display: try to emphasise last word
     title_parts = title.split()
     if len(title_parts) >= 2:
@@ -792,7 +808,7 @@ def generate_html(data, catalog):
 
         <div style="display:flex;flex-wrap:wrap;gap:12px;">
           <a href="#practice" class="btn btn-primary">रोजच्या जीवनात कसे आणावे?</a>
-          <a href="../adhyay" class="btn btn-ghost">अध्याय वाचा</a>
+          <a href="{adhyay_url}" class="btn btn-ghost">{adhyay_label}</a>
         </div>
       </div>
 
@@ -882,7 +898,7 @@ def generate_html(data, catalog):
     <div class="om-big">ॐ</div>
     {saar_html}
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;">
-      <a href="../adhyay" class="btn btn-primary">अध्याय वाचा</a>
+      <a href="{adhyay_url}" class="btn btn-primary">{adhyay_label}</a>
       <a href="../concept" class="btn btn-ghost">दुसरी संकल्पना</a>
     </div>
   </div>
@@ -902,7 +918,7 @@ def generate_html(data, catalog):
       <div>
         <h5>ग्रंथ</h5>
         <a href="../#chapters">सर्व अध्याय</a>
-        <a href="../adhyay">अध्याय २</a>
+        <a href="{adhyay_url}">{adhyay_label}</a>
         <a href="../concept">संकल्पना</a>
       </div>
       <div>
