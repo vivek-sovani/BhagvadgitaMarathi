@@ -21,6 +21,12 @@ SLUGS = [
     "lokasangraha", "maya", "moksha", "nishkam-karmayog",
     "prakriti-purusha", "samatva", "sannyasa-tyaga", "shraddha",
     "sthitapradnya", "trigunas", "vairagya", "vishwarupa",
+    # new batch
+    "abhaya", "ahimsa", "anasakthi", "astikya-buddhi", "chittashuddhi",
+    "dhairya", "indriya-nigraha", "krutagnyata", "kshama", "kshanbhanguratha",
+    "namasmarana", "prarabdha-purushartha", "samarpana", "sankalpa-vikalpa",
+    "satsang", "satya", "sevabhava", "sharanagati", "svadharma",
+    "tapa", "viveka", "yogakshema",
 ]
 
 ICONS = [
