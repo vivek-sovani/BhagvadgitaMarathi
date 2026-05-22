@@ -422,7 +422,7 @@
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
-  pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
+  pdfLabel.textContent = `📄 अध्याय ${adhyay.number} चित्रात्मक विवरण`;
   pendingPdfUrl = assetPath('adhyay.pdf');
   // Only render now if no concept will be selected immediately
   // (avoids racing with the concept PDF render in selectConcept)
@@ -956,7 +956,7 @@
     if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
     if (prevBtn) prevBtn.disabled = !prevAdhyay;
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
-    pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
+    pdfLabel.textContent = `📄 अध्याय ${adhyay.number} चित्रात्मक विवरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
     renderPdfVertical(pendingPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF panel
@@ -1156,7 +1156,7 @@
     showSectionMenu();
 
     // Load concept PDF into the right/swipe panel carousel
-    pdfLabel.textContent = `📄 संकल्पना ${toDevNum(concept.id)} सादरीकरण`;
+    pdfLabel.textContent = `📄 संकल्पना ${toDevNum(concept.id)} चित्रात्मक विवरण`;
     pendingPdfUrl = conceptPdfUrl;
     renderPdfVertical(conceptPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = '';
