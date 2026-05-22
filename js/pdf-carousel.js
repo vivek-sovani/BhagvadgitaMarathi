@@ -76,6 +76,7 @@ class PDFCarousel {
 
   async load(url) {
     if (!url) { this._showPlaceholder('📂', 'PDF उपलब्ध नाही'); return; }
+    if (typeof pdfjsLib === 'undefined') { this._showPlaceholder('⚠️', 'PDF लायब्ररी लोड झाली नाही'); return; }
     if (this.currentUrl === url && this.pdfDoc) return; // only skip if already loaded OK
     this.currentUrl = url;
 

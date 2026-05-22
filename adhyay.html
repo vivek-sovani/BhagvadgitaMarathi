@@ -55,132 +55,132 @@
 
   <div class="adhyay-body" id="adhyay-body">
 
-    <!-- Mobile-only home link (above image) -->
-    <a class="cover-home-link-mobile" href="./" aria-label="मुख्यपानावर जा">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      मुख्यपान
-    </a>
+    <!-- Left panel: summary, concept title bar, concept view -->
+    <div class="adhyay-main">
 
-    <!-- Adhyay summary image + text (shown when no concept selected) -->
-    <div id="summary-img-section">
-      <div class="adhyay-summary-img">
-        <img id="summary-img" src="" alt="अध्याय सारांश">
-        <div class="img-placeholder" id="summary-placeholder">
-          <span>🕉️</span>
-          <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
-        </div>
-        <div class="adhyay-cover-title" id="adhyay-cover-title">
-          <span class="act-num" id="act-num"></span>
-          <span class="act-name" id="act-name"></span>
-        </div>
-      </div>
-      <div class="adhyay-summary-text" id="adhyay-summary-text" style="display:none">
-        <a class="cover-home-link" href="./" aria-label="मुख्यपानावर जा">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-          मुख्यपान
-        </a>
-        <div class="summary-adhyay-label" id="summary-adhyay-label"></div>
-        <p class="summary-adhyay-desc" id="summary-adhyay-desc"></p>
-        <div class="summary-concept-list" id="summary-concept-list"></div>
-      </div>
-    </div>
-
-    <!-- Current concept title bar — shown above concept view -->
-    <div class="concept-title-bar" id="concept-title-bar" style="display:none">
-      <button class="ctb-back" id="ctb-back-btn" title="अध्याय पानावर परत जा">
+      <!-- Mobile-only home link (above image) -->
+      <a class="cover-home-link-mobile" href="./" aria-label="मुख्यपानावर जा">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-        अध्याय
-      </button>
-      <span class="ctb-divider"></span>
-      <span class="ctb-meta" id="ctb-meta"></span>
-      <span class="ctb-name" id="ctb-name"></span>
-    </div>
+        मुख्यपान
+      </a>
 
-    <!-- Concept view: image (left) + info (right) — shown when concept selected -->
-    <div class="concept-view" id="concept-view">
-      <div class="concept-img-wrap">
-        <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
-        <div class="img-placeholder" id="concept-placeholder">
-          <span id="concept-placeholder-emoji">🌅</span>
-          <span>संकल्पना चित्र</span>
-        </div>
-        <button class="shravan-fab" id="shravan-fab" title="श्रवण · ऑडिओ" style="display:none">🎧</button>
-      </div>
-      <div class="concept-info">
-        <div class="concept-info-header">
-          <div class="info-emoji" id="concept-info-emoji"></div>
-          <div class="concept-info-header-text">
-            <div class="info-name" id="concept-info-name"></div>
-            <div class="info-meta" id="concept-info-meta"></div>
+      <!-- Adhyay summary image + text (shown when no concept selected) -->
+      <div id="summary-img-section">
+        <div class="adhyay-summary-img">
+          <img id="summary-img" src="" alt="अध्याय सारांश">
+          <div class="img-placeholder" id="summary-placeholder">
+            <span>🕉️</span>
+            <span id="summary-placeholder-text">अध्याय सारांश चित्र</span>
           </div>
-          <!-- Font size control -->
-          <div class="font-size-ctrl" id="font-size-ctrl">
-            <button class="fsc-btn" data-size="normal" title="सामान्य">A</button>
-            <button class="fsc-btn" data-size="large"  title="मोठा">A+</button>
-            <button class="fsc-btn" data-size="xlarge" title="अधिक मोठा">A++</button>
+          <div class="adhyay-cover-title" id="adhyay-cover-title">
+            <span class="act-num" id="act-num"></span>
+            <span class="act-name" id="act-name"></span>
           </div>
         </div>
-        <div class="concept-info-body">
-
-          <!-- ── Section menu (3 cards) — default view when concept selected ── -->
-          <div class="section-menu" id="section-menu" style="display:none">
-            <p class="smenu-summary" id="smenu-summary" style="display:none"></p>
-            <button class="smenu-card" data-section="vivechan">
-              <div class="smenu-icon-wrap">🪔</div>
-              <div class="smenu-text">
-                <div class="smenu-title">ज्ञानेश्वर महाराज काय म्हणतात</div>
-                <div class="smenu-sub">श्लोक व ज्ञानेश्वरी विवेचन</div>
-              </div>
-              <div class="smenu-arrow">→</div>
-            </button>
-            <button class="smenu-card smenu-katha" id="smenu-katha-card" data-section="katha" style="display:none">
-              <div class="smenu-icon-wrap">🌿</div>
-              <div class="smenu-text">
-                <div class="smenu-title">आयुष्यातील क्षण</div>
-                <div class="smenu-sub">जीवनकथेद्वारा</div>
-              </div>
-              <div class="smenu-arrow">→</div>
-            </button>
-            <!-- Presentation PDF embedded inline on concept landing page -->
-            <div id="smenu-presentation"></div>
-          </div>
-
-          <!-- ── Back bar — shown when a section content is active ── -->
-          <div class="section-back-bar" id="section-back-bar" style="display:none">
-            <button class="sbb-back" id="section-back-btn">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-              मागे
-            </button>
-            <span class="sbb-title" id="section-back-title"></span>
-          </div>
-
-          <!-- ── Section content panels ── -->
-          <div class="section-content" id="section-vivechan" style="display:none">
-            <div class="concept-text" id="concept-text-content"></div>
-            <div class="section-bottom-nav" id="snav-vivechan"></div>
-          </div>
-          <div class="section-content" id="section-katha" style="display:none">
-            <div class="concept-story" id="concept-story-content"></div>
-            <div class="section-bottom-nav" id="snav-katha"></div>
-          </div>
-          <div class="section-content" id="section-shravan" style="display:none">
-            <div id="shravan-content"></div>
-            <div class="section-bottom-nav" id="snav-shravan"></div>
-          </div>
-
+        <div class="adhyay-summary-text" id="adhyay-summary-text" style="display:none">
+          <a class="cover-home-link" href="./" aria-label="मुख्यपानावर जा">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            मुख्यपान
+          </a>
+          <div class="summary-adhyay-label" id="summary-adhyay-label"></div>
+          <p class="summary-adhyay-desc" id="summary-adhyay-desc"></p>
+          <div class="summary-concept-list" id="summary-concept-list"></div>
         </div>
       </div>
-    </div>
 
-    <!-- Adhyay PDF inline viewer -->
+      <!-- Current concept title bar — shown above concept view -->
+      <div class="concept-title-bar" id="concept-title-bar" style="display:none">
+        <button class="ctb-back" id="ctb-back-btn" title="अध्याय पानावर परत जा">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          अध्याय
+        </button>
+        <span class="ctb-divider"></span>
+        <span class="ctb-meta" id="ctb-meta"></span>
+        <span class="ctb-name" id="ctb-name"></span>
+      </div>
+
+      <!-- Concept view: image (left) + info (right) — shown when concept selected -->
+      <div class="concept-view" id="concept-view">
+        <div class="concept-img-wrap">
+          <img id="concept-img" src="" alt="संकल्पना चित्र" onerror="this.style.display='none'">
+          <div class="img-placeholder" id="concept-placeholder">
+            <span id="concept-placeholder-emoji">🌅</span>
+            <span>संकल्पना चित्र</span>
+          </div>
+          <button class="shravan-fab" id="shravan-fab" title="श्रवण · ऑडिओ" style="display:none">🎧</button>
+        </div>
+        <div class="concept-info">
+          <div class="concept-info-header">
+            <div class="info-emoji" id="concept-info-emoji"></div>
+            <div class="concept-info-header-text">
+              <div class="info-name" id="concept-info-name"></div>
+              <div class="info-meta" id="concept-info-meta"></div>
+            </div>
+            <!-- Font size control -->
+            <div class="font-size-ctrl" id="font-size-ctrl">
+              <button class="fsc-btn" data-size="normal" title="सामान्य">A</button>
+              <button class="fsc-btn" data-size="large"  title="मोठा">A+</button>
+              <button class="fsc-btn" data-size="xlarge" title="अधिक मोठा">A++</button>
+            </div>
+          </div>
+          <div class="concept-info-body">
+
+            <!-- ── Section menu (3 cards) — default view when concept selected ── -->
+            <div class="section-menu" id="section-menu" style="display:none">
+              <p class="smenu-summary" id="smenu-summary" style="display:none"></p>
+              <button class="smenu-card" data-section="vivechan">
+                <div class="smenu-icon-wrap">🪔</div>
+                <div class="smenu-text">
+                  <div class="smenu-title">ज्ञानेश्वर महाराज काय म्हणतात</div>
+                  <div class="smenu-sub">श्लोक व ज्ञानेश्वरी विवेचन</div>
+                </div>
+                <div class="smenu-arrow">→</div>
+              </button>
+              <button class="smenu-card smenu-katha" id="smenu-katha-card" data-section="katha" style="display:none">
+                <div class="smenu-icon-wrap">🌿</div>
+                <div class="smenu-text">
+                  <div class="smenu-title">आयुष्यातील क्षण</div>
+                  <div class="smenu-sub">जीवनकथेद्वारा</div>
+                </div>
+                <div class="smenu-arrow">→</div>
+              </button>
+              <!-- Presentation PDF embedded inline on concept landing page -->
+              <div id="smenu-presentation"></div>
+            </div>
+
+            <!-- ── Back bar — shown when a section content is active ── -->
+            <div class="section-back-bar" id="section-back-bar" style="display:none">
+              <button class="sbb-back" id="section-back-btn">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                मागे
+              </button>
+              <span class="sbb-title" id="section-back-title"></span>
+            </div>
+
+            <!-- ── Section content panels ── -->
+            <div class="section-content" id="section-vivechan" style="display:none">
+              <div class="concept-text" id="concept-text-content"></div>
+              <div class="section-bottom-nav" id="snav-vivechan"></div>
+            </div>
+            <div class="section-content" id="section-katha" style="display:none">
+              <div class="concept-story" id="concept-story-content"></div>
+              <div class="section-bottom-nav" id="snav-katha"></div>
+            </div>
+            <div class="section-content" id="section-shravan" style="display:none">
+              <div id="shravan-content"></div>
+              <div class="section-bottom-nav" id="snav-shravan"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.adhyay-main -->
+
+    <!-- Right panel: Adhyay PDF carousel (desktop) / bottom viewer (mobile) -->
     <div class="pdf-open-bar">
-      <div class="story-pdf-viewer adhyay-pdf-viewer">
-        <div class="story-pdf-viewer-label" id="pdf-label">📄 अध्याय सादरीकरण</div>
-        <div class="story-pdf-pages" id="adhyay-pdf-pages">
-          <div class="story-pdf-loading">PDF लोड होत आहे…</div>
-        </div>
-        <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
-      </div>
+      <div class="pdf-open-bar-label" id="pdf-label">📄 अध्याय सादरीकरण</div>
+      <div id="adhyay-pdf-carousel"></div>
     </div>
 
   </div>
@@ -197,8 +197,9 @@
   </div>
   <div class="pdf-modal-backdrop" id="pdf-modal-backdrop"></div>
 
-  <!-- PDF.js (only for thumbnail preview) -->
+  <!-- PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="js/pdf-carousel.js"></script>
   <script>
     if (typeof pdfjsLib !== 'undefined') {
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';

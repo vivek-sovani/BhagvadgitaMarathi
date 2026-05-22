@@ -46,6 +46,9 @@
   const conceptStoryContent = document.getElementById('concept-story-content');
   const pdfLabel         = document.getElementById('pdf-label');
   const pdfOpenBar       = document.querySelector('.pdf-open-bar');
+  const adhyayCarousel   = (typeof PDFCarousel !== 'undefined' && document.getElementById('adhyay-pdf-carousel'))
+    ? new PDFCarousel(document.getElementById('adhyay-pdf-carousel'))
+    : null;
   const pdfModal         = document.getElementById('pdf-modal');
   const pdfModalTitle    = document.getElementById('pdf-modal-title');
   const pdfModalClose    = document.getElementById('pdf-modal-close');
@@ -389,10 +392,7 @@
   // (avoids racing with the concept PDF render in selectConcept)
   const initialConceptId = parseInt(params.get('concept'), 10) || null;
   if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
-    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, () => {
-      const pagesEl = document.getElementById('adhyay-pdf-pages');
-      if (pagesEl) attachPdfZoom(pagesEl);
-    }, false);
+    if (adhyayCarousel) adhyayCarousel.load(pendingPdfUrl);
   }
 
   // ── Render concept text ────────────────────────────────────────
@@ -922,10 +922,8 @@
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
     pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
-    const adhyayPdfEl = document.getElementById('adhyay-pdf-pages');
-    if (adhyayPdfEl) adhyayPdfEl.innerHTML = '<div class="story-pdf-loading">PDF लोड होत आहे…</div>';
-    renderStoryPdfPages(pendingPdfUrl, 'adhyay-pdf-pages', 1.0, null, false);
-    if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF viewer
+    if (adhyayCarousel) adhyayCarousel.load(pendingPdfUrl);
+    if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF panel
     // Restore header label to chapter name (no back arrow)
     headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
     const url = new URL(window.location.href);

@@ -788,7 +788,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== CONCEPT VIEW BODY ===== */
 .adhyay-body {
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+/* Left panel: summary + concept view */
+.adhyay-main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 767px) {
+  .adhyay-body {
+    flex-direction: column;
+  }
 }
 
 /* Concept image + info row */
@@ -1722,14 +1736,44 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* ===== PDF THUMBNAIL CARD ===== */
 .pdf-open-bar {
-  padding: 16px clamp(16px, 4vw, 48px) 24px;
+  width: clamp(300px, 32vw, 440px);
+  flex-shrink: 0;
   background: var(--surface-2);
-  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  padding: 12px 14px 20px;
+  /* Sticky right panel — scrolls with the page but stays in viewport */
+  position: sticky;
+  top: 110px;
+  align-self: flex-start;
+  max-height: calc(100svh - 110px);
+  overflow-y: auto;
 }
-/* On mobile the bottom-concept-nav is fixed (54px) — push content clear of it */
+/* PDF carousel inside the right panel — tall so PDF fills the panel */
+.pdf-open-bar .pdf-carousel-inner {
+  height: calc(100svh - 260px);
+  min-height: 280px;
+}
+.pdf-open-bar-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--primary);
+  padding: 4px 2px 10px;
+}
+/* On mobile: revert to original bottom layout */
 @media (max-width: 767px) {
   .pdf-open-bar {
-    padding-bottom: 84px;
+    width: auto;
+    position: static;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 16px clamp(16px, 4vw, 48px) 84px;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .pdf-open-bar .pdf-carousel-inner {
+    height: auto;
+    min-height: clamp(320px, 60vh, 600px);
   }
 }
 .pdf-thumb-card {
