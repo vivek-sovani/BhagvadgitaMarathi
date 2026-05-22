@@ -1791,11 +1791,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-align: center;
 }
 .pdf-open-bar-label {
-  font-size: 0.68rem;
-  letter-spacing: 0.16em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -12px -14px 12px;   /* bleed to panel edges, matching panel padding */
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--saffron-deep), var(--saffron));
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
-  padding: 4px 2px 10px;
+  border-radius: 0;
 }
 /* Mobile swipe hint — shown at bottom of left panel on mobile only */
 .pdf-swipe-hint-mobile {
