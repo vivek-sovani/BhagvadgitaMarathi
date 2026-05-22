@@ -64,7 +64,11 @@
       const pdf = await pdfjsLib.getDocument({ url, cMapPacked: true }).promise;
       pdfPanelEl.innerHTML = '';
       const dpr        = window.devicePixelRatio || 1;
-      const containerW = pdfPanelEl.clientWidth || 300;
+      // clientWidth may be 0 before first paint; fall back to a size-aware estimate
+      const panelW     = pdfPanelEl.clientWidth;
+      const containerW = panelW > 0 ? panelW
+        : window.innerWidth <= 767 ? window.innerWidth - 28   // mobile: 100vw − padding
+        : Math.round(window.innerWidth * 0.32);               // desktop: ~32vw
       for (let p = 1; p <= pdf.numPages; p++) {
         const page     = await pdf.getPage(p);
         const rotation = page.rotate || 0;

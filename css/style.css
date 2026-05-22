@@ -811,7 +811,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .adhyay-main {
     min-width: 100vw;
     width: 100vw;
+    height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior-y: contain;
     scroll-snap-align: start;
   }
@@ -1821,15 +1823,17 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .pdf-open-bar {
     min-width: 100vw;
     width: 100vw;
+    height: 100%;
     position: static;
     border-left: 1px solid var(--border);
     border-top: none;
     padding: 12px 14px 80px;
     max-height: none;
     overflow-y: auto;
+    overflow-x: hidden;
     overscroll-behavior-y: contain;
     scroll-snap-align: start;
-    touch-action: pan-y;
+    /* No touch-action override — let browser distinguish horizontal vs vertical naturally */
   }
 }
 .pdf-thumb-card {
