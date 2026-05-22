@@ -943,7 +943,7 @@
   function goToCoverPage() {
     currentConceptId = null;
     const adhyayBodyEl = document.getElementById('adhyay-body');
-    if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
+    if (adhyayBodyEl) { adhyayBodyEl.scrollLeft = 0; adhyayBodyEl.scrollTop = 0; }
     window.scrollTo(0, 0);
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
@@ -1000,7 +1000,7 @@
     const concept = adhyay.concepts.find(c => c.id === cid);
     if (!concept) return;
     const adhyayBodyEl = document.getElementById('adhyay-body');
-    if (adhyayBodyEl) adhyayBodyEl.scrollTop = 0;
+    if (adhyayBodyEl) { adhyayBodyEl.scrollLeft = 0; adhyayBodyEl.scrollTop = 0; }
     window.scrollTo(0, 0);
     if (suchiBtn) suchiBtn.style.display = 'none';
 
