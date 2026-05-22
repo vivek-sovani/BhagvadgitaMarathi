@@ -1,4 +1,6 @@
 (function () {
+  const toDevNum = n => String(n).replace(/[0-9]/g, d => '०१२३४५६७८९'[d]);
+
   // ── Parse URL params ─────────────────────────────────────────
   const params     = new URLSearchParams(window.location.search);
   const adhyayId   = parseInt(params.get('id'), 10);
@@ -359,7 +361,7 @@
       const item = document.createElement('div');
       item.className = 'summary-concept-item';
       item.innerHTML = `
-        <span class="sci-num">${concept.id}.</span>
+        <span class="sci-num">${toDevNum(concept.id)}.</span>
         <span class="sci-emoji">${concept.emoji}</span>
         <span class="sci-name">${concept.name}</span>
       `;
@@ -980,7 +982,7 @@
     const idx = adhyay.concepts.findIndex(c => c.id === cid);
     if (conceptTitleBar) {
       conceptTitleBar.style.display = '';
-      ctbMeta.textContent = `${concept.emoji}  संकल्पना ${concept.id}`;
+      ctbMeta.textContent = `${concept.emoji}  संकल्पना ${toDevNum(concept.id)}`;
       ctbName.textContent = concept.name;
     }
 
@@ -1044,7 +1046,7 @@
     // Concept info panel
     conceptInfoEmoji.textContent = concept.emoji;
     conceptInfoName.textContent  = concept.name;
-    conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${concept.id}`;
+    conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${toDevNum(concept.id)}`;
     renderConceptText(String(adhyay.id), String(concept.id));
 
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
@@ -1089,7 +1091,7 @@
       smenuPresentation.innerHTML = `
         <div class="story-pdf-viewer concept-pdf-viewer">
           <div class="story-pdf-viewer-header">
-            <div class="story-pdf-viewer-label">📄 संकल्पना ${concept.id} सादरीकरण</div>
+            <div class="story-pdf-viewer-label">📄 संकल्पना ${toDevNum(concept.id)} सादरीकरण</div>
             <button class="pdf-fullview-btn">🔍 मोठे करा</button>
           </div>
           <div class="story-pdf-pages" id="${cpdfId}">
@@ -1101,7 +1103,7 @@
       if (fullViewBtn) {
         fullViewBtn.addEventListener('click', () => {
           pendingPdfUrl = conceptPdfUrl;
-          openPdfModal(`संकल्पना ${concept.id} — चित्ररूपी सादरीकरण`);
+          openPdfModal(`संकल्पना ${toDevNum(concept.id)} — चित्ररूपी सादरीकरण`);
         });
       }
     }
