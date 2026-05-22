@@ -1081,30 +1081,10 @@
       }
     }
 
-    // Inject concept PDF viewer directly into संकल्पना landing page
-    const cpdfId = `cpdf-${adhyay.id}-${cid}`;
+    // Concept PDF goes into the right-panel carousel (not inline in section menu)
     const conceptPdfUrl = assetPath(`concept-${concept.id}.pdf`);
     const smenuPresentation = document.getElementById('smenu-presentation');
-    if (smenuPresentation) {
-      smenuPresentation.innerHTML = `
-        <div class="story-pdf-viewer concept-pdf-viewer">
-          <div class="story-pdf-viewer-header">
-            <div class="story-pdf-viewer-label">📄 संकल्पना ${toDevNum(concept.id)} सादरीकरण</div>
-            <button class="pdf-fullview-btn">🔍 मोठे करा</button>
-          </div>
-          <div class="story-pdf-pages" id="${cpdfId}">
-            <div class="story-pdf-loading">PDF लोड होत आहे…</div>
-          </div>
-          <div class="story-pdf-swipe-hint">← स्वाइप करून पाने पहा →</div>
-        </div>`;
-      const fullViewBtn = smenuPresentation.querySelector('.pdf-fullview-btn');
-      if (fullViewBtn) {
-        fullViewBtn.addEventListener('click', () => {
-          pendingPdfUrl = conceptPdfUrl;
-          openPdfModal(`संकल्पना ${toDevNum(concept.id)} — चित्ररूपी सादरीकरण`);
-        });
-      }
-    }
+    if (smenuPresentation) smenuPresentation.innerHTML = '';
 
     // ── Render श्रवण section ──────────────────────────────────────
     const shravanContent  = document.getElementById('shravan-content');
@@ -1139,11 +1119,11 @@
     // Show section menu as the landing view for this concept
     showSectionMenu();
 
-    if (pdfOpenBar) pdfOpenBar.style.display = 'none';
+    // Load concept PDF into the right/swipe panel carousel
+    pdfLabel.textContent = `📄 संकल्पना ${toDevNum(concept.id)} सादरीकरण`;
     pendingPdfUrl = conceptPdfUrl;
-    renderStoryPdfPages(pendingPdfUrl, cpdfId, 1.0, null, false);
-    const cpdfPagesEl = smenuPresentation && smenuPresentation.querySelector(`#${cpdfId}`);
-    if (cpdfPagesEl) attachPdfZoom(cpdfPagesEl);
+    if (adhyayCarousel) adhyayCarousel.load(conceptPdfUrl);
+    if (pdfOpenBar) pdfOpenBar.style.display = '';
   }
 
   // ── Recalculate column width on window resize ─────────────────
