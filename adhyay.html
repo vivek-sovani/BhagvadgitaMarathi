@@ -183,7 +183,7 @@
     <!-- Right panel: Adhyay PDF carousel (desktop) / bottom viewer (mobile) -->
     <div class="pdf-open-bar">
       <div class="pdf-open-bar-label" id="pdf-label">📄 अध्याय सादरीकरण</div>
-      <div id="adhyay-pdf-carousel"></div>
+      <div id="adhyay-pdf-panel" class="adhyay-pdf-vertical"></div>
     </div>
 
   </div>
@@ -202,7 +202,6 @@
 
   <!-- PDF.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script src="js/pdf-carousel.js"></script>
   <script>
     if (typeof pdfjsLib !== 'undefined') {
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/pdf.worker.min.js';

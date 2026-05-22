@@ -1760,10 +1760,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   max-height: calc(100svh - 110px);
   overflow-y: auto;
 }
-/* PDF carousel inside the right panel — tall so PDF fills the panel */
-.pdf-open-bar .pdf-carousel-inner {
-  height: calc(100svh - 260px);
-  min-height: 280px;
+/* Vertical all-pages viewer in the right/swipe panel */
+.adhyay-pdf-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.vpdf-page {
+  display: block;
+  width: 100%;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12);
+  filter: contrast(1.2) brightness(0.97);
+}
+.vpdf-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 48px 16px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.vpdf-error {
+  padding: 24px 16px;
+  color: var(--primary);
+  font-size: 0.85rem;
+  text-align: center;
 }
 .pdf-open-bar-label {
   font-size: 0.68rem;
@@ -1800,10 +1822,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow-y: auto;
     overscroll-behavior-y: contain;
     scroll-snap-align: start;
-  }
-  .pdf-open-bar .pdf-carousel-inner {
-    height: calc(100svh - 200px);
-    min-height: 280px;
   }
 }
 .pdf-thumb-card {

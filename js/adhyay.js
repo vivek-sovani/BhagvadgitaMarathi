@@ -44,11 +44,47 @@
   const conceptTextContent  = document.getElementById('concept-text-content');
   const conceptTabs         = document.getElementById('concept-tabs');
   const conceptStoryContent = document.getElementById('concept-story-content');
-  const pdfLabel         = document.getElementById('pdf-label');
-  const pdfOpenBar       = document.querySelector('.pdf-open-bar');
-  const adhyayCarousel   = (typeof PDFCarousel !== 'undefined' && document.getElementById('adhyay-pdf-carousel'))
-    ? new PDFCarousel(document.getElementById('adhyay-pdf-carousel'))
-    : null;
+  const pdfLabel       = document.getElementById('pdf-label');
+  const pdfOpenBar     = document.querySelector('.pdf-open-bar');
+  const pdfPanelEl     = document.getElementById('adhyay-pdf-panel');
+  let   panelPdfUrl    = null;   // tracks what's currently rendered
+
+  // Renders all PDF pages stacked vertically inside the right/swipe panel.
+  async function renderPdfVertical(url) {
+    if (!pdfPanelEl) return;
+    if (url === panelPdfUrl) return;   // already showing this PDF
+    panelPdfUrl = url;
+    if (!url) { pdfPanelEl.innerHTML = ''; return; }
+    if (typeof pdfjsLib === 'undefined') {
+      pdfPanelEl.innerHTML = '<div class="vpdf-error">⚠️ PDF लायब्ररी लोड झाली नाही</div>';
+      return;
+    }
+    pdfPanelEl.innerHTML = '<div class="vpdf-loading"><div class="spinner"></div><span>PDF लोड होत आहे…</span></div>';
+    try {
+      const pdf = await pdfjsLib.getDocument({ url, cMapPacked: true }).promise;
+      pdfPanelEl.innerHTML = '';
+      const dpr        = window.devicePixelRatio || 1;
+      const containerW = pdfPanelEl.clientWidth || 300;
+      for (let p = 1; p <= pdf.numPages; p++) {
+        const page     = await pdf.getPage(p);
+        const rotation = page.rotate || 0;
+        const vp0      = page.getViewport({ scale: 1, rotation });
+        const scale    = (containerW / vp0.width) * dpr;
+        const vp       = page.getViewport({ scale, rotation });
+        const canvas   = document.createElement('canvas');
+        canvas.width   = vp.width;
+        canvas.height  = vp.height;
+        canvas.style.width  = Math.round(vp.width  / dpr) + 'px';
+        canvas.style.height = Math.round(vp.height / dpr) + 'px';
+        canvas.className = 'vpdf-page';
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        pdfPanelEl.appendChild(canvas);
+      }
+    } catch (err) {
+      panelPdfUrl = null;   // allow retry
+      pdfPanelEl.innerHTML = '<div class="vpdf-error">⚠️ PDF उघडता आला नाही</div>';
+    }
+  }
   const pdfModal         = document.getElementById('pdf-modal');
   const pdfModalTitle    = document.getElementById('pdf-modal-title');
   const pdfModalClose    = document.getElementById('pdf-modal-close');
@@ -392,7 +428,7 @@
   // (avoids racing with the concept PDF render in selectConcept)
   const initialConceptId = parseInt(params.get('concept'), 10) || null;
   if (!initialConceptId || !adhyay.concepts.find(c => c.id === initialConceptId)) {
-    if (adhyayCarousel) adhyayCarousel.load(pendingPdfUrl);
+    renderPdfVertical(pendingPdfUrl);
   }
 
   // ── Render concept text ────────────────────────────────────────
@@ -922,7 +958,7 @@
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
     pdfLabel.textContent = `📄 अध्याय ${adhyay.number} सादरीकरण`;
     pendingPdfUrl = assetPath('adhyay.pdf');
-    if (adhyayCarousel) adhyayCarousel.load(pendingPdfUrl);
+    renderPdfVertical(pendingPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF panel
     // Restore header label to chapter name (no back arrow)
     headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
@@ -1122,7 +1158,7 @@
     // Load concept PDF into the right/swipe panel carousel
     pdfLabel.textContent = `📄 संकल्पना ${toDevNum(concept.id)} सादरीकरण`;
     pendingPdfUrl = conceptPdfUrl;
-    if (adhyayCarousel) adhyayCarousel.load(conceptPdfUrl);
+    renderPdfVertical(conceptPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = '';
   }
 
