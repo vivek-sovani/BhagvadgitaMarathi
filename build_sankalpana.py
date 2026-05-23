@@ -27,6 +27,9 @@ SLUGS = [
     "namasmarana", "prarabdha-purushartha", "samarpana", "sankalpa-vikalpa",
     "satsang", "satya", "sevabhava", "sharanagati", "svadharma",
     "tapa", "viveka", "yogakshema",
+    # batch 3
+    "chidananda", "ahaituki-krupa", "kshanti", "avyabhicharini-bhakti",
+    "vivekhyati",
 ]
 
 ICONS = [

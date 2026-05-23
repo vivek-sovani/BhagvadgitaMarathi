@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>विवेकख्याति — संकल्पना · गीता-ज्ञानेश्वरी</title>
+<meta name="theme-color" content="#9c4a10" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+
+  /* ─── Concept hero ─── */
+  .c-hero {
+    background:
+      radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--saffron) 18%, var(--bg)) 0%, var(--bg) 55%);
+    padding: 48px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 880px) { .c-hero { padding: 32px 0 64px; } }
+
+  .c-hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: end;
+    margin-top: 40px;
+  }
+  @media (max-width: 980px) {
+    .c-hero-inner { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+  }
+
+  .c-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 28px; }
+
+  .c-title {
+    font-family: var(--serif-dev);
+    font-weight: 600;
+    font-size: clamp(50px, 7vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .c-title em { font-style: normal; color: var(--saffron-deep); }
+  .c-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mute);
+    margin: 0 0 28px;
+  }
+  .c-summary {
+    font-family: var(--serif-dev);
+    font-size: clamp(19px, 1.5vw, 22px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 0 32px;
+  }
+
+  .origin-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 36px 32px;
+    position: relative;
+    box-shadow: 0 20px 50px -30px rgba(31,24,18,.3);
+  }
+  .origin-card .corner {
+    position: absolute; top: -14px; left: 32px;
+    background: var(--saffron-deep); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .origin-card .head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 14px 0 14px;
+  }
+  .origin-card .shloka {
+    font-family: var(--serif-dev); font-weight: 500; font-size: 22px;
+    line-height: 1.55; margin: 0 0 22px; color: var(--ink);
+  }
+  .origin-card .ovi {
+    font-family: var(--serif-dev); font-style: italic; font-size: 17px;
+    line-height: 1.55; color: var(--ink-soft);
+    border-top: 1px solid var(--rule); padding-top: 18px; margin: 0 0 18px;
+  }
+  .origin-card .ovi-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 8px;
+  }
+  .origin-card .source {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em;
+  }
+  .origin-card .source::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  }
+
+  .c-mandala {
+    position: absolute; top: -180px; right: -180px; width: 580px; height: 580px;
+  }
+
+  .c-body { padding: 80px 0; }
+  @media (max-width: 880px) { .c-body { padding: 56px 0; } }
+
+  .c-section { margin-bottom: 80px; }
+  .c-section:last-child { margin-bottom: 0; }
+  .c-section .section-head { margin-bottom: 36px; max-width: 760px; }
+  .c-section h2 {
+    font-family: var(--serif-dev); font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.18;
+    letter-spacing: -0.005em; margin: 12px 0 14px; color: var(--ink);
+  }
+  .c-section p.body {
+    font-family: var(--serif-dev); font-size: 19px; line-height: 1.7;
+    color: var(--ink-soft); margin: 0 0 16px; max-width: 760px;
+  }
+  .c-section p.body strong { color: var(--ink); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 32px 28px; }
+  .compare-col h5 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 0 0 14px; font-weight: 500;
+  }
+  .compare-col .big {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 26px;
+    margin: 0 0 14px; color: var(--ink); line-height: 1.25;
+  }
+  .compare-col p { font-family: var(--serif-dev); font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+  .compare-col.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .compare-col.dark h5 { color: var(--saffron-glow); }
+  .compare-col.dark .big { color: var(--bg); }
+  .compare-col.dark p { color: rgba(251,246,234,.75); }
+
+  .scenarios {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px;
+  }
+  @media (max-width: 980px) { .scenarios { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+  .scn {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 28px 26px; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .scn:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--saffron) 35%, var(--rule)); }
+  .scn .ic {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--bg-2);
+    display: grid; place-items: center; color: var(--saffron-deep); margin-bottom: 22px;
+  }
+  .scn h4 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .scn .scn-q { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--saffron-deep); margin: 0 0 12px; line-height: 1.45; }
+  .scn p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .practice { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 88px 0; }
+  @media (max-width: 880px) { .practice { padding: 56px 0; } }
+  .practice .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: 20px;
+    overflow: hidden; margin-top: 40px;
+  }
+  @media (max-width: 880px) { .practice .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .practice .grid { grid-template-columns: 1fr; } }
+  .step { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; }
+  .step .num {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 52px;
+    color: var(--saffron-deep); line-height: 1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .step h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .step p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+  .myth {
+    background: var(--ink); color: var(--bg); border-radius: 26px; padding: 56px 48px; margin-top: 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  @media (max-width: 720px) { .myth { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; } }
+  .myth .glyph { font-family: var(--serif-dev); font-size: 120px; line-height: 1; color: var(--saffron-glow); opacity: .8; }
+  .myth h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(24px, 2.4vw, 32px); color: var(--bg); margin: 0 0 14px; line-height: 1.25; }
+  .myth p { font-family: var(--serif-dev); font-size: 18px; line-height: 1.6; color: rgba(251,246,234,.78); margin: 0 0 8px; }
+  .myth .myth-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-glow); margin-bottom: 14px; }
+
+  .related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+  @media (max-width: 880px) { .related { grid-template-columns: 1fr; } }
+  .rel {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 26px 24px; transition: transform .2s ease, border-color .2s ease; display: block;
+  }
+  .rel:hover { transform: translateY(-2px); border-color: var(--saffron-deep); }
+  .rel .reltag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+  .rel h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .rel p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 14px; }
+  .rel .arrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--saffron-deep); }
+
+  .closing {
+    text-align: center; padding: 100px 0 120px;
+    background: radial-gradient(ellipse at top, color-mix(in oklab, var(--saffron) 14%, var(--bg)) 0%, var(--bg) 65%);
+  }
+  @media (max-width: 880px) { .closing { padding: 64px 0 80px; } }
+  .closing .om-big { font-family: var(--serif-dev); font-size: 64px; color: var(--saffron-deep); line-height: 1; margin-bottom: 28px; }
+  .closing h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(28px, 3vw, 42px); line-height: 1.25; margin: 0 auto 24px; max-width: 720px; text-wrap: balance; }
+  .closing p { font-family: var(--serif-dev); font-size: 19px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../">होम</a>
+      <a href="../adhyay">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+      <a href="#">बद्दल</a>
+      <a href="#" class="nav-cta">वाचन सुरू</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="c-hero">
+  <svg class="mandala c-mandala" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.5">
+      <circle cx="100" cy="100" r="95"/><circle cx="100" cy="100" r="78"/>
+      <circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="42"/>
+      <circle cx="100" cy="100" r="24"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="0.4">
+      <g id="cp"><path d="M100 8 Q112 60 100 94 Q88 60 100 8 Z"/></g>
+      <use href="#cp" transform="rotate(22.5 100 100)"/>
+      <use href="#cp" transform="rotate(45 100 100)"/>
+      <use href="#cp" transform="rotate(67.5 100 100)"/>
+      <use href="#cp" transform="rotate(90 100 100)"/>
+      <use href="#cp" transform="rotate(112.5 100 100)"/>
+      <use href="#cp" transform="rotate(135 100 100)"/>
+      <use href="#cp" transform="rotate(157.5 100 100)"/>
+      <use href="#cp" transform="rotate(180 100 100)"/>
+      <use href="#cp" transform="rotate(202.5 100 100)"/>
+      <use href="#cp" transform="rotate(225 100 100)"/>
+      <use href="#cp" transform="rotate(247.5 100 100)"/>
+      <use href="#cp" transform="rotate(270 100 100)"/>
+      <use href="#cp" transform="rotate(292.5 100 100)"/>
+      <use href="#cp" transform="rotate(315 100 100)"/>
+      <use href="#cp" transform="rotate(337.5 100 100)"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="crumb">
+      <a href="../">होम</a>
+      <span class="sep">/</span>
+      <a href="../concept">संकल्पना</a>
+      <span class="sep">/</span>
+      <span class="now">विवेकख्याति</span>
+    </div>
+
+    <div class="c-hero-inner">
+      <div class="reveal">
+        <div class="eyebrow-dev">गीतेची केंद्रीय संकल्पना</div>
+        <h1 class="c-title"><em>विवेकख्याति.</em></h1>
+        <p class="c-sub">विवेक + ख्याति. विवेकाची परिपक्व अवस्था. ज्ञान आणि अज्ञान, क्षेत्र आणि क्षेत्रज्ञ, नित्य आणि अनित्य यांतील सूक्ष्म भेद पूर्णपणे आणि अनायासे जाणणे.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#practice" class="btn btn-primary">रोजच्या जीवनात कसे आणावे?</a>
+          <a href="../adhyay?id=13" class="btn btn-ghost">अध्याय १३ वाचा</a>
+        </div>
+      </div>
+
+      <div class="reveal origin-card">
+        <span class="corner">मूळ श्लोक</span>
+        <div class="head">अध्याय १३, श्लोक ३४–३५</div>
+        <p class="shloka">यथा प्रकाशयत्येकः कृत्स्नं लोकमिमं रविः ।<br/>क्षेत्रं क्षेत्री तथा कृत्स्नं प्रकाशयति भारत ॥ ३४ ॥<br/><br/>क्षेत्रक्षेत्रज्ञयोरेवमन्तरं ज्ञानचक्षुषा ।<br/>भूतप्रकृतिमोक्षं च ये विदुर्यान्ति ते परम् ॥ ३५ ॥</p>
+
+        <div class="ovi-label">ज्ञानेश्वरी ओवी · अध्याय १३</div>
+        <p class="ovi">जैसा एकुचि सूर्य आहे ।<br/>परी सकळ जगा प्रकाशी पाहे ।<br/>तैसा क्षेत्री क्षेत्र उजाळे ।<br/>ज्ञानें जाण ॥<br/><br/>क्षेत्र क्षेत्रज्ञाचें अंतर ।<br/>ज्ञानचक्षूंनीं पाहे साचार ।<br/>प्रकृतिमोक्ष जाणे निर्धार ।<br/>तो परम पावे ॥</p>
+
+        <div class="source">श्रीकृष्ण → अर्जुन · कुरुक्षेत्र</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="c-body">
+  <div class="wrap-narrow">
+
+    <!-- Meaning -->
+    <div class="c-section">
+      <div class="eyebrow-dev">अर्थ</div>
+      <h2>संकल्पनेचा गाभा.</h2>
+      
+      
+      <div class="compare">
+        <div class="compare-col">
+          <h5>स्वरूप</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">शाब्दिक विवेक</strong><br/>"आत्मा अमर आहे" हे माहीत आहे</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">बौद्धिक विवेक</strong><br/>युक्तिप्रमाणे हे खरे आहे</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">अनुभवजन्य विवेक</strong><br/>"मी हे प्रत्यक्ष अनुभवतो"</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">विवेकख्याति</strong><br/>"हे नेहमी, अनायासे, स्पष्ट आहे"</li></ul>
+        </div>
+        <div class="compare-col dark">
+          <h5>उदाहरण</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">शाब्दिक विवेक</strong><br/>पुस्तकातून वाचलेले</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">बौद्धिक विवेक</strong><br/>तर्काने सिद्ध केलेले</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">अनुभवजन्य विवेक</strong><br/>ध्यानातील अनुभव</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">विवेकख्याति</strong><br/>जीवन्मुक्ताची अवस्था</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dnyaneshwari -->
+    <div class="c-section">
+      <div class="eyebrow-dev">ज्ञानेश्वरी विवेचन</div>
+      <h2>संत ज्ञानेश्वर हे श्लोक सामान्य माणसासाठी कसे उघडतात?</h2>
+      <p class="body">संत ज्ञानेश्वर महाराज विवेकख्यातीचे वर्णन करताना म्हणतात — हे "ज्ञानचक्षू" उघडणे आहे. शरीरचक्षू जन्मापासून असतात — ज्ञानचक्षू साधनेने उघडतात. एकदा उघडले की पुन्हा बंद होत नाहीत.</p>
+<p class="body">ज्ञानेश्वर महाराज उदाहरणे देतात:</p>
+<ul style="margin:0 0 16px 20px;">
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>सूर्य आणि दीप</strong> — घरात दिवा लावला तर घराचा अंधार जातो. पण सूर्य उगवला तर सर्वांचा अंधार एकाच वेळी जातो. मनन-चिंतनाने छोटे ज्ञान येते — विवेकख्यातीने संपूर्ण अज्ञान नाहीसे होते.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>सोने पाहणारा</strong> — जो सोन्याचा जाणकार आहे, त्याला कुठलाही दागिना पाहताना त्यात लपलेले सोने लगेच दिसते — वेळ लागत नाही. विवेकख्याति असाच — जगातील प्रत्येक गोष्टीत ब्रह्म लगेच दिसते — विचार करायला लागत नाही.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>कसलेला तलवारबाज</strong> — नवशिक्याला तलवारबाजीचे प्रत्येक पाऊल विचारावे लागते. कसलेल्या योद्ध्याला विचार न करता सहज जमते. विवेकख्याति म्हणजे विवेकाची ही परिपक्वता — सहज, अनायास.</li>
+</ul>
+<p class="body"><em>"जसा सोन्याचा जाणकार सर्व दागिन्यांत सोने अनायासे पाहतो — तसे ब्रह्मज्ञानी विवेकख्यातीने सर्वत्र ब्रह्म पाहतो."</em></p>
+<p class="body">ज्ञानेश्वर महाराज सांगतात — विवेकख्याति एका क्षणात येत नाही — पण जेव्हा येते, ती परिपूर्ण असते. जसे बाळाला चालणे एकदम येत नाही — पण एकदा आले की विसरत नाही.</p>
+<p class="body">---</p>
+            <div style="background:var(--paper);border:1px solid var(--rule);border-radius:20px;padding:32px 32px;margin-top:24px;">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:14px;">ज्ञानेश्वरी अध्याय १३ · संबंधित ओव्या</div>
+        <p style="font-family:var(--serif-dev);font-style:italic;font-size:21px;line-height:1.55;color:var(--ink);margin:0;">जैसें सुवर्ण जाणतां जाणें ।<br/>सर्व दागिन्यांत सोनें पाहणें ।<br/>तैसें ब्रह्मज्ञान लाहणें ।<br/>विवेकख्यातीनें ॥</p>
+        <p style="font-family:var(--serif-dev);font-size:16px;color:var(--ink-soft);margin:16px 0 0;padding-top:16px;border-top:1px dashed var(--rule);">"जसा सोन्याचा जाणकार सर्व दागिन्यांत सोने अनायासे पाहतो — तसे ब्रह्मज्ञानी विवेकख्यातीने सर्वत्र ब्रह्म पाहतो."</p>
+      </div>
+    </div>
+
+    <!-- Modern scenarios -->
+    <div class="c-section" id="modern">
+      <div class="eyebrow-dev">आधुनिक प्रसंग</div>
+      <h2>आजच्या जीवनात ही संकल्पना कुठे उभी राहते?</h2>
+      <p class="body">तत्त्वज्ञानाची खरी कसोटी कार्यालयात, स्वयंपाकघरात आणि निर्णयाच्या क्षणी होते.</p>
+
+      <div class="scenarios">
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h4>वारंवार चुकणे</h4>
+          <p class="scn-q">"समजते की हे चुकीचे आहे — तरी पुन्हा होते."</p>
+          <p>"समजते" म्हणजे शाब्दिक विवेक — "अनुभवात उतरले नाही" म्हणजे विवेकख्याति झाली नाही. श्रवण-मनन पुरेसे नाही — निदिध्यासन आवश्यक. ते जगण्यात उतरवणे म्हणजे विवेकख्यातीकडे वाटचाल.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/><path d="M10 19v-6h4v6"/></svg></div>
+          <h4>भावनेत वाहवत जाणे</h4>
+          <p class="scn-q">"माहीत आहे की भावनेत वाहवत जाऊ नये — तरी जातो."</p>
+          <p>"माहीत आहे" हे बौद्धिक विवेक. "भावना आणि 'मी' वेगळे" हे अनुभवात उतरणे — हे निदिध्यासनाचे फळ. विवेकख्यातीत "भावना आहे — मी साक्षी" हे अनायासे होते.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h4>साधनेत खोलवर जाणे</h4>
+          <p class="scn-q">"कधी कधी ध्यानात खोल जातो — कधी नाही. सातत्य नाही."</p>
+          <p>सातत्य नाही म्हणजे विवेकख्याति अजून पूर्ण झाली नाही. जेव्हा होईल तेव्हा ध्यान अवस्था नित्य असेल — "कधी कधी" नव्हे. तोपर्यंत — नियमित अभ्यास हाच मार्ग.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M5 12H2M22 12h-3M5.2 5.2l2.1 2.1M16.7 7.3l2.1-2.1"/><circle cx="12" cy="15" r="6"/></svg></div>
+          <h4>जग आणि ब्रह्म</h4>
+          <p class="scn-q">"ब्रह्म सर्वत्र आहे हे माहीत आहे — पण जगताना विसरतो."</p>
+          <p>हे विसरणे — म्हणजे विवेकख्याति अजून नाही. सोन्याचा जाणकार दागिना पाहताना विसरत नाही. निदिध्यासनाने हे विस्मरण कमी होते — आणि विवेकख्यातीत पूर्ण संपते.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>स्वतःला ओळखणे</h4>
+          <p class="scn-q">"कधी कधी 'मी आत्मा आहे' हे जाणवते — कधी विसरते."</p>
+          <p>"कधी कधी" म्हणजे अनुभवजन्य विवेक. "नेहमी" म्हणजे विवेकख्याति. ही अवस्था हळूहळू घट्ट होते — प्रत्येक साधनेच्या क्षणाने. घाई नको — सातत्य हवे.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>कठीण परिस्थितीत स्थिरता</h4>
+          <p class="scn-q">"शांत असताना सर्व समजते — संकटात सर्व विसरतो."</p>
+          <p>शांतीत विवेक आणि संकटात विवेक — दोन्ही परिस्थितींत सारखाच असणे म्हणजे विवेकख्याति. कसलेल्या योद्ध्याला रणांगणातही शांती असते. सराव शांतीत होतो — परीक्षा संकटात होते.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Myth callout -->
+    <div class="c-section">
+      <div class="eyebrow-dev">गैरसमज</div>
+      <h2>ही संकल्पना समजण्यात सहसा होणारी चूक.</h2>
+      <div class="myth">
+        <div class="glyph">"</div>
+        <div>
+          <div class="myth-label">सर्वसामान्य चुकीचा अर्थ</div>
+          <h3>"विवेकख्याति म्हणजे सर्वज्ञता — सर्व काही माहीत असणे"</h3>
+          <p>विवेकख्याति म्हणजे "एक" गोष्ट पूर्णपणे जाणणे — "आत्मा आणि प्रकृती वेगळ्या आहेत." हे एक ज्ञान, पण परिपूर्ण. सर्वज्ञता वेगळी — विवेकख्याति म्हणजे मूलभूत भेद अनायासे जाणणे.</p>
+<p><strong>गीता म्हणते:</strong> "ज्ञानचक्षुषा" — ज्ञानाचे चक्षू. हे चक्षू एकाच गोष्टीसाठी — क्षेत्र आणि क्षेत्रज्ञ यांतील भेद. हे एकच ज्ञान सर्व बंधन तोडते.</p>
+<p>---</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice" id="practice">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">रोजच्या जीवनात</div>
+    <h2 class="section-title" style="margin-top:14px;">चार पावले — आजपासून सुरू करण्यासाठी.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:640px;margin:0;line-height:1.6;">एका दिवसात हे साधता येत नाही — पण रोज एक छोटा सराव केला, तर महिन्याभरात मनाची दिशा बदलते.</p>
+
+    <div class="grid">
+      <div class="step">
+        <div class="num">०१</div>
+        <h5>श्रवण</h5>
+        <p>एक गीताश्लोक किंवा ज्ञानेश्वरी ओवी रोज वाचा — श्रवण हे विवेकाचे बीज.</p>
+      </div>
+      <div class="step">
+        <div class="num">०२</div>
+        <h5>मनन</h5>
+        <p>त्या ओवीचा अर्थ एक मिनिट विचारात घ्या — "हे माझ्या जीवनात कुठे दिसते?"</p>
+      </div>
+      <div class="step">
+        <div class="num">०३</div>
+        <h5>निदिध्यासन</h5>
+        <p>एक वेळ कठीण प्रसंगात — "हे क्षेत्र आहे — मी क्षेत्रज्ञ आहे" — हे आठवणे.</p>
+      </div>
+      <div class="step">
+        <div class="num">०४</div>
+        <h5>सातत्य</h5>
+        <p>घाई नाही — रोज एक पाऊल. विवेकख्याति फुलासारखी — बळजबरी नाही, जोपासना हवी.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="c-body" style="padding-top:80px;padding-bottom:40px;">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">पुढे वाचा</div>
+    <h2 class="section-title" style="margin:14px 0 14px;">संबंधित संकल्पना.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:560px;margin:0;line-height:1.55;">विवेकख्याति समजली, तर पुढच्या तीन संकल्पना नैसर्गिकपणे उघडतात.</p>
+
+    <div class="related">
+      <a href="./kshetra-kshetradnya.html" class="rel">
+        <div class="reltag">अध्याय १३, श्लोक १–३</div>
+        <h5>क्षेत्र-क्षेत्रज्ञ</h5>
+        <p>विवेकख्यातीचा विषय — क्षेत्र आणि क्षेत्रज्ञ यांतील भेद.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./viveka.html" class="rel">
+        <div class="reltag">अध्याय २, श्लोक ४१</div>
+        <h5>विवेक</h5>
+        <p>विवेकख्यातीचे बीज — नित्य-अनित्य भेद.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./moksha.html" class="rel">
+        <div class="reltag">अध्याय १८, श्लोक ५५–६६</div>
+        <h5>मोक्ष</h5>
+        <p>विवेकख्यातीचे फळ — मोक्ष.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap-narrow">
+    <div class="om-big">ॐ</div>
+    <p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;"><em>"क्षेत्रक्षेत्रज्ञयोरेवमन्तरं ज्ञानचक्षुषा ।</em> <em>भूतप्रकृतिमोक्षं च ये विदुर्यान्ति ते परम् ॥"</em> — गीता १३.३५ <em>सोन्याचा जाणकार दागिन्यात सोने अनायासे पाहतो. सूर्य उगवला की सर्व अंधार एकाच वेळी जातो. विवेकख्याति म्हणजे हे — क्षण न गमावता, प्रयत्न न करता, सहजपणे — आत्मा आणि प्रकृती यांतील भेद नित्य स्पष्ट असणे.</em></p><p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0 0 28px;">ज्ञानचक्षूंनी क्षेत्र-क्षेत्रज्ञाचा भेद जाणून प्रकृतिमोक्ष जे जाणतात — ते परम तत्त्वाला जातात.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;">
+      <a href="../adhyay?id=13" class="btn btn-primary">अध्याय १३ वाचा</a>
+      <a href="../concept" class="btn btn-ghost">दुसरी संकल्पना</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../" style="font-size:22px;">
+          <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
+          <span>गीता-ज्ञानेश्वरी</span>
+        </a>
+        <p class="foot-blurb">गीता आणि ज्ञानेश्वरी — आधुनिक जीवनासाठी एका शांत वाचनाच्या स्वरूपात.</p>
+      </div>
+      <div>
+        <h5>ग्रंथ</h5>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../adhyay?id=13">अध्याय १३ वाचा</a>
+        <a href="../concept">संकल्पना</a>
+      </div>
+      <div>
+        <h5>अभ्यास</h5>
+        <a href="#">आजचा श्लोक</a>
+        <a href="#">माझ्या नोंदी</a>
+        <a href="#">वाचन प्रगती</a>
+      </div>
+      <div>
+        <h5>बद्दल</h5>
+        <a href="#">उद्देश</a>
+        <a href="#">स्रोत</a>
+        <a href="#">संपर्क</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© २०२६ गीता-ज्ञानेश्वरी · प्रेमाने बनवलेले.</div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    });
+  });
+</script>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
