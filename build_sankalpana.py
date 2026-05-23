@@ -30,6 +30,8 @@ SLUGS = [
     # batch 3
     "chidananda", "ahaituki-krupa", "kshanti", "avyabhicharini-bhakti",
     "vivekhyati",
+    # batch 4
+    "buddhiyoga", "prasannachitta", "yoganishtha",
 ]
 
 ICONS = [

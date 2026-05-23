@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>बुद्धियोग — संकल्पना · गीता-ज्ञानेश्वरी</title>
+<meta name="theme-color" content="#9c4a10" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+
+  /* ─── Concept hero ─── */
+  .c-hero {
+    background:
+      radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--saffron) 18%, var(--bg)) 0%, var(--bg) 55%);
+    padding: 48px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 880px) { .c-hero { padding: 32px 0 64px; } }
+
+  .c-hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: end;
+    margin-top: 40px;
+  }
+  @media (max-width: 980px) {
+    .c-hero-inner { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+  }
+
+  .c-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 28px; }
+
+  .c-title {
+    font-family: var(--serif-dev);
+    font-weight: 600;
+    font-size: clamp(50px, 7vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .c-title em { font-style: normal; color: var(--saffron-deep); }
+  .c-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mute);
+    margin: 0 0 28px;
+  }
+  .c-summary {
+    font-family: var(--serif-dev);
+    font-size: clamp(19px, 1.5vw, 22px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 0 32px;
+  }
+
+  .origin-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 36px 32px;
+    position: relative;
+    box-shadow: 0 20px 50px -30px rgba(31,24,18,.3);
+  }
+  .origin-card .corner {
+    position: absolute; top: -14px; left: 32px;
+    background: var(--saffron-deep); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .origin-card .head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 14px 0 14px;
+  }
+  .origin-card .shloka {
+    font-family: var(--serif-dev); font-weight: 500; font-size: 22px;
+    line-height: 1.55; margin: 0 0 22px; color: var(--ink);
+  }
+  .origin-card .ovi {
+    font-family: var(--serif-dev); font-style: italic; font-size: 17px;
+    line-height: 1.55; color: var(--ink-soft);
+    border-top: 1px solid var(--rule); padding-top: 18px; margin: 0 0 18px;
+  }
+  .origin-card .ovi-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 8px;
+  }
+  .origin-card .source {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em;
+  }
+  .origin-card .source::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  }
+
+  .c-mandala {
+    position: absolute; top: -180px; right: -180px; width: 580px; height: 580px;
+  }
+
+  .c-body { padding: 80px 0; }
+  @media (max-width: 880px) { .c-body { padding: 56px 0; } }
+
+  .c-section { margin-bottom: 80px; }
+  .c-section:last-child { margin-bottom: 0; }
+  .c-section .section-head { margin-bottom: 36px; max-width: 760px; }
+  .c-section h2 {
+    font-family: var(--serif-dev); font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.18;
+    letter-spacing: -0.005em; margin: 12px 0 14px; color: var(--ink);
+  }
+  .c-section p.body {
+    font-family: var(--serif-dev); font-size: 19px; line-height: 1.7;
+    color: var(--ink-soft); margin: 0 0 16px; max-width: 760px;
+  }
+  .c-section p.body strong { color: var(--ink); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 32px 28px; }
+  .compare-col h5 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 0 0 14px; font-weight: 500;
+  }
+  .compare-col .big {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 26px;
+    margin: 0 0 14px; color: var(--ink); line-height: 1.25;
+  }
+  .compare-col p { font-family: var(--serif-dev); font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+  .compare-col.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .compare-col.dark h5 { color: var(--saffron-glow); }
+  .compare-col.dark .big { color: var(--bg); }
+  .compare-col.dark p { color: rgba(251,246,234,.75); }
+
+  .scenarios {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px;
+  }
+  @media (max-width: 980px) { .scenarios { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+  .scn {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 28px 26px; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .scn:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--saffron) 35%, var(--rule)); }
+  .scn .ic {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--bg-2);
+    display: grid; place-items: center; color: var(--saffron-deep); margin-bottom: 22px;
+  }
+  .scn h4 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .scn .scn-q { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--saffron-deep); margin: 0 0 12px; line-height: 1.45; }
+  .scn p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .practice { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 88px 0; }
+  @media (max-width: 880px) { .practice { padding: 56px 0; } }
+  .practice .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: 20px;
+    overflow: hidden; margin-top: 40px;
+  }
+  @media (max-width: 880px) { .practice .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .practice .grid { grid-template-columns: 1fr; } }
+  .step { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; }
+  .step .num {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 52px;
+    color: var(--saffron-deep); line-height: 1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .step h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .step p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+  .myth {
+    background: var(--ink); color: var(--bg); border-radius: 26px; padding: 56px 48px; margin-top: 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  @media (max-width: 720px) { .myth { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; } }
+  .myth .glyph { font-family: var(--serif-dev); font-size: 120px; line-height: 1; color: var(--saffron-glow); opacity: .8; }
+  .myth h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(24px, 2.4vw, 32px); color: var(--bg); margin: 0 0 14px; line-height: 1.25; }
+  .myth p { font-family: var(--serif-dev); font-size: 18px; line-height: 1.6; color: rgba(251,246,234,.78); margin: 0 0 8px; }
+  .myth .myth-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-glow); margin-bottom: 14px; }
+
+  .related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+  @media (max-width: 880px) { .related { grid-template-columns: 1fr; } }
+  .rel {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 26px 24px; transition: transform .2s ease, border-color .2s ease; display: block;
+  }
+  .rel:hover { transform: translateY(-2px); border-color: var(--saffron-deep); }
+  .rel .reltag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+  .rel h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .rel p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 14px; }
+  .rel .arrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--saffron-deep); }
+
+  .closing {
+    text-align: center; padding: 100px 0 120px;
+    background: radial-gradient(ellipse at top, color-mix(in oklab, var(--saffron) 14%, var(--bg)) 0%, var(--bg) 65%);
+  }
+  @media (max-width: 880px) { .closing { padding: 64px 0 80px; } }
+  .closing .om-big { font-family: var(--serif-dev); font-size: 64px; color: var(--saffron-deep); line-height: 1; margin-bottom: 28px; }
+  .closing h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(28px, 3vw, 42px); line-height: 1.25; margin: 0 auto 24px; max-width: 720px; text-wrap: balance; }
+  .closing p { font-family: var(--serif-dev); font-size: 19px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../">होम</a>
+      <a href="../adhyay">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+      <a href="#">बद्दल</a>
+      <a href="#" class="nav-cta">वाचन सुरू</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="c-hero">
+  <svg class="mandala c-mandala" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.5">
+      <circle cx="100" cy="100" r="95"/><circle cx="100" cy="100" r="78"/>
+      <circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="42"/>
+      <circle cx="100" cy="100" r="24"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="0.4">
+      <g id="cp"><path d="M100 8 Q112 60 100 94 Q88 60 100 8 Z"/></g>
+      <use href="#cp" transform="rotate(22.5 100 100)"/>
+      <use href="#cp" transform="rotate(45 100 100)"/>
+      <use href="#cp" transform="rotate(67.5 100 100)"/>
+      <use href="#cp" transform="rotate(90 100 100)"/>
+      <use href="#cp" transform="rotate(112.5 100 100)"/>
+      <use href="#cp" transform="rotate(135 100 100)"/>
+      <use href="#cp" transform="rotate(157.5 100 100)"/>
+      <use href="#cp" transform="rotate(180 100 100)"/>
+      <use href="#cp" transform="rotate(202.5 100 100)"/>
+      <use href="#cp" transform="rotate(225 100 100)"/>
+      <use href="#cp" transform="rotate(247.5 100 100)"/>
+      <use href="#cp" transform="rotate(270 100 100)"/>
+      <use href="#cp" transform="rotate(292.5 100 100)"/>
+      <use href="#cp" transform="rotate(315 100 100)"/>
+      <use href="#cp" transform="rotate(337.5 100 100)"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="crumb">
+      <a href="../">होम</a>
+      <span class="sep">/</span>
+      <a href="../concept">संकल्पना</a>
+      <span class="sep">/</span>
+      <span class="now">बुद्धियोग</span>
+    </div>
+
+    <div class="c-hero-inner">
+      <div class="reveal">
+        <div class="eyebrow-dev">गीतेची केंद्रीय संकल्पना</div>
+        <h1 class="c-title"><em>बुद्धियोग.</em></h1>
+        <p class="c-sub">बुद्धी + योग. शुद्ध, विवेकसंपन्न बुद्धीचा ईश्वराशी संयोग. बुद्धीला ईश्वरावर अर्पण करून विवेकाने जगणे.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#practice" class="btn btn-primary">रोजच्या जीवनात कसे आणावे?</a>
+          <a href="../adhyay?id=2" class="btn btn-ghost">अध्याय २ वाचा</a>
+        </div>
+      </div>
+
+      <div class="reveal origin-card">
+        <span class="corner">मूळ श्लोक</span>
+        <div class="head">अध्याय २, श्लोक ४९–५०</div>
+        <p class="shloka">दूरेण ह्यवरं कर्म बुद्धियोगाद्धनञ्जय ।<br/>बुद्धौ शरणमन्विच्छ कृपणाः फलहेतवः ॥ ४९ ॥<br/><br/>बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते ।<br/>तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम् ॥ ५० ॥</p>
+
+        <div class="ovi-label">ज्ञानेश्वरी ओवी · अध्याय २</div>
+        <p class="ovi">बुद्धियोगें जोडलेला ।<br/>कर्म करी परी मुक्त झाला ।<br/>पुण्य पाप दोन्ही सोडला ।<br/>बुद्धियुक्त तो ॥<br/><br/>योगः कर्मसु कौशलम् ।<br/>हें रहस्य जाण संपूर्ण ।<br/>बुद्धी शरण ईश्वरी पूर्ण ।<br/>हाचि बुद्धियोग ॥</p>
+
+        <div class="source">श्रीकृष्ण → अर्जुन · कुरुक्षेत्र</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="c-body">
+  <div class="wrap-narrow">
+
+    <!-- Meaning -->
+    <div class="c-section">
+      <div class="eyebrow-dev">अर्थ</div>
+      <h2>संकल्पनेचा गाभा.</h2>
+      
+      
+      <div style="overflow-x:auto;margin-top:32px;">
+        <table style="width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--rule);border-radius:16px;overflow:hidden;">
+          <thead><tr><th style="padding:10px 14px;border-bottom:1px solid var(--rule);"></th><th style="font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--saffron-deep);padding:10px 14px;text-align:left;border-bottom:1px solid var(--rule);">बुद्धियोगाचे स्वरूप</th></tr></thead>
+          <tbody><tr><td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;">ज्ञानयोग</td><td style="font-family:var(--serif-dev);font-size:15px;line-height:1.5;color:var(--ink-soft);padding:10px 14px;border-bottom:1px solid var(--rule);">"मी आत्मा आहे" — बुद्धीने जाणणे</td></tr><tr><td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;">कर्मयोग</td><td style="font-family:var(--serif-dev);font-size:15px;line-height:1.5;color:var(--ink-soft);padding:10px 14px;border-bottom:1px solid var(--rule);">"फळाशिवाय कर्म" — बुद्धीने निवडणे</td></tr><tr><td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;">भक्तियोग</td><td style="font-family:var(--serif-dev);font-size:15px;line-height:1.5;color:var(--ink-soft);padding:10px 14px;border-bottom:1px solid var(--rule);">"ईश्वरावर बुद्धी अर्पण" — बुद्धीने समर्पण</td></tr><tr><td style="font-family:var(--mono);font-size:12px;font-weight:600;color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--rule);white-space:nowrap;">राजयोग</td><td style="font-family:var(--serif-dev);font-size:15px;line-height:1.5;color:var(--ink-soft);padding:10px 14px;border-bottom:1px solid var(--rule);">"बुद्धी एकाग्र" — ध्यानात बुद्धी शुद्ध होणे</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Dnyaneshwari -->
+    <div class="c-section">
+      <div class="eyebrow-dev">ज्ञानेश्वरी विवेचन</div>
+      <h2>संत ज्ञानेश्वर हे श्लोक सामान्य माणसासाठी कसे उघडतात?</h2>
+      <p class="body">संत ज्ञानेश्वर महाराज बुद्धियोगाला <strong>नावाचे सुकाणू</strong> म्हणतात. नाव कितीही मोठी असो — सुकाणू नसला तर भरकटते. बुद्धियोग म्हणजे जीवनाचे सुकाणू — विवेकपूर्ण दिशा.</p>
+<p class="body">ज्ञानेश्वर महाराज उदाहरणे देतात:</p>
+<ul style="margin:0 0 16px 20px;">
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>सुकाणू आणि नाव</strong> — सुकाणू असेल तर नाव ध्येयाकडे. नसेल तर प्रवाहाच्या दयेवर. बुद्धियोग म्हणजे जीवनाचे सुकाणू — दिशा ईश्वराकडे.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>मशाल आणि प्रवासी</strong> — अंधारात मशाल असेल तर रस्ता दिसतो. बुद्धियोग म्हणजे जीवनमार्गावरील मशाल — विवेकाचा प्रकाश.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>सोनार आणि सोने</strong> — सोनाराला सोने ओळखणे माहीत आहे — खरे-खोटे लगेच कळते. बुद्धियोगाने "नित्य-अनित्य" लगेच ओळखता येते.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>वैद्य आणि रोगी</strong> — वैद्याला रोग ओळखता येतो — उपाय माहीत असतो. बुद्धियोगाने जीवनाचे "रोग" (अज्ञान, आसक्ती) ओळखता येतात — "उपाय" (साधना) माहीत होतो.</li>
+</ul>
+<p class="body"><em>"जसे नावेला सुकाणू असले की ध्येयाकडे जाते — तसे बुद्धियोगाने विवेकबळाने ईश्वराकडे धाव घेता येते."</em></p>
+<p class="body">ज्ञानेश्वर महाराज सांगतात — "योगः कर्मसु कौशलम्" हे गीतेचे सार. बुद्धियोग म्हणजे हे कौशल्य — प्रत्येक कर्म विवेकाने, शांतीने, आसक्तीशिवाय करणे. हे शिकणे म्हणजे जीवन शिकणे.</p>
+<p class="body">---</p>
+            <div style="background:var(--paper);border:1px solid var(--rule);border-radius:20px;padding:32px 32px;margin-top:24px;">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:14px;">ज्ञानेश्वरी अध्याय २ · संबंधित ओव्या</div>
+        <p style="font-family:var(--serif-dev);font-style:italic;font-size:21px;line-height:1.55;color:var(--ink);margin:0;">जैसें नावेसी सुकाणू असे ।<br/>तैसें बुद्धियोगें चालसे ।<br/>ईश्वराकडे धाव घेसे ।<br/>विवेकबळें ॥</p>
+        <p style="font-family:var(--serif-dev);font-size:16px;color:var(--ink-soft);margin:16px 0 0;padding-top:16px;border-top:1px dashed var(--rule);">"जसे नावेला सुकाणू असले की ध्येयाकडे जाते — तसे बुद्धियोगाने विवेकबळाने ईश्वराकडे धाव घेता येते."</p>
+      </div>
+    </div>
+
+    <!-- Modern scenarios -->
+    <div class="c-section" id="modern">
+      <div class="eyebrow-dev">आधुनिक प्रसंग</div>
+      <h2>आजच्या जीवनात ही संकल्पना कुठे उभी राहते?</h2>
+      <p class="body">तत्त्वज्ञानाची खरी कसोटी कार्यालयात, स्वयंपाकघरात आणि निर्णयाच्या क्षणी होते.</p>
+
+      <div class="scenarios">
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h4>कठीण निर्णय</h4>
+          <p class="scn-q">"महत्त्वाचा निर्णय घ्यायचा आहे — बुद्धी गोंधळलेली आहे."</p>
+          <p>"बुद्धौ शरणमन्विच्छ" — बुद्धीला ईश्वराला शरण द्या. "हे निर्णय माझे नाही — माझ्याद्वारे ईश्वर घेतो." मग शांतपणे तथ्य पाहा — बुद्धी स्पष्ट होते.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/><path d="M10 19v-6h4v6"/></svg></div>
+          <h4>व्यावसायिक कौशल्य</h4>
+          <p class="scn-q">"कामात उत्कृष्टता आणायची आहे — कसे?"</p>
+          <p>"योगः कर्मसु कौशलम्" — कर्मातील कौशल्य म्हणजे योग. बुद्धियोगाने केलेले कर्म — एकाग्र, शांत, आसक्तीशिवाय — आपोआप उत्कृष्ट होते. "हे कर्म ईश्वरासाठी" — हेतू शुद्ध — गुणवत्ता वाढते.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h4>तर्क आणि श्रद्धा</h4>
+          <p class="scn-q">"बुद्धीला पटले नाही तर श्रद्धा कशी ठेवायची?"</p>
+          <p>बुद्धियोग म्हणजे "तर्काने नाकारणे" नव्हे — "तर्काच्या पलीकडे जाणे." बुद्धी शुद्ध झाली की ती तर्काच्या मर्यादा जाणते — आणि अनुभवाला वाट देते. शुद्ध बुद्धी श्रद्धेशी विरोधात नाही — तिला पूरक आहे.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M5 12H2M22 12h-3M5.2 5.2l2.1 2.1M16.7 7.3l2.1-2.1"/><circle cx="12" cy="15" r="6"/></svg></div>
+          <h4>भावनेत बुद्धी</h4>
+          <p class="scn-q">"भावनेत बुद्धी काम करत नाही — चुकीचे निर्णय होतात."</p>
+          <p>भावना क्षेत्र — बुद्धी क्षेत्रज्ञाच्या जवळची. "बुद्धियुक्त" म्हणजे भावनाशून्य नव्हे — भावनेने न वाहवणारी बुद्धी. शांत होताना एक श्वास — "बुद्धीला ईश्वराला शरण" — मग बोलणे.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>अध्यात्मिक शंका</h4>
+          <p class="scn-q">"बुद्धीला अनेक प्रश्न — उत्तरे नाहीत — साधना थांबते."</p>
+          <p>"व्यवसायात्मिका बुद्धी" — एकाग्र, निश्चयात्मक. प्रश्न विचारणे बुद्धीचे काम — पण "उत्तर न येईपर्यंत थांबतो" हे अपरिपक्व बुद्धी. परिपक्व बुद्धी प्रश्न विचारत साधनाही करते.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>सामाजिक न्याय</h4>
+          <p class="scn-q">"न्यायासाठी लढायचे आहे — पण कसे?"</p>
+          <p>"बुद्धियोगाने युक्त" म्हणजे क्रोधाशिवाय, द्वेषाशिवाय — पण ठाम. "पुण्य-पाप दोन्ही सोडणे" म्हणजे "मला श्रेय मिळेल" हा हेतू सोडणे. शुद्ध हेतूने, बुद्धियोगाने — न्यायाचा लढा अधिक शक्तिशाली.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Myth callout -->
+    <div class="c-section">
+      <div class="eyebrow-dev">गैरसमज</div>
+      <h2>ही संकल्पना समजण्यात सहसा होणारी चूक.</h2>
+      <div class="myth">
+        <div class="glyph">"</div>
+        <div>
+          <div class="myth-label">सर्वसामान्य चुकीचा अर्थ</div>
+          <h3>"बुद्धियोग म्हणजे केवळ तर्क, बौद्धिकता"</h3>
+          <p>बुद्धियोग बौद्धिकतेच्या पलीकडे आहे. "बुद्धौ शरणमन्विच्छ" — बुद्धी ईश्वराला शरण. म्हणजे बुद्धीचा अहंकार सोडणे — "मी सर्वज्ञ" हे सोडणे. शुद्ध बुद्धी तर्काने नव्हे — अनुभवाने ईश्वराला जाणते.</p>
+<p><strong>गीता म्हणते:</strong> "योगः कर्मसु कौशलम्" — कौशल्य म्हणजे तर्क नव्हे — विवेक, शांती, आसक्तीशिवाय कर्म. हे अनुभवाने येते — केवळ तर्काने नव्हे.</p>
+<p>---</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice" id="practice">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">रोजच्या जीवनात</div>
+    <h2 class="section-title" style="margin-top:14px;">चार पावले — आजपासून सुरू करण्यासाठी.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:640px;margin:0;line-height:1.6;">एका दिवसात हे साधता येत नाही — पण रोज एक छोटा सराव केला, तर महिन्याभरात मनाची दिशा बदलते.</p>
+
+    <div class="grid">
+      <div class="step">
+        <div class="num">०१</div>
+        <h5>बुद्धीला शरण</h5>
+        <p>कोणत्याही मोठ्या निर्णयापूर्वी — "ईश्वरा, माझी बुद्धी तुला शरण." मग विवेकाने विचार.</p>
+      </div>
+      <div class="step">
+        <div class="num">०२</div>
+        <h5>कर्मातील कौशल्य</h5>
+        <p>एक काम — बुद्धियोगाने करा — एकाग्र, शांत, आसक्तीशिवाय. "हे ईश्वरासाठी." गुणवत्ता पाहा.</p>
+      </div>
+      <div class="step">
+        <div class="num">०३</div>
+        <h5>बुद्धी शुद्ध करा</h5>
+        <p>सकाळी एक मिनिट — "माझी बुद्धी रागद्वेष, अहंकारापासून शुद्ध होवो." हे बुद्धियोगाची प्रार्थना.</p>
+      </div>
+      <div class="step">
+        <div class="num">०४</div>
+        <h5>सुकाणू धरा</h5>
+        <p>आज जगताना — "माझ्या जीवनाचे सुकाणू कुठे आहे? — ईश्वराकडे की बाह्य गोष्टींकडे?"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="c-body" style="padding-top:80px;padding-bottom:40px;">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">पुढे वाचा</div>
+    <h2 class="section-title" style="margin:14px 0 14px;">संबंधित संकल्पना.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:560px;margin:0;line-height:1.55;">बुद्धियोग समजली, तर पुढच्या तीन संकल्पना नैसर्गिकपणे उघडतात.</p>
+
+    <div class="related">
+      <a href="./viveka.html" class="rel">
+        <div class="reltag">अध्याय २, श्लोक ४१</div>
+        <h5>विवेक</h5>
+        <p>बुद्धियोगाचे प्रथम अंग — "व्यवसायात्मिका बुद्धी."</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./nishkam-karmayog.html" class="rel">
+        <div class="reltag">अध्याय २, श्लोक ४७</div>
+        <h5>निष्काम कर्मयोग</h5>
+        <p>बुद्धियोगाचे कर्मरूप — "योगः कर्मसु कौशलम्."</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./dnyanyog.html" class="rel">
+        <div class="reltag">अध्याय ४, श्लोक ३६–३८</div>
+        <h5>ज्ञानयोग</h5>
+        <p>बुद्धियोगाचे ज्ञानरूप — शुद्ध बुद्धीने आत्मज्ञान.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap-narrow">
+    <div class="om-big">ॐ</div>
+    <p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;"><em>"बुद्धियुक्तो जहातीह उभे सुकृतदुष्कृते ।</em> <em>तस्माद्योगाय युज्यस्व योगः कर्मसु कौशलम् ॥"</em> — गीता २.५० <em>नावेला सुकाणू — जीवनाला बुद्धियोग. मशालीने अंधारात मार्ग — बुद्धियोगाने जीवनात मार्ग. शुद्ध बुद्धी — ईश्वराला शरण — कर्मात कौशल्य — हाच बुद्धियोग — हेच जगण्याचे सार.</em></p><p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0 0 28px;">बुद्धियुक्त पुण्य-पाप दोन्ही सोडतो — योगाशी जोड — कर्मातील कौशल्य म्हणजे योग.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;">
+      <a href="../adhyay?id=2" class="btn btn-primary">अध्याय २ वाचा</a>
+      <a href="../concept" class="btn btn-ghost">दुसरी संकल्पना</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../" style="font-size:22px;">
+          <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
+          <span>गीता-ज्ञानेश्वरी</span>
+        </a>
+        <p class="foot-blurb">गीता आणि ज्ञानेश्वरी — आधुनिक जीवनासाठी एका शांत वाचनाच्या स्वरूपात.</p>
+      </div>
+      <div>
+        <h5>ग्रंथ</h5>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../adhyay?id=2">अध्याय २ वाचा</a>
+        <a href="../concept">संकल्पना</a>
+      </div>
+      <div>
+        <h5>अभ्यास</h5>
+        <a href="#">आजचा श्लोक</a>
+        <a href="#">माझ्या नोंदी</a>
+        <a href="#">वाचन प्रगती</a>
+      </div>
+      <div>
+        <h5>बद्दल</h5>
+        <a href="#">उद्देश</a>
+        <a href="#">स्रोत</a>
+        <a href="#">संपर्क</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© २०२६ गीता-ज्ञानेश्वरी · प्रेमाने बनवलेले.</div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    });
+  });
+</script>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

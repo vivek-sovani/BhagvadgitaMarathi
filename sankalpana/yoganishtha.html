@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>योगनिष्ठा — संकल्पना · गीता-ज्ञानेश्वरी</title>
+<meta name="theme-color" content="#9c4a10" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+
+  /* ─── Concept hero ─── */
+  .c-hero {
+    background:
+      radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--saffron) 18%, var(--bg)) 0%, var(--bg) 55%);
+    padding: 48px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 880px) { .c-hero { padding: 32px 0 64px; } }
+
+  .c-hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: end;
+    margin-top: 40px;
+  }
+  @media (max-width: 980px) {
+    .c-hero-inner { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+  }
+
+  .c-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 28px; }
+
+  .c-title {
+    font-family: var(--serif-dev);
+    font-weight: 600;
+    font-size: clamp(50px, 7vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .c-title em { font-style: normal; color: var(--saffron-deep); }
+  .c-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mute);
+    margin: 0 0 28px;
+  }
+  .c-summary {
+    font-family: var(--serif-dev);
+    font-size: clamp(19px, 1.5vw, 22px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 0 32px;
+  }
+
+  .origin-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 36px 32px;
+    position: relative;
+    box-shadow: 0 20px 50px -30px rgba(31,24,18,.3);
+  }
+  .origin-card .corner {
+    position: absolute; top: -14px; left: 32px;
+    background: var(--saffron-deep); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .origin-card .head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 14px 0 14px;
+  }
+  .origin-card .shloka {
+    font-family: var(--serif-dev); font-weight: 500; font-size: 22px;
+    line-height: 1.55; margin: 0 0 22px; color: var(--ink);
+  }
+  .origin-card .ovi {
+    font-family: var(--serif-dev); font-style: italic; font-size: 17px;
+    line-height: 1.55; color: var(--ink-soft);
+    border-top: 1px solid var(--rule); padding-top: 18px; margin: 0 0 18px;
+  }
+  .origin-card .ovi-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 8px;
+  }
+  .origin-card .source {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em;
+  }
+  .origin-card .source::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  }
+
+  .c-mandala {
+    position: absolute; top: -180px; right: -180px; width: 580px; height: 580px;
+  }
+
+  .c-body { padding: 80px 0; }
+  @media (max-width: 880px) { .c-body { padding: 56px 0; } }
+
+  .c-section { margin-bottom: 80px; }
+  .c-section:last-child { margin-bottom: 0; }
+  .c-section .section-head { margin-bottom: 36px; max-width: 760px; }
+  .c-section h2 {
+    font-family: var(--serif-dev); font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.18;
+    letter-spacing: -0.005em; margin: 12px 0 14px; color: var(--ink);
+  }
+  .c-section p.body {
+    font-family: var(--serif-dev); font-size: 19px; line-height: 1.7;
+    color: var(--ink-soft); margin: 0 0 16px; max-width: 760px;
+  }
+  .c-section p.body strong { color: var(--ink); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 32px 28px; }
+  .compare-col h5 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 0 0 14px; font-weight: 500;
+  }
+  .compare-col .big {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 26px;
+    margin: 0 0 14px; color: var(--ink); line-height: 1.25;
+  }
+  .compare-col p { font-family: var(--serif-dev); font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+  .compare-col.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .compare-col.dark h5 { color: var(--saffron-glow); }
+  .compare-col.dark .big { color: var(--bg); }
+  .compare-col.dark p { color: rgba(251,246,234,.75); }
+
+  .scenarios {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px;
+  }
+  @media (max-width: 980px) { .scenarios { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+  .scn {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 28px 26px; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .scn:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--saffron) 35%, var(--rule)); }
+  .scn .ic {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--bg-2);
+    display: grid; place-items: center; color: var(--saffron-deep); margin-bottom: 22px;
+  }
+  .scn h4 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .scn .scn-q { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--saffron-deep); margin: 0 0 12px; line-height: 1.45; }
+  .scn p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .practice { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 88px 0; }
+  @media (max-width: 880px) { .practice { padding: 56px 0; } }
+  .practice .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: 20px;
+    overflow: hidden; margin-top: 40px;
+  }
+  @media (max-width: 880px) { .practice .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .practice .grid { grid-template-columns: 1fr; } }
+  .step { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; }
+  .step .num {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 52px;
+    color: var(--saffron-deep); line-height: 1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .step h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .step p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+  .myth {
+    background: var(--ink); color: var(--bg); border-radius: 26px; padding: 56px 48px; margin-top: 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  @media (max-width: 720px) { .myth { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; } }
+  .myth .glyph { font-family: var(--serif-dev); font-size: 120px; line-height: 1; color: var(--saffron-glow); opacity: .8; }
+  .myth h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(24px, 2.4vw, 32px); color: var(--bg); margin: 0 0 14px; line-height: 1.25; }
+  .myth p { font-family: var(--serif-dev); font-size: 18px; line-height: 1.6; color: rgba(251,246,234,.78); margin: 0 0 8px; }
+  .myth .myth-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-glow); margin-bottom: 14px; }
+
+  .related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+  @media (max-width: 880px) { .related { grid-template-columns: 1fr; } }
+  .rel {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 26px 24px; transition: transform .2s ease, border-color .2s ease; display: block;
+  }
+  .rel:hover { transform: translateY(-2px); border-color: var(--saffron-deep); }
+  .rel .reltag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+  .rel h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .rel p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 14px; }
+  .rel .arrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--saffron-deep); }
+
+  .closing {
+    text-align: center; padding: 100px 0 120px;
+    background: radial-gradient(ellipse at top, color-mix(in oklab, var(--saffron) 14%, var(--bg)) 0%, var(--bg) 65%);
+  }
+  @media (max-width: 880px) { .closing { padding: 64px 0 80px; } }
+  .closing .om-big { font-family: var(--serif-dev); font-size: 64px; color: var(--saffron-deep); line-height: 1; margin-bottom: 28px; }
+  .closing h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(28px, 3vw, 42px); line-height: 1.25; margin: 0 auto 24px; max-width: 720px; text-wrap: balance; }
+  .closing p { font-family: var(--serif-dev); font-size: 19px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../">होम</a>
+      <a href="../adhyay">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+      <a href="#">बद्दल</a>
+      <a href="#" class="nav-cta">वाचन सुरू</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="c-hero">
+  <svg class="mandala c-mandala" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.5">
+      <circle cx="100" cy="100" r="95"/><circle cx="100" cy="100" r="78"/>
+      <circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="42"/>
+      <circle cx="100" cy="100" r="24"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="0.4">
+      <g id="cp"><path d="M100 8 Q112 60 100 94 Q88 60 100 8 Z"/></g>
+      <use href="#cp" transform="rotate(22.5 100 100)"/>
+      <use href="#cp" transform="rotate(45 100 100)"/>
+      <use href="#cp" transform="rotate(67.5 100 100)"/>
+      <use href="#cp" transform="rotate(90 100 100)"/>
+      <use href="#cp" transform="rotate(112.5 100 100)"/>
+      <use href="#cp" transform="rotate(135 100 100)"/>
+      <use href="#cp" transform="rotate(157.5 100 100)"/>
+      <use href="#cp" transform="rotate(180 100 100)"/>
+      <use href="#cp" transform="rotate(202.5 100 100)"/>
+      <use href="#cp" transform="rotate(225 100 100)"/>
+      <use href="#cp" transform="rotate(247.5 100 100)"/>
+      <use href="#cp" transform="rotate(270 100 100)"/>
+      <use href="#cp" transform="rotate(292.5 100 100)"/>
+      <use href="#cp" transform="rotate(315 100 100)"/>
+      <use href="#cp" transform="rotate(337.5 100 100)"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="crumb">
+      <a href="../">होम</a>
+      <span class="sep">/</span>
+      <a href="../concept">संकल्पना</a>
+      <span class="sep">/</span>
+      <span class="now">योगनिष्ठा</span>
+    </div>
+
+    <div class="c-hero-inner">
+      <div class="reveal">
+        <div class="eyebrow-dev">गीतेची केंद्रीय संकल्पना</div>
+        <h1 class="c-title"><em>योगनिष्ठा.</em></h1>
+        <p class="c-sub">योगात दृढता. साधनेत अचल राहणे. कोणत्याही विघ्नाने, निराशेने, थकव्याने योगाचा त्याग न करणे.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#practice" class="btn btn-primary">रोजच्या जीवनात कसे आणावे?</a>
+          <a href="../adhyay?id=3" class="btn btn-ghost">अध्याय ३ वाचा</a>
+        </div>
+      </div>
+
+      <div class="reveal origin-card">
+        <span class="corner">मूळ श्लोक</span>
+        <div class="head">अध्याय ३, श्लोक ३ व अध्याय ६, श्लोक ४५</div>
+        <p class="shloka">लोकेऽस्मिन्द्विविधा निष्ठा पुरा प्रोक्ता मयानघ ।<br/>ज्ञानयोगेन साङ्ख्यानां कर्मयोगेन योगिनाम् ॥<br/>— अध्याय ३, श्लोक ३<br/><br/>अनेकजन्मसंसिद्धस्ततो याति परां गतिम् ।<br/>— अध्याय ६, श्लोक ४५</p>
+
+        <div class="ovi-label">ज्ञानेश्वरी ओवी · अध्याय ३</div>
+        <p class="ovi">ज्ञानयोगाची निष्ठा एक ।<br/>कर्मयोगाची निष्ठा देख ।<br/>दोन्ही मार्ग अनेक ।<br/>योगाचे असती ॥<br/><br/>जो निष्ठेनें योग करी ।<br/>अनेक जन्मांच्या शक्तीवरी ।<br/>परम गती पावे अंतरीं ।<br/>संसिद्ध होय ॥</p>
+
+        <div class="source">श्रीकृष्ण → अर्जुन · कुरुक्षेत्र</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="c-body">
+  <div class="wrap-narrow">
+
+    <!-- Meaning -->
+    <div class="c-section">
+      <div class="eyebrow-dev">अर्थ</div>
+      <h2>संकल्पनेचा गाभा.</h2>
+      
+      
+      <div class="compare">
+        <div class="compare-col">
+          <h5>स्वरूप</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">अपेक्षाभंग</strong><br/>"फळ दिसत नाही — सोडतो"</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">थकवा</strong><br/>"आता नको — उद्या करतो"</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">विचलन</strong><br/>नवीन मार्गाचे आकर्षण</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">निराशा</strong><br/>"माझ्याने नाही होणार"</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">व्यस्तता</strong><br/>"वेळच नाही"</li></ul>
+        </div>
+        <div class="compare-col dark">
+          <h5>उपाय</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">अपेक्षाभंग</strong><br/>"नेहाभिक्रमनाशः" — स्मरण</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">थकवा</strong><br/>छोटी, नियमित साधना</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">विचलन</strong><br/>एकनिष्ठा — एकाच विहिरीत खोल</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">निराशा</strong><br/>पूर्वसंचिताचे स्मरण</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">व्यस्तता</strong><br/>प्राधान्य बदलणे — योग प्रथम</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dnyaneshwari -->
+    <div class="c-section">
+      <div class="eyebrow-dev">ज्ञानेश्वरी विवेचन</div>
+      <h2>संत ज्ञानेश्वर हे श्लोक सामान्य माणसासाठी कसे उघडतात?</h2>
+      <p class="body">संत ज्ञानेश्वर महाराज योगनिष्ठेला <strong>खोल विहीर खणणे</strong> असे म्हणतात. एका ठिकाणी खोल खणले तरच पाणी मिळते — अनेक ठिकाणी उथळ खणले तर नाही. योगनिष्ठा म्हणजे एकाच ठिकाणी, दीर्घकाळ, खोलवर जाणे.</p>
+<p class="body">ज्ञानेश्वर महाराज उदाहरणे देतात:</p>
+<ul style="margin:0 0 16px 20px;">
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>कुंभार आणि मडके</strong> — कुंभार एका दिवसात मडके बनवत नाही. दिवसामागून दिवस, चाक फिरवत राहतो. योगनिष्ठा अशीच — दीर्घकाळ, नियमित, एकाग्र.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>झाड आणि मूळ</strong> — झाड वाढते — दिसत नाही. मुळे खोल जातात — दिसत नाहीत. वर्षानुवर्षे — मग एकाएकी फळ येते. योगनिष्ठा असाच — दिसत नाही पण होत असते.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>तप आणि अग्नी</strong> — लाकूड घासत राहिले तर अग्नी निघतो — थांबले तर नाही. योगनिष्ठा म्हणजे न थांबता घासत राहणे — अग्नी आपोआप निघतो.</li>
+</ul>
+<p class="body"><em>"जसा कुंभार दिवसेंदिवस चाक फिरवून मडके घडवतो — तसा योगनिष्ठ साधक परम फल साधतो."</em></p>
+<p class="body">ज्ञानेश्वर महाराज सांगतात — "अनेकजन्मसंसिद्धः" — अनेक जन्मांत साधना केलेला. एका जन्मातील निष्ठाही त्या संसिद्धतेत भर घालते. प्रत्येक क्षण महत्त्वाचा — एकही क्षण वाया नाही.</p>
+<p class="body">---</p>
+            <div style="background:var(--paper);border:1px solid var(--rule);border-radius:20px;padding:32px 32px;margin-top:24px;">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:14px;">ज्ञानेश्वरी अध्याय ६ · संबंधित ओव्या</div>
+        <p style="font-family:var(--serif-dev);font-style:italic;font-size:21px;line-height:1.55;color:var(--ink);margin:0;">जैसा कुंभारु चाक फिरवी ।<br/>दिवसेंदिवस घडवी ।<br/>तैसा योगनिष्ठ साधवी ।<br/>परम फल ॥</p>
+        <p style="font-family:var(--serif-dev);font-size:16px;color:var(--ink-soft);margin:16px 0 0;padding-top:16px;border-top:1px dashed var(--rule);">"जसा कुंभार दिवसेंदिवस चाक फिरवून मडके घडवतो — तसा योगनिष्ठ साधक परम फल साधतो."</p>
+      </div>
+    </div>
+
+    <!-- Modern scenarios -->
+    <div class="c-section" id="modern">
+      <div class="eyebrow-dev">आधुनिक प्रसंग</div>
+      <h2>आजच्या जीवनात ही संकल्पना कुठे उभी राहते?</h2>
+      <p class="body">तत्त्वज्ञानाची खरी कसोटी कार्यालयात, स्वयंपाकघरात आणि निर्णयाच्या क्षणी होते.</p>
+
+      <div class="scenarios">
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h4>साधनेत खंड</h4>
+          <p class="scn-q">"काही दिवस झाले नाही — आता कशाला करू?"</p>
+          <p>खंड पडला — पण मार्ग बदलला नाही. कुंभाराचे चाक थांबले — पुन्हा फिरवणे. "नेहाभिक्रमनाशः" — आधीचे व्यर्थ नाही. आत्ता सुरू करणे — हीच निष्ठा.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/><path d="M10 19v-6h4v6"/></svg></div>
+          <h4>फळ न दिसणे</h4>
+          <p class="scn-q">"वर्षे साधना केली — काहीच बदल नाही."</p>
+          <p>झाड वाढते — दिसत नाही. मुळे खोल जातात — दिसत नाहीत. "संसिद्ध" होण्यास वेळ लागतो. थांबणे नाही — एक दिवस फळ येईलच.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h4>नव्या मार्गाचे आकर्षण</h4>
+          <p class="scn-q">"हा मार्ग चांगला वाटतो — तो पण — कोणता घ्यायचा?"</p>
+          <p>एकाच विहिरीत खोल खणले तर पाणी. अनेक ठिकाणी उथळ खणले तर नाही. एक मार्ग निवडा — दृढ रहा. एकनिष्ठा हे योगनिष्ठेचे हृदय.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M5 12H2M22 12h-3M5.2 5.2l2.1 2.1M16.7 7.3l2.1-2.1"/><circle cx="12" cy="15" r="6"/></svg></div>
+          <h4>व्यस्त जीवनात साधना</h4>
+          <p class="scn-q">"इतके काम — साधनेसाठी वेळ नाही."</p>
+          <p>दहा मिनिटे — नित्य — हे एक तास आठवड्यातून एकदा पेक्षा श्रेष्ठ. सातत्य हे निष्ठेचे मूल. "थोडे रोज" — हेच योगनिष्ठेचे आधुनिक रूप.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>निराशेत साधना</h4>
+          <p class="scn-q">"माझ्यासारख्याने काय साधना — मी साधारण माणूस."</p>
+          <p>"अनेकजन्मसंसिद्धः" — तुमच्यात अनेक जन्मांचे पुण्य आहे. तुम्ही साधारण नाही — तुम्ही साधक आहात. निष्ठा ठेवा — ब्रह्म साध्य आहे.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>अंतिम श्वासापर्यंत</h4>
+          <p class="scn-q">"वय झाले — आता कशाला साधना?"</p>
+          <p>"अंतकाले च मामेव स्मरन्" — अंतकाळीही स्मरण — हेच योगनिष्ठेचे परम रूप. प्रत्येक श्वास साधनेचा — शेवटचा श्वासही. कुंभार शेवटच्या दिवसापर्यंत मडके घडवतो.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Myth callout -->
+    <div class="c-section">
+      <div class="eyebrow-dev">गैरसमज</div>
+      <h2>ही संकल्पना समजण्यात सहसा होणारी चूक.</h2>
+      <div class="myth">
+        <div class="glyph">"</div>
+        <div>
+          <div class="myth-label">सर्वसामान्य चुकीचा अर्थ</div>
+          <h3>"योगनिष्ठा म्हणजे कठोर नियम — एकही दिवस चुकला तर सर्व बुडाले"</h3>
+          <p>"नेहाभिक्रमनाशः" — प्रयत्न वाया नाही. एक दिवस चुकला — पुन्हा सुरू करा. निष्ठा म्हणजे परिपूर्णता नव्हे — दिशा सोडणे नाही. चाक थांबले — पुन्हा फिरवा. खोल विहिरीत खणत राहणे — हेच निष्ठा.</p>
+<p>---</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice" id="practice">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">रोजच्या जीवनात</div>
+    <h2 class="section-title" style="margin-top:14px;">चार पावले — आजपासून सुरू करण्यासाठी.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:640px;margin:0;line-height:1.6;">एका दिवसात हे साधता येत नाही — पण रोज एक छोटा सराव केला, तर महिन्याभरात मनाची दिशा बदलते.</p>
+
+    <div class="grid">
+      <div class="step">
+        <div class="num">०१</div>
+        <h5>एक निश्चित वेळ</h5>
+        <p>रोज एकाच वेळी — दहा मिनिटे — योगसाधना. वेळ निश्चित असेल तर निष्ठा टिकते.</p>
+      </div>
+      <div class="step">
+        <div class="num">०२</div>
+        <h5>"नेहाभिक्रमनाशः"</h5>
+        <p>खंड पडला — "प्रयत्न वाया नाही" — आत्ता पुन्हा सुरू. आत्ता हा क्षण — हेच निष्ठेचे नवीकरण.</p>
+      </div>
+      <div class="step">
+        <div class="num">०३</div>
+        <h5>एकनिष्ठा</h5>
+        <p>एक मार्ग, एक गुरू, एक साधना — एक वर्ष दृढपणे — खोलवर जाणे.</p>
+      </div>
+      <div class="step">
+        <div class="num">०४</div>
+        <h5>दीर्घदृष्टी</h5>
+        <p>"आज नाही दिसत — पण होत आहे" — झाड वाढते — दिसत नाही. निष्ठेचे फळ अनेकजन्मसिद्ध.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="c-body" style="padding-top:80px;padding-bottom:40px;">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">पुढे वाचा</div>
+    <h2 class="section-title" style="margin:14px 0 14px;">संबंधित संकल्पना.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:560px;margin:0;line-height:1.55;">योगनिष्ठा समजली, तर पुढच्या तीन संकल्पना नैसर्गिकपणे उघडतात.</p>
+
+    <div class="related">
+      <a href="./avyabhicharini-bhakti.html" class="rel">
+        <div class="reltag">अध्याय १३, श्लोक १०</div>
+        <h5>अव्यभिचारिणी भक्ती</h5>
+        <p>योगनिष्ठेचे भक्तिरूप — न ढळणारी भक्ती.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="#" class="rel">
+        <div class="reltag">अध्याय ४, श्लोक १५</div>
+        <h5>मुमुक्षुत्व</h5>
+        <p>योगनिष्ठेचे इंधन — मोक्षाची तीव्र अभीप्सा.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="#" class="rel">
+        <div class="reltag">अध्याय ६, श्लोक १२</div>
+        <h5>चित्तैकाग्रता</h5>
+        <p>योगनिष्ठेचे फळ — एकाग्र मन.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap-narrow">
+    <div class="om-big">ॐ</div>
+    <p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;"><em>"अनेकजन्मसंसिद्धस्ततो याति परां गतिम् ।"</em> — गीता ६.४५ <em>कुंभार दिवसेंदिवस चाक फिरवतो — मडके तयार होते. झाड वर्षानुवर्षे वाढते — दिसत नाही — फळ येते. विहिरीत एकाच ठिकाणी खोल खणले — पाणी मिळते. योगनिष्ठा म्हणजे हे — दीर्घकाळ, एकाग्रपणे, अखंडपणे — चालत राहणे.</em></p><p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0 0 28px;">अनेक जन्मांत साधनेने संसिद्ध झालेला — परम गतीला जातो.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;">
+      <a href="../adhyay?id=3" class="btn btn-primary">अध्याय ३ वाचा</a>
+      <a href="../concept" class="btn btn-ghost">दुसरी संकल्पना</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../" style="font-size:22px;">
+          <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
+          <span>गीता-ज्ञानेश्वरी</span>
+        </a>
+        <p class="foot-blurb">गीता आणि ज्ञानेश्वरी — आधुनिक जीवनासाठी एका शांत वाचनाच्या स्वरूपात.</p>
+      </div>
+      <div>
+        <h5>ग्रंथ</h5>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../adhyay?id=3">अध्याय ३ वाचा</a>
+        <a href="../concept">संकल्पना</a>
+      </div>
+      <div>
+        <h5>अभ्यास</h5>
+        <a href="#">आजचा श्लोक</a>
+        <a href="#">माझ्या नोंदी</a>
+        <a href="#">वाचन प्रगती</a>
+      </div>
+      <div>
+        <h5>बद्दल</h5>
+        <a href="#">उद्देश</a>
+        <a href="#">स्रोत</a>
+        <a href="#">संपर्क</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© २०२६ गीता-ज्ञानेश्वरी · प्रेमाने बनवलेले.</div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    });
+  });
+</script>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
