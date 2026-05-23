@@ -32,6 +32,8 @@ SLUGS = [
     "vivekhyati",
     # batch 4
     "buddhiyoga", "prasannachitta", "yoganishtha",
+    # batch 5
+    "divyabhava", "atmasakshi", "paramaprem", "chittaikagrata", "anugraha",
 ]
 
 ICONS = [
