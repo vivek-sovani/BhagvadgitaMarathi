@@ -47,6 +47,7 @@
   const pdfLabel       = document.getElementById('pdf-label');
   const pdfOpenBar     = document.querySelector('.pdf-open-bar');
   const pdfPanelEl     = document.getElementById('adhyay-pdf-panel');
+  const swipeHintEl    = document.getElementById('pdf-swipe-hint');
   let   panelPdfUrl    = null;   // tracks what's currently rendered
 
   // Renders all PDF pages stacked vertically inside the right/swipe panel.
@@ -54,11 +55,17 @@
     if (!pdfPanelEl) return;
     if (url === panelPdfUrl) return;   // already showing this PDF
     panelPdfUrl = url;
-    if (!url) { pdfPanelEl.innerHTML = ''; return; }
-    if (typeof pdfjsLib === 'undefined') {
-      pdfPanelEl.innerHTML = '<div class="vpdf-error">⚠️ PDF लायब्ररी लोड झाली नाही</div>';
+    if (!url) {
+      pdfPanelEl.innerHTML = '';
+      if (swipeHintEl) swipeHintEl.style.display = 'none';
       return;
     }
+    if (typeof pdfjsLib === 'undefined') {
+      pdfPanelEl.innerHTML = '<div class="vpdf-error">⚠️ PDF लायब्ररी लोड झाली नाही</div>';
+      if (swipeHintEl) swipeHintEl.style.display = 'none';
+      return;
+    }
+    if (swipeHintEl) swipeHintEl.style.display = '';
     pdfPanelEl.innerHTML = '<div class="vpdf-loading"><div class="spinner"></div><span>PDF लोड होत आहे…</span></div>';
     try {
       const pdf = await pdfjsLib.getDocument({ url, cMapPacked: true }).promise;
@@ -87,6 +94,7 @@
     } catch (err) {
       panelPdfUrl = null;   // allow retry
       pdfPanelEl.innerHTML = '<div class="vpdf-error">⚠️ PDF उघडता आला नाही</div>';
+      if (swipeHintEl) swipeHintEl.style.display = 'none';
     }
   }
   const pdfModal         = document.getElementById('pdf-modal');
