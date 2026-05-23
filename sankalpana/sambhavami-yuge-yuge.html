@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>संभवामि युगे युगे — संकल्पना · गीता-ज्ञानेश्वरी</title>
+<meta name="theme-color" content="#9c4a10" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../css/style.css" />
+<style>
+
+  /* ─── Concept hero ─── */
+  .c-hero {
+    background:
+      radial-gradient(ellipse at 80% 0%, color-mix(in oklab, var(--saffron) 18%, var(--bg)) 0%, var(--bg) 55%);
+    padding: 48px 0 100px;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  @media (max-width: 880px) { .c-hero { padding: 32px 0 64px; } }
+
+  .c-hero-inner {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 80px;
+    align-items: end;
+    margin-top: 40px;
+  }
+  @media (max-width: 980px) {
+    .c-hero-inner { grid-template-columns: 1fr; gap: 48px; align-items: start; }
+  }
+
+  .c-tag-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 28px; }
+
+  .c-title {
+    font-family: var(--serif-dev);
+    font-weight: 600;
+    font-size: clamp(50px, 7vw, 96px);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+    color: var(--ink);
+  }
+  .c-title em { font-style: normal; color: var(--saffron-deep); }
+  .c-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mute);
+    margin: 0 0 28px;
+  }
+  .c-summary {
+    font-family: var(--serif-dev);
+    font-size: clamp(19px, 1.5vw, 22px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 0 32px;
+  }
+
+  .origin-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 24px;
+    padding: 36px 32px;
+    position: relative;
+    box-shadow: 0 20px 50px -30px rgba(31,24,18,.3);
+  }
+  .origin-card .corner {
+    position: absolute; top: -14px; left: 32px;
+    background: var(--saffron-deep); color: var(--paper);
+    padding: 6px 14px; border-radius: 999px;
+    font-family: var(--mono); font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+  .origin-card .head {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 14px 0 14px;
+  }
+  .origin-card .shloka {
+    font-family: var(--serif-dev); font-weight: 500; font-size: 22px;
+    line-height: 1.55; margin: 0 0 22px; color: var(--ink);
+  }
+  .origin-card .ovi {
+    font-family: var(--serif-dev); font-style: italic; font-size: 17px;
+    line-height: 1.55; color: var(--ink-soft);
+    border-top: 1px solid var(--rule); padding-top: 18px; margin: 0 0 18px;
+  }
+  .origin-card .ovi-label {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--saffron-deep); margin-bottom: 8px;
+  }
+  .origin-card .source {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 11px; color: var(--ink-mute); letter-spacing: 0.06em;
+  }
+  .origin-card .source::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--saffron);
+  }
+
+  .c-mandala {
+    position: absolute; top: -180px; right: -180px; width: 580px; height: 580px;
+  }
+
+  .c-body { padding: 80px 0; }
+  @media (max-width: 880px) { .c-body { padding: 56px 0; } }
+
+  .c-section { margin-bottom: 80px; }
+  .c-section:last-child { margin-bottom: 0; }
+  .c-section .section-head { margin-bottom: 36px; max-width: 760px; }
+  .c-section h2 {
+    font-family: var(--serif-dev); font-weight: 600;
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.18;
+    letter-spacing: -0.005em; margin: 12px 0 14px; color: var(--ink);
+  }
+  .c-section p.body {
+    font-family: var(--serif-dev); font-size: 19px; line-height: 1.7;
+    color: var(--ink-soft); margin: 0 0 16px; max-width: 760px;
+  }
+  .c-section p.body strong { color: var(--ink); font-weight: 600; }
+
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
+  @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+  .compare-col { background: var(--paper); border: 1px solid var(--rule); border-radius: 20px; padding: 32px 28px; }
+  .compare-col h5 {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--ink-mute); margin: 0 0 14px; font-weight: 500;
+  }
+  .compare-col .big {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 26px;
+    margin: 0 0 14px; color: var(--ink); line-height: 1.25;
+  }
+  .compare-col p { font-family: var(--serif-dev); font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+  .compare-col.dark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .compare-col.dark h5 { color: var(--saffron-glow); }
+  .compare-col.dark .big { color: var(--bg); }
+  .compare-col.dark p { color: rgba(251,246,234,.75); }
+
+  .scenarios {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 32px;
+  }
+  @media (max-width: 980px) { .scenarios { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .scenarios { grid-template-columns: 1fr; } }
+  .scn {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 28px 26px; display: flex; flex-direction: column;
+    transition: transform .2s ease, border-color .2s ease;
+  }
+  .scn:hover { transform: translateY(-3px); border-color: color-mix(in oklab, var(--saffron) 35%, var(--rule)); }
+  .scn .ic {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--bg-2);
+    display: grid; place-items: center; color: var(--saffron-deep); margin-bottom: 22px;
+  }
+  .scn h4 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .scn .scn-q { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--saffron-deep); margin: 0 0 12px; line-height: 1.45; }
+  .scn p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  .practice { background: var(--paper-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 88px 0; }
+  @media (max-width: 880px) { .practice { padding: 56px 0; } }
+  .practice .grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0;
+    background: var(--rule); border: 1px solid var(--rule); border-radius: 20px;
+    overflow: hidden; margin-top: 40px;
+  }
+  @media (max-width: 880px) { .practice .grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 540px) { .practice .grid { grid-template-columns: 1fr; } }
+  .step { background: var(--paper); padding: 32px 28px; display: flex; flex-direction: column; }
+  .step .num {
+    font-family: var(--serif-dev); font-weight: 600; font-size: 52px;
+    color: var(--saffron-deep); line-height: 1; margin-bottom: 16px; letter-spacing: -0.02em;
+  }
+  .step h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .step p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+  .myth {
+    background: var(--ink); color: var(--bg); border-radius: 26px; padding: 56px 48px; margin-top: 24px;
+    display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center;
+  }
+  @media (max-width: 720px) { .myth { grid-template-columns: 1fr; gap: 24px; padding: 36px 28px; } }
+  .myth .glyph { font-family: var(--serif-dev); font-size: 120px; line-height: 1; color: var(--saffron-glow); opacity: .8; }
+  .myth h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(24px, 2.4vw, 32px); color: var(--bg); margin: 0 0 14px; line-height: 1.25; }
+  .myth p { font-family: var(--serif-dev); font-size: 18px; line-height: 1.6; color: rgba(251,246,234,.78); margin: 0 0 8px; }
+  .myth .myth-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--saffron-glow); margin-bottom: 14px; }
+
+  .related { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 36px; }
+  @media (max-width: 880px) { .related { grid-template-columns: 1fr; } }
+  .rel {
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 18px;
+    padding: 26px 24px; transition: transform .2s ease, border-color .2s ease; display: block;
+  }
+  .rel:hover { transform: translateY(-2px); border-color: var(--saffron-deep); }
+  .rel .reltag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 10px; }
+  .rel h5 { font-family: var(--serif-dev); font-weight: 600; font-size: 20px; margin: 0 0 8px; color: var(--ink); }
+  .rel p { font-size: 14.5px; line-height: 1.55; color: var(--ink-soft); margin: 0 0 14px; }
+  .rel .arrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; color: var(--saffron-deep); }
+
+  .closing {
+    text-align: center; padding: 100px 0 120px;
+    background: radial-gradient(ellipse at top, color-mix(in oklab, var(--saffron) 14%, var(--bg)) 0%, var(--bg) 65%);
+  }
+  @media (max-width: 880px) { .closing { padding: 64px 0 80px; } }
+  .closing .om-big { font-family: var(--serif-dev); font-size: 64px; color: var(--saffron-deep); line-height: 1; margin-bottom: 28px; }
+  .closing h3 { font-family: var(--serif-dev); font-weight: 600; font-size: clamp(28px, 3vw, 42px); line-height: 1.25; margin: 0 auto 24px; max-width: 720px; text-wrap: balance; }
+  .closing p { font-family: var(--serif-dev); font-size: 19px; color: var(--ink-soft); max-width: 560px; margin: 0 auto 32px; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../">होम</a>
+      <a href="../adhyay">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+      <a href="#">बद्दल</a>
+      <a href="#" class="nav-cta">वाचन सुरू</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept" class="on">संकल्पना</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="c-hero">
+  <svg class="mandala c-mandala" viewBox="0 0 200 200" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="0.5">
+      <circle cx="100" cy="100" r="95"/><circle cx="100" cy="100" r="78"/>
+      <circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="42"/>
+      <circle cx="100" cy="100" r="24"/>
+    </g>
+    <g fill="none" stroke="currentColor" stroke-width="0.4">
+      <g id="cp"><path d="M100 8 Q112 60 100 94 Q88 60 100 8 Z"/></g>
+      <use href="#cp" transform="rotate(22.5 100 100)"/>
+      <use href="#cp" transform="rotate(45 100 100)"/>
+      <use href="#cp" transform="rotate(67.5 100 100)"/>
+      <use href="#cp" transform="rotate(90 100 100)"/>
+      <use href="#cp" transform="rotate(112.5 100 100)"/>
+      <use href="#cp" transform="rotate(135 100 100)"/>
+      <use href="#cp" transform="rotate(157.5 100 100)"/>
+      <use href="#cp" transform="rotate(180 100 100)"/>
+      <use href="#cp" transform="rotate(202.5 100 100)"/>
+      <use href="#cp" transform="rotate(225 100 100)"/>
+      <use href="#cp" transform="rotate(247.5 100 100)"/>
+      <use href="#cp" transform="rotate(270 100 100)"/>
+      <use href="#cp" transform="rotate(292.5 100 100)"/>
+      <use href="#cp" transform="rotate(315 100 100)"/>
+      <use href="#cp" transform="rotate(337.5 100 100)"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="crumb">
+      <a href="../">होम</a>
+      <span class="sep">/</span>
+      <a href="../concept">संकल्पना</a>
+      <span class="sep">/</span>
+      <span class="now">संभवामि युगे युगे</span>
+    </div>
+
+    <div class="c-hero-inner">
+      <div class="reveal">
+        <div class="eyebrow-dev">गीतेची केंद्रीय संकल्पना</div>
+        <h1 class="c-title">संभवामि युगे<br/><em>युगे.</em></h1>
+        <p class="c-sub">"मी युगायुगात अवतरतो." ईश्वराचे अवतरण हे नित्य, अखंड आणि प्रयोजनसिद्ध आहे.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="#practice" class="btn btn-primary">रोजच्या जीवनात कसे आणावे?</a>
+          <a href="../adhyay?id=4" class="btn btn-ghost">अध्याय ४ वाचा</a>
+        </div>
+      </div>
+
+      <div class="reveal origin-card">
+        <span class="corner">मूळ श्लोक</span>
+        <div class="head">अध्याय ४, श्लोक ७–८</div>
+        <p class="shloka">यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।<br/>अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ॥ ७ ॥<br/><br/>परित्राणाय साधूनां विनाशाय च दुष्कृताम् ।<br/>धर्मसंस्थापनार्थाय संभवामि युगे युगे ॥ ८ ॥</p>
+
+        <div class="ovi-label">ज्ञानेश्वरी ओवी · अध्याय ४</div>
+        <p class="ovi">जैं जैं होय धर्माची हानी ।<br/>अधर्म वाढे तये क्षणीं ।<br/>तैं तैं अवतरें मी जगीं ।<br/>युगायुगीं ॥<br/><br/>साधूंचे करावया रक्षण ।<br/>दुष्टांचे करावया निर्दळण ।<br/>धर्म स्थापावया संपूर्ण ।<br/>येतसें मी ॥</p>
+
+        <div class="source">श्रीकृष्ण → अर्जुन · कुरुक्षेत्र</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<section class="c-body">
+  <div class="wrap-narrow">
+
+    <!-- Meaning -->
+    <div class="c-section">
+      <div class="eyebrow-dev">अर्थ</div>
+      <h2>संकल्पनेचा गाभा.</h2>
+      
+      
+      <div class="compare">
+        <div class="compare-col">
+          <h5>स्वरूप</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">ऐतिहासिक</strong><br/>व्यक्तिरूप अवतार</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">सामाजिक</strong><br/>संत, सुधारक</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">वैचारिक</strong><br/>नवीन विचाराचे उदय</li><li style="font-size:16px;line-height:1.55;color:var(--ink-soft);margin-bottom:8px;"><strong style="color:var(--ink);font-size:14px;">आंतरिक</strong><br/>साधकाच्या आत विवेकाचा उदय</li></ul>
+        </div>
+        <div class="compare-col dark">
+          <h5>उदाहरण</h5>
+          <ul style="margin:0 0 0 16px;padding:0;"><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">ऐतिहासिक</strong><br/>राम, कृष्ण, बुद्ध</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">सामाजिक</strong><br/>ज्ञानेश्वर, तुकाराम, रामदास</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">वैचारिक</strong><br/>ग्रंथ, तत्त्वज्ञान</li><li style="font-size:16px;line-height:1.55;color:rgba(251,246,234,.78);margin-bottom:8px;"><strong style="color:var(--saffron-glow);font-size:14px;">आंतरिक</strong><br/>अंतःकरणातील जागृती</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dnyaneshwari -->
+    <div class="c-section">
+      <div class="eyebrow-dev">ज्ञानेश्वरी विवेचन</div>
+      <h2>संत ज्ञानेश्वर हे श्लोक सामान्य माणसासाठी कसे उघडतात?</h2>
+      <p class="body">संत ज्ञानेश्वर महाराज या श्लोकावर विस्तृत भाष्य करताना म्हणतात — ईश्वराचे अवतरण हे केवळ बाहेरचे कार्य नाही — ते अंतरंगातही घडते. जेव्हा साधकाच्या अंतरंगात अज्ञानाचा (अधर्माचा) अंधार पसरतो, तेव्हा गुरू-कृपेच्या रूपाने ईश्वर अवतरतो — हे आंतरिक अवतरण.</p>
+<p class="body">ज्ञानेश्वर महाराज उदाहरणे देतात:</p>
+<ul style="margin:0 0 16px 20px;">
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>सूर्य आणि मेघ</strong> — जेव्हा मेघांनी आकाश झाकले जाते (अधर्म), तेव्हा सूर्य (धर्म) झाकला जातो — पण सूर्य नाहीसा होत नाही. मेघ सरले की सूर्य पुन्हा प्रकट होतो. ईश्वराचे अवतरण असेच.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>अग्नी आणि राख</strong> — निखारा राखेखाली झाकलेला असतो. थोडी राख बाजूला केली की अग्नी प्रकट होतो. धर्म कधीच नाश पावत नाही — फक्त झाकला जातो. अवतरण म्हणजे त्याचे पुनः प्रकटन.</li>
+<li style="font-family:var(--serif-dev);font-size:19px;line-height:1.7;color:var(--ink-soft);margin-bottom:6px;"><strong>जल आणि अवकाश</strong> — पावसाचे पाणी सर्वत्र सारखेच पडते. परंतु ते पात्रानुसार साठते. ईश्वर सर्वत्र आहे — तो प्रत्येक पात्रात, पात्राच्या क्षमतेनुसार, प्रकट होतो.</li>
+</ul>
+<p class="body"><em>"जसा मेघांनी झाकलेला सूर्य मेघ सरताच प्रकाशित होतो — तसा माझ्या अवतरणाने धर्माचा अभ्युदय होतो."</em></p>
+<p class="body">ज्ञानेश्वर महाराज स्वतः सांगतात — "मी ज्ञानेश्वरी लिहिली — हे माझे कार्य नव्हे — माझ्याद्वारे ईश्वराचे अवतरण झाले." हे सांगणे म्हणजे "संभवामि युगे युगे" चा खरा अर्थ.</p>
+<p class="body">---</p>
+            <div style="background:var(--paper);border:1px solid var(--rule);border-radius:20px;padding:32px 32px;margin-top:24px;">
+        <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-deep);margin-bottom:14px;">ज्ञानेश्वरी अध्याय ४ · संबंधित ओव्या</div>
+        <p style="font-family:var(--serif-dev);font-style:italic;font-size:21px;line-height:1.55;color:var(--ink);margin:0;">जैसा मेघीं झांकलिया सूर्य ।<br/>मेघ सरतां होय प्रकाश्य ।<br/>तैसा धर्म होय अभ्युदय ।<br/>अवतरणें मज ॥</p>
+        <p style="font-family:var(--serif-dev);font-size:16px;color:var(--ink-soft);margin:16px 0 0;padding-top:16px;border-top:1px dashed var(--rule);">"जसा मेघांनी झाकलेला सूर्य मेघ सरताच प्रकाशित होतो — तसा माझ्या अवतरणाने धर्माचा अभ्युदय होतो."</p>
+      </div>
+    </div>
+
+    <!-- Modern scenarios -->
+    <div class="c-section" id="modern">
+      <div class="eyebrow-dev">आधुनिक प्रसंग</div>
+      <h2>आजच्या जीवनात ही संकल्पना कुठे उभी राहते?</h2>
+      <p class="body">तत्त्वज्ञानाची खरी कसोटी कार्यालयात, स्वयंपाकघरात आणि निर्णयाच्या क्षणी होते.</p>
+
+      <div class="scenarios">
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div>
+          <h4>जगातील अन्याय पाहून निराशा</h4>
+          <p class="scn-q">"इतका अन्याय, भ्रष्टाचार — ईश्वर कुठे आहे? तो का येत नाही?"</p>
+          <p>"संभवामि युगे युगे" — तो येतोच. पण अवतरणाचे स्वरूप बदलते. आज तो विचाराच्या रूपाने, सुधारकाच्या रूपाने, प्रत्येक प्रामाणिक माणसाच्या रूपाने अवतरतो. "तो माझ्याद्वारे काय करवून घेत आहे?" — हा प्रश्न विचारा.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/><path d="M10 19v-6h4v6"/></svg></div>
+          <h4>वैयक्तिक संकट</h4>
+          <p class="scn-q">"माझ्या जीवनात खूप कठीण काळ आला आहे — देवाने सोडून दिले असे वाटते."</p>
+          <p>संकट म्हणजे "अधर्माचा उत्कर्ष" — तेव्हाच ईश्वर अधिक जवळ असतो. संकटातच आंतरिक अवतरण होते — एक विलक्षण स्पष्टता, एक अज्ञात बळ — हे ईश्वराचेच अवतरण.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h4>समाजसेवा</h4>
+          <p class="scn-q">"मी एकट्याने काय करणार? — परिस्थिती बदलणार नाही."</p>
+          <p>ज्ञानेश्वर, तुकाराम, रामदास — यांनीही असेच विचारले असेल. परंतु त्यांच्याद्वारे ईश्वर अवतरला. "माझ्याद्वारे ईश्वराला काय करायचे आहे?" — हा प्रश्न आपल्याला "साधनाचे पात्र" बनवतो.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v6M5 12H2M22 12h-3M5.2 5.2l2.1 2.1M16.7 7.3l2.1-2.1"/><circle cx="12" cy="15" r="6"/></svg></div>
+          <h4>साधनेत अंधकार</h4>
+          <p class="scn-q">"खूप काळ साधना केली — पण प्रकाश नाही — अंधारच आहे."</p>
+          <p>मेघांनी झाकलेला सूर्य — सूर्य नाहीसा नाही. साधनेतील अंधकार म्हणजे मेघ. जेव्हा मेघ (अज्ञान) सर्वाधिक घनदाट असतात — तेव्हाच सूर्योदय (ज्ञान) जवळ असतो. धैर्याने थांबा.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h4>नैतिक संकट</h4>
+          <p class="scn-q">"सर्वांभोवती चुकीच्या गोष्टी होत आहेत — मी एकटा धर्माने वागतो — निरर्थक वाटते."</p>
+          <p>"परित्राणाय साधूनाम्" — साधूंचे रक्षण करायला ईश्वर आहेच. जो धर्माने वागतो तो एकटा नाही — ईश्वराची शक्ती त्याच्यासाठी कार्यरत आहे.</p>
+        </div>
+        <div class="scn">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h10"/></svg></div>
+          <h4>आशेचे तत्त्व</h4>
+          <p class="scn-q">"जग सुधारणार नाही असे वाटते — आशा संपली आहे."</p>
+          <p>"युगे युगे" — हे शाश्वत वचन आहे. इतिहास साक्षी आहे — जेव्हा जेव्हा अंधार गडद झाला तेव्हा तेव्हा प्रकाश आला. हे ईश्वराचे अचूक वचन आहे — आशा हेच धर्माचे अवतरण आहे.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Myth callout -->
+    <div class="c-section">
+      <div class="eyebrow-dev">गैरसमज</div>
+      <h2>ही संकल्पना समजण्यात सहसा होणारी चूक.</h2>
+      <div class="myth">
+        <div class="glyph">"</div>
+        <div>
+          <div class="myth-label">सर्वसामान्य चुकीचा अर्थ</div>
+          <h3>"संभवामि युगे युगे म्हणजे केवळ ऐतिहासिक अवतार"</h3>
+          <p>अवतरण ही एक चिरंतन प्रक्रिया आहे — ती गेली नाही, थांबली नाही. ती प्रत्येक युगात, प्रत्येक समाजात, प्रत्येक साधकाच्या हृदयात घडत राहते. गुरू येणे, विवेक जागणे, संकटात बळ मिळणे — हे सर्व अवतरणाचेच रूप आहे.</p>
+<p>---</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE -->
+<section class="practice" id="practice">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">रोजच्या जीवनात</div>
+    <h2 class="section-title" style="margin-top:14px;">चार पावले — आजपासून सुरू करण्यासाठी.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:640px;margin:0;line-height:1.6;">एका दिवसात हे साधता येत नाही — पण रोज एक छोटा सराव केला, तर महिन्याभरात मनाची दिशा बदलते.</p>
+
+    <div class="grid">
+      <div class="step">
+        <div class="num">०१</div>
+        <h5>आंतरिक धर्म जपा</h5>
+        <p>आज माझ्या जीवनात कोठे धर्माची हानी होत आहे? — तिथे ईश्वराला निमंत्रण द्या.</p>
+      </div>
+      <div class="step">
+        <div class="num">०२</div>
+        <h5>पात्र बना</h5>
+        <p>"माझ्याद्वारे ईश्वराला काय करायचे आहे?" — हा प्रश्न नित्य विचारा.</p>
+      </div>
+      <div class="step">
+        <div class="num">०३</div>
+        <h5>संकटात आस्था</h5>
+        <p>संकटात "तो अधिक जवळ आहे" हे स्मरण ठेवा. मेघ घनदाट असतात तेव्हाच सूर्योदय जवळ असतो.</p>
+      </div>
+      <div class="step">
+        <div class="num">०४</div>
+        <h5>साधूंचा सहवास</h5>
+        <p>धर्माने वागणाऱ्यांच्या सहवासात राहा — ते ईश्वराच्या अवतरणाचे जिवंत स्वरूप आहेत.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="c-body" style="padding-top:80px;padding-bottom:40px;">
+  <div class="wrap-narrow">
+    <div class="eyebrow-dev">पुढे वाचा</div>
+    <h2 class="section-title" style="margin:14px 0 14px;">संबंधित संकल्पना.</h2>
+    <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:560px;margin:0;line-height:1.55;">संभवामि युगे युगे समजली, तर पुढच्या तीन संकल्पना नैसर्गिकपणे उघडतात.</p>
+
+    <div class="related">
+      <a href="./vishwarupa.html" class="rel">
+        <div class="reltag">अध्याय ११</div>
+        <h5>विश्वरूप</h5>
+        <p>अवतरणाचे परम रूप — ईश्वर सर्वत्र प्रकट.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./sharanagati.html" class="rel">
+        <div class="reltag">अध्याय १८, श्लोक ६६</div>
+        <h5>शरणागती</h5>
+        <p>अवतरणाला स्वीकारण्याचा मार्ग — शरण जाणे.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+      <a href="./bhaktiyog.html" class="rel">
+        <div class="reltag">अध्याय १२</div>
+        <h5>भक्तियोग</h5>
+        <p>अवतरणाशी जोडलेले राहण्याचा मार्ग — भक्ती.</p>
+        <div class="arrow">वाचा →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="wrap-narrow">
+    <div class="om-big">ॐ</div>
+    <p style="font-family:var(--serif-dev);font-style:italic;font-size:20px;line-height:1.6;color:var(--ink);margin:0 0 12px;"><em>"परित्राणाय साधूनां विनाशाय च दुष्कृताम् ।</em> <em>धर्मसंस्थापनार्थाय संभवामि युगे युगे ॥"</em> — गीता ४.८ <em>मेघ गेले की सूर्य प्रकट होतो. राख बाजूला केली की निखारा प्रज्वलित होतो. अंधार गडद झाला की प्रकाश उगवतो. "संभवामि युगे युगे" — हे ईश्वराचे चिरंतन वचन आहे — आशेचा अखंड स्रोत.</em></p><p style="font-family:var(--serif-dev);font-weight:600;font-size:18px;color:var(--saffron-deep);margin:0 0 28px;">साधूंच्या रक्षणासाठी, दुष्कर्मांच्या विनाशासाठी, धर्मसंस्थापनेसाठी — मी युगायुगात अवतरतो.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px;">
+      <a href="../adhyay?id=4" class="btn btn-primary">अध्याय ४ वाचा</a>
+      <a href="../concept" class="btn btn-ghost">दुसरी संकल्पना</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../" style="font-size:22px;">
+          <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
+          <span>गीता-ज्ञानेश्वरी</span>
+        </a>
+        <p class="foot-blurb">गीता आणि ज्ञानेश्वरी — आधुनिक जीवनासाठी एका शांत वाचनाच्या स्वरूपात.</p>
+      </div>
+      <div>
+        <h5>ग्रंथ</h5>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../adhyay?id=4">अध्याय ४ वाचा</a>
+        <a href="../concept">संकल्पना</a>
+      </div>
+      <div>
+        <h5>अभ्यास</h5>
+        <a href="#">आजचा श्लोक</a>
+        <a href="#">माझ्या नोंदी</a>
+        <a href="#">वाचन प्रगती</a>
+      </div>
+      <div>
+        <h5>बद्दल</h5>
+        <a href="#">उद्देश</a>
+        <a href="#">स्रोत</a>
+        <a href="#">संपर्क</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© २०२६ गीता-ज्ञानेश्वरी · प्रेमाने बनवलेले.</div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const t = document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    });
+  });
+</script>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
