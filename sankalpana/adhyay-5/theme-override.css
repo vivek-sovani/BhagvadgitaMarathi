@@ -1,0 +1,201 @@
+/* ── Website-aligned theme override for Adhyay 5 story pages ────────────────
+   Matches main site palette:
+     bg #f6efe2 · surface #fbf6ea · surface-2 #f3ead4
+     ink #1f1812 · ink-soft #4a3d31 · ink-mute #7a6b5c · rule #d9cdb4
+     saffron #c2611a · saffron-deep #9c4a10 · gold #b88a3e
+     indigo #2b3e6b · indigo-deep #1a2546
+   Link this AFTER the <style> block in each story page.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Page background ── */
+body {
+  background: #f6efe2 !important;
+}
+body::before {
+  background:
+    radial-gradient(ellipse at 50% 0%,  rgba(194,97,26,.07)  0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(184,138,62,.05) 0%, transparent 45%) !important;
+}
+
+/* ── OM glow → saffron ── */
+.om { color: #c2611a !important; }
+@keyframes omglow {
+  0%,100% { filter: drop-shadow(0 0 8px  rgba(194,97,26,.45)); }
+  50%     { filter: drop-shadow(0 0 22px rgba(194,97,26,.85)); }
+}
+.page-title { color: #4a3d31 !important; opacity: 1 !important; }
+
+/* ── Badge → light parchment ── */
+.badge {
+  background: linear-gradient(135deg, #fbf6ea, #f3ead4) !important;
+  border-color: #b88a3e !important;
+  box-shadow: 0 4px 20px rgba(194,97,26,.10), inset 0 1px 0 rgba(184,138,62,.3) !important;
+}
+.badge .text { color: #4a3d31 !important; }
+
+/* ── Shloka card → light parchment ── */
+.shloka-card {
+  background: linear-gradient(160deg, #fbf6ea, #f3ead4) !important;
+  border-color: rgba(184,138,62,.30) !important;
+  box-shadow: 0 8px 40px rgba(31,24,18,.08) !important;
+}
+.shloka-card::before {
+  background: linear-gradient(90deg, transparent, #c2611a, transparent) !important;
+}
+.slabel { color: #c2611a !important; }
+.stext  { color: #1f1812 !important; }
+.smean  { color: #4a3d31 !important; border-top-color: rgba(184,138,62,.2) !important; }
+
+/* ── Concept summary ── */
+.concept-sum {
+  background: linear-gradient(135deg, rgba(194,97,26,.06), rgba(184,138,62,.04)) !important;
+  border-left-color: #c2611a !important;
+}
+.concept-sum .clabel { color: #c2611a !important; }
+.concept-sum .ctext  { color: #1f1812 !important; }
+.concept-sum strong  { color: #9c4a10 !important; }
+
+/* ── Section header decorators ── */
+.htitle    { color: #c2611a !important; }
+.hline     { background: linear-gradient(90deg, #c2611a, transparent) !important; }
+.hline.rev { background: linear-gradient(90deg, transparent, #c2611a) !important; }
+
+/* ── Card body (reinforce light cream) ── */
+.card-body {
+  background: #fbf6ea !important;
+  box-shadow: 0 20px 60px rgba(31,24,18,.10), 0 0 0 1px rgba(194,97,26,.08) !important;
+}
+
+/* ── Body text ── */
+.para { color: #4a3d31 !important; }
+
+/* ── Key insight → warm yellow (all per-concept colour variants) ── */
+.key-insight {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  border-color: rgba(194,97,26,.18) !important;
+}
+.ki-lbl        { color: #9c4a10 !important; }
+.ki-txt        { color: #1f1812 !important; }
+.ki-txt strong { color: #9c4a10 !important; }
+
+/* ── Reflection / Sankalp row ── */
+.ref-sank         { border-top-color:   rgba(184,138,62,.15) !important; }
+.ref              { border-right-color: rgba(184,138,62,.15) !important; }
+.ref  .rs-lbl     { color: #9c4a10 !important; }
+.sank .rs-lbl     { color: #4d6b3a !important; }
+.rs-txt           { color: #4a3d31 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK NARRATIVE SECTIONS → warm indigo  (site's --indigo / --indigo-deep)
+   ═══════════════════════════════════════════════════════════════════════════ */
+.scene-dark,
+.choice-moment,
+.gita-connect,
+.court-scene,
+.chain-box,
+.turning-point,
+.nd-box,
+.lotus-box,
+.sit-label,
+.person-header,
+.op-scene,
+.sant-header,
+.result-box,
+.final-moment,
+.adhyay-summary {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+}
+
+.dnyan-box {
+  background:   rgba(16,22,48,.85) !important;
+  border-color: rgba(184,138,62,.20) !important;
+}
+.dnyan-lbl   { color: rgba(184,138,62,.75) !important; }
+.dnyan-verse { color: rgba(246,239,226,.85) !important; }
+
+/* scene section labels/titles */
+.scene-lbl   { color: rgba(184,138,62,.75) !important; }
+.scene-title { color: #f6efe2 !important; }
+.scene-sub   { color: rgba(246,239,226,.60) !important; }
+
+/* gita connect text */
+.gc-lbl       { color: #b88a3e !important; opacity: 1 !important; }
+.gc-txt       { color: rgba(246,239,226,.92) !important; }
+.gc-txt .hl   { color: #f0c96a !important; }
+.gc-txt .ahl  { color: #fca07a !important; }
+
+/* choice-moment inner (concept-11) */
+.cm-lbl  { color: rgba(184,138,62,.75) !important; }
+.cm-box  { background: rgba(184,138,62,.10) !important; border-color: rgba(184,138,62,.25) !important; }
+.cm-lbl2 { color: rgba(240,200,80,.80) !important; }
+.cm-txt  { color: #f0c96a !important; }
+.cs-num  { background: rgba(194,97,26,.30) !important; border-color: rgba(194,97,26,.40) !important; color: rgba(255,160,120,.9) !important; }
+.cs-txt    { color: rgba(246,239,226,.82) !important; }
+.cs-txt em { color: #f0c96a !important; }
+
+/* person / sant header inner text */
+.p-icon  { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; border-color: rgba(184,138,62,.4) !important; }
+.p-name  { color: #f0c96a !important; }
+.p-tag   { color: rgba(184,138,62,.80) !important; }
+.p-quote { color: rgba(246,239,226,.75) !important; }
+
+.sh-name  { color: #f0c96a !important; }
+.sh-era   { color: rgba(184,138,62,.75) !important; }
+.sh-quote { color: rgba(246,239,226,.75) !important; }
+
+/* concept-8 dark half of dark-light comparison */
+.dark { background: linear-gradient(135deg, #1a2546, #2b3e6b) !important; }
+.dl-lbl { color: rgba(184,138,62,.75) !important; }
+
+/* concept-6 nine-doors inner elements */
+.nd-door   { background: rgba(43,62,107,.55) !important; border-color: rgba(184,138,62,.20) !important; color: rgba(246,239,226,.85) !important; }
+.nd-center { background: rgba(184,138,62,.12) !important; border-color: rgba(184,138,62,.28) !important; color: rgba(246,239,226,.90) !important; }
+
+/* concept-6 court-scene inner */
+.cs-who   { background: rgba(184,138,62,.15) !important; border-color: rgba(184,138,62,.25) !important; color: rgba(240,200,100,.85) !important; }
+.cs-judge { background: rgba(184,138,62,.10) !important; border-color: rgba(184,138,62,.25) !important; }
+
+/* concept-5 instruments */
+.instr      { background: linear-gradient(135deg, #fbf6ea, #f3ead4) !important; border-color: rgba(184,138,62,.25) !important; }
+.instr.atma { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; border-color: rgba(194,97,26,.40) !important; }
+
+/* concept-4 two-sit */
+.sit.s1 { background: linear-gradient(135deg, #fae8e8, #f0d0d0) !important; }
+.sit.s2 { background: linear-gradient(135deg, #e8f8f4, #d0f0e8) !important; }
+.ws-num { background: linear-gradient(135deg, #c2611a, #9c4a10) !important; color: white !important; }
+
+/* concept-12 final-moment inner */
+.fm-lbl            { color: rgba(184,138,62,.75) !important; }
+.fm-box            { background: rgba(184,138,62,.10) !important; border-color: rgba(184,138,62,.28) !important; }
+.fm-lbl2           { color: rgba(184,138,62,.75) !important; }
+.fm-txt            { color: #f0c96a !important; }
+.fm-meaning        { color: rgba(246,239,226,.78) !important; }
+.fm-meaning strong { color: #f0c96a !important; }
+
+/* concept-12 adhyay-summary inner */
+.as-lbl         { color: #b88a3e !important; opacity: 1 !important; }
+.as-num         { background: linear-gradient(135deg, #b88a3e, #7a5a10) !important; color: #1f1812 !important; }
+.as-text        { color: rgba(246,239,226,.82) !important; }
+.as-text strong { color: #f0c96a !important; }
+
+/* concept-12 three-dims */
+.td-title  { color: #9c4a10 !important; }
+.dim       { background: white !important; border-color: rgba(184,138,62,.15) !important; }
+.dim-lbl   { color: #9c4a10 !important; }
+.dim-txt   { color: #4a3d31 !important; }
+.dim-quote { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; color: #3a2800 !important; }
+
+/* ── Two-column person comparison (concept-11) ── */
+.person-col.p1 { background: linear-gradient(135deg, #fae8e8, #f0d0d0) !important; }
+.person-col.p2 { background: linear-gradient(135deg, #e8f4e8, #d0ead0) !important; }
+.p1 .pc-name   { color: #7a1010 !important; }
+.p2 .pc-name   { color: #107a10 !important; }
+.p1 .pc-body   { color: #4a1004 !important; }
+.p2 .pc-body   { color: #0a3a04 !important; }
+.p1 .pc-result { background: rgba(192,48,48,.12) !important; color: #7a1010 !important; }
+.p2 .pc-result { background: rgba(16,122,16,.10) !important; color: #0a5a0a !important; }
+
+/* ── Footer ── */
+.footer .fdiv  { background: linear-gradient(90deg, transparent, #c2611a, transparent) !important; }
+.footer .ftext { color: #c2611a !important; opacity: 1 !important; }
+.footer .fsub  { color: rgba(194,97,26,.50) !important; }
