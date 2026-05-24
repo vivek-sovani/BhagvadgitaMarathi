@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना ११</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#7A1A1A;--cl:#C03030;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#100202;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(192,48,48,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1E0404,#100202);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(192,48,48,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1E0404,#100202);border:1px solid rgba(192,48,48,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(192,48,48,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(122,26,26,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(220,80,80,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(192,48,48,0.18);}
+
+  .scene-dark{background:linear-gradient(135deg,#1E0404,#100202);padding:22px 28px;border-bottom:1px solid rgba(192,48,48,0.12);}
+  .scene-lbl{font-size:0.63rem;letter-spacing:0.22em;color:rgba(192,48,48,0.65);text-transform:uppercase;margin-bottom:6px;}
+  .scene-title{font-family:'Noto Serif Devanagari',serif;font-size:1.15rem;color:var(--gold-light);font-weight:700;line-height:1.4;}
+  .scene-sub{margin-top:5px;font-size:0.8rem;color:rgba(253,246,232,0.5);}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:22px;}
+
+  /* Two persons - two responses */
+  .two-persons{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .person-col{padding:20px;}
+  .person-col.p1{background:linear-gradient(135deg,#FAE8E8,#F0D0D0);border-right:1px solid rgba(192,48,48,0.12);}
+  .person-col.p2{background:linear-gradient(135deg,#E8F4E8,#D0EAD0);}
+  .pc-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .pc-icon{font-size:1.3rem;}
+  .pc-name{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;}
+  .p1 .pc-name{color:#7A1010;}.p2 .pc-name{color:#107A10;}
+  .pc-body{font-family:'Noto Serif Devanagari',serif;font-size:0.82rem;line-height:1.75;}
+  .p1 .pc-body{color:#4A1004;}.p2 .pc-body{color:#0A3A04;}
+  .pc-result{margin-top:10px;padding:8px 10px;border-radius:8px;font-size:0.78rem;font-weight:600;text-align:center;font-family:'Noto Serif Devanagari',serif;}
+  .p1 .pc-result{background:rgba(192,48,48,0.12);color:#7A1010;}
+  .p2 .pc-result{background:rgba(16,122,16,0.1);color:#0A5A0A;}
+
+  /* Moment of choice */
+  .choice-moment{background:linear-gradient(135deg,#1E0404,#100202);padding:18px 24px;}
+  .cm-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(192,48,48,0.6);margin-bottom:12px;}
+  .cm-box{background:rgba(201,150,58,0.1);border:1px solid rgba(201,150,58,0.25);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+  .cm-lbl2{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,200,80,0.7);margin-bottom:6px;}
+  .cm-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;color:var(--gold-light);line-height:1.75;}
+  .cm-steps{margin-top:10px;}
+  .cm-step{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
+  .cs-num{width:22px;height:22px;border-radius:50%;background:rgba(192,48,48,0.3);border:1px solid rgba(192,48,48,0.4);color:rgba(255,180,180,0.9);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+  .cs-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.78);line-height:1.7;}
+  .cs-txt em{color:var(--gold-light);font-style:italic;}
+
+  .key-insight{background:linear-gradient(135deg,#FFF8E0,#FFF0A8);border:1px solid rgba(192,48,48,0.15);border-radius:13px;padding:18px 20px;margin:16px 28px;position:relative;}
+  .key-insight::before{content:'⚔️';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#2A0808;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#1E0404,#100202);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F8A080;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#180404,#100202);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.two-persons{grid-template-columns:1fr;}.p1{border-right:none;border-bottom:1px solid rgba(192,48,48,0.12);}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para,.key-insight{padding-left:18px;padding-right:18px;margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">⚔️</span><span class="text">संकल्पना ११ / १२ — काम-क्रोध जिंकणे — इहलोकीच मुक्ती ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.२३</div>
+  <div class="stext">शक्नोतीहैव यः सोढुं प्राक्शरीरविमोक्षणात् ।<br>कामक्रोधोद्भवं वेगं स युक्तः स सुखी नरः ।।</div>
+  <div class="smean">"शरीर सुटण्यापूर्वीच — येथेच — जो काम आणि क्रोधातून निर्माण होणारा वेग सहन करण्यास सक्षम आहे — तो युक्त आहे, तो सुखी माणूस आहे."<br><br><em>इहलोकीच मुक्ती. मृत्यूनंतर नाही — आत्ता, या क्षणी, या जन्मात. काम-क्रोधाचा वेग आला — आणि तुम्ही जिंकलात — ते मुक्तीचं क्षण आहे.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">काम-क्रोध दाबायचे नाहीत — <strong>जाणायचे, साक्षी व्हायचे, त्यांना स्वार होऊ द्यायचे नाही.</strong><br><br>तो वेग आला — थांबलात — एक श्वास घेतला — <strong>हीच इहलोकीची मुक्ती. आत्ता, या क्षणी.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>⚔️</span> आधुनिक जीवनातील परिस्थिती</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="scene-dark">
+      <div class="scene-lbl">परिस्थिती · कामाच्या ठिकाणी · एक कठीण क्षण</div>
+      <div class="scene-title">बैठकीत एकाने समोर सगळ्यांसमोर चूक काढली — राग आला</div>
+      <div class="scene-sub">दोन माणसे — एकाच परिस्थितीत — दोन वेगळे प्रतिसाद — दोन वेगळे परिणाम</div>
+    </div>
+
+    <div class="para">एका महत्त्वाच्या बैठकीत — वरिष्ठ अधिकारी समोर — सहकाऱ्याने तुमची चूक सगळ्यांसमोर काढली. अपमान झाला. आत राग उसळला. आता काय करणार?</div>
+
+    <div class="two-persons">
+      <div class="person-col p1">
+        <div class="pc-head"><span class="pc-icon">🌊</span><div class="pc-name">रागाने बोललो</div></div>
+        <div class="pc-body">त्याच क्षणी प्रतिक्रिया दिली — कडक, धारदार. "तुम्हाला काय माहीत?" वरिष्ठांसमोर भांडण. राग बोलला — विवेक गप्प बसला. बैठक बिघडली. नंतर पश्चात्ताप. नाते खराब झाले.</div>
+        <div class="pc-result">🌊 काम-क्रोधाने स्वार केलं — बंधन</div>
+      </div>
+      <div class="person-col p2">
+        <div class="pc-head"><span class="pc-icon">⚔️</span><div class="pc-name">एक क्षण थांबलो</div></div>
+        <div class="pc-body">राग आला — जाणला. एक श्वास घेतला. शांतपणे म्हणाले — "हे मुद्दे नंतर बोलूया." बैठक पूर्ण झाली. नंतर स्वतंत्रपणे बोललो — नात्याचं नुकसान नाही. विवेक बोलला — राग गप्प बसला.</div>
+        <div class="pc-result">⚔️ काम-क्रोध जिंकला — इहलोकीच मुक्ती</div>
+      </div>
+    </div>
+
+    <div class="choice-moment">
+      <div class="cm-lbl">⚡ तो एक क्षण — निर्णायक</div>
+      <div class="cm-box">
+        <div class="cm-lbl2">काम-क्रोधाचा वेग आला — आणि तुमच्याकडे काही सेकंद होते</div>
+        <div class="cm-txt">त्या काही सेकंदात काय केलं — त्यावर सगळं अवलंबून. <strong>शक्नोतीहैव — येथेच, या क्षणी — हा वेग सहन करणं — हीच मुक्ती.</strong></div>
+      </div>
+      <div class="cm-steps">
+        <div class="cm-step">
+          <div class="cs-num">१</div>
+          <div class="cs-txt"><em>जाणा</em> — "राग आलाय. मला माहीत आहे."</div>
+        </div>
+        <div class="cm-step">
+          <div class="cs-num">२</div>
+          <div class="cs-txt"><em>एक श्वास</em> — शरीर शांत केलं की मन थोडं शांत होतं.</div>
+        </div>
+        <div class="cm-step">
+          <div class="cs-num">३</div>
+          <div class="cs-txt"><em>विचारा</em> — "आत्ता बोललो तर काय होईल? थांबलो तर काय होईल?"</div>
+        </div>
+        <div class="cm-step">
+          <div class="cs-num">४</div>
+          <div class="cs-txt"><em>निवडा</em> — विवेकाने बोला. राग बोलत नाही — तुम्ही बोलता. हाच फरक.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">⚔️ गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">काम-क्रोध दाबणं नाही — <strong>सहन करणं म्हणजे साक्षी राहणं.</strong><br><br>राग आला — थांबलात — एक श्वास घेतला — विवेकाने उत्तर दिलं — <strong>हे "शक्नोतीहैव" — येथेच, या जन्मात मुक्ती.</strong><br><br>मृत्यूनंतर नाही — <strong>आत्ता, या बैठकीत, या क्षणी — हीच इहलोकीची मुक्ती. तुम्ही युक्त आहात, तुम्ही सुखी आहात.</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"शक्नोतीहैव यः सोढुं"</span> — येथेच जो सहन करतो. <span class="ahl">बैठकीत राग आला — थांबलात — एक श्वास — हे "इहैव" — येथेच मुक्ती. तो युक्त, तो सुखी.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">काम क्रोध यांचा वेग ।<br>येथेचि जो सहे ।<br>तोचि युक्त पुरुष ।<br>सुखी होय ।।<br><br>इहलोकीच मुक्ती त्या ।<br>मरणाची वाट नाही ।<br>एक श्वास — एक क्षण ।<br>हेंचि मुक्तीचें द्वार ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">⚔️ स्वतःला विचारा</div><div class="rs-txt">"गेल्या आठवड्यात राग आला तेव्हा — मी बोललो का थांबलो? थांबलो असतो तर काय वेगळं झालं असतं?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज राग किंवा तीव्र इच्छा आली तेव्हा — <strong>एक श्वास. "मी जिंकतो" — हे मनात म्हणा. हीच इहलोकीची मुक्ती.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना ११</div></div>
+</body></html>

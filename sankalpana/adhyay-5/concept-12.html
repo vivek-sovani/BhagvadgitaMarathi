@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना १२</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#5A4000;--cl:#9A7010;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0A0800;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(154,112,16,0.12) 0%,transparent 55%),
+    radial-gradient(ellipse at 50% 100%,rgba(201,150,58,0.08) 0%,transparent 50%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#181200,#0A0800);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(154,112,16,0.25),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#181200,#0A0800);border:1px solid rgba(154,112,16,0.22);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(154,112,16,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(90,64,0,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(220,180,60,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(154,112,16,0.2);}
+
+  .person-header{background:linear-gradient(135deg,#181200,#0A0800);padding:24px 28px;display:flex;align-items:flex-start;gap:18px;}
+  .p-icon{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,#FFF0A0,#FFE060);border:2px solid rgba(201,150,58,0.5);display:flex;align-items:center;justify-content:center;font-size:1.7rem;flex-shrink:0;box-shadow:0 0 16px rgba(201,150,58,0.3);}
+  .p-meta{flex:1;}
+  .p-name{font-family:'Noto Serif Devanagari',serif;font-size:1.15rem;font-weight:700;color:var(--gold-light);margin-bottom:3px;}
+  .p-tag{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(154,112,16,0.7);margin-bottom:6px;}
+  .p-quote{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;color:rgba(253,246,232,0.72);font-style:italic;line-height:1.65;}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:24px;}
+
+  /* Three dimensions */
+  .three-dims{padding:0 28px 8px;}
+  .td-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:16px;}
+  .dim{display:flex;gap:14px;margin-bottom:14px;padding:16px;border-radius:12px;background:white;border:1px solid rgba(154,112,16,0.12);}
+  .dim-icon{font-size:1.3rem;flex-shrink:0;margin-top:3px;}
+  .dim-body{flex:1;}
+  .dim-lbl{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;color:var(--c);margin-bottom:4px;}
+  .dim-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;line-height:1.8;color:var(--shadow-ink);}
+  .dim-quote{margin-top:7px;padding:7px 10px;background:linear-gradient(135deg,#FFF8E0,#FFF0A0);border-radius:8px;font-size:0.82rem;color:#3A2800;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.6;}
+
+  /* Final moment */
+  .final-moment{background:linear-gradient(135deg,#181200,#0A0800);padding:22px 26px;position:relative;overflow:hidden;}
+  .final-moment::before{content:'🕉️';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:5rem;opacity:0.06;}
+  .fm-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(154,112,16,0.6);margin-bottom:14px;}
+  .fm-box{background:rgba(201,150,58,0.1);border:1px solid rgba(201,150,58,0.28);border-radius:12px;padding:16px 18px;margin-bottom:12px;}
+  .fm-lbl2{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,200,80,0.7);margin-bottom:7px;}
+  .fm-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--gold-light);line-height:1.8;font-style:italic;}
+  .fm-meaning{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.72);line-height:1.75;}
+  .fm-meaning strong{color:var(--gold-light);}
+
+  /* Summary */
+  .adhyay-summary{background:linear-gradient(160deg,#181200,#0A0800);padding:22px 26px;border-top:1px solid rgba(201,150,58,0.2);}
+  .as-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:16px;}
+  .as-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+  .as-num{background:linear-gradient(135deg,var(--gold),#8A6010);color:var(--ink);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+  .as-emoji{flex-shrink:0;font-size:0.9rem;}
+  .as-text{font-size:0.82rem;color:rgba(253,246,232,0.78);line-height:1.6;}
+  .as-text strong{color:var(--gold-light);}
+
+  .gita-connect{background:linear-gradient(160deg,#181200,#0A0800);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F0D870;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#100A00,#0A0800);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para{padding:0 18px;}.three-dims{padding:0 18px 8px;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">🕉️</span><span class="text">संकल्पना १२ / १२ — ब्रह्मनिर्वाण + भोक्तारं ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.२४–२९</div>
+  <div class="stext">भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम् ।<br>सुहृदं सर्वभूतानां ज्ञात्वा मां शान्तिमृच्छति ।।<br><br>लभन्ते ब्रह्मनिर्वाणमृषयः क्षीणकल्मषाः ।<br>छिन्नद्वैधा यतात्मानः सर्वभूतहिते रताः ।।</div>
+  <div class="smean">"मला यज्ञ-तपाचा भोक्ता, सर्वलोकाचा महेश्वर, सर्वभूतांचा सुहृद जाणून — शांती मिळते."<br>"ज्यांचे पाप क्षीण झाले, ज्यांनी द्वंद्व तोडले, जे आत्मसंयमी, सर्वभूतांच्या हितात रत — ते ऋषी ब्रह्मनिर्वाण मिळवतात."<br><br><em>भोक्तारं — सर्व यज्ञाचा फलदाता ईश्वर. मी निमित्त. ब्रह्मनिर्वाण — अहंकाराची शांती. "मी केलं" नाही — "झालं" हा भाव.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">"मी केलं" नाही — <strong>"माझ्याकडून झालं — तो भोक्ता."</strong><br><br>सर्व यज्ञाचं फळ त्याला. सर्व तपाचं श्रेय त्याला. मी निमित्त.<br><strong>हा भाव आला — ब्रह्मनिर्वाण — अहंकाराची शांती — इथेच.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>👤</span> वास्तविक जीवनातील उदाहरण</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="person-header">
+      <div class="p-icon">🕊️</div>
+      <div class="p-meta">
+        <div class="p-name">विनोबा भावे</div>
+        <div class="p-tag">भूदान चळवळ · पौनार आश्रम · महाराष्ट्र · १८९५–१९८२</div>
+        <div class="p-quote">"मी काहीच केलं नाही. ईश्वर माझ्याकडून करवून घेतो — मी फक्त निमित्त आहे."</div>
+      </div>
+    </div>
+
+    <div class="para">विनोबा भावे — गांधीजींचे अध्यात्मिक वारसदार. भूदान चळवळीत त्यांनी पायी फिरून हजारो एकर जमीन गरिबांसाठी मिळवली. पण या प्रचंड कार्यात त्यांनी कधीही "मी केलं" असं म्हटलं नाही. तीन आयामांतून त्यांचं जीवन गीतेचा हा श्लोक जगत होतं.</div>
+
+    <div class="three-dims">
+      <div class="td-title">तीन आयाम — विनोबांच्या जीवनात</div>
+
+      <div class="dim">
+        <div class="dim-icon">🌾</div>
+        <div class="dim-body">
+          <div class="dim-lbl">भोक्तारं — "फलदाता तो, मी नाही"</div>
+          <div class="dim-txt">भूदानात हजारो एकर जमीन मिळाली — गरिबांना मिळाली. विनोबांनी त्याचं श्रेय कधीच घेतलं नाही. म्हणायचे — "जमीनदारांच्या हृदयात परिवर्तन ईश्वरानेच केलं — मी फक्त चालत राहिलो."</div>
+          <div class="dim-quote">"भोक्तारं यज्ञतपसाम् — यज्ञाचा भोक्ता ईश्वर. माझं चालणे यज्ञ. फल त्याचं."</div>
+        </div>
+      </div>
+
+      <div class="dim">
+        <div class="dim-icon">📖</div>
+        <div class="dim-body">
+          <div class="dim-lbl">क्षीणकल्मष — "पाप-पुण्याचं ओझं नाही"</div>
+          <div class="dim-txt">विनोबांनी आयुष्यभर प्रत्येक धर्माचा अभ्यास केला — गीता, कुराण, बायबल, गुरुग्रंथ. कुठलाच भेद नाही. कुठलाही अहंकार नाही. "माझा धर्म श्रेष्ठ" असं कधीच म्हटलं नाही. द्वंद्व तुटलेलं होतं.</div>
+          <div class="dim-quote">"छिन्नद्वैधा — ज्यांनी द्वंद्व तोडलं. विनोबांनी धर्माचं, जातीचं, माझं-तुझं सगळं द्वंद्व सोडलं."</div>
+        </div>
+      </div>
+
+      <div class="dim">
+        <div class="dim-icon">🕊️</div>
+        <div class="dim-body">
+          <div class="dim-lbl">सर्वभूतहिते रत — "सगळ्यांचं हित"</div>
+          <div class="dim-txt">१९८२ मध्ये पौनार आश्रमात विनोबांनी समाधीचा निर्णय घेतला — अन्न-पाणी सोडलं. म्हणाले — "शरीर आता थकलं. पुढचा प्रवास आतून." भयाशिवाय, पश्चात्तापाशिवाय, शांत. हेच ब्रह्मनिर्वाण.</div>
+          <div class="dim-quote">"लभन्ते ब्रह्मनिर्वाणम् — ब्रह्मनिर्वाण मिळवतात. विनोबांनी ते जगताना मिळवलं — मरताना नाही."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="final-moment">
+      <div class="fm-lbl">🕉️ अंतिम क्षण — ब्रह्मनिर्वाण</div>
+      <div class="fm-box">
+        <div class="fm-lbl2">पौनार आश्रम · १९८२ · विनोबांचे शेवटचे शब्द</div>
+        <div class="fm-txt">"मी जे केलं ते माझं नव्हतं. ईश्वरानेच माझ्याकडून करवून घेतलं. मी निमित्त होतो. आता हे शरीर परत देतो — त्याचं आहे."</div>
+      </div>
+      <div class="fm-meaning">हे ब्रह्मनिर्वाण. <strong>अहंकाराचं विसर्जन — "मी" चं विलीनीकरण.</strong> भीती नाही कारण "मी" नाहीच. पश्चात्ताप नाही कारण "मी केलं" नाहीच. <strong>भोक्तारं — तो भोक्ता — हे आयुष्यभर जाणलं — आणि शेवटी त्यातच विलीन झाले.</strong></div>
+    </div>
+
+    <!-- Adhyay 5 Summary -->
+    <div class="adhyay-summary">
+      <div class="as-lbl">🕉️ अध्याय ५ — १२ संकल्पना — वास्तविक जीवनकथा सारांश</div>
+      <div class="as-row"><div class="as-num">१</div><div class="as-emoji">⚖️</div><div class="as-text"><strong>संन्यास की कर्मयोग</strong> — बाहेर escape नाही — आत बदल हाच खरा संन्यास</div></div>
+      <div class="as-row"><div class="as-num">२</div><div class="as-emoji">🔗</div><div class="as-text"><strong>सांख्य-योग एकच</strong> — मधुमेहतज्ञ + आयुर्वेदतज्ञ + ज्येष्ठ डॉक्टर — ध्येय एक</div></div>
+      <div class="as-row"><div class="as-num">३</div><div class="as-emoji">🌿</div><div class="as-text"><strong>योगयुक्त विशुद्धात्मा</strong> — साने गुरुजी — पाच लक्षणे जगलेला साधक</div></div>
+      <div class="as-row"><div class="as-num">४</div><div class="as-emoji">🌸</div><div class="as-text"><strong>कमळाची उपमा</strong> — घरी भांडण, बैठक — पाण्यात राहा, बुडू नका</div></div>
+      <div class="as-row"><div class="as-num">५</div><div class="as-emoji">🛠️</div><div class="as-text"><strong>शरीर-मन-बुद्धी साधने</strong> — शल्यचिकित्सक — "मी थकलो नाही, शरीर थकलं"</div></div>
+      <div class="as-row"><div class="as-num">६</div><div class="as-emoji">🏰</div><div class="as-text"><strong>नवद्वारपुर</strong> — न्यायाधीश — नगरात गोंधळ, राजा अचल</div></div>
+      <div class="as-row"><div class="as-num">७</div><div class="as-emoji">⚡</div><div class="as-text"><strong>ईश्वर कर्ता नाही</strong> — तीन परिस्थिती — देवावर दोष नाही, स्वभाव जबाबदार</div></div>
+      <div class="as-row"><div class="as-num">८</div><div class="as-emoji">☀️</div><div class="as-text"><strong>ज्ञान सूर्यासारखे</strong> — मंडेला + आईशी भांडण — एक सत्य सगळं बदलतं</div></div>
+      <div class="as-row"><div class="as-num">९</div><div class="as-emoji">👁️</div><div class="as-text"><strong>समदृष्टी</strong> — संत नामदेव + तुकाराम — सगळ्यांत विठ्ठल, इहैव जितः</div></div>
+      <div class="as-row"><div class="as-num">१०</div><div class="as-emoji">🌅</div><div class="as-text"><strong>बाहेरचं सुख क्षणिक</strong> — पसंती, बढती, वस्तू — येतं जातं. आतलं राहतं</div></div>
+      <div class="as-row"><div class="as-num">११</div><div class="as-emoji">⚔️</div><div class="as-text"><strong>काम-क्रोध जिंकणे</strong> — बैठकीत राग — एक श्वास — इहलोकीच मुक्ती</div></div>
+      <div class="as-row"><div class="as-num">१२</div><div class="as-emoji">🕉️</div><div class="as-text"><strong>ब्रह्मनिर्वाण</strong> — विनोबा भावे — "मी निमित्त, भोक्तारं तो" — अहंकाराची शांती</div></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश · अध्याय ५ चे सार</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"भोक्तारं यज्ञतपसां सर्वलोकमहेश्वरम्"</span> — यज्ञाचा भोक्ता ईश्वर. <span class="ahl">विनोबांनी हे आयुष्यभर जगलं — भूदान यज्ञाचा भोक्ता ईश्वर, मी निमित्त. हेच ब्रह्मनिर्वाण.</span><br><br>अध्याय ५ चं सार — <span class="hl">बाहेरून पूर्ण कार्यरत — आतून पूर्ण मुक्त.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">भोक्ता तो सर्वांचा ।<br>कर्ता मी नव्हतोच ।<br>निमित्त मात्र होतो ।<br>हे जाणतो आता ।।<br><br>ब्रह्मनिर्वाण मिळे ।<br>अहंकार जाय ।<br>"मी" विलीन होय ।<br>ब्रह्मात सर्व ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🕉️ स्वतःला विचारा</div><div class="rs-txt">"माझ्या आयुष्यात कुठे मला 'मी केलं' हा भाव सर्वात जास्त असतो? ते सोडलं तर किती हलकं वाटेल?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक काम — <strong>पूर्ण शक्तीने करा. संपल्यावर म्हणा — "भोक्तारं तो. मी निमित्त." हाच ब्रह्मनिर्वाणाचा पहिला श्वास.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना १२ · मालिका पूर्ण</div></div>
+</body></html>
