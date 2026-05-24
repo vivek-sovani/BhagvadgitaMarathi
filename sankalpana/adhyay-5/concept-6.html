@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना ६</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#5A3A00;--cl:#9A6A10;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0C0800;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(154,106,16,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.07) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1A1200,#0C0800);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(154,106,16,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1A1200,#0C0800);border:1px solid rgba(154,106,16,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(154,106,16,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(90,58,0,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(210,170,60,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+
+  /* Nine doors visual */
+  .nine-doors{max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.28s both;}
+  .nd-box{background:linear-gradient(160deg,#1A1200,#0C0800);border:1px solid rgba(154,106,16,0.2);border-radius:14px;padding:18px 20px;}
+  .nd-title{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(154,106,16,0.65);margin-bottom:12px;text-align:center;}
+  .nd-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;}
+  .nd-door{background:rgba(154,106,16,0.1);border:1px solid rgba(154,106,16,0.2);border-radius:8px;padding:8px 6px;text-align:center;}
+  .nd-icon{font-size:1rem;display:block;margin-bottom:3px;}
+  .nd-name{font-size:0.7rem;color:rgba(253,246,232,0.65);line-height:1.3;}
+  .nd-center{text-align:center;padding:8px;background:rgba(201,150,58,0.08);border-radius:8px;border:1px solid rgba(201,150,58,0.2);}
+  .nd-center-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.82rem;color:var(--gold-light);font-style:italic;}
+
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(154,106,16,0.18);}
+
+  .scene-dark{background:linear-gradient(135deg,#1A1200,#0C0800);padding:22px 28px;border-bottom:1px solid rgba(154,106,16,0.12);}
+  .scene-lbl{font-size:0.63rem;letter-spacing:0.22em;color:rgba(154,106,16,0.65);text-transform:uppercase;margin-bottom:6px;}
+  .scene-title{font-family:'Noto Serif Devanagari',serif;font-size:1.15rem;color:var(--gold-light);font-weight:700;line-height:1.4;}
+  .scene-sub{margin-top:5px;font-size:0.8rem;color:rgba(253,246,232,0.5);}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:22px;}
+
+  /* Court scene */
+  .court-scene{background:linear-gradient(135deg,#1A1200,#0C0800);padding:20px 26px;margin:0;}
+  .cs-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(154,106,16,0.6);margin-bottom:14px;}
+  .cs-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:11px;}
+  .cs-who{background:rgba(154,106,16,0.15);border:1px solid rgba(154,106,16,0.25);border-radius:20px;padding:3px 12px;font-size:0.72rem;color:rgba(240,200,100,0.85);white-space:nowrap;flex-shrink:0;margin-top:3px;}
+  .cs-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.78);line-height:1.72;}
+  .cs-judge{background:rgba(201,150,58,0.1);border:1px solid rgba(201,150,58,0.25);border-radius:10px;padding:14px 16px;margin-top:14px;}
+  .cs-judge-lbl{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,200,80,0.7);margin-bottom:6px;}
+  .cs-judge-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;color:var(--gold-light);line-height:1.75;font-style:italic;}
+
+  .dlg{background:linear-gradient(135deg,#FFF8EE,#FDF2DC);border-left:3px solid var(--saffron);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 28px;}
+  .dlg .spkr{font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--deep-saffron);font-weight:700;margin-bottom:5px;}
+  .dlg .txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;line-height:1.85;color:var(--ink);font-style:italic;}
+
+  .key-insight{background:linear-gradient(135deg,#FFF8E0,#FFF0A8);border:1px solid rgba(154,106,16,0.25);border-radius:13px;padding:18px 20px;margin:16px 28px;position:relative;}
+  .key-insight::before{content:'🏰';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#2A1A00;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#1A1200,#0C0800);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F0D070;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#140E00,#0C0800);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.nd-grid{grid-template-columns:repeat(3,1fr);}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para,.dlg,.key-insight{padding-left:18px;padding-right:18px;margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">🏰</span><span class="text">संकल्पना ६ / १२ — नवद्वारपुर — नऊ दरवाज्यांचे नगर ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.१३</div>
+  <div class="stext">सर्वकर्माणि मनसा संन्यस्यास्ते सुखं वशी ।<br>नवद्वारे पुरे देही नैव कुर्वन्न कारयन् ।।</div>
+  <div class="smean">"सर्व कर्मं मनाने संन्यास करून, जिंकलेल्या मनाचा धारण करणारा देही — नऊ दरवाज्यांच्या नगरात — न करत, न करवत — सुखाने राहतो."<br><br><em>शरीर हे एक नगर आहे. नऊ दरवाजे — दोन डोळे, दोन कान, दोन नाकपुड्या, तोंड, आणि दोन खालचे द्वार. या नगरात आत्मा — राजा — शांतपणे राहतो. नगरात गोंधळ असो — राजा शांत.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">तुम्ही त्या नगराचे <strong>राजा आहात — गुलाम नाही.</strong><br><br>नऊ दरवाज्यांतून जग आत येतं — दिसतं, ऐकतं, वासतं. पण राजा स्वतः बाहेर जात नाही. <strong>नगरात गोंधळ असेल — राजा शांत. नगरात उत्सव असेल — राजा शांत.</strong></div>
+</div>
+
+<!-- Nine Doors Visual -->
+<div class="nine-doors">
+  <div class="nd-box">
+    <div class="nd-title">नवद्वारे — नऊ दरवाजे</div>
+    <div class="nd-grid">
+      <div class="nd-door"><span class="nd-icon">👁️</span><div class="nd-name">उजवा डोळा</div></div>
+      <div class="nd-door"><span class="nd-icon">👁️</span><div class="nd-name">डावा डोळा</div></div>
+      <div class="nd-door"><span class="nd-icon">👂</span><div class="nd-name">उजवा कान</div></div>
+      <div class="nd-door"><span class="nd-icon">👂</span><div class="nd-name">डावा कान</div></div>
+      <div class="nd-door"><span class="nd-icon">👃</span><div class="nd-name">उजवी नाकपुडी</div></div>
+      <div class="nd-door"><span class="nd-icon">👃</span><div class="nd-name">डावी नाकपुडी</div></div>
+      <div class="nd-door"><span class="nd-icon">👄</span><div class="nd-name">तोंड</div></div>
+      <div class="nd-door"><span class="nd-icon">🔽</span><div class="nd-name">खालचे दोन द्वार</div></div>
+      <div class="nd-door" style="background:rgba(201,150,58,0.12);border-color:rgba(201,150,58,0.3);">
+        <span class="nd-icon">🪔</span><div class="nd-name" style="color:rgba(240,200,80,0.8);">राजा — आत्मा</div>
+      </div>
+    </div>
+    <div class="nd-center"><div class="nd-center-txt">दरवाजे उघडे — राजा आत. बाहेरचं येतं — पण राजाला स्पर्श नाही.</div></div>
+  </div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>⚖️</span> आधुनिक जीवनातील परिस्थिती</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="scene-dark">
+      <div class="scene-lbl">परिस्थिती · न्यायालय · एक कठीण खटला</div>
+      <div class="scene-title">न्यायाधीश — नगराचा राजा — सगळं ऐकतो, आत शांत</div>
+      <div class="scene-sub">दोन्ही बाजूंचे वकील ओरडतायत, रडतायत, आरोप करतायत — राजा अचल</div>
+    </div>
+
+    <div class="para">न्यायालयात एक गुंतागुंतीचा खटला सुरू आहे. एका बाजूचे वकील आक्रमकपणे युक्तिवाद करत आहेत. दुसऱ्या बाजूचे ओरडत आहेत. आरोपीचे कुटुंब रडत आहे. साक्षीदार अस्वस्थ आहे. खोलीत तणाव आहे.</div>
+
+    <div class="court-scene">
+      <div class="cs-lbl">⚖️ न्यायालयात — नऊ दरवाज्यांतून येणारं</div>
+      <div class="cs-row">
+        <div class="cs-who">👂 कान</div>
+        <div class="cs-txt">ओरडणे, रडणे, युक्तिवाद, आरोप — सगळं कानात येतं. दरवाजा उघडा आहे — पण राजा फक्त ऐकतो, वाहून जात नाही.</div>
+      </div>
+      <div class="cs-row">
+        <div class="cs-who">👁️ डोळे</div>
+        <div class="cs-txt">रडणारं कुटुंब, आक्रमक वकील, अस्वस्थ साक्षीदार — दिसतं सगळं. पण दिसणं आणि त्यात बुडणं वेगळं.</div>
+      </div>
+      <div class="cs-row">
+        <div class="cs-who">🧠 मन</div>
+        <div class="cs-txt">भावना येतात — सहानुभूती, तणाव, दबाव. पण न्यायाधीशाने त्या भावनांचा साक्षी व्हायचं — त्यात वाहायचं नाही.</div>
+      </div>
+      <div class="cs-judge">
+        <div class="cs-judge-lbl">🪔 राजा — न्यायाधीशाचा आत्मा</div>
+        <div class="cs-judge-txt">सगळं ऐकलं, सगळं पाहिलं, सगळं जाणलं — पण आत शांत. नगरात गोंधळ — राजा अचल. निकाल विवेकाने, शांतपणे. न भावनेने, न दबावाने.</div>
+      </div>
+    </div>
+
+    <div class="para">न्यायाधीश खटला संपल्यावर बाहेर आले. एक सहकाऱ्याने विचारले —</div>
+
+    <div class="dlg">
+      <div class="spkr">सहकारी → न्यायाधीश</div>
+      <div class="txt">"आज खूप तणाव होता — तुम्ही इतके शांत कसे राहिलात?"</div>
+    </div>
+    <div class="dlg">
+      <div class="spkr">न्यायाधीश → सहकारी</div>
+      <div class="txt">"सगळं ऐकतो — पण ऐकलेलं माझ्यात राहत नाही. नगरात जे येतं ते येतं — राजाला स्पर्श करत नाही. तणाव नगराचा — राजाचा नाही."</div>
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">🏰 गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">न्यायाधीश नगरात असतो — नगर चालवतो — पण नगराचा गोंधळ त्याला स्पर्श करत नाही.<br><br><strong>तुम्ही त्या राजासारखे आहात.</strong> शरीर-मन-इंद्रियांच्या नगरात राहता — पण त्यांचे गुलाम नाही.<br><br>प्रश्न एकच — <strong>माझ्या नऊ दरवाज्यांचा राजा मी आहे की दरवाजेच माझे राजे झाले आहेत?</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"नवद्वारे पुरे देही नैव कुर्वन्न कारयन्"</span> — नऊ दरवाज्यांच्या नगरात देही — न करत, न करवत — सुखाने राहतो. <span class="ahl">न्यायाधीश हे नवद्वारपुराचे उत्तम उदाहरण — सगळं येतं, जातं — राजा अचल.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">नऊ दरवाजे असती ।<br>इंद्रिये जगाशी जोडती ।<br>परी देही आत राहती ।<br>न करी न करवी ।।<br><br>राजा जैसा नगरात ।<br>शांत असे स्वस्थात ।<br>नगराच्या गोंधळात ।<br>त्यास स्पर्श नाहीं ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🏰 स्वतःला विचारा</div><div class="rs-txt">"माझ्या नऊ दरवाज्यांतून आत येणारं — दृश्य, शब्द, स्पर्श — यांचा राजा मी आहे का? की ते माझे राजे झाले आहेत?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक दरवाजा निवडकपणे बंद करा. <strong>बातम्या एक दिवस बंद. सूचना एक तास बंद. राजाने एक दरवाजा बंद केला — नगरात शांती वाढते.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना ६</div></div>
+</body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना ९</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#5A3A80;--cl:#9060C0;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#080412;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(144,96,192,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#100820,#080412);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(144,96,192,0.2),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#100820,#080412);border:1px solid rgba(144,96,192,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(144,96,192,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(90,58,128,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(180,130,230,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(144,96,192,0.18);}
+
+  /* Sant section header */
+  .sant-header{background:linear-gradient(135deg,#100820,#080412);padding:22px 28px;border-bottom:1px solid rgba(144,96,192,0.12);}
+  .sant-lbl{font-size:0.63rem;letter-spacing:0.22em;color:rgba(144,96,192,0.65);text-transform:uppercase;margin-bottom:8px;}
+  .sant-title{font-family:'Noto Serif Devanagari',serif;font-size:1.15rem;color:var(--gold-light);font-weight:700;line-height:1.4;}
+  .sant-sub{margin-top:5px;font-size:0.8rem;color:rgba(253,246,232,0.5);}
+
+  /* Two sants */
+  .two-sants{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .sant{padding:22px 20px;border-bottom:1px solid rgba(144,96,192,0.1);}
+  .sant.s1{border-right:1px solid rgba(144,96,192,0.1);background:linear-gradient(135deg,#F8F4FC,#F0E8F8);}
+  .sant.s2{background:linear-gradient(135deg,#F4F8FC,#E8F0F8);}
+  .sant-icon{font-size:1.6rem;margin-bottom:8px;display:block;}
+  .sant-name{font-family:'Noto Serif Devanagari',serif;font-size:0.95rem;font-weight:700;margin-bottom:4px;}
+  .s1 .sant-name{color:#3A1860;}.s2 .sant-name{color:#0A2848;}
+  .sant-period{font-size:0.68rem;letter-spacing:0.12em;color:rgba(90,58,128,0.6);margin-bottom:8px;}
+  .sant-body{font-family:'Noto Serif Devanagari',serif;font-size:0.83rem;line-height:1.75;}
+  .s1 .sant-body{color:#2A1040;}.s2 .sant-body{color:#0A1830;}
+
+  .incident{padding:22px 26px;background:var(--cream);border-bottom:1px solid rgba(144,96,192,0.08);}
+  .inc-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:14px;}
+
+  .inc-block{margin-bottom:18px;padding:16px;border-radius:12px;background:white;border:1px solid rgba(144,96,192,0.12);}
+  .inc-block:last-child{margin-bottom:0;}
+  .inc-head{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+  .inc-icon{font-size:1.1rem;}
+  .inc-who{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;color:var(--ink);}
+  .inc-situation{font-size:0.82rem;color:var(--shadow-ink);margin-bottom:8px;line-height:1.65;font-family:'Noto Serif Devanagari',serif;}
+  .inc-response{background:linear-gradient(135deg,#EEE8F8,#E4D8F0);border-left:3px solid var(--cl);border-radius:0 8px 8px 0;padding:8px 12px;font-size:0.83rem;color:#2A1040;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .inc-gita{margin-top:7px;font-size:0.75rem;color:var(--c);font-style:italic;padding-left:4px;}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:22px;}
+
+  .key-insight{background:linear-gradient(135deg,#EEE8F8,#E4D8F0);border:1px solid rgba(144,96,192,0.2);border-radius:13px;padding:18px 20px;margin:8px 28px 20px;position:relative;}
+  .key-insight::before{content:'👁️';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#1A0830;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#100820,#080412);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#C8A0F0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#0C0618,#080412);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.two-sants{grid-template-columns:1fr;}.s1{border-right:none;border-bottom:1px solid rgba(144,96,192,0.1);}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para,.key-insight{padding-left:18px;padding-right:18px;margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">👁️</span><span class="text">संकल्पना ९ / १२ — समदृष्टी ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.१८–१९</div>
+  <div class="stext">विद्याविनयसम्पन्ने ब्राह्मणे गवि हस्तिनि ।<br>शुनि चैव श्वपाके च पण्डिताः समदर्शिनः ।।<br><br>इहैव तैर्जितः सर्गो येषां साम्ये स्थितं मनः ।</div>
+  <div class="smean">"विद्याविनयसंपन्न ब्राह्मण, गाय, हत्ती, कुत्रा आणि चांडाळ — यांत पंडित समदर्शी असतात."<br>"ज्यांचे मन समत्वात स्थिर आहे — त्यांनी इहलोकातच जग जिंकलं — इहैव जितः सर्गः."<br><br><em>सगळ्यांत एकाच आत्म्याचं दर्शन. भेद दिसला नाही — भय नाही. हे साधणं म्हणजे इथेच मुक्ती.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">समदृष्टी म्हणजे सगळे सारखेच आहेत असं म्हणणं नाही.<br><strong>सगळ्यांत एकाच आत्म्याचं दर्शन — हे जाणणं.</strong><br><br>भेद आहेत — ते दिसतात. पण आत जे आहे ते एकच. हे जाणलं की <strong>इहैव जितः सर्गः — इथेच जग जिंकलं.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🙏</span> महाराष्ट्राची संत परंपरा</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="sant-header">
+      <div class="sant-lbl">वास्तविक जीवनातील उदाहरणे · महाराष्ट्र</div>
+      <div class="sant-title">संत नामदेव आणि संत तुकाराम — समदृष्टीचे दोन क्षण</div>
+      <div class="sant-sub">वारकरी संप्रदाय · पंढरपूर · विठ्ठल भक्ती</div>
+    </div>
+
+    <div class="two-sants">
+      <div class="sant s1">
+        <span class="sant-icon">🙏</span>
+        <div class="sant-name">संत नामदेव</div>
+        <div class="sant-period">इ. स. १२७०–१३५० · पंढरपूर</div>
+        <div class="sant-body">शिंपी — खालची जात मानली जात होती. पण विठ्ठलाच्या दर्शनात ते ब्राह्मणांइतकेच जवळ होते. त्यांनी स्वतः अनुभवलं — जातीचा भेद देवापाशी नाही.</div>
+      </div>
+      <div class="sant s2">
+        <span class="sant-icon">🙏</span>
+        <div class="sant-name">संत तुकाराम</div>
+        <div class="sant-period">इ. स. १५९८–१६५० · देहू</div>
+        <div class="sant-body">कुणबी — शेतकरी जात. पण त्यांनी हजारो अभंगांतून सांगितलं — "देव सर्वांचा आहे. जातीचा भेद माणसाने केला — देवाने नाही."</div>
+      </div>
+    </div>
+
+    <div class="incident">
+      <div class="inc-lbl">👁️ समदृष्टीचे ऐतिहासिक क्षण</div>
+
+      <div class="inc-block">
+        <div class="inc-head"><span class="inc-icon">🏛️</span><div class="inc-who">संत नामदेव — मंदिर प्रवेश</div></div>
+        <div class="inc-situation">पंढरपुरात एकदा एका ब्राह्मण पुजाऱ्याने नामदेवांना मंदिरात जाण्यापासून रोखलं — "तुम्ही शिंपी — आत येऊ शकत नाही." नामदेव बाहेर उभे राहिले.</div>
+        <div class="inc-response">"विठ्ठल सगळ्यांचा आहे. दरवाजा तुम्ही बंद केला — त्याने नाही. मी इथेच भजन करतो — तो माझ्याकडे येईल." नामदेव बाहेर उभे राहून अभंग म्हणू लागले. मंदिराची भिंत फिरली अशी कथा आहे — विठ्ठलाचं तोंड नामदेवांकडे वळलं.</div>
+        <div class="inc-gita">पण्डिताः समदर्शिनः — नामदेवांना जात दिसली नाही — विठ्ठल दिसला. हीच समदृष्टी.</div>
+      </div>
+
+      <div class="inc-block">
+        <div class="inc-head"><span class="inc-icon">📜</span><div class="inc-who">संत तुकाराम — अभंग आणि जातीचा प्रश्न</div></div>
+        <div class="inc-situation">ब्राह्मण पंडितांनी तुकारामांना विचारलं — "तुम्ही कुणबी — शास्त्र शिकला नाहीत — तुम्हाला वेदांची भाषा बोलण्याचा अधिकार नाही." तुकारामांनी अभंग लिहिला —</div>
+        <div class="inc-response"><em>"आम्हा घरी धन शब्दांचीच रत्ने। शब्दांचीच शस्त्रे यत्न करू।। तुका म्हणे आम्ही अमृताचे पुत्र। वाया जाल मत्र जाणत्यांनो।।"</em><br><br>"ज्ञान जातीत नाही — हृदयात आहे. देव सगळ्यांत आहे — ब्राह्मणात, कुणब्यात, सगळ्यांत."</div>
+        <div class="inc-gita">इहैव जितः सर्गः — तुकारामांनी जात-पात हे बंधन इहलोकातच जिंकलं. हीच मुक्ती.</div>
+      </div>
+
+    </div>
+
+    <div class="para">नामदेव आणि तुकाराम — दोघेही "खालच्या" जातीचे — समाजाने बाहेर ठेवलेले. पण दोघांनाही एकच दिसत होतं — <strong>विठ्ठल सगळ्यांत आहे. भेद माणसाचा — देवाचा नाही.</strong> हीच समदृष्टी — हाच गीतेचा श्लोक — हेच "इहैव जितः सर्गः."</div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">👁️ गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">समदृष्टी म्हणजे भेद दिसत नाही असं नाही — भेद दिसतो. पण त्याच्या पलीकडे <strong>एकाच आत्म्याचं दर्शन</strong> होतं.<br><br>नामदेव आणि तुकाराम यांनी हे जगलं — जात, अपमान, बाहेर ठेवणं — या सगळ्यात <strong>विठ्ठल दिसत राहिला — भेद दिसला नाही.</strong><br><br>हे साधलं की इहैव — <strong>इथेच, या जन्मात — जग जिंकलं.</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"पण्डिताः समदर्शिनः"</span> — पंडित समदर्शी. <span class="ahl">नामदेव आणि तुकाराम यांनी ब्राह्मण-कुणबी भेद सोडून सगळ्यांत विठ्ठल पाहिला. हे "इहैव जितः सर्गः" — इथेच जग जिंकणं.</span><br><br>ज्ञानदेव म्हणतात — <span class="hl">"समदृष्टी जया जडे। तयासी भवबंध तुटे।।"</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">पंडित समदर्शी असती ।<br>सर्वांत एकचि पाहती ।<br>ब्राह्मण चांडाळ गाय हत्ती ।<br>एकचि त्यांत ।।<br><br>समदृष्टी जया जडे ।<br>तयासी भवबंध तुटे ।<br>इहैव जितः सर्गः ।<br>हेंचि सत्य ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">👁️ स्वतःला विचारा</div><div class="rs-txt">"माझ्या आयुष्यात कोण आहे — ज्याच्याकडे मी भेदाच्या नजरेने पाहतो? जात, धर्म, श्रीमंती, शिक्षण — कुठला भेद? त्यात विठ्ठल दिसतो का?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक माणूस — जो "वेगळा" वाटतो — त्याच्याशी एक शब्द बोला. <strong>"याच्यात आणि माझ्यात एकच आत्मा" — हा भाव मनात ठेवा.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना ९</div></div>
+</body></html>

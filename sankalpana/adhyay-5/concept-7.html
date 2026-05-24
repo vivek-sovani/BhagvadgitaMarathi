@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना ७</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#6A1818;--cl:#A83030;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#100404;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(168,48,48,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1E0808,#100404);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(168,48,48,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1E0808,#100404);border:1px solid rgba(168,48,48,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(168,48,48,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(106,24,24,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(220,100,100,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(168,48,48,0.18);}
+
+  /* Three situations */
+  .sit-set{padding:24px 28px 8px;}
+  .sit-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:16px;}
+  .sit-block{display:flex;gap:14px;margin-bottom:16px;padding:16px;border-radius:12px;background:white;border:1px solid rgba(168,48,48,0.1);}
+  .sb-emoji{font-size:1.4rem;flex-shrink:0;margin-top:2px;}
+  .sb-body{flex:1;}
+  .sb-who{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;color:var(--ink);margin-bottom:5px;}
+  .sb-blame{background:linear-gradient(135deg,#FAE8E8,#F4D0D0);border-left:3px solid var(--cl);border-radius:0 8px 8px 0;padding:8px 12px;margin-bottom:7px;font-size:0.83rem;color:#5A1010;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .sb-real{background:linear-gradient(135deg,#FFF8E8,#FFF0C0);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:8px 12px;font-size:0.83rem;color:#4A3800;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .sb-lbl{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;margin-bottom:3px;}
+  .sb-blame .sb-lbl{color:#8A2020;}.sb-real .sb-lbl{color:#7A6000;}
+
+  .chain-box{background:linear-gradient(135deg,#1E0808,#100404);border-radius:12px;padding:18px 20px;margin:8px 28px 20px;}
+  .chain-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(220,100,100,0.7);margin-bottom:12px;}
+  .chain-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+  .chain-item{background:rgba(168,48,48,0.18);border:1px solid rgba(168,48,48,0.28);border-radius:20px;padding:4px 14px;font-size:0.78rem;color:rgba(255,180,180,0.9);font-family:'Noto Serif Devanagari',serif;}
+  .chain-arrow{color:rgba(201,150,58,0.5);font-size:1rem;}
+  .chain-note{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.75);line-height:1.7;margin-top:8px;font-style:italic;}
+
+  .key-insight{background:linear-gradient(135deg,#FFF8E8,#FFF0C0);border:1px solid rgba(168,48,48,0.15);border-radius:13px;padding:18px 20px;margin:4px 28px 20px;position:relative;}
+  .key-insight::before{content:'⚡';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#2A1A00;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#1E0808,#100404);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F8C080;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#180606,#100404);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.sit-set{padding:18px 18px 8px;}.chain-box,.key-insight{margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">⚡</span><span class="text">संकल्पना ७ / १२ — ईश्वर कर्ता नाही, फलदाता नाही</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.१४–१५</div>
+  <div class="stext">न कर्तृत्वं न कर्माणि लोकस्य सृजति प्रभुः ।<br>न कर्मफलसंयोगं स्वभावस्तु प्रवर्तते ।।<br><br>नादत्ते कस्यचित्पापं न चैव सुकृतं विभुः ।<br>अज्ञानेनावृतं ज्ञानं तेन मुह्यन्ति जन्तवः ।।</div>
+  <div class="smean">"प्रभू लोकांचे कर्तेपण, कर्म वा कर्मफल निर्माण करत नाही. स्वभाव प्रवृत्त होतो."<br>"विभू कुणाचं पाप वा पुण्य घेत नाही. ज्ञान अज्ञानाने झाकलेलं असतं — त्यामुळे जीव मोहात पडतात."<br><br><em>ईश्वर न्यायाधीश नाही — साक्षी आहे. परिणाम स्वभावातून येतात — देवाच्या इच्छेतून नाही. जबाबदारी स्वतःची.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">"देवाने असं केलं" — हे अज्ञान आहे.<br><strong>स्वभाव → कर्म → परिणाम — ही साखळी आहे. देव मध्ये नाही.</strong><br><br>देवावर दोष टाकणे म्हणजे जबाबदारी टाळणे. <strong>जबाबदारी घेतली की बदल शक्य होतो.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🔍</span> आधुनिक जीवनातील परिस्थिती</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="sit-set">
+      <div class="sit-title">तीन परिचित परिस्थिती — दोष कुणाला?</div>
+
+      <div class="sit-block">
+        <div class="sb-emoji">📚</div>
+        <div class="sb-body">
+          <div class="sb-who">परीक्षेत अपयश आलेला विद्यार्थी</div>
+          <div class="sb-blame">
+            <div class="sb-lbl">❌ देवावर दोष</div>
+            "देवाने माझ्यावर कृपा नाही केली. नशीब नव्हतं. परीक्षा कठीण होती — माझ्या नशिबातच नाही."
+          </div>
+          <div class="sb-real">
+            <div class="sb-lbl">✓ खरं कारण</div>
+            अभ्यास नीट झाला नाही. लक्ष विखुरलेलं होतं. सवयी चुकीच्या होत्या. स्वभाव → कर्म → परिणाम.
+          </div>
+        </div>
+      </div>
+
+      <div class="sit-block">
+        <div class="sb-emoji">💼</div>
+        <div class="sb-body">
+          <div class="sb-who">व्यवसायात अपयशी झालेला उद्योजक</div>
+          <div class="sb-blame">
+            <div class="sb-lbl">❌ देवावर दोष</div>
+            "देवाने साथ नाही दिली. आमच्या कुळावरच असं असतं. नशीब नव्हतं — एवढंच."
+          </div>
+          <div class="sb-real">
+            <div class="sb-lbl">✓ खरं कारण</div>
+            बाजाराचा अभ्यास नाही झाला. निर्णय घाईने घेतले. जोखीम नीट मोजली नाही. स्वभाव → निर्णय → परिणाम.
+          </div>
+        </div>
+      </div>
+
+      <div class="sit-block">
+        <div class="sb-emoji">💔</div>
+        <div class="sb-body">
+          <div class="sb-who">नाते तुटलेली व्यक्ती</div>
+          <div class="sb-blame">
+            <div class="sb-lbl">❌ देवावर दोष</div>
+            "देवानेच आमचं नाते तोडलं. आमच्या नशिबातच नव्हतं. वरूनच असं ठरलेलं असतं."
+          </div>
+          <div class="sb-real">
+            <div class="sb-lbl">✓ खरं कारण</div>
+            संवाद नीट झाला नाही. एकमेकांची काळजी दाखवली नाही. अपेक्षा सांगितल्या नाहीत. स्वभाव → वर्तन → परिणाम.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chain-box">
+      <div class="chain-lbl">⚡ गीतेनुसार साखळी — देव यात नाही</div>
+      <div class="chain-row">
+        <div class="chain-item">स्वभाव</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-item">संस्कार</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-item">कर्म</div>
+        <div class="chain-arrow">→</div>
+        <div class="chain-item">परिणाम</div>
+      </div>
+      <div class="chain-note">"न कर्तृत्वं न कर्माणि लोकस्य सृजति प्रभुः" — प्रभू लोकांचं कर्तेपण निर्माण करत नाही. <strong>स्वभावातून सगळं येतं.</strong> देव साक्षी आहे — कर्ता नाही, फलदाता नाही.</div>
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">⚡ गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">देवावर दोष टाकणे म्हणजे दोन नुकसाने —<br><br>एक — <strong>जबाबदारी सुटते</strong> — पण बदल शक्य नाही.<br>दोन — <strong>ईश्वराला चुकीचं समजतो</strong> — तो साक्षी आहे, न्यायाधीश नाही.<br><br>गीता म्हणते — <strong>जबाबदारी घ्या. स्वभाव बदला. कर्म बदलेल. परिणाम बदलेल.</strong><br>देवावर दोष नाही — देव आधार आहे, आडकाठी नाही.</div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"नादत्ते कस्यचित्पापं न चैव सुकृतम्"</span> — ईश्वर कुणाचं पाप वा पुण्य घेत नाही. <span class="ahl">परिणाम स्वभावातून येतात — देवाच्या इच्छेतून नाही. जबाबदारी माझी — बदल शक्य आहे.</span><br><br>ज्ञानदेव म्हणतात — <span class="hl">"स्वभावें चि होय सकल। देव केवळ साक्षी।।"</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">देव ना करी ना करवी ।<br>स्वभावें कर्म होय सर्वी ।<br>फळही स्वभावेंचि येई ।<br>देव साक्षी केवळ ।।<br><br>जबाबदारी जया कळे ।<br>तोचि बदल घडवी ।<br>दोष देवावरी ढकळे ।<br>तो अज्ञानी जाणे ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">⚡ स्वतःला विचारा</div><div class="rs-txt">"माझ्या आयुष्यात कुठे मी देवावर, नशिबावर दोष टाकतो? त्या परिस्थितीत माझा स्वभाव, माझं कर्म — किती जबाबदार आहे?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक परिस्थिती निवडा जी "नशिबावर" सोडली होती. <strong>त्यात माझा स्वभाव काय होता? ते बदललं तर काय होईल?</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना ७</div></div>
+</body></html>
