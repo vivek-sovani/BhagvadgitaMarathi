@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना १</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#6A4A00;--cl:#A87820;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0E0A00;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(168,120,32,0.11) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1C1400,#0E0A00);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(168,120,32,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1C1400,#0E0A00);border:1px solid rgba(168,120,32,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(168,120,32,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(106,74,0,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:32px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(200,170,60,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(168,120,32,0.2);}
+
+  /* Second person scenario blocks */
+  .scene-dark{background:linear-gradient(135deg,#1C1400,#0E0A00);padding:24px 28px;border-bottom:1px solid rgba(168,120,32,0.15);}
+  .scene-label{font-size:0.63rem;letter-spacing:0.22em;color:rgba(168,120,32,0.65);text-transform:uppercase;margin-bottom:8px;}
+  .scene-q{font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:var(--gold-light);font-weight:700;line-height:1.5;}
+  .scene-sub{margin-top:6px;font-size:0.82rem;color:rgba(253,246,232,0.55);line-height:1.6;}
+
+  .thought-block{background:linear-gradient(135deg,#EEF0F8,#E0E6F4);border-left:3px solid #5A70B0;border-radius:0 12px 12px 0;padding:16px 20px;margin:20px 0;position:relative;}
+  .thought-block::before{content:'💭';position:absolute;top:-12px;left:16px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .thought-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#3A5090;font-weight:700;margin-bottom:6px;}
+  .thought-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.88;color:#1A2848;font-style:italic;}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:24px;}
+
+  /* contrast: escape vs badalav */
+  .contrast{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 28px;}
+  .cblock{border-radius:13px;padding:16px 15px;}
+  .cblock.escape{background:linear-gradient(135deg,#FAE8E8,#F4D0D0);border:1px solid rgba(160,40,40,0.2);}
+  .cblock.badalav{background:linear-gradient(135deg,#E8F4D8,#D4EAB8);border:1px solid rgba(64,128,40,0.2);}
+  .cb-icon{font-size:1.4rem;margin-bottom:6px;display:block;}
+  .cb-lbl{font-size:0.66rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:700;margin-bottom:5px;}
+  .escape .cb-lbl{color:#7A1010;}.badalav .cb-lbl{color:#285A10;}
+  .cb-txt{font-size:0.83rem;line-height:1.65;}
+  .escape .cb-txt{color:#4A1004;}.badalav .cb-txt{color:#1A3A08;}
+
+  .key-insight{background:linear-gradient(135deg,#FFF8E8,#FFF0C0);border:1px solid rgba(168,120,32,0.25);border-radius:13px;padding:18px 20px;margin:20px 28px;position:relative;}
+  .key-insight::before{content:'🔑';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#2A2000;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#1C1400,#0E0A00);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F0D870;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#181200,#0E0A00);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.contrast{grid-template-columns:1fr;}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para{padding:0 18px;}.contrast{margin:16px 18px;}.key-insight{margin:16px 18px;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">⚖️</span><span class="text">संकल्पना १ / १२ — संन्यास की कर्मयोग?</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.२–३</div>
+  <div class="stext">संन्यासः कर्मयोगश्च निःश्रेयसकरावुभौ ।<br>तयोस्तु कर्मसंन्यासात् कर्मयोगो विशिष्यते ।।<br><br>ज्ञेयः स नित्यसंन्यासी यो न द्वेष्टि न काङ्क्षति ।</div>
+  <div class="smean">"संन्यास आणि कर्मयोग — दोन्ही मुक्तीकडे नेतात. पण या दोन्हींपैकी कर्मयोग श्रेष्ठ."<br><br>"जो द्वेष करत नाही, इच्छा करत नाही — तो नित्यसंन्यासी."<br><br><em>संन्यास ही वेषभूषा नाही — ती मनाची अवस्था आहे. बाहेर काही बदलायची गरज नाही — आत बदलायचं आहे.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">बाहेरून escape नाही — <strong>आत बदल — हाच खरा कर्मसंन्यास.</strong><br><br>जो द्वेष करत नाही, इच्छा करत नाही — तो कुठेही राहून संन्यासी आहे. <strong>मन निर्लिप्त असणे — हीच खरी संन्यासाची अवस्था.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🪞</span> तुमच्याच जीवनातील प्रश्न</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="scene-dark">
+      <div class="scene-label">एक परिचित विचार · तुम्हालाही आला असेल</div>
+      <div class="scene-q">"सगळं सोडून कुठेतरी निघून जावं..."</div>
+      <div class="scene-sub">ऑफिस, घर, नाती, जबाबदाऱ्या — सगळ्यापासून दूर. शांत. एकटे.</div>
+    </div>
+
+    <div class="para">हा विचार कधी ना कधी येतो — कठीण परिस्थितीत, थकव्यात, निराशेत. "जर हे सगळं नसतं तर किती बरं झालं असतं." कधी हिमालयाची ओढ वाटते, कधी एखाद्या आश्रमाची, कधी फक्त घरातील एका बंद खोलीची.</div>
+
+    <div class="thought-block">
+      <div class="thought-lbl">मनात येणारे विचार</div>
+      <div class="thought-txt">"इथून निघालो की शांती मिळेल."<br>"या माणसांपासून दूर गेलो की बरं होईल."<br>"हे काम सोडलं की मोकळं वाटेल."</div>
+    </div>
+
+    <div class="para">पण एक प्रश्न विचारा — जेव्हा तुम्ही खरोखरच सुट्टीला गेलात, एकट्याने — मन शांत झालं का? की तेच विचार, तेच काळजी, तेच नाती — बरोबर आले?</div>
+
+    <div class="para">कारण <strong>मन बरोबर येतं.</strong> ते सामानाच्या बॅगेत असतं. हिमालयात गेलो तरी — जर मन त्याच जुन्या जखमांत रमत असेल — तर हिमालय काय करणार?</div>
+
+    <div class="contrast">
+      <div class="cblock escape">
+        <span class="cb-icon">🏃</span>
+        <div class="cb-lbl">बाहेरचे escape</div>
+        <div class="cb-txt">परिस्थिती बदलणे — पण मन तेच. तात्पुरती शांती — मग परत तेच. बाहेर पळालो — आत नाही बदललो.</div>
+      </div>
+      <div class="cblock badalav">
+        <span class="cb-icon">🌿</span>
+        <div class="cb-lbl">आतला बदल</div>
+        <div class="cb-txt">परिस्थिती तशीच — पण मन निर्लिप्त. कर्म चालू — द्वेष नाही, अपेक्षा नाही. हाच खरा संन्यास.</div>
+      </div>
+    </div>
+
+    <div class="para">कृष्ण अर्जुनाला सांगतो — "दोन्ही मार्ग मुक्तीकडे नेतात. पण कर्मयोग श्रेयस्कर." का? कारण तो practical आहे. जगात राहून, काम करत, नाती सांभाळत — आत निर्लिप्त राहणे — हे कठीण आहे पण शक्य आहे.</div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">🔑 गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">जो कुठेही राहून — <strong>द्वेष नाही, इच्छा नाही</strong> — तो नित्यसंन्यासी.<br><br>संन्यास घ्यायला हिमालयात जायची गरज नाही. घरात, ऑफिसमध्ये, स्वयंपाकघरात — <strong>मन निर्लिप्त ठेवणे — हाच खरा संन्यास.</strong><br><br>बाहेरचं escape सोपं आहे. आत बदलणं कठीण — पण तेच शाश्वत.</div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"संन्यासः कर्मयोगश्च निःश्रेयसकरावुभौ"</span> — दोन्ही मुक्तीकडे. पण <span class="ahl">कर्मयोग श्रेयस्कर — कारण तो जगात राहून साधता येतो.</span><br><br>खरा प्रश्न हा नाही — "कुठे जाऊ?" खरा प्रश्न हा आहे — <span class="ahl">"आत काय आहे? द्वेष आहे का? अपेक्षा आहे का?"</span> ते गेलं की — तुम्ही कुठेही असाल — संन्यासी आहात.
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">संन्यास कर्मयोग दोन्ही ।<br>मुक्तीचे मार्ग जाणी ।<br>परी कर्मयोग सुलभ मनीं ।<br>म्हणोनि श्रेष्ठ ।।<br><br>जो द्वेष न करी ।<br>जो इच्छा न धरी ।<br>तोचि खरा संन्यासी ।<br>जाण पार्था ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">⚖️ स्वतःला विचारा</div><div class="rs-txt">"माझ्या आयुष्यात — कुठे मी परिस्थिती बदलण्यात ऊर्जा घालवतो, जेव्हा खरं तर आत बदल व्हायला हवा?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक काम — पूर्ण मनाने करा. <strong>निकालाची काळजी बाजूला. "मी माझं सर्वोत्तम देतो — बाकी सोडतो."</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना १</div></div>
+</body></html>
