@@ -1600,6 +1600,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   padding: 5px 14px 8px;
 }
 
+/* ── Story HTML iframe viewer (full-page कथा design) ── */
+.story-html-viewer {
+  width: 100%;
+  margin: 0;
+}
+.story-html-frame {
+  display: block;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #0E0A00;
+}
+@media (max-width: 767px) {
+  .story-html-frame {
+    height: calc(100vh - 160px);
+    min-height: 500px;
+    border-radius: 8px;
+  }
+}
+
 /* ── Story image viewer (image-mode कथा section) ── */
 .story-img-viewer {
   margin-bottom: 12px;

@@ -648,6 +648,13 @@
       && GITA_STORIES[parseInt(adhyayIdStr)][conceptIdStr];
     if (!entry) { el.innerHTML = ''; return false; }
 
+    if (entry.kathaHtmlUrl) {
+      el.innerHTML = `<div class="story-html-viewer">
+        <iframe class="story-html-frame" src="${entry.kathaHtmlUrl}" loading="lazy" referrerpolicy="no-referrer"></iframe>
+      </div>`;
+      return true;
+    }
+
     const { shloka, conceptSummary, story } = entry;
     const pdfPagesId = `spdf-${adhyayIdStr}-${conceptIdStr}`;
     let html = '';

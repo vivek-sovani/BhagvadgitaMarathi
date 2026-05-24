@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ५ | संकल्पना ५</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#4A2878;--cl:#7848B8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#08040E;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(120,72,184,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#100818,#08040E);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(120,72,184,0.2),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#100818,#08040E);border:1px solid rgba(120,72,184,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(120,72,184,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(74,40,120,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(160,110,220,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+
+  /* Instruments grid */
+  .instruments{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.28s both;}
+  .instr{background:linear-gradient(135deg,#100818,#08040E);border:1px solid rgba(120,72,184,0.22);border-radius:12px;padding:14px 10px;text-align:center;}
+  .instr.atma{border-color:rgba(201,150,58,0.4);background:linear-gradient(135deg,#1C1030,#100818);}
+  .instr-icon{font-size:1.3rem;margin-bottom:5px;display:block;}
+  .instr-name{font-family:'Noto Serif Devanagari',serif;font-size:0.78rem;font-weight:700;margin-bottom:3px;}
+  .instr .instr-name{color:var(--gold-light);}
+  .atma .instr-name{color:var(--gold);}
+  .instr-role{font-size:0.68rem;line-height:1.4;}
+  .instr .instr-role{color:rgba(253,246,232,0.45);}
+  .atma .instr-role{color:rgba(240,201,106,0.6);}
+
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(120,72,184,0.18);}
+
+  .person-header{background:linear-gradient(135deg,#100818,#08040E);padding:22px 28px;display:flex;align-items:flex-start;gap:18px;}
+  .p-icon{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#E8D8F8,#D0B8F0);border:2px solid rgba(120,72,184,0.4);display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
+  .p-meta{flex:1;}
+  .p-name{font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;font-weight:700;color:var(--gold-light);margin-bottom:3px;}
+  .p-tag{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(120,72,184,0.7);margin-bottom:6px;}
+  .p-scene{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.65);font-style:italic;line-height:1.6;}
+
+  .para{font-size:0.94rem;line-height:2;color:var(--shadow-ink);margin-bottom:16px;padding:0 28px;}
+  .para:first-of-type{padding-top:22px;}
+
+  /* Thought compare */
+  .thought-compare{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:4px 28px 18px;}
+  .tc{border-radius:12px;padding:15px 14px;}
+  .tc.wrong{background:linear-gradient(135deg,#FAE8E8,#F4D0D0);border:1px solid rgba(160,40,40,0.2);}
+  .tc.right{background:linear-gradient(135deg,#EEE8F8,#E0D0F0);border:1px solid rgba(120,72,184,0.2);}
+  .tc-lbl{font-size:0.63rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+  .wrong .tc-lbl{color:#7A1010;}.right .tc-lbl{color:#4A2878;}
+  .tc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;line-height:1.72;font-style:italic;}
+  .wrong .tc-txt{color:#4A1004;}.right .tc-txt{color:#2A1040;}
+
+  /* Operation theatre */
+  .op-scene{background:linear-gradient(135deg,#100818,#08040E);padding:20px 26px;margin:0;}
+  .op-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(120,72,184,0.6);margin-bottom:14px;}
+  .op-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:11px;}
+  .op-tag{background:rgba(120,72,184,0.18);border:1px solid rgba(120,72,184,0.28);border-radius:20px;padding:3px 12px;font-size:0.72rem;color:rgba(200,170,240,0.9);white-space:nowrap;flex-shrink:0;margin-top:3px;}
+  .op-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.8);line-height:1.72;}
+  .op-atma-row{background:rgba(201,150,58,0.1);border:1px solid rgba(201,150,58,0.25);border-radius:10px;padding:12px 16px;margin-top:14px;display:flex;align-items:flex-start;gap:12px;}
+  .op-atma-tag{background:rgba(201,150,58,0.2);border:1px solid rgba(201,150,58,0.4);border-radius:20px;padding:3px 12px;font-size:0.72rem;color:rgba(240,200,80,0.9);white-space:nowrap;flex-shrink:0;margin-top:3px;}
+  .op-atma-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:var(--gold-light);line-height:1.72;font-style:italic;}
+
+  .key-insight{background:linear-gradient(135deg,#EEE8F8,#E0D0F0);border:1px solid rgba(120,72,184,0.2);border-radius:13px;padding:18px 20px;margin:20px 28px;position:relative;}
+  .key-insight::before{content:'🛠️';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#1A0830;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#100818,#08040E);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#C0A0F0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#0C0618,#08040E);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.instruments{grid-template-columns:1fr 1fr;}.thought-compare{grid-template-columns:1fr;margin:4px 18px 18px;}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.para{padding:0 18px;}.key-insight{margin:16px 0;}body{padding:22px 13px 48px;}}
+</style>
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ५ · कर्मसंन्यासयोग</span></div>
+<div class="badge"><span class="emoji">🛠️</span><span class="text">संकल्पना ५ / १२ — शरीर-मन-बुद्धी — साधने, मी नाही ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ५.११</div>
+  <div class="stext">कायेन मनसा बुद्ध्या केवलैरिन्द्रियैरपि ।<br>योगिनः कर्म कुर्वन्ति सङ्गं त्यक्त्वाऽत्मशुद्धये ।।</div>
+  <div class="smean">"योगी — शरीराने, मनाने, बुद्धीने, केवळ इंद्रियांनीही — आसक्ती सोडून कर्म करतात — आत्मशुद्धीसाठी."<br><br><em>शरीर, मन, बुद्धी, इंद्रिये — ही "मी" नाहीत. ही साधने आहेत. "मी" म्हणजे त्यांचा साक्षी आत्मा — जो थकत नाही, रागावत नाही, घाबरत नाही.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">"मी थकलो" — नाही. <strong>"माझ्या शरीराला थकवा आला."</strong><br>"मी रागावलो" — नाही. <strong>"माझ्या मनाने राग व्यक्त केला."</strong><br><br>शरीर-मन-बुद्धी ही साधने आहेत. <strong>साक्षी आत्मा "मी" — थकत नाही, डळमळत नाही.</strong></div>
+</div>
+
+<!-- Instruments Visual -->
+<div class="instruments">
+  <div class="instr">
+    <span class="instr-icon">💪</span>
+    <div class="instr-name">शरीर</div>
+    <div class="instr-role">हात, पाय, इंद्रिये — कर्म करणारे साधन</div>
+  </div>
+  <div class="instr">
+    <span class="instr-icon">🧠</span>
+    <div class="instr-name">मन</div>
+    <div class="instr-role">भावना, विचार — संवेदन करणारे साधन</div>
+  </div>
+  <div class="instr">
+    <span class="instr-icon">💡</span>
+    <div class="instr-name">बुद्धी</div>
+    <div class="instr-role">निर्णय, विवेक — विचार करणारे साधन</div>
+  </div>
+  <div class="instr atma">
+    <span class="instr-icon">🪔</span>
+    <div class="instr-name">आत्मा — "मी"</div>
+    <div class="instr-role">साक्षी — थकत नाही, डळमळत नाही</div>
+  </div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>👤</span> वास्तविक जीवनातील उदाहरण</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="person-header">
+      <div class="p-icon">🔪</div>
+      <div class="p-meta">
+        <div class="p-name">एक अनुभवी शल्यचिकित्सक</div>
+        <div class="p-tag">शस्त्रक्रियागृह · सात तासांची जटिल शस्त्रक्रिया</div>
+        <div class="p-scene">सकाळी सातला शस्त्रक्रिया सुरू झाली. दुपारी दोन वाजत आले. रुग्णाचं हृदय पुन्हा सुरू करायचं होतं. एकही चूक चालणार नाही.</div>
+      </div>
+    </div>
+
+    <div class="para">सात तासांच्या शस्त्रक्रियेत दोन प्रकारचे डॉक्टर असतात — एक जे शरीराच्या थकव्याशी झुंजत असतात, आणि दुसरे जे साक्षी राहून काम करत राहतात. फरक कशात आहे?</div>
+
+    <div class="thought-compare">
+      <div class="tc wrong">
+        <div class="tc-lbl">❌ चुकीचा विचार</div>
+        <div class="tc-txt">"मी थकलोय. माझे हात थरथरतायत. मला आता हे जमणार नाही. मी घाबरतोय."</div>
+      </div>
+      <div class="tc right">
+        <div class="tc-lbl">✓ साक्षी भाव</div>
+        <div class="tc-txt">"माझ्या हातांना थकवा आला. माझ्या मनात भीती आली. मी — आत्मा — अजूनही शांत आहे."</div>
+      </div>
+    </div>
+
+    <div class="op-scene">
+      <div class="op-lbl">🔪 शस्त्रक्रियागृहात — साधने कार्यरत, आत्मा शांत</div>
+      <div class="op-row">
+        <div class="op-tag">शरीर</div>
+        <div class="op-txt">सात तास उभे राहणे, हात स्थिर ठेवणे, डोळे एकाग्र. शरीर थकतं — पण शरीर साधन आहे. "माझ्या शरीराला थकवा आला" — मी थकलो नाही.</div>
+      </div>
+      <div class="op-row">
+        <div class="op-tag">मन</div>
+        <div class="op-txt">अचानक गुंतागुंत निर्माण झाली — मनात एक क्षण भीती आली. पण अनुभवी डॉक्टर त्या भीतीला "पाहतो" — त्यात बुडत नाही. "माझ्या मनात भीती आली" — मी घाबरलो नाही.</div>
+      </div>
+      <div class="op-row">
+        <div class="op-tag">बुद्धी</div>
+        <div class="op-txt">परिस्थिती पाहते, पर्याय तपासते, निर्णय घेते. बुद्धी काम करत राहते — "माझ्या बुद्धीने निर्णय घेतला" — मी गोंधळलो नाही.</div>
+      </div>
+      <div class="op-atma-row">
+        <div class="op-atma-tag">आत्मा — "मी"</div>
+        <div class="op-atma-txt">सात तास — शांत, स्थिर, साक्षी. शरीर थकलं, मनात भावना आल्या, बुद्धीने निर्णय घेतले — पण "मी" — आत्मा — या सगळ्यांचा साक्षी होता. लिप्त नाही. थकलेला नाही.</div>
+      </div>
+    </div>
+
+    <div class="para">शस्त्रक्रिया यशस्वी झाली. डॉक्टर बाहेर आले. नर्सने विचारले — "थकलात का?" डॉक्टर म्हणाले — <em>"शरीर थकलं. पण आत शांत आहे."</em></div>
+
+    <div class="para">हा फरक आत्मशुद्धीचा आहे. <strong>"मी थकलो"</strong> म्हटलं की ओळख शरीराशी जोडली — आणि थकवा आत घर करतो. <strong>"माझ्या शरीराला थकवा आला"</strong> म्हटलं की आत्मा वेगळा राहतो — आणि कर्म अधिक निर्मळपणे होतं.</div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">🛠️ गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">"आत्मशुद्धये" — <strong>आत्मशुद्धीसाठी कर्म.</strong><br><br>डॉक्टरने सात तास शस्त्रक्रिया केली — शरीराने, मनाने, बुद्धीने — पण "मी करतो" हा अहंकार नाही. साधने काम करत राहिली — आत्मा साक्षी राहिला. <strong>हेच आत्मशुद्धीचं कर्म.</strong><br><br>आजपासून एक बदल — कुठलीही भावना आली, थकवा आला — म्हणा : <strong>"हे माझ्या साधनाला झालं — मला नाही."</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"कायेन मनसा बुद्ध्या"</span> — शरीराने, मनाने, बुद्धीने कर्म करा. <span class="ahl">पण "मी" — आत्मा — या सगळ्यांचा साक्षी. साधने थकतात, आत्मा थकत नाही.</span><br><br>ज्ञानदेव म्हणतात — <span class="hl">"शरीर मन बुद्धी इंद्रिये। ही साधने आहेत खरे। 'मी' नाही त्यांत कुठे। साक्षी आत्मा मी।।"</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">शरीर मन बुद्धी इंद्रिये ।<br>ही साधने आहेत खरे ।<br>"मी" नाही त्यांत कुठे ।<br>साक्षी आत्मा मी ।।<br><br>योगी कर्म करी आसक्तिविण ।<br>आत्मशुद्धी हाच हेतू जाण ।<br>फळ नाही नाव नाही ।<br>शुद्धता एक ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🛠️ स्वतःला विचारा</div><div class="rs-txt">"आज राग आला, थकवा आला, निराशा आली — 'मी' या सगळ्यांपासून वेगळा आहे का? एकदा हे वेगळेपण अनुभवा."</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज जेव्हा तीव्र भावना येईल — <strong>एक श्वास. "हे माझ्या मनाला/शरीराला होतंय. मी — आत्मा — साक्षी आहे."</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ५ · संकल्पना ५</div></div>
+</body></html>
