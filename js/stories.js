@@ -1524,6 +1524,16 @@ const GITA_STORIES = {
   },  // end adhyay 5
 
 
+  // ── Adhyay 6 ─────────────────────────────────────────────────────────────
+  "6": {
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-5.html" }
+  },  // end adhyay 6
+
+
   // ── Adhyay 10 ─────────────────────────────────────────────────────────────
   "10": {
     // ── Concept 1 ──────────────────────────────────────────────────

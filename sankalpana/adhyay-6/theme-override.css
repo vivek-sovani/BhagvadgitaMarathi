@@ -1,0 +1,182 @@
+/* ── Website-aligned theme override for Adhyay 6 story pages ────────────────
+   Matches main site palette:
+     bg #f6efe2 · surface #fbf6ea · surface-2 #f3ead4
+     ink #1f1812 · ink-soft #4a3d31 · ink-mute #7a6b5c · rule #d9cdb4
+     saffron #c2611a · saffron-deep #9c4a10 · gold #b88a3e
+     indigo #2b3e6b · indigo-deep #1a2546
+   Link this AFTER the <style> block in each story page.
+────────────────────────────────────────────────────────────────────────────── */
+
+/* ── Page background ── */
+body {
+  background: #f6efe2 !important;
+}
+body::before {
+  background:
+    radial-gradient(ellipse at 50% 0%,  rgba(194,97,26,.07)  0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(184,138,62,.05) 0%, transparent 45%) !important;
+}
+
+/* ── OM glow → saffron ── */
+.om { color: #c2611a !important; }
+@keyframes omglow {
+  0%,100% { filter: drop-shadow(0 0 8px  rgba(194,97,26,.45)); }
+  50%     { filter: drop-shadow(0 0 22px rgba(194,97,26,.85)); }
+}
+.page-title { color: #4a3d31 !important; opacity: 1 !important; }
+
+/* ── Badge → light parchment ── */
+.badge {
+  background: linear-gradient(135deg, #fbf6ea, #f3ead4) !important;
+  border-color: #b88a3e !important;
+  box-shadow: 0 4px 20px rgba(194,97,26,.10), inset 0 1px 0 rgba(184,138,62,.3) !important;
+}
+.badge .text { color: #4a3d31 !important; }
+
+/* ── Shloka card → light parchment ── */
+.shloka-card {
+  background: linear-gradient(160deg, #fbf6ea, #f3ead4) !important;
+  border-color: rgba(184,138,62,.30) !important;
+  box-shadow: 0 8px 40px rgba(31,24,18,.08) !important;
+}
+.shloka-card::before {
+  background: linear-gradient(90deg, transparent, #c2611a, transparent) !important;
+}
+.slabel { color: #c2611a !important; }
+.stext  { color: #1f1812 !important; }
+.smean  { color: #4a3d31 !important; border-top-color: rgba(184,138,62,.2) !important; }
+
+/* ── Concept summary ── */
+.concept-sum {
+  background: linear-gradient(135deg, rgba(194,97,26,.06), rgba(184,138,62,.04)) !important;
+  border-left-color: #c2611a !important;
+}
+.concept-sum .clabel { color: #c2611a !important; }
+.concept-sum .ctext  { color: #1f1812 !important; }
+.concept-sum strong  { color: #9c4a10 !important; }
+
+/* ── Section header decorators ── */
+.htitle    { color: #c2611a !important; }
+.hline     { background: linear-gradient(90deg, #c2611a, transparent) !important; }
+.hline.rev { background: linear-gradient(90deg, transparent, #c2611a) !important; }
+
+/* ── Card body (reinforce light cream) ── */
+.card-body {
+  background: #fbf6ea !important;
+  box-shadow: 0 20px 60px rgba(31,24,18,.10), 0 0 0 1px rgba(194,97,26,.08) !important;
+}
+
+/* ── Key insight → warm yellow ── */
+.key-insight {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  border-color: rgba(194,97,26,.18) !important;
+}
+.ki-lbl        { color: #9c4a10 !important; }
+.ki-txt        { color: #1f1812 !important; }
+.ki-txt strong { color: #9c4a10 !important; }
+
+/* ── Reflection / Sankalp row ── */
+.ref-sank         { border-top-color:   rgba(184,138,62,.15) !important; }
+.ref              { border-right-color: rgba(184,138,62,.15) !important; }
+.ref  .rs-lbl     { color: #9c4a10 !important; }
+.sank .rs-lbl     { color: #4d6b3a !important; }
+.rs-txt           { color: #4a3d31 !important; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK NARRATIVE SECTIONS → warm indigo
+   ═══════════════════════════════════════════════════════════════════════════ */
+.gita-connect,
+.char-intro,
+.staircase,
+.mirror-q,
+.scene-intro,
+.mountain-box,
+.intro-note {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+}
+
+.dnyan-box {
+  background:   rgba(16,22,48,.85) !important;
+  border-color: rgba(184,138,62,.20) !important;
+}
+.dnyan-lbl   { color: rgba(184,138,62,.75) !important; }
+.dnyan-verse { color: rgba(246,239,226,.85) !important; }
+
+/* gita connect text */
+.gc-lbl       { color: #b88a3e !important; opacity: 1 !important; }
+.gc-txt       { color: rgba(246,239,226,.92) !important; }
+.gc-txt .hl   { color: #f0c96a !important; }
+.gc-txt .ahl  { color: #fca07a !important; }
+
+/* ─── concept-1 character intro (dark) ─── */
+.char-icon { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; border-color: rgba(184,138,62,.4) !important; }
+.char-name { color: #f0c96a !important; }
+.char-desc { color: rgba(184,138,62,.80) !important; }
+.char-note { color: rgba(246,239,226,.72) !important; }
+
+/* concept-1 day-timeline (light card-body) */
+.dt-title        { color: #9c4a10 !important; }
+.mt-dot          { border-color: #c2611a !important; background: #fbf6ea !important; }
+.mt-dot.active   { background: #c2611a !important; }
+.mt-dot.key      { background: #b88a3e !important; border-color: #b88a3e !important; box-shadow: 0 0 8px rgba(184,138,62,.55) !important; }
+.mt-label        { color: #9c4a10 !important; }
+.moment::before  { background: linear-gradient(180deg, rgba(194,97,26,.3), transparent) !important; }
+.moment-content  { background: white !important; border-color: rgba(184,138,62,.15) !important; }
+
+/* ─── concept-2 staircase (dark) ─── */
+.sc-lbl       { color: rgba(184,138,62,.75) !important; }
+.sc-lbl2      { color: rgba(246,239,226,.55) !important; }
+.sc-goal-lbl  { color: rgba(240,200,80,.75) !important; }
+.sc-top       { background: linear-gradient(135deg, #c2611a, #9c4a10) !important; box-shadow: 0 0 20px rgba(194,97,26,.5) !important; }
+
+/* concept-2 mirror-q (dark) */
+.mq-lbl         { color: rgba(184,138,62,.75) !important; }
+.mq-box         { background: rgba(184,138,62,.10) !important; border-color: rgba(184,138,62,.28) !important; }
+.mq-q           { color: #f0c96a !important; }
+.mq-note        { color: rgba(246,239,226,.78) !important; }
+.mq-note strong { color: #f0c96a !important; }
+
+/* concept-2 two-stages headers (light card-body) */
+.s-karma .st-name { color: #1a2546 !important; }
+.s-sham  .st-name { color: #1a2546 !important; }
+.sit-lbl          { color: #9c4a10 !important; }
+
+/* ─── concept-3 scene-intro (dark) ─── */
+.si-lbl   { color: rgba(184,138,62,.75) !important; }
+.si-title { color: #f0c96a !important; }
+.si-sub   { color: rgba(246,239,226,.55) !important; }
+
+/* concept-3 conversation (light card-body) */
+.conv-lbl  { color: #9c4a10 !important; }
+.cd-txt    { color: rgba(122,107,92,.6) !important; }
+
+/* concept-3 realization (already light yellow) — just align label */
+.rl-lbl    { color: #9c4a10 !important; }
+.rl-txt strong { color: #9c4a10 !important; }
+
+/* ─── concept-4 mountain-box (dark) ─── */
+.mb-lbl          { color: rgba(184,138,62,.75) !important; }
+.mb-visual       { filter: drop-shadow(0 0 10px rgba(184,138,62,.5)) !important; }
+.mb-quote        { color: rgba(246,239,226,.78) !important; }
+.mb-quote strong { color: #f0c96a !important; }
+
+/* ─── concept-5 intro-note (dark) ─── */
+.in-lbl        { color: rgba(184,138,62,.75) !important; }
+.in-txt        { color: rgba(246,239,226,.80) !important; }
+.in-txt strong { color: #f0c96a !important; }
+
+/* concept-5 steps — purple step-num → saffron */
+.steps-lbl  { color: #9c4a10 !important; }
+.step-num {
+  background: linear-gradient(135deg, #c2611a, #9c4a10) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(194,97,26,.4) !important;
+}
+.step-body  { background: white !important; border-color: rgba(184,138,62,.15) !important; }
+.step-gita  { background: linear-gradient(135deg, #fef3c7, #fde68a) !important; color: #3a2800 !important; }
+.sc-line    { background: linear-gradient(180deg, rgba(194,97,26,.4), rgba(194,97,26,.1)) !important; }
+
+/* ── Footer ── */
+.footer .fdiv  { background: linear-gradient(90deg, transparent, #c2611a, transparent) !important; }
+.footer .ftext { color: #c2611a !important; opacity: 1 !important; }
+.footer .fsub  { color: rgba(194,97,26,.50) !important; }

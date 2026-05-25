@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ६ | संकल्पना १</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#285848;--cl:#409870;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#020E08;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(64,152,112,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#041408,#020E08);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(64,152,112,0.2),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#041408,#020E08);border:1px solid rgba(64,152,112,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(64,152,112,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(40,88,72,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:32px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(80,200,140,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(64,152,112,0.18);}
+
+  /* Character intro */
+  .char-intro{background:linear-gradient(135deg,#041408,#020E08);padding:20px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid rgba(64,152,112,0.12);}
+  .char-icon{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#C8F0D8,#A0E0B8);border:2px solid rgba(64,152,112,0.4);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+  .char-meta{flex:1;}
+  .char-name{font-family:'Noto Serif Devanagari',serif;font-size:1rem;font-weight:700;color:var(--gold-light);margin-bottom:2px;}
+  .char-desc{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(64,152,112,0.7);margin-bottom:5px;}
+  .char-note{font-family:'Noto Serif Devanagari',serif;font-size:0.83rem;color:rgba(253,246,232,0.6);font-style:italic;line-height:1.6;}
+
+  /* Timeline of day */
+  .day-timeline{padding:24px 28px 8px;}
+  .dt-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:18px;}
+
+  .moment{display:flex;gap:16px;margin-bottom:20px;position:relative;}
+  .moment::before{content:'';position:absolute;left:19px;top:40px;bottom:-20px;width:1px;background:linear-gradient(180deg,rgba(64,152,112,0.3),transparent);}
+  .moment:last-child::before{display:none;}
+  .moment-time{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:40px;}
+  .mt-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--cl);background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:4px;z-index:1;}
+  .mt-dot.active{background:var(--cl);}
+  .mt-dot.key{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(201,150,58,0.5);}
+  .mt-label{font-size:0.65rem;color:var(--c);text-align:center;line-height:1.2;font-weight:600;}
+  .moment-content{flex:1;background:white;border-radius:12px;padding:14px 16px;border:1px solid rgba(64,152,112,0.1);}
+  .mc-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+  .mc-icon{font-size:1rem;}
+  .mc-title{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;color:var(--ink);}
+  .mc-body{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;line-height:1.8;color:var(--shadow-ink);}
+  .mc-thought{margin-top:8px;padding:8px 12px;background:linear-gradient(135deg,#EEF8F4,#E0F4EC);border-left:2px solid var(--cl);border-radius:0 8px 8px 0;font-size:0.82rem;color:#1A4830;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .mc-gita{margin-top:8px;padding:7px 11px;background:linear-gradient(135deg,#FFF8E0,#FFF0A8);border-radius:8px;font-size:0.78rem;color:#4A3800;font-style:italic;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1.6;border:1px solid rgba(201,150,58,0.2);}
+
+  /* Key insight */
+  .key-insight{background:linear-gradient(135deg,#EEF8F4,#D8F0E4);border:1px solid rgba(64,152,112,0.2);border-radius:13px;padding:18px 20px;margin:8px 28px 20px;position:relative;}
+  .key-insight::before{content:'🧘';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#0A2818;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#041408,#020E08);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#80E0B0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#030A06,#020E08);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.day-timeline{padding:20px 18px 8px;}.key-insight{margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+<link rel="stylesheet" href="theme-override.css">
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ६ · आत्मसंयमयोग</span></div>
+<div class="badge"><span class="emoji">🧘</span><span class="text">संकल्पना १ / ११ — खरा योगी — कर्त्यापण सोडणारा</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ६.१–२</div>
+  <div class="stext">अनाश्रितः कर्मफलं कार्यं कर्म करोति यः ।<br>स संन्यासी च योगी च न निरग्निर्न चाक्रियः ।।<br><br>यं संन्यासमिति प्राहुर्योगं तं विद्धि पाण्डव ।<br>न ह्यसंन्यस्तसंकल्पो योगी भवति कश्चन ।।</div>
+  <div class="smean">"जो कर्मफलाचा आश्रय न घेता कर्तव्यकर्म करतो — तोच संन्यासी आणि योगी. जो अग्नी नाही, जो कर्म नाही — तो नव्हे."<br><br>"जिला संन्यास म्हणतात — तोच योग आहे असं जाण. संकल्प न सोडलेला कोणीही योगी होत नाही."<br><br><em>ध्यानाच्या खोलीत बसलेला नाही — रोजच्या कामात निर्लिप्तपणे राहणारा खरा योगी.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">खरा योगी कर्म सोडत नाही — <strong>कर्त्यापण सोडतो.</strong><br><br>काम करायचं — पूर्ण मनाने. पण "हे मला मिळायला हवं" हा संकल्प सोडायचा.<br><strong>Meditation mat वर नाही — ऑफिसमध्ये, स्वयंपाकघरात, रस्त्यावर — हाच योग.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🗓️</span> साधकाचा एक दिवस</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="char-intro">
+      <div class="char-icon">👨‍💻</div>
+      <div class="char-meta">
+        <div class="char-name">अर्जुन — एक आधुनिक साधक</div>
+        <div class="char-desc">वय ३५ · संगणक अभियंता · पुणे · साधना शिकतोय</div>
+        <div class="char-note">अर्जुन गेल्या सहा महिन्यांपासून गीता वाचतोय. ध्यान करतो — पण मनात एक प्रश्न असतो : "खरा योगी म्हणजे नक्की काय?" आज त्याला उत्तर मिळणार.</div>
+      </div>
+    </div>
+
+    <div class="day-timeline">
+      <div class="dt-title">📅 अर्जुनच्या दिवसातील पाच क्षण</div>
+
+      <!-- Moment 1 -->
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot active"></div><div class="mt-label">सकाळी ७</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">🌅</span><div class="mc-title">सकाळचं ध्यान — पण मन project मध्ये</div></div>
+          <div class="mc-body">अर्जुन ध्यानाला बसला. डोळे मिटले. पण मनात एकच विचार — "आजची बैठक कशी होईल? त्या client ने approve केलं नाही तर?" पाच मिनिटे गेली — ध्यान नाही, काळजी.</div>
+          <div class="mc-thought">💭 "मी खरा योगी नाही. मला ध्यानात बसायला जमत नाही."</div>
+        </div>
+      </div>
+
+      <!-- Moment 2 -->
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot active"></div><div class="mt-label">सकाळी १०</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">💻</span><div class="mc-title">ऑफिसमध्ये — एक कठीण काम</div></div>
+          <div class="mc-body">वरिष्ठांनी एक नवीन काम दिलं — दोन दिवसांत. अर्जुनला माहीत आहे हे कठीण आहे. मनात राग आला — "हे असं का?" एक क्षण थांबला. म्हणाला — "हे माझं कर्तव्य आहे. करतो."</div>
+          <div class="mc-thought">💭 "Result काय होईल ते नंतर. आत्ता फक्त काम."</div>
+          <div class="mc-gita">अनाश्रितः कर्मफलं — कर्मफलाचा आश्रय न घेता कर्तव्य केलं. हाच योग.</div>
+        </div>
+      </div>
+
+      <!-- Moment 3 -->
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot"></div><div class="mt-label">दुपारी १</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">🍽️</span><div class="mc-title">जेवण — फोन न बघता</div></div>
+          <div class="mc-body">जेवताना अर्जुनने फोन खिशात ठेवला. फक्त जेवण. चव घेतली, श्वास घेतला. पाच मिनिटे — बाकी काहीच नाही. सहकारी म्हणाला — "आज शांत दिसतोस."</div>
+          <div class="mc-thought">💭 "जेवण करतोय — हा माझा योग आत्ता."</div>
+        </div>
+      </div>
+
+      <!-- Moment 4 - KEY -->
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot key"></div><div class="mt-label">संध्याकाळी ४</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">⭐</span><div class="mc-title">वरिष्ठांनी नाकारलं — आणि अर्जुन शांत राहिला</div></div>
+          <div class="mc-body">दोन दिवसांचं काम — वरिष्ठांनी म्हणाले "हे approach बरोबर नाही. पुन्हा कर." आधीचा अर्जुन — रागावला असता, निराश झाला असता. आजचा अर्जुन — एक श्वास घेतला. म्हणाला — <em>"ठीक आहे. नक्की काय बदलायचं ते सांगा."</em></div>
+          <div class="mc-thought">💭 "माझं काम चांगलं करणं — हे माझ्या हातात. approve होणं — त्याच्या हातात. मी माझ्या भागाचा योगी आहे."</div>
+          <div class="mc-gita">न ह्यसंन्यस्तसंकल्पो योगी भवति — "approve होईलच" हा संकल्प सोडला. तेव्हाच योगी झाला.</div>
+        </div>
+      </div>
+
+      <!-- Moment 5 -->
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot active"></div><div class="mt-label">रात्री ९</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">🌙</span><div class="mc-title">रात्री — एक जाणीव</div></div>
+          <div class="mc-body">रात्री झोपण्यापूर्वी अर्जुन विचार करत राहिला. "आज ध्यानाच्या खोलीत पाच मिनिटे जमलं नाही — पण ऑफिसमध्ये नकार आला तेव्हा शांत राहिलो. तेच खरं ध्यान होतं का?"</div>
+          <div class="mc-thought">💭 "Meditation mat वरचा योगी नाही झालो आज. पण ऑफिसमध्ये थोडा योगी झालो."</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">🧘 गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">अर्जुनला आज कळलं — <strong>खरा योगी meditation mat वर बसतो तेव्हाच नाही.</strong><br><br>वरिष्ठांनी नाकारलं — आणि तो शांत राहिला. जेवताना फक्त जेवण केलं. काम नाकारल्यावर "पुन्हा सांगा" म्हणाला.<br><br><strong>हे सगळे योगाचे क्षण होते. कर्म केलं — पण "मला मिळायला हवं" हा संकल्प सोडला. हाच खरा योगी.</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"अनाश्रितः कर्मफलं"</span> — कर्मफलाचा आश्रय न घेता. <span class="ahl">अर्जुनने ऑफिसमध्ये हे केलं — approval ची अपेक्षा न ठेवता काम केलं. तोच योगी.</span><br><br>ध्यानाच्या खोलीत न जमलेलं — ऑफिसमध्ये जमलं. <span class="ahl">कारण योग म्हणजे mat वर बसणं नाही — कर्त्यापण सोडणं.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">कर्म करीं निःसंग ।<br>फळ सोडीं अनायासें ।<br>तोचि योग जाणासें ।<br>कर्मयोग ।।<br><br>कर्त्यापण सोडणें ।<br>संन्यास जाण ।<br>कर्म करीत मुक्त राही ।<br>तोचि योगी ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🧘 स्वतःला विचारा</div><div class="rs-txt">"आज माझ्या रोजच्या कामात — मी किती उपस्थित आहे? कामात मन आहे की फळाच्या विचारात?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">सकाळी कामाला सुरुवात करताना — <strong>"आज माझं कर्तव्य करतो. निकाल जो येईल तो येईल — मी माझं सर्वोत्तम देतो."</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ६ · संकल्पना १</div></div>
+</body></html>

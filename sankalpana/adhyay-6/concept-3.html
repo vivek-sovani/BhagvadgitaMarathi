@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ६ | संकल्पना ३</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#7A1818;--cl:#C03020;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#100202;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(192,48,32,0.1) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1E0404,#100202);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(192,48,32,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1E0404,#100202);border:1px solid rgba(192,48,32,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(192,48,32,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(122,24,24,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(220,80,60,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(192,48,32,0.18);}
+  .scene-intro{background:linear-gradient(135deg,#1E0404,#100202);padding:18px 28px;border-bottom:1px solid rgba(192,48,32,0.12);}
+  .si-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(192,48,32,0.65);margin-bottom:6px;}
+  .si-title{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold-light);font-weight:700;line-height:1.4;}
+  .si-sub{margin-top:5px;font-size:0.78rem;color:rgba(253,246,232,0.5);}
+  .conversation{padding:22px 28px 8px;}
+  .conv-lbl{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:16px;}
+  .conv-msg{display:flex;gap:12px;margin-bottom:14px;align-items:flex-start;}
+  .conv-msg.mind{flex-direction:row;}
+  .conv-msg.sadhak{flex-direction:row-reverse;}
+  .msg-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:2px;}
+  .mind .msg-avatar{background:linear-gradient(135deg,#FAD8D8,#F0B8B8);border:1px solid rgba(192,48,32,0.3);}
+  .sadhak .msg-avatar{background:linear-gradient(135deg,#D8F0E8,#B8E4D0);border:1px solid rgba(40,152,100,0.3);}
+  .msg-bubble{max-width:80%;padding:12px 15px;}
+  .mind .msg-bubble{background:linear-gradient(135deg,#FAE8E8,#F4D0D0);border:1px solid rgba(192,48,32,0.15);border-radius:14px 14px 14px 4px;}
+  .sadhak .msg-bubble{background:linear-gradient(135deg,#E8F8F0,#D0F0E4);border:1px solid rgba(40,152,100,0.15);border-radius:14px 14px 4px 14px;}
+  .msg-who{font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;margin-bottom:5px;}
+  .mind .msg-who{color:#8A1010;}.sadhak .msg-who{color:#1A5830;}
+  .msg-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.87rem;line-height:1.75;font-style:italic;}
+  .mind .msg-txt{color:#4A1004;}.sadhak .msg-txt{color:#0A2818;}
+  .conv-divider{text-align:center;padding:6px 0;margin:4px 0;}
+  .cd-txt{font-size:0.68rem;color:rgba(192,48,32,0.4);letter-spacing:0.2em;text-transform:uppercase;}
+  .realization{background:linear-gradient(135deg,#FFF8E0,#FFF0A8);border:1px solid rgba(201,150,58,0.25);border-radius:13px;padding:16px 20px;margin:8px 28px 20px;position:relative;}
+  .realization::before{content:'💡';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .rl-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:#6A5000;font-weight:700;margin-bottom:7px;}
+  .rl-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;line-height:1.85;color:#2A1E00;}
+  .rl-txt strong{color:var(--maroon);}
+  .two-minds{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(192,48,32,0.08);}
+  .mind-col{padding:18px 18px;}
+  .mind-col.enemy{background:linear-gradient(135deg,#FAE8E8,#F4D8D8);}
+  .mind-col.friend{background:linear-gradient(135deg,#E8F8F0,#D8F4E8);border-left:1px solid rgba(192,48,32,0.08);}
+  .mc-head{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+  .enemy .mc-head{color:#7A1010;}.friend .mc-head{color:#0A5028;}
+  .mc-sign{display:flex;align-items:flex-start;gap:6px;margin-bottom:6px;}
+  .ms-dot{width:5px;height:5px;border-radius:50%;margin-top:8px;flex-shrink:0;}
+  .enemy .ms-dot{background:#C03020;}.friend .ms-dot{background:#28A860;}
+  .mc-sign-txt{font-size:0.8rem;line-height:1.6;}
+  .enemy .mc-sign-txt{color:#4A1004;}.friend .mc-sign-txt{color:#0A3018;}
+  .gita-connect{background:linear-gradient(160deg,#1E0404,#100202);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F0A090;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#180404,#100202);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.two-minds{grid-template-columns:1fr;}.friend{border-left:none;border-top:1px solid rgba(192,48,32,0.08);}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.conversation{padding:18px 18px 8px;}.realization{margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+<link rel="stylesheet" href="theme-override.css">
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ६ · आत्मसंयमयोग</span></div>
+<div class="badge"><span class="emoji">⚔️</span><span class="text">संकल्पना ३ / ११ — मन हाच शत्रू, मन हाच मित्र</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ६.५–६</div>
+  <div class="stext">उद्धरेदात्मनात्मानं नात्मानमवसादयेत् ।<br>आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ।।<br><br>बन्धुरात्मात्मनस्तस्य येनात्मैवात्मना जितः ।<br>अनात्मनस्तु शत्रुत्वे वर्तेतात्मैव शत्रुवत् ।।</div>
+  <div class="smean">"माणसाने स्वतःच स्वतःचा उद्धार करावा. स्वतःला अधोगतीला नेऊ नये. तू स्वतःच स्वतःचा मित्र — तू स्वतःच स्वतःचा शत्रू."<br>"ज्याने स्वतःला जिंकलं — त्याला आत्मा मित्र. न जिंकलेल्याला आत्माच शत्रूसारखा वागतो."<br><br><em>एकाच माणसात दोन्ही शक्यता. मन जिंकलेल्याला मन मित्र. न जिंकलेल्याला मन शत्रू.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">सगळे मोठे शत्रू बाहेर नाहीत — <strong>सर्वात मोठा शत्रू आत आहे.</strong><br><br>आपलेच विचार आपल्याला खाली खेचतात. आपलाच आत्मा आपल्याला वर नेऊ शकतो.<br><strong>"हे माझ्या मनाचं म्हणणं — मी वेगळा आहे." — हा एक विचार सगळं बदलतो.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>💬</span> आतला संवाद — मन आणि साधक</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="scene-intro">
+      <div class="si-lbl">परिस्थिती · अर्जुनच्या दिवसातील चार क्षण</div>
+      <div class="si-title">मन त्याला खाली खेचतं — साधक प्रत्येक वेळी उत्तर देतो</div>
+      <div class="si-sub">हा संवाद तुमच्याही आत रोज होतो</div>
+    </div>
+
+    <div class="conversation">
+      <div class="conv-lbl">💬 आतला संवाद — ऐका</div>
+
+      <div class="conv-msg mind">
+        <div class="msg-avatar">😤</div>
+        <div class="msg-bubble">
+          <div class="msg-who">मन — सकाळी ६</div>
+          <div class="msg-txt">"आज ध्यान नको. रात्री उशिरा झोपलो. उद्या करू — आज खूप थकवा आहे."</div>
+        </div>
+      </div>
+
+      <div class="conv-msg sadhak">
+        <div class="msg-avatar">🧘</div>
+        <div class="msg-bubble">
+          <div class="msg-who">साधक</div>
+          <div class="msg-txt">"हे माझ्या मनाचं म्हणणं आहे — मी नाही. मी फक्त पाच मिनिटे बसतो. बघूया काय होतं."</div>
+        </div>
+      </div>
+
+      <div class="conv-divider"><div class="cd-txt">· · थोड्या वेळाने · ·</div></div>
+
+      <div class="conv-msg mind">
+        <div class="msg-avatar">😤</div>
+        <div class="msg-bubble">
+          <div class="msg-who">मन — ध्यानात</div>
+          <div class="msg-txt">"काल चांगलं झालं नाही ध्यान. आज काय होणार? तू कधीच खरा योगी होणार नाहीस."</div>
+        </div>
+      </div>
+
+      <div class="conv-msg sadhak">
+        <div class="msg-avatar">🧘</div>
+        <div class="msg-bubble">
+          <div class="msg-who">साधक</div>
+          <div class="msg-txt">"'कधीच नाही' हे मनाचं म्हणणं आहे. मी वेगळा आहे. श्वास घेतो — पुन्हा सुरू करतो."</div>
+        </div>
+      </div>
+
+      <div class="conv-divider"><div class="cd-txt">· · कामाच्या ठिकाणी · ·</div></div>
+
+      <div class="conv-msg mind">
+        <div class="msg-avatar">😤</div>
+        <div class="msg-bubble">
+          <div class="msg-who">मन — कठीण प्रसंगात</div>
+          <div class="msg-txt">"त्या सहकाऱ्याने परत असं केलं. राग आलाय. आत्ताच बोल — गप्प बसणं कमकुवतपणा आहे."</div>
+        </div>
+      </div>
+
+      <div class="conv-msg sadhak">
+        <div class="msg-avatar">🧘</div>
+        <div class="msg-bubble">
+          <div class="msg-who">साधक</div>
+          <div class="msg-txt">"राग आला — हे खरं. पण राग माझ्या मनाला आला — मला नाही. एक श्वास. विचार करतो. मग बोलतो."</div>
+        </div>
+      </div>
+
+      <div class="conv-divider"><div class="cd-txt">· · रात्री झोपताना · ·</div></div>
+
+      <div class="conv-msg mind">
+        <div class="msg-avatar">😤</div>
+        <div class="msg-bubble">
+          <div class="msg-who">मन — रात्री</div>
+          <div class="msg-txt">"आज काहीच नाही झालं नीट. उद्याही असंच होणार. साधना करून काय उपयोग?"</div>
+        </div>
+      </div>
+
+      <div class="conv-msg sadhak">
+        <div class="msg-avatar">🧘</div>
+        <div class="msg-bubble">
+          <div class="msg-who">साधक</div>
+          <div class="msg-txt">"हे निराशेचं मन बोलतंय. पण आज सकाळी ध्यान केलं — ते खरं. कामात एक श्वास घेतला — ते खरं. उद्या पुन्हा प्रयत्न."</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="realization">
+      <div class="rl-lbl">💡 जाणीव — हाच फरक</div>
+      <div class="rl-txt">मनाचं बोलणं आणि माझं बोलणं — <strong>हे वेगळं आहे हे जाणणं — हाच जितात्मा होण्याचा पहिला टप्पा.</strong><br><br>"मला जमणार नाही" — हे मन बोलतं. मी ऐकतो — पण मानत नाही. तेव्हाच मन शत्रूकडून मित्राकडे वळू लागतं.</div>
+    </div>
+
+    <div class="two-minds">
+      <div class="mind-col enemy">
+        <div class="mc-head"><span>😤</span> शत्रू — न जिंकलेलं मन</div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">"मला जमणार नाही" — आत्मविश्वास खाऊन टाकतं</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">अतिविचार — एक प्रश्न हजार बनतो</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">चालढकल — "उद्या करू" नेहमीच</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">नकारात्मक आत्मसंवाद — स्वतःलाच दोष</div></div>
+      </div>
+      <div class="mind-col friend">
+        <div class="mc-head"><span>🧘</span> मित्र — जिंकलेलं मन</div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">"हे मन बोलतंय — मी वेगळा" हे जाणणं</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">एक श्वास — मग निर्णय — घाई नाही</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">"प्रयत्न करतो" — हा भाव नेहमी</div></div>
+        <div class="mc-sign"><div class="ms-dot"></div><div class="mc-sign-txt">स्थिरता — परिस्थितीने हलत नाही</div></div>
+      </div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"आत्मैव ह्यात्मनो बन्धुः"</span> — तू स्वतःच स्वतःचा मित्र. <span class="ahl">अर्जुनने मनाचं म्हणणं ऐकलं — पण मानलं नाही. हेच जिंकणं. मन शत्रूकडून मित्राकडे वळू लागलं.</span><br><br>मनाचा विजय ज्यासि — <span class="ahl">सर्व विजय त्यासि. बाहेरचे सगळे विजय आतल्या मनाच्या विजयावर अवलंबून.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">स्वतःचाचि उद्धार ।<br>स्वतःचाचि करी ।<br>स्वतःच होय वैरी ।<br>किंवा मित्र ।।<br><br>मनाचा विजय ज्यासि ।<br>सर्व विजय त्यासि ।<br>मनाचा पराजय ज्यासि ।<br>सर्व पराजय ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">⚔️ स्वतःला विचारा</div><div class="rs-txt">"माझ्या जीवनात सध्या मन माझा मित्र आहे की शत्रू? अतिविचार, चालढकल, स्वतःबद्दल शंका — ही शत्रूची लक्षणे."</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एका नकारात्मक विचाराला थांबा. म्हणा — <strong>"हे माझ्या मनाचं म्हणणं. मी वेगळा आहे. मी प्रयत्न करतो."</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ६ · संकल्पना ३</div></div>
+</body></html>
