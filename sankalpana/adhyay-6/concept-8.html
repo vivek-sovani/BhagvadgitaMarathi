@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ६ | संकल्पना ८</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#1A4860;--cl:#2880A8;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#020C12;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(40,128,168,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#041018,#020C12);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(40,128,168,0.2),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#041018,#020C12);border:1px solid rgba(40,128,168,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(40,128,168,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(26,72,96,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:32px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(80,180,230,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(40,128,168,0.18);}
+
+  /* Char intro */
+  .char-intro{background:linear-gradient(135deg,#041018,#020C12);padding:20px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid rgba(40,128,168,0.12);}
+  .char-icon{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#C8E8F8,#A0D4F0);border:2px solid rgba(40,128,168,0.4);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+  .char-meta{flex:1;}
+  .char-name{font-family:'Noto Serif Devanagari',serif;font-size:1rem;font-weight:700;color:var(--gold-light);margin-bottom:2px;}
+  .char-desc{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(40,128,168,0.7);margin-bottom:5px;}
+  .char-note{font-family:'Noto Serif Devanagari',serif;font-size:0.83rem;color:rgba(253,246,232,0.6);font-style:italic;line-height:1.6;}
+
+  /* Timeline */
+  .day-timeline{padding:24px 28px 8px;}
+  .dt-title{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:18px;}
+  .moment{display:flex;gap:16px;margin-bottom:20px;position:relative;}
+  .moment::before{content:'';position:absolute;left:19px;top:40px;bottom:-20px;width:1px;background:linear-gradient(180deg,rgba(40,128,168,0.3),transparent);}
+  .moment:last-child::before{display:none;}
+  .moment-time{display:flex;flex-direction:column;align-items:center;flex-shrink:0;width:40px;}
+  .mt-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--cl);background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:4px;z-index:1;}
+  .mt-dot.active{background:var(--cl);}
+  .mt-dot.wander{background:#C03020;border-color:#C03020;}
+  .mt-dot.return{background:#28A860;border-color:#28A860;}
+  .mt-dot.key{background:var(--gold);border-color:var(--gold);box-shadow:0 0 8px rgba(201,150,58,0.5);}
+  .mt-label{font-size:0.65rem;color:var(--c);text-align:center;line-height:1.2;font-weight:600;}
+  .moment-content{flex:1;background:white;border-radius:12px;padding:14px 16px;border:1px solid rgba(40,128,168,0.1);}
+  .moment-content.wander-m{border-color:rgba(192,48,32,0.15);background:linear-gradient(135deg,white,#FFF8F8);}
+  .moment-content.return-m{border-color:rgba(40,168,96,0.15);background:linear-gradient(135deg,white,#F0FFF4);}
+  .mc-head{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+  .mc-icon{font-size:1rem;}
+  .mc-title{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;color:var(--ink);}
+  .mc-body{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;line-height:1.8;color:var(--shadow-ink);}
+  .mc-thought{margin-top:8px;padding:8px 12px;border-left:2px solid var(--cl);border-radius:0 8px 8px 0;font-size:0.82rem;color:#1A3848;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .mc-thought.wander-t{background:linear-gradient(135deg,#FFF0F0,#FFE8E8);border-color:#C03020;color:#4A1004;}
+  .mc-thought.return-t{background:linear-gradient(135deg,#F0FFF4,#E0FFF0);border-color:#28A860;color:#0A2818;}
+  .mc-gita{margin-top:8px;padding:7px 11px;background:linear-gradient(135deg,#FFF8E0,#FFF0A8);border-radius:8px;font-size:0.78rem;color:#3A2800;font-style:italic;line-height:1.6;font-family:'Tiro Devanagari Sanskrit',serif;}
+
+  /* Count tracker */
+  .count-tracker{background:linear-gradient(135deg,#041018,#020C12);padding:16px 24px;border-top:1px solid rgba(40,128,168,0.1);}
+  .ct-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(40,128,168,0.6);margin-bottom:10px;}
+  .ct-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .ct-item{display:flex;align-items:center;gap:6px;}
+  .ct-dot{width:10px;height:10px;border-radius:50%;}
+  .ct-dot.w{background:#C03020;}.ct-dot.r{background:#28A860;}
+  .ct-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.83rem;color:rgba(253,246,232,0.75);}
+  .ct-note{margin-top:8px;font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.65);font-style:italic;line-height:1.65;}
+  .ct-note strong{color:var(--gold-light);}
+
+  .key-insight{background:linear-gradient(135deg,#E8F4FC,#D0E8F8);border:1px solid rgba(40,128,168,0.2);border-radius:13px;padding:18px 20px;margin:8px 28px 20px;position:relative;}
+  .key-insight::before{content:'🌊';position:absolute;top:-12px;left:18px;background:var(--cream);padding:0 4px;font-size:1rem;}
+  .ki-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:7px;}
+  .ki-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.9;color:#0A1828;}
+  .ki-txt strong{color:var(--maroon);}
+
+  .gita-connect{background:linear-gradient(160deg,#041018,#020C12);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#80C8F0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#030C12,#020C12);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.day-timeline{padding:18px 18px 8px;}.key-insight{margin-left:0;margin-right:0;}body{padding:22px 13px 48px;}}
+</style>
+<link rel="stylesheet" href="theme-override.css">
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ६ · आत्मसंयमयोग</span></div>
+<div class="badge"><span class="emoji">🌊</span><span class="text">संकल्पना ८ / ११ — मन भटकलं तर — परत आणा ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ६.२६</div>
+  <div class="stext">यतो यतो निश्चरति मनश्चञ्चलमस्थिरम् ।<br>ततस्ततो नियम्यैतदात्मन्येव वशं नयेत् ।।</div>
+  <div class="smean">"जेथे जेथे हे चंचल, अस्थिर मन जाते — तेथे तेथून परत आणून आत्म्याच्या ताब्यात घ्यावे."<br><br><em>मन भटकणं हे ध्यानाची चूक नाही — मनाचा स्वभाव आहे. भटकलं की परत आणा — हाच ध्यानाचा अभ्यास. किती वेळा भटकतं हे महत्त्वाचं नाही — किती वेळा परत येतं हे महत्त्वाचं.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">मन भटकणं = अपयश — <strong>हे खोटं आहे.</strong><br><br>मन भटकणं = मनाचा स्वभाव. परत आणणं = ध्यानाचा अभ्यास.<br><strong>जेवढ्या वेळा परत आणलं — तेवढा अभ्यास झाला. हेच ध्यान.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🗓️</span> अर्जुनच्या एका ध्यानाचा प्रवास</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="char-intro">
+      <div class="char-icon">👨‍💻</div>
+      <div class="char-meta">
+        <div class="char-name">अर्जुन — आजचं ध्यान</div>
+        <div class="char-desc">वय ३५ · संगणक अभियंता · पुणे · सकाळी ७</div>
+        <div class="char-note">आज अर्जुन वीस मिनिटे ध्यानाला बसला. मन सात वेळा भटकलं — सात वेळा परत आलं. हा त्याचा प्रवास.</div>
+      </div>
+    </div>
+
+    <div class="day-timeline">
+      <div class="dt-title">🌊 वीस मिनिटांचा प्रवास — भटकणे आणि परत येणे</div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot active"></div><div class="mt-label">मि. ०</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">🧘</span><div class="mc-title">सुरुवात — बसलो, डोळे मिटले</div></div>
+          <div class="mc-body">आसन घेतलं. डोळे मिटले. श्वासावर लक्ष दिलं. पहिले दोन श्वास शांत होते.</div>
+          <div class="mc-thought">💭 "आत्ता श्वास घेतोय. हवा आत येतेय..."</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot wander"></div><div class="mt-label">मि. २</div></div>
+        <div class="moment-content wander-m">
+          <div class="mc-head"><span class="mc-icon">💭</span><div class="mc-title">पहिलं भटकणे — कामाचा विचार</div></div>
+          <div class="mc-body">मन गेलं — "आजची बैठक किती वाजता आहे? तयारी केली का?" पुढचे दोन मिनिटे बैठकीतच गेले.</div>
+          <div class="mc-thought wander-t">😤 "परत कामाचा विचार आला. ध्यान फसलं."</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot return"></div><div class="mt-label">मि. ४</div></div>
+        <div class="moment-content return-m">
+          <div class="mc-head"><span class="mc-icon">↩️</span><div class="mc-title">पहिलं परत येणे</div></div>
+          <div class="mc-body">अर्जुनला जाणवलं — "मन भटकलं." रागावला नाही. शांतपणे श्वासावर परत आलं.</div>
+          <div class="mc-thought return-t">✓ "मन गेलं होतं — परत आलो. हाच अभ्यास."</div>
+          <div class="mc-gita">यतो यतो निश्चरति — जिथे जिथे मन गेलं — तिथून परत आणलं.</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot wander"></div><div class="mt-label">मि. ७</div></div>
+        <div class="moment-content wander-m">
+          <div class="mc-head"><span class="mc-icon">💭</span><div class="mc-title">दुसरं भटकणे — कालचं भांडण</div></div>
+          <div class="mc-body">मन गेलं — "काल मी तसं का बोललो? त्याला वाईट वाटलं असेल." आत एक जड भावना आली.</div>
+          <div class="mc-thought wander-t">😤 "परत एकदा. आज ध्यान जमणारच नाही."</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot return"></div><div class="mt-label">मि. ९</div></div>
+        <div class="moment-content return-m">
+          <div class="mc-head"><span class="mc-icon">↩️</span><div class="mc-title">दुसरं परत येणे</div></div>
+          <div class="mc-body">अर्जुनने जाणलं — "ही भावना आहे — ती जाईल. आत्ता श्वास." परत श्वासावर लक्ष दिलं.</div>
+          <div class="mc-thought return-t">✓ "भावना आली — जाणली — सोडली. परत आलो."</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot wander"></div><div class="mt-label">मि. १२</div></div>
+        <div class="moment-content wander-m">
+          <div class="mc-head"><span class="mc-icon">💭</span><div class="mc-title">तिसरं, चौथं, पाचवं भटकणे...</div></div>
+          <div class="mc-body">उरलेल्या वेळात मन अजून चार वेळा भटकलं — खरेदी, मुलाची शाळा, एक गाण्याची ओळ, संध्याकाळचं जेवण.</div>
+          <div class="mc-thought wander-t">😤 "पाच वेळा भटकलो. हे ध्यान नाही — वेळ वाया."</div>
+        </div>
+      </div>
+
+      <div class="moment">
+        <div class="moment-time"><div class="mt-dot key"></div><div class="mt-label">मि. २०</div></div>
+        <div class="moment-content">
+          <div class="mc-head"><span class="mc-icon">⭐</span><div class="mc-title">ध्यान संपलं — आणि एक जाणीव</div></div>
+          <div class="mc-body">वीस मिनिटे संपली. अर्जुन उठला. मनात एक विचार — "सात वेळा भटकलो. पण सात वेळाच परत आलो."</div>
+          <div class="mc-thought return-t">✓ "भटकणं = मनाचा स्वभाव. परत येणं = माझा अभ्यास. आज सात वेळा अभ्यास केला."</div>
+          <div class="mc-gita">ततस्ततो नियम्यैतद् — तिथून तिथून परत आणा. सात वेळा परत आणलं — सात वेळा ध्यान झालं.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="count-tracker">
+      <div class="ct-lbl">📊 अर्जुनच्या वीस मिनिटांचा हिशेब</div>
+      <div class="ct-row">
+        <div class="ct-item"><div class="ct-dot w"></div><div class="ct-txt">मन भटकलं — ७ वेळा</div></div>
+        <div class="ct-item"><div class="ct-dot r"></div><div class="ct-txt">परत आलं — ७ वेळा</div></div>
+      </div>
+      <div class="ct-note">म्हणजे आज <strong>७ वेळा ध्यान झालं.</strong> मन भटकणं म्हणजे ध्यान फसणं नाही — <strong>परत येणं म्हणजे ध्यान होणं.</strong></div>
+    </div>
+
+    <div class="key-insight">
+      <div class="ki-lbl">🌊 गीतेचा मुख्य मुद्दा</div>
+      <div class="ki-txt">कृष्ण म्हणतो — "जिथे जिथे मन जाते — तिथून परत आणा." <strong>किती वेळा भटकलं हे विचारत नाही.</strong><br><br>परत येणं हाच अभ्यास. वारंवार परत येणं म्हणजे वारंवार ध्यान.<br><strong>आज मन शंभर वेळा भटकलं आणि शंभर वेळा परत आणलं — तर शंभर वेळा ध्यान झालं.</strong></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"यतो यतो निश्चरति मनः"</span> — जिथे जिथे मन जाते. <span class="ahl">परत आणा — हेच. कारण नाही, चूक नाही, रागावणं नाही. फक्त परत आणा.</span><br><br>अर्जुनने सात वेळा परत आणलं — <span class="ahl">सात वेळा ध्यान झालं. हा श्लोक ध्यानाच्या सर्वात मोठ्या अडथळ्यावर — "मन भटकतं" — थेट उत्तर देतो.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">मन जाय जेथ तेथ ।<br>तेथूनि आणावें येथ ।<br>हेंचि ध्यान सांगत ।<br>श्रीकृष्ण ।।<br><br>भटकणें मनाचा स्वभाव ।<br>परत येणें साधकाचा ।<br>जेवढ्या वेळा परत येई ।<br>तेवढें ध्यान ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🌊 स्वतःला विचारा</div><div class="rs-txt">"ध्यानात मन भटकलं म्हणून मी थांबतो का? आजपासून — भटकलं तर परत आणा. हाच अभ्यास आहे."</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज ध्यानात मन भटकेल — <strong>किती वेळा परत आणलं ते मोजा. ती संख्या म्हणजे तुमचा आजचा ध्यान-अभ्यास.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ६ · संकल्पना ८</div></div>
+</body></html>

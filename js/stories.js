@@ -1530,7 +1530,12 @@ const GITA_STORIES = {
     "2": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-2.html" },
     "3": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-3.html" },
     "4": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-4.html" },
-    "5": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-5.html" }
+    "5":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-5.html" },
+    "6":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-6.html" },
+    "7":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-7.html" },
+    "8":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-8.html" },
+    "9":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-9.html" },
+    "10": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-10.html" }
   },  // end adhyay 6
 
 

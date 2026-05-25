@@ -180,3 +180,92 @@ body::before {
 .footer .fdiv  { background: linear-gradient(90deg, transparent, #c2611a, transparent) !important; }
 .footer .ftext { color: #c2611a !important; opacity: 1 !important; }
 .footer .fsub  { color: rgba(194,97,26,.50) !important; }
+
+/* ─── concept-6 audit-header (dark) ─── */
+.audit-header {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+  border-bottom-color: rgba(184,138,62,.15) !important;
+}
+.ah-lbl   { color: rgba(184,138,62,.80) !important; }
+.ah-title { color: #f0c96a !important; }
+.ah-sub   { color: rgba(246,239,226,.60) !important; }
+
+/* concept-6 result-box (dark) */
+.result-box {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+}
+.rb-lbl        { color: rgba(184,138,62,.80) !important; }
+.rb-txt        { color: rgba(246,239,226,.82) !important; }
+.rb-txt strong { color: #f0c96a !important; }
+
+/* concept-6 audit-sections label (light) */
+.as-lbl { color: #9c4a10 !important; }
+
+/* ─── concept-7 deepa-visual (dark) ─── */
+.deepa-visual {
+  background: linear-gradient(160deg, #1a2546, #2b3e6b) !important;
+  border-bottom-color: rgba(184,138,62,.18) !important;
+}
+.dv-quote   { color: #f0c96a !important; }
+.dv-meaning { color: rgba(246,239,226,.72) !important; }
+
+/* concept-7 layers labels (light) */
+.ly-lbl   { color: #9c4a10 !important; }
+.ld-title { color: #9c4a10 !important; }
+
+/* ─── concept-8 count-tracker (dark) ─── */
+.count-tracker {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+  border-top-color: rgba(184,138,62,.12) !important;
+}
+.ct-lbl         { color: rgba(184,138,62,.80) !important; }
+.ct-txt         { color: rgba(246,239,226,.80) !important; }
+.ct-note        { color: rgba(246,239,226,.70) !important; }
+.ct-note strong { color: #f0c96a !important; }
+
+/* ─── concept-9 scene-header (dark) ─── */
+.scene-header {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+  border-bottom-color: rgba(184,138,62,.15) !important;
+}
+.sh-lbl   { color: rgba(184,138,62,.80) !important; }
+.sh-title { color: #f0c96a !important; }
+.sh-sub   { color: rgba(246,239,226,.60) !important; }
+
+/* concept-9 turning (dark) */
+.turning {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+}
+.tp-lbl         { color: rgba(184,138,62,.80) !important; }
+.tp-box         { background: rgba(184,138,62,.10) !important; border-color: rgba(184,138,62,.28) !important; }
+.tp-lbl2        { color: rgba(240,200,80,.80) !important; }
+.tp-txt         { color: #f0c96a !important; }
+.tp-note        { color: rgba(246,239,226,.75) !important; }
+.tp-note strong { color: #f0c96a !important; }
+
+/* concept-9 practice — green step-num → saffron, scene labels */
+.sb-lbl { color: #9c4a10 !important; }
+.pr-lbl { color: #9c4a10 !important; }
+.ps-num {
+  background: linear-gradient(135deg, #c2611a, #9c4a10) !important;
+  color: white !important;
+  box-shadow: 0 2px 8px rgba(194,97,26,.4) !important;
+}
+.ps-txt em { color: #9c4a10 !important; }
+
+/* ─── concept-10 shloka-dark (dark) ─── */
+.shloka-dark {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+  border-top-color: rgba(184,138,62,.15) !important;
+}
+.sd-lbl     { color: rgba(184,138,62,.80) !important; }
+.sd-shloka  { color: #f0c96a !important; }
+.sd-meaning { color: rgba(246,239,226,.72) !important; }
+
+/* concept-10 letter — align purple accents to warm palette */
+.letter-quote {
+  background: linear-gradient(135deg, rgba(194,97,26,.06), rgba(184,138,62,.04)) !important;
+  border-left-color: #c2611a !important;
+  color: #3a2800 !important;
+}
+.lc-sign { color: #9c4a10 !important; }

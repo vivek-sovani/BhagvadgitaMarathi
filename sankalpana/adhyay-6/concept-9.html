@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ६ | संकल्पना ९</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#285838;--cl:#409858;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#020E06;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(64,152,88,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#041408,#020E06);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(64,152,88,0.2),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#041408,#020E06);border:1px solid rgba(64,152,88,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(64,152,88,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(40,88,56,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(100,200,120,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(64,152,88,0.18);}
+
+  /* Scene header */
+  .scene-header{background:linear-gradient(135deg,#041408,#020E06);padding:20px 28px;border-bottom:1px solid rgba(64,152,88,0.12);}
+  .sh-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(64,152,88,0.65);margin-bottom:6px;}
+  .sh-title{font-family:'Noto Serif Devanagari',serif;font-size:1.1rem;color:var(--gold-light);font-weight:700;line-height:1.4;}
+  .sh-sub{margin-top:5px;font-size:0.8rem;color:rgba(253,246,232,0.5);}
+
+  /* The scene itself */
+  .scene-box{background:linear-gradient(135deg,#F8F4E0,#F4ECC8);border-bottom:1px solid rgba(64,152,88,0.1);padding:18px 28px;}
+  .sb-lbl{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:10px;}
+  .sb-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.92rem;line-height:1.9;color:#2A1E00;}
+
+  /* Two perspectives */
+  .two-views{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .view{padding:22px 20px;}
+  .view.v1{background:linear-gradient(135deg,#FAE8E8,#F4D8D8);border-right:1px solid rgba(64,152,88,0.08);}
+  .view.v2{background:linear-gradient(135deg,#E8F8EC,#D0F0DC);}
+  .view-head{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+  .vh-icon{font-size:1.2rem;}
+  .vh-name{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;font-weight:700;}
+  .v1 .vh-name{color:#7A1010;}.v2 .vh-name{color:#0A4820;}
+  .view-body{font-family:'Noto Serif Devanagari',serif;font-size:0.83rem;line-height:1.78;margin-bottom:10px;}
+  .v1 .view-body{color:#4A1004;}.v2 .view-body{color:#0A2818;}
+  .view-inner{padding:9px 12px;border-radius:9px;font-size:0.82rem;font-style:italic;font-family:'Noto Serif Devanagari',serif;line-height:1.65;}
+  .v1 .view-inner{background:rgba(192,48,32,0.1);color:#5A1010;border-left:2px solid rgba(192,48,32,0.3);}
+  .v2 .view-inner{background:rgba(40,152,96,0.1);color:#0A3818;border-left:2px solid rgba(40,152,96,0.3);}
+  .view-result{margin-top:10px;padding:7px 10px;border-radius:8px;font-size:0.78rem;font-weight:600;text-align:center;font-family:'Noto Serif Devanagari',serif;}
+  .v1 .view-result{background:rgba(192,48,32,0.12);color:#7A1010;}
+  .v2 .view-result{background:rgba(40,152,96,0.1);color:#0A4820;}
+
+  /* Turning point */
+  .turning{background:linear-gradient(135deg,#041408,#020E06);padding:18px 26px;}
+  .tp-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(64,152,88,0.6);margin-bottom:12px;}
+  .tp-box{background:rgba(201,150,58,0.1);border:1px solid rgba(201,150,58,0.25);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+  .tp-lbl2{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(240,200,80,0.7);margin-bottom:6px;}
+  .tp-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.88rem;color:var(--gold-light);line-height:1.75;font-style:italic;}
+  .tp-note{font-family:'Noto Serif Devanagari',serif;font-size:0.85rem;color:rgba(253,246,232,0.72);line-height:1.72;}
+  .tp-note strong{color:var(--gold-light);}
+
+  /* Practice section */
+  .practice{padding:18px 28px 8px;}
+  .pr-lbl{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--c);font-weight:700;margin-bottom:14px;}
+  .pr-step{display:flex;gap:12px;margin-bottom:12px;padding:12px 14px;border-radius:10px;background:white;border:1px solid rgba(64,152,88,0.1);}
+  .ps-num{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#409858,#285838);color:white;display:flex;align-items:center;justify-content:center;font-size:0.78rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+  .ps-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.87rem;line-height:1.75;color:var(--shadow-ink);}
+  .ps-txt em{color:var(--deep-saffron);font-style:italic;}
+
+  .gita-connect{background:linear-gradient(160deg,#041408,#020E06);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#80E0A0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#030A04,#020E06);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.two-views{grid-template-columns:1fr;}.v1{border-right:none;border-bottom:1px solid rgba(64,152,88,0.08);}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}.practice{padding:16px 16px 8px;}body{padding:22px 13px 48px;}}
+</style>
+<link rel="stylesheet" href="theme-override.css">
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ६ · आत्मसंयमयोग</span></div>
+<div class="badge"><span class="emoji">🌐</span><span class="text">संकल्पना ९ / ११ — सर्वभूतस्थित — सर्वांत मीच ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ६.२९–३०</div>
+  <div class="stext">सर्वभूतस्थमात्मानं सर्वभूतानि चात्मनि ।<br>ईक्षते योगयुक्तात्मा सर्वत्र समदर्शनः ।।<br><br>यो मां पश्यति सर्वत्र सर्वं च मयि पश्यति ।<br>तस्याहं न प्रणश्यामि स च मे न प्रणश्यति ।।</div>
+  <div class="smean">"योगयुक्त आत्मा — सर्व भूतांत आत्मा पाहतो, सर्व भूते आत्म्यात पाहतो — सर्वत्र समदर्शन."<br>"जो मला सर्वत्र पाहतो आणि सर्व माझ्यात — त्याच्यापासून मी हरवत नाही, तो माझ्यापासून हरवत नाही."<br><br><em>हे ध्यानाचं सर्वोच्च फळ. आत्मा सर्वांत दिसतो — मग द्वेष कुणाशी? भय कशाचं?</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">सर्वभूतस्थित — सर्वांत तोच आत्मा.<br><strong>हे दिसू लागलं की द्वेष संपतो. भय संपतं. एकटेपणा संपतो.</strong><br><br>एकाच प्रसंगाला दोन माणसे वेगळ्या नजरेने पाहतात. <strong>ती नजर बदलणं — हाच योगाचा अभ्यास.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>👁️</span> एकच प्रसंग — दोन दृष्टी</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="scene-header">
+      <div class="sh-lbl">परिस्थिती · रस्त्यावर · पुणे</div>
+      <div class="sh-title">एक भिकारी — दोन माणसांची नजर</div>
+      <div class="sh-sub">एकाच माणसाकडे दोन वेगळ्या नजरेने पाहिलं तर काय दिसतं?</div>
+    </div>
+
+    <div class="scene-box">
+      <div class="sb-lbl">प्रसंग</div>
+      <div class="sb-txt">सकाळी ऑफिसला जाताना रस्त्यावर एक वृद्ध माणूस हात पसरून बसलेला. फाटलेले कपडे, थकलेला चेहरा. दोन माणसे जवळून जातात — एक अर्जुन, एक त्याचा मित्र विजय.</div>
+    </div>
+
+    <div class="two-views">
+      <div class="view v1">
+        <div class="view-head"><span class="vh-icon">😐</span><div class="vh-name">विजय — सामान्य नजर</div></div>
+        <div class="view-body">विजयने पाहिलं — एक भिकारी. "नशिबाने मार खाल्लेला. आपण काय करणार?" पुढे निघून गेला. मनात एक क्षण — मग विसर पडला.</div>
+        <div class="view-inner">"तो वेगळा — मी वेगळा. त्याचं आयुष्य — माझ्याशी काय संबंध?"</div>
+        <div class="view-result">🔴 भेद दिसला — दूरी राहिली</div>
+      </div>
+      <div class="view v2">
+        <div class="view-head"><span class="vh-icon">🌐</span><div class="vh-name">अर्जुन — साधकाची नजर</div></div>
+        <div class="view-body">अर्जुन थांबला. पाहिलं — थकलेला चेहरा, हात पसरणं, डोळ्यांतली निराशा. आत काहीतरी हललं. "याच्यात आणि माझ्यात एकच काहीतरी आहे."</div>
+        <div class="view-inner">"याच्यातही तोच आत्मा — माझ्यात जो आहे तोच. परिस्थिती वेगळी — आत्मा एकच."</div>
+        <div class="view-result">🟢 एकता दिसली — करुणा आली</div>
+      </div>
+    </div>
+
+    <div class="turning">
+      <div class="tp-lbl">🌐 ती नजर कुठून येते?</div>
+      <div class="tp-box">
+        <div class="tp-lbl2">अर्जुनच्या मनात जे घडलं</div>
+        <div class="tp-txt">"ध्यानात मी रोज जाणवतो — आत एक काहीतरी आहे जे विचारांपलीकडे आहे. ते माझ्यात आहे — तर याच्यातही असेलच. तोच आत्मा."</div>
+      </div>
+      <div class="tp-note">ही नजर अचानक येत नाही. <strong>ध्यानात स्वतःतला आत्मा जाणवला की इतरांतही दिसू लागतो.</strong> आधी आत — मग बाहेर. सर्वभूतस्थित हे ध्यानाचं फळ आहे — सुरुवात नाही.</div>
+    </div>
+
+    <div class="practice">
+      <div class="pr-lbl">🌐 सर्वभूतस्थित दृष्टी कशी विकसित होते — तीन पायऱ्या</div>
+      <div class="pr-step">
+        <div class="ps-num">१</div>
+        <div class="ps-txt"><em>आधी स्वतःत पाहा</em> — ध्यानात आत जो शांत आत्मा जाणवतो — त्याला ओळखा. "हे मन नाही — हे विचार नाही — हे 'मी' आहे" — हे जाणा.</div>
+      </div>
+      <div class="pr-step">
+        <div class="ps-num">२</div>
+        <div class="ps-txt"><em>जवळच्या माणसात पाहा</em> — एखाद्या प्रिय माणसाकडे पाहताना — "याच्यातही तोच आत्मा आहे." हे मनात म्हणा. हळूहळू जाणवेल.</div>
+      </div>
+      <div class="pr-step">
+        <div class="ps-num">३</div>
+        <div class="ps-txt"><em>कठीण माणसात पाहा</em> — ज्याच्याशी नाते कठीण आहे — त्याच्यातही तोच आत्मा. "याच्यात आणि माझ्यात एकच" — हा एक विचार नाते बदलू शकतो.</div>
+      </div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"यो मां पश्यति सर्वत्र"</span> — जो मला सर्वत्र पाहतो. <span class="ahl">अर्जुनने भिकाऱ्यात तोच आत्मा पाहिला — तेव्हा करुणा आली, दूरी नाही. हेच सर्वभूतस्थित दर्शन.</span><br><br>तस्याहं न प्रणश्यामि — <span class="ahl">त्याच्यापासून मी हरवत नाही. ज्याला सर्वांत तोच दिसतो — त्याला ईश्वर सोडत नाही.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">सर्व भूतांत आत्मा पाहे ।<br>सर्वांत मीच असे जाणे ।<br>तोचि योगी खरा होय ।<br>समदर्शी ।।<br><br>जो मला सर्वत्र पाहे ।<br>त्यापासूनि मी न जाय ।<br>तोही माझ्यापासूनि ।<br>दूर न होय ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🌐 स्वतःला विचारा</div><div class="rs-txt">"आज मी कुणाकडे 'तो वेगळा — मी वेगळा' या नजरेने पाहिलं? त्याच्यात आत्मा पाहण्याचा प्रयत्न केला का?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एका माणसाकडे — <strong>जो "वेगळा" वाटतो — त्याच्याकडे पाहा आणि मनात म्हणा: "याच्यात आणि माझ्यात एकच आत्मा आहे."</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ६ · संकल्पना ९</div></div>
+</body></html>
