@@ -1535,7 +1535,8 @@ const GITA_STORIES = {
     "7":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-7.html" },
     "8":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-8.html" },
     "9":  { kathaHtmlUrl: "sankalpana/adhyay-6/concept-9.html" },
-    "10": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-10.html" }
+    "10": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-10.html" },
+    "11": { kathaHtmlUrl: "sankalpana/adhyay-6/concept-11.html" }
   },  // end adhyay 6
 
 

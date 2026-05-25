@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भगवद्गीता — अध्याय ६ | संकल्पना ११</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--saffron:#E8730A;--deep-saffron:#C45E00;--gold:#C9963A;--gold-light:#F0C96A;
+    --maroon:#7B1C1C;--cream:#FDF6E8;--parchment:#F5EACF;--ink:#2A1A0E;
+    --shadow-ink:#3D2512;--sage:#5B7A4E;--c:#6A1A40;--cl:#B03070;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#0E0208;min-height:100vh;font-family:'Noto Sans Devanagari',sans-serif;
+    display:flex;flex-direction:column;align-items:center;padding:40px 20px 60px;position:relative;overflow-x:hidden;}
+  body::before{content:'';position:fixed;inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(176,48,112,0.1) 0%,transparent 55%),
+    radial-gradient(ellipse at 80% 100%,rgba(201,150,58,0.06) 0%,transparent 45%);
+    pointer-events:none;z-index:0;}
+  .page-header{text-align:center;margin-bottom:36px;position:relative;z-index:1;animation:fadeDown 0.8s ease both;}
+  .om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.4rem;color:var(--gold);display:block;margin-bottom:8px;filter:drop-shadow(0 0 14px rgba(201,150,58,0.7));animation:omglow 3s ease-in-out infinite;}
+  @keyframes omglow{0%,100%{filter:drop-shadow(0 0 8px rgba(201,150,58,0.5))}50%{filter:drop-shadow(0 0 24px rgba(201,150,58,1))}}
+  .page-title{font-family:'Noto Serif Devanagari',serif;font-size:1rem;color:var(--gold-light);letter-spacing:0.15em;opacity:0.8;}
+  .badge{background:linear-gradient(135deg,#1C0410,#0E0208);border:1px solid var(--gold);border-radius:40px;padding:10px 28px;display:inline-flex;align-items:center;gap:10px;margin-bottom:32px;position:relative;z-index:1;animation:fadeDown 0.9s ease 0.1s both;box-shadow:0 4px 20px rgba(176,48,112,0.22),inset 0 1px 0 rgba(201,150,58,0.3);}
+  .badge .emoji{font-size:1.2rem;}.badge .text{font-family:'Noto Serif Devanagari',serif;color:var(--gold-light);font-size:0.9rem;font-weight:600;}
+  .shloka-card{background:linear-gradient(160deg,#1C0410,#0E0208);border:1px solid rgba(176,48,112,0.2);border-radius:16px;padding:26px 30px;max-width:700px;width:100%;margin-bottom:26px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.2s both;box-shadow:0 8px 40px rgba(0,0,0,0.5);}
+  .shloka-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--cl),transparent);}
+  .slabel{font-size:0.68rem;color:var(--cl);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:10px;opacity:0.85;}
+  .stext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;color:var(--cream);line-height:1.9;text-align:center;}
+  .smean{margin-top:13px;padding-top:13px;border-top:1px solid rgba(176,48,112,0.15);font-size:0.83rem;color:rgba(253,246,232,0.68);line-height:1.72;text-align:center;font-style:italic;}
+  .concept-sum{background:linear-gradient(135deg,rgba(106,26,64,0.14),rgba(201,150,58,0.07));border-left:3px solid var(--cl);border-radius:0 12px 12px 0;padding:18px 22px;max-width:700px;width:100%;margin-bottom:28px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.3s both;}
+  .concept-sum .clabel{font-size:0.68rem;letter-spacing:0.18em;color:rgba(220,100,160,0.9);text-transform:uppercase;margin-bottom:7px;}
+  .concept-sum .ctext{font-family:'Noto Serif Devanagari',serif;color:var(--cream);font-size:0.97rem;line-height:1.85;}
+  .concept-sum strong{color:var(--gold-light);}
+  .section-hdr{display:flex;align-items:center;gap:12px;max-width:700px;width:100%;margin-bottom:20px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.35s both;}
+  .hline{flex:1;height:1px;background:linear-gradient(90deg,var(--gold),transparent);}
+  .hline.rev{background:linear-gradient(90deg,transparent,var(--gold));}
+  .htitle{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;color:var(--gold);white-space:nowrap;display:flex;align-items:center;gap:7px;}
+  .main-card{max-width:700px;width:100%;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.4s both;}
+  .card-body{background:var(--cream);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.55),0 0 0 1px rgba(176,48,112,0.18);}
+
+  /* Why bhakti superior */
+  .why-box{background:linear-gradient(135deg,#1C0410,#0E0208);padding:18px 26px;border-bottom:1px solid rgba(176,48,112,0.12);}
+  .wb-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(176,48,112,0.65);margin-bottom:10px;}
+  .wb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .wb-item{background:rgba(176,48,112,0.1);border:1px solid rgba(176,48,112,0.2);border-radius:10px;padding:12px 14px;text-align:center;}
+  .wb-icon{font-size:1.1rem;display:block;margin-bottom:5px;}
+  .wb-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.82rem;color:rgba(253,246,232,0.8);line-height:1.55;}
+
+  /* Person sections */
+  .person{padding:24px 28px;border-bottom:1px solid rgba(176,48,112,0.1);position:relative;}
+  .person:last-child{border-bottom:none;}
+  .person::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;}
+  .p1::before{background:linear-gradient(180deg,#B03070,#6A1A40);}
+  .p2::before{background:linear-gradient(180deg,#C04080,#8A2050);}
+  .p3::before{background:linear-gradient(180deg,#C9963A,#8A6010);}
+  .person-head{display:flex;align-items:flex-start;gap:14px;margin-bottom:12px;}
+  .p-icon{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+  .p1 .p-icon{background:linear-gradient(135deg,#F8D0E8,#F0B0D4);border:1px solid rgba(176,48,112,0.3);}
+  .p2 .p-icon{background:linear-gradient(135deg,#FAD8EC,#F4C0DC);border:1px solid rgba(192,64,128,0.3);}
+  .p3 .p-icon{background:linear-gradient(135deg,#FFF8E0,#FFF0B0);border:1px solid rgba(201,150,58,0.3);}
+  .p-meta{flex:1;}
+  .p-name{font-family:'Noto Serif Devanagari',serif;font-size:1.05rem;font-weight:700;color:var(--ink);margin-bottom:3px;}
+  .p-tag{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--c);font-weight:600;}
+  .p-body{font-family:'Noto Serif Devanagari',serif;font-size:0.93rem;line-height:1.95;color:var(--shadow-ink);padding-left:62px;}
+  .p-body strong{color:var(--maroon);}
+  .p-body em{color:var(--deep-saffron);font-style:italic;}
+  .p-quote{margin-top:10px;padding:10px 14px;background:linear-gradient(135deg,rgba(176,48,112,0.08),rgba(176,48,112,0.04));border-radius:8px;border-left:2px solid rgba(176,48,112,0.3);font-size:0.8rem;color:var(--c);font-style:italic;line-height:1.65;font-family:'Noto Serif Devanagari',serif;}
+
+  /* Adhyay 6 summary */
+  .adhyay-summary{background:linear-gradient(160deg,#1C0410,#0E0208);padding:22px 26px;border-top:1px solid rgba(201,150,58,0.2);}
+  .as-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:16px;}
+  .as-row{display:flex;align-items:flex-start;gap:10px;margin-bottom:10px;}
+  .as-num{background:linear-gradient(135deg,var(--gold),#8A6010);color:var(--ink);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.62rem;font-weight:700;flex-shrink:0;margin-top:2px;}
+  .as-emoji{flex-shrink:0;font-size:0.9rem;}
+  .as-text{font-size:0.82rem;color:rgba(253,246,232,0.78);line-height:1.6;}
+  .as-text strong{color:var(--gold-light);}
+
+  .gita-connect{background:linear-gradient(160deg,#1C0410,#0E0208);padding:22px 26px;position:relative;overflow:hidden;border-top:1px solid rgba(201,150,58,0.15);}
+  .gita-connect::before{content:'🕉️';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:3.8rem;opacity:0.07;}
+  .gc-lbl{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);opacity:0.8;margin-bottom:9px;}
+  .gc-txt{font-family:'Noto Serif Devanagari',serif;font-size:0.9rem;color:var(--cream);line-height:1.88;opacity:0.92;}
+  .gc-txt .hl{color:var(--gold-light);font-weight:600;}.gc-txt .ahl{color:#F090C0;font-weight:600;}
+  .dnyan-box{background:linear-gradient(135deg,#160306,#0E0208);border:1px solid rgba(201,150,58,0.18);border-radius:11px;padding:16px 18px;margin-top:15px;}
+  .dnyan-lbl{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,201,106,0.6);margin-bottom:9px;}
+  .dnyan-verse{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:rgba(253,246,232,0.82);line-height:1.95;font-style:italic;}
+  .ref-sank{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(201,150,58,0.14);}
+  .ref,.sank{padding:18px 20px;}.ref{border-right:1px solid rgba(201,150,58,0.14);}
+  .rs-lbl{font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:7px;font-weight:700;}
+  .ref .rs-lbl{color:var(--c);}.sank .rs-lbl{color:var(--sage);}
+  .rs-txt{font-size:0.81rem;line-height:1.75;color:rgba(42,26,14,0.82);}
+  .footer{text-align:center;margin-top:36px;position:relative;z-index:1;animation:fadeUp 0.8s ease 0.6s both;}
+  .footer .fdiv{width:180px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 14px;}
+  .footer .ftext{font-family:'Tiro Devanagari Sanskrit',serif;font-size:0.88rem;color:var(--gold);opacity:0.7;letter-spacing:0.1em;}
+  .footer .fsub{margin-top:8px;font-size:0.7rem;color:rgba(201,150,58,0.38);letter-spacing:0.12em;}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+  @media(max-width:520px){.wb-grid{grid-template-columns:1fr;}.p-body{padding-left:0;}.ref-sank{grid-template-columns:1fr;}.ref{border-right:none;border-bottom:1px solid rgba(201,150,58,0.14);}body{padding:22px 13px 48px;}}
+</style>
+<link rel="stylesheet" href="theme-override.css">
+</head>
+<body>
+
+<div class="page-header"><span class="om">ॐ</span><span class="page-title">भगवद्गीता · अध्याय ६ · आत्मसंयमयोग</span></div>
+<div class="badge"><span class="emoji">🕉️</span><span class="text">संकल्पना ११ / ११ — भक्तियोग सर्वश्रेष्ठ ★</span></div>
+
+<div class="shloka-card">
+  <div class="slabel">मूळ श्लोक · गीता ६.४७</div>
+  <div class="stext">योगिनामपि सर्वेषां मद्गतेनान्तरात्मना ।<br>श्रद्धावान्भजते यो मां स मे युक्ततमो मतः ।।</div>
+  <div class="smean">"सर्व योग्यांमध्ये — जो माझ्यावर मन ठेवून, श्रद्धेने माझी भक्ती करतो — तोच मला सर्वात योग्य वाटतो."<br><br><em>अध्याय ६ चा अंतिम श्लोक. ज्ञानयोग, कर्मयोग, ध्यानयोग — सगळ्यांमध्ये श्रेष्ठ कोण? जो श्रद्धेने भक्ती करतो. कारण भक्तीत सगळे मार्ग एकत्र येतात.</em></div>
+</div>
+
+<div class="concept-sum">
+  <div class="clabel">संकल्पनेचा गाभा</div>
+  <div class="ctext">भक्तियोग श्रेष्ठ — कारण तो सर्वांसाठी सहज साध्य.<br><strong>ज्ञान लागत नाही, शरीराचं बळ लागत नाही — फक्त श्रद्धा हवी.</strong><br><br>भक्तीत कर्म, ज्ञान, ध्यान सगळं एकत्र येतं. <strong>प्रेम हाच सर्वश्रेष्ठ योग.</strong></div>
+</div>
+
+<div class="section-hdr">
+  <div class="hline"></div>
+  <div class="htitle"><span>🕉️</span> भक्तियोग श्रेष्ठ का — आणि कोण जगलं?</div>
+  <div class="hline rev"></div>
+</div>
+
+<div class="main-card">
+  <div class="card-body">
+
+    <div class="why-box">
+      <div class="wb-lbl">भक्तियोग श्रेष्ठ का — चार कारणे</div>
+      <div class="wb-grid">
+        <div class="wb-item"><span class="wb-icon">💗</span><div class="wb-txt">श्रद्धा एकच लागते — ज्ञान, कौशल्य नाही</div></div>
+        <div class="wb-item"><span class="wb-icon">🌊</span><div class="wb-txt">सहज — बाळापासून वृद्धापर्यंत सगळ्यांना साध्य</div></div>
+        <div class="wb-item"><span class="wb-icon">🔗</span><div class="wb-txt">थेट संबंध — भक्त आणि ईश्वर यांच्यात</div></div>
+        <div class="wb-item"><span class="wb-icon">✨</span><div class="wb-txt">इतर सगळे मार्ग भक्तीत एकत्र येतात</div></div>
+      </div>
+    </div>
+
+    <!-- मीराबाई -->
+    <div class="person p1">
+      <div class="person-head">
+        <div class="p-icon">🎶</div>
+        <div class="p-meta">
+          <div class="p-name">मीराबाई</div>
+          <div class="p-tag">राजस्थान · १६वं शतक · कृष्णभक्त · संत कवयित्री</div>
+        </div>
+      </div>
+      <div class="p-body">
+        मीराबाई राजघराण्यातील. सगळं होतं — संपत्ती, दर्जा, कुटुंब. पण त्यांनी सगळं सोडलं — फक्त कृष्णाच्या प्रेमासाठी. <strong>ज्ञानयोग नाही, कठोर तप नाही — फक्त श्रद्धेने भजन, प्रेमाने भक्ती.</strong> त्यांचे अभंग आजही लाखो लोक म्हणतात — <em>"मेरे तो गिरिधर गोपाल — दूसरो न कोई."</em> सगळं सोडलं — एकच ठेवलं — प्रेम. तेच भक्तीचं सार. शास्त्र नाही, तर्क नाही — फक्त हृदय.
+        <div class="p-quote">मद्गतेनान्तरात्मना — माझ्यावर मन ठेवून. मीराबाईंचं संपूर्ण मन, संपूर्ण जीव — कृष्णावर. हेच युक्ततम — सर्वश्रेष्ठ.</div>
+      </div>
+    </div>
+
+    <!-- रामकृष्ण परमहंस -->
+    <div class="person p2">
+      <div class="person-head">
+        <div class="p-icon">🌸</div>
+        <div class="p-meta">
+          <div class="p-name">रामकृष्ण परमहंस</div>
+          <div class="p-tag">बंगाल · १९वं शतक · काली भक्त · आत्मज्ञानी</div>
+        </div>
+      </div>
+      <div class="p-body">
+        रामकृष्ण परमहंस — दक्षिणेश्वर मंदिरात पुजारी. शास्त्र कमी शिकले होते. पण <strong>काली मातेवर इतकं प्रेम की ते तिच्याशी बालासारखे बोलत, रडत, हसत.</strong> विवेकानंद यांना सांगायचे — "माझ्याकडे ज्ञान नाही, तर्क नाही. मला फक्त आई आहे." त्याच भक्तीतून त्यांनी आत्मसाक्षात्कार मिळवला — आणि विवेकानंदांना दिला. <em>"भक्तीचा मार्ग सरळ — ज्ञानाचा मार्ग वाकडा."</em> हे ते म्हणायचे.
+        <div class="p-quote">श्रद्धावान् भजते यो मां — श्रद्धेने भजन. रामकृष्णांची श्रद्धा बालासारखी निर्मळ — तीच त्यांची शक्ती. शास्त्र नाही — प्रेम आहे.</div>
+      </div>
+    </div>
+
+    <!-- संत तुकाराम -->
+    <div class="person p3">
+      <div class="person-head">
+        <div class="p-icon">🙏</div>
+        <div class="p-meta">
+          <div class="p-name">संत तुकाराम</div>
+          <div class="p-tag">देहू, महाराष्ट्र · १७वं शतक · विठ्ठल भक्त · अभंगकार</div>
+        </div>
+      </div>
+      <div class="p-body">
+        संत तुकाराम — कुणबी शेतकरी. गरिबी, कुटुंबाचा विरोध, समाजाचा दबाव — सगळं होतं. पण विठ्ठलावरची भक्ती — ती कधीच कमी झाली नाही. <strong>रात्री अभंग लिहित बसायचे, टाळ वाजवत गाणी म्हणायचे — त्या प्रेमातून हजारो अभंग आले.</strong> महाराष्ट्राच्या घराघरात आजही त्यांचे अभंग — <em>"आनंदाचे डोही आनंद तरंग."</em> ज्ञान नाही, संपत्ती नाही — फक्त विठ्ठलावर प्रेम. तेच भक्तियोगाचं जिवंत उदाहरण.
+        <div class="p-quote">योगिनामपि सर्वेषां — सर्व योग्यांमध्ये सर्वश्रेष्ठ. तुकारामांनी सर्वश्रेष्ठ भक्तियोग जगला — शेतातून, गरिबीतून, सामान्य जगण्यातून.</div>
+      </div>
+    </div>
+
+    <!-- Adhyay 6 Summary -->
+    <div class="adhyay-summary">
+      <div class="as-lbl">🕉️ अध्याय ६ — ११ संकल्पना — संपूर्ण मालिका सारांश</div>
+      <div class="as-row"><div class="as-num">१</div><div class="as-emoji">🧘</div><div class="as-text"><strong>खरा योगी</strong> — अर्जुन — ऑफिसमध्ये शांत राहणं हाच योग</div></div>
+      <div class="as-row"><div class="as-num">२</div><div class="as-emoji">🪜</div><div class="as-text"><strong>आरोहण-आरूढ</strong> — चढणाऱ्याला कर्म, पोहोचलेल्याला शांतता</div></div>
+      <div class="as-row"><div class="as-num">३</div><div class="as-emoji">⚔️</div><div class="as-text"><strong>मन मित्र-शत्रू</strong> — "हे मन बोलतंय — मी वेगळा" — हाच विजय</div></div>
+      <div class="as-row"><div class="as-num">४</div><div class="as-emoji">🏔️</div><div class="as-text"><strong>जितात्मा</strong> — थंडी, अपमान, प्रशंसा — तीनही अवस्थांत पर्वतासारखा</div></div>
+      <div class="as-row"><div class="as-num">५</div><div class="as-emoji">📿</div><div class="as-text"><strong>ध्यानाची पद्धत</strong> — जागा, आसन, श्वास, एकाग्रता, हेतू — पाच पायऱ्या</div></div>
+      <div class="as-row"><div class="as-num">६</div><div class="as-emoji">⚖️</div><div class="as-text"><strong>युक्त आहार-विहार</strong> — आहार, झोप, काम, दृश्य-श्रव्य — स्वयंपरीक्षा</div></div>
+      <div class="as-row"><div class="as-num">७</div><div class="as-emoji">🕯️</div><div class="as-text"><strong>दीपवत् उपमा</strong> — वाऱ्याशिवाय दिवा — निवात अवस्था — तीन थर</div></div>
+      <div class="as-row"><div class="as-num">८</div><div class="as-emoji">🌊</div><div class="as-text"><strong>मन भटकलं तर</strong> — अर्जुन — सात वेळा भटकलं — सात वेळा ध्यान झालं</div></div>
+      <div class="as-row"><div class="as-num">९</div><div class="as-emoji">🌐</div><div class="as-text"><strong>सर्वभूतस्थित</strong> — एक भिकारी — दोन नजरा — करुणा की दूरी</div></div>
+      <div class="as-row"><div class="as-num">१०</div><div class="as-emoji">🌱</div><div class="as-text"><strong>अर्धवट साधना</strong> — कृष्णाचं पत्र — "तुझा एकही प्रयत्न वाया नाही"</div></div>
+      <div class="as-row"><div class="as-num">११</div><div class="as-emoji">🕉️</div><div class="as-text"><strong>भक्तियोग श्रेष्ठ</strong> — मीराबाई, रामकृष्ण, तुकाराम — प्रेम हाच सर्वश्रेष्ठ योग</div></div>
+    </div>
+
+    <div class="gita-connect">
+      <div class="gc-lbl">🕉️ गीता संदेश · अध्याय ६ चा समारोप</div>
+      <div class="gc-txt">कृष्ण म्हणतो — <span class="hl">"स मे युक्ततमो मतः"</span> — तो मला सर्वात योग्य वाटतो. <span class="ahl">मीराबाई, रामकृष्ण, तुकाराम — तिघांनी श्रद्धेने भक्ती केली. ज्ञान नाही, कठोर तप नाही — फक्त प्रेम. तेच युक्ततम.</span><br><br>अध्याय ६ सांगतो — <span class="ahl">ध्यान, संयम, साधना — सगळ्याचं अंतिम फळ म्हणजे प्रेम. भक्ती. "मद्गतेनान्तरात्मना" — माझ्यावर मन ठेवून जगणं.</span>
+        <div class="dnyan-box">
+          <div class="dnyan-lbl">🟧 ज्ञानेश्वरी</div>
+          <div class="dnyan-verse">योगियांमाजी सर्वश्रेष्ठ ।<br>तो भक्त माझा ।<br>श्रद्धेने भजतो मज ।<br>तोचि युक्ततम ।।<br><br>ज्ञान नसो कर्म नसो ।<br>श्रद्धा एक असो ।<br>प्रेमे माझ्याशी जोडे ।<br>तोचि श्रेष्ठ ।।</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ref-sank">
+      <div class="ref"><div class="rs-lbl">🕉️ स्वतःला विचारा</div><div class="rs-txt">"माझ्यासाठी भक्ती म्हणजे काय? मीराबाईसारखी गाणी? रामकृष्णांसारखं प्रेम? तुकारामांसारखे अभंग? माझा मार्ग कुठला?"</div></div>
+      <div class="sank"><div class="rs-lbl">🌱 आजचा संकल्प</div><div class="rs-txt">आज एक क्षण — <strong>श्रद्धेने डोळे मिटा. मनात म्हणा — "तू आहेस. मी तुझा." हीच भक्ती. हाच सर्वश्रेष्ठ योग.</strong></div></div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer"><div class="fdiv"></div><div class="ftext">। श्रीकृष्णार्पणमस्तु ।</div><div class="fsub">भगवद्गीता ज्ञानकोश · अध्याय ६ · संकल्पना ११ · मालिका पूर्ण</div></div>
+</body></html>

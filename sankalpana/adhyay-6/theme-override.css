@@ -269,3 +269,46 @@ body::before {
   color: #3a2800 !important;
 }
 .lc-sign { color: #9c4a10 !important; }
+
+/* ─── concept-11 why-box (dark) ─── */
+.why-box {
+  background: linear-gradient(135deg, #1a2546, #2b3e6b) !important;
+  border-bottom-color: rgba(184,138,62,.15) !important;
+}
+.wb-lbl  { color: rgba(184,138,62,.80) !important; }
+.wb-item {
+  background: rgba(184,138,62,.08) !important;
+  border-color: rgba(184,138,62,.22) !important;
+}
+.wb-txt  { color: rgba(246,239,226,.82) !important; }
+
+/* concept-11 adhyay-summary (dark) */
+.adhyay-summary {
+  background: linear-gradient(160deg, #1a2546, #2b3e6b) !important;
+  border-top-color: rgba(184,138,62,.22) !important;
+}
+.adhyay-summary .as-lbl { color: #b88a3e !important; opacity: 1 !important; }
+.as-num {
+  background: linear-gradient(135deg, #c2611a, #9c4a10) !important;
+  color: white !important;
+}
+.as-text        { color: rgba(246,239,226,.80) !important; }
+.as-text strong { color: #f0c96a !important; }
+
+/* concept-11 person blocks (light card-body) — purple → warm */
+.p1::before { background: linear-gradient(180deg, #c2611a, #9c4a10) !important; }
+.p2::before { background: linear-gradient(180deg, #b88a3e, #8a6010) !important; }
+.p1 .p-icon {
+  background: linear-gradient(135deg, #fef3c7, #fde68a) !important;
+  border-color: rgba(194,97,26,.30) !important;
+}
+.p2 .p-icon {
+  background: linear-gradient(135deg, #fef9e7, #fef3c7) !important;
+  border-color: rgba(184,138,62,.30) !important;
+}
+.p-tag { color: #9c4a10 !important; }
+.p-quote {
+  background: linear-gradient(135deg, rgba(194,97,26,.07), rgba(184,138,62,.04)) !important;
+  border-left-color: rgba(194,97,26,.35) !important;
+  color: #7a4a20 !important;
+}
