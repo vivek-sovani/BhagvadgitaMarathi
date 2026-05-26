@@ -128,6 +128,10 @@
           localStorage.setItem(FONTSIZE_KEY, size);
           fontSizeCtrl.querySelectorAll('.fsc-btn').forEach(b =>
             b.classList.toggle('fsc-active', b.dataset.size === size));
+          const frame = document.querySelector('.story-html-frame');
+          if (frame && frame.contentDocument && frame.contentDocument.documentElement) {
+            frame.contentDocument.documentElement.dataset.fontsize = size;
+          }
         });
       });
     }

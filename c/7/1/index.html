@@ -363,6 +363,10 @@
     }
     .shloka-deva, .ovi { color: #8B5E10 !important; }
   }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
 </style>
 </head>
 <body>
@@ -572,5 +576,11 @@
   भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना १/९ · 🕉️ श्रीकृष्णार्पणमस्तु
 </footer>
 
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
 </body>
 </html>
