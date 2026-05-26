@@ -1,20 +1,680 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="mr" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vivek-sovani.github.io/BhagvadgitaMarathi/c/7/2/">
-  <meta property="og:title" content="🌍 अपरा आणि परा प्रकृती — धाग्यात मणी | अध्याय ७ · ज्ञानविज्ञानयोग">
-  <meta property="og:description" content="गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन">
-  <meta property="og:image" content="https://vivek-sovani.github.io/BhagvadgitaMarathi/assets/og/adhyay-7/concept-2.jpg">
-  <meta property="og:image:width" content="540">
-  <meta property="og:image:height" content="960">
-  <meta name="twitter:card" content="summary">
-  <meta http-equiv="refresh" content="0;url=https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=2">
-  <title>🌍 अपरा आणि परा प्रकृती — धाग्यात मणी | गीता-ज्ञानेश्वरी</title>
-  <script>window.location.replace('https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=2');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अपरा आणि परा प्रकृती — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.02) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    letter-spacing: 0.03em;
+  }
+  .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.85rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.5;
+  }
+  .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.7;
+    margin-top: 0.25rem;
+  }
+
+  /* ORNAMENTAL DIVIDERS */
+  .gold-rule {
+    border: none;
+    margin: 1.75rem 0;
+  }
+
+  /* SHLOKA BLOCK */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .shloka-block .mandala-bg {
+    position: absolute;
+    opacity: 0.04;
+    right: -30px;
+    top: -30px;
+    pointer-events: none;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200,146,42,0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+    position: relative;
+  }
+
+  /* SECTION HEADING */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+  }
+  .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* EXPLANATION */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* PRAKRITI TWO-COLUMN */
+  .prakriti-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+  }
+  .prakriti-card {
+    border: 1px solid rgba(200,146,42,0.35);
+    border-radius: 4px;
+    padding: 1.1rem 1.25rem;
+  }
+  .prakriti-card.apara { border-color: rgba(74,124,111,0.5); }
+  .prakriti-card.para  { border-color: rgba(200,146,42,0.6); }
+  .prakriti-label {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  .prakriti-card.apara .prakriti-label { color: var(--patina-teal); }
+  .prakriti-card.para  .prakriti-label { color: var(--temple-gold); }
+  .prakriti-desc {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--antique-cream);
+    opacity: 0.9;
+  }
+  .prakriti-items {
+    font-family: var(--font-deva);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    opacity: 0.8;
+    margin-top: 0.5rem;
+  }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* RELEVANCE */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.35rem;
+    display: block;
+  }
+  .example-name {
+    font-family: var(--font-deva);
+    font-size: 1.5rem;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1.1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.3);
+    margin: 1rem 0;
+  }
+
+  /* DHAGA-MANI VISUAL */
+  .dhaga-visual {
+    margin: 1.25rem 0;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(200,146,42,0.05);
+    border-radius: 4px;
+    border: 1px dashed rgba(200,146,42,0.25);
+  }
+  .dhaga-visual .label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--patina-teal);
+    margin-top: 0.5rem;
+  }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* SANKALPANA */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1rem;
+  }
+  .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* ANALYTICAL */
+  .analytical-block {
+    border: 1px dashed rgba(200,146,42,0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  /* FOOTER */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block,
+    .prakriti-card, .dhaga-visual {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
 </head>
 <body>
-  <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=2">पुढे जा →</a>
+  <!-- Site Nav -->
+  <header style="background:#1A1208; border-bottom:1px solid #C8922A; padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100;">
+    <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:1.05rem; color:#C8922A; text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:1.2rem;">🕉️</span> गीता-ज्ञानेश्वरी
+    </a>
+    <nav style="display:flex; gap:1.25rem; align-items:center;">
+      <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:0.9rem; color:#F0E6C8; text-decoration:none; opacity:0.8;">होम</a>
+      <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?adhyay=7" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:0.9rem; color:#E8651A; text-decoration:none;">अध्याय ७</a>
+    </nav>
+  </header>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · संकल्पना २ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">अपरा आणि परा प्रकृती</div>
+  <div class="concept-subtitle">धाग्यात मणी — विश्वाचे मूळ स्वरूप</div>
+</header>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.4-5 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/>
+      <circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.४–५</span>
+  <div class="shloka-deva">
+    भूमिरापोऽनलो वायुः खं मनो बुद्धिरेव च ।<br>
+    अहङ्कार इतीयं मे भिन्ना प्रकृतिरष्टधा ॥<br><br>
+    अपरेयमितस्त्वन्यां प्रकृतिं विद्धि मे पराम् ।<br>
+    जीवभूतां महाबाहो ययेदं धार्यते जगत् ॥
+  </div>
+  <div class="shloka-meaning">
+    "पृथ्वी, जल, अग्नी, वायू, आकाश, मन, बुद्धी, अहंकार — ही माझी आठ प्रकारची अपरा प्रकृती.<br>
+    आणि याहून वेगळी — परा — प्रकृती जाण — जीवभूत —<br>ज्याने हे संपूर्ण जग धारण केले आहे."
+  </div>
+</div>
+
+<!-- SHLOKA 7.7 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ७.७</span>
+  <div class="shloka-deva">
+    मत्तः परतरं नान्यत्किञ्चिदस्ति धनञ्जय ।<br>
+    मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे धनंजया, माझ्यापेक्षा श्रेष्ठ असे दुसरे काही नाही.<br>
+    माझ्यात हे सर्व गुंफलेले आहे —<br>
+    <strong class="gold-text">जसे धाग्यात मणी.</strong>"
+  </div>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs>
+    <pattern id="diamond-divider" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="12" fill="url(#diamond-divider)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    श्रीकृष्ण विश्वाचे मूळ स्वरूप दोन भागांत सांगतो —
+  </p>
+
+  <div class="prakriti-grid">
+    <div class="prakriti-card apara">
+      <div class="prakriti-label">अपरा प्रकृती</div>
+      <div class="prakriti-desc">खालची, जड, दृश्य</div>
+      <div class="prakriti-items">
+        पृथ्वी · जल · अग्नी · वायू<br>
+        आकाश · मन · बुद्धी · अहंकार<br>
+        <em style="font-size:0.9rem; opacity:0.75;">— आठ घटक</em>
+      </div>
+    </div>
+    <div class="prakriti-card para">
+      <div class="prakriti-label">परा प्रकृती</div>
+      <div class="prakriti-desc">वरची, चेतन, अदृश्य</div>
+      <div class="prakriti-items">
+        जीवात्मा —<br>
+        ज्याने हे सगळे<br>
+        जग धारण केले आहे
+      </div>
+    </div>
+  </div>
+
+  <p>
+    <span class="key-term">अपरा</span> = शरीर, मन, बुद्धी, अहंकार. हे "माझे" नाही — हे साधन आहे.<br>
+    <span class="key-term">परा</span> = आत्मा. हाच खरा "मी" आहे.
+  </p>
+  <p>
+    "सूत्रे मणिगणा इव" — धाग्यात मण्यांसारखे. एक धागा — त्यात अनेक वेगवेगळे मणी. धागा दिसत नाही — मणीच दिसतात. पण <strong class="gold-text">धागा नाही तर मणी विखुरतात.</strong> तसेच — ईश्वर दिसत नाही — फक्त जग दिसते. पण ईश्वर नाही तर जग टिकत नाही.
+  </p>
+</div>
+
+<!-- DHAGA MANI VISUAL -->
+<div class="dhaga-visual">
+  <svg xmlns="http://www.w3.org/2000/svg" width="380" height="60" viewBox="0 0 380 60" aria-label="धाग्यात मणी — उपमा">
+    <!-- Thread line -->
+    <line x1="10" y1="30" x2="370" y2="30" stroke="#C8922A" stroke-width="2" opacity="0.6"/>
+    <!-- Beads -->
+    <circle cx="40"  cy="30" r="14" fill="#1E3A5F" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="95"  cy="30" r="14" fill="#4A7C6F" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="150" cy="30" r="14" fill="#8B1A1A" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="205" cy="30" r="14" fill="#3A2A10" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="260" cy="30" r="14" fill="#1E3A5F" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="315" cy="30" r="14" fill="#4A7C6F" stroke="#C8922A" stroke-width="1.5"/>
+    <circle cx="355" cy="30" r="10" fill="#C8922A" stroke="#C8922A" stroke-width="1"/>
+    <!-- Bead labels -->
+    <text x="40"  y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">पृथ्वी</text>
+    <text x="95"  y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">जल</text>
+    <text x="150" y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">अग्नी</text>
+    <text x="205" y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">मन</text>
+    <text x="260" y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">बुद्धी</text>
+    <text x="315" y="35" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="9" fill="#F0E6C8">आत्मा</text>
+    <text x="355" y="34" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="8" fill="#1A1208">ईश्वर</text>
+  </svg>
+  <div class="label">मणी = अपरा प्रकृती &nbsp;·&nbsp; सोनेरी धागा = परा प्रकृती (ईश्वर)</div>
+</div>
+
+<div class="pull-quote">
+  <strong class="gold-text">धाग्याला शोधा — मणी आपोआप जुळतात.</strong><br>
+  आत्म्याला ओळखा — जग समजते.
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- MODERN RELEVANCE — DHIRUBHAI -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">उद्योजक · गुजरात</span>
+  <div class="example-name">धीरूभाई अंबानी</div>
+  <div class="example-dates">१९३२ – २००२ · चोरवाड, गुजरात</div>
+
+  <p>
+    धीरूभाई यांनी जे उभे केले ते पाहिले — कारखाने, पैसे, माणसे, यंत्रे — हे सर्व <span class="key-term">अपरा प्रकृती</span> आहे. दृश्य, जड, मोजता येण्यासारखे. पण हे सगळे उभे राहिले कारण एक <span class="key-term">परा प्रकृती</span> होती — एक अदृश्य धागा होता — भारताला स्वतःचे कापड उद्योग असावेत, हे स्वप्न.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    चोरवाडहून येमेनला गेलेला एक तरुण — तिथे पेट्रोल पंपावर काम केले. पैसे जमवले. मुंबईत आला — रस्त्यावर कापड विकले. तो <strong class="gold-text">धागा</strong> — "भारतात जगातली सर्वोत्तम कापड गिरणी उभारायची" — हा विचार — कधी सुटला नाही.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    मणी बदलत राहिले — कामगार बदलले, कारखाने वाढले, व्यवसाय बदलला — पण <span class="key-term">परा</span> धागा तोच राहिला. आणि म्हणूनच — एका सामान्य माणसाने असामान्य साम्राज्य उभे केले.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    धीरूभाई म्हणायचे — <strong class="gold-text">"मनुष्याने स्वप्न पाहायला शिकले पाहिजे — आणि त्या स्वप्नाशी प्रामाणिक राहायला."</strong> हेच <span class="key-term">परा प्रकृती</span>चे वर्णन आहे — जे दिसत नाही, पण जे सर्वकाही धारण करते.
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs>
+    <pattern id="diamond-divider2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="12" fill="url(#diamond-divider2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    पृथ्वी जल अग्नी वायू ।<br>
+    आकाश मन बुद्धी अहंकारू ।<br>
+    हे आठ अपरा जाणू ।<br>
+    माझी प्रकृती ।।<br><br>
+    धाग्यात मणी जैसे ।<br>
+    मी सर्वांत असे ।<br>
+    परम तत्त्व एकच ।<br>
+    सर्वांचा आधार ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "धाग्यात मणी जैसे" — ही उपमा देतात. सृष्टी, विज्ञान, ज्ञान — हे सगळे मणी. ईश्वर — धागा. धागा दिसत नाही, पण त्याशिवाय माळ नाही. धीरूभाई यांचे स्वप्न — तो धागा — आयुष्यभर दिसला नाही कुणाला — पण त्याच्यामुळे सगळे जुळले.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "माझ्या आयुष्यातील 'धागा' कोण आहे? जो सगळ्याला एकत्र धरतो?"<br><br>
+    शरीर-मन-बुद्धी हे मणी आहेत. आत्मा धागा आहे. तो ओळखला आहे का?
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एकदा विचारा —<br>
+    <strong class="gold-text">"माझ्यातील 'परा' — आत्मा — तो आज कुठे आहे?"</strong><br><br>
+    धाग्याला शोधा — मणी आपोआप जुळतात.
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    सांख्य दर्शनात <span class="key-term">पुरुष</span> आणि <span class="key-term">प्रकृती</span> यांची जोडी सांगितली आहे — पुरुष (चेतन) आणि प्रकृती (जड). गीतेत श्रीकृष्ण हेच अपरा-परा च्या भाषेत सांगतो, पण एक महत्त्वाचा फरक करतो — दोन्ही माझ्यातूनच निर्माण होतात.
+  </p>
+  <p>
+    धीरूभाई यांच्या जीवनात हे स्पष्ट दिसते — <span class="key-term">अपरा</span> बदलत राहते. पैसे येतात-जातात, माणसे बदलतात, कारखाने वाढतात. पण <span class="key-term">परा</span> — स्वप्न, उद्दिष्ट, जगण्याचे कारण — ते स्थिर राहते. ज्या माणसाला आपला "धागा" सापडतो, त्याला जग उभे करता येते.
+  </p>
+  <p>
+    आपल्या प्रत्येकाच्या आयुष्यात हा प्रश्न आहे — आपण <span class="key-term">अपरा</span>शी घट्ट धरलो आहोत की <span class="key-term">परा</span> शोधतो आहोत?
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना २/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
 </body>
 </html>

@@ -1,20 +1,473 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="mr" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vivek-sovani.github.io/BhagvadgitaMarathi/c/7/4/">
-  <meta property="og:title" content="🌀 माया — त्रिगुणांचा दुर्भेद्य पडदा | अध्याय ७ · ज्ञानविज्ञानयोग">
-  <meta property="og:description" content="गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन">
-  <meta property="og:image" content="https://vivek-sovani.github.io/BhagvadgitaMarathi/assets/og/adhyay-7/concept-4.jpg">
-  <meta property="og:image:width" content="540">
-  <meta property="og:image:height" content="960">
-  <meta name="twitter:card" content="summary">
-  <meta http-equiv="refresh" content="0;url=https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=4">
-  <title>🌀 माया — त्रिगुणांचा दुर्भेद्य पडदा | गीता-ज्ञानेश्वरी</title>
-  <script>window.location.replace('https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=4');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>माया — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.02) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.25rem; }
+
+  /* SHLOKA */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .shloka-block .mandala-bg { position: absolute; opacity: 0.04; right: -30px; top: -30px; pointer-events: none; }
+  .shloka-number {
+    position: absolute; top: -0.75rem; right: 1rem;
+    background: var(--saffron); color: white;
+    font-family: var(--font-deva); font-size: 0.75rem;
+    padding: 0.2rem 0.65rem; border-radius: 20px;
+  }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  /* SECTION HEADING */
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  /* EXPLANATION */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* TRIGUNA GRID */
+  .triguna-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin: 1.25rem 0; }
+  .guna-card { border-radius: 4px; padding: 1rem 0.85rem; text-align: center; border: 1px solid; }
+  .guna-card.sattva { background: rgba(74,124,111,0.1); border-color: rgba(74,124,111,0.45); }
+  .guna-card.rajas  { background: rgba(232,101,26,0.08); border-color: rgba(232,101,26,0.4); }
+  .guna-card.tamas  { background: rgba(139,26,26,0.1); border-color: rgba(139,26,26,0.4); }
+  .guna-name { font-family: var(--font-deva); font-size: 1.15rem; font-weight: 600; display: block; margin-bottom: 0.35rem; }
+  .guna-card.sattva .guna-name { color: var(--patina-teal); }
+  .guna-card.rajas  .guna-name { color: var(--saffron); }
+  .guna-card.tamas  .guna-name { color: #c05050; }
+  .guna-moh { font-family: var(--font-deva); font-size: 0.9rem; line-height: 1.7; color: var(--antique-cream); opacity: 0.85; }
+
+  /* PULL QUOTE */
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* RELEVANCE */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    overflow: hidden;
+  }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.5rem; color: var(--antique-cream); font-weight: 600; line-height: 1.4; margin-bottom: 0.1rem; }
+  .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1.1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  /* MAYA STAGES TIMELINE */
+  .maya-timeline { margin: 1.1rem 0; }
+  .maya-stage {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid rgba(200,146,42,0.12);
+  }
+  .maya-stage:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .stage-num {
+    background: rgba(200,146,42,0.15);
+    border: 1px solid rgba(200,146,42,0.4);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+  }
+  .stage-content { flex: 1; }
+  .stage-label { font-family: var(--font-deva); font-size: 0.9rem; color: var(--patina-teal); margin-bottom: 0.2rem; display: block; }
+  .stage-text { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.85; color: var(--antique-cream); }
+  .stage-text strong { color: var(--temple-gold); }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute; top: -0.75rem; left: 1.25rem;
+    background: var(--deep-vellum); color: var(--temple-gold);
+    font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem;
+  }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* SANKALPANA */
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* ANALYTICAL */
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  /* FOOTER */
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block, .guna-card, .maya-stage
+      { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
 </head>
 <body>
-  <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?id=7&concept=4">पुढे जा →</a>
+  <!-- Site Nav -->
+  <header style="background:#1A1208; border-bottom:1px solid #C8922A; padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100;">
+    <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:1.05rem; color:#C8922A; text-decoration:none; display:flex; align-items:center; gap:0.5rem;">
+      <span style="font-size:1.2rem;">🕉️</span> गीता-ज्ञानेश्वरी
+    </a>
+    <nav style="display:flex; gap:1.25rem; align-items:center;">
+      <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:0.9rem; color:#F0E6C8; text-decoration:none; opacity:0.8;">होम</a>
+      <a href="https://vivek-sovani.github.io/BhagvadgitaMarathi/adhyay.html?adhyay=7" style="font-family:'Tiro Devanagari','Noto Serif Devanagari',serif; font-size:0.9rem; color:#E8651A; text-decoration:none;">अध्याय ७</a>
+    </nav>
+  </header>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · संकल्पना ४ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">माया — त्रिगुणांचा दुर्भेद्य पडदा</div>
+  <div class="concept-subtitle">दैवी ह्येषा गुणमयी मम माया — शरण हाच मार्ग</div>
+</header>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.13-14 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/>
+      <circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.१३–१४</span>
+  <div class="shloka-deva">
+    त्रिभिर्गुणमयैर्भावैरेभिः सर्वमिदं जगत् ।<br>
+    मोहितं नाभिजानाति मामेभ्यः परमव्ययम् ॥<br><br>
+    दैवी ह्येषा गुणमयी मम माया दुरत्यया ।<br>
+    मामेव ये प्रपद्यन्ते मायामेतां तरन्ति ते ॥
+  </div>
+  <div class="shloka-meaning">
+    "त्रिगुणमय भावांनी हे सारे जग मोहित झाले आहे —<br>
+    त्यांच्यापेक्षा परम, अव्यय अशा मला जाणत नाही.<br>
+    ही दैवी गुणमयी माझी माया दुस्तर आहे —<br>
+    <strong class="gold-text">जे फक्त मलाच शरण येतात, ते हिला तरतात."</strong>
+  </div>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs>
+    <pattern id="dd1" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="12" fill="url(#dd1)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    ईश्वर सर्वत्र आहे — मग माणूस त्याला का पाहत नाही? श्रीकृष्ण उत्तर देतो — <span class="key-term">माया</span>. पण माया म्हणजे खोटे नाही — ते <strong class="gold-text">अपूर्ण दृष्टी</strong> आहे. त्रिगुण वेगवेगळ्या प्रकारे मोहित करतात —
+  </p>
+
+  <div class="triguna-grid">
+    <div class="guna-card sattva">
+      <span class="guna-name">सत्त्व</span>
+      <span class="guna-moh">"मी चांगला आहे" — हा अहंकार माया आहे</span>
+    </div>
+    <div class="guna-card rajas">
+      <span class="guna-name">रज</span>
+      <span class="guna-moh">"मला हे मिळवायचे आहे" — ही इच्छा माया आहे</span>
+    </div>
+    <div class="guna-card tamas">
+      <span class="guna-name">तम</span>
+      <span class="guna-moh">"मला कशातच रस नाही" — हा निरुत्साह माया आहे</span>
+    </div>
+  </div>
+
+  <p>
+    तिन्ही वेगळ्या प्रकारे मोहित करतात — पण तिन्ही माया आहेत. मायेतून बाहेर पडण्याचा एकच मार्ग — <strong class="gold-text">शरण येणे.</strong>
+  </p>
+  <p>
+    शरण येणे म्हणजे दुर्बलता नाही — ते सामर्थ्य आहे. <strong class="gold-text">"माझ्या बुद्धीने मी सगळे सोडवू शकत नाही"</strong> हे मान्य करणे — हीच खरी बुद्धिमत्ता.
+  </p>
+</div>
+
+<div class="pull-quote">
+  <strong class="gold-text">माया दुर्भेद्य आहे — पण अभेद्य नाही.</strong><br>
+  शरण हाच एक मार्ग आहे.
+</div>
+
+<!-- LOTUS DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- MODERN RELEVANCE — STEVE JOBS -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">उद्योजक · संगणक क्षेत्र</span>
+  <div class="example-name">स्टीव्ह जॉब्स</div>
+  <div class="example-dates">१९५५ – २०११ · कॅलिफोर्निया, अमेरिका</div>
+
+  <p>
+    स्टीव्ह जॉब्स यांच्या जीवनात <span class="key-term">माया</span>चे तीनही गुण एकामागून एक आले — आणि प्रत्येक वेळी माया उतरली तेव्हाच खरे कार्य झाले.
+  </p>
+
+  <hr class="inner-divider">
+
+  <div class="maya-timeline">
+    <div class="maya-stage">
+      <div class="stage-num">१</div>
+      <div class="stage-content">
+        <span class="stage-label">रज माया — "मीच सगळ्यात श्रेष्ठ"</span>
+        <div class="stage-text">
+          ॲपलच्या सुरुवातीच्या काळात जॉब्स यांना वाटत असे — <strong>"माझ्याशिवाय हे कुणालाच जमणार नाही."</strong> त्यांचा अहंकार, हट्टीपणा, सहकाऱ्यांवर रागावणे — हे रजोगुणाच्या मायेचे रूप होते. १९८५ मध्ये स्वतःच्याच कंपनीने त्यांना बाहेर काढले.
+        </div>
+      </div>
+    </div>
+    <div class="maya-stage">
+      <div class="stage-num">२</div>
+      <div class="stage-content">
+        <span class="stage-label">माया उतरणे — बाहेर काढल्यावर</span>
+        <div class="stage-text">
+          ॲपलमधून बाहेर पडल्यावर जॉब्स म्हणाले — <strong class="gold-text">"हे माझ्या आयुष्यातले सर्वात चांगले झाले. यशाचे ओझे नाहीसे झाले आणि पुन्हा नवशिक्यासारखे सुरू करता आले."</strong> ही माया उतरण्याची पायरी होती.
+        </div>
+      </div>
+    </div>
+    <div class="maya-stage">
+      <div class="stage-num">३</div>
+      <div class="stage-content">
+        <span class="stage-label">परत आल्यावर — शरण आणि स्पष्टता</span>
+        <div class="stage-text">
+          पिक्सार, नेक्स्ट केल्यावर जॉब्स परत ॲपलमध्ये आले — पण बदललेले. आता ते म्हणायचे — <strong>"आपण काय करू शकत नाही हे सांगणे तितकेच महत्त्वाचे आहे जितके काय करू शकतो हे."</strong> मर्यादा मान्य करणे — हे शरणेचे रूप होते.
+        </div>
+      </div>
+    </div>
+    <div class="maya-stage">
+      <div class="stage-num">४</div>
+      <div class="stage-content">
+        <span class="stage-label">अंतिम माया सुटणे — आजारपणात</span>
+        <div class="stage-text">
+          आजारपणात जॉब्स यांनी सांगितले — <strong class="gold-text">"मृत्यू हे जगण्याचे सर्वोत्तम साधन आहे — तो सगळी माया साफ करतो."</strong> स्टेनफोर्डच्या भाषणात त्यांनी सांगितले — "तुमचा वेळ मर्यादित आहे, तो दुसऱ्यांच्या जगण्यात घालवू नका." हे त्रिगुणांच्या पलीकडे जाण्याचे बोलणे होते.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="inner-divider">
+
+  <p>
+    जॉब्स यांचे संपूर्ण जीवन गीतेच्या या श्लोकाचे चित्रण आहे — <span class="key-term">रज</span>ाने मोहित, बाहेर काढले गेल्यावर <span class="key-term">माया</span> उतरली, शरणतेने परत आले, आणि <strong class="gold-text">मृत्यूने अंतिम माया साफ केली.</strong>
+  </p>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs>
+    <pattern id="dd2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="12" fill="url(#dd2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    त्रिगुणांनी मोहित जग ।<br>
+    मज न पाहे कुणी ।<br>
+    माया माझी दुर्भेद्य ।<br>
+    दुस्तर ती ।।<br><br>
+    परी जो मज शरण येई ।<br>
+    माया त्याला न बाधे ।<br>
+    हे एकच मार्ग असे ।<br>
+    मायेतून मुक्त होण्याचा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे एकच मार्ग" — शरण येणे. जॉब्स यांना हे कंपनीने बाहेर काढल्यावर कळले. माया उतरण्यासाठी कधी कधी जीवन स्वतःच धक्का देते. तो धक्का ओळखता आला तर — तो ईश्वराचे निमंत्रण आहे.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "माझ्या आयुष्यात कुठला गुण जास्त मोहित करतो?<br>
+    सत्त्व — 'मी चांगला आहे'?<br>
+    रज — 'मला हे मिळवायचे आहे'?<br>
+    तम — 'मला कशातच रस नाही'?"<br><br>
+    तो ओळखणे — मायेतून बाहेर पडण्याची पहिली पायरी.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एखाद्या गोष्टीत जास्त गुंतायला लागाल — थांबा.<br><br>
+    <strong class="gold-text">"ही माया आहे का? यापलीकडे काय आहे?"</strong><br><br>
+    हा एकच प्रश्न — पडदा हलवण्यास पुरेसा आहे.
+  </p>
+</div>
+
+<!-- LOTUS DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अद्वैत वेदान्तात <span class="key-term">माया</span> ही केवळ भ्रम नाही — ती <span class="key-term">अनिर्वचनीय</span> आहे. सत्य नाही, असत्यही नाही — पण आवरण घालते. गीतेत कृष्ण म्हणतो — ही माया "दैवी" आहे, म्हणजे ईश्वरीच आहे. ती दुश्मन नाही — शिक्षक आहे.
+  </p>
+  <p>
+    जॉब्स यांच्या जीवनात ही माया शिक्षक म्हणून आली — कंपनीतून हाकलणे, आजारपण, मृत्यूची जाणीव. प्रत्येक वेळी माया उतरली तेव्हा ते अधिक स्पष्ट झाले. <span class="key-term">आयफोन, आयपॉड, पिक्सार</span> — हे सगळे माया उतरल्यानंतरचे कार्य आहे.
+  </p>
+  <p>
+    "मामेव ये प्रपद्यन्ते" — जे माझ्याकडे शरण येतात ते तरतात. शरण म्हणजे स्वतःची बुद्धी संपूर्णपणे सोडणे नाही — स्वतःच्या मर्यादा मान्य करणे आणि त्यापलीकडे पाहणे. <strong class="gold-text">हे जॉब्स यांनी केले — आणि जग बदलले.</strong>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना ४/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
 </body>
 </html>
