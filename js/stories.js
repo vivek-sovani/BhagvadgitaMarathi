@@ -1540,6 +1540,20 @@ const GITA_STORIES = {
   },  // end adhyay 6
 
 
+  // ── Adhyay 7 ─────────────────────────────────────────────────────────────
+  "7": {
+    "1": { kathaHtmlUrl: "c/7/1/index.html" },
+    "2": { kathaHtmlUrl: "c/7/2/index.html" },
+    "3": { kathaHtmlUrl: "c/7/3/index.html" },
+    "4": { kathaHtmlUrl: "c/7/4/index.html" },
+    "5": { kathaHtmlUrl: "c/7/5/index.html" },
+    "6": { kathaHtmlUrl: "c/7/6/index.html" },
+    "7": { kathaHtmlUrl: "c/7/7/index.html" },
+    "8": { kathaHtmlUrl: "c/7/8/index.html" },
+    "9": { kathaHtmlUrl: "c/7/9/index.html" }
+  },  // end adhyay 7
+
+
   // ── Adhyay 10 ─────────────────────────────────────────────────────────────
   "10": {
     // ── Concept 1 ──────────────────────────────────────────────────
