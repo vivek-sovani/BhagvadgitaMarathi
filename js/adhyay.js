@@ -1258,7 +1258,7 @@
         }
         return {
           title: concept.name + ' | अध्याय ' + toDevNum(adhyayId) + ' · ' + adhyay.name,
-          url: origin + baseDir + '/c/' + adhyayId + '/' + cid + '/'
+          url: origin + baseDir + '/adhyay.html?id=' + adhyayId + '&concept=' + cid
         };
       });
     }
