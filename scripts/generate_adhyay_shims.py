@@ -2,9 +2,10 @@
 """
 Generate /c/{adhyayId}/index.html shim pages for all 18 adhyays.
 
-These give the adhyay-level share button a proper OG preview card on
-WhatsApp/Telegram. Uses assets/adhyay-X/summary.jpg when available,
-falls back to home-banner-landscape.jpg for chapters 12-18.
+Uses home-banner-landscape.jpg (1376x768, landscape) as the OG image
+for all chapters — WhatsApp requires landscape images for preview cards.
+Portrait images (summary.jpg, concept images) are silently ignored by
+WhatsApp's link preview crawler.
 
 Run from the project root:
     python3 scripts/generate_adhyay_shims.py
@@ -13,9 +14,10 @@ Run from the project root:
 import os
 
 BASE_URL      = "https://vivek-sovani.github.io/BhagvadgitaMarathi"
-FALLBACK_IMG  = f"{BASE_URL}/assets/home-banner-landscape.jpg"
-FALLBACK_W    = 1200
-FALLBACK_H    = 630
+# Use landscape banner for all — WhatsApp only shows landscape OG images
+OG_IMAGE      = f"{BASE_URL}/assets/home-banner-landscape.jpg"
+OG_IMAGE_W    = 1376
+OG_IMAGE_H    = 768
 
 ADHYAYS = [
     {"id":  1, "number": "१",  "name": "अर्जुनविषादयोग",             "emoji": "😔"},
@@ -83,24 +85,17 @@ def main():
         og_title    = f"{a['emoji']} अध्याय {a['number']} · {a['name']} | गीता-ज्ञानेश्वरी"
         page_title  = f"अध्याय {a['number']} · {a['name']}"
 
-        if has_summary(aid):
-            og_image     = f"{BASE_URL}/assets/adhyay-{aid}/summary.jpg"
-            og_w, og_h   = "1080", "1080"
-            twitter_card = "summary_large_image"
-        else:
-            og_image     = FALLBACK_IMG
-            og_w, og_h   = str(FALLBACK_W), str(FALLBACK_H)
-            twitter_card = "summary_large_image"
-
+        # Always use landscape banner — WhatsApp only previews landscape OG images
         html = SHIM.format(
-            og_url=og_url, og_title=og_title, og_image=og_image,
-            og_w=og_w, og_h=og_h, twitter_card=twitter_card,
+            og_url=og_url, og_title=og_title,
+            og_image=OG_IMAGE, og_w=str(OG_IMAGE_W), og_h=str(OG_IMAGE_H),
+            twitter_card="summary_large_image",
             redirect=redirect, page_title=page_title,
         )
 
         with open(out_f, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"  Created: c/{aid}/index.html  (image: {'summary.jpg' if has_summary(aid) else 'fallback'})")
+        print(f"  Created: c/{aid}/index.html")
         created += 1
 
     print(f"\nDone — {created} adhyay shim pages created.")
