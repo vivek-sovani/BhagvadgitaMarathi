@@ -693,17 +693,10 @@
     var btn = document.getElementById('home-share-btn');
     if (!btn || !window.initShareButton) return;
     var HOME_URL = 'https://vivek-sovani.github.io/BhagvadgitaMarathi/';
-    var isAndroid = /android/i.test(navigator.userAgent);
-    var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-    var installLine = isAndroid
-      ? '📲 App म्हणून इन्स्टॉल करा: Chrome मेनू (⋮) → "होम स्क्रीनवर जोडा"'
-      : isIOS
-      ? '📲 App म्हणून इन्स्टॉल करा: Safari शेअर (□↑) → "Add to Home Screen"'
-      : '📲 App म्हणून इन्स्टॉल करा: Chrome/Safari → होम स्क्रीनवर जोडा';
     window.initShareButton(btn, function () {
       return {
         title: '🌺 गीता-ज्ञानेश्वरी — आधुनिक जीवनदर्शन',
-        text: 'श्रीकृष्णाचा उपदेश, आजच्या जीवनासाठी — मराठीत.\n' + installLine,
+        text: 'श्रीकृष्णाचा उपदेश, आजच्या जीवनासाठी — मराठीत.\n\n📲 App म्हणून इन्स्टॉल करा:\n• Android: Chrome मेनू (⋮) → "होम स्क्रीनवर जोडा"\n• iPhone: Safari शेअर (□↑) → "Add to Home Screen"',
         url: HOME_URL
       };
     });
