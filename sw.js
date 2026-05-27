@@ -1,4 +1,4 @@
-const CACHE = 'gita-v17';
+const CACHE = 'gita-v18';
 
 const PRECACHE = [
   './',
@@ -13,6 +13,8 @@ const PRECACHE = [
   './js/triggers.js',
   './js/pdf-carousel.js',
   './js/pdf.worker.min.js',
+  './js/share.js',
+  './js/pwa-update.js',
   './assets/home-banner-landscape.jpg',
   './assets/home-banner-potrait.jpg',
   './assets/icons/icon-192.png',
@@ -28,10 +30,11 @@ self.addEventListener('install', e => {
 
 self.addEventListener('activate', e => {
   e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
+    caches.keys()
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
+  // controllerchange fires on all tabs — pwa-update.js listens and shows the banner
 });
 
 self.addEventListener('fetch', e => {
@@ -41,9 +44,19 @@ self.addEventListener('fetch', e => {
   // Only handle same-origin requests
   if (url.origin !== location.origin) return;
 
-  // Let the browser handle HTML page navigation directly — avoids ERR_FAILED
-  // caused by server .html → clean-URL redirects conflicting with SW interception
-  if (request.mode === 'navigate') return;
+  // HTML navigation: network-first so pages are always fresh; fall back to cache offline
+  if (request.mode === 'navigate') {
+    e.respondWith(
+      fetch(request)
+        .then(res => {
+          const clone = res.clone();
+          caches.open(CACHE).then(c => c.put(request, clone));
+          return res;
+        })
+        .catch(() => caches.match(request))
+    );
+    return;
+  }
 
   // PDFs: network-first, fall back to cache
   if (url.pathname.endsWith('.pdf')) {
@@ -59,17 +72,18 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Everything else: cache-first
+  // JS / CSS / images / fonts: stale-while-revalidate
+  // → serve cached version instantly for fast load
+  // → fetch fresh copy in background and update the cache for next visit
   e.respondWith(
-    caches.match(request).then(cached => {
-      if (cached) return cached;
-      return fetch(request).then(res => {
-        if (res.ok) {
-          const clone = res.clone();
-          caches.open(CACHE).then(c => c.put(request, clone));
-        }
-        return res;
-      });
-    })
+    caches.open(CACHE).then(cache =>
+      cache.match(request).then(cached => {
+        const networkFetch = fetch(request).then(res => {
+          if (res.ok) cache.put(request, res.clone());
+          return res;
+        }).catch(() => cached);   // offline: fall back to cached copy
+        return cached || networkFetch;
+      })
+    )
   );
 });

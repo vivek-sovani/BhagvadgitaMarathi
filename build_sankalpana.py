@@ -775,6 +775,7 @@ def generate_html(data, catalog):
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="../css/style.css" />
 <script src="../js/share.js" defer></script>
+<script src="../js/pwa-update.js" defer></script>
 <style>
 {STYLE_BLOCK}
 </style>
