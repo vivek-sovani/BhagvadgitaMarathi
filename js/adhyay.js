@@ -1244,8 +1244,8 @@
     const adhyayShareBtn = document.getElementById('adhyay-share-btn');
     if (adhyayShareBtn) {
       window.initShareButton(adhyayShareBtn, () => ({
-        title: 'अध्याय ' + toDevNum(adhyayId) + ' — ' + adhyay.name + ' · गीता-ज्ञानेश्वरी',
-        url: origin + baseDir + '/adhyay.html?id=' + adhyayId
+        title: 'अध्याय ' + toDevNum(adhyayId) + ' · ' + adhyay.name + ' | गीता-ज्ञानेश्वरी',
+        url: origin + baseDir + '/c/' + adhyayId + '/'
       }));
     }
 
