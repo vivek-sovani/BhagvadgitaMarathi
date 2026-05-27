@@ -2517,6 +2517,111 @@ body[data-fontsize="xlarge"] .pdf-slide-summary .story-rs-text       { font-size
 .btn-saffron { background: var(--saffron-deep); color: var(--surface); }
 .btn-saffron:hover { transform: translateY(-2px); background: var(--saffron); }
 
+/* ── SHARE BUTTON ── */
+.share-anchor-wrap { position: relative; display: inline-flex; }
+.share-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  color: var(--saffron-deep);
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+.share-btn svg { width: 18px; height: 18px; }
+.share-btn:hover {
+  transform: translateY(-1px);
+  background: color-mix(in oklab, var(--saffron) 12%, var(--surface));
+  border-color: color-mix(in oklab, var(--saffron) 50%, var(--rule));
+}
+.share-btn:focus-visible {
+  outline: 2px solid var(--saffron-deep);
+  outline-offset: 2px;
+}
+/* On dark bars (concept-title-bar uses --primary-dk background) */
+.concept-title-bar .share-btn {
+  background: rgba(0,0,0,0.18);
+  border-color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.9);
+}
+.concept-title-bar .share-btn:hover {
+  background: rgba(0,0,0,0.30);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.share-btn.share-btn-inline {
+  width: auto; height: auto;
+  padding: 10px 18px;
+  border-radius: 999px;
+  gap: 8px;
+  font-family: var(--sans-dev);
+  font-size: 15px; font-weight: 500;
+  color: var(--ink);
+}
+.share-btn.share-btn-inline svg { color: var(--saffron-deep); }
+.share-btn.share-btn-inline:hover { background: color-mix(in oklab, var(--saffron) 10%, var(--surface)); }
+
+.share-popover {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 200;
+  min-width: 200px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px -8px rgba(31,24,18,.22), 0 4px 12px -4px rgba(31,24,18,.12);
+  padding: 6px;
+  display: flex; flex-direction: column; gap: 2px;
+  animation: share-pop-in .14s ease-out;
+}
+@keyframes share-pop-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.share-popover-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  font-family: var(--sans-dev);
+  font-size: 14.5px;
+  color: var(--ink);
+  cursor: pointer;
+  text-decoration: none;
+  text-align: left;
+  width: 100%;
+  transition: background .15s ease;
+}
+.share-popover-item:hover { background: color-mix(in oklab, var(--saffron) 10%, var(--surface)); }
+.share-popover-item svg { flex-shrink: 0; color: var(--saffron-deep); }
+
+.share-toast {
+  position: fixed;
+  left: 50%; bottom: 32px;
+  transform: translate(-50%, 12px);
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--sans-dev);
+  font-size: 14.5px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  box-shadow: 0 12px 32px -8px rgba(31,24,18,.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease, transform .2s ease;
+  z-index: 300;
+}
+.share-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* ── TYPOGRAPHIC HELPERS ── */
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;

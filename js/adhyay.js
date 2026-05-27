@@ -1231,4 +1231,37 @@
     selectConcept(conceptId);
   }
 
+  // ── Wire Share buttons (summary state + concept-title-bar state) ──
+  if (window.initShareButton) {
+    const origin = window.location.origin;
+    // pathname like "/BhagvadgitaMarathi/adhyay.html" → "/BhagvadgitaMarathi"
+    const baseDir = window.location.pathname.replace(/\/adhyay\.html.*$/, '');
+
+    const adhyayShareBtn = document.getElementById('adhyay-share-btn');
+    if (adhyayShareBtn) {
+      window.initShareButton(adhyayShareBtn, () => ({
+        title: 'अध्याय ' + toDevNum(adhyayId) + ' — ' + adhyay.name + ' · गीता-ज्ञानेश्वरी',
+        url: origin + baseDir + '/adhyay.html?id=' + adhyayId
+      }));
+    }
+
+    const conceptShareBtn = document.getElementById('concept-share-btn');
+    if (conceptShareBtn) {
+      window.initShareButton(conceptShareBtn, () => {
+        const cid = currentConceptId;
+        const concept = cid && adhyay.concepts.find(c => c.id === cid);
+        if (!concept) {
+          return {
+            title: 'अध्याय ' + toDevNum(adhyayId) + ' — ' + adhyay.name,
+            url: origin + baseDir + '/adhyay.html?id=' + adhyayId
+          };
+        }
+        return {
+          title: concept.name + ' | अध्याय ' + toDevNum(adhyayId) + ' · ' + adhyay.name,
+          url: origin + baseDir + '/c/' + adhyayId + '/' + cid + '/'
+        };
+      });
+    }
+  }
+
 })();
