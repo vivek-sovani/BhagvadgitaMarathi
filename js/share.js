@@ -120,10 +120,10 @@
     if (!data || !data.url) return;
     const title = data.title || getTitleFromDocument();
     const url = data.url;
-    const text = buildText(title, url);
 
     if (navigator.share) {
-      navigator.share({ title, text, url }).catch(() => {});
+      // Pass title as text so the URL (carried by `url`) appears only once
+      navigator.share({ title, text: title, url }).catch(() => {});
       return;
     }
     openPopover(buttonEl, title, url);

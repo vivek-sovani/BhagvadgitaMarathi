@@ -1238,6 +1238,9 @@
     // (GitHub Pages serves adhyay.html for extensionless /adhyay links, keeping /adhyay in URL)
     const baseDir = window.location.pathname.replace(/\/adhyay(\.html)?$/, '');
 
+    // Adhyays that have /c/{id}/{concept}/ redirect pages with OG preview tags
+    const ADHYAYS_WITH_C_PAGES = new Set([1, 2, 3, 4, 5, 6, 7, 8, 11]);
+
     const adhyayShareBtn = document.getElementById('adhyay-share-btn');
     if (adhyayShareBtn) {
       window.initShareButton(adhyayShareBtn, () => ({
@@ -1257,9 +1260,14 @@
             url: origin + baseDir + '/adhyay.html?id=' + adhyayId
           };
         }
+        // Use /c/ redirect page (has OG image preview) when available,
+        // otherwise fall back to adhyay.html which always resolves
+        const conceptUrl = ADHYAYS_WITH_C_PAGES.has(adhyayId)
+          ? origin + baseDir + '/c/' + adhyayId + '/' + cid + '/'
+          : origin + baseDir + '/adhyay.html?id=' + adhyayId + '&concept=' + cid;
         return {
           title: concept.name + ' | अध्याय ' + toDevNum(adhyayId) + ' · ' + adhyay.name,
-          url: origin + baseDir + '/adhyay.html?id=' + adhyayId + '&concept=' + cid
+          url: conceptUrl
         };
       });
     }
