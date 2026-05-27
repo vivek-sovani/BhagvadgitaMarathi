@@ -1234,8 +1234,9 @@
   // ── Wire Share buttons (summary state + concept-title-bar state) ──
   if (window.initShareButton) {
     const origin = window.location.origin;
-    // pathname like "/BhagvadgitaMarathi/adhyay.html" → "/BhagvadgitaMarathi"
-    const baseDir = window.location.pathname.replace(/\/adhyay\.html.*$/, '');
+    // pathname may be "/BhagvadgitaMarathi/adhyay.html" or "/BhagvadgitaMarathi/adhyay"
+    // (GitHub Pages serves adhyay.html for extensionless /adhyay links, keeping /adhyay in URL)
+    const baseDir = window.location.pathname.replace(/\/adhyay(\.html)?$/, '');
 
     const adhyayShareBtn = document.getElementById('adhyay-share-btn');
     if (adhyayShareBtn) {
