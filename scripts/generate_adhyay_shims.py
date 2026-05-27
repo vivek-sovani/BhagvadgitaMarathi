@@ -2,22 +2,37 @@
 """
 Generate /c/{adhyayId}/index.html shim pages for all 18 adhyays.
 
-Uses home-banner-landscape.jpg (1376x768, landscape) as the OG image
-for all chapters — WhatsApp requires landscape images for preview cards.
-Portrait images (summary.jpg, concept images) are silently ignored by
-WhatsApp's link preview crawler.
+Uses each chapter's assets/adhyay-X/summary.jpg (portrait 1143x2048)
+as the OG image. Falls back to home-banner-landscape.jpg for chapters
+12-18 that don't have a summary image yet.
 
 Run from the project root:
     python3 scripts/generate_adhyay_shims.py
 """
 
-import os
+import os, struct
 
-BASE_URL      = "https://vivek-sovani.github.io/BhagvadgitaMarathi"
-# Use landscape banner for all — WhatsApp only shows landscape OG images
-OG_IMAGE      = f"{BASE_URL}/assets/home-banner-landscape.jpg"
-OG_IMAGE_W    = 1376
-OG_IMAGE_H    = 768
+BASE_URL     = "https://vivek-sovani.github.io/BhagvadgitaMarathi"
+FALLBACK_IMG = f"{BASE_URL}/assets/home-banner-landscape.jpg"
+FALLBACK_W   = 1376
+FALLBACK_H   = 768
+
+
+def jpg_dimensions(path):
+    """Return (width, height) of a JPEG by reading its SOF marker."""
+    try:
+        with open(path, 'rb') as f:
+            data = f.read()
+        i = 0
+        while i < len(data) - 9:
+            if data[i:i+2] in (b'\xff\xc0', b'\xff\xc2'):
+                h = struct.unpack('>H', data[i+5:i+7])[0]
+                w = struct.unpack('>H', data[i+7:i+9])[0]
+                return w, h
+            i += 1
+    except Exception:
+        pass
+    return None
 
 ADHYAYS = [
     {"id":  1, "number": "१",  "name": "अर्जुनविषादयोग",             "emoji": "😔"},
@@ -64,38 +79,43 @@ SHIM = """\
 """
 
 
-def has_summary(adhyay_id):
-    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return os.path.isfile(os.path.join(root, "assets", f"adhyay-{adhyay_id}", "summary.jpg"))
-
-
 def main():
     root    = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     created = 0
 
     for a in ADHYAYS:
-        aid     = a["id"]
-        out_dir = os.path.join(root, "c", str(aid))
-        out_f   = os.path.join(out_dir, "index.html")
-
+        aid        = a["id"]
+        out_dir    = os.path.join(root, "c", str(aid))
+        out_f      = os.path.join(out_dir, "index.html")
         os.makedirs(out_dir, exist_ok=True)
 
-        redirect    = f"{BASE_URL}/adhyay.html?id={aid}"
-        og_url      = f"{BASE_URL}/c/{aid}/"
-        og_title    = f"{a['emoji']} अध्याय {a['number']} · {a['name']} | गीता-ज्ञानेश्वरी"
-        page_title  = f"अध्याय {a['number']} · {a['name']}"
+        redirect   = f"{BASE_URL}/adhyay.html?id={aid}"
+        og_url     = f"{BASE_URL}/c/{aid}/"
+        og_title   = f"{a['emoji']} अध्याय {a['number']} · {a['name']} | गीता-ज्ञानेश्वरी"
+        page_title = f"अध्याय {a['number']} · {a['name']}"
 
-        # Always use landscape banner — WhatsApp only previews landscape OG images
+        # Use chapter's own summary.jpg with its real dimensions; fallback to banner
+        summary_path = os.path.join(root, "assets", f"adhyay-{aid}", "summary.jpg")
+        dims = jpg_dimensions(summary_path)
+        if dims:
+            og_image = f"{BASE_URL}/assets/adhyay-{aid}/summary.jpg"
+            og_w, og_h = str(dims[0]), str(dims[1])
+            label = f"summary.jpg ({dims[0]}x{dims[1]})"
+        else:
+            og_image = FALLBACK_IMG
+            og_w, og_h = str(FALLBACK_W), str(FALLBACK_H)
+            label = "fallback banner"
+
         html = SHIM.format(
             og_url=og_url, og_title=og_title,
-            og_image=OG_IMAGE, og_w=str(OG_IMAGE_W), og_h=str(OG_IMAGE_H),
-            twitter_card="summary_large_image",
+            og_image=og_image, og_w=og_w, og_h=og_h,
+            twitter_card="summary",
             redirect=redirect, page_title=page_title,
         )
 
         with open(out_f, "w", encoding="utf-8") as f:
             f.write(html)
-        print(f"  Created: c/{aid}/index.html")
+        print(f"  c/{aid}/index.html  ({label})")
         created += 1
 
     print(f"\nDone — {created} adhyay shim pages created.")
