@@ -1238,8 +1238,8 @@
     // (GitHub Pages serves adhyay.html for extensionless /adhyay links, keeping /adhyay in URL)
     const baseDir = window.location.pathname.replace(/\/adhyay(\.html)?$/, '');
 
-    // Adhyays that have /c/{id}/{concept}/ redirect pages with OG preview tags
-    const ADHYAYS_WITH_C_PAGES = new Set([1, 2, 3, 4, 5, 6, 7, 8, 11]);
+    // All 18 adhyays now have /c/{id}/{concept}/ shim pages with OG preview tags
+    const ADHYAYS_WITH_C_PAGES = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]);
 
     const adhyayShareBtn = document.getElementById('adhyay-share-btn');
     if (adhyayShareBtn) {
