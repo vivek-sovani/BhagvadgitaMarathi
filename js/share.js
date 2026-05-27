@@ -67,9 +67,9 @@
     if (e.key === 'Escape') closePopover();
   }
 
-  function openPopover(anchorBtn, title, url) {
+  function openPopover(anchorBtn, title, url, shareText) {
     closePopover();
-    const text = buildText(title, url);
+    const text = buildText(shareText || title, url);
     const pop = document.createElement('div');
     pop.className = 'share-popover';
     pop.setAttribute('role', 'menu');
@@ -118,15 +118,16 @@
   function handleShare(buttonEl, getShareData) {
     const data = getShareData();
     if (!data || !data.url) return;
-    const title = data.title || getTitleFromDocument();
-    const url = data.url;
+    const title    = data.title || getTitleFromDocument();
+    const url      = data.url;
+    const shareText = data.text || title;  // optional rich body (e.g. install instructions)
 
     if (navigator.share) {
-      // Pass title as text so the URL (carried by `url`) appears only once
-      navigator.share({ title, text: title, url }).catch(() => {});
+      // shareText as body so the URL (carried by `url`) appears only once
+      navigator.share({ title, text: shareText, url }).catch(() => {});
       return;
     }
-    openPopover(buttonEl, title, url);
+    openPopover(buttonEl, title, url, shareText);
   }
 
   window.initShareButton = function (buttonEl, getShareData) {
