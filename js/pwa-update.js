@@ -27,7 +27,7 @@
     msg.textContent = '🔄 नवीन आवृत्ती उपलब्ध आहे';
 
     var refreshBtn = document.createElement('button');
-    refreshBtn.textContent = 'ताज करा';
+    refreshBtn.textContent = 'अपडेट करा';
     refreshBtn.style.cssText = [
       'background:var(--saffron-deep,#9c4a10)', 'color:#fff',
       'border:none', 'border-radius:999px',
