@@ -36,6 +36,11 @@ SLUGS = [
     "divyabhava", "atmasakshi", "paramaprem", "chittaikagrata", "anugraha",
     # batch 6
     "sambhavami-yuge-yuge", "mumukshutvam", "atmanigraha", "paramartha", "kshema",
+    # batch 7
+    "santosha", "lokavat", "nirmama", "adveshta", "dnyanayagya",
+    "sattvasamshuddhi", "atmabodha", "dharana", "vairagya-abhyasa", "mauna",
+    "samarpana-bhava", "karuna", "pratyahara", "jivanmukti",
+    "ishvara-pranidhan", "brahma-bhava",
 ]
 
 ICONS = [
