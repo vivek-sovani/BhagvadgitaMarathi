@@ -1,14 +1,18 @@
-const CACHE = 'gita-v18';
+const CACHE = 'gita-v19';
 
 const PRECACHE = [
   './',
   './adhyay',
   './concept',
   './css/style.css',
+  './js/i18n.js',
+  './js/lang-toggle.js',
   './js/data.js',
+  './js/data-en.js',
   './js/home.js',
   './js/adhyay.js',
   './js/content.js',
+  './js/content-en.js',
   './js/stories.js',
   './js/triggers.js',
   './js/pdf-carousel.js',

@@ -1,5 +1,13 @@
 (function () {
   const toDevNum = n => String(n).replace(/[0-9]/g, d => '०१२३४५६७८९'[d]);
+  const lang = () => (typeof getCurrentLang === 'function') ? getCurrentLang() : 'mr';
+  const activeNum = n => lang() === 'en' ? String(n) : toDevNum(n);
+  const enAdhyayData = () => (lang() === 'en' && typeof GITA_DATA_EN !== 'undefined')
+    ? GITA_DATA_EN.adhyays.find(a => a.id === adhyayId) : null;
+  const enConceptName = (cid) => {
+    const ea = enAdhyayData();
+    return (ea && ea.concepts.find(c => c.id === cid)?.name) || null;
+  };
 
   // ── Parse URL params ─────────────────────────────────────────
   const params     = new URLSearchParams(window.location.search);
@@ -390,8 +398,15 @@
   if (ctbBackBtn) ctbBackBtn.addEventListener('click', goToCoverPage);
 
   // ── Render adhyay summary image ───────────────────────────────
-  summaryPHText.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
-  summaryImg.alt = `अध्याय ${adhyay.number} सारांश`;
+  function getAdhyayDisplayName() {
+    const ea = enAdhyayData();
+    return (ea && ea.name) ? ea.name : adhyay.name;
+  }
+  function getAdhyayDisplayNum() { return activeNum(adhyay.id); }
+  function getChapterLabel() { return (typeof t === 'function') ? t('chapter') : 'अध्याय'; }
+
+  summaryPHText.textContent = `${getChapterLabel()} ${getAdhyayDisplayNum()} — ${getAdhyayDisplayName()}`;
+  summaryImg.alt = `${getChapterLabel()} ${getAdhyayDisplayNum()} summary`;
   summaryImg.style.display = '';
   summaryPH.style.display = 'none';
   const summaryExts = ['jpg', 'jpeg', 'png'];
@@ -408,22 +423,41 @@
   };
 
   // ── Render summary text + concept list ───────────────────────
-  if (adhyay.summary && summaryTextEl) {
-    summaryLabelEl.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
-    summaryDescEl.textContent  = adhyay.summary;
+  function renderSummaryText() {
+    if (!adhyay.summary && !enAdhyayData()?.summary) return;
+    if (!summaryTextEl) return;
+    const ea = enAdhyayData();
+    const displayName = (ea && ea.name) ? ea.name : adhyay.name;
+    const displayNum  = activeNum(adhyay.id);
+    const chLabel = getChapterLabel();
+    const summary = (lang() === 'en' && ea && ea.summary) ? ea.summary : adhyay.summary;
+    const cLabel = (typeof t === 'function') ? t('conceptLabel') : 'संकल्पना';
+    summaryLabelEl.textContent = `${chLabel} ${displayNum} — ${displayName}`;
+    summaryDescEl.textContent  = summary || adhyay.summary;
     summaryConceptListEl.innerHTML = '';
     adhyay.concepts.forEach(concept => {
       const item = document.createElement('div');
       item.className = 'summary-concept-item';
+      const cName = (lang() === 'en') ? (enConceptName(concept.id) || concept.name) : concept.name;
       item.innerHTML = `
-        <span class="sci-num">${toDevNum(concept.id)}.</span>
+        <span class="sci-num">${activeNum(concept.id)}.</span>
         <span class="sci-emoji">${concept.emoji}</span>
-        <span class="sci-name">${concept.name}</span>
+        <span class="sci-name">${cName}</span>
       `;
       item.addEventListener('click', () => selectConcept(concept.id));
       summaryConceptListEl.appendChild(item);
     });
     summaryTextEl.style.display = '';
+  }
+  if (adhyay.summary) renderSummaryText();
+
+  function adhyayNavLabel(a) {
+    if (!a) return '';
+    if (lang() === 'en' && typeof GITA_DATA_EN !== 'undefined') {
+      const ea = GITA_DATA_EN.adhyays.find(x => x.id === a.id);
+      if (ea && ea.name) return `${getChapterLabel()} ${a.id} — ${ea.name}`;
+    }
+    return `${getChapterLabel()} ${activeNum(a.id)} — ${a.name}`;
   }
 
   // ── Show bottom nav (cover page: chapter navigation) ─────────
@@ -431,14 +465,18 @@
     bnavEl.style.display = '';
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
-    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? `अध्याय ${prevAdhyay.number} — ${prevAdhyay.name}` : '';
-    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
+    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? adhyayNavLabel(prevAdhyay) : '';
+    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? adhyayNavLabel(nextAdhyay) : '';
     if (prevBtn) prevBtn.disabled = !prevAdhyay;
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
   }
 
   // ── Adhyay-level PDF (default view) ──────────────────────────
-  pdfLabel.textContent = `🪷 अध्याय ${adhyay.number} चित्रात्मक विवरण`;
+  function pdfChapterLabel() {
+    const tmpl = (typeof t === 'function') ? t('chapterIllustrated') : '🪷 अध्याय {N} चित्रात्मक विवरण';
+    return tmpl.replace('{N}', activeNum(adhyay.id));
+  }
+  pdfLabel.textContent = pdfChapterLabel();
   pendingPdfUrl = assetPath('adhyay.pdf');
   // Only render now if no concept will be selected immediately
   // (avoids racing with the concept PDF render in selectConcept)
@@ -451,17 +489,40 @@
   function renderConceptText(adhyayIdStr, conceptIdStr) {
     const el = conceptTextContent;
     if (!el) return;
-    const adhyayContent = (typeof GITA_CONTENT !== 'undefined') && GITA_CONTENT[adhyayIdStr];
-    const raw = adhyayContent && adhyayContent[conceptIdStr];
-    if (!raw) { el.innerHTML = ''; return; }
 
+    // Pick English content if available, else fall back to Marathi
+    const enContent = (lang() === 'en' && typeof GITA_CONTENT_EN !== 'undefined')
+      && GITA_CONTENT_EN[adhyayIdStr];
+    const rawEn = enContent && enContent[conceptIdStr];
+    const adhyayContentMr = (typeof GITA_CONTENT !== 'undefined') && GITA_CONTENT[adhyayIdStr];
+    const rawMr = adhyayContentMr && adhyayContentMr[conceptIdStr];
+
+    if (lang() === 'en' && !rawEn) {
+      // Show fallback note + Marathi content
+      const fallbackMsg = (typeof t === 'function') ? t('comingSoon') : '';
+      const fallbackHtml = fallbackMsg
+        ? `<div class="en-fallback-note">${fallbackMsg}</div>` : '';
+      if (!rawMr) { el.innerHTML = fallbackHtml; return; }
+      el.innerHTML = fallbackHtml;
+      el.insertAdjacentHTML('beforeend', '<div id="_mr_fallback_content"></div>');
+      const sub = document.getElementById('_mr_fallback_content');
+      if (sub) _parseConceptRaw(rawMr, sub, 'mr');
+      return;
+    }
+
+    const raw = rawEn || rawMr;
+    if (!raw) { el.innerHTML = ''; return; }
+    _parseConceptRaw(raw, el, lang());
+  }
+
+  function _parseConceptRaw(raw, el, currentLang) {
     // Parse the raw text into structured HTML
     const lines = raw.split('\n');
     let html = '<div>';
     let i = 0;
 
-    // Skip header line (first line with 🕉️ भगवद्गीता | ...)
-    if (lines[0] && lines[0].includes('भगवद्गीता |')) i = 1;
+    // Skip header line (first line with 🕉️ भगवद्गीता | ... or Bhagavad Gita | ...)
+    if (lines[0] && (lines[0].includes('भगवद्गीता |') || lines[0].includes('Bhagavad Gita |'))) i = 1;
 
     let inShlok    = false;
     let inDnyan    = false;
@@ -476,7 +537,8 @@
         shlokLines = []; inShlok = false;
       }
       if (inDnyan && dnyanLines.length) {
-        html += `<div class="ct-dnyananeshwari"><span class="ct-dnyananeshwari-label">🟧 ज्ञानेश्वरी</span>${dnyanLines.join('<br>')}</div>`;
+        const dnLabel = (typeof t === 'function') ? t('dnyaneshwariLabel') : 'ज्ञानेश्वरी';
+        html += `<div class="ct-dnyananeshwari"><span class="ct-dnyananeshwari-label">🟧 ${dnLabel}</span>${dnyanLines.join('<br>')}</div>`;
         dnyanLines = []; inDnyan = false;
       }
     };
@@ -516,7 +578,8 @@
         if (inSankalp) { html += '</div>'; }
         inSankalp = true; inQuestion = false;
         const rest = line.replace(/^🌱\s*/, '');
-        html += `<div class="ct-sankalp"><span class="ct-label">🌱 आजचा संकल्प</span>`;
+        const sankalpLabel = (typeof t === 'function') ? t('todayResolve') : 'आजचा संकल्प';
+        html += `<div class="ct-sankalp"><span class="ct-label">🌱 ${sankalpLabel}</span>`;
         if (rest) html += `<div>${rest}</div>`;
         i++; continue;
       }
@@ -561,9 +624,9 @@
   let _historyRestore = false;
 
   const SECTION_LABELS = {
-    vivechan:    'ज्ञानेश्वर महाराज काय म्हणतात',
-    katha:       adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण',
-    shravan:     'श्रवण',
+    get vivechan() { return (typeof t === 'function') ? t('sectionVivechan') : 'ज्ञानेश्वर महाराज काय म्हणतात'; },
+    get katha()    { return (typeof t === 'function') ? (adhyayId === 4 ? t('sectionKatha4') : t('sectionKatha')) : (adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण'); },
+    get shravan()  { return (typeof t === 'function') ? t('sectionShravan') : 'श्रवण'; },
   };
 
   function scrollInfoToTop() {
@@ -975,16 +1038,16 @@
     // Restore chapter nav in bottom nav
     const prevBtn = document.getElementById('prev-concept-btn');
     const nextBtn = document.getElementById('next-concept-btn');
-    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? `अध्याय ${prevAdhyay.number} — ${prevAdhyay.name}` : '';
-    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? `अध्याय ${nextAdhyay.number} — ${nextAdhyay.name}` : '';
+    if (bnavPrevName) bnavPrevName.textContent = prevAdhyay ? adhyayNavLabel(prevAdhyay) : '';
+    if (bnavNextName) bnavNextName.textContent = nextAdhyay ? adhyayNavLabel(nextAdhyay) : '';
     if (prevBtn) prevBtn.disabled = !prevAdhyay;
     if (nextBtn) nextBtn.disabled = !nextAdhyay;
-    pdfLabel.textContent = `🪷 अध्याय ${adhyay.number} चित्रात्मक विवरण`;
+    pdfLabel.textContent = pdfChapterLabel();
     pendingPdfUrl = assetPath('adhyay.pdf');
     renderPdfVertical(pendingPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = ''; // restore adhyay PDF panel
     // Restore header label to chapter name (no back arrow)
-    headerLabel.textContent = `अध्याय ${adhyay.number} · ${adhyay.name}`;
+    headerLabel.textContent = `${getChapterLabel()} ${getAdhyayDisplayNum()} · ${getAdhyayDisplayName()}`;
     const url = new URL(window.location.href);
     url.searchParams.delete('concept');
     history.pushState({ adhyayId }, '', url);
@@ -1033,14 +1096,16 @@
     history.pushState({ adhyayId, conceptId: cid }, '', url);
 
     // Update header label to show back-to-chapter affordance
-    headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> अध्याय ${adhyay.number} · ${adhyay.name}`;
+    const hAdhyayName = getAdhyayDisplayName();
+    headerLabel.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px;flex-shrink:0"><polyline points="15 18 9 12 15 6"/></svg> ${getChapterLabel()} ${getAdhyayDisplayNum()} · ${hAdhyayName}`;
 
     // Update concept title bar
     const idx = adhyay.concepts.findIndex(c => c.id === cid);
+    const cLabel = (typeof t === 'function') ? t('conceptLabel') : 'संकल्पना';
     if (conceptTitleBar) {
       conceptTitleBar.style.display = '';
-      ctbMeta.textContent = `${concept.emoji}  संकल्पना ${toDevNum(concept.id)}`;
-      ctbName.textContent = concept.name;
+      ctbMeta.textContent = `${concept.emoji}  ${cLabel} ${activeNum(concept.id)}`;
+      ctbName.textContent = enConceptName(cid) || concept.name;
     }
 
     // Update bottom nav with prev/next concept names
@@ -1051,14 +1116,14 @@
     if (prevBtn) {
       prevBtn.disabled = false;
       if (bnavPrevName) bnavPrevName.textContent = prevConcept
-        ? `${prevConcept.emoji} ${prevConcept.name}`
-        : prevAdhyay ? `अध्याय ${prevAdhyay.number} · ${prevAdhyay.emoji} ${prevAdhyay.name}` : `अध्याय ${adhyay.number}`;
+        ? `${prevConcept.emoji} ${enConceptName(prevConcept.id) || prevConcept.name}`
+        : prevAdhyay ? adhyayNavLabel(prevAdhyay) : getAdhyayDisplayName();
     }
     if (nextBtn) {
       nextBtn.disabled = !nextConcept && !nextAdhyay;
       if (bnavNextName) bnavNextName.textContent = nextConcept
-        ? `${nextConcept.emoji} ${nextConcept.name}`
-        : nextAdhyay ? `अध्याय ${nextAdhyay.number} · ${nextAdhyay.emoji} ${nextAdhyay.name}` : '';
+        ? `${nextConcept.emoji} ${enConceptName(nextConcept.id) || nextConcept.name}`
+        : nextAdhyay ? adhyayNavLabel(nextAdhyay) : '';
     }
 
     summarySection.style.display = 'none';
@@ -1102,8 +1167,8 @@
 
     // Concept info panel
     conceptInfoEmoji.textContent = concept.emoji;
-    conceptInfoName.textContent  = concept.name;
-    conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${toDevNum(concept.id)}`;
+    conceptInfoName.textContent  = enConceptName(cid) || concept.name;
+    conceptInfoMeta.textContent  = `${getChapterLabel()} ${getAdhyayDisplayNum()} · ${(typeof t === 'function') ? t('conceptLabel') : 'संकल्पना'} ${activeNum(concept.id)}`;
     renderConceptText(String(adhyay.id), String(concept.id));
 
     const hasStory = renderStory(String(adhyay.id), String(concept.id));
@@ -1179,7 +1244,8 @@
     showSectionMenu();
 
     // Load concept PDF into the right/swipe panel carousel
-    pdfLabel.textContent = `🪷 संकल्पना ${toDevNum(concept.id)} चित्रात्मक विवरण`;
+    const conceptPdfTmpl = (typeof t === 'function') ? t('conceptIllustrated') : '🪷 संकल्पना {N} चित्रात्मक विवरण';
+    pdfLabel.textContent = conceptPdfTmpl.replace('{N}', activeNum(concept.id));
     pendingPdfUrl = conceptPdfUrl;
     renderPdfVertical(conceptPdfUrl);
     if (pdfOpenBar) pdfOpenBar.style.display = '';
@@ -1272,5 +1338,33 @@
       });
     }
   }
+
+  // ── Re-render on language change ─────────────────────────────
+  document.addEventListener('langchange', () => {
+    // Update summary image alt + placeholder text
+    summaryPHText.textContent = `${getChapterLabel()} ${getAdhyayDisplayNum()} — ${getAdhyayDisplayName()}`;
+    // Re-render summary text and concept list
+    renderSummaryText();
+    // Update PDF label
+    pdfLabel.textContent = currentConceptId != null
+      ? (() => { const tmpl = (typeof t === 'function') ? t('conceptIllustrated') : '🪷 संकल्पना {N} चित्रात्मक विवरण'; return tmpl.replace('{N}', activeNum(currentConceptId)); })()
+      : pdfChapterLabel();
+    // Update header breadcrumb
+    headerLabel.textContent = currentConceptId != null
+      ? `${getChapterLabel()} ${getAdhyayDisplayNum()} · ${getAdhyayDisplayName()}`
+      : `${getChapterLabel()} ${getAdhyayDisplayNum()} · ${getAdhyayDisplayName()}`;
+    // Re-render concept view if one is open
+    if (currentConceptId != null) {
+      const concept = adhyay.concepts.find(c => c.id === currentConceptId);
+      if (concept) {
+        const cLabel = (typeof t === 'function') ? t('conceptLabel') : 'संकल्पना';
+        ctbMeta.textContent = `${concept.emoji}  ${cLabel} ${activeNum(concept.id)}`;
+        ctbName.textContent = enConceptName(currentConceptId) || concept.name;
+        conceptInfoName.textContent = enConceptName(currentConceptId) || concept.name;
+        conceptInfoMeta.textContent = `${getChapterLabel()} ${getAdhyayDisplayNum()} · ${cLabel} ${activeNum(concept.id)}`;
+        renderConceptText(String(adhyay.id), String(currentConceptId));
+      }
+    }
+  });
 
 })();

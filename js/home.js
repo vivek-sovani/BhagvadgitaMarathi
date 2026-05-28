@@ -1,43 +1,57 @@
 (function () {
-  const EN_SUBTITLES = [
-    "Arjuna's Despair", "Knowledge of the Self", "Path of Action",
-    "Knowledge & Action", "Renunciation of Action", "Meditation",
-    "Wisdom & Realization", "The Imperishable", "Royal Knowledge",
-    "Divine Manifestations", "The Universal Form", "Path of Devotion",
-    "Field & Knower", "Three Qualities", "Supreme Person",
-    "Divine & Demonic", "Three Kinds of Faith", "Path of Liberation"
-  ];
-
-  const STATS = [
+  const STATS_MR = [
     "४६ श्लोक", "७२ श्लोक", "४३ श्लोक", "४२ श्लोक", "२९ श्लोक",
     "४७ श्लोक", "३० श्लोक", "२८ श्लोक", "३४ श्लोक", "४२ श्लोक",
     "५५ श्लोक", "२० श्लोक", "३५ श्लोक", "२७ श्लोक", "२० श्लोक",
     "२४ श्लोक", "२८ श्लोक", "७८ श्लोक"
   ];
+  const STATS_EN = [
+    "46 verses", "72 verses", "43 verses", "42 verses", "29 verses",
+    "47 verses", "30 verses", "28 verses", "34 verses", "42 verses",
+    "55 verses", "20 verses", "35 verses", "27 verses", "20 verses",
+    "24 verses", "28 verses", "78 verses"
+  ];
 
   const grid = document.getElementById('chapters-grid');
   if (!grid) return;
 
-  GITA_DATA.adhyays.forEach(adhyay => {
-    const idx = adhyay.id - 1;
-    const available = adhyay.available;
-    const el = document.createElement(available ? 'a' : 'div');
-    el.className = 'chapter' + (available ? '' : ' unavailable');
-    if (available) el.href = `./adhyay?id=${adhyay.id}`;
+  function renderGrid() {
+    const lang = (typeof getCurrentLang === 'function') ? getCurrentLang() : 'mr';
+    const enData = (lang === 'en' && typeof GITA_DATA_EN !== 'undefined') ? GITA_DATA_EN : null;
+    const stats = lang === 'en' ? STATS_EN : STATS_MR;
+    const chLabel = (typeof t === 'function') ? t('chapter') : 'अध्याय';
+    const cLabel  = (typeof t === 'function') ? t('conceptLabel') : 'संकल्पना';
 
-    el.innerHTML = `
-      <div class="num-block">
-        <div class="roman">${adhyay.number}</div>
-        <div class="label">अध्याय</div>
-      </div>
-      <div class="body">
-        <h4 class="title">${adhyay.name}</h4>
-        <p class="sub">${EN_SUBTITLES[idx] || ''}</p>
-        <div class="stats"><span>${STATS[idx] || ''}</span><span>${adhyay.concepts.length} संकल्पना</span></div>
-      </div>
-    `;
-    grid.appendChild(el);
-  });
+    grid.innerHTML = '';
+    GITA_DATA.adhyays.forEach(adhyay => {
+      const idx = adhyay.id - 1;
+      const available = adhyay.available;
+      const enAdhyay = enData && enData.adhyays.find(a => a.id === adhyay.id);
+      const displayName = (lang === 'en' && enAdhyay) ? enAdhyay.name : adhyay.name;
+      const displayNum  = lang === 'en' ? adhyay.id : adhyay.number;
+      const subtitle    = lang === 'en' ? '' : '';
+
+      const el = document.createElement(available ? 'a' : 'div');
+      el.className = 'chapter' + (available ? '' : ' unavailable');
+      if (available) el.href = `./adhyay?id=${adhyay.id}`;
+
+      el.innerHTML = `
+        <div class="num-block">
+          <div class="roman">${displayNum}</div>
+          <div class="label">${chLabel}</div>
+        </div>
+        <div class="body">
+          <h4 class="title">${displayName}</h4>
+          <div class="stats"><span>${stats[idx] || ''}</span><span>${adhyay.concepts.length} ${cLabel}</span></div>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+  }
+
+  renderGrid();
+
+  document.addEventListener('langchange', renderGrid);
 })();
 
 // ── Daily concept picker ──────────────────────────────────────────────────────
@@ -69,28 +83,37 @@
   const scOvi     = document.getElementById('sc-ovi');
   const scMeaning = document.getElementById('sc-meaning');
 
-  if (scRef)     scRef.textContent = `आजची संकल्पना · अध्याय ${adhyay.number} · ${concept.emoji} ${concept.name}`;
-  if (scShlok)   scShlok.textContent = concept.tagline;
-  if (scOvi)     scOvi.innerHTML = trigger.paras[0];
+  const lang = (typeof getCurrentLang === 'function') ? getCurrentLang() : 'mr';
+  const chNum = lang === 'en' ? adhyay.id : adhyay.number;
+  const enAdhyay = (lang === 'en' && typeof GITA_DATA_EN !== 'undefined')
+    && GITA_DATA_EN.adhyays.find(a => a.id === adhyay.id);
+  const enConcept = enAdhyay && enAdhyay.concepts.find(c => c.id === concept.id);
+  const displayName = (lang === 'en' && enConcept) ? enConcept.name : concept.name;
+  const chLabel = (typeof t === 'function') ? t('chapter') : 'अध्याय';
+  const todayCLabel = (typeof t === 'function') ? t('todayConcept') : 'आजची संकल्पना';
+  const todayActionLabel = (typeof t === 'function') ? t('todayAction') : 'आजचे करायचे काय?';
+  const readThisLabel = (typeof t === 'function') ? t('readThis') : 'हे वाचा';
+
+  if (scRef)   scRef.textContent = `${todayCLabel} · ${chLabel} ${chNum} · ${concept.emoji} ${displayName}`;
+  if (scShlok) scShlok.textContent = (lang === 'en' && enConcept && enConcept.tagline) ? enConcept.tagline : concept.tagline;
+  if (scOvi)   scOvi.innerHTML = trigger.paras[0];
   const conceptUrl = `./adhyay?id=${adhyay.id}&concept=${concept.id}`;
   const ctaLinked = trigger.cta.replace(
     /हे वाचा/g,
-    `<a href="${conceptUrl}" style="color:var(--saffron);font-weight:600;text-decoration:underline;text-underline-offset:3px;">हे वाचा →</a>`
+    `<a href="${conceptUrl}" style="color:var(--saffron);font-weight:600;text-decoration:underline;text-underline-offset:3px;">${readThisLabel} →</a>`
   );
-  if (scMeaning) scMeaning.innerHTML = `<strong>आजचे करायचे काय?</strong> ${ctaLinked}`;
+  if (scMeaning) scMeaning.innerHTML = `<strong>${todayActionLabel}</strong> ${ctaLinked}`;
 
   // ── Today-verse section (आजचा पाठ) ───────────────────────────
   const tvRef   = document.getElementById('tv-ref');
   const tvQuote = document.getElementById('tv-quote');
   const tvCta   = document.getElementById('tv-cta');
 
-  if (tvRef)   tvRef.textContent = `अध्याय ${adhyay.number} · ${concept.emoji} ${concept.name}`;
-  // Use second para if available — it tends to be the more reflective one
+  if (tvRef)   tvRef.textContent = `${chLabel} ${chNum} · ${concept.emoji} ${displayName}`;
   if (tvQuote) tvQuote.innerHTML = trigger.paras.length > 1 ? trigger.paras[1] : trigger.paras[0];
-  // CTA with linked "हे वाचा"
   const tvCtaLinked = trigger.cta.replace(
     /हे वाचा/g,
-    `<a href="${conceptUrl}" style="color:var(--saffron-glow);font-weight:600;text-decoration:underline;text-underline-offset:3px;">हे वाचा →</a>`
+    `<a href="${conceptUrl}" style="color:var(--saffron-glow);font-weight:600;text-decoration:underline;text-underline-offset:3px;">${readThisLabel} →</a>`
   );
   if (tvCta) tvCta.innerHTML = tvCtaLinked;
 })();
