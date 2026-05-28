@@ -2722,37 +2722,3 @@ h2.section-title {
 
 /* ── MANDALA / DECORATIVE ── */
 .mandala { opacity: .12; pointer-events: none; color: var(--saffron-deep); }
-
-/* ── LANGUAGE TOGGLE ───────────────────────────────────────── */
-.lang-toggle {
-  display: inline-flex; align-items: center; gap: 2px;
-  background: none; border: 1px solid var(--rule);
-  border-radius: 20px; padding: 4px 10px; cursor: pointer;
-  font-family: inherit; font-size: 13px; font-weight: 500;
-  color: var(--ink-soft); transition: border-color .2s, color .2s;
-  white-space: nowrap; flex-shrink: 0;
-}
-.lang-toggle:hover { border-color: var(--saffron); color: var(--ink); }
-.lang-toggle .lt-sep { color: var(--rule); margin: 0 1px; }
-.lang-toggle .lt-active { font-weight: 700; color: var(--saffron-deep); }
-
-/* English mode font switch */
-[lang="en"] body,
-[lang="en"] p,
-[lang="en"] .lede,
-[lang="en"] .ct-para,
-[lang="en"] .summary-adhyay-desc,
-[lang="en"] .smenu-trigger-para {
-  font-family: var(--serif), Georgia, serif;
-}
-
-/* English "coming soon" fallback banner */
-.en-fallback-note {
-  display: none;
-  background: color-mix(in oklab, var(--saffron) 10%, var(--surface));
-  border: 1px solid color-mix(in oklab, var(--saffron) 25%, var(--rule));
-  border-radius: 10px; padding: 14px 18px;
-  color: var(--ink-soft); font-size: 14px;
-  margin-bottom: 20px;
-}
-[lang="en"] .en-fallback-note { display: block; }
