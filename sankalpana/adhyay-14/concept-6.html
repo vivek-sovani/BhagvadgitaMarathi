@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गुणातीत कोण? — भगवद्गीता अध्याय १४</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना ६ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">गुणातीत कोण?</div>
+  <div class="concept-subtitle">स्थितप्रज्ञाचा भाऊ — स्तुती-निंदेत समान</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    अर्जुन विचारतो — "जो तिन्ही गुणांच्या पलीकडे गेला,<br>त्याची लक्षणे काय? तो कसा वागतो, कसा जगतो?"<br>
+    कृष्णाचे उत्तर अध्याय २ मधल्या स्थितप्रज्ञासारखेच —<br>
+    <strong style="color: var(--temple-gold);">जो सुख-दुःख, स्तुती-निंदा, सोने-माती यांत समान राहतो — तो गुणातीत.</strong>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 14.22-23 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.२२–२३</span>
+  <div class="shloka-deva">
+    प्रकाशं च प्रवृत्तिं च मोहमेव च पाण्डव ।<br>
+    न द्वेष्टि सम्प्रवृत्तानि न निवृत्तानि काङ्क्षति ॥<br>
+    उदासीनवदासीनो गुणैर्यो न विचाल्यते ।<br>
+    गुणा वर्तन्त इत्येव योऽवतिष्ठति नेङ्गते ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "प्रकाश (सत्त्व), प्रवृत्ती (रज) आणि मोह (तम) —<br>
+    हे आले तरी जो द्वेष करत नाही, गेले तरी इच्छित नाही;<br>
+    जो उदासीनासारखा राहतो, गुणांनी हलत नाही;<br>
+    'गुण आपापले काम करत आहेत' एवढे जाणून जो स्थिर राहतो, डळमळत नाही —"
+  </div>
+</div>
+
+<!-- SHLOKA 14.24-25 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.२४–२५</span>
+  <div class="shloka-deva">
+    समदुःखसुखः स्वस्थः समलोष्टाश्मकाञ्चनः ।<br>
+    तुल्यप्रियाप्रियो धीरस्तुल्यनिन्दात्मसंस्तुतिः ॥<br>
+    मानापमानयोस्तुल्यस्तुल्यो मित्रारिपक्षयोः ।<br>
+    सर्वारम्भपरित्यागी गुणातीतः स उच्यते ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "सुख-दुःखात समान, स्वतःत स्थिर, माती-दगड-सोने समान मानणारा;<br>
+    प्रिय-अप्रिय सारखे, धीर, निंदा-स्तुती समान;<br>
+    मान-अपमानात समान, मित्र-शत्रू समान;<br>
+    सर्व आरंभांचा (कर्तृत्वाच्या आसक्तीचा) त्याग करणारा — तो गुणातीत म्हटला जातो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    गुणातीत म्हणजे गुण नष्ट झालेला माणूस नव्हे — <span class="key-term">गुण येतात-जातात, पण तो त्यांनी हलत नाही.</span> तो "उदासीनवत्" — साक्षीसारखा. हे अध्याय २ च्या स्थितप्रज्ञाचेच पुढचे रूप.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>परिस्थिती</th>
+        <th>गुणातीताची वृत्ती</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>सुख / दुःख</td>
+        <td>दोन्हीत समान, स्थिर</td>
+      </tr>
+      <tr>
+        <td>स्तुती / निंदा</td>
+        <td>दोन्ही सारखेच — हलत नाही</td>
+      </tr>
+      <tr>
+        <td>सोने / माती</td>
+        <td>मूल्याची समान दृष्टी</td>
+      </tr>
+      <tr>
+        <td>मित्र / शत्रू</td>
+        <td>दोघांकडे समभाव</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    महत्त्वाचा शब्द — <span class="key-term">"गुणा वर्तन्ते"</span> — गुण आपापले काम करत आहेत. तो म्हणतो, <strong style="color: var(--temple-gold);">"राग, उत्साह, आळस येतात-जातात — ती प्रकृती आहे; मी फक्त साक्षी."</strong>
+  </p>
+  <p>
+    हे दडपून टाकणे नव्हे, उदासीनता नव्हे — हे आंतरिक स्थैर्य. लाट येते, लाट जाते; समुद्राचा तळ शांतच राहतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  गुणातीत म्हणजे गुणांशिवायचा नव्हे — गुणांनी न हलणारा.<br>
+  <strong style="color: var(--temple-gold);">लाटा येतात-जातात; समुद्राचा तळ शांतच राहतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — SACHIN -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· जीवन-प्रसंग आणि एक समकालीन उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · आणि स्थैर्याचे दर्शन</span>
+  <div class="example-name">स्तुती-निंदेतला समतोल — सचिन तेंडुलकर</div>
+  <div class="example-dates">रोजचा अनुभव · आणि सार्वजनिक जीवनातले स्थैर्य</div>
+
+  <p>
+    आधी रोजचा अनुभव — एकाच तासात तुम्हाला एक कौतुकाचा आणि एक टीकेचा संदेश येतो. कौतुकाने मन फुलते, टीकेने कोलमडते. <span class="key-term">आपली मनःस्थिती दुसऱ्यांच्या शब्दांच्या ताब्यात</span> असते. गुणातीताची कसोटी नेमकी इथेच.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    सार्वजनिक जीवनात हा समतोल ज्यांच्यात दिसला, त्यांचे एक उदाहरण म्हणजे <strong style="color: var(--temple-gold);">सचिन तेंडुलकर</strong>. दोन दशकांहून अधिक काळ संपूर्ण देशाच्या अपेक्षांचे ओझे, देवासारखी पूजा — आणि अपयश आल्यावर तितकीच तीव्र टीका. दोन्ही टोकांचा मारा त्यांच्यावर सतत होत राहिला.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    तरीही त्यांचे सार्वजनिक वर्तन शांत, संयमी राहिले — शतक झळकले तरी अति-उन्माद नाही, शून्यावर बाद झाले तरी न खचता पुढच्या सामन्याची तयारी. <span class="key-term">स्तुतीने हुरळून न जाणे आणि निंदेने न कोलमडणे</span> — गीतेचे "तुल्यनिन्दात्मसंस्तुतिः" याचे हे दृश्य रूप.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    इथे एक प्रामाणिक सावधानता — हे त्यांच्या <span class="key-term">सार्वजनिक स्थैर्याचे</span> निरीक्षण आहे, त्यांच्या आंतरिक अवस्थेचा निवाडा नव्हे. गीता "गुणातीत" ही एक उंच आध्यात्मिक अवस्था सांगते. पण ही उदाहरणे दाखवतात की स्तुती-निंदेत समतोल राखणे ही केवळ कल्पना नाही — ती रोजच्या जगात अभ्यासता येणारी, पाहता येणारी गोष्ट आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सुख दुःख समान ज्यासि ।<br>
+    निंदा स्तुती सारखी ।<br>
+    सोने माती एकची ।<br>
+    तो गुणातीत ।।<br><br>
+    गुण वर्तती आपुले ।<br>
+    मी साक्षी हे जाणुनी ।<br>
+    डळमळत नाही जो ।<br>
+    स्थिर राहे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "गुण वर्तती आपुले, मी साक्षी" — हा भाव सांगतात. गुणातीत गुणांशी भांडत नाही; तो फक्त "हे प्रकृतीचे खेळ, मी पाहणारा" एवढे जाणतो. आणि या जाणिवेतच स्तुती-निंदेपलीकडचे स्थैर्य येते — समुद्राच्या तळासारखे.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझी मनःस्थिती किती वेळा दुसऱ्यांच्या स्तुती-निंदेवर<br>वर-खाली होते?"<br><br>
+    कौतुकाने फुलणे आणि टीकेने कोलमडणे — दोन्ही एकाच साखळीचे टोक.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज कौतुक मिळो वा टीका — एक क्षण थांबून मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"हे येते आणि जाते. माझा तळ शांत आहे."</strong><br>
+    प्रतिक्रिया देण्याआधीचा हा क्षण — हीच गुणातीततेची सुरुवात.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    गुणातीताची ही लक्षणे अध्याय २ मधील <span class="key-term">स्थितप्रज्ञ</span> आणि अध्याय १२ मधील <span class="key-term">आदर्श भक्त</span> यांच्याशी जवळजवळ तंतोतंत जुळतात. गीता वेगवेगळ्या मार्गांनी (ज्ञान, भक्ती, गुणातीतता) एकाच अंतिम अवस्थेकडे नेते — आंतरिक स्थैर्य, समत्व.
+  </p>
+  <p>
+    महत्त्वाचे — हे <span class="key-term">वैराग्य म्हणजे कोरडेपणा नव्हे.</span> गुणातीत माणूस भावनाशून्य दगड नसतो; तो भावना अनुभवतो, पण त्यांच्या लाटांमध्ये वाहून जात नाही. "उदासीनवत्" — उदासीनासारखा, उदासीन नव्हे. हा सूक्ष्म पण निर्णायक फरक.
+  </p>
+  <p>
+    आधुनिक संदर्भात याला <span class="key-term">भावनिक स्थैर्य</span> किंवा समत्व म्हणता येईल — बाह्य यश-अपयश, प्रशंसा-टीका यांवर आत्ममूल्य अवलंबून न ठेवणे. खेळाडू, नेते, कलाकार — ज्यांना सतत जनतेच्या लाटांना तोंड द्यावे लागते, त्यांच्यासाठी हे विशेष प्रस्तुत. <strong style="color: var(--temple-gold);">स्तुतीचा वारा आणि निंदेचे वादळ — दोन्हीत न डळमळणारा दीपस्तंभ होणे</strong> — हीच गुणातीततेची व्यावहारिक साधना.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना ६/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

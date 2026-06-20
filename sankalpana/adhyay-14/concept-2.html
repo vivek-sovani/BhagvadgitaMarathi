@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सत्त्वगुण — भगवद्गीता अध्याय १४</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना २ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">सत्त्वगुण</div>
+  <div class="concept-subtitle">प्रकाश, ज्ञान, सुख — आणि त्याचा सूक्ष्म बंध</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    एखाद्या शांत पहाटे, ध्यानानंतर किंवा चांगले पुस्तक वाचून संपवल्यावर —<br>
+    <strong style="color: var(--temple-gold);">मन हलके, स्वच्छ, समाधानी; सर्व काही स्पष्ट दिसते.</strong><br>
+    हाच सत्त्वगुण — प्रकाशाचा, ज्ञानाचा, सुखाचा.<br>
+    पण गीता एक सूक्ष्म इशाराही देते — हे सुखही बांधते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 14.6 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.६</span>
+  <div class="shloka-deva">
+    तत्र सत्त्वं निर्मलत्वात्प्रकाशकमनामयम् ।<br>
+    सुखसङ्गेन बध्नाति ज्ञानसङ्गेन चानघ ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "त्यांत सत्त्व निर्मल असल्याने प्रकाश देणारे आणि निरोगी आहे;<br>
+    पण हे निष्पाप अर्जुना, ते सुखाच्या आसक्तीने<br>
+    आणि ज्ञानाच्या आसक्तीने (जीवाला) बांधते."
+  </div>
+</div>
+
+<!-- SHLOKA 14.11 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.११</span>
+  <div class="shloka-deva">
+    सर्वद्वारेषु देहेऽस्मिन्प्रकाश उपजायते ।<br>
+    ज्ञानं यदा तदा विद्याद्विवृद्धं सत्त्वमित्युत ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जेव्हा या देहाच्या सर्व द्वारांतून (इंद्रियांतून) प्रकाश —<br>
+    म्हणजे ज्ञान — प्रकट होऊ लागते,<br>
+    तेव्हा सत्त्वगुण वाढला आहे असे जाणावे."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    सत्त्व म्हणजे तिन्ही गुणांतला सर्वांत उज्ज्वल — <span class="key-term">निर्मल, प्रकाशमान, निरोगी.</span> सत्त्व वाढले की मन शांत, बुद्धी स्पष्ट, अंतःकरण प्रसन्न.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>सत्त्वाची लक्षणे</th>
+        <th>अनुभव</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>प्रकाश</td>
+        <td>विचार स्पष्ट, गोंधळ नाही</td>
+      </tr>
+      <tr>
+        <td>ज्ञान</td>
+        <td>समजून घेण्याची ओढ</td>
+      </tr>
+      <tr>
+        <td>सुख</td>
+        <td>शांत, निर्मळ समाधान</td>
+      </tr>
+      <tr>
+        <td>निरामय</td>
+        <td>निरोगी, हलके मन</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    पण गीतेचा सूक्ष्म इशारा इथेच — <span class="key-term">"सुखसङ्गेन... ज्ञानसङ्गेन बध्नाति."</span> सत्त्वही बांधते. <strong style="color: var(--temple-gold);">"मी शांत आहे, मी ज्ञानी आहे, मी इतरांपेक्षा शुद्ध आहे" — हा अभिमान सोन्याची साखळी.</strong>
+  </p>
+  <p>
+    साखळी सोन्याची असली तरी साखळीच. म्हणून सत्त्व जोपासावे — पण त्याला चिकटू नये. ध्येय सत्त्वात अडकणे नव्हे, तर तिन्ही गुणांच्या पलीकडे जाणे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  सत्त्व उत्तम — पण "मी शांत, मी ज्ञानी" हा अभिमानही एक बंध.<br>
+  <strong style="color: var(--temple-gold);">सोन्याची असली तरी साखळी ती साखळीच.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — LIFE SITUATION + SUDHA MURTY -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· जीवन-प्रसंग आणि एक समकालीन व्यक्तिमत्त्व</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · स्पष्टतेचा क्षण</span>
+  <div class="example-name">शांत मनाचा क्षण → आणि साधेपणाचे मूर्तिमंत रूप</div>
+  <div class="example-dates">रोजचा अनुभव · आणि सुधा मूर्ती</div>
+
+  <p>
+    आधी स्वतःचा अनुभव आठवा — सकाळी व्यायाम करून, किंवा मन लावून एखादे काम पूर्ण करून आलेली ती <span class="key-term">हलकी, स्वच्छ, समाधानी</span> भावना. त्या क्षणी राग कमी, संयम जास्त, निर्णय स्पष्ट. हाच सत्त्वाचा स्पर्श.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गुण एखाद्या जीवनभर टिकलेल्या व्यक्तीत पाहायचा असेल, तर <strong style="color: var(--temple-gold);">सुधा मूर्ती</strong> हे समकालीन उदाहरण. प्रचंड संपत्ती आणि कीर्ती असूनही त्यांचे जीवन साधेपणाचे — साध्या साड्या, मोजक्या गरजा, आणि शिक्षण व समाजसेवेला वाहिलेले काम.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    ज्ञानाची ओढ, शिकण्याची आणि शिकवण्याची आवड, संयमी वर्तन, आणि दिखाव्याचा अभाव — ही सत्त्वाची लक्षणे त्यांच्या सार्वजनिक वावरात स्पष्ट दिसतात. <span class="key-term">समृद्धी असूनही साधेपणा</span> — हाच निर्मल, प्रकाशमान सत्त्वाचा आविष्कार.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    पण गीतेचा इशारा इथेही लागू — सत्त्व कितीही सुंदर असो, "मी साधा, मी शुद्ध" हा सूक्ष्म अभिमानही बंध ठरू शकतो. म्हणून खरा साधेपणा तोच, जो <span class="key-term">स्वतःच्या साधेपणाचेही भान न ठेवता</span> सहज वाहतो. सत्त्व जोपासावे, पण त्याची साखळीही ओळखावी.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सत्त्व निर्मल प्रकाश ।<br>
+    ज्ञान सुख निरामय ।<br>
+    पण सुखाच्या संगाने ।<br>
+    बांधते जीवा ।।<br><br>
+    सोन्याची का असेना ।<br>
+    साखळी ती साखळीच ।<br>
+    सत्त्व जपावे परी ।<br>
+    चिकटू नये ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "सोन्याची का असेना, साखळी ती साखळीच" — हा मर्म सांगतात. सत्त्व सर्वोत्तम गुण, पण तोही बंध. "मी शांत, मी ज्ञानी" या भावात अडकले की प्रगती थांबते. सत्त्व पायरी आहे — मुक्काम नव्हे.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या शांततेचा, ज्ञानाचा, साधेपणाचा —<br>मला सूक्ष्म अभिमान तर वाटत नाही ना?"<br><br>
+    सत्त्व जपा, पण त्याच्या साखळीचेही भान ठेवा.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज सत्त्व वाढवणारी एक कृती करा — वाचन, ध्यान, सेवा —<br>
+    <strong style="color: var(--saffron);">पण ती गाजावाजा न करता, भान न ठेवता सहज करा.</strong><br>
+    हाच साखळीशिवायचा सत्त्व.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    गीतेची सत्त्वाविषयीची भूमिका सूक्ष्म आणि महत्त्वाची आहे. इतर अनेक परंपरा "चांगले गुण कमवा" इथेच थांबतात; गीता एक पाऊल पुढे जाते — <span class="key-term">सत्त्वही अंतिम ध्येय नाही.</span> ते सर्वोत्तम साधन आहे, पण साधनालाच ध्येय मानले की प्रगती खुंटते.
+  </p>
+  <p>
+    <span class="key-term">"सुखसङ्ग"</span> आणि <span class="key-term">"ज्ञानसङ्ग"</span> — सुखाची आणि ज्ञानाची आसक्ती — हे सत्त्वाचे सूक्ष्म बंध. आध्यात्मिक प्रगतीत हा एक ज्ञात धोका : साधक शांती, समाधान किंवा "मी जाणतो" या अवस्थेला चिकटतो आणि तिथेच रेंगाळतो.
+  </p>
+  <p>
+    म्हणूनच अध्याय १४ चे अंतिम ध्येय <span class="key-term">गुणातीत</span> — तिन्ही गुणांच्या पलीकडे. सत्त्व ही त्या प्रवासातली सर्वांत स्वच्छ, सर्वांत प्रकाशमान पायरी; पण पायरीवर थांबायचे नसते. <strong style="color: var(--temple-gold);">सत्त्व जोपासावे, सत्त्वाने जगावे — पण शेवटी सत्त्वाचीही पकड सोडावी.</strong> हेच या संकल्पनेचे सार.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना २/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

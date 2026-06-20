@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>तमोगुण — भगवद्गीता अध्याय १४</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना ४ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">तमोगुण</div>
+  <div class="concept-subtitle">अज्ञान, आळस, प्रमाद — आणि त्यातून बाहेर पडण्याची वाट</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    रात्री दमून पडलात, हातात फोन, स्क्रोल करत राहता —<br>
+    <strong style="color: var(--temple-gold);">काही करावेसे वाटत नाही, उठावेसेही नाही. उद्यावर ढकलू, असे सतत वाटते.</strong><br>
+    हे जडत्व, ही टाळाटाळ म्हणजे तमोगुण.<br>
+    पण गीता हे सांगतानाच त्यातून बाहेर पडण्याची वाटही दाखवते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 14.8 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.८</span>
+  <div class="shloka-deva">
+    तमस्त्वज्ञानजं विद्धि मोहनं सर्वदेहिनाम् ।<br>
+    प्रमादालस्यनिद्राभिस्तन्निबध्नाति भारत ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "तम हे अज्ञानातून जन्मलेले, सर्व देहधारींना मोहित करणारे —<br>
+    असे जाण. हे भारता, ते प्रमाद (बेपर्वाई), आळस आणि<br>
+    अति-निद्रेने (जीवाला) बांधते."
+  </div>
+</div>
+
+<!-- SHLOKA 14.13 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.१३</span>
+  <div class="shloka-deva">
+    अप्रकाशोऽप्रवृत्तिश्च प्रमादो मोह एव च ।<br>
+    तमस्येतानि जायन्ते विवृद्धे कुरुनन्दन ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "अंधार (अस्पष्टता), निष्क्रियता, बेपर्वाई आणि मोह —<br>
+    हे तम वाढल्यावर प्रकट होतात,<br>
+    हे कुरुनंदन."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    तम म्हणजे <span class="key-term">अंधार, जडत्व, मोह.</span> सत्त्व प्रकाश देते, रज हालचाल देतो — तम दोन्ही झाकतो. ना स्पष्टता, ना कृती; फक्त धुके आणि जडपणा.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>तमाचे रूप</th>
+        <th>अनुभव</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>अप्रकाश</td>
+        <td>विचार अस्पष्ट, गोंधळ</td>
+      </tr>
+      <tr>
+        <td>अप्रवृत्ती</td>
+        <td>काहीच करावेसे न वाटणे</td>
+      </tr>
+      <tr>
+        <td>प्रमाद</td>
+        <td>बेपर्वाई, टाळाटाळ</td>
+      </tr>
+      <tr>
+        <td>मोह</td>
+        <td>भ्रम, चुकीचे समजणे</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    महत्त्वाचे — <strong style="color: var(--temple-gold);">तम म्हणजे विश्रांती नव्हे.</strong> खरी विश्रांती ताजेतवाने करते; तम थकवते, बधिर करते. आवश्यक झोप सात्त्विक; पण पलायनासाठीची सुस्ती तामसी.
+  </p>
+  <p>
+    आणि तम ही अवस्था आहे, कायमचा शिक्का नाही. <span class="key-term">अगदी छोटी कृतीही</span> — उठून पाणी पिणे, एक पाऊल चालणे — तमाचे चक्र तोडू शकते. अंधार हटवायला लढावे लागत नाही; एक लहान दिवा पुरतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  तम म्हणजे विश्रांती नव्हे — ती थकवणारी सुस्ती आहे.<br>
+  <strong style="color: var(--temple-gold);">पण तो अवस्था आहे, नशीब नाही — एक लहान कृती चक्र तोडते.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — LIFE SITUATION + RECOVERY ARC -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· रोजचा अनुभव आणि बाहेर पडण्याची वाट</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · जडत्व ते पहिले पाऊल</span>
+  <div class="example-name">डूम-स्क्रोल चक्र — आणि त्यातून उठणारा क्षण</div>
+  <div class="example-dates">आजचा सार्वत्रिक अनुभव · आणि सावरण्याचा प्रवास</div>
+
+  <p>
+    हा अनुभव सर्वांना ओळखीचा — महत्त्वाचे काम समोर आहे, पण आपण ते टाळून तासन्‌तास फोन स्क्रोल करतो, मालिका बघत राहतो, "उद्या करू" म्हणत झोपी जातो. ऊर्जा गळून जाते, अपराधभाव वाढतो, पण उठवत नाही. हे <span class="key-term">तमाचे चक्र.</span>
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    व्यसन, खिन्नता, बर्नआउट यांतही हेच जडत्व अधिक गडद रूपात येते — सर्व काही निरर्थक वाटते, हालचालच नकोशी होते. गीता हे वास्तव नाकारत नाही; ती ते "अज्ञानजं, मोहनम्" म्हणून स्पष्ट नाव देते.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    पण खरी गोष्ट <strong style="color: var(--temple-gold);">बाहेर पडण्याच्या वाटेत</strong> आहे. व्यसनातून सावरणारा, खिन्नतेतून पुन्हा उभा राहणारा माणूस मोठ्या उडीने बदलत नाही — तो <span class="key-term">एक लहान पाऊल</span> उचलतो. एक फोन कॉल, एक चालणे, एक दिवस. तमाचे चक्र अशाच छोट्या कृतींनी तुटते.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    गीतेचा धडा करुणामय आहे — तमात अडकणे म्हणजे अपयश नव्हे; ती प्रकृतीची एक अवस्था आहे, जी प्रत्येकाला येते. महत्त्वाचे हे की <span class="key-term">तो शेवट नाही.</span> रत्नाकर लुटारूही एका क्षणाच्या जाणिवेतून वाल्मीकी झाला. अंधार कितीही गडद असो — एक ठिणगी पुरते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    तम अज्ञानातून जन्मे ।<br>
+    सर्वांना मोहवी ते ।<br>
+    प्रमाद आळस निद्रा ।<br>
+    बांधती जीवा ।।<br><br>
+    अंधार हटवाया ।<br>
+    लढावे न लागे ।<br>
+    एक लहान दिवा ।<br>
+    पुरेसा होय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "एक लहान दिवा पुरेसा" — हा आशेचा सूर लावतात. तमाशी झुंजायचे नाही; फक्त एक छोटी सकारात्मक कृती करायची. अंधार स्वतःहून जात नाही, पण प्रकाश आला की तो टिकत नाही. एक पाऊल — आणि चक्र तुटते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "मी सध्या काही टाळतो आहे का — जे करायला हवे,<br>पण जडपणामुळे पुढे ढकलतो आहे?"<br><br>
+    ते ओळखा — आणि स्वतःला दोष न देता, एक लहान पाऊल निवडा.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक टाळलेले काम — फक्त <strong style="color: var(--saffron);">पाच मिनिटे</strong> करा.<br>
+    पूर्ण करायचे नाही — फक्त सुरू करा.<br>
+    "सुरुवात" हाच तमावरचा सर्वांत मोठा विजय.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    गीता तमाचे वर्णन निःपक्षपातीपणे करते — दोष देत नाही, फक्त ओळख देते. हे महत्त्वाचे, कारण तमाचे एक लक्षण म्हणजे <span class="key-term">स्वतःला दोष देणे</span> आणि त्या अपराधभावात अधिकच खोल बुडणे. म्हणून उपाय आत्मनिंदा नव्हे — स्पष्ट जाणीव आणि लहान कृती.
+  </p>
+  <p>
+    आधुनिक वर्तनशास्त्रही हेच सांगते — जडत्वाच्या चक्रातून बाहेर पडायला प्रेरणेची वाट पाहू नये; <span class="key-term">छोटी कृती आधी, प्रेरणा नंतर.</span> "दोन मिनिटांचा नियम", "फक्त सुरुवात करा" — हे सगळे गीतेच्या "एक दिवा पुरेसा" या तत्त्वाचेच आधुनिक रूप.
+  </p>
+  <p>
+    खोल अर्थाने, तम हा शत्रू नसून तिन्ही गुणांतला एक नैसर्गिक टप्पा — विश्रांती, पुनर्रचना यांचाही तो भाग. धोका तेव्हा, जेव्हा तो <span class="key-term">वाढतो आणि कायम राहतो.</span> गीतेची दृष्टी करुणामय आणि व्यावहारिक : <strong style="color: var(--temple-gold);">तम ओळखा, त्यात अडकू नका, आणि एका छोट्या प्रकाशाने वाट काढा.</strong> ही ओळख हाच गुणांच्या पलीकडे जाण्याचा पाया.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना ४/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

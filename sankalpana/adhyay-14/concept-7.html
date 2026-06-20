@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>गुणांतीत होण्याचा मार्ग — भगवद्गीता अध्याय १४</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना ७ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">गुणांतीत होण्याचा मार्ग</div>
+  <div class="concept-subtitle">भक्तीने — अव्यभिचारी भक्तियोगाने</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    "गुणातीत कोण?" हे कळले. पण खरा प्रश्न उरतो —<br>
+    <strong style="color: var(--temple-gold);">गुणांच्या पलीकडे जायचे कसे? बळाने? झगडून?</strong><br>
+    कृष्ण एक अनपेक्षित, सोपा मार्ग सांगतो —<br>
+    अव्यभिचारी भक्तीने. झगडून नव्हे, शरण जाऊन.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.२६</span>
+  <div class="shloka-deva">
+    मां च योऽव्यभिचारेण भक्तियोगेन सेवते ।<br>
+    स गुणान्समतीत्यैतान्ब्रह्मभूयाय कल्पते ॥
+  </div>
+  <div class="shloka-meaning">
+    "आणि जो अव्यभिचारी (न डळमळणाऱ्या) भक्तियोगाने माझी सेवा करतो,<br>
+    तो या तिन्ही गुणांना पूर्णपणे ओलांडून<br>
+    ब्रह्मरूप होण्यास पात्र होतो."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.२७</span>
+  <div class="shloka-deva">
+    ब्रह्मणो हि प्रतिष्ठाहममृतस्याव्ययस्य च ।<br>
+    शाश्वतस्य च धर्मस्य सुखस्यैकान्तिकस्य च ॥
+  </div>
+  <div class="shloka-meaning">
+    "कारण त्या ब्रह्माचा — अमृत आणि अव्यय,<br>
+    शाश्वत धर्म आणि एकमेव खऱ्या सुखाचा —<br>
+    आधार मीच आहे."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा संपूर्ण अध्यायाचा व्यावहारिक कळस. गुणातीत होणे फार उंच वाटते — पण कृष्ण मार्ग अगदी सोपा सांगतो : <span class="key-term">अव्यभिचारी भक्ती.</span>
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>कठीण मार्ग</th><th>कृष्णाचा मार्ग</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>गुणांशी झगडणे</td><td>ईश्वराला शरण जाणे</td></tr>
+      <tr><td>बळाने दाबणे</td><td>प्रेमाने वळवणे</td></tr>
+      <tr><td>"मी जिंकेन"</td><td>"तू सांभाळ"</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    <span class="key-term">"अव्यभिचारेण"</span> — न डळमळणारी, एकनिष्ठ भक्ती. मन एका दिशेला स्थिर झाले, की गुणांची ओढ आपोआप कमी होते. <strong style="color: var(--temple-gold);">अंधाराशी लढावे लागत नाही — दिवा लावला की तो जातो.</strong>
+  </p>
+  <p>
+    महत्त्वाचे — कृष्ण म्हणतो "मीच ब्रह्माचा आधार." म्हणजे भक्ती आणि ज्ञान वेगळे नाहीत; भक्तीने जो ईश्वराला धरतो, तो आपोआप ब्रह्माला — गुणातीत अवस्थेला — पोहोचतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  गुणांशी झगडावे लागत नाही — फक्त लक्ष दुसरीकडे वळवायचे.<br>
+  <strong style="color: var(--temple-gold);">अंधाराशी लढत बसण्यापेक्षा एक दिवा लावणे सोपे.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· आजची शरणागती आणि वारीचा अनुभव</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · शरणागतीची शक्ती</span>
+  <div class="example-name">"मी सांभाळतो" ते "तू सांभाळ" — आणि वारीतला विठ्ठल</div>
+  <div class="example-dates">आजचा सावरण्याचा प्रवास · आणि पंढरीची वाट</div>
+  <p>
+    आजचा अनुभव — व्यसन, खिन्नता किंवा बर्नआउटमधून सावरणारे अनेक लोक सांगतात की केवळ इच्छाशक्तीने ते जमले नाही. वळण आले तेव्हा, जेव्हा त्यांनी <span class="key-term">"मी एकटा सगळे नियंत्रित करेन"</span> हा अहंकार सोडला आणि स्वतःहून मोठ्या कशाला तरी शरण गेले — एखादा कार्यक्रम, श्रद्धा, समूह.
+  </p>
+  <hr class="divider">
+  <p>
+    हीच गीतेची <span class="key-term">अव्यभिचारी भक्ती</span> — झगडून नव्हे, सोपवून. जेव्हा लक्ष "मी, माझे" वरून मोठ्या उद्देशाकडे वळते, तेव्हा रजाची धावपळ आणि तमाचे जडत्व आपोआप सैल होते. <strong style="color: var(--temple-gold);">शरणागती ही दुर्बलता नव्हे — ती सर्वांत मोठी आंतरिक ताकद.</strong>
+  </p>
+  <hr class="divider">
+  <p>
+    महाराष्ट्रात याचे जिवंत रूप दरवर्षी <span class="key-term">पंढरपूरच्या वारीत</span> दिसते. लाखो वारकरी उन्हातान्हात शेकडो किलोमीटर चालतात — जात, पैसा, पद विसरून, फक्त विठ्ठलनामात. त्या एकनिष्ठ नामस्मरणात "मी कोण, मला काय हवे" हा अहंकार विरून जातो; उरतो फक्त भाव.
+  </p>
+  <hr class="divider">
+  <p>
+    वारीतला वारकरी सुख-दुःख, थकवा-आनंद यांच्या पलीकडे एका लयीत पोहोचतो — हाच गुणांच्या पलीकडे जाण्याचा भक्तिमार्ग. <span class="key-term">एकनिष्ठ भक्तीत अहंकार विरतो, आणि अहंकार विरला की गुणांची पकडही सुटते.</span> जुनी वारी असो वा आजची शरणागती — सूत्र एकच.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    अव्यभिचारी भक्तीने ।<br>
+    जो मज सेवितो ।<br>
+    तिन्ही गुण ओलांडुनी ।<br>
+    ब्रह्म होतो ।।<br><br>
+    झगडावे न लागे ।<br>
+    शरण जावे फक्त ।<br>
+    दिवा लावता अंधार ।<br>
+    जातो आपोआप ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "झगडावे न लागे, शरण जावे फक्त" — हा सोपा मार्ग सांगतात. गुणांशी थेट लढाई थकवणारी; पण ईश्वराकडे एकनिष्ठ लक्ष वळवले की गुणांची ओढ आपोआप सैल होते. वारकऱ्याचे विठ्ठलनाम हेच — लढाई नव्हे, समर्पण.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या वाईट सवयी, मनःस्थिती — मी त्यांच्याशी फक्त<br>झगडतो का? की लक्ष एखाद्या मोठ्या, उच्च गोष्टीकडे वळवतो?"<br><br>
+    झगडण्यापेक्षा वळवणे सोपे आणि टिकाऊ.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एका सवयीशी लढण्याऐवजी — लक्ष वळवा.<br>
+    <strong style="color: var(--saffron);">"हे माझ्या हातात पूर्ण नाही — तू सांभाळ."</strong><br>
+    ही शरणागती दुर्बलता नव्हे; ती सुटकेची सुरुवात.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक संपूर्ण गीतेतल्या एका मध्यवर्ती सूत्राची पुनरावृत्ती आहे — <span class="key-term">भक्ती हाच सर्वांत सुलभ मार्ग.</span> ज्ञानमार्ग कठीण, योगमार्ग कठोर; पण अव्यभिचारी भक्ती सर्वांना, सर्व परिस्थितीत शक्य. आणि ती थेट गुणातीत — ब्रह्मभूत — अवस्थेकडे नेते.
+  </p>
+  <p>
+    मानसशास्त्रीय दृष्टीनेही हे सखोल आहे. वाईट सवयी किंवा नकारात्मक मनःस्थिती यांच्याशी थेट झुंजल्याने त्या अनेकदा बळावतात (विचार दाबला की उलटतो). उलट <span class="key-term">लक्ष सकारात्मक, उच्च गोष्टीकडे वळवणे</span> अधिक परिणामकारक — हेच "अंधाराशी न लढता दिवा लावणे."
+  </p>
+  <p>
+    १४.२७ मध्ये कृष्ण भक्ती आणि ज्ञान यांना जोडतो — "ब्रह्माचा आधार मीच." म्हणजे सगुण भक्ती आणि निर्गुण ब्रह्म वेगळे नाहीत; भक्ताला धरलेला हात अखेर ब्रह्मापर्यंतच नेतो. <strong style="color: var(--temple-gold);">गुणांच्या वादळातून बाहेर पडण्याचा पूल म्हणजे एकनिष्ठ समर्पण</strong> — आणि तोच अध्याय १४ चा अंतिम, आश्वासक संदेश.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना ७/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

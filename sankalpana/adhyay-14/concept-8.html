@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय १४ — सार व समारोप — भगवद्गीता</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना ८ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">सार व समारोप</div>
+  <div class="concept-subtitle">तीन गुण, साक्षी, आणि पलीकडची वाट — एका दृष्टीत</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    संपूर्ण अध्याय १४ एका साध्या रूपकात बसतो —<br>
+    <strong style="color: var(--temple-gold);">तीन गुण म्हणजे आकाशातले बदलते हवामान. तुम्ही ते हवामान नाही — तुम्ही ते पाहणारे आकाश आहात.</strong><br>
+    ऊन येते, ढग येतात, वादळ येते आणि जाते —<br>
+    आकाश मात्र अबाधित राहते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.१९–२० · सारसूत्र</span>
+  <div class="shloka-deva">
+    नान्यं गुणेभ्यः कर्तारं यदा द्रष्टानुपश्यति ।<br>
+    गुणेभ्यश्च परं वेत्ति मद्भावं सोऽधिगच्छति ॥<br>
+    गुणानेतानतीत्य त्रीन्देही देहसमुद्भवान् ।<br>
+    जन्ममृत्युजरादुःखैर्विमुक्तोऽमृतमश्नुते ॥
+  </div>
+  <div class="shloka-meaning">
+    "जेव्हा द्रष्टा (साक्षी) गुणांशिवाय दुसरा कर्ता नाही असे पाहतो,<br>
+    आणि स्वतःला गुणांच्या पलीकडचे जाणतो — तो माझ्या भावाला पोहोचतो.<br>
+    देहातून उद्भवलेल्या या तीन गुणांना ओलांडून<br>
+    देही जन्म-मृत्यू-जरा-दुःखांतून मुक्त होऊन अमृत अनुभवतो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">सारांश</span>
+  <span class="label-small">· संपूर्ण अध्यायाची वाट</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अध्याय १४ ने एक संपूर्ण प्रवास घडवला — गुणांचा जन्म, त्यांचे स्वरूप, त्यांची झुंज, आणि शेवटी त्यांच्या पलीकडची वाट. एका दृष्टीत तो असा :
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>संकल्पना</th><th>सार</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>१. जन्म</td><td>तिन्ही गुण प्रत्येकात विणलेले</td></tr>
+      <tr><td>२. सत्त्व</td><td>प्रकाश-ज्ञान — पण सुखाचा सूक्ष्म बंध</td></tr>
+      <tr><td>३. रज</td><td>इच्छा-कर्म — दिशा दिली तर कर्मयोग</td></tr>
+      <tr><td>४. तम</td><td>जडत्व — एक लहान कृती चक्र तोडते</td></tr>
+      <tr><td>५. संघर्ष</td><td>गुण झुंजतात; साक्षी पाहतो</td></tr>
+      <tr><td>६. गुणातीत</td><td>स्तुती-निंदेत समान — स्थिर तळ</td></tr>
+      <tr><td>७. मार्ग</td><td>अव्यभिचारी भक्तीने पलीकडे</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    सर्वांचा गाभा एकच — <span class="key-term">"मी गुण नाही; मी गुणांना पाहणारा साक्षी आहे."</span> ही एक दृष्टी संपूर्ण अध्यायाचे फळ.
+  </p>
+  <p>
+    आणि कृष्ण आश्वासन देतो — जो हे जाणतो, तो <strong style="color: var(--temple-gold);">जन्म-मृत्यू-जरा-दुःखांच्या पलीकडे जाऊन अमृत अनुभवतो.</strong> गुणांचे हवामान कितीही बदलो — आकाश अमर आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  हवामान थांबवता येत नाही — पण तुम्ही हवामान होणे थांबवू शकता.<br>
+  <strong style="color: var(--temple-gold);">ढग पाहणारे आकाश व्हा — तेच गुणातीत.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· रूपक — आकाश आणि हवामान</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-दृष्टी · संपूर्ण अध्यायाचे सूत्र</span>
+  <div class="example-name">आकाश व्हा, हवामान नको</div>
+  <div class="example-dates">रोजच्या मनःस्थितीकडे पाहण्याची नवी दृष्टी</div>
+  <p>
+    दिवसभरात मनाचे हवामान सतत बदलते — सकाळी प्रसन्न ऊन (सत्त्व), दुपारी अस्वस्थ वारा (रज), रात्री जड ढग (तम). आपण नेहमी या हवामानाशी एकरूप होतो — "मी आनंदी आहे", "मी कंटाळलो आहे", "मी अस्वस्थ आहे."
+  </p>
+  <hr class="divider">
+  <p>
+    अध्याय १४ ची संपूर्ण शिकवण एका वाक्यात — <strong style="color: var(--temple-gold);">"मी आनंदी आहे" ऐवजी "माझ्यात आत्ता आनंद आहे."</strong> छोटा बदल, पण मोठा फरक. पहिल्यात तुम्ही हवामान आहात; दुसऱ्यात तुम्ही ते पाहणारे आकाश.
+  </p>
+  <hr class="divider">
+  <p>
+    हे रोज सरावता येते — व्यसन सोडणारा, खिन्नतेतून उठणारा, टीकेत स्थिर राहणारा, प्रसिद्धीत न हुरळणारा — सर्वांचे सूत्र एकच : <span class="key-term">गुणांना ओळखा, त्यांच्याशी एकरूप होऊ नका, आणि भक्तीने लक्ष उच्चाकडे वळवा.</span>
+  </p>
+  <hr class="divider">
+  <p>
+    गीतेची ही दृष्टी प्राचीन असली, तरी आजच्या तणाव-भरल्या, सतत बदलणाऱ्या जगात अधिकच प्रस्तुत. भावनांचे वादळ नाकारायचे नाही, त्यांत बुडायचेही नाही — फक्त <span class="key-term">पाहणारे आकाश</span> राहायचे. हाच गुणत्रयविभागयोगाचा शाश्वत, समकालीन संदेश.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    गुण कर्ते जाणुनी ।<br>
+    मी साक्षी ओळखुनी ।<br>
+    तिन्ही ओलांडुनी जो ।<br>
+    अमृत पावे ।।<br><br>
+    हवामान बदले सदा ।<br>
+    आकाश अबाधित ।<br>
+    तैसा गुणातीत जो ।<br>
+    अमर राहे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "आकाश अबाधित" — या प्रतिमेत संपूर्ण अध्याय बांधतात. गुण म्हणजे बदलते हवामान; आत्मा म्हणजे न बदलणारे आकाश. जो हे जाणून गुणांना साक्षीभावाने पाहतो आणि भक्तीने पलीकडे जातो, तो अमृताला — शाश्वत शांतीला — पोहोचतो.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "मी माझ्या मनःस्थितीशी एकरूप होतो —<br>की ती पाहणारे आकाश राहतो?"<br><br>
+    "मी दुःखी आहे" आणि "माझ्यात आत्ता दुःख आहे" — यांतला फरक अनुभवा.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज मनःस्थिती बदलेल तेव्हा, ती "मी" न म्हणता पाहा —<br>
+    <strong style="color: var(--saffron);">"हे हवामान आहे, येईल आणि जाईल. मी आकाश आहे."</strong><br>
+    हाच अध्याय १४ चा रोजचा अभ्यास.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन · अध्याय समारोप</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय १४ हा सांख्य आणि वेदान्त यांना भक्तीच्या धाग्याने जोडतो. सांख्याची <span class="key-term">प्रकृती-पुरुष</span> चौकट — गुण प्रकृतीचे, आत्मा साक्षी — इथे आहे; पण गीता तिला कोरडे तत्त्वज्ञान न ठेवता "अव्यभिचारी भक्ती" हा जिवंत, सर्वसुलभ मार्ग जोडते.
+  </p>
+  <p>
+    मध्यवर्ती अंतर्दृष्टी म्हणजे <span class="key-term">तादात्म्य आणि साक्षीभाव</span> यांतला फरक. दुःख टाळणे शक्य नाही, गुण थांबवणे शक्य नाही — पण "मी दुःख" ऐवजी "मी दुःखाचा साक्षी" ही दृष्टी बदलता येते. आधुनिक मनोचिकित्सेतील "डिफ्यूजन" — विचारांपासून अंतर राखणे — याच तत्त्वावर उभी आहे.
+  </p>
+  <p>
+    अखेरचे आश्वासन गहन आहे — गुणातीत अवस्था म्हणजे केवळ मनःशांती नव्हे, तर <span class="key-term">"अमृतमश्नुते"</span> — जन्म-मृत्यूच्या चक्रापलीकडची मुक्ती. आणि तिथे पोहोचण्याचा पूल भव्य साधना नव्हे, तर एकनिष्ठ समर्पण. <strong style="color: var(--temple-gold);">गुणांचे हवामान ओळखा, साक्षी व्हा, आणि भक्तीने आकाश व्हा</strong> — हाच गुणत्रयविभागयोगाचा संपूर्ण, शाश्वत सारांश.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना ८/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

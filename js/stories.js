@@ -1827,6 +1827,22 @@ const GITA_STORIES = {
         sankalp: "\"मय्येव मन आधत्स्व — माझ्यातच मन स्थापन कर.\" सकाळी, काम करताना, झोपताना — कृष्णात."
       }
     }
-  }  // end adhyay 12
+  },  // end adhyay 12
+
+
+  // ── Adhyay 14 ─────────────────────────────────────────────────────────────
+  // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
+  // Content lives in sankalpana/adhyay-14/ (embedded via iframe); the c/14/N/ paths
+  // stay as OG-redirect stubs that route into the app.
+  "14": {
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-5.html" },
+    "6": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-6.html" },
+    "7": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-7.html" },
+    "8": { kathaHtmlUrl: "sankalpana/adhyay-14/concept-8.html" }
+  }  // end adhyay 14
 
 };

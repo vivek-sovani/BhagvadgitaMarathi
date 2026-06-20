@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>रजोगुण — भगवद्गीता अध्याय १४</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १४ · संकल्पना ३ · गुणत्रयविभागयोग</div>
+  <div class="concept-title">रजोगुण</div>
+  <div class="concept-subtitle">इच्छा, कर्म, तृष्णा — न थांबणारे इंजिन</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    रात्रीचे दोन वाजले तरी लॅपटॉप चालू, अजून एक ईमेल, अजून एक काम —<br>
+    <strong style="color: var(--temple-gold);">"अजून हवे, अजून पुढे, अजून मोठे."</strong><br>
+    हे न थांबणारे इंजिन म्हणजे रजोगुण.<br>
+    तो ऊर्जा देतो, यश देतो — पण समाधान कधीच देत नाही.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 14.7 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.७</span>
+  <div class="shloka-deva">
+    रजो रागात्मकं विद्धि तृष्णासङ्गसमुद्भवम् ।<br>
+    तन्निबध्नाति कौन्तेय कर्मसङ्गेन देहिनम् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "रज हे रागरूप (आसक्तीचे) आहे, तृष्णा आणि संगातून उत्पन्न होणारे —<br>
+    असे जाण. हे कौंतेया, ते कर्माच्या आसक्तीने<br>
+    देहीला (आत्म्याला) बांधते."
+  </div>
+</div>
+
+<!-- SHLOKA 14.12 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १४.१२</span>
+  <div class="shloka-deva">
+    लोभः प्रवृत्तिरारम्भः कर्मणामशमः स्पृहा ।<br>
+    रजस्येतानि जायन्ते विवृद्धे भरतर्षभ ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "लोभ, धावपळ, कर्मांचा आरंभ (नवनवीन उपक्रम),<br>
+    अस्वस्थता आणि तीव्र इच्छा —<br>
+    हे रज वाढल्यावर प्रकट होतात, हे भरतश्रेष्ठा."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    रज म्हणजे <span class="key-term">हालचाल, इच्छा, महत्त्वाकांक्षा.</span> तो वाईट नाही — जगातली सर्व निर्मिती, उद्योग, प्रगती रजातूनच होते. पण त्याचे स्वरूप एकच — कधीच तृप्त न होणे.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>रजाचे रूप</th>
+        <th>अनुभव</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>तृष्णा</td>
+        <td>"अजून हवे" ही न संपणारी ओढ</td>
+      </tr>
+      <tr>
+        <td>प्रवृत्ती</td>
+        <td>सतत धावपळ, गती</td>
+      </tr>
+      <tr>
+        <td>आरंभ</td>
+        <td>नवनवीन उपक्रम, योजना</td>
+      </tr>
+      <tr>
+        <td>अशम</td>
+        <td>अस्वस्थता, मन शांत नाही</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    रज <span class="key-term">"कर्मसङ्गेन"</span> बांधतो — कर्माच्या आसक्तीने. काम वाईट नाही; <strong style="color: var(--temple-gold);">"फळ मिळालेच पाहिजे" ही आसक्ती बांधते.</strong> म्हणूनच कर्मयोग सांगतो — कर्म करा, फळाची आसक्ती सोडा.
+  </p>
+  <p>
+    रजाला नाकारायचे नाही — त्याला <span class="key-term">दिशा</span> द्यायची. निरुद्देश धावपळ म्हणजे बंध; उच्च ध्येयाला वाहिलेली तीच ऊर्जा म्हणजे साधन.
+  </p>
+</div>
+
+<div class="pull-quote">
+  रज यश देतो, पण समाधान कधीच देत नाही.<br>
+  <strong style="color: var(--temple-gold);">त्याला नाकारू नका — दिशा द्या.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — SHIVAJI + MODERN ACHIEVER -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· जुने आणि नवे — दिशा दिलेली ऊर्जा</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · आणि छत्रपती शिवाजी महाराज</span>
+  <div class="example-name">न थांबणारे इंजिन — आणि ध्येयाला वाहिलेली ऊर्जा</div>
+  <div class="example-dates">आजचा महत्त्वाकांक्षी जीव · आणि शिवकालीन कर्मयोग</div>
+
+  <p>
+    आजचा अनुभव आधी — स्टार्टअप उभारणारा रात्रंदिवस राबतो, परीक्षेआधी विद्यार्थी झोप विसरतो, यशस्वी माणूसही सुट्टीवर असताना फोन तपासतो. ऊर्जा प्रचंड, पण मन कधीच निवांत नाही. हा <span class="key-term">रज</span> — शुद्ध, दिशाहीन धावपळ.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    आता तीच ऊर्जा <strong style="color: var(--temple-gold);">दिशा मिळाल्यावर</strong> काय होते, ते छत्रपती शिवाजी महाराजांत दिसते. अफाट कार्यशक्ती, अखंड हालचाल, किल्ले बांधणे, आरमार उभारणे, प्रशासन रचणे — रजाची सर्व लक्षणे. पण ती ऊर्जा वैयक्तिक तृष्णेसाठी नव्हे, तर <span class="key-term">स्वराज्याच्या</span> उच्च ध्येयाला वाहिलेली होती.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच फरक — दिशाहीन रज बांधतो, ध्येयाला वाहिलेला रज घडवतो. शिवरायांची धावपळ "मला अजून हवे" साठी नव्हती; ती "लोकांसाठी, धर्मासाठी, न्यायासाठी" होती. म्हणून तीच ऊर्जा <span class="key-term">कर्मयोग</span> बनली — बंध नव्हे.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    गीतेचा धडा हाच — रज ही शक्ती आहे, ती टाकाऊ नाही. प्रश्न एकच : <strong style="color: var(--temple-gold);">ही ऊर्जा फक्त "माझ्या" तृष्णेसाठी आहे, की एखाद्या मोठ्या उद्देशासाठी?</strong> उत्तरात फरक — तीच धावपळ एकतर थकवते, नाहीतर इतिहास घडवते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    रज रागरूप जाण ।<br>
+    तृष्णेतून उद्भवे ।<br>
+    कर्माच्या संगाने ।<br>
+    बांधते जीवा ।।<br><br>
+    लोभ धावपळ आरंभ ।<br>
+    अस्वस्थता स्पृहा ।<br>
+    रज वाढल्या चिन्हे ।<br>
+    हीच जाणावी ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — रजाचे मूळ तृष्णा आणि आसक्ती. कर्म वाईट नाही, पण "फळ हवेच" ही पकड बांधते. तीच ऊर्जा निष्काम होऊन उच्च ध्येयाला वाहिली, की बंध सुटतो आणि कर्मयोग होतो. शिवरायांची अखंड कर्मशक्ती हीच दिशा दिलेल्या रजाची साक्ष.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझी धावपळ — फक्त 'मला अजून हवे' साठी आहे,<br>की एखाद्या मोठ्या, अर्थपूर्ण उद्देशासाठी?"<br><br>
+    उत्तरात ठरते — ती ऊर्जा थकवते की घडवते.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक काम — फळाची आसक्ती न ठेवता, पूर्ण झोकून करा.<br>
+    <strong style="color: var(--saffron);">ऊर्जा तीच, पण "माझ्यासाठी" ऐवजी "अर्पण म्हणून".</strong><br>
+    हाच रजाचा कर्मयोगात कायापालट.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    रजोगुण आधुनिक जगात सर्वाधिक उत्सवित गुण आहे — स्पर्धा, महत्त्वाकांक्षा, उत्पादकता, "हसल कल्चर" हे सगळे रजाचेच गौरव. गीता रजाला नाकारत नाही; ती फक्त त्याचे स्वरूप स्पष्ट करते — <span class="key-term">तो कधीच तृप्त होत नाही.</span> एक ध्येय गाठले की लगेच पुढचे; विश्रांती नाही, समाधान नाही.
+  </p>
+  <p>
+    मानसशास्त्रात याला "hedonic treadmill" म्हणतात — मिळवत राहूनही समाधानाची पातळी तीच राहते. गीतेचे निदान हजारो वर्षांपूर्वीच हेच होते : <span class="key-term">तृष्णा</span> ही न संपणारी, आणि <span class="key-term">कर्मसङ्ग</span> — फळाची आसक्ती — हाच खरा बंध.
+  </p>
+  <p>
+    उपाय रज नष्ट करणे नव्हे — ते अशक्य आणि अनावश्यक. उपाय म्हणजे <span class="key-term">निष्काम कर्म</span> — तीच ऊर्जा, पण फळाच्या पकडीशिवाय आणि उच्च उद्देशाला वाहिलेली. <strong style="color: var(--temple-gold);">दिशाहीन रज थकवतो; अर्पित रज घडवतो.</strong> रजाचे रूपांतर हाच कर्मयोगाचा गाभा, आणि गुणातीततेकडचे महत्त्वाचे पाऊल.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · गुणत्रयविभागयोग · अध्याय १४ · संकल्पना ३/८ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>
