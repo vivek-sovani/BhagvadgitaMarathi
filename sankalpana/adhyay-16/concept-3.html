@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आसुरी माणूस — काम, क्रोध, लोभाचा दास — भगवद्गीता अध्याय १६</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १६ · संकल्पना ३ · दैवासुरसम्पद्विभागयोग</div>
+  <div class="concept-title">आसुरी माणूस</div>
+  <div class="concept-subtitle">काम, क्रोध, लोभाचा दास — आणि बाहेर पडण्याचं दार</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    "आज हे मिळालं — उद्या ते मिळवीन. हे माझं आहे, ते पण येईल.<br>
+    माझ्यासारखा दुसरा कोण? मी ईश्वर आहे."<br>
+    <strong style="color: var(--temple-gold);">गीता हा आंतरिक एकपात्री प्रयोग सांगते — आणि विचारते,<br>
+    हे विचार आपल्यालाही कधी येत नाहीत का?</strong>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १६.१०–१२</span>
+  <div class="shloka-deva">
+    कामुपाश्रित्य दुष्पूरं दम्भमानमदान्विताः ।<br>
+    मोहाद्गृहीत्वासद्ग्राहान्प्रवर्तन्तेऽशुचिव्रताः ॥<br>
+    चिन्तामपरिमेयां च प्रलयान्तामुपाश्रिताः ।<br>
+    कामोपभोगपरमा एतावदिति निश्चिताः ॥<br>
+    आशापाशशतैर्बद्धाः कामक्रोधपरायणाः ।<br>
+    ईहन्ते कामभोगार्थमन्यायेनार्थसञ्चयान् ॥
+  </div>
+  <div class="shloka-meaning">
+    "न तृप्त होणाऱ्या कामाचा आश्रय घेऊन, दंभ-मान-मद यांनी युक्त,<br>
+    मोहाने चुकीच्या विश्वासांना धरून अशुद्ध व्रतांनी वागतात.<br>
+    मृत्यूपर्यंत अपार काळज्या करतात, भोग हेच परम मानतात.<br>
+    आशेच्या शेकडो फासांनी बद्ध, काम-क्रोधात बुडालेले —<br>
+    भोगासाठी अन्यायाने संपत्ती गोळा करतात."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १६.१३–१५</span>
+  <div class="shloka-deva">
+    इदमद्य मया लब्धमिमं प्राप्स्ये मनोरथम् ।<br>
+    इदमस्तीदमपि मे भविष्यति पुनर्धनम् ॥<br>
+    असौ मया हतः शत्रुर्हनिष्ये चापरानपि ।<br>
+    ईश्वरोऽहमहं भोगी सिद्धोऽहं बलवान्सुखी ॥<br>
+    आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया ।<br>
+    यक्ष्ये दास्यामि मोदिष्य इत्यज्ञानविमोहिताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "आज मला हे मिळालं, ही इच्छा पूर्ण करीन, हे माझं आहे, हे पण येईल.<br>
+    हा शत्रू मी नष्ट केला, इतरांनाही करीन.<br>
+    मी ईश्वर, मी भोक्ता, मी सिद्ध, बलवान, सुखी.<br>
+    मी श्रीमंत, कुलीन — माझ्यासारखा दुसरा कोण? —<br>
+    अशा अज्ञानमोहित जनांचा आतला एकपात्री प्रयोग."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· आंतरिक एकपात्री</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हे श्लोक वाचताना जाणवतं — हे कुण्या दुसऱ्याचं वर्णन नाही. <span class="key-term">हे विचार आपल्यालाही कधी येतात.</span> कमी-जास्त प्रमाणात.
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>आसुरी विचार</th><th>आपल्यातला आवाज</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>दुष्पूरं काम</td><td>"हे मिळालं — पण अजून हवं"</td></tr>
+      <tr><td>चिन्तामपरिमेयाम्</td><td>"हे टिकेल का? ते मिळेल का?"</td></tr>
+      <tr><td>आशापाशैर्बद्धाः</td><td>एक स्वप्न पूर्ण — दुसरं तयार</td></tr>
+      <tr><td>ईश्वरोऽहम्</td><td>"माझ्यासारखा दुसरा कोण?"</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    कृष्ण हे दाखवतो — <span class="key-term">निदान म्हणून, शिक्षा म्हणून नव्हे.</span> ओळखलं तर सुटता येतं. <strong style="color: var(--temple-gold);">तो विचार "माझा" नाही — हे जाणवलं की त्याची पकड कमी होते.</strong>
+  </p>
+  <p>
+    आणि महत्त्वाचं — ज्ञानदेव म्हणतात, "तो आसुरी नाही, तो गुण आहे — तो जाऊ शकतो." दार बंद केलं नाही, उघडंच ठेवलंय.
+  </p>
+</div>
+
+<div class="pull-quote">
+  "ईश्वरोऽहम्" — हा विचार दुसऱ्याचा नाही; तो आपल्या सगळ्यांच्या आत कधी ना कधी उठतो.<br>
+  <strong style="color: var(--temple-gold);">ओळखलं — की तो "माझा" नाही हे कळतं. आणि तेच सुटका.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· "never enough" — आणि बाहेर पडण्याचं दार</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · न संपणारी दौड</span>
+  <div class="example-name">"सर्व काही असूनही" — आणि थांबण्याचा क्षण</div>
+  <div class="example-dates">आजचा "never enough" सापळा · आणि जाणिवेचा क्षण</div>
+  <p>
+    आजच्या जगात "never enough" ही एक खरी, ओळखीची अवस्था. पैसा, पद, मान्यता, फॉलोअर्स — सगळं मिळालं तरी एक पोकळी राहते. <span class="key-term">"आणखी हवं"</span> हा आवाज कधीच बंद होत नाही. हेच गीतेचं "दुष्पूरं काम" — कधीच न तृप्त होणारी इच्छा.
+  </p>
+  <hr class="divider">
+  <p>
+    आणि गीतेचा "ईश्वरोऽहम्" — <strong style="color: var(--temple-gold);">"मी श्रेष्ठ, माझ्यासारखा कोण?"</strong> — हा सोशल मीडियाच्या युगात खूप ओळखीचा. तुलना, स्पर्धा, "माझं चांगलं" दाखवण्याची सक्ती — हे सूक्ष्म "ईश्वरोऽहम्" रोजच्या जगण्यात डोकावतो.
+  </p>
+  <hr class="divider">
+  <p>
+    पण — आणि हेच गीतेचं खरं देणं — <span class="key-term">हे विचार येणं म्हणजे आपण "आसुरी माणूस" नाही.</span> ते विचार म्हणजे एक प्रवाह, एक लहर; ती लहर "मी" नाही. जो क्षण आपण हे ओळखतो — "हा 'never enough' चा विचार आलाय, पण तो माझा गाभा नाही" — तोच क्षण मुक्तीचा दरवाजा उघडतो.
+  </p>
+  <hr class="divider">
+  <p>
+    इतिहासात आणि आजच्या काळातही असे लोक झाले जे यातून बाहेर पडले — संपत्ती असूनही साधेपणाकडे वळले, यश असूनही नम्र राहिले. ते "माझ्यासारखा कोण?" सोडून "इतरांसाठी काय?" हा प्रश्न विचारू लागले. <span class="key-term">तो क्षण म्हणजेच आसुरीपणाचं दार बंद होणं आणि दैवी दाराचं उघडणं.</span>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    आज हे मिळाले उद्या ते ।<br>
+    काम न संपे कधी एकटे ।<br>
+    आशेचे फासे गुंफती ते ।<br>
+    आसुरी जनांना ।।<br><br>
+    हे विचार ओळखावे ।<br>
+    स्वतःत पाहून दूर व्हावे ।<br>
+    दैवी विचार रुजवावे ।<br>
+    हाच उपाय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे विचार ओळखावे — स्वतःत पाहून दूर व्हावे" — हे सांगतात. आसुरी विचार दुसऱ्यात नाही — आपल्यातच असतात. त्यांना ओळखणं म्हणजे जागृती. आणि उपाय सोपा — दैवी विचार रुजवायचे; आसुरी आपोआप कमी होतात.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-दे">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "आज मला 'मला हे मिळायलाच हवं' किंवा 'मी सर्वश्रेष्ठ'<br>असा विचार आला का?"<br><br>
+    आला असेल — तो पाहा. त्यावर दया करा. तो जाऊ शकतो.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखाद्या इच्छेबद्दल मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"ही इच्छा पूर्ण झाली नाही तरी मी ठीक आहे.<br>माझं जीवन यापेक्षा मोठं आहे."</strong><br>
+    हाच आसुरी कामवासनेवरचा पहिला विजय.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    श्लोक १६.१३–१५ हे गीतेतले सर्वांत धाडसी विधान — कृष्ण आसुरी मनाचा <span class="key-term">आतला एकपात्री प्रयोग</span> जसाच्या तसा मांडतो. "ईश्वरोऽहम्" — मी ईश्वर आहे — हे वाचताना अनेकांना धक्का बसतो, कारण हा आवाज ओळखीचा वाटतो. तेच कृष्णाचं प्रयोजन — आरसा दाखवणं.
+  </p>
+  <p>
+    <span class="key-term">"दुष्पूरम्"</span> — कधीच न भरणारं — हे मानसशास्त्रातल्या "insatiability" शी अचूक जुळतं. संशोधन सांगतं की सातत्याने बाह्य गोष्टींतून आत्मसन्मान शोधणे हा एक सापळा आहे; प्रत्येक यश नवी तुलना जन्मवतं. गीतेने हे "आशापाश" या एका शब्दात हजारो वर्षांपूर्वी ओळखलं.
+  </p>
+  <p>
+    पण सर्वांत महत्त्वाचं — गीता निराशावादी नाही. <span class="key-term">"तो जाऊ शकतो"</span> हे ज्ञानदेवांचं वचन आशावादी आहे. आसुरी वृत्ती ही नशीब नाही, ती एक अवस्था आहे — आणि ओळख हाच बदलाचा आरंभ. <strong style="color: var(--temple-gold);">"हे माझे नाही" हे एकदा जाणवलं, की त्या विचाराची पकड सुटू लागते</strong> — आणि पुढच्या संकल्पनेतला "दैवी स्वभाव वाढवण्याचा" मार्ग आपोआप उघडतो.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · दैवासुरसम्पद्विभागयोग · अध्याय १६ · संकल्पना ३/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+<script>
+(function() { var sz = localStorage.getItem('gita-fontsize') || 'normal'; document.documentElement.dataset.fontsize = sz; })();
+</script>
+</body>
+</html>

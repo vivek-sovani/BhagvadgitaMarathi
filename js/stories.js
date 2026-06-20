@@ -1674,6 +1674,21 @@ const GITA_STORIES = {
   },  // end adhyay 15
 
 
+  // ── Adhyay 16 ─────────────────────────────────────────────────────────────
+  // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
+  // Content lives in sankalpana/adhyay-16/ (embedded via iframe); the c/16/N/ paths
+  // stay as OG-redirect stubs that route into the app.
+  "16": {
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-5.html" },
+    "6": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-6.html" },
+    "7": { kathaHtmlUrl: "sankalpana/adhyay-16/concept-7.html" }
+  },  // end adhyay 16
+
+
   // ── Adhyay 17 ─────────────────────────────────────────────────────────────
   // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
   // Content lives in sankalpana/adhyay-17/ (embedded via iframe); the c/17/N/ paths
@@ -1686,6 +1701,24 @@ const GITA_STORIES = {
     "5": { kathaHtmlUrl: "sankalpana/adhyay-17/concept-5.html" },
     "6": { kathaHtmlUrl: "sankalpana/adhyay-17/concept-6.html" },
     "7": { kathaHtmlUrl: "sankalpana/adhyay-17/concept-7.html" }
-  }  // end adhyay 17
+  },  // end adhyay 17
+
+
+  // ── Adhyay 18 ─────────────────────────────────────────────────────────────
+  // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
+  // Content lives in sankalpana/adhyay-18/ (embedded via iframe); the c/18/N/ paths
+  // stay as OG-redirect stubs that route into the app.
+  "18": {
+    "1":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-1.html" },
+    "2":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-2.html" },
+    "3":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-3.html" },
+    "4":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-4.html" },
+    "5":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-5.html" },
+    "6":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-6.html" },
+    "7":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-7.html" },
+    "8":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-8.html" },
+    "9":  { kathaHtmlUrl: "sankalpana/adhyay-18/concept-9.html" },
+    "10": { kathaHtmlUrl: "sankalpana/adhyay-18/concept-10.html" }
+  }  // end adhyay 18
 
 };

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>आसुरीसंपद — भगवद्गीता अध्याय १६</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १६ · संकल्पना २ · दैवासुरसम्पद्विभागयोग</div>
+  <div class="concept-title">आसुरीसंपद</div>
+  <div class="concept-subtitle">आसुरी स्वभावाची लक्षणे — दंभ, दर्प, अभिमान, क्रोध</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    दैवीसंपद समजली. आता कृष्ण आसुरी स्वभाव सांगतो —<br>
+    आणि हे ऐकताना एक गोष्ट लक्षात ठेवायची —<br>
+    <strong style="color: var(--temple-gold);">ही दुसऱ्या कुणाची यादी नाही; हे गुण आपल्यातही डोकावतात.</strong><br>
+    ते ओळखले, तरच त्यांच्यापासून दूर होता येतं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १६.४</span>
+  <div class="shloka-deva">
+    दम्भो दर्पोऽभिमानश्च क्रोधः पारुष्यमेव च ।<br>
+    अज्ञानं चाभिजातस्य पार्थ सम्पदमासुरीम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "दंभ, दर्प, अभिमान, क्रोध, पारुष्य (कठोरता) आणि अज्ञान —<br>
+    हे आसुरीसंपत्तीत जन्मलेल्याचे गुण, हे पार्था."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १६.७–९</span>
+  <div class="shloka-deva">
+    प्रवृत्तिं च निवृत्तिं च जना न विदुरासुराः ।<br>
+    न शौचं नापि चाचारो न सत्यं तेषु विद्यते ॥<br>
+    असत्यमप्रतिष्ठं ते जगदाहुरनीश्वरम् ।<br>
+    अपरस्परसम्भूतं किमन्यत्कामहैतुकम् ॥<br>
+    एतां दृष्टिमवष्टभ्य नष्टात्मानोऽल्पबुद्धयः ।<br>
+    प्रभवन्त्युग्रकर्माणः क्षयाय जगतोऽहिताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "आसुरी लोकांना प्रवृत्ती-निवृत्ती कळत नाही; शुचिता, आचार, सत्य त्यांच्यात नाही.<br>
+    ते म्हणतात — 'जग असत्य, आधारहीन, ईश्वरहीन; केवळ काम-इच्छेतून जन्मलेलं.'<br>
+    या दृष्टीत अडकलेले नष्टात्मा, अल्पबुद्धी —<br>
+    जगाच्या नाशासाठी उग्र कर्मे करत राहतात."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· मुख्य लक्षणे</span>
+</div>
+<div class="explanation-block">
+  <table class="contrast-table">
+    <thead>
+      <tr><th>लक्षण</th><th>अर्थ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>दंभ</td><td>दाखवणेपणा — आत नाही, बाहेर दाखवतो</td></tr>
+      <tr><td>दर्प</td><td>गर्व — "मी सर्वश्रेष्ठ, इतरांपेक्षा उत्तम"</td></tr>
+      <tr><td>अभिमान</td><td>अहंकार — "मी हे केलं, मीच आहे"</td></tr>
+      <tr><td>पारुष्य</td><td>कठोरता — बोलणं कठोर, वागणं निर्दय</td></tr>
+      <tr><td>अज्ञान</td><td>मूळ आसुरी गुण — "ईश्वर नाही, नैतिकता नाही"</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    मूळ आसुरी दृष्टी म्हणजे <span class="key-term">"जगद् अनीश्वरम्"</span> — कशाचाही आधार नाही, नैतिकता नाही. त्यातून येतं — <strong style="color: var(--temple-gold);">"माझ्या इच्छाच महत्त्वाच्या; इतरांशी काय देणंघेणं?"</strong>
+  </p>
+  <p>
+    सर्वांत महत्त्वाचं भान — <span class="key-term">हे आसुरी विचार आपल्यातही येतात.</span> कुणालाही "आसुरी माणूस" असा शिक्का मारणं हा मुद्दा नाही; मुद्दा हा की हे प्रवाह ओळखणं — मग ते "माझे" म्हणणं बंद होतं.
+  </p>
+</div>
+
+<div class="pull-quote">
+  ही दुसऱ्याची यादी नाही — हे प्रवाह प्रत्येकात कधी ना कधी डोकावतात.<br>
+  <strong style="color: var(--temple-gold);">ओळखलं, की "हे माझं" म्हणणं सुटतं — आणि तेच पहिलं पाऊल.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· नमुना, व्यक्ती नव्हे</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-नमुना · वृत्ती, माणूस नव्हे</span>
+  <div class="example-name">अनिर्बंध अहंकाराचा नमुना — आणि एक सुपरिचित दंतकथा</div>
+  <div class="example-dates">ओळखीचे आधुनिक नमुने · आणि रावणाचं रूपक</div>
+  <p>
+    हे गुण कुठल्या एका व्यक्तीचे नाहीत — ते <span class="key-term">वृत्तीचे नमुने</span> आहेत, जे आपण रोज पाहतो. सतत दुसऱ्याला तुच्छ लेखणारा "टॉक्सिक बॉस"; समोरच्याला न ओळखता निर्दयपणे शिवीगाळ करणारा ऑनलाइन "ट्रोल"; "नियम माझ्यासाठी नाहीत" म्हणणारा अनिर्बंध अहंकार. हे दंभ-दर्प-पारुष्याचे आजचे चेहरे.
+  </p>
+  <hr class="divider">
+  <p>
+    इथे एक महत्त्वाची काळजी — <strong style="color: var(--temple-gold);">गीता कुणाही जिवंत, खऱ्या व्यक्तीला "आसुरी" ठरवत नाही, आणि आपणही ठरवू नये.</strong> हे नमुने आहेत, माणसांवरचे शिक्के नाहीत. कारण हेच गुण थोड्याफार प्रमाणात प्रत्येकात कधी ना कधी उठतात — रागाच्या क्षणी, गर्वाच्या क्षणी.
+  </p>
+  <hr class="divider">
+  <p>
+    हा नमुना अत्यंत टोकाला गेल्यावर कसा दिसतो, हे समजायला परंपरेने सुरक्षित, दंतकथेतली उदाहरणं दिली — <span class="key-term">रावण</span> हे त्यातलं ठळक. प्रचंड विद्वान, बलशाली, तपस्वी — पण दर्प आणि अनिर्बंध इच्छेने ग्रासलेला. "माझी इच्छाच अंतिम" या एका वृत्तीने त्याचं सर्व ज्ञान-सामर्थ्य नाशाकडे वळलं. दंतकथा असल्याने ती कुणावर अन्याय न करता धडा देते.
+  </p>
+  <hr class="divider">
+  <p>
+    आणि गीतेचा खरा रोख स्वतःकडे वळवण्याचा आहे — <span class="key-term">"आज माझ्यात कुठला आसुरी गुण उठला?"</span> रावण बाहेर शोधण्यापेक्षा, आतल्या रावणाचा एक धागा ओळखणं अधिक उपयोगी. ओळख हाच बदलाचा आरंभ; पुढचं पाऊल — आसुरीशी लढत बसण्याऐवजी दैवी गुण वाढवणं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    दंभ दर्प अभिमान ।<br>
+    क्रोध कठोरता अज्ञान ।<br>
+    हे आसुरी गुण जाण ।<br>
+    दूर राहावे ।।<br><br>
+    हे गुण ओळखावे आधी ।<br>
+    मग दूर व्हावे त्यापासून ।<br>
+    दैवी गुण वाढवावे तेव्हा ।<br>
+    हाच मार्ग ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे गुण ओळखावे आधी — मग दूर व्हावे" — हे सांगतात. आसुरी गुण कळले की त्यांना "माझे" म्हणणं बंद होतं. आणि "दैवी गुण वाढवावे — हाच मार्ग" : आसुरीशी थेट लढायचं नाही, दैवी वाढवायचं, म्हणजे आसुरीला जागाच उरत नाही.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "आज माझ्यात कुठला आसुरी गुण उठला —<br>दंभ, क्रोध, दर्प, की दुसरा?"<br><br>
+    ओळखणं हा निर्णय नाही — ते आत्मनिरीक्षण आहे.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखाद्या क्षणी राग किंवा दंभ आला, तर मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"हा आसुरी गुण आहे. मी त्यापेक्षा वेगळा आहे."</strong><br>
+    हे एकदा म्हणणं — गुणापासून थोडं दूर उभं राहणं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    गीता आसुरी स्वभावाचं मूळ <span class="key-term">अज्ञानात</span> — आणि विशेषतः "जगद् अनीश्वरम्" या दृष्टीत — पाहते. जिथे कशाचाही उच्च आधार नाही, नैतिक नियम नाही, तिथे "माझी इच्छाच सर्वस्व" ही वृत्ती मोकाट सुटते. म्हणजे आसुरीपणा हा मुख्यतः नैतिक मर्यादेचा अभाव.
+  </p>
+  <p>
+    इथे एक नैतिक काळजी महत्त्वाची — हा अध्याय माणसांचे दोन तट पाडण्यासाठी नाही. परंपरेतले भाष्यकारही सांगतात की <span class="key-term">दैवी आणि आसुरी प्रवृत्ती प्रत्येक माणसात असतात</span>; प्रश्न फक्त कुठली बळावते याचा. म्हणून दुसऱ्यावर "आसुरी" शिक्का मारणं हाच एक सूक्ष्म दर्प ठरू शकतो.
+  </p>
+  <p>
+    सर्वांत व्यावहारिक सूत्र ज्ञानेश्वरांच्या ओवीत — <span class="key-term">"आसुरीशी लढायचं नाही, दैवी वाढवायचं."</span> मानसशास्त्रही हेच सुचवतं : नकारात्मक वृत्तीशी थेट झुंजल्याने ती अनेकदा बळावते; उलट सकारात्मक सवयी रुजवल्या की नकारात्मकतेला जागा उरत नाही. <strong style="color: var(--temple-gold);">अंधाराशी लढण्यापेक्षा दिवा लावणं</strong> — हाच या संकल्पनेचा, आणि पुढच्या "दैवी स्वभाव वाढवणे"चा, गाभा.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · दैवासुरसम्पद्विभागयोग · अध्याय १६ · संकल्पना २/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>
