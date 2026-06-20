@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>चार प्रकारचे भक्त — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.02) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.25rem; }
+
+  /* SHLOKA */
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .mandala-bg { position: absolute; opacity: 0.04; right: -30px; top: -30px; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; }
+
+  /* SECTION HEADING */
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  /* EXPLANATION */
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* FOUR BHAKT LADDER */
+  .bhakt-ladder { margin: 1.25rem 0; }
+  .bhakt-step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.15rem;
+    border-radius: 4px;
+    margin-bottom: 0.6rem;
+    border: 1px solid;
+    position: relative;
+  }
+  .bhakt-step.aart    { background: rgba(74,124,111,0.07);  border-color: rgba(74,124,111,0.3); }
+  .bhakt-step.arthaarthi { background: rgba(232,101,26,0.06); border-color: rgba(232,101,26,0.3); }
+  .bhakt-step.jijnyasu { background: rgba(30,58,95,0.12);  border-color: rgba(30,58,95,0.5); }
+  .bhakt-step.jnyani  { background: rgba(200,146,42,0.08); border-color: rgba(200,146,42,0.55); }
+  .step-num { font-family: var(--font-deva); font-size: 1.5rem; color: var(--temple-gold); min-width: 2rem; flex-shrink: 0; line-height: 1.3; }
+  .step-body { flex: 1; }
+  .step-name { font-family: var(--font-deva); font-size: 1.15rem; font-weight: 600; display: block; margin-bottom: 0.25rem; }
+  .bhakt-step.aart     .step-name { color: var(--patina-teal); }
+  .bhakt-step.arthaarthi .step-name { color: var(--saffron); }
+  .bhakt-step.jijnyasu .step-name { color: #6FA8DC; }
+  .bhakt-step.jnyani   .step-name { color: var(--temple-gold); }
+  .step-desc { font-family: var(--font-deva); font-size: 1rem; line-height: 1.8; color: var(--antique-cream); opacity: 0.9; }
+  .step-tag { font-family: var(--font-deva); font-size: 0.8rem; padding: 0.1rem 0.5rem; border-radius: 10px; margin-left: 0.5rem; vertical-align: middle; }
+  .tag-good  { background: rgba(74,124,111,0.3);  color: var(--patina-teal); }
+  .tag-best  { background: rgba(200,146,42,0.2); color: var(--temple-gold); }
+
+  /* PULL QUOTE */
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* FAMILY STORY */
+  .family-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .family-block .block-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; display: block; }
+  .family-member {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(74,124,111,0.2);
+  }
+  .family-member:last-child { border-bottom: none; padding-bottom: 0; }
+  .member-icon { font-size: 1.5rem; flex-shrink: 0; min-width: 2.2rem; text-align: center; margin-top: 0.1rem; }
+  .member-body { flex: 1; }
+  .member-role { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); display: block; margin-bottom: 0.15rem; }
+  .member-name { font-family: var(--font-deva); font-size: 1.1rem; font-weight: 600; color: var(--antique-cream); display: block; margin-bottom: 0.25rem; }
+  .member-desc { font-family: var(--font-deva); font-size: 1rem; line-height: 1.8; color: var(--antique-cream); opacity: 0.88; }
+  .member-type { font-family: var(--font-deva); font-size: 0.82rem; color: var(--temple-gold); margin-top: 0.2rem; display: block; }
+
+  /* RAMANA BLOCK */
+  .ramana-block {
+    background: linear-gradient(135deg, #100A1E 0%, #160E28 100%);
+    border: 1px solid rgba(200,146,42,0.5);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .ramana-block::before { content: '✦ ज्ञानी — शिखर'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.5rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1.1rem; opacity: 0.85; }
+  .ramana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .ramana-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(200,146,42,0.2); margin: 1rem 0; }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* SANKALPANA */
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* ANALYTICAL */
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  /* FOOTER */
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .family-block, .ramana-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block, .bhakt-step
+      { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · संकल्पना ६ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">चार प्रकारचे भक्त — ज्ञानी श्रेष्ठ</div>
+  <div class="concept-subtitle">चतुर्विधा भजन्ते मां — आर्त, जिज्ञासू, अर्थार्थी, ज्ञानी</div>
+</header>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.16-17 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/>
+      <circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.१६–१७</span>
+  <div class="shloka-deva">
+    चतुर्विधा भजन्ते मां जनाः सुकृतिनोऽर्जुन ।<br>
+    आर्तो जिज्ञासुरर्थार्थी ज्ञानी च भरतर्षभ ॥<br><br>
+    तेषां ज्ञानी नित्ययुक्त एकभक्तिर्विशिष्यते ।<br>
+    प्रियो हि ज्ञानिनोऽत्यर्थमहं स च मम प्रियः ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे अर्जुना, चार प्रकारचे सुकृती लोक माझ्याकडे येतात —<br>
+    आर्त, जिज्ञासू, अर्थार्थी, ज्ञानी.<br>
+    त्यांत ज्ञानी — नित्ययुक्त, एकभक्ती — विशेष आहे.<br>
+    <strong class="gold-text">मी ज्ञान्याला अत्यंत प्रिय आणि तोही मला अत्यंत प्रिय."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 7.18-19 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ७.१८–१९</span>
+  <div class="shloka-deva">
+    उदाराः सर्व एवैते ज्ञानी त्वात्मैव मे मतम् ।<br>
+    बहूनां जन्मनामन्ते ज्ञानवान्मां प्रपद्यते ।<br>
+    वासुदेवः सर्वमिति स महात्मा सुदुर्लभः ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे सगळे उदार आहेत — पण ज्ञानी हा मी स्वतःच आहे असे मला वाटते.<br>
+    अनेक जन्मांनंतर ज्ञानी मला प्रपन्न होतो —<br>
+    <strong class="gold-text">'वासुदेवः सर्वम्' — असे जाणणारा महात्मा अत्यंत दुर्लभ."</strong>
+  </div>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd1" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd1)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· चार पायऱ्या</span>
+</div>
+<div class="explanation-block">
+  <p>
+    जे माझ्याकडे येतात ते कोण? श्रीकृष्ण सांगतो — चार प्रकार. हे आपल्याला आरसा दाखवतात — <strong class="gold-text">आपण कुठल्या कारणाने ईश्वराकडे जातो?</strong>
+  </p>
+
+  <div class="bhakt-ladder">
+    <div class="bhakt-step aart">
+      <div class="step-num">१</div>
+      <div class="step-body">
+        <span class="step-name">आर्त <span class="step-tag tag-good">योग्य आहे</span></span>
+        <div class="step-desc">दुःखाने, संकटाने ईश्वराकडे येतो. "देवा, यातून सोडव." दुःखातही ईश्वर आठवणे — हे शुभ आहे. हीच सुरुवात.</div>
+      </div>
+    </div>
+    <div class="bhakt-step arthaarthi">
+      <div class="step-num">२</div>
+      <div class="step-body">
+        <span class="step-name">अर्थार्थी</span>
+        <div class="step-desc">फळासाठी येतो. धन, नोकरी, संतान मागायला. फळ मिळते — पण नाशवंत असते. ईश्वराशी संपर्क होतो — हे मात्र टिकते.</div>
+      </div>
+    </div>
+    <div class="bhakt-step jijnyasu">
+      <div class="step-num">३</div>
+      <div class="step-body">
+        <span class="step-name">जिज्ञासू <span class="step-tag tag-good">श्रेष्ठ</span></span>
+        <div class="step-desc">जाणून घेण्यासाठी येतो. "ईश्वर म्हणजे काय? हे विश्व कसे चालते? मी कोण?" — शोध प्रामाणिक आहे.</div>
+      </div>
+    </div>
+    <div class="bhakt-step jnyani">
+      <div class="step-num">४</div>
+      <div class="step-body">
+        <span class="step-name">ज्ञानी <span class="step-tag tag-best">✦ सर्वांत श्रेष्ठ</span></span>
+        <div class="step-desc">फळाची अपेक्षा नाही. मागणे नाही. सदैव युक्त. <strong class="gold-text">"वासुदेवः सर्वम्"</strong> — सर्व वासुदेव आहे — हे जाणतो. कृष्ण म्हणतो — "तो मी स्वतःच आहे."</div>
+      </div>
+    </div>
+  </div>
+
+  <p style="margin-top:1rem;">
+    चारही उदार आहेत — कुणीही कमी नाही. पण ज्ञानी हे शिखर आहे — <strong class="gold-text">अनेक जन्मांनंतर येणारे.</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  "मी ज्ञान्याला प्रिय आणि तो मला प्रिय" —<br>
+  <strong class="gold-text">ज्ञानी आणि कृष्ण यांच्यात फरकच उरत नाही.</strong>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- FAMILY STORY -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· एका कुटुंबाची कथा</span>
+</div>
+<div class="family-block">
+  <span class="block-tag">एकाच घरात चारही भक्त —</span>
+
+  <div class="family-member">
+    <div class="member-icon">👩</div>
+    <div class="member-body">
+      <span class="member-role">आई</span>
+      <span class="member-name">आर्त भक्त</span>
+      <div class="member-desc">मुलगा खूप आजारी होता. रात्री उशिरा देवाला साकडे घातले — "देवा, माझ्या मुलाला वाचव. बाकी काही नको." डोळ्यांत अश्रू, हृदयात भीती — पण ते क्षण खरे होते. ईश्वर त्या अश्रूंत होता.</div>
+      <span class="member-type">→ दुःखातून आलेली भक्ती — शुभ आणि खरी</span>
+    </div>
+  </div>
+
+  <div class="family-member">
+    <div class="member-icon">👨</div>
+    <div class="member-body">
+      <span class="member-role">वडील</span>
+      <span class="member-name">अर्थार्थी भक्त</span>
+      <div class="member-desc">नोकरी सुटली होती. सिद्धिविनायकाला गेले — "गणपतीबाप्पा, नोकरी मिळू दे." नवस केला. नोकरी मिळाली — नवस फेडला. फळ मिळाले. पण ईश्वराशी ओळखही झाली — ती पुढे राहिली.</div>
+      <span class="member-type">→ फळासाठी आलेली भक्ती — ईश्वराचा स्पर्श होतो</span>
+    </div>
+  </div>
+
+  <div class="family-member">
+    <div class="member-icon">👦</div>
+    <div class="member-body">
+      <span class="member-role">मुलगा</span>
+      <span class="member-name">जिज्ञासू भक्त</span>
+      <div class="member-desc">बारावीनंतर प्रश्न पडला — "ईश्वर खरा आहे का? हे विश्व कोणी बनवले? मी कोण आहे?" गीता वाचायला लागला. Vedanta ऐकायला लागला. उत्तर पूर्ण मिळाले नाही — पण शोध प्रामाणिक आहे. हेच श्रेष्ठ आहे.</div>
+      <span class="member-type">→ जिज्ञासेतून आलेली भक्ती — ज्ञानाचे द्वार</span>
+    </div>
+  </div>
+
+  <div class="family-member">
+    <div class="member-icon">👴</div>
+    <div class="member-body">
+      <span class="member-role">आजोबा</span>
+      <span class="member-name">ज्ञानी भक्त</span>
+      <div class="member-desc">रोज पहाटे चारला उठतात. काहीच मागत नाहीत. बसतात — फक्त शांत. कुणाला विचारले तर म्हणतात — "बोलायचे काय? तो आहेच. मी त्याच्यात आहे." घरात सगळ्यात कमी बोलतात — पण त्यांच्या सान्निध्यात शांती मिळते.</div>
+      <span class="member-type">→ <strong class="gold-text">"वासुदेवः सर्वम्" — ज्ञानाचे शिखर</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- RAMANA MAHARSHI -->
+<div class="ramana-block">
+  <span class="example-tag">अद्वैत वेदान्ती · तमिळनाडू</span>
+  <div class="example-name">रमण महर्षी</div>
+  <div class="example-dates">१८७९ – १९५० · तिरुवण्णामलै</div>
+
+  <p>
+    रमण महर्षी यांच्याकडे जग यायचे — काहीतरी मागायला. आर्त, अर्थार्थी, जिज्ञासू — सगळे. ते सगळ्यांना एकच प्रश्न विचारायचे —
+  </p>
+  <div style="text-align:center; padding: 0.85rem; background: rgba(200,146,42,0.07); border-radius:4px; margin:0.75rem 0;">
+    <span style="font-family:var(--font-deva); font-size:1.3rem; color:var(--temple-gold);">"मी कोण?"</span>
+  </div>
+  <p>
+    कुठलीही मागणी नाही. कुठलाही नवस नाही. कुठलाही शोध नाही — फक्त एक प्रश्न. हे <span class="key-term">ज्ञानाचे</span> शिखर आहे — जिथे भक्त आणि ईश्वर वेगळे राहत नाहीत.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    कृष्ण म्हणतो — <strong class="gold-text">"ज्ञानी हा मी स्वतःच आहे असे मला वाटते."</strong> रमण महर्षी यांच्याकडे पाहिले की हे समजते. ते "मी कोण?" विचारायचे — आणि उत्तर "वासुदेवः सर्वम्" हेच होते. कधी बोलून नाही — पण त्यांच्या शांततेत ते होते.
+  </p>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    आर्त जिज्ञासू अर्थार्थी ज्ञानी ।<br>
+    चारही माझे भक्त जाणी ।<br>
+    परी ज्ञानी तो मीच मानी ।<br>
+    प्रिय सर्वांत ।।<br><br>
+    वासुदेवः सर्वमिति ।<br>
+    जो जाणे ती अवस्था ।<br>
+    तो महात्मा दुर्लभ ।<br>
+    अनेक जन्मांनंतर ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "अनेक जन्मांनंतर" — हे सांगतात. एका जन्मात "वासुदेवः सर्वम्" ची अवस्था येत नाही. पण येते. हळूहळू. प्रत्येक जन्मी जवळ जवळ. आपल्या घरातले आजोबा — ते त्या दिशेने निघालेले आहेत. आपणही निघूया.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी ईश्वराकडे कुठल्या कारणाने जातो?"<br><br>
+    आर्त — दुःखात? अर्थार्थी — फळासाठी?<br>
+    जिज्ञासू — जाणायला? की ज्ञानी — निःस्वार्थपणे?<br><br>
+    प्रामाणिक उत्तर — पुढच्या पायरीची दिशा सांगते.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज ईश्वराशी — एक क्षण — फळाशिवाय जोडा.<br><br>
+    <strong class="gold-text">"मला काही नको. फक्त तुझ्याशी जोडायचे आहे."</strong><br><br>
+    हे एकच वाक्य — एक क्षण. हीच ज्ञानाची सुरुवात.
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हे चार प्रकार म्हणजे चार पायऱ्या आहेत — एकाच शिडीच्या. <span class="key-term">आर्त</span> सर्वात खाली — पण ते चुकीचे नाही. दुःखातून ईश्वराकडे जाणे हे पण श्रेष्ठच आहे. कृष्ण सगळ्यांना "सुकृती" म्हणतो — सगळ्यांना थोरवी देतो.
+  </p>
+  <p>
+    फरक एकच — <span class="key-term">ज्ञानी</span> हा "मी" सोडतो. बाकी तिघे "मला हे द्या" म्हणतात. ज्ञानी म्हणतो — "मी तुझ्यात आहे." भक्त आणि ईश्वर वेगळे राहत नाहीत. म्हणूनच कृष्ण म्हणतो — <strong class="gold-text">"ज्ञानी हा मी स्वतःच आहे."</strong>
+  </p>
+  <p>
+    रमण महर्षींचे "मी कोण?" — हाच प्रश्न आर्तातून जिज्ञासूकडे आणि जिज्ञासूतून ज्ञानाकडे नेतो. आपल्या घरातले आजोबा, रमण महर्षी — हे सगळे त्याच एका प्रश्नाचे उत्तर शोधत आहेत. <span class="key-term">वासुदेवः सर्वम्</span> — हेच अंतिम उत्तर.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना ६/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

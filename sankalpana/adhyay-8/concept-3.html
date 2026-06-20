@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अभ्यासयोगेन — भगवद्गीता अध्याय ८</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ८ · संकल्पना ३ · अक्षरब्रह्मयोग</div>
+  <div class="concept-title">अभ्यासयोगेन</div>
+  <div class="concept-subtitle">परम पुरुषाकडे जाणे — सततच्या अभ्यासाने</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    "सर्व काळी माझे स्मरण कर" — हे कळले.<br>
+    <strong style="color: var(--temple-gold);">पण ते करायचे कसे? मन भटकत असेल तर?</strong><br>
+    कृष्ण उत्तर देतो — <em>अभ्यासयोगेन</em> — सततच्या अभ्यासाने.<br>
+    आणि ज्याचे स्मरण करायचे, त्या परम पुरुषाचे वर्णनही करतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 8.8 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.८</span>
+  <div class="shloka-deva">
+    अभ्यासयोगयुक्तेन चेतसा नान्यगामिना ।<br>
+    परमं पुरुषं दिव्यं याति पार्थानुचिन्तयन् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "अभ्यासयोगाने युक्त, दुसरीकडे न भटकणाऱ्या चित्ताने<br>
+    अनुचिंतन करत — हे पार्था, तो परम दिव्य पुरुषाकडे जातो."
+  </div>
+</div>
+
+<!-- SHLOKA 8.9-10 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.९–१०</span>
+  <div class="shloka-deva">
+    कविं पुराणमनुशासितारम् अणोरणीयांसमनुस्मरेद्यः ।<br>
+    सर्वस्य धातारमचिन्त्यरूपम् आदित्यवर्णं तमसः परस्तात् ॥<br>
+    प्रयाणकाले मनसाचलेन भक्त्या युक्तो योगबलेन चैव ।<br>
+    भ्रुवोर्मध्ये प्राणमावेश्य सम्यक् स तं परं पुरुषमुपैति दिव्यम् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जो सर्वज्ञ, पुरातन, नियंता, अणूहूनही सूक्ष्म, सर्वांचा धारणकर्ता,<br>
+    अचिंत्यरूप, सूर्यासारखा प्रकाशमान, अंधाराच्या पलीकडचा —<br>
+    त्याचे स्मरण करतो; अचल मनाने, भक्तीने, योगबलाने,<br>
+    प्राण भुवयांच्या मध्ये स्थापून — तो परम दिव्य पुरुषाकडे जातो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण परम पुरुषाची सहा लक्षणे सांगतो — पण ती लक्षात ठेवण्यापेक्षा महत्त्वाचे आहे एक शब्द — <span class="key-term">अभ्यासयोग.</span>
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>विशेषण</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>कवि</td>
+        <td>सर्वज्ञ — सर्व जाणणारा</td>
+      </tr>
+      <tr>
+        <td>पुराण</td>
+        <td>पुरातन — अनादी</td>
+      </tr>
+      <tr>
+        <td>अणोरणीयान्</td>
+        <td>अणूहूनही सूक्ष्म — सर्वांत आत पोहोचणारा</td>
+      </tr>
+      <tr>
+        <td>आदित्यवर्ण</td>
+        <td>सूर्यासारखा प्रकाशमान</td>
+      </tr>
+      <tr>
+        <td>तमसः परस्तात्</td>
+        <td>अंधाराच्या — मायेच्या — पलीकडे</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    हा ईश्वर दूर आकाशात नाही — <strong style="color: var(--temple-gold);">भुवयांच्या मध्ये, हृदयात</strong> आहे. आणि त्याच्यापर्यंत पोहोचण्याचा मार्ग एकच — अभ्यास.
+  </p>
+  <p>
+    <span class="key-term">अभ्यासयोग</span> म्हणजे सतत सराव. मन भटकले — परत आणणे. पुन्हा भटकले — पुन्हा परत. एकदा नाही, हजारदा. हाच योग.
+  </p>
+</div>
+
+<div class="pull-quote">
+  परम पुरुष क्षणात मिळत नाही.<br>
+  <strong style="color: var(--temple-gold);">मन भटकले की परत आणणे — हाच अभ्यास, हाच मार्ग.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — BHIMSEN JOSHI -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">शास्त्रीय गायक · किराणा घराणे</span>
+  <div class="example-name">पंडित भीमसेन जोशी</div>
+  <div class="example-dates">१९२२ – २०११ · गदग, कर्नाटक</div>
+
+  <p>
+    लहानपणीच गुरूच्या शोधात भीमसेन घरातून निघून गेले. गुरू सापडल्यावरही पुढची अनेक वर्षे फक्त एकच गोष्ट — <span class="key-term">रियाझ</span>. पहाटे उठून, तासन्‌तास, एकाच स्वराचा, एकाच पलट्याचा सराव.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गीतेचा <span class="key-term">अभ्यासयोग</span>. एका मैफलीतील सौंदर्य अचानक येत नाही — त्यामागे दशकांचा "दुसरीकडे न भटकणारे चित्त" असतो. <strong style="color: var(--temple-gold);">"नान्यगामिना चेतसा"</strong> — हेच रियाझाचे सूत्र.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    प्रसिद्धी आल्यानंतरही त्यांनी रियाझ सोडला नाही. कारण त्यांना ठाऊक होते — स्वर "माहीत" असणे वेगळे आणि स्वर "जगणे" वेगळे. आणि जगण्यासाठी फक्त एकच मार्ग — रोजचा अखंड सराव.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    रियाझातून स्वर आणि गायक यांच्यातील अंतर पुसले जाते — तसेच अभ्यासयोगातून साधक आणि <span class="key-term">परम पुरुष</span> यांच्यातील अंतर. साधना ही मैफल नव्हे — ती रोजची पहाट आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सर्वज्ञ पुरातन ।<br>
+    अणूहून सूक्ष्म तन ।<br>
+    सूर्यासम प्रकाशन ।<br>
+    तमाच्या पलीकडे ।।<br><br>
+    अभ्यासे स्मरावे ।<br>
+    भुवयांत प्राण न्यावे ।<br>
+    भक्तीने जोडावे ।<br>
+    तो परम मिळे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "अभ्यासे स्मरावे" — हे आवर्जून सांगतात. एकदा नाही — सतत, आयुष्यभर. प्रत्येक वेळी मन भटकले की परत आणायचे. हाच सराव, हाच अभ्यासयोग. भीमसेनांचा रियाझ हेच रोजचे "अभ्यासे स्मरावे" होते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या स्मरणात — माझ्या ध्यानात — परम पुरुष कसा दिसतो?<br>प्रकाश? शांती? उपस्थिती?"<br><br>
+    त्या अनुभवाला नाव द्यायची गरज नाही — फक्त त्याकडे जा.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज ५ मिनिटे — डोळे मिटून —<br>
+    <strong style="color: var(--saffron);">"अणूहून सूक्ष्म, सूर्यासारखा प्रकाशमान — तो माझ्या हृदयात आहे."</strong><br>
+    फक्त हे एक चित्र. फक्त हे एक स्मरण. आणि उद्या पुन्हा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    पतंजलीच्या योगसूत्रात मनाच्या स्थिरतेसाठी दोन साधने सांगितली आहेत — <span class="key-term">अभ्यास</span> आणि <span class="key-term">वैराग्य</span>. अभ्यास म्हणजे एका स्थितीत राहण्याचा सतत प्रयत्न; आणि तो दीर्घकाळ, अखंड, श्रद्धेने केला तरच दृढ होतो. गीतेचा अभ्यासयोग हाच विचार पुढे नेतो.
+  </p>
+  <p>
+    अध्याय ६ मध्ये अर्जुनाने "मन वाऱ्यासारखे चंचल" अशी तक्रार केली होती; तेथेही उत्तर हेच होते — अभ्यासाने आणि वैराग्याने मन वळते. अध्याय ८ ती शिकवण अंत्यकाळच्या संदर्भात लागू करतो — जे रोज सरावले, तेच शेवटी सहज येते.
+  </p>
+  <p>
+    म्हणूनच परम पुरुषाचे वर्णन आणि अभ्यासयोग एकाच श्वासात येतात. लक्ष्य कितीही दिव्य असो — <span class="key-term">अणूहून सूक्ष्म, सूर्याहून तेजस्वी</span> — त्याकडे जाणारी वाट मात्र अगदी साधी आहे : रोजचा, न थांबणारा सराव.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · अक्षरब्रह्मयोग · अध्याय ८ · संकल्पना ३/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सात प्रश्न, सात उत्तरे — भगवद्गीता अध्याय ८</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ८ · संकल्पना १ · अक्षरब्रह्मयोग</div>
+  <div class="concept-title">सात प्रश्न, सात उत्तरे</div>
+  <div class="concept-subtitle">ब्रह्म, अध्यात्म, कर्म — आणि देहातील अधियज्ञ</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    अध्याय ७ च्या शेवटी कृष्णाने सांगितले —<br>
+    <strong style="color: var(--temple-gold);">"जो मला अधिभूत, अधिदैव, अधियज्ञासहित जाणतो —<br>तो अंत्यकाळीही मला जाणतो."</strong><br>
+    अर्जुनाला उत्सुकता दाटली — "हे सर्व नेमके काय आहे?"<br>
+    आणि तो एकाच श्वासात सात मूलभूत प्रश्न विचारतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 8.1-2 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.१–२</span>
+  <div class="shloka-deva">
+    किं तद्ब्रह्म किमध्यात्मं किं कर्म पुरुषोत्तम ।<br>
+    अधिभूतं च किं प्रोक्तमधिदैवं किमुच्यते ॥<br>
+    अधियज्ञः कथं कोऽत्र देहेऽस्मिन्मधुसूदन ।<br>
+    प्रयाणकाले च कथं ज्ञेयोऽसि नियतात्मभिः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "हे पुरुषोत्तम — ब्रह्म काय? अध्यात्म काय? कर्म काय?<br>
+    अधिभूत काय? अधिदैव काय? या देहात अधियज्ञ कोण?<br>
+    आणि अंत्यकाळी संयमी पुरुष तुला कसे जाणतात?"
+  </div>
+</div>
+
+<!-- SHLOKA 8.3-4 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.३–४</span>
+  <div class="shloka-deva">
+    अक्षरं ब्रह्म परमं स्वभावोऽध्यात्ममुच्यते ।<br>
+    भूतभावोद्भवकरो विसर्गः कर्मसंज्ञितः ॥<br>
+    अधिभूतं क्षरो भावः पुरुषश्चाधिदैवतम् ।<br>
+    अधियज्ञोऽहमेवात्र देहे देहभृतां वर ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "अक्षर — तेच परम ब्रह्म. स्वभाव — तेच अध्यात्म.<br>
+    भूतांचा भाव उत्पन्न करणारा विसर्ग — तेच कर्म.<br>
+    नाशवंत भाव — अधिभूत. पुरुष — अधिदैव.<br>
+    आणि या देहात अधियज्ञ — तो मीच आहे."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अर्जुनाचे सात प्रश्न म्हणजे जणू संपूर्ण वेदान्ताचा नकाशा. कृष्ण प्रत्येकाला एका शब्दात उत्तर देतो — आणि सात संकल्पना एका सूत्रात बांधतो.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>प्रश्न</th>
+        <th>उत्तर</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ब्रह्म</td>
+        <td>अक्षर</td>
+        <td>जे कधीच नष्ट होत नाही — सर्वांचा आधार</td>
+      </tr>
+      <tr>
+        <td>अध्यात्म</td>
+        <td>स्वभाव</td>
+        <td>प्रत्येकाचे आत्मस्वरूप</td>
+      </tr>
+      <tr>
+        <td>कर्म</td>
+        <td>विसर्ग</td>
+        <td>भूतांचा भाव उत्पन्न करणारी सृष्टी-शक्ती</td>
+      </tr>
+      <tr>
+        <td>अधिभूत</td>
+        <td>क्षर भाव</td>
+        <td>नाशवंत सृष्टी — जे येते आणि जाते</td>
+      </tr>
+      <tr>
+        <td>अधिदैव</td>
+        <td>पुरुष</td>
+        <td>हिरण्यगर्भ — सूक्ष्म सृष्टीचा अधिपती</td>
+      </tr>
+      <tr>
+        <td>अधियज्ञ</td>
+        <td>कृष्ण स्वतः</td>
+        <td>प्रत्येकाच्या देहात वसणारा अंतरात्मा</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    सातवा प्रश्न — <span class="key-term">"अंत्यकाळी तू कसा जाणायचा?"</span> — हाच पुढच्या संपूर्ण अध्यायाचा गाभा. म्हणूनच या अध्यायाचे नाव <span class="key-term">अक्षरब्रह्मयोग</span>.
+  </p>
+  <p>
+    या सहा संकल्पनांत सर्वांत जवळची — <strong style="color: var(--temple-gold);">अधियज्ञ.</strong> तो दूर स्वर्गात नाही — तो याच देहात, याच श्वासात, साक्षी होऊन बसलेला आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  ब्रह्म दूर वाटते. अधियज्ञ जवळ आहे.<br>
+  <strong style="color: var(--temple-gold);">जो प्रत्येकाच्या देहात साक्षी होऊन राहतो — तोच अंत्यकाळी हाक मारतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — NACHIKETA -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">कठोपनिषद · वैदिक परंपरा</span>
+  <div class="example-name">नचिकेता</div>
+  <div class="example-dates">कठोपनिषद · यम-नचिकेता संवाद</div>
+
+  <p>
+    अर्जुनाप्रमाणेच नचिकेताही एक प्रश्न विचारणारा होता. वडिलांनी रागाच्या भरात त्याला मृत्यूच्या देवाकडे — <span class="key-term">यमाकडे</span> — पाठवले. यमाच्या दारात तीन दिवस उपाशी थांबल्यावर यमाने तीन वर देऊ केले.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    पहिले दोन वर — वडिलांचा राग शमावा आणि स्वर्गाची अग्नि-विद्या — नचिकेताने घेतले. पण तिसरा वर मागताना त्याने सर्व प्रलोभने नाकारली. यमाने धन, राज्य, दीर्घायुष्य, अप्सरा — सर्व देऊ केले. नचिकेता ठाम राहिला —
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    <strong style="color: var(--temple-gold);">"हे सर्व नाशवंत आहे. मला मृत्यूनंतर काय उरते — आत्मा अमर आहे का — तेच सांग."</strong> हाच अर्जुनाचा सातवा प्रश्न — "अंत्यकाळी तू कसा जाणायचा?" नचिकेताने तेच धैर्य आधीच दाखवले होते.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    प्रलोभनांना नाकारून फक्त <span class="key-term">अक्षर</span> सत्याचा शोध घेणारा साधक — हाच अध्याय ८ चा खरा अधिकारी. नचिकेता बाहेरून बालक होता, पण आतून त्याने <span class="key-term">अधियज्ञ</span> — आपल्यातील अंतरात्मा — ओळखला होता. म्हणूनच मृत्यूही त्याला घाबरवू शकला नाही.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    अक्षर ते ब्रह्म जाण ।<br>
+    स्वभाव ते अध्यात्म ।<br>
+    कर्म भूत-उत्पत्ती ।<br>
+    हे सत्य समज ।।<br><br>
+    अधिभूत क्षर असे ।<br>
+    अधिदैव पुरुष असे ।<br>
+    अधियज्ञ मीच असे ।<br>
+    देहात सदा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "देहात सदा" — हे आवर्जून सांगतात. अधियज्ञ म्हणजे प्रत्येकाच्या देहात राहणारा कृष्ण — साक्षी-चेतना. जो सर्व काही पाहतो, पण स्वतः हलत नाही. नचिकेताप्रमाणे जो हा अंतरात्मा ओळखतो, त्याला बाहेरची प्रलोभने मोहवू शकत नाहीत.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या देहात राहणारा अधियज्ञ — माझा अंतरात्मा —<br>तो आज मला काय सांगतो आहे?"<br><br>
+    शांतपणे आत पाहा. तो नेहमी बोलतो — आपण ऐकत नाही.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक क्षण — सर्व बाहेरचे विचार बाजूला ठेवा.<br>
+    <strong style="color: var(--saffron);">"माझ्या आत जे स्थिर, शांत, अक्षर आहे — तेच ब्रह्म."</strong><br>
+    हाच एक विचार. हीच ब्रह्मयोगाची सुरुवात.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    उपनिषदांत <span class="key-term">अक्षर</span> ही संकल्पना वारंवार येते — जे क्षरत नाही, झिजत नाही, ते अक्षर. मांडुक्य उपनिषदात ओम्‌लाच अक्षर म्हटले आहे. गीता तेच अक्षर परम ब्रह्म म्हणून पुढे नेते.
+  </p>
+  <p>
+    अर्जुनाचे सात प्रश्न आणि नचिकेताचा तिसरा वर — दोन्ही एकाच जिज्ञासेचे रूप. <span class="key-term">"नाशवंताच्या पलीकडे काय?"</span> हा प्रश्न जोवर मनात उगवत नाही, तोवर अध्यात्माची सुरुवातच होत नाही.
+  </p>
+  <p>
+    सहा संकल्पनांपैकी पाच विश्वाचे वर्णन करतात — पण सहावी, <span class="key-term">अधियज्ञ</span>, थेट साधकाकडे बोट दाखवते. कृष्ण म्हणतो — "तो मीच आहे, याच देहात." तत्त्वज्ञान दूरचे राहत नाही — ते अंतरात्म्याइतके जवळ येते. हीच अध्याय ८ ची खरी देणगी.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · अक्षरब्रह्मयोग · अध्याय ८ · संकल्पना १/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

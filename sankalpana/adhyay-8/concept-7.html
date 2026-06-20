@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>शुक्ल-कृष्ण मार्ग — भगवद्गीता अध्याय ८</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ८ · संकल्पना ७ · अक्षरब्रह्मयोग</div>
+  <div class="concept-title">शुक्ल-कृष्ण मार्ग</div>
+  <div class="concept-subtitle">देवयान विरुद्ध पितृयान — दोन वाटा, दोन गती</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    अध्याय ८ चा समारोप कृष्ण एका गूढ रूपकाने करतो —<br>
+    <strong style="color: var(--temple-gold);">देह सोडल्यावर जीवापुढे दोन वाटा असतात.</strong><br>
+    एक प्रकाशाची — जिथून परत येणे नाही.<br>
+    दुसरी अंधाराची — जिथून पुन्हा परत यावे लागते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 8.24-25 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.२४–२५</span>
+  <div class="shloka-deva">
+    अग्निर्ज्योतिरहः शुक्लः षण्मासा उत्तरायणम् ।<br>
+    तत्र प्रयाता गच्छन्ति ब्रह्म ब्रह्मविदो जनाः ॥<br>
+    धूमो रात्रिस्तथा कृष्णः षण्मासा दक्षिणायनम् ।<br>
+    तत्र चान्द्रमसं ज्योतिर्योगी प्राप्य निवर्तते ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "अग्नी, प्रकाश, दिवस, शुक्ल पक्ष, उत्तरायणाचे सहा महिने —<br>
+    या मार्गाने जाणारे ब्रह्मवेत्ते ब्रह्माला पोहोचतात.<br>
+    धूर, रात्र, कृष्ण पक्ष, दक्षिणायनाचे सहा महिने —<br>
+    या मार्गाने योगी चंद्रलोकीचे तेज मिळवून पुन्हा परत येतो."
+  </div>
+</div>
+
+<!-- SHLOKA 8.26 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.२६</span>
+  <div class="shloka-deva">
+    शुक्लकृष्णे गती ह्येते जगतः शाश्वते मते ।<br>
+    एकया यात्यनावृत्तिमन्ययावर्तते पुनः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "शुक्ल आणि कृष्ण — या जगाच्या दोन शाश्वत गती मानल्या आहेत.<br>
+    एका मार्गाने गेलेला परत येत नाही; दुसऱ्याने गेलेला पुन्हा परततो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण दोन प्रतीकात्मक मार्ग सांगतो — <span class="key-term">शुक्ल (प्रकाशाचा)</span> आणि <span class="key-term">कृष्ण (अंधाराचा)</span>. हे केवळ ऋतू किंवा तिथी नव्हेत — ते जीवाच्या आंतरिक अवस्थेची प्रतीके आहेत.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>शुक्ल मार्ग</th>
+        <th>कृष्ण मार्ग</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>प्रकाश, अग्नी, दिवस</td>
+        <td>धूर, रात्र, अंधार</td>
+      </tr>
+      <tr>
+        <td>ज्ञान, अनन्य स्मरण</td>
+        <td>सकाम कर्म, फलाशा</td>
+      </tr>
+      <tr>
+        <td>देवयान — ब्रह्माकडे</td>
+        <td>पितृयान — चंद्रलोकाकडे</td>
+      </tr>
+      <tr>
+        <td>परत येणे नाही</td>
+        <td>पुन्हा जन्म-मृत्यू</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    इथे तिथीचा बाह्य अर्थ गौण आहे. खरा प्रश्न आहे — <strong style="color: var(--temple-gold);">जीव कोणत्या भावात, कोणत्या प्रकाशात देह सोडतो?</strong> आतला प्रकाश की आतला अंधार?
+  </p>
+  <p>
+    ज्याचे मन ज्ञानाने, स्मरणाने उजळलेले — तो शुक्ल मार्गाने. ज्याचे मन फलाशा आणि मोहाच्या धुक्यात — तो कृष्ण मार्गाने, पुन्हा परतण्यासाठी.
+  </p>
+</div>
+
+<div class="pull-quote">
+  वाट दोन — प्रकाशाची आणि अंधाराची.<br>
+  <strong style="color: var(--temple-gold);">कोणत्या वाटेने जायचे, ते आजच्या जगण्याने ठरते.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — TWO PATHS -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· दोन मार्ग — एक जीवनदृष्टी</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">रूपक · दोन जीवनवाटा</span>
+  <div class="example-name">प्रकाशाची वाट आणि धुक्याची वाट</div>
+  <div class="example-dates">शुक्ल मार्ग vs कृष्ण मार्ग — रोजच्या जगण्यात</div>
+
+  <p>
+    कल्पना करा दोन माणसांची. पहिला — आयुष्यभर शिकत राहिला, देत राहिला, स्मरण करत राहिला. त्याचे मन हळूहळू स्वच्छ, उजळ होत गेले. हीच <span class="key-term">शुक्ल वाट</span> — आतला प्रकाश वाढवणारी.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    दुसरा — आयुष्यभर फक्त "मला काय मिळेल" याभोवती फिरला. प्रत्येक कृतीमागे फलाची अपेक्षा, साठवण्याची ओढ. त्याचे मन धुक्याने भरत गेले. हीच <strong style="color: var(--temple-gold);">कृष्ण वाट</strong> — पुन्हा पुन्हा त्याच ओढीकडे परत आणणारी.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    महत्त्वाचे हे — कोणीही जन्मतः एका वाटेवर नसतो. <span class="key-term">प्रत्येक दिवशीची निवड</span> वाट घडवते. आज दिलेले, आज स्मरलेले, आज सोडलेले — हे सारे जीवाला प्रकाशाकडे किंवा धुक्याकडे थोडे थोडे सरकवते.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    म्हणूनच गीता मृत्यूनंतरच्या वाटेचे वर्णन करते, पण बोट दाखवते <span class="key-term">आजच्या जगण्याकडे.</span> अंत्यकाळची वाट आजच्या सवयींतून तयार होते — हाच अध्याय ८ चा समारोप-संदेश.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    प्रकाशाची एक वाट ।<br>
+    अंधाराची एक वाट ।<br>
+    एकीने परत नाही ।<br>
+    दुजीने पुन्हा ये ।।<br><br>
+    ज्ञानप्रकाशे जो जाय ।<br>
+    तो ब्रह्मात विलीन होय ।<br>
+    धुक्यात भटके जो ।<br>
+    परतोनि येतसे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "ज्ञानप्रकाशे जो जाय" — हे आवर्जून सांगतात. बाह्य तिथी-ऋतू महत्त्वाचे नाहीत; महत्त्वाचा आहे आतला प्रकाश. ज्याचे मन ज्ञानाने उजळले, तो प्रकाशाच्या वाटेने जातो. आणि ती वाट एका दिवसात नव्हे — रोजच्या निवडींतून घडते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या आजच्या निवडी — मला प्रकाशाकडे नेताहेत<br>की धुक्याकडे?"<br><br>
+    देणे, स्मरणे, सोडणे — की मिळवणे, साठवणे, अडकणे?
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक कृती — फलाची अपेक्षा न ठेवता करा.<br>
+    <strong style="color: var(--saffron);">एक देणे. एक स्मरण. एक मोह सोडणे.</strong><br>
+    हेच आतला प्रकाश वाढवणे. हीच शुक्ल वाटेची सुरुवात.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    <span class="key-term">देवयान</span> आणि <span class="key-term">पितृयान</span> — हे दोन मार्ग उपनिषदांत, विशेषतः छांदोग्य आणि बृहदारण्यक उपनिषदांत, सविस्तर येतात. गीता तीच प्राचीन संकल्पना थोडक्यात पुढे नेते. देवयान म्हणजे ज्ञानमार्गाने ब्रह्माकडे जाणारी अनावृत्ती-गती; पितृयान म्हणजे सकाम कर्माने मिळणारी, परत आणणारी गती.
+  </p>
+  <p>
+    अनेक भाष्यकार स्पष्ट करतात की इथला अर्थ केवळ मृत्यूच्या तिथीवर अवलंबून नाही — तो जीवाच्या <span class="key-term">चित्तावस्थेचे</span> प्रतीक आहे. प्रकाश म्हणजे ज्ञान, अंधार म्हणजे अज्ञान. म्हणून हा श्लोक भौगोलिक नव्हे, आध्यात्मिक नकाशा आहे.
+  </p>
+  <p>
+    अध्याय ८ चा हा समारोप संपूर्ण अध्यायाचे सार एकत्र आणतो — अंत्यकाळचे स्मरण, आयुष्यभराचा अभ्यास, आणि नित्य-अनित्याचा विवेक. <strong style="color: var(--temple-gold);">मृत्यू ही शिक्षा नाही — ती आजच्या जगण्याची परीक्षा आहे.</strong> जो रोज प्रकाशाकडे एक पाऊल टाकतो, त्याची अंतिम वाटही प्रकाशाचीच असते.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · अक्षरब्रह्मयोग · अध्याय ८ · संकल्पना ७/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

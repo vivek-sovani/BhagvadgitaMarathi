@@ -108,6 +108,11 @@
   const sectionBackBar   = document.getElementById('section-back-bar');
   const sectionBackTitle = document.getElementById('section-back-title');
   const smenuKathaCard   = document.getElementById('smenu-katha-card');
+  const smenuVivechanCard = sectionMenu
+    && sectionMenu.querySelector('.smenu-card[data-section="vivechan"]');
+  // Adhyay 8 onward: ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण are merged into a single
+  // combined concept HTML, so the concept landing shows one card instead of two.
+  const isCombinedAdhyay = (adhyayId === 8);
   const shravanFab       = document.getElementById('shravan-fab');
   const fontSizeCtrl     = document.getElementById('font-size-ctrl');
 
@@ -562,7 +567,8 @@
 
   const SECTION_LABELS = {
     vivechan:    'ज्ञानेश्वर महाराज काय म्हणतात',
-    katha:       adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण',
+    katha:       isCombinedAdhyay ? 'विवेचन व जीवनदर्शन'
+                 : adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण',
     shravan:     'श्रवण',
   };
 
@@ -620,8 +626,9 @@
     navEl.appendChild(menuPill);
     // Cross-section jump pills (skip current section)
     [
-      { id: 'vivechan', icon: '📖', label: 'ज्ञानेश्वर',       show: true },
-      { id: 'katha',    icon: '📚', label: adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण', show: hasStory },
+      { id: 'vivechan', icon: '📖', label: 'ज्ञानेश्वर',       show: !isCombinedAdhyay },
+      { id: 'katha',    icon: '📚', label: isCombinedAdhyay ? 'विवेचन व जीवनदर्शन'
+                                          : adhyayId === 4 ? 'आधुनिक योगी' : 'आयुष्यातील क्षण', show: hasStory },
     ].forEach(s => {
       if (!s.show || s.id === sectionId) return;
       const pill = document.createElement('button');
@@ -1111,12 +1118,22 @@
     // Show/hide कथा card in section menu
     if (smenuKathaCard) {
       smenuKathaCard.style.display = hasStory ? '' : 'none';
-      if (adhyayId === 4) {
-        const t = smenuKathaCard.querySelector('.smenu-title');
-        const s = smenuKathaCard.querySelector('.smenu-sub');
+      const t = smenuKathaCard.querySelector('.smenu-title');
+      const s = smenuKathaCard.querySelector('.smenu-sub');
+      if (isCombinedAdhyay) {
+        // Single combined card — विवेचन + जीवनदर्शन in one HTML
+        if (t) t.textContent = 'विवेचन व जीवनदर्शन';
+        if (s) s.textContent = 'श्लोक, ज्ञानेश्वरी व आयुष्यातील क्षण';
+      } else if (adhyayId === 4) {
         if (t) t.textContent = 'आधुनिक योगी';
         if (s) s.textContent = 'वास्तविक जीवनकथा';
       }
+    }
+
+    // Combined adhyays merge विवेचन into the कथा HTML, so hide the separate
+    // "ज्ञानेश्वर महाराज काय म्हणतात" card.
+    if (smenuVivechanCard) {
+      smenuVivechanCard.style.display = isCombinedAdhyay ? 'none' : '';
     }
 
     // ── Concept trigger text in section menu ──
@@ -1175,8 +1192,16 @@
     buildSectionNav('katha',    hasStory);
     buildSectionNav('shravan',  hasStory);
 
-    // Show section menu as the landing view for this concept
-    showSectionMenu();
+    // Show the concept landing view. Combined adhyays have a single merged page,
+    // so open it directly instead of a redundant one-card section menu. Suppress the
+    // extra history push so "back" from the page returns to the cover, not a menu.
+    if (isCombinedAdhyay && hasStory) {
+      _historyRestore = true;
+      showSection('katha');
+      _historyRestore = false;
+    } else {
+      showSectionMenu();
+    }
 
     // Load concept PDF into the right/swipe panel carousel
     pdfLabel.textContent = `🪷 संकल्पना ${toDevNum(concept.id)} चित्रात्मक विवरण`;
@@ -1217,7 +1242,13 @@
     } else if (s && s.conceptId) {
       // Back to concept section menu (no specific section)
       if (currentConceptId === s.conceptId) {
-        showSectionMenu();   // concept already rendered — just show the menu
+        if (isCombinedAdhyay) {
+          _historyRestore = true;
+          showSection('katha');   // combined page is the landing, not a menu
+          _historyRestore = false;
+        } else {
+          showSectionMenu();   // concept already rendered — just show the menu
+        }
       } else {
         selectConcept(s.conceptId);
       }

@@ -1542,16 +1542,31 @@ const GITA_STORIES = {
 
   // ── Adhyay 7 ─────────────────────────────────────────────────────────────
   "7": {
-    "1": { kathaHtmlUrl: "c/7/1/index.html" },
-    "2": { kathaHtmlUrl: "c/7/2/index.html" },
-    "3": { kathaHtmlUrl: "c/7/3/index.html" },
-    "4": { kathaHtmlUrl: "c/7/4/index.html" },
-    "5": { kathaHtmlUrl: "c/7/5/index.html" },
-    "6": { kathaHtmlUrl: "c/7/6/index.html" },
-    "7": { kathaHtmlUrl: "c/7/7/index.html" },
-    "8": { kathaHtmlUrl: "c/7/8/index.html" },
-    "9": { kathaHtmlUrl: "c/7/9/index.html" }
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-5.html" },
+    "6": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-6.html" },
+    "7": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-7.html" },
+    "8": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-8.html" },
+    "9": { kathaHtmlUrl: "sankalpana/adhyay-7/concept-9.html" }
   },  // end adhyay 7
+
+
+  // ── Adhyay 8 ─────────────────────────────────────────────────────────────
+  // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
+  // Content lives in sankalpana/adhyay-8/ (embedded via iframe); the c/8/N/ paths
+  // stay as OG-redirect stubs that route into the app.
+  "8": {
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-5.html" },
+    "6": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-6.html" },
+    "7": { kathaHtmlUrl: "sankalpana/adhyay-8/concept-7.html" }
+  },  // end adhyay 8
 
 
   // ── Adhyay 10 ─────────────────────────────────────────────────────────────

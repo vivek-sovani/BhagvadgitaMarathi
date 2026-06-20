@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>चार प्रकारचे अभक्त — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.02) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.25rem; }
+
+  /* SHLOKA */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .mandala-bg { position: absolute; opacity: 0.04; right: -30px; top: -30px; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  /* SECTION HEADING */
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  /* EXPLANATION */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* FOUR ABHAKT CARDS */
+  .abhakt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .abhakt-card {
+    background: rgba(139,26,26,0.08);
+    border: 1px solid rgba(139,26,26,0.35);
+    border-radius: 4px;
+    padding: 1.1rem 1.15rem;
+    position: relative;
+  }
+  .abhakt-card.danger { border-color: rgba(200,146,42,0.5); background: rgba(200,146,42,0.06); }
+  .abhakt-num {
+    position: absolute;
+    top: -0.6rem; left: 0.85rem;
+    background: var(--vermilion);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 0.72rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+  }
+  .abhakt-card.danger .abhakt-num { background: var(--temple-gold); color: var(--deep-vellum); }
+  .abhakt-name { font-family: var(--font-deva); font-size: 1.15rem; color: var(--saffron); font-weight: 600; margin-top: 0.5rem; margin-bottom: 0.3rem; display: block; }
+  .abhakt-card.danger .abhakt-name { color: var(--temple-gold); }
+  .abhakt-voice { font-family: var(--font-deva); font-size: 0.95rem; color: var(--antique-cream); opacity: 0.75; font-style: italic; margin-bottom: 0.5rem; line-height: 1.6; }
+  .abhakt-vivechan { font-family: var(--font-deva); font-size: 0.92rem; color: var(--antique-cream); line-height: 1.75; }
+
+  /* PULL QUOTE */
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* MIRROR BLOCK — आरसा */
+  .mirror-block {
+    background: linear-gradient(135deg, #0A0A18 0%, #0E0E25 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .mirror-block::before {
+    content: '🪞 आरसा';
+    position: absolute; top: -0.75rem; left: 1.25rem;
+    background: var(--deep-vellum); color: var(--temple-gold);
+    font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem;
+  }
+  .mirror-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .mirror-block p:last-child { margin-bottom: 0; }
+
+  /* TUKARAMA ABHANGAS */
+  .abhanga-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1.1rem; opacity: 0.85; }
+  .abhanga-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .abhanga-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  .abhanga-ovi {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 2.05;
+    color: var(--temple-gold);
+    text-align: center;
+    padding: 0.75rem;
+    background: rgba(200,146,42,0.05);
+    border-radius: 4px;
+    margin: 0.75rem 0;
+  }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* SANKALPANA */
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* ANALYTICAL */
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  /* FOOTER */
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .mirror-block, .abhanga-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block, .abhakt-card
+      { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · संकल्पना ५ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">चार प्रकारचे अभक्त</div>
+  <div class="concept-subtitle">न मां दुष्कृतिनो मूढाः — माझ्याकडे न येणारे</div>
+</header>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.15 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/>
+      <circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.१५</span>
+  <div class="shloka-deva">
+    न मां दुष्कृतिनो मूढाः प्रपद्यन्ते नराधमाः ।<br>
+    माययापहृतज्ञाना आसुरं भावमाश्रिताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "दुष्कृती, मूढ, नराधम,<br>
+    मायेने ज्यांचे ज्ञान हिरावले आहे, आसुरी भाव धारण केलेले —<br>
+    <strong class="gold-text">हे माझ्याकडे येत नाहीत."</strong>
+  </div>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd1" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd1)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· चार प्रकार</span>
+</div>
+<div class="explanation-block">
+  <p>
+    श्रीकृष्ण सांगतो — माझ्याकडे येत नाहीत असे चार प्रकार आहेत. हे ऐकताना दुसऱ्यांवर बोट ठेवायला नाही — <strong class="gold-text">आपण स्वतःला यांत ओळखायचे आहे.</strong>
+  </p>
+
+  <div class="abhakt-grid">
+    <div class="abhakt-card">
+      <span class="abhakt-num">१</span>
+      <span class="abhakt-name">दुष्कृती</span>
+      <div class="abhakt-voice">"मला माहीत आहे हे चुकीचे — तरीही करतो."</div>
+      <div class="abhakt-vivechan">जाणूनबुजून चुकीचे कर्म करत राहणे. सुधरायची इच्छाच नाही.</div>
+    </div>
+    <div class="abhakt-card">
+      <span class="abhakt-num">२</span>
+      <span class="abhakt-name">मूढ</span>
+      <div class="abhakt-voice">"आत्मा वगैरे काही नाही. हे सगळे उगाच आहे."</div>
+      <div class="abhakt-vivechan">अज्ञानी. ईश्वराच्या अस्तित्वाबद्दल प्रश्नच नाही — उत्तर शोधणे सोडाच.</div>
+    </div>
+    <div class="abhakt-card danger">
+      <span class="abhakt-num">३ · सर्वात धोकादायक</span>
+      <span class="abhakt-name">माययापहृतज्ञान</span>
+      <div class="abhakt-voice">"मी खूप वाचले आहे, खूप माहीत आहे — पण जगणे जुनेच."</div>
+      <div class="abhakt-vivechan">ज्ञान आहे — पण अनुभव नाही. बोध आहे — विज्ञान नाही. <strong class="gold-text">मायेने ज्ञानच हिरावले.</strong></div>
+    </div>
+    <div class="abhakt-card">
+      <span class="abhakt-num">४</span>
+      <span class="abhakt-name">आसुरी भाव</span>
+      <div class="abhakt-voice">"मी माझ्या बुद्धीने सगळे करतो. ईश्वराची गरज नाही."</div>
+      <div class="abhakt-vivechan">अहंकार हाच अडसर. "मी" च्या पलीकडे पाहण्यास नकार.</div>
+    </div>
+  </div>
+
+  <p>
+    तिसरा प्रकार सर्वात धोकादायक — कारण त्याला वाटते तो सुरक्षित आहे. ज्ञान आहे — पण ते जगण्यात उतरलेले नाही. हीच संकल्पना १ मधील <span class="key-term">ज्ञान विरुद्ध विज्ञान</span> ची आठवण.
+  </p>
+</div>
+
+<div class="pull-quote">
+  हा आरसा आहे — दुसऱ्यासाठी नाही.<br>
+  <strong class="gold-text">आपण स्वतःला यांत कुठे दिसतो — हा प्रश्न.</strong>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- MIRROR — आपल्याच जीवनात -->
+<div class="section-heading">
+  <span class="label-deva">आपल्याच जीवनात</span>
+  <span class="label-small">· आजच्या काळात</span>
+</div>
+<div class="mirror-block">
+  <p>
+    हे चार प्रकार कुठल्या एका माणसात नाहीत — ते <strong class="gold-text">आपल्या प्रत्येकाच्या आत आहेत.</strong> वेगवेगळ्या प्रसंगी, वेगवेगळ्या वेळी, आपण यांपैकी एका रूपात असतो.
+  </p>
+
+  <div style="background: rgba(200,146,42,0.05); border-radius: 4px; padding: 1.1rem 1.25rem; margin: 0.85rem 0;">
+    <div style="font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem;">आपण कधी असतो —</div>
+
+    <div style="display:flex; gap:0.75rem; align-items:flex-start; margin-bottom:0.6rem;">
+      <span style="color:var(--vermilion); font-size:1rem; flex-shrink:0;">●</span>
+      <div style="font-family:var(--font-deva); font-size:1.05rem; line-height:1.85; color:var(--antique-cream);">
+        <strong style="color:var(--saffron);">दुष्कृती</strong> — जेव्हा रोज रात्री ठरवतो "उद्यापासून सुधारतो" — आणि दुसऱ्या दिवशी तेच.
+      </div>
+    </div>
+    <div style="display:flex; gap:0.75rem; align-items:flex-start; margin-bottom:0.6rem;">
+      <span style="color:var(--vermilion); font-size:1rem; flex-shrink:0;">●</span>
+      <div style="font-family:var(--font-deva); font-size:1.05rem; line-height:1.85; color:var(--antique-cream);">
+        <strong style="color:var(--saffron);">मूढ</strong> — जेव्हा दिवसभर इतके व्यस्त असतो की आत्म्याचा विचारच होत नाही.
+      </div>
+    </div>
+    <div style="display:flex; gap:0.75rem; align-items:flex-start; margin-bottom:0.6rem;">
+      <span style="color:var(--temple-gold); font-size:1rem; flex-shrink:0;">●</span>
+      <div style="font-family:var(--font-deva); font-size:1.05rem; line-height:1.85; color:var(--antique-cream);">
+        <strong style="color:var(--temple-gold);">माययापहृतज्ञान</strong> — जेव्हा गीता वाचतो, चांगले वाटते — पण जगणे काही बदलत नाही. <strong class="gold-text">हे सर्वात जास्त लागू होते.</strong>
+      </div>
+    </div>
+    <div style="display:flex; gap:0.75rem; align-items:flex-start;">
+      <span style="color:var(--vermilion); font-size:1rem; flex-shrink:0;">●</span>
+      <div style="font-family:var(--font-deva); font-size:1.05rem; line-height:1.85; color:var(--antique-cream);">
+        <strong style="color:var(--saffron);">आसुरी भाव</strong> — जेव्हा वाटते "मी स्वतः यशस्वी आहे — ईश्वराची गरज काय?"
+      </div>
+    </div>
+  </div>
+
+  <p>
+    तुकाराम महाराज अभंगात म्हणतात —
+  </p>
+  <div class="abhanga-ovi">
+    नाही निश्चय मनासी ।<br>
+    धांवे इकडे तिकडे सदा ।<br>
+    हे तो माझे लक्षण ।<br>
+    तुका म्हणे काय करू ।।
+  </div>
+  <p>
+    "हे माझे लक्षण" — तुकाराम स्वतःबद्दल हे सांगतात. <strong class="gold-text">स्वतःला ओळखणे — हीच ज्ञानाची सुरुवात.</strong> आणि ओळखल्यावर "काय करू" हा प्रश्न विचारणे — हीच ईश्वराकडे वाटचाल.
+  </p>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    दुष्कृती मूढ नराधम ।<br>
+    मायेने मोहित ज्ञान ।<br>
+    आसुरी भाव धरून ।<br>
+    माझ्याकडे न येती ।।<br><br>
+    यांत स्वतःला पाहावे ।<br>
+    कुठे आहो जाणावे ।<br>
+    मग एक पाऊल ।<br>
+    माझ्याकडे यावे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "यांत स्वतःला पाहावे" — हे सांगतात. हा आरसा आहे — दोष काढायला नाही. आपण कुठे आहोत ते ओळखले तर पुढे जाता येते. <strong class="gold-text">"मग एक पाऊल माझ्याकडे यावे"</strong> — ईश्वर थांबलेला आहे. आपणच जायचे आहे.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "या चार प्रकारांपैकी मी कधी कधी कुठे असतो?"<br><br>
+    प्रामाणिकपणे पाहणे — हीच ज्ञानाची सुरुवात.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एक अडथळा — जो ईश्वरापासून दूर ठेवतो — ओळखा.<br><br>
+    <strong class="gold-text">आणि एक छोटी पायरी — त्याच्या विरुद्ध दिशेने.</strong><br><br>
+    एक पाऊल पुरे. माझ्याकडे यावे — कृष्ण थांबलेला आहे.
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    या चार प्रकारांत एक क्रम आहे — <span class="key-term">दुष्कृती</span> सर्वात खालच्या स्तरावर, <span class="key-term">आसुरी भाव</span> सर्वात सूक्ष्म. पण तिसरा — <span class="key-term">माययापहृतज्ञान</span> — हा शिकलेल्या, वाचलेल्या माणसाचा धोका आहे. ज्ञान मिळाले पण अहंकार वाढला — माया अधिक सूक्ष्म झाली.
+  </p>
+  <p>
+    संकल्पना १ मध्ये सांगितले — <span class="key-term">ज्ञान</span> आणि <span class="key-term">विज्ञान</span> वेगळे आहेत. तिसरा अभक्त ज्ञान घेऊन थांबतो — विज्ञानापर्यंत पोहोचत नाही. हे आपल्यापैकी बहुतेकांचे चित्र आहे — आणि म्हणूनच कृष्णाने याला वेगळे सांगितले.
+  </p>
+  <p>
+    उपाय एकच — <strong class="gold-text">स्वतःला ओळखणे, आणि एक पाऊल टाकणे.</strong> संपूर्ण परिवर्तन एका क्षणात होत नाही — पण एक प्रामाणिक पाऊल कृष्णापर्यंत पोहोचते.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना ५/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

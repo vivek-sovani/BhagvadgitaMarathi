@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अव्यक्त परमात्मा — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.04) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.03) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* HEADER */
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-badge { display: inline-block; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.3rem; }
+
+  /* SHLOKA */
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .mandala-bg { position: absolute; opacity: 0.04; right: -30px; top: -30px; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; }
+
+  /* SECTION HEADING */
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  /* EXPLANATION */
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* JNANARA LAKSHANAM */
+  .lakshanam-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin: 1.1rem 0; }
+  .lakshanam-card { background: rgba(200,146,42,0.07); border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 0.9rem 0.85rem; text-align: center; }
+  .lakshanam-icon { font-size: 1.3rem; display: block; margin-bottom: 0.3rem; }
+  .lakshanam-name { font-family: var(--font-deva); font-size: 1rem; color: var(--temple-gold); display: block; margin-bottom: 0.2rem; font-weight: 600; }
+  .lakshanam-desc { font-family: var(--font-deva); font-size: 0.88rem; color: var(--antique-cream); opacity: 0.82; line-height: 1.6; }
+
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* VIVEKANANDA */
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.5rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1.1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  .viv-quote {
+    background: rgba(200,146,42,0.07);
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin: 0.85rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 1.95;
+    color: var(--temple-gold);
+    text-align: center;
+  }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* ADHYAY SAAR — summary of all 9 */
+  .saar-block {
+    background: linear-gradient(135deg, #100A04 0%, #1C1005 100%);
+    border: 2px solid var(--temple-gold);
+    border-radius: 6px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .saar-block::before { content: 'अध्याय ७ — सार'; position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.95rem; padding: 0 0.75rem; white-space: nowrap; }
+  .saar-row { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.55rem 0; border-bottom: 1px solid rgba(200,146,42,0.12); }
+  .saar-row:last-child { border-bottom: none; }
+  .saar-num { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); min-width: 1.5rem; flex-shrink: 0; margin-top: 0.15rem; }
+  .saar-text { font-family: var(--font-deva); font-size: 1rem; line-height: 1.75; color: var(--antique-cream); }
+  .saar-text strong { color: var(--temple-gold); }
+
+  /* MAHAVAKYA */
+  .mahavakya-block {
+    background: linear-gradient(135deg, #0A0508 0%, #100A0E 100%);
+    border: 1px solid rgba(200,146,42,0.6);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+  .mahavakya-label { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem; display: block; }
+  .mahavakya-text { font-family: var(--font-deva); font-size: 1.6rem; line-height: 1.9; color: var(--temple-gold); margin-bottom: 0.75rem; }
+  .mahavakya-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); opacity: 0.85; }
+
+  /* SANKALPANA */
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* ANALYTICAL */
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  /* FOOTER */
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block, .lakshanam-card, .saar-block,
+    .mahavakya-block, .viv-quote
+      { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi, .mahavakya-text { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">अव्यक्त परमात्मा</div>
+  <div class="concept-badge">संकल्पना ९/९ · अंतिम</div>
+  <div class="concept-subtitle">येषां त्वन्तगतं पापम् — मला जाणणारे कोण?</div>
+</header>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.28-29 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/><circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/><circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.२८–२९</span>
+  <div class="shloka-deva">
+    येषां त्वन्तगतं पापं जनानां पुण्यकर्मणाम् ।<br>
+    ते द्वन्द्वमोहनिर्मुक्ता भजन्ते मां दृढव्रताः ॥<br><br>
+    जरामरणमोक्षाय मामाश्रित्य यतन्ति ये ।<br>
+    ते ब्रह्म तद्विदुः कृत्स्नमध्यात्मं कर्म चाखिलम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "ज्यांचे पाप नष्ट झाले, पुण्यकर्मी, द्वंद्वमोहमुक्त, दृढव्रत — ते मला भजतात.<br>
+    जे जन्म-मृत्यूतून मुक्त होण्यासाठी माझ्यावर आश्रित होतात —<br>
+    <strong class="gold-text">ते ब्रह्म, अध्यात्म, संपूर्ण कर्म जाणतात."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 7.30 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ७.३०</span>
+  <div class="shloka-deva">
+    साधिभूताधिदैवं मां साधियज्ञं च ये विदुः ।<br>
+    प्रयाणकालेऽपि च मां ते विदुर्युक्तचेतसः ॥
+  </div>
+  <div class="shloka-meaning">
+    "जे मला अधिभूत, अधिदैव, अधियज्ञासहित जाणतात —<br>
+    <strong class="gold-text">ते युक्तचेतस अंत्यकाळीही मला जाणतात."</strong>
+  </div>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd1" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd1)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· मला जाणणाऱ्यांची लक्षणे</span>
+</div>
+<div class="explanation-block">
+  <p>
+    आधीच्या श्लोकात सांगितले — "मला कुणी जाणत नाही." आता कृष्ण सांगतो — <strong class="gold-text">मला कोण जाणतो?</strong>
+  </p>
+
+  <div class="lakshanam-grid">
+    <div class="lakshanam-card">
+      <span class="lakshanam-icon">✦</span>
+      <span class="lakshanam-name">पाप नष्ट</span>
+      <div class="lakshanam-desc">चुकीच्या कर्मांपासून दूर झालेले — मन स्वच्छ</div>
+    </div>
+    <div class="lakshanam-card">
+      <span class="lakshanam-icon">⚖️</span>
+      <span class="lakshanam-name">द्वंद्वमुक्त</span>
+      <div class="lakshanam-desc">इच्छा-द्वेषाच्या पलीकडे गेलेले — संकल्पना ८</div>
+    </div>
+    <div class="lakshanam-card">
+      <span class="lakshanam-icon">🔥</span>
+      <span class="lakshanam-name">दृढव्रत</span>
+      <div class="lakshanam-desc">ठाम निश्चयाने साधना करणारे —흔들리지 않는</div>
+    </div>
+  </div>
+
+  <p>
+    आणि त्यांना काय मिळते? <span class="key-term">ब्रह्म</span> जाणतात. <span class="key-term">अध्यात्म</span> जाणतात. <span class="key-term">संपूर्ण कर्म</span> जाणतात.
+  </p>
+  <p>
+    <strong class="gold-text">"अंत्यकाळीही मला जाणतात"</strong> — जे आयुष्यभर ईश्वराशी युक्त राहतात, ते अंत्यकाळीही युक्त असतात. हा अध्याय ८ चा आधार आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  <strong class="gold-text">"वासुदेवः सर्वमिति स महात्मा सुदुर्लभः"</strong><br>
+  सर्व वासुदेव आहे — हे जेव्हा जाणतो, तेव्हा शोध संपतो.
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VIVEKANANDA -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संन्यासी · वेदान्ती · बंगाल</span>
+  <div class="example-name">स्वामी विवेकानंद</div>
+  <div class="example-dates">१८६३ – १९०२ · कोलकाता, बंगाल</div>
+
+  <p>
+    १८९३. शिकागो. धर्म संसद. एक तरुण संन्यासी उभा राहिला — आणि म्हणाला —
+  </p>
+
+  <div class="viv-quote">
+    "Sisters and brothers of America —"<br>
+    <span style="font-size:0.9rem; opacity:0.8;">सभागृहातील सात हजार लोक उभे राहिले. टाळ्यांचा कडकडाट.</span>
+  </div>
+
+  <p>
+    त्यांनी त्या भाषणात एकच गोष्ट सांगितली — <strong class="gold-text">सर्व धर्म एकाच सत्याकडे जातात. त्या सत्याचे नाव — वासुदेवः सर्वम्.</strong> हे theory म्हणून नाही — अनुभव म्हणून. रामकृष्ण परमहंसांनी त्यांना हे दिले होते — विज्ञान म्हणून.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    विवेकानंद हे <span class="key-term">पाप नष्ट</span>, <span class="key-term">द्वंद्वमुक्त</span>, <span class="key-term">दृढव्रत</span> — तिन्ही लक्षणे एकत्र असलेले होते. ते भारताच्या दारिद्र्याबद्दल रडले — पण त्याचा द्वेष नाही. पाश्चात्य श्रीमंतीबद्दल मोह नाही. <strong class="gold-text">फक्त एक ध्येय — "मला माझ्या देशाच्या लोकांसाठी ईश्वर आणायचा आहे."</strong>
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    ते म्हणाले — <strong class="gold-text">"जोपर्यंत एक माणूस भुकेला आहे — तोपर्यंत माझा धर्म पूर्ण नाही."</strong> हे "वासुदेवः सर्वम्" चे व्यावहारिक रूप आहे — सर्वांत ईश्वर पाहणे, आणि त्यांची सेवा करणे.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    वयाच्या ३९ व्या वर्षी गेले. जाण्यापूर्वी म्हणाले — <strong class="gold-text">"मला अजून काम करायचे आहे — पण हे शरीर जड झाले आहे."</strong> अंत्यकाळी ते <span class="key-term">युक्तचेतस</span> होते — कृष्णाच्या भाषेत — "प्रयाणकालेऽपि च मां ते विदुः."
+  </p>
+</div>
+
+<!-- DIAMOND DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    पाप नाश द्वंद्वमुक्त ।<br>
+    दृढव्रत युक्तचेतस ।<br>
+    ते मला जाणती ।<br>
+    अंत्यकाळीही ।।<br><br>
+    वासुदेवः सर्वमिति ।<br>
+    हे ज्याने जाणले ।<br>
+    त्याला सर्व मिळाले ।<br>
+    काही उरले नाही ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "काही उरले नाही" — हे सांगतात. "वासुदेवः सर्वम्" — सर्व वासुदेव आहे — हे जेव्हा जाणतो, तेव्हा शोध संपतो. विवेकानंदांना हे शिकागोत जाणवले — आणि ते जग बदलले. आपल्यालाही जाणवेल — एक एक पाऊल.
+  </div>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- ADHYAY 7 SAAR -->
+<div class="section-heading">
+  <span class="label-deva">अध्याय ७ — थोडक्यात</span>
+  <span class="label-small">· ९ संकल्पनांचे सार</span>
+</div>
+<div class="saar-block">
+  <div class="saar-row">
+    <div class="saar-num">१</div>
+    <div class="saar-text"><strong>ज्ञान + विज्ञान</strong> — बोध आणि अनुभव दोन्ही हवेत. नकाशा आणि प्रवास वेगळे. <em style="color:var(--patina-teal);">रामानुजन</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">२</div>
+    <div class="saar-text"><strong>अपरा-परा प्रकृती</strong> — धाग्यात मणी. धागा दिसत नाही, पण तोच सगळे धरतो. <em style="color:var(--patina-teal);">धीरूभाई अंबानी</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">३</div>
+    <div class="saar-text"><strong>मीच सर्वांत</strong> — रस, प्रकाश, गंध, ध्वनी. प्रत्येक अनुभवात ईश्वर. <em style="color:var(--patina-teal);">पंडित भीमसेन जोशी</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">४</div>
+    <div class="saar-text"><strong>माया</strong> — त्रिगुणांचा पडदा. शरण हाच एकमेव मार्ग. <em style="color:var(--patina-teal);">स्टीव्ह जॉब्स</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">५</div>
+    <div class="saar-text"><strong>चार अभक्त</strong> — दुष्कृती, मूढ, माययापहृतज्ञान, आसुरी. स्वतःला ओळखा. <em style="color:var(--patina-teal);">तुकाराम — "हे माझे लक्षण"</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">६</div>
+    <div class="saar-text"><strong>चार भक्त</strong> — आर्त, अर्थार्थी, जिज्ञासू, ज्ञानी. ज्ञानी श्रेष्ठ. <em style="color:var(--patina-teal);">रमण महर्षी</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">७</div>
+    <div class="saar-text"><strong>फळ क्षणिक · फळ अक्षय</strong> — धन येते-जाते. ईश्वर येतो, राहतो. <em style="color:var(--patina-teal);">तुकाराम महाराज</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">८</div>
+    <div class="saar-text"><strong>इच्छा-द्वेष पडदा</strong> — पडदा उचलला की ईश्वर दिसतो. <em style="color:var(--patina-teal);">रतन टाटा</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-num">९</div>
+    <div class="saar-text"><strong>अव्यक्त परमात्मा</strong> — द्वंद्वमुक्त, दृढव्रत — अंत्यकाळीही युक्त. <em style="color:var(--patina-teal);">स्वामी विवेकानंद</em></div>
+  </div>
+</div>
+
+<!-- MAHAVAKYA -->
+<div class="mahavakya-block">
+  <span class="mahavakya-label">अध्याय ७ चे परम सत्य —</span>
+  <div class="mahavakya-text">वासुदेवः सर्वमिति</div>
+  <div class="mahavakya-meaning">
+    सर्व वासुदेव आहे —<br>
+    हे जेव्हा जाणतो, तेव्हा शोध संपतो.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 अंतिम प्रश्न</span>
+  <p>
+    "या नऊ संकल्पनांपैकी — आज कुठली एक संकल्पना माझ्या जीवनात उतरवायची आहे?"<br><br>
+    एक निवडा. एक पाऊल टाका.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 अंतिम संकल्प</span>
+  <p>
+    अध्याय ७ चे सार —<br><br>
+    <strong class="gold-text">आज एकदा — सगळ्यांत ईश्वर पाहण्याचा प्रयत्न करा.</strong><br><br>
+    पाण्यात, सूर्यप्रकाशात, एखाद्या माणसाच्या स्मितात —<br>
+    "वासुदेवः सर्वम्" — हा एकच विचार.<br><br>
+    🕉️ श्रीकृष्णार्पणमस्तु.
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय ७ हा गीतेच्या मध्यभागी आहे — आणि तो ईश्वराचे स्वरूप थेट सांगतो. अध्याय १ ते ६ मध्ये <span class="key-term">जीवाचे</span> स्वरूप सांगितले — कर्म, भक्ती, ज्ञान. अध्याय ७ ते १२ मध्ये <span class="key-term">ईश्वराचे</span> स्वरूप सांगितले — विभूती, विश्वरूप, भक्तियोग.
+  </p>
+  <p>
+    "वासुदेवः सर्वमिति स महात्मा सुदुर्लभः" — हे अध्यायाचे शिखर आहे. विवेकानंदांनी शिकागोत हेच सांगितले — सर्व धर्म एकाच सत्याकडे जातात. ते सत्य — <strong class="gold-text">वासुदेवः सर्वम्.</strong>
+  </p>
+  <p>
+    रामानुजन ते विवेकानंद — नऊ वेगळ्या माणसांच्या जीवनात हा अध्याय जिवंत दिसतो. ज्ञान ते विज्ञान, अपरा ते परा, माया ते मुक्ती — हा प्रवास आपल्या प्रत्येकाचा आहे. <strong class="gold-text">अध्याय ७ हा road map आहे — वासुदेवः सर्वम् हे destination आहे.</strong>
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना ९/९ · समाप्त · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

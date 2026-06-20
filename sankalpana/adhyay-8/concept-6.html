@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>कालचक्र — भगवद्गीता अध्याय ८</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ८ · संकल्पना ६ · अक्षरब्रह्मयोग</div>
+  <div class="concept-title">कालचक्र</div>
+  <div class="concept-subtitle">ब्रह्मदेवाचा दिवस-रात्र — सृष्टीचे अखंड चक्र</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    "ब्रह्मलोकही अनित्य" — हे कृष्णाने सांगितले.<br>
+    <strong style="color: var(--temple-gold);">पण किती मोठा हा काल? किती अफाट हे चक्र?</strong><br>
+    कृष्ण आता काळाचे प्रमाण उलगडतो —<br>
+    ब्रह्मदेवाचा एक दिवस, एक रात्र — आणि अगणित सृष्टी.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 8.17 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.१७</span>
+  <div class="shloka-deva">
+    सहस्रयुगपर्यन्तमहर्यद्ब्रह्मणो विदुः ।<br>
+    रात्रिं युगसहस्रान्तां तेऽहोरात्रविदो जनाः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "ब्रह्मदेवाचा एक दिवस म्हणजे हजार युगांचा काळ,<br>
+    आणि त्याची रात्रही हजार युगांची — हे जे जाणतात,<br>
+    तेच खरे अहोरात्र (काळ) जाणणारे लोक."
+  </div>
+</div>
+
+<!-- SHLOKA 8.18-19 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ८.१८–१९</span>
+  <div class="shloka-deva">
+    अव्यक्ताद्व्यक्तयः सर्वाः प्रभवन्त्यहरागमे ।<br>
+    रात्र्यागमे प्रलीयन्ते तत्रैवाव्यक्तसंज्ञके ॥<br>
+    भूतग्रामः स एवायं भूत्वा भूत्वा प्रलीयते ।<br>
+    रात्र्यागमेऽवशः पार्थ प्रभवत्यहरागमे ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "दिवस उगवताच अव्यक्तातून सर्व व्यक्त रूपे जन्मतात,<br>
+    रात्र येताच त्याच अव्यक्तात ती पुन्हा विलीन होतात.<br>
+    हाच भूतसमूह पुन्हा पुन्हा जन्मतो आणि विलीन होतो —<br>
+    रात्री परवश होऊन लय, दिवशी पुन्हा उत्पत्ती."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण काळाचे प्रमाण देतो — आणि ते मानवी कल्पनेच्या पलीकडचे आहे. <span class="key-term">हजार युगे</span> म्हणजे ब्रह्मदेवाचा एक दिवस; तितकीच त्याची रात्र.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>अवस्था</th>
+        <th>काय घडते</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>दिवस (अहर्)</td>
+        <td>अव्यक्तातून सर्व सृष्टी व्यक्त होते</td>
+      </tr>
+      <tr>
+        <td>रात्र (रात्रि)</td>
+        <td>सर्व सृष्टी पुन्हा अव्यक्तात विलीन</td>
+      </tr>
+      <tr>
+        <td>पुन्हा दिवस</td>
+        <td>तीच सृष्टी पुन्हा प्रकट — परवश</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    <span class="key-term">"भूत्वा भूत्वा प्रलीयते"</span> — होत होत विलीन होते. हे चक्र थांबत नाही. आपण ज्याला "जग" म्हणतो, ते या अफाट श्वासातला एक क्षण आहे.
+  </p>
+  <p>
+    आणि महत्त्वाचा शब्द — <strong style="color: var(--temple-gold);">"अवशः" — परवश.</strong> या चक्रात अडकलेला जीव स्वतंत्र नाही; तो चक्रानुसारच येतो-जातो. मुक्ती म्हणजे या परवशतेतून बाहेर पडणे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  आपले संपूर्ण आयुष्य — ब्रह्मदेवाच्या एका पापणीच्या लवण्याइतके.<br>
+  <strong style="color: var(--temple-gold);">हे भान आले की अहंकार आपोआप विरतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — ARYABHATA -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">खगोलशास्त्रज्ञ · गणितज्ञ</span>
+  <div class="example-name">आर्यभट</div>
+  <div class="example-dates">इ.स. ४७६ – सुमारे ५५० · कुसुमपुर (पाटलीपुत्र)</div>
+
+  <p>
+    वयाच्या अवघ्या तेविसाव्या वर्षी आर्यभटाने <em>आर्यभटीय</em> हा ग्रंथ रचला. त्यात त्याने <span class="key-term">कल्प, मन्वंतर, युग</span> यांची प्रचंड कालगणना मांडली — गीता ज्या "सहस्रयुग" काळाबद्दल बोलते, त्याचेच गणिती रूप.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    आर्यभटाने सांगितले की पृथ्वी स्वतःभोवती फिरते आणि म्हणूनच दिवस-रात्र होतात. ज्या युगात बहुतेक जग पृथ्वीला स्थिर मानत होते, तेव्हा त्याने ही गोष्ट गणिताने सिद्ध केली — <strong style="color: var(--temple-gold);">काळ आणि गती यांचे चक्र त्याने आकड्यांत बांधले.</strong>
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    गीतेचा "अहोरात्र" आणि आर्यभटाची कालगणना — दोन्ही एकाच दृष्टीतून येतात : <span class="key-term">काळ हे चक्र आहे, रेषा नाही.</span> उत्पत्ती-स्थिती-लय हे अखंड फिरत राहते. भारतीय परंपरेने काळाला कधीच लहान, सरळ रेषेत पाहिले नाही.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    आर्यभटाचे कार्य सांगते की हे विशाल कालभान ही केवळ श्रद्धा नव्हती — ती एक <span class="key-term">वैज्ञानिक दृष्टी</span> होती. आणि त्या अफाट काळासमोर माणूस किती लहान, हे जाणणे — हाच गीतेचा नम्रतेचा धडा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    हजार युगांचा दिवस ।<br>
+    तितकीच रात्र खास ।<br>
+    हाच ब्रह्मयाचा काळ ।<br>
+    अफाट असे ।।<br><br>
+    दिवशी सृष्टी प्रकटे ।<br>
+    रात्री ती लय पावे ।<br>
+    पुन्हा पुन्हा हे घडे ।<br>
+    चक्र न थांबे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "चक्र न थांबे" — हे आवर्जून सांगतात. सृष्टी येते आणि जाते, पुन्हा येते — हे अखंड फिरते राहते. या अफाट कालचक्रासमोर माणसाचा अहंकार किती क्षुद्र, हे जाणवणे — हीच खरी जाणीव. आर्यभटाने तोच काळ आकड्यांत मांडला; गीता तो हृदयात मांडते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "या अफाट कालचक्रात माझे आयुष्य एक क्षणमात्र आहे —<br>तरी मी कशासाठी इतका अहंकार, इतकी चिंता बाळगतो?"<br><br>
+    हे भान आले की मन हलके होते.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एकदा — रात्री आकाशाकडे पाहा.<br>
+    <strong style="color: var(--saffron);">"हे विश्व किती अफाट, हा काळ किती विशाल — आणि मी किती लहान."</strong><br>
+    या नम्रतेत एक क्षण थांबा. अहंकार आपोआप विरेल.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    भारतीय कालगणना ही जगातील सर्वांत विशाल कालसंकल्पनांपैकी एक मानली जाते. <span class="key-term">युग, महायुग, मन्वंतर, कल्प</span> — या क्रमाने काळ अब्जावधी वर्षांपर्यंत विस्तारतो. ही दृष्टी काळाला चक्रीय मानते — सरळ रेषेत नव्हे, तर उत्पत्ती-स्थिती-लयाच्या अखंड फेऱ्यांत.
+  </p>
+  <p>
+    आधुनिक विज्ञानातही विश्वाच्या प्रसरण-आकुंचनाच्या चक्रांची चर्चा होते. म्हणूनच कार्ल सेगनसारख्या शास्त्रज्ञांनी भारतीय <span class="key-term">कल्प</span>-कल्पनेचा आदराने उल्लेख केला — विश्वाच्या वयाशी जुळणारी प्राचीन कालदृष्टी म्हणून.
+  </p>
+  <p>
+    पण गीतेचा हेतू खगोलशास्त्र शिकवणे नाही. हे विशाल कालभान देण्यामागे एकच उद्देश आहे — <span class="key-term">वैराग्य आणि नम्रता.</span> जो स्वतःचे आयुष्य या अफाट चक्रातला एक क्षण म्हणून पाहतो, त्याचा अहंकार टिकत नाही — आणि तेव्हाच तो परम, अचल ब्रह्माकडे वळतो.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · अक्षरब्रह्मयोग · अध्याय ८ · संकल्पना ६/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

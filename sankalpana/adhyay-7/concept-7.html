@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>देवांची पूजा — फळ क्षणिक, माझे फळ अक्षय — भगवद्गीता अध्याय ७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,146,42,0.03) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(232,101,26,0.02) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.25rem; }
+
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .mandala-bg { position: absolute; opacity: 0.04; right: -30px; top: -30px; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* COMPARISON — क्षणिक vs अक्षय */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-card { border-radius: 4px; padding: 1.25rem; border: 1px solid; }
+  .compare-card.nashvant { background: rgba(139,26,26,0.08); border-color: rgba(139,26,26,0.4); }
+  .compare-card.akshay   { background: rgba(200,146,42,0.08); border-color: rgba(200,146,42,0.5); }
+  .compare-title { font-family: var(--font-deva); font-size: 1.1rem; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+  .compare-card.nashvant .compare-title { color: #c05050; }
+  .compare-card.akshay   .compare-title { color: var(--temple-gold); }
+  .compare-list { font-family: var(--font-deva); font-size: 0.97rem; line-height: 2; color: var(--antique-cream); opacity: 0.9; }
+  .compare-list li { list-style: none; padding-left: 1rem; position: relative; }
+  .compare-card.nashvant .compare-list li::before { content: '○'; position: absolute; left: 0; color: #c05050; font-size: 0.7rem; top: 0.35rem; }
+  .compare-card.akshay   .compare-list li::before { content: '✦'; position: absolute; left: 0; color: var(--temple-gold); font-size: 0.7rem; top: 0.35rem; }
+
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* TUKARAM BLOCK */
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.5rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1.1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  .abhanga-box {
+    background: rgba(200,146,42,0.06);
+    border: 1px solid rgba(200,146,42,0.25);
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin: 0.85rem 0;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 2.05;
+    color: var(--temple-gold);
+  }
+
+  /* SPECTRUM — फळ क्षणिक ते अक्षय */
+  .spectrum-bar {
+    margin: 1.25rem 0;
+    padding: 1rem 1.25rem;
+    background: rgba(200,146,42,0.04);
+    border: 1px dashed rgba(200,146,42,0.2);
+    border-radius: 4px;
+  }
+  .spectrum-label { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem; display: block; }
+  .spectrum-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .spec-what { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); min-width: 9rem; }
+  .spec-arrow { color: var(--saffron); font-size: 0.9rem; flex-shrink: 0; }
+  .spec-result { font-family: var(--font-deva); font-size: 0.95rem; }
+  .spec-result.nashvant { color: #c05050; }
+  .spec-result.akshay   { color: var(--temple-gold); }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block, .compare-card, .spectrum-bar, .abhanga-box
+      { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ७ · संकल्पना ७ · ज्ञानविज्ञानयोग</div>
+  <div class="concept-title">देवांची पूजा — फळ क्षणिक, माझे फळ अक्षय</div>
+  <div class="concept-subtitle">अन्तवत्तु फलं तेषां — नाशवंत विरुद्ध अक्षय</div>
+</header>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin-bottom:2rem;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- SHLOKA 7.20-21 -->
+<div class="shloka-block">
+  <svg class="mandala-bg" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" aria-hidden="true">
+    <g transform="translate(150,150)">
+      <circle r="30" fill="none" stroke="#C8922A" stroke-width="1"/><circle r="60" fill="none" stroke="#C8922A" stroke-width="0.75"/>
+      <circle r="90" fill="none" stroke="#C8922A" stroke-width="0.75"/><circle r="120" fill="none" stroke="#C8922A" stroke-width="0.5"/>
+      <line x1="0" y1="-120" x2="0" y2="120" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-120" y1="0" x2="120" y2="0" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="-85" y1="-85" x2="85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <line x1="85" y1="-85" x2="-85" y2="85" stroke="#C8922A" stroke-width="0.5" opacity="0.6"/>
+      <circle r="4" fill="#C8922A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ७.२०–२१</span>
+  <div class="shloka-deva">
+    कामैस्तैस्तैर्हृतज्ञानाः प्रपद्यन्तेऽन्यदेवताः ।<br>
+    तं तं नियममास्थाय प्रकृत्या नियताः स्वया ॥<br><br>
+    यो यो यां यां तनुं भक्तः श्रद्धयार्चितुमिच्छति ।<br>
+    तस्य तस्याचलां श्रद्धां तामेव विदधाम्यहम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "ज्यांचे ज्ञान विविध इच्छांनी हिरावले, ते इतर देवांकडे जातात.<br>
+    जो भक्त ज्या देवतेची पूजा करू इच्छितो —<br>
+    <strong class="gold-text">त्याची त्या देवतेवर अचल श्रद्धा मीच करतो."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 7.23 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ७.२३</span>
+  <div class="shloka-deva">
+    अन्तवत्तु फलं तेषां तद्भवत्यल्पमेधसाम् ।<br>
+    देवान्देवयजो यान्ति मद्भक्ता यान्ति मामपि ॥
+  </div>
+  <div class="shloka-meaning">
+    "परंतु त्या अल्पबुद्धींना मिळणारे फळ नाशवंत आहे.<br>
+    देवपूजक देवाला जातात —<br>
+    <strong class="gold-text">माझे भक्त मला येतात."</strong>
+  </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd1" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd1)"/>
+</svg>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    श्रीकृष्ण देव-पूजा चुकीची म्हणत नाही — <strong class="gold-text">तो म्हणतो, फळाचा विचार करा.</strong>
+  </p>
+
+  <div class="compare-grid">
+    <div class="compare-card nashvant">
+      <span class="compare-title">नाशवंत फळ</span>
+      <ul class="compare-list">
+        <li>धन — येते आणि जाते</li>
+        <li>आरोग्य — शरीर नश्वर</li>
+        <li>यश — काळाने विसरले जाते</li>
+        <li>संतान — स्वतंत्र जीव</li>
+        <li>स्वर्ग — तोही संपतो</li>
+      </ul>
+    </div>
+    <div class="compare-card akshay">
+      <span class="compare-title">अक्षय फळ</span>
+      <ul class="compare-list">
+        <li>मोक्ष — कधीच जात नाही</li>
+        <li>ईश्वरी जाणीव — सदा राहते</li>
+        <li>आत्मज्ञान — नाशवंत नाही</li>
+        <li>शांती — परिस्थितीवर अवलंबून नाही</li>
+        <li>कृष्णाशी एकरूपता — अनंत</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    "मीच सर्व देवांत आहे" — म्हणजे कुठलीही पूजा शेवटी मलाच पोहोचते. पण <strong class="gold-text">जाणीवपूर्वक ईश्वराशी जोडणे — अधिक थेट, अधिक प्रभावी.</strong>
+  </p>
+
+  <div class="spectrum-bar">
+    <span class="spectrum-label">कुठे मागतो → काय मिळते —</span>
+    <div class="spectrum-row"><span class="spec-what">धनासाठी पूजा</span><span class="spec-arrow">→</span><span class="spec-result nashvant">धन मिळते — नाशवंत</span></div>
+    <div class="spectrum-row"><span class="spec-what">यशासाठी पूजा</span><span class="spec-arrow">→</span><span class="spec-result nashvant">यश मिळते — क्षणिक</span></div>
+    <div class="spectrum-row"><span class="spec-what">जिज्ञासेने पूजा</span><span class="spec-arrow">→</span><span class="spec-result akshay">ज्ञान वाढते — टिकते</span></div>
+    <div class="spectrum-row"><span class="spec-what">निःस्वार्थ पूजा</span><span class="spec-arrow">→</span><span class="spec-result akshay">कृष्णाशी जोडणे — <strong>अक्षय</strong></span></div>
+  </div>
+</div>
+
+<div class="pull-quote">
+  जगातल्या गोष्टी येतात आणि जातात.<br>
+  <strong class="gold-text">ईश्वर येतो — राहतो.</strong>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- TUKARAM MAHARAJ -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · वारकरी परंपरा · महाराष्ट्र</span>
+  <div class="example-name">संत तुकाराम महाराज</div>
+  <div class="example-dates">१५९८ – १६५० · देहू, पुणे जिल्हा</div>
+
+  <p>
+    तुकाराम महाराजांच्या जीवनात नाशवंत आणि अक्षय फळाचा फरक अतिशय स्पष्टपणे दिसतो. त्यांनी व्यापार केला — धन मागितले नाही. संसार केला — सुख मागितले नाही. दुष्काळाने सगळे गेले — तरी ते देवाकडे जगण्यासाठी गेले नाहीत.
+  </p>
+
+  <hr class="inner-divider">
+
+  <div class="abhanga-box">
+    देव-ऋण फेडायला आलो ।<br>
+    व्याज नको मला ।<br>
+    तुकाराम म्हणे — विठ्ठला ।<br>
+    तूच पुरे मला ।।
+  </div>
+
+  <p>
+    "तूच पुरे मला" — हे <span class="key-term">अक्षय फळाची</span> मागणी आहे. धन नाही, आरोग्य नाही, यश नाही — फक्त <strong class="gold-text">विठ्ठल.</strong> हेच कृष्णाचे "मद्भक्ता यान्ति मामपि" आहे.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    तुकारामांचा व्यापार बुडाला, पत्नी आणि मुलगा गेला, दुष्काळ पडला — पण ते म्हणाले —
+  </p>
+
+  <div class="abhanga-box">
+    आता कोठे धावे मन ।<br>
+    तेथे तेथे नारायण ।।
+  </div>
+
+  <p>
+    "तेथे तेथे नारायण" — हे <span class="key-term">संकल्पना ३</span> चे "मीच सर्वांत" आहे. आणि हे <span class="key-term">संकल्पना ७</span> चे अक्षय फळ आहे — दुःखातही ईश्वर दिसणे. हे धनाने मिळत नाही — साधनेने मिळते.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    तुकारामांना वैकुंठाला जाताना — ते फळ मिळाले जे <strong class="gold-text">कधीच संपत नाही.</strong> कारण त्यांनी नाशवंत कधीच मागितले नव्हते.
+  </p>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="12" viewBox="0 0 400 12" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <defs><pattern id="dd2" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse"><line x1="0" y1="6" x2="20" y2="6" stroke="#C8922A" stroke-width="0.5" opacity="0.5"/><polygon points="10,2 14,6 10,10 6,6" fill="none" stroke="#C8922A" stroke-width="0.75"/></pattern></defs>
+  <rect width="100%" height="12" fill="url(#dd2)"/>
+</svg>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    देवांना भजे जो ।<br>
+    देव त्यासि मिळे ।<br>
+    पण फळ क्षणिक असे ।<br>
+    नाशवंत ते ।।<br><br>
+    मज भजे जो ।<br>
+    मज तो पावे ।<br>
+    फळ अक्षय असे ।<br>
+    कधीच न जाय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "फळ अक्षय असे" — हे सांगतात. कुठल्या ध्येयासाठी साधना करायची हे ठरवणे महत्त्वाचे. तुकारामांनी हे ठरवले होते — "तूच पुरे मला." म्हणूनच त्यांचे अभंग आजही टिकले — ते स्वतः जसे अक्षय फळाकडे गेले, तसेच त्यांचे शब्दही अक्षय राहिले.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "माझ्या प्रार्थनेत — माझ्या भक्तीत — मी काय मागतो?"<br><br>
+    नाशवंत — धन, आरोग्य, यश?<br>
+    की अक्षय — जाणीव, शांती, मोक्ष?<br><br>
+    दोन्ही मागणे चुकीचे नाही — पण कुठे जायचे आहे हे ठरवा.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज प्रार्थनेत — एक वेळ — फक्त इतकेच मागा —<br><br>
+    <strong class="gold-text">"तुझी जाणीव दे. बाकी तू जाणतोस."</strong><br><br>
+    तुकारामांसारखे — "तूच पुरे मला."
+  </p>
+</div>
+
+<!-- ORNAMENTAL DIVIDER -->
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="20" viewBox="0 0 600 20" preserveAspectRatio="xMidYMid meet" aria-hidden="true" style="margin:1.75rem 0;">
+  <line x1="0" y1="10" x2="260" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <circle cx="300" cy="10" r="6" fill="none" stroke="#C8922A" stroke-width="1.5"/>
+  <circle cx="300" cy="10" r="2" fill="#C8922A"/>
+  <line x1="340" y1="10" x2="600" y2="10" stroke="#C8922A" stroke-width="1" opacity="0.7"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(0 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(60 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(120 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(180 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(240 300 10)"/>
+  <ellipse cx="300" cy="4" rx="2" ry="3" fill="#C8922A" opacity="0.4" transform="rotate(300 300 10)"/>
+</svg>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    मीमांसा दर्शनात यज्ञाचे फळ — <span class="key-term">स्वर्ग</span> — हे सर्वोच्च मानले गेले. पण गीतेत कृष्ण सांगतो — स्वर्गही <span class="key-term">नाशवंत</span> आहे. पुण्य संपले की स्वर्ग सुटतो. "अन्तवत्तु फलं" — फळाला अंत आहे.
+  </p>
+  <p>
+    तुकारामांनी हे वारकरी परंपरेत सांगितले — भक्ती म्हणजे मागणे नाही, देणे आहे. स्वतःला देणे — ईश्वराला. "तूच पुरे" हे उत्तर मिळायला अनेक जन्म लागतात. पण एकदा ते उमजले — बाकी काहीच लागत नाही.
+  </p>
+  <p>
+    कृष्ण म्हणतो — "मद्भक्ता यान्ति मामपि." माझे भक्त मलाच येतात. <strong class="gold-text">म्हणजे — फळ म्हणून कृष्ण मिळतो.</strong> कृष्णाच्यापेक्षा मोठे अक्षय फळ काय असेल?
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · ज्ञानविज्ञानयोग · अध्याय ७ · संकल्पना ७/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>
