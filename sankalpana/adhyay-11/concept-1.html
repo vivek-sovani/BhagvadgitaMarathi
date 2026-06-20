@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अर्जुनाची विनंती — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --soft-glow:     #E8C872;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    /* CONCEPT 1 — शांत जिज्ञासा: soft warm gold glow */
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,200,114,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 60%, rgba(200,146,42,0.03) 0%, transparent 60%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  /* SITE NAV */
+  .site-nav {
+    background:#1A1208; border-bottom:1px solid var(--temple-gold);
+    padding:0.6rem 1.5rem; display:flex; align-items:center;
+    justify-content:space-between; position:sticky; top:0; z-index:100;
+  }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  /* HEADER */
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-badge { display: inline-block; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.7; margin-top: 0.3rem; }
+
+  /* OPENING SOFT GLOW INTRO */
+  .intro-glow {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .intro-glow .eye {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 0 12px rgba(232,200,114,0.5));
+  }
+  .intro-glow p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* SHLOKA */
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    opacity: 0.06; pointer-events: none;
+  }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  /* SECTION HEADING */
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  /* EXPLANATION */
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--soft-glow); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  /* RELEVANCE */
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0A 100%); border: 1px solid rgba(200,146,42,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--temple-gold); margin-bottom: 1.1rem; opacity: 0.9; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(200,146,42,0.25); margin: 1rem 0; }
+
+  /* JNANESHWARI */
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* SANKALPANA */
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  /* ANALYTICAL */
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  /* NAV FOOTER */
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a {
+    flex:1; text-align:center; padding:0.85rem 1rem;
+    background:#221507; border:1px solid rgba(200,146,42,0.4); border-radius:4px;
+    font-family:var(--font-deva); font-size:0.95rem; color:var(--temple-gold); text-decoration:none;
+  }
+  .concept-nav a.disabled { opacity:0.35; pointer-events:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+  .glow-text { color: var(--soft-glow); }
+
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">अर्जुनाची विनंती</div>
+  <div class="concept-badge">🙏 संकल्पना १/७</div>
+  <div class="concept-subtitle">"ते रूप मला दाखव" — दिव्य दृष्टीची मागणी</div>
+</header>
+
+<!-- INTRO GLOW -->
+<div class="intro-glow">
+  <span class="eye">👁️</span>
+  <p>
+    अध्याय १० मध्ये कृष्णाने आपल्या विभूती सांगितल्या —<br>
+    "मी हे आहे, मी ते आहे." अर्जुनाची उत्सुकता शिगेला पोहोचली.<br>
+    <strong class="glow-text">आणि त्याने एक विलक्षण विनंती केली —<br>"ते रूप मला प्रत्यक्ष पाहायचे आहे."</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 11.3 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)">
+      <circle r="40" fill="none" stroke="#E8C872" stroke-width="1"/>
+      <circle r="80" fill="none" stroke="#E8C872" stroke-width="0.75"/>
+      <circle r="120" fill="none" stroke="#E8C872" stroke-width="0.5"/>
+      <circle r="155" fill="none" stroke="#E8C872" stroke-width="0.5"/>
+      <circle r="6" fill="#E8C872"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ११.३</span>
+  <div class="shloka-deva">
+    एवमेतद्यथात्थ त्वमात्मानं परमेश्वर ।<br>
+    द्रष्टुमिच्छामि ते रूपमैश्वरं पुरुषोत्तम ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे परमेश्वरा, तू स्वतःबद्दल जे सांगितलेस ते अगदी तसेच आहे.<br>
+    <strong class="gold-text">परंतु हे पुरुषोत्तमा — मला तुझे ते ऐश्वर्यपूर्ण रूप<br>प्रत्यक्ष पाहायची इच्छा आहे."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.4 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.४</span>
+  <div class="shloka-deva">
+    मन्यसे यदि तच्छक्यं मया द्रष्टुमिति प्रभो ।<br>
+    योगेश्वर ततो मे त्वं दर्शयात्मानमव्ययम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे प्रभो, जर तुला वाटत असेल की ते रूप मी पाहू शकेन —<br>
+    तर हे योगेश्वरा, मला तुझे ते अव्यय रूप दाखव."
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अर्जुनाची ही विनंती एका सामान्य उत्सुकतेपेक्षा खूप वेगळी आहे. त्याने <span class="key-term">श्रद्धा</span> आणि <span class="key-term">जिज्ञासा</span> — दोन्ही एकत्र मांडल्या.
+  </p>
+  <p>
+    "एवमेतत्" — तू सांगतोस ते खरे आहे. <strong class="gold-text">हा विश्वास.</strong> पण "द्रष्टुमिच्छामि" — मला पाहायचे आहे. <strong class="gold-text">ही जिज्ञासा.</strong> ऐकणे आणि पाहणे — यात फरक आहे. हेच अध्याय ७ चे <span class="key-term">ज्ञान</span> आणि <span class="key-term">विज्ञान</span>.
+  </p>
+  <p>
+    अर्जुन नम्र आहे — "जर तुला वाटत असेल मी पाहू शकेन तर." तो स्वतःच्या पात्रतेबद्दल आग्रही नाही. <strong class="glow-text">ही नम्रता — हीच दिव्य दृष्टीची पहिली अट.</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  ऐकणे म्हणजे श्रद्धा. पाहणे म्हणजे अनुभव.<br>
+  <strong class="glow-text">अर्जुनाला आता अनुभव हवा होता.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">प्रत्येक खऱ्या शोधकाचा क्षण</span>
+  <div class="example-name">जिज्ञासू शोधक</div>
+  <div class="example-sub">"मला फक्त ऐकायचे नाही — पाहायचे आहे"</div>
+
+  <p>
+    एखाद्या विद्यार्थ्याला शिक्षक सांगतात — "प्रकाश सात रंगांचा बनलेला असतो." तो विश्वास ठेवतो. पण जेव्हा तो स्वतः <strong class="gold-text">prism धरतो आणि भिंतीवर इंद्रधनुष्य पाहतो</strong> — तो क्षण वेगळा असतो. ऐकलेले सत्य आता अनुभवलेले सत्य होते.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    हाच फरक — पुस्तकात "हिमालय भव्य आहे" वाचणे, आणि प्रत्यक्ष हिमालयासमोर उभे राहणे. वैज्ञानिक सूत्र वाचणे, आणि प्रयोगशाळेत ते घडताना पाहणे. <span class="key-term">अर्जुनाची विनंती हीच होती</span> — "मला तुझ्याबद्दल कळले. आता तुला अनुभवायचे आहे."
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    पण एक महत्त्वाची गोष्ट — अर्जुनाने हे <strong class="glow-text">नम्रतेने</strong> मागितले, आव्हान म्हणून नाही. खरा शोधक "सिद्ध कर" म्हणत नाही — तो "मला दाखव" अशी प्रार्थना करतो. <strong class="gold-text">हीच वृत्ती दिव्य दृष्टीस पात्र करते.</strong>
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    तू जे सांगितलेस ।<br>
+    ते सत्य मानतो मी ।<br>
+    परी ते रूप पाहण्याची ।<br>
+    इच्छा मनी ।।<br><br>
+    जर योग्य वाटे तुज ।<br>
+    तर दाखव ते रूप ।<br>
+    नम्रपणे मागतो ।<br>
+    हा अर्जुन ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव अर्जुनाची नम्रता अधोरेखित करतात. तो आग्रह करत नाही — विनंती करतो. "जर योग्य वाटे तुज" — हा भाव महत्त्वाचा. श्रद्धा असेल आणि नम्रता असेल, तरच अनुभवाचे द्वार उघडते. हाच भक्तीचा पाया.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी ईश्वराबद्दल फक्त ऐकतो — की अनुभवण्याचीही इच्छा ठेवतो?"<br><br>
+    आणि ती इच्छा — नम्रतेने आहे की आग्रहाने?
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,200,114,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-glow);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एखादे सत्य — जे फक्त ऐकले आहे —<br>
+    <strong class="glow-text">प्रत्यक्ष अनुभवण्याचा प्रयत्न करा.</strong><br><br>
+    आणि अर्जुनासारखे म्हणा — "जर योग्य वाटत असेल, तर मला दाखव."
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय ११ हा संपूर्ण गीतेचा भावनिक शिखरबिंदू आहे. इथपर्यंत कृष्णाने <span class="key-term">शब्दांनी</span> ज्ञान दिले. आता तो <span class="key-term">दर्शनाने</span> देणार आहे. हे शब्दज्ञान ते प्रत्यक्षानुभव यांच्यातले संक्रमण आहे.
+  </p>
+  <p>
+    अर्जुनाची विनंती दर्शवते की <span class="key-term">श्रद्धा</span> ही अनुभवाचा शेवट नाही — सुरुवात आहे. श्रद्धेतून जिज्ञासा, जिज्ञासेतून प्रार्थना, प्रार्थनेतून दर्शन. हा क्रम आहे. आणि या सगळ्याचा पाया — नम्रता.
+  </p>
+  <p>
+    पुढच्या संकल्पनेत कृष्ण अर्जुनाला <span class="key-term">दिव्य चक्षु</span> देईल — कारण मांस-डोळ्यांनी विश्वरूप दिसत नाही. पण ते दान मिळण्यासाठी आधी ही नम्र विनंती आवश्यक होती. <strong class="gold-text">मागितल्याशिवाय दिले जात नाही.</strong>
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना १/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

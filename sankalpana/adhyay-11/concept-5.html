@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>स्तुती आणि क्षमायाचना — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --twilight:      #2E4A6F;
+    --soft-blue:     #6FA8DC;
+    --plum:          #4A3A6F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #0E1018;
+    /* CONCEPT 5 — शरणागती, नम्रता: calming deep blue / twilight */
+    background-image:
+      radial-gradient(ellipse at 50% 8%, rgba(111,168,220,0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 60%, rgba(74,58,111,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 85%, rgba(46,74,111,0.10) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#0E1018; border-bottom:1px solid var(--soft-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--soft-blue); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--soft-blue); border-bottom: 1px solid var(--twilight); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--soft-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--soft-blue); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(111,168,220,0.3); }
+  .concept-badge { display: inline-block; background: var(--twilight); color: var(--antique-cream); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  /* BOW HERO */
+  .bow-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .bow-hero .icon { font-size: 2.4rem; display: block; margin-bottom: 0.75rem; filter: drop-shadow(0 0 14px rgba(111,168,220,0.45)); }
+  .bow-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .shloka-block {
+    background: linear-gradient(135deg, #0E1626 0%, #16203A 100%);
+    border: 1px solid var(--soft-blue);
+    border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem;
+    position: relative; overflow: hidden;
+    box-shadow: 0 0 30px rgba(46,74,111,0.15) inset;
+  }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--twilight); color: var(--antique-cream); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--soft-blue); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(111,168,220,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--soft-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #121A2A; border-left: 3px solid var(--soft-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--soft-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #141826 0%, #1A2036 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--soft-blue); margin-bottom: 1.1rem; opacity: 0.9; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #14100A 0%, #1E160C 100%); border: 1px solid rgba(111,168,220,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1018; color: var(--soft-blue); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--soft-blue); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(111,168,220,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #121A2A; border: 1px solid rgba(111,168,220,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--soft-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(111,168,220,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1018; color: var(--soft-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#121A2A; border:1px solid rgba(111,168,220,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--soft-blue); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .blue-text { color: var(--soft-blue); }
+
+  .iks-footer { border-top: 2px solid var(--soft-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--soft-blue); opacity: 0.7; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #2E4A6F !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">स्तुती आणि क्षमायाचना</div>
+  <div class="concept-badge">🙇 संकल्पना ५/७</div>
+  <div class="concept-subtitle">सखेति मत्वा — "मित्र म्हणून बोललो, क्षमा कर"</div>
+</header>
+
+<!-- BOW HERO -->
+<div class="bow-hero">
+  <span class="icon">🙏</span>
+  <p>
+    भयंकर रूप पाहिल्यावर, "मी काळ आहे" ऐकल्यावर —<br>
+    अर्जुनाचा अहंकार पूर्णपणे गळून पडला.<br>
+    <strong class="blue-text">तो नतमस्तक झाला आणि क्षमा मागू लागला.</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 11.41-42 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#6FA8DC" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#6FA8DC"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ११.४१–४२</span>
+  <div class="shloka-deva">
+    सखेति मत्वा प्रसभं यदुक्तं हे कृष्ण हे यादव हे सखेति ।<br>
+    अजानता महिमानं तवेदं मया प्रमादात्प्रणयेन वापि ॥<br>
+    यच्चावहासार्थमसत्कृतोऽसि विहारशय्यासनभोजनेषु ।<br>
+    तत्क्षामये त्वामहमप्रमेयम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "तुला मित्र समजून, तुझा महिमा न जाणता,<br>
+    प्रेमाने किंवा निष्काळजीपणे — 'हे कृष्ण, हे यादव, हे मित्रा' असे म्हणालो.<br>
+    खेळताना, बसताना, जेवताना तुझा अपमान केला —<br>
+    <strong class="blue-text">त्या सर्वांची मी तुझ्याकडे क्षमा मागतो."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.44 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.४४</span>
+  <div class="shloka-deva">
+    तस्मात्प्रणम्य प्रणिधाय कायं प्रसादये त्वामहमीशमीड्यम् ।<br>
+    पितेव पुत्रस्य सखेव सख्युः प्रियः प्रियायार्हसि देव सोढुम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "म्हणून शरीर नमवून, साष्टांग नमस्कार करून, तुला प्रसन्न करतो.<br>
+    <strong class="blue-text">पिता पुत्राला, मित्र मित्राला, प्रियकर प्रियेला जसे क्षमा करतो —<br>तसे तू मला क्षमा कर."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा क्षण अत्यंत हृदयस्पर्शी आहे. अर्जुनाला आता जाणवले की ज्याला तो वर्षानुवर्षे फक्त <span class="key-term">मित्र, सारथी</span> समजत होता — तो प्रत्यक्ष परमेश्वर आहे.
+  </p>
+  <p>
+    आणि त्याला आठवते — किती वेळा त्याने कृष्णाला सहज "ए कृष्णा, ए यादवा" म्हटले. खेळताना थट्टा केली, बरोबरीने वागला. <strong class="blue-text">"मला माहीतच नव्हते तू कोण आहेस."</strong> — हा पश्चात्ताप.
+  </p>
+  <p>
+    पण इथे एक सुंदर गोष्ट आहे. अर्जुन क्षमा मागतो — पण त्या प्रेमळ नात्याची आठवणही ठेवतो. "पिता-पुत्र, मित्र-मित्र, प्रियकर-प्रिया." <strong class="key-term">ईश्वर भव्य आहे, पण तो जवळचाही आहे.</strong> भीतीनंतर परत प्रेमाकडे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  खरी नम्रता भीतीतून येत नाही —<br>
+  <strong class="blue-text">ती स्वतःच्या मर्यादांच्या प्रामाणिक जाणिवेतून येते.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">अहंकार गळण्याचा क्षण</span>
+  <div class="example-name">मोठेपणाची खरी जाणीव</div>
+  <div class="example-sub">जेव्हा कळते — आपण किती लहान आहोत</div>
+
+  <p>
+    एखाद्या विद्यार्थ्याला वाटते तो खूप हुशार आहे — जोपर्यंत तो एखाद्या खऱ्या विद्वानाला भेटत नाही. एखाद्या गिर्यारोहकाला वाटते तो बलवान आहे — जोपर्यंत तो हिमालयासमोर उभा राहत नाही. <strong class="blue-text">मोठ्यासमोर उभे राहिल्यावरच आपले खरे माप कळते.</strong>
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    अनेकदा आपण जवळच्या माणसांना — आई-वडील, गुरू, मित्र — गृहीत धरतो. त्यांचे मोठेपण लक्षातच येत नाही, कारण ते रोज आपल्यासोबत असतात. आणि एक दिवस त्यांचे खरे रूप कळते — <span class="key-term">तेव्हा अर्जुनासारखी जाणीव होते</span> — "मी यांना ओळखलेच नाही."
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    पण अर्जुनाची क्षमायाचना ही केवळ भीतीची नाही. ती <strong class="blue-text">प्रेमाची आणि प्रामाणिकपणाची</strong> आहे. खरी नम्रता म्हणजे स्वतःला कमी लेखणे नाही — ती म्हणजे सत्य जसे आहे तसे स्वीकारणे. "तू मोठा आहेस, मी लहान — आणि तरीही तू माझा जवळचा आहेस." <strong class="key-term">हीच परिपक्व भक्ती.</strong>
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    मित्र म्हणोनि बोललो ।<br>
+    महिमा न जाणता ।<br>
+    खेळ-थट्टेत वागलो ।<br>
+    क्षमा कर आता ।।<br><br>
+    पिता पुत्रा जैसा ।<br>
+    मित्र मित्रा जैसा ।<br>
+    क्षमा करी मजला ।<br>
+    हे देवा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव अर्जुनाच्या नम्रतेतले सौंदर्य दाखवतात. भीतीने नव्हे, प्रेमाने तो क्षमा मागतो. आणि महत्त्वाचे — तो ते जवळचे नाते सोडत नाही. ईश्वर कितीही भव्य असो, भक्ताचे प्रेमळ नाते उरतेच. हीच भक्तीची गोडी — भय आणि प्रेम एकत्र.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "माझ्या आयुष्यातील कुणाला — आई-वडील, गुरू, मित्र, ईश्वर —<br>मी गृहीत धरले आहे का? त्यांचे खरे मोठेपण ओळखले आहे का?"
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(111,168,220,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-blue);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एका जवळच्या व्यक्तीला —<br>
+    जिला आपण गृहीत धरत आलो —<br>
+    <strong class="blue-text">मनापासून कृतज्ञता व्यक्त करा. नम्रपणे.</strong><br><br>
+    अर्जुनासारखे — प्रेमाने आणि प्रामाणिकपणे.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अर्जुनाची क्षमायाचना ही भक्तीतील <span class="key-term">नम्रता</span> या तत्त्वाचे उत्तम उदाहरण आहे. भीतीतून सुरू झालेला हा क्षण प्रेमात बदलतो. हे महत्त्वाचे — खरी भक्ती भीतीवर उभी राहत नाही, ती प्रेमावर उभी राहते.
+  </p>
+  <p>
+    इथे एक सूक्ष्म तत्त्व आहे — <span class="key-term">ऐश्वर्य</span> (भव्यता) आणि <span class="key-term">माधुर्य</span> (गोडी) — ईश्वराची दोन रूपे. विश्वरूप हे ऐश्वर्य. पण अर्जुनाला माधुर्यही हवे आहे — तो जवळचा कृष्ण. म्हणून तो "पिता-पुत्र, मित्र-मित्र" ही प्रेमळ नाती आठवतो.
+  </p>
+  <p>
+    पुढच्या संकल्पनेत अर्जुन कृष्णाला विनवेल — <strong class="blue-text">"परत तुझे सौम्य रूप दाखव."</strong> भयंकर सत्य पाहिले, स्वीकारले, क्षमा मागितली — आता त्याला परत प्रेमळ रूप हवे आहे. कठोर सत्य पचवणे — आणि मग शांतीकडे परतणे. ही परिपक्वतेची पूर्ण वाटचाल.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना ५/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

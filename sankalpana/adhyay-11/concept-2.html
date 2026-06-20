@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>विश्वरूप प्रकट — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --radiant-gold:  #FFD966;
+    --white-blaze:   #FFF4D6;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #1C1408;
+    /* CONCEPT 2 — भव्यता, तेज: intense radiant gold burst */
+    background-image:
+      radial-gradient(ellipse at 50% 5%, rgba(255,217,102,0.16) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 30%, rgba(232,101,26,0.06) 0%, transparent 55%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  /* SITE NAV */
+  .site-nav { background:#1A1208; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  /* HEADER */
+  .iks-header { border-top: 2px solid var(--radiant-gold); border-bottom: 1px solid var(--radiant-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--radiant-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--radiant-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 20px rgba(255,217,102,0.4); }
+  .concept-badge { display: inline-block; background: var(--radiant-gold); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  /* THOUSAND SUNS HERO */
+  .suns-hero {
+    text-align: center;
+    padding: 1rem 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .suns-hero svg { max-width: 280px; width: 100%; height: auto; filter: drop-shadow(0 0 25px rgba(255,217,102,0.5)); }
+  .suns-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  /* SHLOKA */
+  .shloka-block {
+    background: linear-gradient(135deg, #2A1C08 0%, #3A2810 100%);
+    border: 1px solid var(--radiant-gold);
+    border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem;
+    position: relative; overflow: hidden;
+    box-shadow: 0 0 30px rgba(255,217,102,0.08) inset;
+  }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.08; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--radiant-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(255,217,102,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #2A1C0A; border-left: 3px solid var(--radiant-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--radiant-gold); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #0A1420 0%, #0E1E32 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--radiant-gold); margin-bottom: 1.1rem; opacity: 0.9; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+  .viv-quote { background: rgba(255,217,102,0.07); border:1px solid rgba(255,217,102,0.3); border-radius:4px; padding:0.85rem 1.25rem; margin:0.75rem 0; font-family:var(--font-deva); font-size:1.1rem; line-height:1.9; color:var(--radiant-gold); text-align:center; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(255,217,102,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--radiant-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--radiant-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(255,217,102,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #2A1C0A; border: 1px solid rgba(255,217,102,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(255,217,102,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--radiant-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#2A1C0A; border:1px solid rgba(255,217,102,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--radiant-gold); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--radiant-gold); }
+  .blaze-text { color: var(--white-blaze); }
+
+  .iks-footer { border-top: 2px solid var(--radiant-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--radiant-gold); opacity: 0.7; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">विश्वरूप प्रकट</div>
+  <div class="concept-badge">🌌 संकल्पना २/७</div>
+  <div class="concept-subtitle">दिवि सूर्यसहस्रस्य — हजार सूर्यांचे तेज</div>
+</header>
+
+<!-- THOUSAND SUNS HERO -->
+<div class="suns-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="सहस्र सूर्य">
+    <defs>
+      <radialGradient id="sunCore" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFF4D6"/>
+        <stop offset="45%" stop-color="#FFD966"/>
+        <stop offset="100%" stop-color="#E8651A"/>
+      </radialGradient>
+    </defs>
+    <g transform="translate(100,100)">
+      <!-- many rays -->
+      <g stroke="#FFD966" stroke-width="1.5" opacity="0.6">
+        <!-- generate 36 rays -->
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(0)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(10)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(20)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(30)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(40)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(50)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(60)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(70)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(80)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(90)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(100)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(110)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(120)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(130)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(140)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(150)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(160)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(170)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(180)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(190)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(200)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(210)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(220)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(230)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(240)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(250)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(260)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(270)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(280)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(290)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(300)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(310)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(320)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(330)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(340)"/>
+        <line x1="0" y1="0" x2="0" y2="-95" transform="rotate(350)"/>
+      </g>
+      <circle r="45" fill="url(#sunCore)"/>
+      <text y="8" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="22" fill="#1A1208">ॐ</text>
+    </g>
+  </svg>
+  <p>
+    जर आकाशात <strong class="gold-text">एकाच वेळी हजार सूर्य</strong> उगवले,<br>
+    तर त्यांचे एकत्रित तेज — <strong class="blaze-text">कदाचित त्या महात्म्याच्या तेजासारखे असेल.</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 11.12 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340" aria-hidden="true">
+    <g transform="translate(170,170)" stroke="#FFD966" stroke-width="0.6" fill="none">
+      <circle r="50"/><circle r="90"/><circle r="130"/><circle r="165"/>
+      <circle r="8" fill="#FFD966"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ११.१२</span>
+  <div class="shloka-deva">
+    दिवि सूर्यसहस्रस्य भवेद्युगपदुत्थिता ।<br>
+    यदि भाः सदृशी सा स्याद्भासस्तस्य महात्मनः ॥
+  </div>
+  <div class="shloka-meaning">
+    "आकाशात जर हजार सूर्य एकाच वेळी उगवले,<br>
+    तर त्यांचे तेज कदाचित —<br>
+    <strong class="gold-text">त्या विश्वरूप महात्म्याच्या तेजासारखे असेल."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.13 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.१३</span>
+  <div class="shloka-deva">
+    तत्रैकस्थं जगत्कृत्स्नं प्रविभक्तमनेकधा ।<br>
+    अपश्यद्देवदेवस्य शरीरे पाण्डवस्तदा ॥
+  </div>
+  <div class="shloka-meaning">
+    "त्या वेळी अर्जुनाने देवाधिदेवाच्या शरीरात<br>
+    अनेक प्रकारांनी विभागलेले<br>
+    <strong class="gold-text">संपूर्ण विश्व एकाच ठिकाणी पाहिले."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्णाने अर्जुनाला <span class="key-term">दिव्य चक्षु</span> दिले — कारण मांस-डोळ्यांनी हे रूप दिसणे शक्य नव्हते. आणि मग जे दिसले — ते शब्दांत मांडणे संजयलाही अशक्य झाले.
+  </p>
+  <p>
+    म्हणून त्याने एकच उपमा वापरली — <strong class="gold-text">"सहस्र सूर्य."</strong> एक सूर्यच डोळ्यांना सहन होत नाही — हजार सूर्यांची कल्पना करा. ती भव्यता, ते तेज — हे विश्वरूपाचे वर्णन.
+  </p>
+  <p>
+    आणि त्या तेजात अर्जुनाने काय पाहिले? <strong class="gold-text">संपूर्ण विश्व — एकाच ठिकाणी.</strong> सर्व लोक, सर्व प्राणी, सर्व देव — सगळे एका रूपात. हे "वासुदेवः सर्वम्" चे प्रत्यक्ष दर्शन होते — अध्याय ७ चे सत्य आता डोळ्यांसमोर.
+  </p>
+</div>
+
+<div class="pull-quote">
+  एक सूर्य डोळ्यांना सहन होत नाही.<br>
+  <strong class="gold-text">विश्वरूप म्हणजे हजार सूर्यांचे एकत्रित तेज.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">अंतराळवीर · पृथ्वीचे दर्शन</span>
+  <div class="example-name">अवकाशातून पृथ्वी पाहणे</div>
+  <div class="example-sub">"The Overview Effect" — विश्वरूपाची आधुनिक झलक</div>
+
+  <p>
+    जे अंतराळवीर अवकाशातून पृथ्वी पाहतात — त्यांना एक विलक्षण अनुभव येतो. शास्त्रज्ञ त्याला <strong class="gold-text">"Overview Effect"</strong> म्हणतात. क्षणभर त्यांना संपूर्ण पृथ्वी — सर्व देश, सर्व समुद्र, सर्व माणसे — एकाच दृश्यात दिसतात. सीमा नाहीशा होतात. सगळे एक दिसते.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    राकेश शर्मा — अवकाशात गेलेले पहिले भारतीय. इंदिरा गांधींनी विचारले — "वरून भारत कसा दिसतो?" त्यांनी उत्तर दिले —
+  </p>
+  <div class="viv-quote">
+    "सारे जहाँ से अच्छा."
+  </div>
+  <p>
+    हे फक्त देशभक्तीचे उत्तर नव्हते — तो एक <span class="key-term">दर्शनाचा क्षण</span> होता. अवकाशातून पाहिल्यावर पृथ्वीची भव्यता, एकता, सौंदर्य — सगळे एकत्र जाणवते. हे विश्वरूपाची एक छोटी झलक आहे.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    अंतराळवीर एडगर मिचेल म्हणाले — "तुम्हाला अचानक जाणवते की हे सगळे एक आहे." <strong class="gold-text">हीच अर्जुनाची अनुभूती</strong> — "तत्रैकस्थं जगत्कृत्स्नं" — संपूर्ण विश्व एकाच ठिकाणी. फरक एवढाच — अर्जुनाला हे ईश्वराच्या शरीरात दिसले, अंतराळवीरांना अवकाशातून.
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सहस्र सूर्य एकवटले ।<br>
+    तरी ते तेज थोडे ।<br>
+    ऐसे विश्वरूप प्रकटले ।<br>
+    अर्जुनापुढे ।।<br><br>
+    सर्व जग एकाठायी ।<br>
+    अर्जुने पाहिले ।<br>
+    देवाच्या त्या देही ।<br>
+    सामावले ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव या प्रसंगाचे वर्णन अत्यंत भव्य भाषेत करतात. "सहस्र सूर्य एकवटले तरी ते तेज थोडे" — म्हणजे विश्वरूपाचे तेज त्याहूनही अधिक. शब्द अपुरे पडतात. जिथे शब्द संपतात, तिथे दर्शन सुरू होते. हेच विज्ञान — प्रत्यक्ष अनुभव.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी कधी अशी भव्यता अनुभवली आहे का — जिथे माझे छोटेपण जाणवले<br>आणि विश्वाची विशालता दिसली?"<br><br>
+    तारांकित आकाश? समुद्र? पर्वत? — तो विश्वरूपाचा स्पर्श असतो.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(255,217,102,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--radiant-gold);">🌱 आजचा संकल्प</span>
+  <p>
+    आज रात्री — एकदा आकाशाकडे पाहा.<br>
+    तारे, अवकाश, अनंतता —<br>
+    <strong class="gold-text">"हे सगळे एकाच तत्त्वात सामावलेले आहे" — हा एक विचार.</strong><br><br>
+    तीच विश्वरूपाची झलक.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    "सहस्र सूर्य" ही उपमा गीतेतील सर्वात प्रसिद्ध रूपकांपैकी एक आहे. ती तेजाचे वर्णन करते — पण त्याहून अधिक, ती <span class="key-term">मानवी आकलनाची मर्यादा</span> दाखवते. काही गोष्टी इतक्या भव्य असतात की त्यांचे वर्णन फक्त उपमेनेच शक्य होते.
+  </p>
+  <p>
+    "तत्रैकस्थं जगत्कृत्स्नं" — संपूर्ण विश्व एकाच ठिकाणी. हे अद्वैताचे दृश्यरूप आहे. विविधतेमागे एकता — हे तत्त्वज्ञान शब्दांत अध्याय ७ मध्ये सांगितले, आता अध्याय ११ मध्ये दृश्यरूपात दाखवले.
+  </p>
+  <p>
+    आधुनिक विज्ञानही हेच सांगते — सर्व पदार्थ एकाच मूलद्रव्यांपासून, सर्व ऊर्जा एकाच स्रोतापासून. <strong class="gold-text">विश्वरूप म्हणजे या एकतेचे प्रत्यक्ष दर्शन.</strong> पुढच्या संकल्पनेत हेच रूप भयंकर रूप घेईल — कारण भव्यतेची दुसरी बाजू भीती आहे.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना २/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

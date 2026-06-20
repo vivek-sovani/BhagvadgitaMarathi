@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सौम्य रूप — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --soft-glow:     #E8C872;
+    --warm-rose:     #D88A6A;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    /* CONCEPT 6 — परत शांती, उबदारता: warm gold returning, gentle */
+    background-image:
+      radial-gradient(ellipse at 50% 5%, rgba(232,200,114,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 75% 55%, rgba(216,138,106,0.06) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(200,146,42,0.04) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#1A1208; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(232,200,114,0.3); }
+  .concept-badge { display: inline-block; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  .lotus-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .lotus-hero svg { max-width: 180px; width: 100%; height: auto; filter: drop-shadow(0 0 16px rgba(232,200,114,0.4)); }
+  .lotus-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--soft-glow); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0A 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #221507; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#221507; border:1px solid rgba(200,146,42,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--temple-gold); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+  .glow-text { color: var(--soft-glow); }
+  .rose-text { color: var(--warm-rose); }
+
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">सौम्य रूप</div>
+  <div class="concept-badge">🌸 संकल्पना ६/७</div>
+  <div class="concept-subtitle">कठोर सत्य स्वीकारणे — हीच परिपक्वता</div>
+</header>
+
+<!-- LOTUS HERO -->
+<div class="lotus-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 120" aria-label="कमळ — सौम्यता">
+    <g transform="translate(80,75)">
+      <ellipse cx="0" cy="0" rx="14" ry="42" fill="#E8C872" opacity="0.85"/>
+      <ellipse cx="0" cy="0" rx="14" ry="42" fill="#D88A6A" opacity="0.4" transform="rotate(40)"/>
+      <ellipse cx="0" cy="0" rx="14" ry="42" fill="#D88A6A" opacity="0.4" transform="rotate(-40)"/>
+      <ellipse cx="0" cy="0" rx="13" ry="38" fill="#E8C872" opacity="0.7" transform="rotate(75)"/>
+      <ellipse cx="0" cy="0" rx="13" ry="38" fill="#E8C872" opacity="0.7" transform="rotate(-75)"/>
+      <circle cx="0" cy="0" r="9" fill="#C8922A"/>
+    </g>
+  </svg>
+  <p>
+    भयंकर रूप पाहून अर्जुन हादरला होता.<br>
+    त्याने विनवले — <strong class="glow-text">"परत तुझे ते सौम्य, प्रेमळ रूप दाखव."</strong><br>
+    आणि कृष्णाने त्याला शांत केले.
+  </p>
+</div>
+
+<!-- SHLOKA 11.45-46 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#E8C872" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#E8C872"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ११.४५–४६</span>
+  <div class="shloka-deva">
+    अदृष्टपूर्वं हृषितोऽस्मि दृष्ट्वा भयेन च प्रव्यथितं मनो मे ।<br>
+    तदेव मे दर्शय देव रूपं प्रसीद देवेश जगन्निवास ॥<br>
+    किरीटिनं गदिनं चक्रहस्तमिच्छामि त्वां द्रष्टुमहं तथैव ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे रूप आधी कधी न पाहिलेले — पाहून आनंदित झालो, पण मन भयाने व्याकूळ झाले.<br>
+    हे देवा, मला परत तेच (सौम्य) रूप दाखव. प्रसन्न हो.<br>
+    <strong class="gold-text">मुकुट घातलेला, गदा-चक्रधारी — तुला तसेच पाहायचे आहे."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.50 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.५०</span>
+  <div class="shloka-deva">
+    इत्यर्जुनं वासुदेवस्तथोक्त्वा स्वकं रूपं दर्शयामास भूयः ।<br>
+    आश्वासयामास च भीतमेनं भूत्वा पुनः सौम्यवपुर्महात्मा ॥
+  </div>
+  <div class="shloka-meaning">
+    "असे अर्जुनाला सांगून वासुदेवाने परत आपले (सौम्य) रूप दाखवले.<br>
+    आणि पुन्हा सौम्य शरीर धारण करून —<br>
+    <strong class="gold-text">त्या भयभीत अर्जुनाला आश्वस्त केले."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अर्जुनाने विश्वरूप मागितले होते — आणि पाहिले. भव्यता, तेज, संहार — सगळे अनुभवले. पण आता तो प्रामाणिकपणे कबूल करतो — <strong class="glow-text">"भयेन च प्रव्यथितं मनो मे" — माझे मन भयाने व्याकूळ झाले."</strong>
+  </p>
+  <p>
+    आणि तो परत सौम्य रूप मागतो. हे दुर्बलता नाही — हे शहाणपण आहे. <span class="key-term">कठोर सत्य पाहणे आवश्यक होते, पण त्यातच राहणे शक्य नाही.</span> माणसाला जगण्यासाठी प्रेमळ, जवळचे रूपही हवे.
+  </p>
+  <p>
+    आणि कृष्ण काय करतो? तो लगेच सौम्य होतो. <strong class="gold-text">"आश्वासयामास च भीतम्"</strong> — त्या भयभीत मित्राला आश्वस्त करतो. ईश्वर भव्य आहे, पण तो भक्ताला घाबरवून ठेवत नाही. भयंकर सत्य दाखवल्यावर तो परत प्रेमाने जवळ घेतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  कठोर सत्य पाहणे — धैर्य.<br>
+  <strong class="glow-text">ते पचवून परत शांतीत येणे — परिपक्वता.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">कठोर सत्य आणि परिपक्वता</span>
+  <div class="example-name">सत्य पचवण्याची कला</div>
+  <div class="example-sub">पाहणे, स्वीकारणे, आणि पुढे जाणे</div>
+
+  <p>
+    एखाद्या डॉक्टरला रुग्णाचा गंभीर रिपोर्ट सांगावा लागतो. कठोर सत्य. पण चांगला डॉक्टर ते सत्य सांगतो <strong class="gold-text">आणि मग धीरही देतो</strong> — "हे गंभीर आहे, पण आपण मार्ग काढू." सत्य लपवत नाही, पण रुग्णाला भीतीत सोडतही नाही. <span class="key-term">हेच कृष्णाचे वागणे.</span>
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    जीवनात आपल्याला अनेकदा कठोर सत्यांना सामोरे जावे लागते — मृत्यू, अपयश, विश्वासघात, स्वतःच्या मर्यादा. हे टाळता येत नाही — पाहावेच लागते. पण <strong class="rose-text">त्या सत्यातच अडकून राहणे म्हणजे जगणे थांबवणे.</strong> परिपक्व माणूस सत्य स्वीकारतो, पचवतो, आणि परत जीवनाच्या प्रेमळ बाजूकडे वळतो.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    अर्जुनाने हेच केले. त्याने काळाचे, संहाराचे, मृत्यूचे भयंकर सत्य पाहिले — नाकारले नाही. पण मग तो म्हणाला — "आता मला परत तुझे प्रेमळ रूप हवे." <strong class="gold-text">सत्याचे दर्शन घेणे आणि तरीही प्रेमात, शांतीत जगणे</strong> — हीच खरी आध्यात्मिक परिपक्वता. भयाने गोठून जायचे नाही, सत्य नाकारायचेही नाही — दोन्हीच्या मध्ये संतुलन.
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    भव्य रूप पाहिले ।<br>
+    परी मन भ्याले ।<br>
+    सौम्य रूप दे आता ।<br>
+    म्हणे अर्जुन ।।<br><br>
+    कृष्ण सौम्य झाला ।<br>
+    भीत मित्रा शांतवी ।<br>
+    प्रेमळ रूप घेऊनि ।<br>
+    आश्वासिले ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव कृष्णाच्या वात्सल्याचे वर्णन करतात. भयंकर रूप दाखवल्यावर तो भक्ताला तिथेच सोडत नाही — लगेच सौम्य होतो, आश्वस्त करतो. हीच ईश्वराची करुणा. सत्य दाखवतो, पण प्रेमाने सावरतोही. भक्ताला कधीच एकटे, भयभीत ठेवत नाही.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "एखादे कठोर सत्य पाहिल्यावर — मी त्यातच अडकून राहतो,<br>की ते स्वीकारून परत शांतीकडे, प्रेमाकडे वळतो?"<br><br>
+    सत्य पाहणे आणि शांत राहणे — यांच्यात संतुलन आहे का?
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,200,114,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-glow);">🌱 आजचा संकल्प</span>
+  <p>
+    एखादे कठोर सत्य — जे मनात अडकले आहे —<br>
+    आज ते प्रामाणिकपणे स्वीकारा.<br>
+    <strong class="glow-text">आणि मग — जीवनाच्या एका सुंदर, प्रेमळ गोष्टीकडे वळा.</strong><br><br>
+    दोन्ही हवे — सत्याचे धैर्य, आणि प्रेमाची शांती.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा प्रसंग ईश्वराच्या दोन रूपांचे संतुलन दाखवतो — <span class="key-term">विराट</span> (cosmic) आणि <span class="key-term">सगुण</span> (personal). विश्वरूप भव्य पण भयावह. सौम्य रूप जवळचे आणि प्रेमळ. भक्तीसाठी सौम्य रूप अधिक उपयुक्त — कारण प्रेम भयावर उभे राहत नाही.
+  </p>
+  <p>
+    अर्जुनाने विराट रूप मागितले, पाहिले — पण शेवटी त्याला सगुण, सौम्य रूपच हवे होते. हे अध्याय १२ चा पाया घालते — जिथे कृष्ण सांगेल की <strong class="gold-text">सगुण भक्ती निर्गुणापेक्षा सोपी आणि श्रेष्ठ आहे.</strong> सामान्य माणसासाठी प्रेमळ, मूर्त रूप अधिक जवळचे.
+  </p>
+  <p>
+    "कठोर सत्य स्वीकारणे हीच परिपक्वता" — हा या संकल्पनेचा सार. आध्यात्मिक प्रवासात भयंकर सत्यांचा सामना अटळ आहे. पण त्यात गोठून जायचे नाही. सत्य पाहायचे, पचवायचे, आणि परत प्रेमात-शांतीत यायचे. <strong class="glow-text">शेवटची संकल्पना सांगेल — हे सगळे दर्शन फक्त अनन्य भक्तीनेच शक्य होते.</strong>
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना ६/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

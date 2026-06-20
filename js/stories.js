@@ -1595,6 +1595,22 @@ const GITA_STORIES = {
     "7": { kathaHtmlUrl: "sankalpana/adhyay-10/concept-7.html" }
   },  // end adhyay 10
 
+
+  // ── Adhyay 11 ─────────────────────────────────────────────────────────────
+  // Combined concept pages — ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण in a single HTML.
+  // Content lives in sankalpana/adhyay-11/ (embedded via iframe); the c/11/N/ paths
+  // stay as OG-redirect stubs that route into the app.
+  "11": {
+    "1": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-1.html" },
+    "2": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-2.html" },
+    "3": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-3.html" },
+    "4": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-4.html" },
+    "5": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-5.html" },
+    "6": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-6.html" },
+    "7": { kathaHtmlUrl: "sankalpana/adhyay-11/concept-7.html" }
+  },  // end adhyay 11
+
+
   "12": {
     "1": {
       shloka: {

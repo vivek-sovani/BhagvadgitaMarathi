@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मी काळ आहे — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --ember:         #E84B1A;
+    --blood:         #8B1A1A;
+    --void:          #0A0608;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #0E0608;
+    /* CONCEPT 4 — काळ, संहार शिखर: deepest dark, ominous ember core */
+    background-image:
+      radial-gradient(ellipse at 50% 8%, rgba(232,75,26,0.14) 0%, transparent 45%),
+      radial-gradient(circle at 50% 40%, rgba(139,26,26,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 30% 90%, rgba(139,26,26,0.08) 0%, transparent 45%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#0E0608; border-bottom:1px solid var(--ember); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--ember); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--ember); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--ember); border-bottom: 1px solid var(--blood); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.95rem; color: var(--ember); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 24px rgba(232,75,26,0.5); }
+  .concept-badge { display: inline-block; background: var(--blood); color: var(--antique-cream); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  /* TIME HERO */
+  .time-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .time-hero svg { max-width: 260px; width: 100%; height: auto; filter: drop-shadow(0 0 26px rgba(232,75,26,0.5)); }
+  .time-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  .shloka-block {
+    background: linear-gradient(135deg, #18080A 0%, #260C0C 100%);
+    border: 1px solid var(--ember);
+    border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem;
+    position: relative; overflow: hidden;
+    box-shadow: 0 0 40px rgba(139,26,26,0.15) inset;
+  }
+  .shloka-block.hero-shloka { border: 2px solid var(--ember); box-shadow: 0 0 50px rgba(232,75,26,0.18) inset, 0 0 20px rgba(232,75,26,0.15); }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.1; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--ember); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-number.maha { background: var(--blood); }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.3rem; line-height: 2.15; color: var(--ember); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(232,75,26,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--ember); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #1A0A0A; border-left: 3px solid var(--ember); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--ember); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.18rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #0A1420 0%, #0E1E32 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--ember); margin-bottom: 1.1rem; opacity: 0.9; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+  .viv-quote { background: rgba(232,75,26,0.08); border:1px solid rgba(232,75,26,0.35); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.12rem; line-height:1.9; color:var(--ember); text-align:center; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(232,75,26,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--void); color: var(--ember); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--ember); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(232,75,26,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #1A0A0A; border: 1px solid rgba(232,75,26,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(232,75,26,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--void); color: var(--ember); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1A0A0A; border:1px solid rgba(232,75,26,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--ember); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .ember-text { color: var(--ember); }
+
+  .iks-footer { border-top: 2px solid var(--ember); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); opacity: 0.7; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B1A1A !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">"मी काळ आहे"</div>
+  <div class="concept-badge">⏳ संकल्पना ४/७</div>
+  <div class="concept-subtitle">कालोऽस्मि लोकक्षयकृत् — तू निमित्त मात्र हो</div>
+</header>
+
+<!-- TIME HERO -->
+<div class="time-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="काळचक्र">
+    <defs>
+      <radialGradient id="timeCore" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#E84B1A"/>
+        <stop offset="60%" stop-color="#8B1A1A"/>
+        <stop offset="100%" stop-color="#1A0606"/>
+      </radialGradient>
+    </defs>
+    <g transform="translate(100,100)">
+      <circle r="85" fill="none" stroke="#8B1A1A" stroke-width="1.5" opacity="0.6"/>
+      <circle r="85" fill="url(#timeCore)" opacity="0.85"/>
+      <!-- clock spokes / kaala chakra -->
+      <g stroke="#E84B1A" stroke-width="1.5" opacity="0.8">
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(0)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(30)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(60)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(90)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(120)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(150)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(180)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(210)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(240)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(270)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(300)"/>
+        <line x1="0" y1="0" x2="0" y2="-78" transform="rotate(330)"/>
+      </g>
+      <circle r="10" fill="#1A0606" stroke="#E84B1A" stroke-width="1.5"/>
+      <text y="6" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="12" fill="#E84B1A">काळ</text>
+    </g>
+  </svg>
+  <p>
+    अर्जुनाने भयभीत होऊन विचारले —<br>
+    "हे उग्र रूप कोण आहेस तू?"<br>
+    <strong class="ember-text">आणि उत्तर आले — गीतेतील सर्वात गहन वाक्य.</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 11.32 — MAHA SHLOKA -->
+<div class="shloka-block hero-shloka">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360" aria-hidden="true">
+    <g transform="translate(180,180)" stroke="#E84B1A" stroke-width="0.6" fill="none">
+      <circle r="60"/><circle r="110"/><circle r="160"/>
+      <circle r="9" fill="#E84B1A"/>
+    </g>
+  </svg>
+  <span class="shloka-number maha">श्लोक ११.३२ · महाश्लोक</span>
+  <div class="shloka-deva">
+    कालोऽस्मि लोकक्षयकृत्प्रवृद्धो<br>
+    लोकान्समाहर्तुमिह प्रवृत्तः ।<br>
+    ऋतेऽपि त्वां न भविष्यन्ति सर्वे<br>
+    येऽवस्थिताः प्रत्यनीकेषु योधाः ॥
+  </div>
+  <div class="shloka-meaning">
+    "मी काळ आहे — लोकांचा संहार करणारा, वाढलेला.<br>
+    या जगाचा संहार करण्यासाठी प्रवृत्त झालो आहे.<br>
+    <strong class="ember-text">तू नसलास तरीही — समोरचे सर्व योद्धे जिवंत राहणार नाहीत."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.33 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.३३</span>
+  <div class="shloka-deva">
+    तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून् भुङ्क्ष्व राज्यं समृद्धम् ।<br>
+    मयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन् ॥
+  </div>
+  <div class="shloka-meaning">
+    "म्हणून ऊठ, यश मिळव, शत्रूंना जिंकून समृद्ध राज्य भोग.<br>
+    हे सर्व मीच आधीच मारले आहेत —<br>
+    <strong class="ember-text">हे सव्यसाची, तू फक्त निमित्त मात्र हो."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा गीतेतील सर्वात थरारक क्षण आहे. कृष्ण स्वतःची ओळख देतो — <strong class="ember-text">"कालोऽस्मि" — मी काळ आहे.</strong> काळ — जो सर्वकाही गिळतो. जे जन्मले ते मरणार. हा अटळ नियम — तोच ईश्वराचे एक रूप.
+  </p>
+  <p>
+    कृष्ण अर्जुनाला एक गहन सत्य सांगतो — <strong class="ember-text">"मयैवैते निहताः पूर्वमेव"</strong> — हे योद्धे मी आधीच मारले आहेत. त्यांचा मृत्यू अटळ आहे. तू लढलास किंवा नाही — ते जाणारच. <strong class="key-term">तू फक्त निमित्त हो.</strong>
+  </p>
+  <p>
+    हे कर्मयोगाचे परम रूप आहे — "मी कर्ता" हा अहंकार सोडणे. परिणाम ईश्वराच्या हाती. आपण फक्त आपले कर्तव्य करायचे — निमित्त म्हणून. <strong class="ember-text">कर्ता काळ आहे, आपण साधन.</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  <strong class="ember-text">"तू फक्त निमित्त मात्र हो."</strong><br>
+  कर्ता ईश्वर — आपण फक्त साधन.
+</div>
+
+<!-- MODERN RELEVANCE — OPPENHEIMER -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">भौतिकशास्त्रज्ञ · अमेरिका</span>
+  <div class="example-name">रॉबर्ट ओपेनहायमर</div>
+  <div class="example-sub">१९०४ – १९६७ · अणुबॉम्बचे जनक</div>
+
+  <p>
+    १६ जुलै १९४५. न्यू मेक्सिकोचे वाळवंट. मानवी इतिहासातील पहिली अणुस्फोट चाचणी — "Trinity Test". आकाश एका क्षणात <strong class="ember-text">हजार सूर्यांच्या तेजाने</strong> उजळले. आणि त्या क्षणी ओपेनहायमरच्या मनात गीतेचाच श्लोक आला.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    ओपेनहायमर संस्कृत शिकले होते आणि त्यांनी गीता मूळातून वाचली होती. तो स्फोट पाहून त्यांना आठवले —
+  </p>
+  <div class="viv-quote">
+    "Now I am become Death,<br>the destroyer of worlds."<br>
+    <span style="font-size:0.88rem; opacity:0.8;">(कालोऽस्मि लोकक्षयकृत् — श्लोक ११.३२ चे रूपांतर)</span>
+  </div>
+  <p>
+    हाच तो श्लोक — "मी काळ आहे, जगाचा संहारक." तीन हजार वर्षांपूर्वीचे कृष्णाचे शब्द — विसाव्या शतकातील सर्वात भयंकर शोधाच्या क्षणी जिवंत झाले.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    पण यात एक खोल अर्थ आहे. ओपेनहायमरला जाणवले की त्यांनी जे निर्माण केले ते एक <span class="key-term">संहारक शक्ती</span> होती — काळासारखी. आणि गीतेचा संदेश इथे लागू होतो — विज्ञानी फक्त <strong class="ember-text">निमित्त</strong> होते. ती शक्ती निसर्गातच होती. प्रश्न होता — ती शक्ती कशी वापरायची?
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    ओपेनहायमर पुढे अणुशस्त्रांच्या विरोधात उभे राहिले. त्यांना समजले की <strong class="key-term">शक्ती तटस्थ असते — हेतू महत्त्वाचा.</strong> काळ संहार करतो, पण निर्मितीही करतो. अर्जुनाला कृष्णाने हेच सांगितले — संहार अटळ आहे, पण तू धर्माच्या बाजूने निमित्त हो, अधर्माच्या नको.
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    काळ मी संहारक ।<br>
+    सर्व गिळणारा ।<br>
+    जे जन्मले ते सारे ।<br>
+    माझ्यात विरणार ।।<br><br>
+    तू न लढलास तरी ।<br>
+    हे जाणारच ।<br>
+    म्हणोनि ऊठ अर्जुना ।<br>
+    निमित्त हो माझे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "निमित्त हो माझे" — हा कर्मयोगाचा सार सांगतात. अर्जुनाला वाटत होते "मी मारणारा." कृष्ण म्हणतो "नाही — काळ मारणारा, तू फक्त साधन." हा अहंकार-नाश आहे. "मी कर्ता" हा भाव गेला की कर्म बंधन राहत नाही. हीच खरी मुक्ती — कर्म करूनही अलिप्त राहणे.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी माझ्या यश-अपयशाचा 'कर्ता' स्वतःला मानतो —<br>की मी फक्त एक निमित्त आहे, हे स्वीकारतो?"<br><br>
+    'मी कर्ता' हा अहंकार — हाच बंधनाचे मूळ.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,75,26,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--ember);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एक कर्तव्य —<br>
+    पूर्ण निष्ठेने करा, पण फळाचा कर्तेपणा सोडून.<br><br>
+    <strong class="ember-text">"मी फक्त निमित्त. परिणाम त्याच्या हाती." — हा भाव ठेवा.</strong>
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    "कालोऽस्मि" हा श्लोक काळाला ईश्वराचे रूप मानतो. भारतीय तत्त्वज्ञानात <span class="key-term">काळ</span> ही केवळ घड्याळाची संकल्पना नाही — तो सृष्टीचा नियंता आहे. जे काळात जन्मते ते काळातच विरते. हा अटळ नियम — आणि तो ईश्वरी आहे.
+  </p>
+  <p>
+    अर्जुनाला युद्धाचे ओझे वाटत होते — "मी या सगळ्यांना मारणार." कृष्णाने ते ओझे उतरवले — "तू कर्ता नाहीस, काळ कर्ता आहे." हे जबाबदारी टाळणे नाही — हे <span class="key-term">अहंकारातून मुक्ती</span> आहे. कर्तव्य करायचे, पण "मीच सर्वकाही करतो" हा भ्रम सोडायचा.
+  </p>
+  <p>
+    ओपेनहायमरच्या जीवनात हाच प्रश्न जिवंत झाला — शक्ती निर्माण केली, पण तिचा कर्ता कोण? <strong class="ember-text">गीता सांगते — शक्ती ईश्वरी, माणूस निमित्त. म्हणून हेतू शुद्ध ठेवा.</strong> पुढच्या संकल्पनेत अर्जुन या भयंकर सत्यापुढे नतमस्तक होईल — क्षमायाचना करेल. भीतीनंतर येते नम्रता.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना ४/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

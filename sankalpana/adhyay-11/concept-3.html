@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>भयंकर रूप — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --ember:         #E84B1A;
+    --blood:         #8B1A1A;
+    --ash:           #9A8470;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #14080A;
+    /* CONCEPT 3 — भीती, संहार: dark ember/blood glow */
+    background-image:
+      radial-gradient(ellipse at 50% 10%, rgba(232,75,26,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(139,26,26,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(139,26,26,0.08) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  /* SITE NAV */
+  .site-nav { background:#14080A; border-bottom:1px solid var(--ember); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--ember); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--ember); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--ember); border-bottom: 1px solid var(--blood); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--ember); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(232,75,26,0.4); }
+  .concept-badge { display: inline-block; background: var(--blood); color: var(--antique-cream); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  /* FIRE HERO */
+  .fire-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .fire-hero svg { max-width: 230px; width: 100%; height: auto; filter: drop-shadow(0 0 22px rgba(232,75,26,0.55)); }
+  .fire-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  .shloka-block {
+    background: linear-gradient(135deg, #1E0A08 0%, #2E1010 100%);
+    border: 1px solid var(--ember);
+    border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem;
+    position: relative; overflow: hidden;
+    box-shadow: 0 0 30px rgba(139,26,26,0.12) inset;
+  }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.08; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--ember); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--ember); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(232,75,26,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--ember); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #1E0E0A; border-left: 3px solid var(--ember); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--ember); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #0A1420 0%, #0E1E32 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--ember); margin-bottom: 1.1rem; opacity: 0.9; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(74,124,111,0.3); margin: 1rem 0; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(232,75,26,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--ember); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--ember); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(232,75,26,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #1E0E0A; border: 1px solid rgba(232,75,26,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(232,75,26,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--ember); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E0E0A; border:1px solid rgba(232,75,26,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--ember); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .ember-text { color: var(--ember); }
+  .blood-text { color: #d05050; }
+
+  .iks-footer { border-top: 2px solid var(--ember); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--ember); opacity: 0.7; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B1A1A !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">भयंकर रूप</div>
+  <div class="concept-badge">😱 संकल्पना ३/७</div>
+  <div class="concept-subtitle">दंष्ट्राकरालानि — काळापुढे कुणी थारत नाही</div>
+</header>
+
+<!-- FIRE HERO -->
+<div class="fire-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 200" aria-label="संहारक अग्नी">
+    <defs>
+      <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0%" stop-color="#8B1A1A"/>
+        <stop offset="45%" stop-color="#E84B1A"/>
+        <stop offset="80%" stop-color="#E8651A"/>
+        <stop offset="100%" stop-color="#FFD966"/>
+      </linearGradient>
+    </defs>
+    <path d="M80 195 C40 165 35 120 60 90 C62 110 72 115 70 95 C68 70 80 45 95 25 C92 55 110 70 105 100 C103 120 115 125 118 105 C128 130 125 165 80 195 Z" fill="url(#flame)" opacity="0.95"/>
+    <path d="M80 190 C58 168 56 135 72 112 C73 128 82 130 80 116 C90 135 95 160 80 190 Z" fill="#FFD966" opacity="0.55"/>
+  </svg>
+  <p>
+    जे रूप आत्तापर्यंत भव्य आणि तेजस्वी होते —<br>
+    <strong class="ember-text">ते अचानक भयंकर झाले.</strong><br>
+    अनेक मुखे, भीषण दात, धगधगणारे डोळे —<br>
+    अर्जुनाचे धैर्य गळून पडले.
+  </p>
+</div>
+
+<!-- SHLOKA 11.23 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#E84B1A" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#E84B1A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक ११.२३</span>
+  <div class="shloka-deva">
+    रूपं महत्ते बहुवक्त्रनेत्रं महाबाहो बहुबाहूरुपादम् ।<br>
+    बहूदरं बहुदंष्ट्राकरालं दृष्ट्वा लोकाः प्रव्यथितास्तथाहम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे महाबाहो, अनेक मुखे-डोळे, अनेक हात-मांड्या-पाय,<br>
+    अनेक उदरे, भीषण दात असलेले तुझे विराट रूप पाहून —<br>
+    <strong class="ember-text">सर्व लोक भयभीत झाले आहेत, आणि मीही."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.25 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.२५</span>
+  <div class="shloka-deva">
+    दंष्ट्राकरालानि च ते मुखानि दृष्ट्वैव कालानलसन्निभानि ।<br>
+    दिशो न जाने न लभे च शर्म प्रसीद देवेश जगन्निवास ॥
+  </div>
+  <div class="shloka-meaning">
+    "भीषण दात असलेली, प्रलयाग्नीसारखी तुझी मुखे पाहून<br>
+    मला दिशा कळेनात, शांती मिळेना.<br>
+    <strong class="ember-text">हे देवेशा, जगन्निवासा — प्रसन्न हो."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अर्जुनाला जे रूप पाहायचे होते — ते आता दिसले. पण ते फक्त भव्य नव्हते — ते <strong class="ember-text">भयंकर</strong> होते. अनेक मुखे, धगधगणारे डोळे, प्रलयाग्नीसारखे दात.
+  </p>
+  <p>
+    हे महत्त्वाचे आहे — ईश्वर फक्त सुंदर, सौम्य, प्रेमळ नाही. तो <span class="key-term">संहारकही</span> आहे. निर्मिती आणि नाश — दोन्ही त्याचेच. सूर्य प्रकाश देतो, तोच जाळतोही.
+  </p>
+  <p>
+    अर्जुन — महाभारतातील सर्वश्रेष्ठ योद्धा — <strong class="ember-text">थरथरला.</strong> "दिशो न जाने" — मला दिशा कळेनात. हा कबुलीजबाब महत्त्वाचा. सत्य नेहमी सुखकर नसते. कधी कधी ते भयावह असते — आणि तरीही ते सत्यच असते.
+  </p>
+</div>
+
+<div class="pull-quote">
+  ईश्वर फक्त सौम्य नाही — तो संहारकही आहे.<br>
+  <strong class="ember-text">निर्मिती आणि नाश — दोन्ही एकाच रूपात.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">निसर्गाचे विराट-भयंकर रूप</span>
+  <div class="example-name">निसर्गाची दुहेरी शक्ती</div>
+  <div class="example-sub">जे पोषतो, तोच संहारतो</div>
+
+  <p>
+    समुद्र किती सुंदर — पण त्सुनामी आल्यावर तोच समुद्र संहारक होतो. नदी जीवन देते — पूर आल्यावर तीच सर्वस्व वाहून नेते. अग्नी अन्न शिजवतो — पण वणवा झाल्यावर सगळे जाळतो. <strong class="ember-text">एकच शक्ती — दोन रूपे.</strong>
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    ज्वालामुखीचा उद्रेक, भूकंप, वादळ — या क्षणी माणसाला आपले <span class="key-term">क्षुद्रत्व</span> जाणवते. कितीही प्रगती केली, तरी निसर्गाच्या एका झटक्यापुढे माणूस हतबल आहे. हीच अर्जुनाची अनुभूती — "लोकाः प्रव्यथिताः" — सर्व भयभीत.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    पण यात एक धडा आहे. भयंकर रूप पाहून पळून जायचे नाही — ते <strong class="ember-text">स्वीकारायचे</strong> आहे. निसर्गाची विनाशक शक्ती ही त्याच्या निर्मितीक्षम शक्तीचीच दुसरी बाजू आहे. जो हे समजतो, तो निसर्गाला — आणि ईश्वराला — संपूर्णपणे जाणतो. <strong class="key-term">फक्त सुंदर बाजू पाहणे म्हणजे अर्धवट दर्शन.</strong>
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    भीषण मुखे ती ।<br>
+    प्रलयाग्नी सारखी ।<br>
+    पाहून अर्जुनाची ।<br>
+    मती गुंगली ।।<br><br>
+    दिशा न कळे त्याला ।<br>
+    शांती न मिळे ।<br>
+    म्हणे प्रसन्न हो ।<br>
+    जगन्निवासा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव अर्जुनाच्या भीतीचे प्रामाणिक वर्णन करतात. एवढा महान योद्धा — पण विश्वरूपापुढे थरथरला. हे दुर्बलता नाही — सत्याचा खरा सामना आहे. भीती वाटणे स्वाभाविक — पण त्या भीतीतही "प्रसन्न हो" म्हणणे — हीच भक्ती. भीतीतून शरणागतीकडे.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी ईश्वराचे — किंवा जीवनाचे — फक्त सुखकर रूप स्वीकारतो,<br>की कठोर, भयावह बाजूही स्वीकारायला तयार आहे?"<br><br>
+    संपूर्ण स्वीकार — हेच खरे दर्शन.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,75,26,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--ember);">🌱 आजचा संकल्प</span>
+  <p>
+    आज जीवनातली एक कठोर, अप्रिय गोष्ट —<br>
+    जी टाळत आलो आहे —<br>
+    <strong class="ember-text">तिच्याकडे प्रामाणिकपणे पाहा. ती नाकारू नका.</strong><br><br>
+    सत्याचे भयंकर रूपही सत्यच असते.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    भारतीय परंपरेत ईश्वर <span class="key-term">सौम्य</span> आणि <span class="key-term">रौद्र</span> — दोन्ही रूपांत पूजला जातो. शिव हा संहारक, पण तोच कल्याणकारी. काली भयंकर, पण तीच मातेसारखी प्रेमळ. हे द्वैत भारतीय अध्यात्माचे वैशिष्ट्य आहे — ईश्वर फक्त "चांगला" नाही, तो <span class="key-term">संपूर्ण</span> आहे.
+  </p>
+  <p>
+    अर्जुनाची भीती ही अपयश नाही — ती परिपक्वतेची सुरुवात आहे. जोपर्यंत आपण ईश्वराला फक्त "इच्छापूर्ती करणारा" मानतो, तोपर्यंत आपले दर्शन अपूर्ण. भयंकर रूप पाहूनच पूर्ण सत्य कळते.
+  </p>
+  <p>
+    पुढच्या संकल्पनेत हे भयंकर रूप स्वतःची ओळख देईल — <strong class="ember-text">"कालोऽस्मि" — मी काळ आहे.</strong> ही गीतेतील सर्वात गहन आणि थरारक घोषणा. भीतीचे रूप आता आपले खरे स्वरूप सांगेल.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना ३/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

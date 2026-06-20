@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अनन्यभक्ती — भगवद्गीता अध्याय ११</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --soft-glow:     #E8C872;
+    --warm-rose:     #D88A6A;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    /* CONCEPT 7 — समर्पण, समारोप: full warm golden glow */
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,200,114,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(232,101,26,0.05) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#1A1208; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(232,200,114,0.35); }
+  .concept-badge { display: inline-block; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  .heart-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .heart-hero svg { max-width: 170px; width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(232,200,114,0.45)); }
+  .heart-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block.hero-shloka { border: 2px solid var(--soft-glow); box-shadow: 0 0 40px rgba(232,200,114,0.12) inset, 0 0 16px rgba(232,200,114,0.12); }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-glow); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-number.maha { background: var(--saffron); color: white; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.28rem; line-height: 2.15; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--soft-glow); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0A 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+
+  /* ADHYAY SAAR */
+  .saar-block { background: linear-gradient(135deg, #100A04 0%, #1C1005 100%); border: 2px solid var(--temple-gold); border-radius: 6px; padding: 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .saar-block::before { content: 'अध्याय ११ — भावनांचा प्रवास'; position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.92rem; padding: 0 0.75rem; white-space: nowrap; }
+  .saar-row { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid rgba(200,146,42,0.12); }
+  .saar-row:last-child { border-bottom: none; }
+  .saar-dot { width: 0.85rem; height: 0.85rem; border-radius: 50%; flex-shrink: 0; margin-top: 0.45rem; }
+  .saar-text { font-family: var(--font-deva); font-size: 1rem; line-height: 1.7; color: var(--antique-cream); }
+  .saar-text strong { color: var(--temple-gold); }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  /* MAHAVAKYA */
+  .mahavakya-block { background: linear-gradient(135deg, #1C1408 0%, #2A1E0C 100%); border: 1px solid rgba(232,200,114,0.6); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; text-align: center; }
+  .mahavakya-label { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem; display: block; }
+  .mahavakya-text { font-family: var(--font-deva); font-size: 1.45rem; line-height: 1.9; color: var(--soft-glow); margin-bottom: 0.75rem; }
+  .mahavakya-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); opacity: 0.88; }
+
+  .sankalpana-block { background: #221507; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#221507; border:1px solid rgba(200,146,42,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--temple-gold); text-decoration:none; }
+  .concept-nav a.disabled { opacity:0.35; pointer-events:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+  .glow-text { color: var(--soft-glow); }
+
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block, .saar-block, .mahavakya-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi, .mahavakya-text { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ११ · विश्वरूपदर्शन योग</div>
+  <div class="concept-title">अनन्यभक्ती</div>
+  <div class="concept-badge">🌺 संकल्पना ७/७ · समारोप</div>
+  <div class="concept-subtitle">भक्त्या त्वनन्यया शक्य — भक्तीशिवाय हे दिसत नाही</div>
+</header>
+
+<!-- HEART HERO -->
+<div class="heart-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" aria-label="भक्तीचे कमळ-हृदय">
+    <g transform="translate(80,70)">
+      <ellipse cx="0" cy="0" rx="13" ry="40" fill="#E8C872" opacity="0.85"/>
+      <ellipse cx="0" cy="0" rx="13" ry="40" fill="#D88A6A" opacity="0.45" transform="rotate(45)"/>
+      <ellipse cx="0" cy="0" rx="13" ry="40" fill="#D88A6A" opacity="0.45" transform="rotate(-45)"/>
+      <ellipse cx="0" cy="0" rx="12" ry="35" fill="#E8C872" opacity="0.6" transform="rotate(90)"/>
+      <circle cx="0" cy="0" r="12" fill="#C8922A"/>
+      <text y="5" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#1A1208">ॐ</text>
+    </g>
+  </svg>
+  <p>
+    अर्जुनाने विचारले — "हे रूप मीच पाहू शकलो, इतर का नाही?"<br>
+    कृष्णाचे उत्तर — संपूर्ण अध्यायाचा सार —<br>
+    <strong class="glow-text">"फक्त अनन्य भक्तीनेच हे रूप दिसते."</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 11.53-54 — MAHA -->
+<div class="shloka-block hero-shloka">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="340" height="340" viewBox="0 0 340 340" aria-hidden="true">
+    <g transform="translate(170,170)" stroke="#E8C872" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="105"/><circle r="155"/>
+      <circle r="8" fill="#E8C872"/>
+    </g>
+  </svg>
+  <span class="shloka-number maha">श्लोक ११.५३–५४ · महाश्लोक</span>
+  <div class="shloka-deva">
+    नाहं वेदैर्न तपसा न दानेन न चेज्यया ।<br>
+    शक्य एवंविधो द्रष्टुं दृष्टवानसि मां यथा ॥<br>
+    भक्त्या त्वनन्यया शक्य अहमेवंविधोऽर्जुन ।<br>
+    ज्ञातुं द्रष्टुं च तत्त्वेन प्रवेष्टुं च परन्तप ॥
+  </div>
+  <div class="shloka-meaning">
+    "वेदांनी नाही, तपाने नाही, दानाने नाही, यज्ञानेही नाही —<br>
+    या रूपात मला पाहणे शक्य नाही.<br>
+    <strong class="glow-text">हे अर्जुना, फक्त अनन्य भक्तीनेच मला असे जाणणे,<br>पाहणे आणि माझ्यात प्रवेश करणे शक्य आहे."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 11.55 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ११.५५</span>
+  <div class="shloka-deva">
+    मत्कर्मकृन्मत्परमो मद्भक्तः सङ्गवर्जितः ।<br>
+    निर्वैरः सर्वभूतेषु यः स मामेति पाण्डव ॥
+  </div>
+  <div class="shloka-meaning">
+    "जो माझ्यासाठी कर्म करतो, मला परम मानतो, माझा भक्त आहे,<br>
+    आसक्तीरहित आहे, सर्व प्राण्यांशी वैररहित आहे —<br>
+    <strong class="gold-text">तो माझ्यापर्यंत पोहोचतो, हे पांडवा."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    संपूर्ण अध्यायाचा कळस इथे आहे. इतके भव्य दर्शन — हजार सूर्य, काळरूप, संहार — हे कशामुळे शक्य झाले? कृष्ण स्पष्ट सांगतो — <strong class="glow-text">वेद, तप, दान, यज्ञ — यांपैकी कशानेही नाही.</strong>
+  </p>
+  <p>
+    फक्त एका गोष्टीने — <span class="key-term">अनन्य भक्ती.</span> "अनन्य" म्हणजे दुसरे काही नाही — फक्त ईश्वर. विभाजित नसलेले, संपूर्ण समर्पित प्रेम. हीच एकमेव किल्ली.
+  </p>
+  <p>
+    आणि अनन्य भक्त कसा असतो? श्लोक ११.५५ सांगतो — <strong class="gold-text">माझ्यासाठी कर्म करणारा, मला परम मानणारा, आसक्तीरहित, सर्वांशी वैररहित.</strong> हे अध्याय ११ चे सार — आणि पुढच्या भक्तियोगाचे (अध्याय १२) बीज. भक्ती म्हणजे फक्त भावना नाही — ती जगण्याची रीत आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  ज्ञान दाखवते, तप शुद्ध करते —<br>
+  <strong class="glow-text">पण ईश्वराला पाहायला फक्त प्रेम पुरते.</strong>
+</div>
+
+<!-- MODERN RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">प्रेमाने जे दिसते — ज्ञानाने नाही</span>
+  <div class="example-name">अनन्य प्रेमाची दृष्टी</div>
+  <div class="example-sub">काही गोष्टी फक्त प्रेमानेच दिसतात</div>
+
+  <p>
+    एखाद्या बाळाचे खरे सौंदर्य कोण पाहू शकते? — त्याची आई. कितीही तज्ज्ञ डॉक्टर त्याची तपासणी करोत, कितीही छायाचित्रकार त्याचे फोटो काढोत — पण <strong class="gold-text">आईला जे दिसते ते कुणालाच दिसत नाही.</strong> कारण तिची दृष्टी प्रेमाची आहे. हेच अनन्य भक्तीचे रहस्य.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    एखादे संगीत — तंत्रज्ञ त्याचे frequency मोजू शकतो, समीक्षक त्याचे विश्लेषण करू शकतो. पण ज्याला ते संगीत <span class="key-term">मनापासून आवडते</span>, त्यालाच त्यातला आत्मा कळतो. ज्ञान बाहेरून बघते — प्रेम आतून अनुभवते. <strong class="key-term">काही सत्ये फक्त प्रेमालाच उघड होतात.</strong>
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    म्हणूनच कृष्ण म्हणतो — वेद वाचून, तप करून, दान देऊन मला "माहीत" करता येईल — पण <strong class="glow-text">"पाहायला" आणि "माझ्यात प्रवेश करायला" फक्त भक्ती लागते.</strong> ज्ञान म्हणजे ईश्वराबद्दल जाणणे. भक्ती म्हणजे ईश्वराला जाणणे. अर्जुनाला विश्वरूप दिसले — कारण त्याचे कृष्णावर अनन्य प्रेम होते. हीच सर्व साधनेची परिणती.
+  </p>
+</div>
+
+<!-- ADHYAY 11 SAAR — emotional journey -->
+<div class="section-heading">
+  <span class="label-deva">अध्याय ११ — थोडक्यात</span>
+  <span class="label-small">· भावनांचा प्रवास</span>
+</div>
+<div class="saar-block">
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#E8C872;"></div>
+    <div class="saar-text"><strong>१ · अर्जुनाची विनंती</strong> — "ते रूप दाखव." जिज्ञासा + नम्रता.</div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#FFD966;"></div>
+    <div class="saar-text"><strong>२ · विश्वरूप प्रकट</strong> — हजार सूर्यांचे तेज. भव्यता.</div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#E84B1A;"></div>
+    <div class="saar-text"><strong>३ · भयंकर रूप</strong> — संहारक मुखे. भीती.</div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#8B1A1A;"></div>
+    <div class="saar-text"><strong>४ · "मी काळ आहे"</strong> — कालोऽस्मि. तू निमित्त मात्र. <em style="color:var(--patina-teal);">ओपेनहायमर</em></div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#6FA8DC;"></div>
+    <div class="saar-text"><strong>५ · क्षमायाचना</strong> — "मित्र समजलो, क्षमा कर." नम्रता.</div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#D88A6A;"></div>
+    <div class="saar-text"><strong>६ · सौम्य रूप</strong> — कठोर सत्य पचवून शांती. परिपक्वता.</div>
+  </div>
+  <div class="saar-row">
+    <div class="saar-dot" style="background:#C8922A;"></div>
+    <div class="saar-text"><strong>७ · अनन्यभक्ती</strong> — हे सगळे फक्त प्रेमानेच शक्य. समर्पण.</div>
+  </div>
+</div>
+
+<!-- MAHAVAKYA -->
+<div class="mahavakya-block">
+  <span class="mahavakya-label">अध्याय ११ चे परम सत्य —</span>
+  <div class="mahavakya-text">भक्त्या त्वनन्यया शक्यः</div>
+  <div class="mahavakya-meaning">
+    फक्त अनन्य भक्तीनेच —<br>
+    ईश्वर जाणणे, पाहणे आणि त्याच्यात विलीन होणे शक्य.
+  </div>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    वेद तप दान यज्ञ ।<br>
+    यांनी न दिसे मी ।<br>
+    अनन्य भक्तीनेच ।<br>
+    दिसतो मी ।।<br><br>
+    जो मज परम मानी ।<br>
+    वैर न धरी कुणाशी ।<br>
+    तो येतो मजपाशी ।<br>
+    निश्चये ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव या समारोपात भक्तीचे श्रेष्ठत्व अधोरेखित करतात. सर्व साधना उपयुक्त — पण अंतिम दर्शन फक्त प्रेमानेच. आणि ते प्रेम कोरडे नाही — ते जगण्यात उतरते: वैररहित, आसक्तीरहित, सर्वांप्रती करुणा. हीच खरी भक्ती — आणि हाच पुढच्या भक्तियोगाचा पाया.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 अंतिम प्रश्न</span>
+  <p>
+    "मी ईश्वराबद्दल फक्त जाणून घेण्याचा प्रयत्न करतो —<br>की त्याच्यावर अनन्य प्रेम करण्याचा?"<br><br>
+    ज्ञान आणि भक्ती — माझ्यात कशाचे पारडे जड आहे?
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,200,114,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-glow);">🌱 अंतिम संकल्प</span>
+  <p>
+    अध्याय ११ चा सार —<br><br>
+    <strong class="glow-text">आज एक कर्म — फक्त प्रेमाने करा. फळासाठी नाही, कुणाविरुद्ध नाही.</strong><br><br>
+    अनन्य भक्ती म्हणजे — वैररहित, आसक्तीरहित, संपूर्ण समर्पित प्रेम.<br>
+    🕉️ श्रीकृष्णार्पणमस्तु.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय ११ हा गीतेचा भावनिक शिखरबिंदू आहे. इथे शब्दज्ञान संपते आणि प्रत्यक्ष दर्शन होते. आणि त्या दर्शनाची किल्ली — <span class="key-term">अनन्य भक्ती.</span> हे महत्त्वाचे की कृष्ण वेद, तप, दान, यज्ञ — सर्व नाकारत नाही, पण म्हणतो की अंतिम दर्शनासाठी ती अपुरी आहेत.
+  </p>
+  <p>
+    संपूर्ण अध्यायाचा भावनिक प्रवास लक्षणीय आहे — जिज्ञासा → भव्यता → भीती → संहाराचे सत्य → नम्रता → शांती → प्रेम. हा प्रत्येक साधकाचा प्रवास आहे. सत्याच्या सर्व छटा अनुभवून शेवटी प्रेमातच विश्रांती.
+  </p>
+  <p>
+    श्लोक ११.५५ — "मत्कर्मकृत्... निर्वैरः सर्वभूतेषु" — हा संपूर्ण गीतेचा सारांश मानला जातो. <strong class="gold-text">माझ्यासाठी कर्म, मला परम मानणे, आसक्तीरहित, सर्वांशी वैररहित.</strong> कर्मयोग, भक्तियोग, ज्ञानयोग — सगळे एका श्लोकात. आणि हाच पुढच्या अध्याय १२ — भक्तियोगाचा — थेट प्रवेश. <strong class="glow-text">विश्वरूपाचे भव्य दर्शन शेवटी एका साध्या सत्यात विसावते — प्रेम करा.</strong>
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · विश्वरूपदर्शन योग · अध्याय ११ · संकल्पना ७/७ · समाप्त · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>
