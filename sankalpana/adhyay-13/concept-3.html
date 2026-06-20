@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ज्ञानाची वीस लक्षणे — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0E1418;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(42,58,90,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(90,138,138,0.06) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(168,192,208,0.3); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(168,192,208,0.45)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.18rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* 20 LAKSHANE LIST */
+  .lakshane-list { margin: 1.25rem 0; }
+  .lakshane-item { display:flex; gap:0.85rem; align-items:flex-start; padding:0.65rem 0; border-bottom:1px solid rgba(168,192,208,0.12); }
+  .lakshane-item:last-child { border-bottom:none; }
+  .lak-num { width:1.8rem; height:1.8rem; border-radius:50%; background:rgba(168,192,208,0.12); border:1px solid var(--silver-blue); color:var(--silver-blue); font-family:var(--font-deva); font-size:0.9rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:0.1rem; }
+  .lak-body { flex:1; }
+  .lak-sk { font-family:var(--font-deva); font-size:1.05rem; font-weight:600; color:var(--mist); }
+  .lak-mr { font-family:var(--font-deva); font-size:0.98rem; color:var(--antique-cream); opacity:0.85; }
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .key-term { color: var(--silver-blue); } .gold-text { color: var(--temple-gold); } .blue-text { color: var(--silver-blue); } .mist-text { color: var(--mist); }
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+  @media print { body { background: white; color: #1A2A2A; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #eef4f6 !important; border-color: #5A8A8A !important; } .shloka-deva, .ovi { color: #2A3A5A !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">ज्ञानाची वीस लक्षणे</div>
+  <div class="concept-badge">📿 संकल्पना ३/९</div>
+  <div class="concept-subtitle">अमानित्वम् अदम्भित्वम् — ज्ञान्याची ओळख</div>
+</header>
+<div class="mirror-hero">
+  <span class="icon">📿</span>
+  <p>
+    ज्ञान म्हणजे फक्त माहिती नव्हे —<br>
+    ती जगण्यातून दिसते. कृष्ण ज्ञान्याची<br>
+    <strong class="mist-text">वीस लक्षणे सांगतो — हीच खऱ्या ज्ञानाची खूण.</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#A8C0D0"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.७–८</span>
+  <div class="shloka-deva">
+    अमानित्वमदम्भित्वमहिंसा क्षान्तिरार्जवम् ।<br>
+    आचार्योपासनं शौचं स्थैर्यमात्मविनिग्रहः ॥<br>
+    इन्द्रियार्थेषु वैराग्यमनहङ्कार एव च ।<br>
+    जन्ममृत्युजराव्याधिदुःखदोषानुदर्शनम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "नम्रता, निर्दंभपणा, अहिंसा, क्षमा, सरळपणा, गुरुसेवा, शुद्धता, स्थिरता, आत्मसंयम,<br>
+    इंद्रियविषयांत वैराग्य, अहंकाराचा अभाव,<br>
+    <strong class="mist-text">जन्म-मृत्यू-वार्धक्य-रोग-दुःखातील दोष पाहणे..."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· ज्ञानाची वीस लक्षणे</span></div>
+<div class="explanation-block">
+  <p>
+    कृष्ण इथे एक आश्चर्यकारक गोष्ट करतो — तो "ज्ञान" ची व्याख्या <strong class="mist-text">माहिती किंवा बुद्धिमत्ता म्हणून नव्हे, तर स्वभाव-गुण म्हणून</strong> देतो. खरा ज्ञानी तो, ज्याच्यात ही लक्षणे दिसतात.
+  </p>
+  <div class="lakshane-list">
+    <div class="lakshane-item"><div class="lak-num">१</div><div class="lak-body"><span class="lak-sk">अमानित्व</span> — <span class="lak-mr">मानाची हाव नसणे, नम्रता</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">२</div><div class="lak-body"><span class="lak-sk">अदम्भित्व</span> — <span class="lak-mr">दिखाऊपणा, ढोंग नसणे</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">३</div><div class="lak-body"><span class="lak-sk">अहिंसा</span> — <span class="lak-mr">कुणालाही न दुखावणे</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">४</div><div class="lak-body"><span class="lak-sk">क्षान्ति</span> — <span class="lak-mr">क्षमाशीलता, सहनशीलता</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">५</div><div class="lak-body"><span class="lak-sk">आर्जव</span> — <span class="lak-mr">सरळपणा, मनात-वाचेत एकवाक्यता</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">६</div><div class="lak-body"><span class="lak-sk">आचार्योपासन</span> — <span class="lak-mr">गुरुसेवा, शिकण्याची वृत्ती</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">७</div><div class="lak-body"><span class="lak-sk">शौच</span> — <span class="lak-mr">बाह्य व अंतरंग शुद्धता</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">८</div><div class="lak-body"><span class="lak-sk">स्थैर्य</span> — <span class="lak-mr">मनाची स्थिरता</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">९</div><div class="lak-body"><span class="lak-sk">आत्मविनिग्रह</span> — <span class="lak-mr">आत्मसंयम</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">१०</div><div class="lak-body"><span class="lak-sk">वैराग्य</span> — <span class="lak-mr">इंद्रियविषयांत आसक्ती नसणे</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">११</div><div class="lak-body"><span class="lak-sk">अनहंकार</span> — <span class="lak-mr">अहंकाराचा अभाव</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">१२</div><div class="lak-body"><span class="lak-sk">दोषदर्शन</span> — <span class="lak-mr">जन्म-मृत्यू-रोग-दुःखातील दोष जाणणे</span></div></div>
+    <div class="lakshane-item"><div class="lak-num">१३–२०</div><div class="lak-body"><span class="lak-sk">अनासक्ती, समत्व, अनन्यभक्ती, एकांतप्रियता, आत्मज्ञानात स्थिरता...</span> <span class="lak-mr">(पुढील श्लोकांत)</span></div></div>
+  </div>
+  <p>
+    लक्ष द्या — यात "खूप वाचन" किंवा "तर्कशक्ती" नाही. <strong class="blue-text">ज्ञान म्हणजे चारित्र्य</strong> — नम्रता, अहिंसा, क्षमा, सरळपणा. ज्ञानी तो नव्हे जो जास्त जाणतो, तर जो जास्त चांगला जगतो.
+  </p>
+</div>
+<div class="pull-quote">ज्ञान डोक्यात नसते — ते स्वभावात दिसते.<br><strong class="blue-text">नम्रता, अहिंसा, क्षमा — हीच ज्ञानाची खूण.</strong></div>
+<div class="section-heading"><span class="label-deva">आजच्या काळात</span><span class="label-small">· रूपक</span></div>
+<div class="relevance-block">
+  <span class="example-tag">भरलेले कणीस झुकते</span>
+  <div class="example-name">नम्रतेची खूण</div>
+  <div class="example-sub">जे भरलेले, ते झुकलेले</div>
+  <p>
+    शेतातले कणीस पाहा — <strong class="mist-text">रिकामे कणीस ताठ उभे राहते, पण दाण्यांनी भरलेले कणीस खाली झुकते.</strong> जेवढे अधिक भरलेले, तेवढे अधिक नम्र. हीच ज्ञानाची पहिली खूण — "अमानित्व."
+  </p>
+  <hr class="inner-divider">
+  <p>
+    खरे ज्ञान आल्यावर अहंकार वाढत नाही — तो कमी होतो. कारण ज्ञानी माणसाला कळते की <span class="key-term">तो शरीर-मन नाही, साक्षी आत्मा आहे.</span> मग "मी मोठा" हा भाव कुठून येणार? जो स्वतःला आत्मा मानतो, तो कशाचा अभिमान धरणार?
+  </p>
+  <hr class="inner-divider">
+  <p>
+    म्हणूनच या वीस लक्षणांचा गाभा एकच — <strong class="blue-text">अहंकाराचा क्षय.</strong> नम्रता, निर्दंभपणा, अनहंकार, समत्व — सगळे "मी"पणा विरघळण्याचे परिणाम. आत्मज्ञान जसजसे वाढते, तसतसे हे गुण आपोआप येतात. लक्षणे ही कारण नव्हे — परिणाम आहेत.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    नम्रता निर्दंभ ।<br>
+    अहिंसा क्षमा ।<br>
+    सरळ शुद्ध मन ।<br>
+    हे ज्ञान जाण ।।<br><br>
+    जे जे सद्गुण ।<br>
+    अंगी बाणती ।<br>
+    तेथे ज्ञान वसे ।<br>
+    निश्चये ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — ज्ञान वेगळे आणि सद्गुण वेगळे नाहीत. जिथे नम्रता, अहिंसा, क्षमा — तिथेच ज्ञान. ही लक्षणे म्हणजे ज्ञानाचा सुगंध. फूल उमलले की सुगंध येतोच — तसे आत्मज्ञान आले की हे गुण येतातच.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"माझे ज्ञान माझ्या वागण्यात दिसते का?<br>मी जास्त वाचतो/जाणतो — की जास्त नम्र, क्षमाशील झालो?"<br><br>ज्ञानाची खरी परीक्षा — स्वभाव.</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 आजचा संकल्प</span>
+  <p>आज या वीसांपैकी एक लक्षण निवडा —<br><strong class="blue-text">नम्रता, अहिंसा, क्षमा, किंवा सरळपणा — आणि ते एका प्रसंगात जगा.</strong><br><br>ज्ञान वाचू नका — जगा.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    गीतेची ही व्याख्या क्रांतिकारी आहे — <span class="key-term">ज्ञान म्हणजे माहिती नव्हे, चारित्र्य.</span> पाश्चात्त्य परंपरेत ज्ञान बहुधा बौद्धिक (epistemic) मानले जाते. पण भारतीय परंपरेत ज्ञान आणि नैतिकता एकरूप — खरे जाणणे म्हणजे योग्य जगणे.
+  </p>
+  <p>
+    महत्त्वाचे — ही वीस लक्षणे "ज्ञानाची साधने" आणि "ज्ञानाची लक्षणे" दोन्ही आहेत. नम्रता ज्ञानाकडे नेते, आणि ज्ञान आल्यावर नम्रता वाढते. हे एक सद्गुण-चक्र आहे.
+  </p>
+  <p>
+    या सर्व लक्षणांचा समान धागा — <span class="key-term">अहंकाराचा क्षय.</span> क्षेत्र-क्षेत्रज्ञ विवेक (संकल्पना १-२) जसजसा खोल होतो, तसतसा "मी देह-मन" हा भ्रम विरतो — आणि हे गुण आपोआप प्रकटतात. <strong class="blue-text">पुढच्या संकल्पनेत — ज्या परमात्म्याला जाणायचे, ते "ज्ञेय" कसे आहे — हे उलगडेल.</strong>
+  </p>
+</div>
+<footer class="iks-footer">भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना ३/९ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>क्षेत्र आणि क्षेत्रज्ञ — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #0E1418;
+    /* ADHYAY 13 — साक्षी: cool clear silver-blue, meditative */
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(42,58,90,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(90,138,138,0.06) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(168,192,208,0.3); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero svg { max-width: 220px; width: 100%; height: auto; filter: drop-shadow(0 0 16px rgba(168,192,208,0.4)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* KSHETRA VS KSHETRAJNA compare */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-card { border-radius: 4px; padding: 1.15rem 1.2rem; border: 1px solid; }
+  .compare-card.kshetra  { background: rgba(90,138,138,0.08); border-color: rgba(90,138,138,0.45); }
+  .compare-card.kshetrajna { background: rgba(168,192,208,0.08); border-color: rgba(168,192,208,0.5); }
+  .compare-title { font-family: var(--font-deva); font-size: 1.12rem; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+  .compare-card.kshetra  .compare-title { color: var(--patina-teal); }
+  .compare-card.kshetrajna .compare-title { color: var(--silver-blue); }
+  .compare-desc { font-family: var(--font-deva); font-size: 0.98rem; line-height: 1.85; color: var(--antique-cream); opacity: 0.9; }
+
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .concept-nav a.disabled { opacity:0.35; pointer-events:none; }
+
+  .key-term { color: var(--silver-blue); }
+  .gold-text { color: var(--temple-gold); }
+  .blue-text { color: var(--silver-blue); }
+  .mist-text { color: var(--mist); }
+
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #1A2A2A; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block, .compare-card { background: #eef4f6 !important; border-color: #5A8A8A !important; }
+    .shloka-deva, .ovi { color: #2A3A5A !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">क्षेत्र आणि क्षेत्रज्ञ</div>
+  <div class="concept-badge">🏡 संकल्पना १/९</div>
+  <div class="concept-subtitle">शरीर हे शेत — आत्मा हा जाणणारा</div>
+</header>
+
+<!-- MIRROR HERO -->
+<div class="mirror-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" aria-label="क्षेत्र आणि साक्षी">
+    <defs>
+      <radialGradient id="witnessGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#C8D8E0"/>
+        <stop offset="60%" stop-color="#A8C0D0"/>
+        <stop offset="100%" stop-color="#2A3A5A"/>
+      </radialGradient>
+    </defs>
+    <!-- field / kshetra: a bounded rectangle -->
+    <rect x="35" y="55" width="130" height="70" rx="4" fill="none" stroke="#5A8A8A" stroke-width="1.5" opacity="0.7"/>
+    <line x1="35" y1="75" x2="165" y2="75" stroke="#5A8A8A" stroke-width="0.6" opacity="0.4"/>
+    <line x1="35" y1="95" x2="165" y2="95" stroke="#5A8A8A" stroke-width="0.6" opacity="0.4"/>
+    <line x1="35" y1="115" x2="165" y2="115" stroke="#5A8A8A" stroke-width="0.6" opacity="0.4"/>
+    <text x="100" y="140" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="11" fill="#5A8A8A">क्षेत्र (शरीर)</text>
+    <!-- knower / kshetrajna: eye/witness above -->
+    <circle cx="100" cy="28" r="20" fill="url(#witnessGlow)"/>
+    <circle cx="100" cy="28" r="6" fill="#0E1418"/>
+    <circle cx="100" cy="28" r="2.5" fill="#C8D8E0"/>
+    <text x="100" y="10" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="10" fill="#A8C0D0">क्षेत्रज्ञ (आत्मा)</text>
+    <!-- gaze lines -->
+    <line x1="100" y1="48" x2="100" y2="55" stroke="#A8C0D0" stroke-width="1" opacity="0.5" stroke-dasharray="2 2"/>
+  </svg>
+  <p>
+    अध्याय १३ एका मूलभूत प्रश्नाने सुरू होतो —<br>
+    <strong class="mist-text">"मी कोण? हे शरीर, की त्यात राहणारा कुणी?"</strong><br>
+    कृष्ण उत्तर देतो — शरीर म्हणजे क्षेत्र, ते जाणणारा म्हणजे क्षेत्रज्ञ.
+  </p>
+</div>
+
+<!-- SHLOKA 13.1-2 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#A8C0D0"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.१–२</span>
+  <div class="shloka-deva">
+    इदं शरीरं कौन्तेय क्षेत्रमित्यभिधीयते ।<br>
+    एतद्यो वेत्ति तं प्राहुः क्षेत्रज्ञ इति तद्विदः ॥<br>
+    क्षेत्रज्ञं चापि मां विद्धि सर्वक्षेत्रेषु भारत ।<br>
+    क्षेत्रक्षेत्रज्ञयोर्ज्ञानं यत्तज्ज्ञानं मतं मम ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे कौन्तेया, हे शरीर 'क्षेत्र' म्हणून ओळखले जाते. जो हे जाणतो त्याला 'क्षेत्रज्ञ' म्हणतात.<br>
+    सर्व क्षेत्रांतील क्षेत्रज्ञ मीच आहे, हे जाण.<br>
+    <strong class="mist-text">क्षेत्र आणि क्षेत्रज्ञ यांचे ज्ञान — हेच खरे ज्ञान, असे मला वाटते."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा गीतेतील एक निर्णायक वळणबिंदू आहे. आत्तापर्यंत कर्म, भक्ती — आता थेट <strong class="mist-text">आत्मज्ञान.</strong> कृष्ण एक साधे पण क्रांतिकारी सूत्र देतो — तू शरीर नाहीस, तू शरीराला जाणणारा आहेस.
+  </p>
+
+  <div class="compare-grid">
+    <div class="compare-card kshetra">
+      <span class="compare-title">क्षेत्र (शरीर)</span>
+      <div class="compare-desc">जे बदलते — शरीर, मन, इंद्रिये, भावना. जन्मते, वाढते, क्षीण होते, मरते. <strong style="color:var(--patina-teal);">दृश्य, नाशवंत.</strong></div>
+    </div>
+    <div class="compare-card kshetrajna">
+      <span class="compare-title">क्षेत्रज्ञ (आत्मा)</span>
+      <div class="compare-desc">जो जाणतो — साक्षी, द्रष्टा. बदलत नाही, जन्मत-मरत नाही. <strong class="blue-text">अदृश्य, शाश्वत, साक्षी.</strong></div>
+    </div>
+  </div>
+
+  <p>
+    "क्षेत्र" म्हणजे शेत. ज्याप्रमाणे शेतात पेरले ते उगवते — तसे शरीरात अनुभव, कर्म, भावना उगवतात. पण शेत आणि शेतकरी वेगळे. <strong class="blue-text">शरीरात जे घडते ते मी पाहतो — म्हणजे मी ते घडणे नाही, मी पाहणारा आहे.</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  "मला भूक लागली" — पण भूक शरीराला लागते.<br>
+  <strong class="blue-text">मी ती जाणणारा — मी भूक नाही.</strong>
+</div>
+
+<!-- RELEVANCE -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· रथ-सारथीचे रूपक</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">कठोपनिषदाचे प्राचीन रूपक</span>
+  <div class="example-name">रथ आणि रथी</div>
+  <div class="example-sub">शरीर हा रथ — आत्मा हा रथी (स्वार)</div>
+
+  <p>
+    कठोपनिषदात एक सुंदर रूपक आहे — <strong class="mist-text">शरीर म्हणजे रथ, बुद्धी म्हणजे सारथी, मन म्हणजे लगाम, इंद्रिये म्हणजे घोडे — आणि आत्मा म्हणजे रथात बसलेला स्वार (रथी).</strong> रथ चालतो, थांबतो, मोडतो — पण स्वार वेगळा.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    आपण रोज म्हणतो — "माझे शरीर", "माझे मन", "माझे विचार". पण लक्ष द्या — <span class="key-term">"माझे" म्हणणारा कोण?</span> जर शरीर "माझे" आहे, तर "मी" शरीराहून वेगळा असलाच पाहिजे. गाडी "माझी" म्हणणारा गाडी नसतो — चालक असतो.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    हा भेद कळला की एक मोठी शांती येते. शरीराला त्रास होतो, वय वाढते, आजार येतात — पण <strong class="blue-text">साक्षी आत्मा अबाधित राहतो.</strong> रथ जुना झाला म्हणून स्वार जुना होत नाही. हे जाणणे म्हणजे क्षेत्र-क्षेत्रज्ञ विवेक — आणि कृष्ण म्हणतो, "हेच खरे ज्ञान."
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    शरीर हे क्षेत्र ।<br>
+    जाणे तो क्षेत्रज्ञ ।<br>
+    दोघांचा हा भेद ।<br>
+    जाण पां ।।<br><br>
+    जे जे दिसे बदलत ।<br>
+    ते ते क्षेत्र जाण ।<br>
+    जो पाहे अबदल ।<br>
+    तो आत्मा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव हा भेद सोप्या भाषेत सांगतात — जे बदलते ते क्षेत्र, जो अबदल राहून पाहतो तो आत्मा. हा विवेक हीच आत्मज्ञानाची पहिली पायरी. शरीराशी तादात्म्य सुटले की दुःख सुटते. कारण दुःख क्षेत्राला होते, क्षेत्रज्ञाला नाही.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मी स्वतःला शरीर मानतो, की शरीराला जाणणारा साक्षी?"<br><br>
+    जेव्हा 'माझे शरीर' म्हणतो — तेव्हा 'माझे' म्हणणारा कोण?
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एका क्षणी थांबा. शरीराकडे, विचारांकडे —<br>
+    <strong class="blue-text">साक्षीभावाने पाहा. "हे सगळे मी पाहतो — म्हणजे मी हे नाही."</strong><br><br>
+    एक क्षण — द्रष्टा होऊन पाहा.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    क्षेत्र-क्षेत्रज्ञ भेद हा <span class="key-term">सांख्य</span> आणि <span class="key-term">वेदान्त</span> दर्शनांचा गाभा आहे. सांख्य याला प्रकृती-पुरुष म्हणते, वेदान्त देह-आत्मा. मूळ अंतर्दृष्टी एकच — <span class="key-term">द्रष्टा आणि दृश्य वेगळे.</span> जे पाहता येते ते "मी" असू शकत नाही, कारण पाहणारा त्याहून वेगळा असतो.
+  </p>
+  <p>
+    हे केवळ तत्त्वज्ञान नाही — ते एक व्यावहारिक मुक्तीचे साधन आहे. आपल्या बहुतेक दुःखांचे मूळ शरीर-मनाशी अति-तादात्म्य. "मला अपमान झाला", "मी आजारी आहे" — इथे "मी" शरीर-मनात अडकतो. साक्षीभाव हे तादात्म्य सोडवतो.
+  </p>
+  <p>
+    महत्त्वाचे — कृष्ण म्हणतो "सर्व क्षेत्रांतील क्षेत्रज्ञ मीच." म्हणजे प्रत्येक शरीरातला साक्षी एकच — परमात्मा. <strong class="blue-text">हे अद्वैताचे बीज.</strong> पुढच्या संकल्पनेत क्षेत्राचे — शरीराचे — संपूर्ण स्वरूप, पंचमहाभूतांपासून मनापर्यंत, उलगडेल.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना १/९ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

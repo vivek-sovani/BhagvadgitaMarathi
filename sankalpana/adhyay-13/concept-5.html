@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रकृती आणि पुरुष — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0E1418;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(42,58,90,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(90,138,138,0.06) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(168,192,208,0.3); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(168,192,208,0.45)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.2rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.25rem 0; }
+  .compare-card { border-radius: 4px; padding: 1.15rem 1.2rem; border: 1px solid; }
+  .compare-card.prakriti { background: rgba(90,138,138,0.08); border-color: rgba(90,138,138,0.45); }
+  .compare-card.purusha { background: rgba(168,192,208,0.08); border-color: rgba(168,192,208,0.5); }
+  .compare-title { font-family: var(--font-deva); font-size: 1.12rem; font-weight: 600; display: block; margin-bottom: 0.5rem; }
+  .compare-card.prakriti .compare-title { color: var(--patina-teal); }
+  .compare-card.purusha .compare-title { color: var(--silver-blue); }
+  .compare-desc { font-family: var(--font-deva); font-size: 0.97rem; line-height: 1.85; color: var(--antique-cream); opacity: 0.9; }
+  .compare-desc ul { list-style:none; padding:0; margin:0.4rem 0 0; }
+  .compare-desc li { padding-left:1rem; position:relative; margin-bottom:0.2rem; }
+  .compare-card.prakriti li::before { content:'•'; position:absolute; left:0; color:var(--patina-teal); }
+  .compare-card.purusha li::before { content:'•'; position:absolute; left:0; color:var(--silver-blue); }
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .key-term { color: var(--silver-blue); } .gold-text { color: var(--temple-gold); } .blue-text { color: var(--silver-blue); } .mist-text { color: var(--mist); }
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+  @media print { body { background: white; color: #1A2A2A; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .compare-card { background: #eef4f6 !important; border-color: #5A8A8A !important; } .shloka-deva, .ovi { color: #2A3A5A !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">प्रकृती आणि पुरुष</div>
+  <div class="concept-badge">⚭ संकल्पना ५/९</div>
+  <div class="concept-subtitle">प्रकृतिं पुरुषं चैव — दोन शाश्वत तत्त्वे</div>
+</header>
+<div class="mirror-hero">
+  <span class="icon">☯</span>
+  <p>
+    जग कसे चालते? कृष्ण सांख्याचे मूळ सूत्र देतो —<br>
+    <strong class="mist-text">दोन शाश्वत तत्त्वे: प्रकृती (क्रिया) आणि पुरुष (साक्षी).</strong><br>
+    सर्व घडामोड प्रकृतीची — पुरुष फक्त पाहणारा.
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#A8C0D0"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.१९–२१</span>
+  <div class="shloka-deva">
+    प्रकृतिं पुरुषं चैव विद्ध्यनादी उभावपि ।<br>
+    विकारांश्च गुणांश्चैव विद्धि प्रकृतिसम्भवान् ॥<br>
+    कार्यकारणकर्तृत्वे हेतुः प्रकृतिरुच्यते ।<br>
+    पुरुषः सुखदुःखानां भोक्तृत्वे हेतुरुच्यते ॥
+  </div>
+  <div class="shloka-meaning">
+    "प्रकृती आणि पुरुष — दोघेही अनादि आहेत, हे जाण.<br>
+    सर्व विकार आणि गुण प्रकृतीतून उत्पन्न होतात.<br>
+    <strong class="mist-text">कार्य-कारणाचे कर्तृत्व प्रकृतीचे; सुख-दुःखाचे भोक्तृत्व पुरुषाचे."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· दोन तत्त्वे</span></div>
+<div class="explanation-block">
+  <p>
+    सांख्य दर्शनाचा गाभा इथे आहे — विश्व दोन मूलभूत तत्त्वांनी बनलेले. <strong class="mist-text">प्रकृती सगळे करते, पुरुष फक्त अनुभवतो.</strong> हे क्षेत्र-क्षेत्रज्ञ भेदाचेच विस्तृत रूप.
+  </p>
+  <div class="compare-grid">
+    <div class="compare-card prakriti">
+      <span class="compare-title">प्रकृती</span>
+      <div class="compare-desc">कर्ता — जे करते<ul>
+        <li>सर्व क्रिया, बदल</li>
+        <li>शरीर, मन, गुण</li>
+        <li>कार्य-कारणाचे मूळ</li>
+        <li>सक्रिय, बदलणारी</li>
+      </ul></div>
+    </div>
+    <div class="compare-card purusha">
+      <span class="compare-title">पुरुष</span>
+      <div class="compare-desc">भोक्ता — जो अनुभवतो<ul>
+        <li>साक्षी, द्रष्टा</li>
+        <li>सुख-दुःखाचा अनुभव</li>
+        <li>निष्क्रिय, स्थिर</li>
+        <li>अबदल, शाश्वत</li>
+      </ul></div>
+    </div>
+  </div>
+  <p>
+    महत्त्वाचा मुद्दा — <span class="key-term">सर्व कर्म प्रकृती करते.</span> शरीर हालचाल करते, मन विचार करते, इंद्रिये काम करतात — हे सगळे प्रकृतीचे. पुरुष (आत्मा) काहीच करत नाही — तो फक्त साक्षी. पण भ्रमाने तो स्वतःला कर्ता मानतो — आणि सुख-दुःख भोगतो.
+  </p>
+</div>
+<div class="pull-quote">करते प्रकृती — भोगतो पुरुष.<br><strong class="blue-text">हा भेद कळला की कर्तेपणाचे ओझे उतरते.</strong></div>
+<div class="section-heading"><span class="label-deva">आजच्या काळात</span><span class="label-small">· रूपक</span></div>
+<div class="relevance-block">
+  <span class="example-tag">वीज आणि यंत्र — कर्ता कोण?</span>
+  <div class="example-name">वीज आणि उपकरण</div>
+  <div class="example-sub">वीज चालवते, पण काम यंत्र करते</div>
+  <p>
+    एक रूपक — <strong class="mist-text">वीज आणि विद्युत उपकरणे.</strong> पंखा फिरतो, दिवा जळतो, मोटर चालते — सगळी क्रिया उपकरणांची. पण ती शक्य होते विजेमुळे. तरीही वीज स्वतः फिरत नाही, जळत नाही, चालत नाही — ती फक्त <span class="key-term">उपस्थित</span> असते आणि सगळे घडते.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    प्रकृती म्हणजे उपकरणे — जी प्रत्यक्ष क्रिया करतात. पुरुष म्हणजे वीज (किंवा त्याहून सूक्ष्म — विजेला जाणणारा). शरीर-मनाची सगळी क्रिया प्रकृतीची, पण पुरुषाच्या उपस्थितीमुळेच ती चेतन वाटते. <strong class="blue-text">पुरुष काहीच करत नाही, तरी त्याच्याशिवाय काहीच घडत नाही.</strong>
+  </p>
+  <hr class="inner-divider">
+  <p>
+    हे कळले की एक मोठी मुक्ती मिळते. आपण म्हणतो "मी हे केले, मी ते केले" — आणि त्याचे ओझे, अभिमान, अपराधभाव वाहतो. पण जर सगळे प्रकृती करते, तर <span class="key-term">"मी कर्ता" हा भ्रम सुटतो.</span> मी फक्त साक्षी — हे जाणणे म्हणजे कर्तेपणाच्या ओझ्यातून मुक्ती. हेच अध्याय ३ चे निष्काम कर्म आणि अध्याय ११ चे "निमित्त मात्र" — आता तत्त्वज्ञानाच्या भाषेत.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    प्रकृती ती करी ।<br>
+    सर्व कार्य कारण ।<br>
+    पुरुष तो भोगी ।<br>
+    सुख दुःख ।।<br><br>
+    दोघे अनादि ।<br>
+    परी भिन्न स्वभावे ।<br>
+    एक क्रिया एक साक्षी ।<br>
+    जाण पां ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव हा सूक्ष्म भेद उलगडतात — प्रकृती कर्ता, पुरुष भोक्ता-साक्षी. आपली चूक ही की आपण साक्षी असून कर्ता मानतो स्वतःला. हा भ्रम सुटला की कर्माचे बंधन सुटते. करणे प्रकृतीचे, पाहणे आपले — ही जाणीव हीच मुक्ती.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"मी खरोखर 'कर्ता' आहे का — की प्रकृती करते आणि मी फक्त पाहतो?<br>'मी केले' या भावनेमागे किती ओझे आहे?"</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 आजचा संकल्प</span>
+  <p>आज एखादे काम करताना —<br><strong class="blue-text">"हे प्रकृती करते आहे, मी साक्षी आहे" — हा भाव ठेवून पाहा.</strong><br><br>कर्तेपणाचे ओझे एक क्षण खाली ठेवा.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    प्रकृती-पुरुष द्वैत हे <span class="key-term">सांख्य दर्शनाचे</span> मूलभूत तत्त्व. सांख्य या दोघांना स्वतंत्र, अनादि मानते. गीता हे स्वीकारते, पण एक पाऊल पुढे जाते — दोघांच्याही पलीकडे परमात्मा (पुरुषोत्तम) आहे, जो दोघांनाही धारण करतो. म्हणून गीता शुद्ध द्वैत नव्हे.
+  </p>
+  <p>
+    व्यावहारिक मूल्य — हा भेद "कर्तेपणाच्या भ्रमातून" मुक्ती देतो. आधुनिक मानसशास्त्रही सांगते की अति-कर्तेपणाची भावना (over-identification) ताण, अपराधभाव, अहंकार निर्माण करते. साक्षीभाव हे ओझे हलके करतो.
+  </p>
+  <p>
+    पण सावधान — "प्रकृती करते" याचा अर्थ "मी बेजबाबदार राहावे" असा नाही. हे कर्म टाळण्याचे निमित्त नव्हे — तर कर्म करताना अहंकार-आसक्ती सोडण्याचे साधन. <strong class="blue-text">पुढच्या संकल्पनेत — पुरुष नेमका कसा? भोक्ता, साक्षी, अनुमंता — हे चित्रपट-प्रेक्षक रूपकातून उलगडेल.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना ५/९ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

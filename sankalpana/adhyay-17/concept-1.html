@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>तीन प्रकारची श्रद्धा — भगवद्गीता अध्याय १७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #16120E;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6D2;
+    --patina-teal:   #5A7C70;
+    /* TRIGUNA palette */
+    --sattva:        #E8D8A0;
+    --sattva-bg:     rgba(232,216,160,0.09);
+    --rajas:         #D9542B;
+    --rajas-bg:      rgba(217,84,43,0.10);
+    --tamas:         #6B6478;
+    --tamas-bg:      rgba(107,100,120,0.12);
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #16120E;
+    /* ADHYAY 17 — triguna: three-tone subtle wash */
+    background-image:
+      radial-gradient(ellipse at 20% 5%, rgba(232,216,160,0.07) 0%, transparent 45%),
+      radial-gradient(ellipse at 80% 15%, rgba(217,84,43,0.06) 0%, transparent 45%),
+      radial-gradient(ellipse at 50% 95%, rgba(107,100,120,0.10) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#16120E; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--antique-cream); margin-top: 0.4rem; line-height: 1.5; }
+  .concept-badge { display: inline-block; background: var(--temple-gold); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  /* TRIGUNA HERO */
+  .triguna-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .triguna-hero svg { max-width: 260px; width: 100%; height: auto; }
+  .triguna-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+  .shloka-block { background: linear-gradient(135deg, #100C08 0%, #1E160E 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--temple-gold); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.22rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #1C150E; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* TRIGUNA 3-COLUMN GRID — signature */
+  .guna-grid { display:grid; grid-template-columns:1fr; gap:0.75rem; margin:1.25rem 0; }
+  @media(min-width:560px){ .guna-grid{ grid-template-columns:1fr 1fr 1fr; } }
+  .guna-col { border-radius:4px; padding:1.1rem 1rem; border:1px solid; }
+  .guna-col.sattva { background:var(--sattva-bg); border-color:rgba(232,216,160,0.5); }
+  .guna-col.rajas  { background:var(--rajas-bg);  border-color:rgba(217,84,43,0.5); }
+  .guna-col.tamas  { background:var(--tamas-bg);  border-color:rgba(107,100,120,0.5); }
+  .guna-name { font-family:var(--font-deva); font-size:1.05rem; font-weight:600; display:block; margin-bottom:0.4rem; }
+  .guna-col.sattva .guna-name { color:var(--sattva); }
+  .guna-col.rajas  .guna-name { color:var(--rajas); }
+  .guna-col.tamas  .guna-name { color:#9A92A8; }
+  .guna-desc { font-family:var(--font-deva); font-size:0.95rem; line-height:1.75; color:var(--antique-cream); opacity:0.9; }
+  .pull-quote { border-left: 4px solid var(--temple-gold); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #1A130C 0%, #241A10 100%); border: 1px solid rgba(200,146,42,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--temple-gold); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(200,146,42,0.25); margin: 1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C150E; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1C150E; border:1px solid rgba(200,146,42,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--temple-gold); text-decoration:none; }
+  .concept-nav a.disabled { opacity:0.35; pointer-events:none; }
+  .key-term { color: var(--saffron); } .gold-text { color: var(--temple-gold); }
+  .sattva-text { color: var(--sattva); } .rajas-text { color: var(--rajas); } .tamas-text { color: #9A92A8; }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .guna-col { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १७ · श्रद्धात्रयविभागयोग</div>
+  <div class="concept-title">तीन प्रकारची श्रद्धा</div>
+  <div class="concept-badge">🙏 संकल्पना १/७</div>
+  <div class="concept-subtitle">सात्त्विकी · राजसी · तामसी — श्रद्धाच माणसाला घडवते</div>
+</header>
+<div class="triguna-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 120" aria-label="तीन गुण">
+    <!-- sattva -->
+    <g><circle cx="50" cy="50" r="26" fill="rgba(232,216,160,0.18)" stroke="#E8D8A0" stroke-width="1.5"/>
+      <circle cx="50" cy="50" r="9" fill="#E8D8A0"/>
+      <text x="50" y="100" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#E8D8A0">सत्त्व</text></g>
+    <!-- rajas -->
+    <g><circle cx="130" cy="50" r="26" fill="rgba(217,84,43,0.18)" stroke="#D9542B" stroke-width="1.5"/>
+      <path d="M130 34 C124 44 121 50 130 64 C139 50 136 44 130 34 Z" fill="#D9542B"/>
+      <text x="130" y="100" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#D9542B">रज</text></g>
+    <!-- tamas -->
+    <g><circle cx="210" cy="50" r="26" fill="rgba(107,100,120,0.22)" stroke="#6B6478" stroke-width="1.5"/>
+      <circle cx="210" cy="50" r="9" fill="#3A3540"/>
+      <text x="210" y="100" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#9A92A8">तम</text></g>
+  </svg>
+  <p>
+    अध्याय १६ च्या शेवटी अर्जुनाला प्रश्न पडला —<br>
+    "जे शास्त्र सोडून, पण श्रद्धेने उपासना करतात, त्यांचे काय?"<br>
+    <strong class="gold-text">कृष्ण उत्तर देतो — श्रद्धाच तीन प्रकारची असते.</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#C8922A" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#C8922A"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १७.२–३</span>
+  <div class="shloka-deva">
+    त्रिविधा भवति श्रद्धा देहिनां सा स्वभावजा ।<br>
+    सात्त्विकी राजसी चैव तामसी चेति तां शृणु ॥<br>
+    सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत ।<br>
+    श्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः ॥
+  </div>
+  <div class="shloka-meaning">
+    "देहधारी जीवांची श्रद्धा त्यांच्या स्वभावानुसार तीन प्रकारची असते — सात्त्विकी, राजसी, तामसी.<br>
+    प्रत्येकाची श्रद्धा त्याच्या अंतःकरणानुसार असते.<br>
+    <strong class="gold-text">हा माणूस श्रद्धामय आहे — जो ज्या श्रद्धेचा, तो तसाच असतो."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· संकल्पनेचा अर्थ</span></div>
+<div class="explanation-block">
+  <p>
+    कृष्ण एक गहन सत्य सांगतो — <strong class="gold-text">"यो यच्छ्रद्धः स एव सः"</strong> — माणूस ज्या श्रद्धेचा, तोच तो बनतो. श्रद्धा म्हणजे फक्त धार्मिक विश्वास नव्हे — ती म्हणजे आपण कशाला मूल्य देतो, कशावर विश्वास ठेवतो, कशासाठी जगतो.
+  </p>
+  <div class="guna-grid">
+    <div class="guna-col sattva"><span class="guna-name">सात्त्विक</span><div class="guna-desc">शुद्ध, उन्नत मूल्यांवर श्रद्धा. सत्य, सेवा, ज्ञान यांची पूजा.</div></div>
+    <div class="guna-col rajas"><span class="guna-name">राजसिक</span><div class="guna-desc">यश, सत्ता, संपत्ती यांवर श्रद्धा. महत्त्वाकांक्षेची पूजा.</div></div>
+    <div class="guna-col tamas"><span class="guna-name">तामसिक</span><div class="guna-desc">भ्रम, अंधश्रद्धा, हानिकारक गोष्टींवर श्रद्धा. अज्ञानाची पूजा.</div></div>
+  </div>
+  <p>
+    महत्त्वाचे — श्रद्धा प्रत्येकाला असतेच. <span class="key-term">श्रद्धाहीन कुणीच नाही.</span> प्रश्न एवढाच — कशावर श्रद्धा? आणि तीच श्रद्धा माणसाला घडवते. <strong class="gold-text">तुमची श्रद्धा सांगा — मी तुम्ही कोण ते सांगतो.</strong>
+  </p>
+</div>
+<div class="pull-quote">माणूस ज्यावर श्रद्धा ठेवतो, तसा तो बनतो.<br><strong class="gold-text">"यो यच्छ्रद्धः स एव सः."</strong></div>
+<div class="section-heading"><span class="label-deva">आजच्या काळात</span><span class="label-small">· व्यावहारिक रूपक</span></div>
+<div class="relevance-block">
+  <span class="example-tag">रोजच्या जीवनातली श्रद्धा</span>
+  <div class="example-name">तुम्ही कशाची पूजा करता?</div>
+  <div class="example-sub">श्रद्धेची दिशा — जीवनाची दिशा</div>
+  <p>
+    प्रत्येकजण कशाची ना कशाची "पूजा" करतोच — फक्त देवळातली नव्हे. कुणी <span class="sattva-text">ज्ञान, सेवा, सत्याची</span> पूजा करतो; कुणी <span class="rajas-text">पैसा, पद, प्रसिद्धीची</span>; कुणी <span class="tamas-text">व्यसन, द्वेष, आळसाची.</span> आणि जे रोज पूजतो, तेच आपण होत जातो.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    एक साधे उदाहरण — दोन माणसे रोज सकाळी उठतात. एक उठून <span class="sattva-text">व्यायाम, वाचन, चांगले विचार</span> करतो — त्याची श्रद्धा आरोग्य-ज्ञानावर. दुसरा उठून फक्त <span class="rajas-text">"आज किती कमवायचे, कुणाला मागे टाकायचे"</span> विचारतो — त्याची श्रद्धा स्पर्धा-यशावर. वर्षभरात दोघे पूर्ण वेगळी माणसे बनतात. <strong class="gold-text">श्रद्धेची दिशा हीच आयुष्याची दिशा.</strong>
+  </p>
+  <hr class="inner-divider">
+  <p>
+    गीतेचा मुद्दा हा नाही की "तामसिक माणूस वाईट." मुद्दा हा की <strong class="gold-text">आपली श्रद्धा कुठे आहे हे तपासा — आणि ती उन्नत करता येते.</strong> श्रद्धा बदलली की माणूस बदलतो. आज पैशावरची श्रद्धा उद्या सेवेकडे वळवता येते. हीच मुक्तीची सुरुवात — स्वतःच्या श्रद्धेचे प्रामाणिक निरीक्षण.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    जैसी ज्याची श्रद्धा ।<br>
+    तैसा तो होय ।<br>
+    श्रद्धेचेच रूप ।<br>
+    हा देही ।।<br><br>
+    सत्त्व रज तम ।<br>
+    तीन प्रकार तिचे ।<br>
+    स्वभावानुसार ।<br>
+    घडे जीव ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — माणूस म्हणजे त्याच्या श्रद्धेचेच मूर्त रूप. श्रद्धा सात्त्विक तर जीवन उन्नत, राजसिक तर अस्वस्थ, तामसिक तर अंधारात. म्हणून श्रद्धा तपासणे आणि उन्नत करणे — हाच साधनेचा पाया. कारण श्रद्धा बदलली की संपूर्ण माणूस बदलतो.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"मी रोज मनातून कशाची 'पूजा' करतो —<br>ज्ञान-सेवेची, यश-संपत्तीची, की व्यसन-द्वेषाची?"<br><br>माझी श्रद्धा कुठे आहे, तसाच मी बनतो आहे.</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,216,160,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--sattva);">🌱 आजचा संकल्प</span>
+  <p>आज माझ्या एका श्रद्धेचे प्रामाणिक निरीक्षण करा —<br><strong class="sattva-text">आणि ती एक पायरी अधिक सात्त्विक करण्याचा प्रयत्न करा.</strong><br><br>श्रद्धा उन्नत — जीवन उन्नत.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    अध्याय १७ <span class="key-term">त्रिगुण सिद्धांत</span> (अध्याय १४) व्यवहारात लागू करतो. सत्त्व-रज-तम हे तीन गुण फक्त तात्विक नाहीत — ते आपल्या श्रद्धा, आहार, कर्म, दान — सगळ्यांत प्रकटतात. हा अध्याय म्हणजे त्रिगुणांचे व्यावहारिक उपयोजन.
+  </p>
+  <p>
+    "श्रद्धामयोऽयं पुरुषः" — हे एक खोल मानसशास्त्र आहे. आधुनिक मानसशास्त्रही सांगते की आपली मूल्ये, विश्वास (beliefs) आपले वर्तन घडवतात. गीता तेच सांगते — पण एक पाऊल पुढे: श्रद्धा बदलता येते, म्हणून माणूसही बदलता येतो.
+  </p>
+  <p>
+    महत्त्वाचे — गीता श्रद्धेला नाकारत नाही, तिला दिशा देते. ती "श्रद्धा सोडा" म्हणत नाही, "श्रद्धा उन्नत करा" म्हणते. <strong class="gold-text">पुढच्या संकल्पनेत हाच त्रिगुण-विवेक आहारात — आपण काय खातो त्यात — कसा लागू होतो, हे उलगडेल.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · श्रद्धात्रयविभागयोग · अध्याय १७ · संकल्पना १/७ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

@@ -112,7 +112,7 @@
     && sectionMenu.querySelector('.smenu-card[data-section="vivechan"]');
   // Adhyay 8 onward: ज्ञानेश्वरी विवेचन + आयुष्यातील क्षण are merged into a single
   // combined concept HTML, so the concept landing shows one card instead of two.
-  const isCombinedAdhyay = (adhyayId === 8 || adhyayId === 9 || adhyayId === 10 || adhyayId === 11 || adhyayId === 12 || adhyayId === 14);
+  const isCombinedAdhyay = (adhyayId === 8 || adhyayId === 9 || adhyayId === 10 || adhyayId === 11 || adhyayId === 12 || adhyayId === 13 || adhyayId === 14 || adhyayId === 17);
   const shravanFab       = document.getElementById('shravan-fab');
   const fontSizeCtrl     = document.getElementById('font-size-ctrl');
 

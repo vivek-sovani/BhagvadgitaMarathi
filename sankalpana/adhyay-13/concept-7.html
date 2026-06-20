@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मुक्तीचे मार्ग — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0E1418;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(42,58,90,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(90,138,138,0.06) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(168,192,208,0.3); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(168,192,208,0.45)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.2rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* PATHS */
+  .paths-list { margin: 1.25rem 0; }
+  .path-item { display:flex; gap:0.85rem; align-items:flex-start; padding:0.85rem 1rem; border-radius:4px; margin-bottom:0.6rem; border:1px solid rgba(168,192,208,0.3); background:rgba(168,192,208,0.05); }
+  .path-icon { font-size:1.4rem; flex-shrink:0; }
+  .path-body { flex:1; }
+  .path-name { font-family:var(--font-deva); font-size:1.1rem; font-weight:600; color:var(--mist); display:block; margin-bottom:0.15rem; }
+  .path-desc { font-family:var(--font-deva); font-size:0.98rem; line-height:1.8; color:var(--antique-cream); opacity:0.9; }
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .key-term { color: var(--silver-blue); } .gold-text { color: var(--temple-gold); } .blue-text { color: var(--silver-blue); } .mist-text { color: var(--mist); }
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+  @media print { body { background: white; color: #1A2A2A; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .path-item { background: #eef4f6 !important; border-color: #5A8A8A !important; } .shloka-deva, .ovi { color: #2A3A5A !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">मुक्तीचे मार्ग</div>
+  <div class="concept-badge">🧭 संकल्पना ७/९</div>
+  <div class="concept-subtitle">ध्यानेन — ज्ञानाकडे जाण्याच्या अनेक वाटा</div>
+</header>
+<div class="mirror-hero">
+  <span class="icon">🧭</span>
+  <p>
+    साक्षी आत्मा कसा जाणायचा? कृष्ण एक नव्हे —<br>
+    <strong class="mist-text">अनेक मार्ग सांगतो: ध्यान, ज्ञान, कर्मयोग, श्रवण.</strong><br>
+    प्रत्येकाला आपापला मार्ग — पण मुक्काम एकच.
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#A8C0D0"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.२४–२५</span>
+  <div class="shloka-deva">
+    ध्यानेनात्मनि पश्यन्ति केचिदात्मानमात्मना ।<br>
+    अन्ये साङ्ख्येन योगेन कर्मयोगेन चापरे ॥<br>
+    अन्ये त्वेवमजानन्तः श्रुत्वान्येभ्य उपासते ।<br>
+    तेऽपि चातितरन्त्येव मृत्युं श्रुतिपरायणाः ॥
+  </div>
+  <div class="shloka-meaning">
+    "काही ध्यानाने आत्म्यात आत्मा पाहतात, काही सांख्ययोगाने, काही कर्मयोगाने.<br>
+    तर काही न जाणणारे — इतरांकडून ऐकून उपासना करतात.<br>
+    <strong class="mist-text">तेही — श्रवणावर निष्ठा ठेवणारे — मृत्यू तरून जातात."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· अनेक वाटा</span></div>
+<div class="explanation-block">
+  <p>
+    कृष्णाची उदारता इथे दिसते. आत्मज्ञानाचा एकच मार्ग तो सांगत नाही — <strong class="mist-text">प्रत्येक स्वभावासाठी वेगळी वाट देतो.</strong> आणि शेवटी म्हणतो — जे नुसते श्रद्धेने ऐकतात, तेही तरून जातात.
+  </p>
+  <div class="paths-list">
+    <div class="path-item"><span class="path-icon">🧘</span><div class="path-body"><span class="path-name">ध्यानयोग</span><span class="path-desc">अंतर्मुख होऊन, ध्यानाद्वारे स्वतःमध्ये आत्मा पाहणे.</span></div></div>
+    <div class="path-item"><span class="path-icon">📖</span><div class="path-body"><span class="path-name">सांख्ययोग (ज्ञान)</span><span class="path-desc">विवेकाने — क्षेत्र-क्षेत्रज्ञ भेद समजून आत्मज्ञान.</span></div></div>
+    <div class="path-item"><span class="path-icon">🤲</span><div class="path-body"><span class="path-name">कर्मयोग</span><span class="path-desc">निष्काम कर्माद्वारे चित्तशुद्धी आणि आत्मसाक्षात्कार.</span></div></div>
+    <div class="path-item"><span class="path-icon">👂</span><div class="path-body"><span class="path-name">श्रवण-उपासना</span><span class="path-desc">तत्त्व न कळले तरी श्रद्धेने सत्पुरुषांकडून ऐकणे — तेही तारक.</span></div></div>
+  </div>
+  <p>
+    सर्वात हृदयस्पर्शी — शेवटचा मार्ग. ज्यांना तत्त्वज्ञान कळत नाही, ध्यान जमत नाही — <strong class="blue-text">ते फक्त श्रद्धेने ऐकतात, आणि तेही तरून जातात.</strong> कुणीही मागे राहत नाही. (हे अध्याय १२ च्या चार-टप्प्यांची आठवण.)
+  </p>
+</div>
+<div class="pull-quote">वाटा अनेक — मुक्काम एक.<br><strong class="blue-text">श्रद्धेने ऐकणाराही तरून जातो.</strong></div>
+<div class="section-heading"><span class="label-deva">आजच्या काळात</span><span class="label-small">· रूपक</span></div>
+<div class="relevance-block">
+  <span class="example-tag">शिखरावर जाण्याच्या अनेक वाटा</span>
+  <div class="example-name">एक पर्वत, अनेक वाटा</div>
+  <div class="example-sub">मार्ग वेगळे — शिखर एकच</div>
+  <p>
+    एका पर्वतशिखरावर जाण्यासाठी अनेक वाटा असतात — कुणी सरळ चढतो, कुणी वळणावळणाने जातो, कुणी दुसऱ्या बाजूने. <strong class="mist-text">वाटा वेगळ्या, अडचणी वेगळ्या — पण शिखर एकच.</strong> कुणी चुकीचा आणि कुणी बरोबर असे नाही.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    तसेच आत्मज्ञानाचे — ध्यानप्रिय माणूस ध्यानाने जाईल, बुद्धिप्रधान विवेकाने, कर्मशील कर्मयोगाने, श्रद्धाळू श्रवणाने. <span class="key-term">महत्त्वाचे हे की चालत राहणे.</span> कोणती वाट "श्रेष्ठ" यावर वाद घालण्यात अर्थ नाही — आपल्या स्वभावाला जुळणारी वाट निवडावी.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    आणि गीता एक सुंदर गोष्ट सांगते — ज्याला स्वतः वाट सापडत नाही, तो <strong class="blue-text">वाट माहीत असणाऱ्यासोबत (सत्पुरुष, गुरू) चालला तरी पोहोचतो.</strong> "श्रुत्वान्येभ्यः" — इतरांकडून ऐकून. म्हणजे सत्संग, श्रवण, सद्ग्रंथवाचन — हेही मार्गच. आत्मज्ञान फक्त बुद्धिमंतांची मक्तेदारी नाही.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    कोणी ध्यानाने ।<br>
+    कोणी ज्ञानाने ।<br>
+    कोणी कर्मयोगे ।<br>
+    आत्मा पाहती ।।<br><br>
+    जे नुसते ऐकती ।<br>
+    श्रद्धेने भजती ।<br>
+    तेही तरुनी जाती ।<br>
+    मृत्यूते ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव गीतेची उदारता अधोरेखित करतात — मार्ग अनेक, सगळे तारक. आणि सर्वात कनवाळू गोष्ट — जे नुसते श्रद्धेने ऐकतात, तेही तरतात. आत्मज्ञान फक्त विद्वानांचे नाही — श्रद्धाळू भोळ्या भक्तालाही ते मिळते. हीच गीतेची सर्वसमावेशकता.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"माझ्या स्वभावाला कोणती वाट जुळते —<br>ध्यान, विवेक, कर्म, की श्रवण?"<br><br>दुसऱ्याची वाट कॉपी करण्यापेक्षा — माझी ओळखा.</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 आजचा संकल्प</span>
+  <p>आज माझ्या स्वभावाला जुळणाऱ्या एका मार्गाने —<br><strong class="blue-text">एक पाऊल टाका: थोडे ध्यान, थोडे चिंतन, एक निष्काम कर्म, किंवा सत्संग-श्रवण.</strong><br><br>वाद नको — वाटचाल हवी.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    हे श्लोक गीतेच्या <span class="key-term">मार्ग-बहुलतेचे</span> (pluralism) उत्तम उदाहरण. गीता कुठलाही एकच मार्ग सक्तीचा करत नाही — ध्यान, ज्ञान, कर्म, भक्ती, श्रवण — सगळे मान्य. हे भारतीय अध्यात्माचे वैशिष्ट्य — "एकं सत् विप्रा बहुधा वदन्ति" (सत्य एक, ज्ञानी ते अनेक प्रकारे सांगतात).
+  </p>
+  <p>
+    विशेष लक्षणीय — <span class="key-term">श्रवण-मार्गाचा</span> समावेश. ज्यांना उच्च तत्त्वज्ञान, कठोर ध्यान जमत नाही, त्यांच्यासाठीही दार उघडे. श्रद्धा आणि सत्संग हेही तारक. हे अध्याय १२ च्या "श्रद्दधाना" शी आणि चार-टप्प्यांशी सुसंगत.
+  </p>
+  <p>
+    व्यावहारिक धडा — आध्यात्मिक मार्गात "माझा मार्ग श्रेष्ठ, तुझा कनिष्ठ" हा वाद निरर्थक. प्रत्येकाचा स्वभाव वेगळा, म्हणून वाटही वेगळी. <strong class="blue-text">पुढच्या संकल्पनेत — हा साक्षी आत्मा सर्व भूतांत समानपणे आहे, ही समदृष्टी — उलगडेल. ज्ञानाचे सामाजिक रूप: समत्व.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना ७/९ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

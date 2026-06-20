@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ॐ तत् सत् — भगवद्गीता अध्याय १७</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #16120E;
+    --temple-gold:   #C8922A;
+    --bright-gold:   #E8C872;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6D2;
+    --patina-teal:   #5A7C70;
+    --sattva:        #E8D8A0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #16120E;
+    /* concept 6 — transcending gunas: warm golden glow, sattva-focused */
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,200,114,0.13) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(200,146,42,0.06) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#16120E; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--saffron); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--bright-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(232,200,114,0.35); }
+  .concept-badge { display: inline-block; background: var(--temple-gold); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .om-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .om-hero svg { max-width: 200px; width: 100%; height: auto; filter: drop-shadow(0 0 20px rgba(232,200,114,0.5)); }
+  .om-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+  .shloka-block { background: linear-gradient(135deg, #100C08 0%, #1E160E 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block.hero-shloka { border: 2px solid var(--bright-gold); box-shadow: 0 0 36px rgba(232,200,114,0.12) inset; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--bright-gold); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.2rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200,146,42,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #1C150E; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* OM TAT SAT — three sacred words */
+  .triword-grid { display:grid; grid-template-columns:1fr; gap:0.75rem; margin:1.25rem 0; }
+  @media(min-width:560px){ .triword-grid{ grid-template-columns:1fr 1fr 1fr; } }
+  .triword { background:rgba(232,200,114,0.08); border:1px solid rgba(232,200,114,0.45); border-radius:4px; padding:1.2rem 1rem; text-align:center; }
+  .tw-sk { font-family:var(--font-deva); font-size:1.6rem; font-weight:600; color:var(--bright-gold); display:block; margin-bottom:0.4rem; }
+  .tw-name { font-family:var(--font-deva); font-size:0.9rem; color:var(--temple-gold); display:block; margin-bottom:0.4rem; }
+  .tw-desc { font-family:var(--font-deva); font-size:0.92rem; line-height:1.7; color:var(--antique-cream); opacity:0.9; }
+  .pull-quote { border-left: 4px solid var(--temple-gold); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #1A130C 0%, #241A10 100%); border: 1px solid rgba(200,146,42,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--temple-gold); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(200,146,42,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(232,200,114,0.08); border:1px solid rgba(232,200,114,0.35); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.1rem; line-height:1.95; color:var(--bright-gold); text-align:center; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C150E; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200,146,42,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1C150E; border:1px solid rgba(200,146,42,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--temple-gold); text-decoration:none; }
+  .key-term { color: var(--saffron); } .gold-text { color: var(--temple-gold); } .bright-text { color: var(--bright-gold); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .triword { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi, .tw-sk { color: #8B5E10 !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १७ · श्रद्धात्रयविभागयोग</div>
+  <div class="concept-title">ॐ तत् सत्</div>
+  <div class="concept-badge">🕉️ संकल्पना ६/७</div>
+  <div class="concept-subtitle">तीन शब्दांत ब्रह्म — प्रत्येक कर्म ब्रह्मार्पण</div>
+</header>
+<div class="om-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 130" aria-label="ॐ तत् सत्">
+    <defs><radialGradient id="omG" cx="50%" cy="45%" r="55%"><stop offset="0%" stop-color="#E8C872"/><stop offset="60%" stop-color="#C8922A"/><stop offset="100%" stop-color="#8B5E10"/></radialGradient></defs>
+    <circle cx="100" cy="58" r="46" fill="none" stroke="#E8C872" stroke-width="1" opacity="0.4"/>
+    <circle cx="100" cy="58" r="34" fill="rgba(232,200,114,0.12)"/>
+    <text x="100" y="74" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="44" fill="url(#omG)">ॐ</text>
+    <text x="100" y="122" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#E8C872">ॐ तत् सत्</text>
+  </svg>
+  <p>
+    गुणांच्या वर्गीकरणानंतर कृष्ण त्यांच्या पलीकडे नेतो —<br>
+    <strong class="bright-text">ब्रह्माचे त्रिविध नाम: ॐ तत् सत्.</strong><br>
+    या नामाने केलेले प्रत्येक कर्म ब्रह्मार्पण होते.
+  </p>
+</div>
+<div class="shloka-block hero-shloka">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#E8C872" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#E8C872"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १७.२३</span>
+  <div class="shloka-deva">
+    ॐ तत्सदिति निर्देशो ब्रह्मणस्त्रिविधः स्मृतः ।<br>
+    ब्राह्मणास्तेन वेदाश्च यज्ञाश्च विहिताः पुरा ॥
+  </div>
+  <div class="shloka-meaning">
+    "'ॐ तत् सत्' असा ब्रह्माचा त्रिविध निर्देश सांगितला आहे.<br>
+    <strong class="gold-text">याच्यानेच प्राचीन काळी ब्राह्मण, वेद आणि यज्ञ निर्माण झाले."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· ब्रह्माचे त्रिविध नाम</span></div>
+<div class="explanation-block">
+  <p>
+    आत्तापर्यंत कृष्णाने सगळे तीन गुणांत विभागले. आता तो <strong class="bright-text">गुणांच्या पलीकडे</strong> नेतो — ब्रह्माच्या तीन पवित्र शब्दांकडे. हे तीन शब्द उच्चारून केलेले कर्म गुणांच्या वर्गीकरणाच्या पलीकडे जाते — ते थेट ब्रह्मार्पण होते.
+  </p>
+  <div class="triword-grid">
+    <div class="triword"><span class="tw-sk">ॐ</span><span class="tw-name">परब्रह्माचे प्रतीक</span><div class="tw-desc">कर्माच्या आरंभी — "हे ब्रह्मासाठी." अहंकार गळतो.</div></div>
+    <div class="triword"><span class="tw-sk">तत्</span><span class="tw-name">"ते" — परम तत्त्व</span><div class="tw-desc">फळाची अपेक्षा न ठेवता — "हे त्या परमासाठी." निष्कामता.</div></div>
+    <div class="triword"><span class="tw-sk">सत्</span><span class="tw-name">सत्य, मांगल्य</span><div class="tw-desc">सत्कर्म, सद्भाव, स्थिरता — "हे शुभ आणि खरे आहे."</div></div>
+  </div>
+  <p>
+    या तीन शब्दांचा अर्थ — कोणतेही कर्म <span class="key-term">"माझ्यासाठी" न करता "ब्रह्मासाठी"</span> करणे. यज्ञ, दान, तप — कोणतेही कर्म ॐ तत् सत् भावाने केले की त्यातला "मी"पणा, फळाची हाव गळून पडते. कर्म पवित्र होते.
+  </p>
+</div>
+<div class="pull-quote">"माझ्यासाठी" ऐवजी "ब्रह्मासाठी" —<br><strong class="bright-text">हाच भाव कोणत्याही कर्माला पवित्र करतो.</strong></div>
+<div class="section-heading"><span class="label-deva">आजच्या काळात</span><span class="label-small">· व्यावहारिक रूपक</span></div>
+<div class="relevance-block">
+  <span class="example-tag">रोजचे कर्म ब्रह्मार्पण</span>
+  <div class="example-name">प्रत्येक कृतीआधी एक भाव</div>
+  <div class="example-sub">"हे माझ्यासाठी नाही, मोठ्या गोष्टीसाठी"</div>
+  <p>
+    "ॐ तत् सत्" चा गाभा एका वाक्यात — <strong class="bright-text">कोणतेही काम सुरू करताना ते स्वतःच्या स्वार्थापलीकडे अर्पण करणे.</strong> हे फक्त मंत्रोच्चार नव्हे — एक मनोवृत्ती. आजच्या भाषेत: "हे काम मी फक्त माझ्या फायद्यासाठी नाही, तर एका मोठ्या हेतूसाठी करतो."
+  </p>
+  <hr class="inner-divider">
+  <p>
+    एक डॉक्टर रुग्णावर उपचार करताना — "हे फक्त फी साठी नाही, रुग्णसेवेसाठी." एक शिक्षक शिकवताना — "हे फक्त पगारासाठी नाही, विद्यार्थ्याच्या भविष्यासाठी." एक आई स्वयंपाक करताना — "हे फक्त कर्तव्य नाही, प्रेमाचे अर्पण." <span class="key-term">हाच ॐ तत् सत् भाव.</span> कृती तीच, पण अर्पणाने ती पवित्र होते.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    हे जेवणाआधी म्हटल्या जाणाऱ्या श्लोकामागचेही तत्त्व — <strong class="gold-text">"ब्रह्मार्पणं ब्रह्म हविः"</strong> — हे अन्न, खाणारा, खाण्याची क्रिया, सगळे ब्रह्मच. रोजच्या जेवणालाही यज्ञ बनवण्याची ही दृष्टी. आणि हेच जीवनातल्या प्रत्येक कृतीला लागू — काम, सेवा, नाते, अगदी विश्रांतीही — "हे ब्रह्मासाठी" म्हटले की क्षुद्र कर्मही पूजा होते.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    ॐ तत् सत् हे ।<br>
+    ब्रह्माचे रूप ।<br>
+    या भावे कर्म ।<br>
+    ब्रह्म होय ।।<br><br>
+    माझेपण सोडुनी ।<br>
+    अर्पी जो ब्रह्मा ।<br>
+    त्याचे क्षुद्र कर्मही ।<br>
+    पूजा होय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — ॐ तत् सत् हे केवळ शब्द नव्हेत, ती अर्पणाची वृत्ती. "हे माझे" सोडून "हे ब्रह्माचे" म्हटले की कर्म पवित्र होते. मग रोजचे साधे कामही पूजा बनते. हाच कर्मयोग आणि भक्तियोग यांचा संगम — कर्म ब्रह्मार्पण.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"माझी कर्मे मी फक्त 'माझ्यासाठी' करतो,<br>की एका मोठ्या हेतूसाठी अर्पण करतो?"<br><br>कोणत्या कामाला मी पूजा बनवू शकतो?</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,200,114,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--bright-gold);">🌱 आजचा संकल्प</span>
+  <p>आज एखादे काम सुरू करताना —<br><strong class="bright-text">मनात म्हणा: "हे माझ्यासाठी नाही, मोठ्या हेतूसाठी — ॐ तत् सत्."</strong><br><br>आणि ते काम पूजेसारखे करा.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    "ॐ तत् सत्" हा अध्यायाचा <span class="key-term">कळस</span> आहे. आत्तापर्यंतचे सगळे त्रिगुण-वर्गीकरण व्यावहारिक होते — सात्त्विक चांगले, राजसिक कमी, तामसिक टाळावे. पण इथे कृष्ण गुणांच्या पलीकडे नेतो — ब्रह्मार्पणाकडे. कर्म ब्रह्माला अर्पण केले की ते गुणातीत होते.
+  </p>
+  <p>
+    हे गीतेच्या <span class="key-term">कर्मयोग + भक्तियोग + ज्ञानयोग</span> यांचा संगम. कर्म करा (कर्मयोग), ब्रह्माला अर्पण करा (भक्तियोग), आणि "मी कर्ता नाही" हे जाणा (ज्ञानयोग). तीन मार्ग एका भावात — ॐ तत् सत्.
+  </p>
+  <p>
+    व्यावहारिक सार — अर्पणभाव कोणत्याही कर्माला उन्नत करतो. हेतू स्वार्थापलीकडे नेला की क्षुद्र कर्मही पवित्र होते. <strong class="bright-text">शेवटच्या संकल्पनेत — संपूर्ण अध्याय १७ चा सार आणि संत ज्ञानेश्वरांची समारोप-दृष्टी उलगडेल.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · श्रद्धात्रयविभागयोग · अध्याय १७ · संकल्पना ६/७ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

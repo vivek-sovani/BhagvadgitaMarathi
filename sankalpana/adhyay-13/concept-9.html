@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सार व समारोप — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0E1418;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(90,138,138,0.05) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(168,192,208,0.35); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero svg { max-width: 180px; width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(168,192,208,0.45)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.2rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  /* SAAR */
+  .saar-block { background: linear-gradient(135deg, #0A1016 0%, #14202E 100%); border: 2px solid var(--silver-blue); border-radius: 6px; padding: 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .saar-block::before { content: 'अध्याय १३ — साक्षीभावाचा प्रवास'; position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: #0E1418; color: var(--silver-blue); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.75rem; white-space: nowrap; }
+  .saar-row { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid rgba(168,192,208,0.12); }
+  .saar-row:last-child { border-bottom: none; }
+  .saar-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; background: var(--silver-blue); }
+  .saar-text { font-family: var(--font-deva); font-size: 0.98rem; line-height: 1.7; color: var(--antique-cream); }
+  .saar-text strong { color: var(--mist); }
+  .saar-text em { color: var(--patina-teal); font-style: normal; }
+  /* MAHAVAKYA */
+  .mahavakya-block { background: linear-gradient(135deg, #0E1A22 0%, #16242E 100%); border: 1px solid rgba(168,192,208,0.6); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; text-align: center; }
+  .mahavakya-label { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem; display: block; }
+  .mahavakya-text { font-family: var(--font-deva); font-size: 1.4rem; line-height: 1.9; color: var(--mist); margin-bottom: 0.75rem; }
+  .mahavakya-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); opacity: 0.88; }
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(200,146,42,0.07); border:1px solid rgba(200,146,42,0.3); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.08rem; line-height:1.95; color:var(--temple-gold); text-align:center; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .key-term { color: var(--silver-blue); } .gold-text { color: var(--temple-gold); } .blue-text { color: var(--silver-blue); } .mist-text { color: var(--mist); }
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+  @media print { body { background: white; color: #1A2A2A; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .saar-block, .mahavakya-block { background: #eef4f6 !important; border-color: #5A8A8A !important; } .shloka-deva, .ovi, .mahavakya-text { color: #2A3A5A !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">सार व समारोप</div>
+  <div class="concept-badge">🪷 संकल्पना ९/९ · समाप्त</div>
+  <div class="concept-subtitle">प्रकृती करते — पुरुष साक्षी राहतो</div>
+</header>
+<div class="mirror-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 150" aria-label="साक्षी आरसा">
+    <defs><radialGradient id="finalG" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#C8D8E0"/><stop offset="55%" stop-color="#A8C0D0"/><stop offset="100%" stop-color="#2A3A5A"/></radialGradient></defs>
+    <circle cx="80" cy="62" r="40" fill="none" stroke="#A8C0D0" stroke-width="1" opacity="0.5"/>
+    <circle cx="80" cy="62" r="26" fill="url(#finalG)" opacity="0.85"/>
+    <circle cx="80" cy="62" r="8" fill="#0E1418"/>
+    <circle cx="80" cy="62" r="3" fill="#C8D8E0"/>
+    <g stroke="#A8C0D0" stroke-width="0.8" opacity="0.4">
+      <line x1="80" y1="10" x2="80" y2="20"/><line x1="80" y1="104" x2="80" y2="114"/>
+      <line x1="28" y1="62" x2="38" y2="62"/><line x1="122" y1="62" x2="132" y2="62"/>
+    </g>
+    <text x="80" y="138" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="10" fill="#A8C0D0">साक्षी — स्वच्छ आरसा</text>
+  </svg>
+  <p>
+    अध्याय १३ — क्षेत्रक्षेत्रज्ञविभागयोग — संपतो.<br>
+    एका साध्या पण मुक्तिदायी सत्याने —<br>
+    <strong class="mist-text">"सर्व प्रकृती करते. आत्मा फक्त साक्षी राहतो."</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#A8C0D0"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.२९ व १३.३४</span>
+  <div class="shloka-deva">
+    प्रकृत्यैव च कर्माणि क्रियमाणानि सर्वशः ।<br>
+    यः पश्यति तथात्मानमकर्तारं स पश्यति ॥<br>
+    ...क्षेत्रक्षेत्रज्ञयोरेवमन्तरं ज्ञानचक्षुषा ।<br>
+    भूतप्रकृतिमोक्षं च ये विदुर्यान्ति ते परम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "सर्व कर्मे प्रकृतीच करते — आणि आत्मा अकर्ता आहे, असे जो पाहतो, तोच खरे पाहतो.<br>
+    जे ज्ञानदृष्टीने क्षेत्र-क्षेत्रज्ञातील भेद आणि प्रकृतीपासूनची मुक्ती जाणतात —<br>
+    <strong class="mist-text">ते परम गतीला जातात."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">समारोप</span><span class="label-small">· अध्याय १३ चा सार</span></div>
+<div class="explanation-block">
+  <p>
+    संपूर्ण अध्यायाचा सार एका वाक्यात — <strong class="mist-text">"प्रकृती करते, आत्मा साक्षी."</strong> शरीर, मन, इंद्रिये, भावना — हे सगळे क्षेत्र (प्रकृती). त्यांना पाहणारा साक्षी — क्षेत्रज्ञ (आत्मा). हा भेद कळणे हेच खरे ज्ञान, हीच मुक्ती.
+  </p>
+  <p>
+    आणि या ज्ञानाचे फळ? — कर्तेपणाच्या ओझ्यातून मुक्ती, भावनांच्या वादळातून शांती, आणि सर्वांत एक आत्मा पाहण्याची समदृष्टी. <strong class="blue-text">तत्त्वज्ञान शेवटी करुणेत आणि शांतीत उतरते.</strong>
+  </p>
+</div>
+<div class="pull-quote">"मी कर्ता नाही, साक्षी आहे" —<br><strong class="blue-text">हे एक वाक्य कळले, की अर्धी गीता कळली.</strong></div>
+<!-- SAAR -->
+<div class="saar-block">
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>१ · क्षेत्र आणि क्षेत्रज्ञ</strong> — शरीर व त्याला जाणणारा. <em>रथ-सारथी</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>२ · क्षेत्राचे स्वरूप</strong> — मन-बुद्धीही क्षेत्रच. <em>आकाश-ढग</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>३ · ज्ञानाची २० लक्षणे</strong> — ज्ञान म्हणजे चारित्र्य. <em>भरलेले कणीस</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>४ · ज्ञेय परमात्मा</strong> — अवर्णनीय. <em>याज्ञवल्क्य · नेति नेति</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>५ · प्रकृती आणि पुरुष</strong> — कर्ता व भोक्ता. <em>वीज-यंत्र</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>६ · पुरुष — साक्षी</strong> — गुणसंग हेच बंधन. <em>चित्रपट-प्रेक्षक</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>७ · मुक्तीचे मार्ग</strong> — ध्यान-ज्ञान-कर्म-श्रवण. <em>एक पर्वत, अनेक वाटा</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>८ · सर्वत्र ईश्वर</strong> — समदृष्टी, अहिंसा. <em>सूर्य-प्रतिबिंब</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>९ · सार व समारोप</strong> — प्रकृती करते, आत्मा साक्षी. <em>ज्ञानेश्वर</em></div></div>
+</div>
+<!-- MAHAVAKYA -->
+<div class="mahavakya-block">
+  <span class="mahavakya-label">अध्याय १३ चे परम सत्य —</span>
+  <div class="mahavakya-text">आत्मानम् अकर्तारं<br>स पश्यति</div>
+  <div class="mahavakya-meaning">
+    "आत्मा अकर्ता आहे" — हे जो पाहतो, तोच खरे पाहतो.<br>
+    साक्षीभाव हीच मुक्तीची किल्ली.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">संत-दर्शन</span><span class="label-small">· समारोपाची दृष्टी</span></div>
+<div class="relevance-block">
+  <span class="example-tag">संत · आळंदी (महाराष्ट्र) · १३ वे शतक</span>
+  <div class="example-name">संत ज्ञानेश्वर</div>
+  <div class="example-sub">क्षेत्र-क्षेत्रज्ञ ज्ञान सोप्या मराठीत आणणारे</div>
+  <p>
+    या संपूर्ण अध्यायातील गहन तत्त्वज्ञान — क्षेत्र-क्षेत्रज्ञ, प्रकृती-पुरुष, साक्षीभाव — हे ज्ञानेश्वरांनी ज्ञानेश्वरीत सामान्य माणसाला समजेल अशा रूपकांतून मांडले. <strong class="mist-text">अमूर्त तत्त्वज्ञान त्यांनी जिवंत प्रतिमांत बदलले.</strong>
+  </p>
+  <hr class="inner-divider">
+  <p>
+    ज्ञानेश्वरांची एक प्रसिद्ध जाणीव — <strong class="gold-text">देह आणि आत्मा यांचा भेद, पण शेवटी सर्वांत एकत्व.</strong> त्यांच्या अमृतानुभवात त्यांनी हाच साक्षीभाव, हेच अद्वैत मांडले. आणि ते स्वतः जगले — वयाच्या एकविसाव्या वर्षी संजीवन समाधी घेताना त्यांना देहाचा मोह नव्हता. कारण ते जाणत होते — मी देह नाही, मी साक्षी आत्मा.
+  </p>
+  <hr class="inner-divider">
+  <div class="pada-box">
+    "देह जरी जाय ।<br>
+    तरी आत्मा अक्षय ।<br>
+    साक्षीभावे राहे ।<br>
+    निर्लेप ।।"
+  </div>
+  <p>
+    ज्ञानेश्वरांचे जीवन हेच अध्याय १३ चे जिवंत भाष्य — <strong class="blue-text">क्षेत्र (देह) नाशवंत, क्षेत्रज्ञ (आत्मा) अक्षय.</strong> हे केवळ जाणले नाही, तर जगून दाखवले. साक्षीभाव म्हणजे पलायन नव्हे — तो जीवन पूर्णपणे जगून, तरीही त्यात न अडकण्याचा मार्ग.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· समारोप-ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    क्षेत्र क्षेत्रज्ञ ।<br>
+    भेद जाणुनी जो ।<br>
+    प्रकृतीतुनी मुक्त ।<br>
+    होय तो ।।<br><br>
+    देह प्रकृतीचा ।<br>
+    आत्मा साक्षी शुद्ध ।<br>
+    हे जाणुनी पावे ।<br>
+    परम गती ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव अध्यायाचा सार सांगतात — क्षेत्र-क्षेत्रज्ञ भेद जाणणे हीच मुक्ती. देह प्रकृतीचा, आत्मा साक्षी. हे ज्ञानदृष्टीने जाणणारा प्रकृतीच्या बंधनातून मुक्त होतो. विवेकाची ही दृष्टी — हीच परम गतीची वाट. ज्ञान शेवटी मुक्तीत विसावते.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 अंतिम प्रश्न</span>
+  <p>"या नऊ संकल्पनांनंतर — मी स्वतःला अधिक 'देह-मन' मानतो,<br>की अधिक 'साक्षी आत्मा'?"<br><br>एक रूपक — रथ, आकाश, चित्रपट, सूर्य — कोणते माझ्या हृदयात रुजले?</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 अंतिम संकल्प</span>
+  <p>अध्याय १३ चा सार —<br><br><strong class="mist-text">आज दिवसातून एकदा थांबा. शरीर, विचार, भावना यांकडे साक्षीभावाने पाहा. "हे प्रकृती करते, मी फक्त पाहतो."</strong><br><br>साक्षी व्हा — मुक्त व्हा.<br>🕉️ श्रीकृष्णार्पणमस्तु.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    अध्याय १३ हा गीतेच्या <span class="key-term">ज्ञानयोगाचा</span> गाभा. इथे सांख्य (प्रकृती-पुरुष) आणि वेदान्त (क्षेत्र-क्षेत्रज्ञ, अद्वैत) यांचा समन्वय. मध्यवर्ती अंतर्दृष्टी — <span class="key-term">द्रष्टा आणि दृश्य यांचा भेद.</span> जे पाहता येते (देह, मन, भावना) ते "मी" नाही; पाहणारा साक्षी तो "मी."
+  </p>
+  <p>
+    या अध्यायाची खरी ताकद त्याच्या व्यावहारिकतेत आहे. साक्षीभाव हे केवळ तत्त्वज्ञान नाही — ते दुःखमुक्तीचे, कर्तेपणाच्या ओझ्यातून सुटकेचे, आणि समदृष्टी-करुणेचे साधन. आधुनिक mindfulness, चिंतन-पद्धती — सगळ्यांचे मूळ इथे.
+  </p>
+  <p>
+    अध्याय ११ (भावनांचे दर्शन), अध्याय १२ (प्रेमाची भक्ती), अध्याय १३ (विवेकाचे ज्ञान) — गीता हृदय आणि बुद्धी दोन्हींना स्पर्श करते. <strong class="blue-text">पुढच्या अध्याय १४ मध्ये — प्रकृतीचे तीन गुण (सत्त्व, रज, तम) — हे आणखी उलगडतील. क्षेत्र समजले, आता त्याचे गुण समजतील.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना ९/९ · समाप्त · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ज्ञेय — परमात्मा — भगवद्गीता अध्याय १३</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #0E1418;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #EAF0F2;
+    --patina-teal:   #5A8A8A;
+    --silver-blue:   #A8C0D0;
+    --deep-indigo:   #2A3A5A;
+    --mist:          #C8D8E0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #0E1418;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(168,192,208,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(42,58,90,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(90,138,138,0.06) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#0E1418; border-bottom:1px solid var(--silver-blue); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--silver-blue); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--silver-blue); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--silver-blue); border-bottom: 1px solid var(--deep-indigo); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--mist); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(168,192,208,0.3); }
+  .concept-badge { display: inline-block; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.72; margin-top: 0.3rem; }
+  .mirror-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .mirror-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(168,192,208,0.45)); }
+  .mirror-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0C1620 0%, #14202E 100%); border: 1px solid var(--silver-blue); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.07; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--silver-blue); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.2rem; line-height: 2.1; color: var(--mist); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(168,192,208,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--silver-blue); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #101A24; border-left: 3px solid var(--silver-blue); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* PARADOX PAIRS */
+  .paradox-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:0.5rem 0.85rem; align-items:center; margin:1.25rem 0; padding:1rem 1.1rem; background:rgba(42,58,90,0.18); border:1px dashed rgba(168,192,208,0.3); border-radius:4px; }
+  .px-l { text-align:right; font-family:var(--font-deva); font-size:1rem; color:var(--mist); }
+  .px-c { text-align:center; font-family:var(--font-deva); font-size:0.8rem; color:var(--patina-teal); }
+  .px-r { text-align:left; font-family:var(--font-deva); font-size:1rem; color:var(--silver-blue); }
+  .pull-quote { border-left: 4px solid var(--silver-blue); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0E1A22 0%, #14222E 100%); border: 1px solid rgba(168,192,208,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--silver-blue); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(168,192,208,0.25); margin: 1rem 0; }
+  .neti-box { background:rgba(168,192,208,0.08); border:1px solid rgba(168,192,208,0.35); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.15rem; line-height:1.9; color:var(--mist); text-align:center; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #14120A 0%, #1E1A0E 100%); border: 1px solid rgba(200,146,42,0.4); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #0E1418; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #101A24; border: 1px solid rgba(168,192,208,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(168,192,208,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #0E1418; color: var(--silver-blue); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#101A24; border:1px solid rgba(168,192,208,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--silver-blue); text-decoration:none; }
+  .key-term { color: var(--silver-blue); } .gold-text { color: var(--temple-gold); } .blue-text { color: var(--silver-blue); } .mist-text { color: var(--mist); }
+  .iks-footer { border-top: 2px solid var(--silver-blue); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--silver-blue); opacity: 0.65; }
+  @media print { body { background: white; color: #1A2A2A; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #eef4f6 !important; border-color: #5A8A8A !important; } .shloka-deva, .ovi { color: #2A3A5A !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १३ · क्षेत्रक्षेत्रज्ञविभागयोग</div>
+  <div class="concept-title">ज्ञेय — परमात्मा</div>
+  <div class="concept-badge">🌌 संकल्पना ४/९</div>
+  <div class="concept-subtitle">अनादिमत्परं ब्रह्म — जे जाणायचे, ते अवर्णनीय</div>
+</header>
+<div class="mirror-hero">
+  <span class="icon">🌌</span>
+  <p>
+    क्षेत्र कळले, ज्ञान कळले — आता <strong class="mist-text">ज्ञेय:</strong> जे जाणायचे ते परब्रह्म.<br>
+    पण ते इतके अगाध की कृष्ण त्याचे वर्णन<br>
+    <strong class="mist-text">विरोधाभासांतूनच करतो — "ते आहे, पण असे नाही."</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#A8C0D0" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#A8C0D0"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १३.१३–१४</span>
+  <div class="shloka-deva">
+    ज्ञेयं यत्तत्प्रवक्ष्यामि यज्ज्ञात्वामृतमश्नुते ।<br>
+    अनादिमत्परं ब्रह्म न सत्तन्नासदुच्यते ॥<br>
+    सर्वतःपाणिपादं तत्सर्वतोऽक्षिशिरोमुखम् ।<br>
+    सर्वतःश्रुतिमल्लोके सर्वमावृत्य तिष्ठति ॥
+  </div>
+  <div class="shloka-meaning">
+    "जे जाणल्याने अमृताची प्राप्ती होते, ते ज्ञेय मी सांगतो — ते अनादि परब्रह्म.<br>
+    ते 'सत्' म्हणताही येत नाही, 'असत्' म्हणताही येत नाही.<br>
+    <strong class="mist-text">सर्वत्र त्याचे हात-पाय, सर्वत्र डोळे-मुखे — सर्व व्यापून ते राहते."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· अवर्णनीयाचे वर्णन</span></div>
+<div class="explanation-block">
+  <p>
+    परब्रह्म वर्णन करणे अशक्य — कारण शब्द हे मर्यादित, ब्रह्म अमर्याद. म्हणून कृष्ण <strong class="mist-text">विरोधाभासांतून</strong> त्याकडे निर्देश करतो. हे तर्कदोष नाहीत — ही भाषेची मर्यादा दाखवणारी पद्धत.
+  </p>
+  <div class="paradox-grid">
+    <div class="px-l">सर्वत्र हात-पाय-डोळे</div><div class="px-c">पण</div><div class="px-r">इंद्रियरहित</div>
+    <div class="px-l">सर्वांना धारण करते</div><div class="px-c">पण</div><div class="px-r">निर्गुण, निर्लेप</div>
+    <div class="px-l">आत आणि बाहेर</div><div class="px-c">दोन्ही</div><div class="px-r">सर्व भूतांत</div>
+    <div class="px-l">अति दूर</div><div class="px-c">आणि</div><div class="px-r">अति जवळ</div>
+    <div class="px-l">अविभक्त (एक)</div><div class="px-c">पण</div><div class="px-r">विभक्तासारखे भासते</div>
+  </div>
+  <p>
+    "न सत् न असत्" — ते आहे असेही म्हणता येत नाही, नाही असेही नाही. कारण <span class="key-term">"आहे-नाही" या आपल्या कल्पना मर्यादित गोष्टींना लागू</span> होतात. ब्रह्म त्या पलीकडे. ते डोळ्यांना दिसत नाही म्हणून "नाही" नाही — आणि वस्तूसारखे "आहे" ही नाही.
+  </p>
+</div>
+<div class="pull-quote">शब्द जिथे संपतात —<br><strong class="blue-text">तिथे ब्रह्माचे वर्णन सुरू होते. "नेति, नेति."</strong></div>
+<div class="section-heading"><span class="label-deva">संत-दर्शन</span><span class="label-small">· "नेति नेति" चे ऋषी</span></div>
+<div class="relevance-block">
+  <span class="example-tag">उपनिषद-ऋषी · बृहदारण्यक</span>
+  <div class="example-name">याज्ञवल्क्य</div>
+  <div class="example-sub">"नेति नेति" — हे नाही, हे नाही</div>
+  <p>
+    बृहदारण्यक उपनिषदातील महान ऋषी याज्ञवल्क्य. राजा जनकाच्या दरबारात, पत्नी मैत्रेयीशी संवादात — त्यांनी ब्रह्माचे वर्णन एका अद्वितीय पद्धतीने केले. ब्रह्म "हे आहे" असे सांगण्याऐवजी त्यांनी सांगितले <strong class="mist-text">ब्रह्म "हे नाही."</strong>
+  </p>
+  <hr class="inner-divider">
+  <div class="neti-box">
+    "नेति, नेति" —<br>
+    <span style="font-size:0.9rem; opacity:0.85;">हे नाही, हे नाही</span>
+  </div>
+  <p>
+    प्रत्येक वर्णनाला याज्ञवल्क्य म्हणत — "नेति" (हे नाही). ब्रह्म शरीर नाही, मन नाही, इंद्रिये नाहीत, विचार नाहीत. <span class="key-term">जे जे सांगता येते, ते ते ब्रह्म नाही</span> — कारण ब्रह्म सांगणाराच आहे, सांगितले जाणारे नाही. द्रष्टा कधीच दृश्य होऊ शकत नाही.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    ही "नेति नेति" पद्धत गीतेच्या "न सत् न असत्" शी अचूक जुळते. <strong class="blue-text">सत्याकडे जाण्याचा मार्ग — जे सत्य नाही ते एक एक सोडत जाणे.</strong> शरीर सोडले, मन सोडले, विचार सोडले — जे उरते, ते अनिर्वचनीय ब्रह्म. वर्णनाने नाही, वर्णन सोडण्याने ते कळते.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    याज्ञवल्क्यांनी मैत्रेयीला सांगितले — <strong class="mist-text">"ज्याच्यामुळे सर्व कळते, त्याला कशाने कळणार?"</strong> डोळा सर्व पाहतो, पण स्वतःला पाहू शकत नाही. तसे ब्रह्म सर्वांचे ज्ञाता — त्याला कोण जाणणार? म्हणून फक्त "नेति नेति" — आणि मग मौन.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सत् म्हणावे तरी नव्हे ।<br>
+    असत् म्हणावे तरी नव्हे ।<br>
+    शब्दांच्या पलीकडे ।<br>
+    ते ब्रह्म ।।<br><br>
+    सर्वत्र तेचि भरले ।<br>
+    तरी निर्लेप राहिले ।<br>
+    जवळ अन् दूर ।<br>
+    एकाच काळी ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव ब्रह्माच्या अवर्णनीयतेचे वर्णन करतात. ते सर्वत्र, तरी निर्लेप; जवळ, तरी दूर. हे विरोधाभास म्हणजे शब्दांची हतबलता. ब्रह्म अनुभवायचे — वर्णन करता येत नाही. म्हणून ऋषी शेवटी मौनात जातात.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"मी जे जे 'मी' मानतो — शरीर, मन, विचार, भावना —<br>ते एक एक सोडत गेलो, तर शेवटी काय उरते?"<br><br>"नेति नेति" — हे नाही, हे नाही... मग?</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(168,192,208,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--silver-blue);">🌱 आजचा संकल्प</span>
+  <p>आज एका शांत क्षणी — "नेति नेति" चा अभ्यास करा.<br><strong class="blue-text">"मी शरीर नाही... मन नाही... विचार नाही..." — आणि जे उरते त्यात विसावा.</strong><br><br>वर्णन सोडा — अनुभव घ्या.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>
+    "न सत् न असत्" आणि "नेति नेति" — हे <span class="key-term">अपोहवाद</span> किंवा निषेधाद्वारे ज्ञान या पद्धतीचे उत्तम उदाहरण. ब्रह्म सकारात्मक वर्णनाने पकडता येत नाही, कारण कुठलेही वर्णन त्याला मर्यादित करते. म्हणून निषेधाने — जे ते नाही ते सोडत — त्याकडे निर्देश.
+  </p>
+  <p>
+    विरोधाभास (सर्वत्र हात पण इंद्रियरहित) हे तर्कदोष नाहीत — ते <span class="key-term">भाषेच्या मर्यादेचे</span> द्योतक. ब्रह्म देश-काल-कारणाच्या पलीकडे, पण आपली भाषा देश-काल-कारणात बद्ध. म्हणून त्या भाषेने अमर्यादाचे वर्णन विरोधाभासी वाटणारच.
+  </p>
+  <p>
+    गीता आणि उपनिषद इथे एकरूप — ब्रह्म <span class="key-term">अनुभवगम्य</span>, वर्णनातीत. <strong class="blue-text">पुढच्या संकल्पनेत — हे ब्रह्म जग कसे चालवते? प्रकृती आणि पुरुष या दोन तत्त्वांचा खेळ कसा? — सांख्याच्या दृष्टीतून उलगडेल.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · क्षेत्रक्षेत्रज्ञविभागयोग · अध्याय १३ · संकल्पना ४/९ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>
