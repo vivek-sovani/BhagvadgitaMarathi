@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>निर्गुण उपासना — भगवद्गीता अध्याय १२</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --warm-rose:     #D88A6A;
+    --soft-peach:    #E8A87C;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #1A1410;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,168,124,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(216,138,106,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(200,146,42,0.05) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#1A1410; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--warm-rose); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--warm-rose); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(232,168,124,0.3); }
+  .concept-badge { display: inline-block; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  .diya-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .diya-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(232,168,124,0.5)); }
+  .diya-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .shloka-block { background: linear-gradient(135deg, #14100A 0%, #241810 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(216,138,106,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--warm-rose); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #1E160E; border-left: 3px solid var(--warm-rose); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--warm-rose); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(232,168,124,0.07); border:1px solid rgba(216,138,106,0.3); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.1rem; line-height:1.95; color:var(--soft-peach); text-align:center; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(216,138,106,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #1A1410; color: var(--warm-rose); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(216,138,106,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #1E160E; border: 1px solid rgba(216,138,106,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(216,138,106,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #1A1410; color: var(--warm-rose); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E160E; border:1px solid rgba(216,138,106,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--warm-rose); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+  .rose-text { color: var(--warm-rose); }
+  .peach-text { color: var(--soft-peach); }
+
+  .iks-footer { border-top: 2px solid var(--warm-rose); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १२ · भक्तियोग</div>
+  <div class="concept-title">निर्गुण उपासना</div>
+  <div class="concept-badge">🧘 संकल्पना ३/११</div>
+  <div class="concept-subtitle">कठीण पण शक्य — निराकाराचा मार्ग</div>
+</header>
+
+<!-- HERO -->
+<div class="diya-hero">
+  <span class="icon">🧘</span>
+  <p>
+    कृष्णाने सगुण भक्ती श्रेष्ठ म्हटली —<br>
+    पण निर्गुण मार्गही नाकारला नाही.<br>
+    <strong class="peach-text">"जे इंद्रिये जिंकून, समबुद्धीने, सर्वांचे हित पाहत<br>निराकाराची उपासना करतात — ते माझ्यापर्यंत पोहोचतातच."</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 12.3-4 -->
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#D88A6A" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#D88A6A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक १२.३–४</span>
+  <div class="shloka-deva">
+    ये त्वक्षरमनिर्देश्यमव्यक्तं पर्युपासते ।<br>
+    सर्वत्रगमचिन्त्यं च कूटस्थमचलं ध्रुवम् ॥<br>
+    सन्नियम्येन्द्रियग्रामं सर्वत्र समबुद्धयः ।<br>
+    ते प्राप्नुवन्ति मामेव सर्वभूतहिते रताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "जे अक्षर, अनिर्देश्य, अव्यक्त, सर्वव्यापी, अचिंत्य, अचल, ध्रुव अशा निराकाराची उपासना करतात,<br>
+    इंद्रिये जिंकून, सर्वत्र समबुद्धी ठेवून, सर्व प्राण्यांच्या हितात रत राहून —<br>
+    <strong class="gold-text">ते माझ्यापर्यंतच पोहोचतात."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण न्यायी आहे. सगुण भक्ती श्रेष्ठ म्हटली — पण निर्गुण मार्ग चुकीचा म्हटला नाही. <strong class="peach-text">"ते प्राप्नुवन्ति मामेव" — तेही माझ्यापर्यंत पोहोचतातच.</strong>
+  </p>
+  <p>
+    पण निर्गुण मार्ग कठीण आहे — आणि त्याच्या अटीही कठोर. <span class="key-term">इंद्रिये जिंकलेली</span>, <span class="key-term">सर्वत्र समबुद्धी</span>, आणि <span class="key-term">सर्व प्राण्यांचे हित</span>. हे साधले तरच निराकार उपासना फळते.
+  </p>
+  <p>
+    महत्त्वाची गोष्ट — निर्गुण भक्ताला रूप नाही, पण <strong class="rose-text">"सर्वभूतहिते रताः"</strong> — सर्वांचे हित हाच त्याचा देव. निराकाराची उपासना म्हणजे सगळ्यांत ईश्वर पाहणे, सगळ्यांची सेवा करणे. हे सोपे नाही — पण शक्य आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  निर्गुण भक्ताला मूर्ती नसते —<br>
+  <strong class="rose-text">सर्व प्राण्यांचे हित हीच त्याची पूजा.</strong>
+</div>
+
+<!-- SANT DARSHAN — KABIR -->
+<div class="section-heading">
+  <span class="label-deva">संत-दर्शन</span>
+  <span class="label-small">· निर्गुण भक्तीचे मूर्तिमंत रूप</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · काशी (उत्तर भारत) · १५ वे शतक</span>
+  <div class="example-name">संत कबीर</div>
+  <div class="example-sub">"ना मैं मंदिर, ना मैं मस्जिद" — निराकाराचा उपासक</div>
+
+  <p>
+    कबीर — विणकर. ना हिंदू, ना मुसलमान म्हणवणारे. त्यांनी कुठल्याही मूर्तीला, कुठल्याही रूपाला धरले नाही. <strong class="peach-text">त्यांचा राम निराकार होता</strong> — दशरथपुत्र राम नव्हे, तर सर्वव्यापी, निर्गुण ब्रह्म.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    कबीर मूर्तिपूजेवर प्रश्न विचारत —
+  </p>
+  <div class="pada-box">
+    "पाहन पूजे हरि मिलें,<br>
+    तो मैं पूजूँ पहार ।"
+  </div>
+  <p>
+    "दगड पूजून जर देव मिळत असेल, तर मी अख्खा पर्वत पूजेन." कबीरांचा देव बाहेर नव्हता — <span class="key-term">तो आत होता.</span> "जिथे शोधतोस तिथे नाही — तो तर तुझ्या श्वासातच आहे." हीच निर्गुण उपासना.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    पण कबीरांचे वैशिष्ट्य — त्यांची निर्गुण भक्ती कोरडी नव्हती. ती <strong class="rose-text">"सर्वभूतहिते रताः"</strong> या गीतेच्या अटीशी पूर्ण जुळते. त्यांनी जातिभेद नाकारला, सर्वांना समान मानले, करुणा शिकवली. त्यांच्यासाठी ईश्वर म्हणजे सर्वांमधले एकत्व.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    कबीर सांगतात — निर्गुण मार्ग कठीण, पण तो साधल्यावर देव सर्वत्र दिसतो. <strong class="peach-text">मीरेला कृष्ण एका रूपात दिसला — कबीरांना तो सर्व रूपांत दिसला.</strong> दोघेही ईश्वरापर्यंत पोहोचले — फक्त वाटा वेगळ्या. गीता दोन्ही वाटा मान्य करते.
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    निराकार जे भजती ।<br>
+    इंद्रिये जिंकुनी ।<br>
+    सर्वांचे हित पाहती ।<br>
+    समबुद्धीने ।।<br><br>
+    तेही मज पावती ।<br>
+    परी मार्ग कठीण ।<br>
+    देहधारी जीवा ।<br>
+    दुष्कर तो ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव निर्गुण मार्गाचा आदर करतात, पण त्याची कठीणता स्पष्ट सांगतात. हा मार्ग थोड्यांचाच — ज्यांनी इंद्रिये जिंकली, अहंकार सोडला. कबीरांसारखे विरळ साधक हे करू शकतात. पण सर्वांचे हित ही अट दोन्ही मार्गांना समान — भक्ती कुठलीही असो, करुणा अनिवार्य.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "मला ईश्वर एका रूपात जवळचा वाटतो (मीरेसारखा),<br>की सर्वांमध्ये, सर्वत्र (कबीरांसारखा)?"<br><br>
+    दोन्ही बरोबर — पण माझा स्वभाव कोणता?
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,168,124,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-peach);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एका अनोळखी व्यक्तीमध्ये — किंवा निसर्गात —<br>
+    <strong class="peach-text">ईश्वर पाहण्याचा प्रयत्न करा. "सर्वभूतहिते रताः."</strong><br><br>
+    एका छोट्या कृतीतून सर्वांचे हित — हीच निर्गुण पूजा.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    निर्गुण उपासना <span class="key-term">अद्वैत वेदान्ताशी</span> जवळची आहे — जिथे ब्रह्म निराकार, निर्गुण, सर्वव्यापी. पण गीता एक महत्त्वाची अट जोडते — <span class="key-term">"सर्वभूतहिते रताः."</span> निराकाराची उपासना म्हणजे फक्त ध्यान नाही — ती सर्व प्राण्यांच्या सेवेत प्रकट होते.
+  </p>
+  <p>
+    कबीरांचे जीवन हे सिद्ध करते. त्यांनी निर्गुणाची उपासना केली, पण ती समाजसुधारणेत, करुणेत, समतेत उतरली. निर्गुण भक्ती ही पलायन नाही — ती अधिक खोल जबाबदारी आहे.
+  </p>
+  <p>
+    गीतेची उदारता इथे दिसते — ती सगुण श्रेष्ठ म्हणते, पण निर्गुणही मान्य करते. <strong class="rose-text">मीरा आणि कबीर — दोन वेगळ्या वाटा, एकच मुक्काम.</strong> पुढच्या संकल्पनेत कृष्ण सामान्य माणसासाठी एक सोपी, टप्प्याटप्प्याची शिडी देईल — संत नामदेवांच्या भक्तीतून ती उलगडेल.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · भक्तियोग · अध्याय १२ · संकल्पना ३/११ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>

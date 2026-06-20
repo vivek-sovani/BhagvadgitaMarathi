@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रिय भक्त (१) — भगवद्गीता अध्याय १२</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --warm-rose:     #D88A6A;
+    --soft-peach:    #E8A87C;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #1A1410;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,168,124,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(216,138,106,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(200,146,42,0.05) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#1A1410; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--warm-rose); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--warm-rose); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(232,168,124,0.3); }
+  .concept-badge { display: inline-block; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+  .diya-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .diya-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(232,168,124,0.5)); }
+  .diya-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #14100A 0%, #241810 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(216,138,106,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--warm-rose); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #1E160E; border-left: 3px solid var(--warm-rose); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  /* GUNA BADGES */
+  .guna-grid { display:flex; flex-wrap:wrap; gap:0.6rem; margin:1.25rem 0; }
+  .guna-badge { background:rgba(232,168,124,0.1); border:1px solid rgba(216,138,106,0.4); border-radius:20px; padding:0.4rem 0.9rem; font-family:var(--font-deva); font-size:0.95rem; color:var(--soft-peach); }
+  .pull-quote { border-left: 4px solid var(--warm-rose); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(232,168,124,0.07); border:1px solid rgba(216,138,106,0.3); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.08rem; line-height:1.95; color:var(--soft-peach); text-align:center; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(216,138,106,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #1A1410; color: var(--warm-rose); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(216,138,106,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1E160E; border: 1px solid rgba(216,138,106,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(216,138,106,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #1A1410; color: var(--warm-rose); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E160E; border:1px solid rgba(216,138,106,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--warm-rose); text-decoration:none; }
+  .key-term { color: var(--saffron); } .gold-text { color: var(--temple-gold); } .rose-text { color: var(--warm-rose); } .peach-text { color: var(--soft-peach); }
+  .iks-footer { border-top: 2px solid var(--warm-rose); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १२ · भक्तियोग</div>
+  <div class="concept-title">प्रिय भक्त — लक्षणे (१)</div>
+  <div class="concept-badge">💗 संकल्पना ६/११</div>
+  <div class="concept-subtitle">अद्वेष्टा सर्वभूतानां — द्वेष नाही, मैत्री व करुणा</div>
+</header>
+<div class="diya-hero">
+  <span class="icon">💗</span>
+  <p>
+    आता कृष्ण आपल्या <strong class="peach-text">प्रिय भक्ताची लक्षणे</strong> सांगू लागतो.<br>
+    पहिले आणि सर्वात महत्त्वाचे —<br>
+    <strong class="rose-text">कुणाचाही द्वेष न करणारा, सर्वांशी मैत्री व करुणा ठेवणारा.</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#D88A6A" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#D88A6A"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १२.१३–१४</span>
+  <div class="shloka-deva">
+    अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च ।<br>
+    निर्ममो निरहङ्कारः समदुःखसुखः क्षमी ॥<br>
+    सन्तुष्टः सततं योगी यतात्मा दृढनिश्चयः ।<br>
+    मय्यर्पितमनोबुद्धिर्यो मद्भक्तः स मे प्रियः ॥
+  </div>
+  <div class="shloka-meaning">
+    "सर्व प्राण्यांचा द्वेष न करणारा, मैत्रीपूर्ण आणि करुणामय,<br>
+    ममत्वरहित, अहंकाररहित, सुख-दुःखात समान, क्षमाशील,<br>
+    सदा संतुष्ट, संयमी, दृढनिश्चयी, मन-बुद्धी मला अर्पण केलेला —<br>
+    <strong class="gold-text">असा माझा भक्त मला प्रिय आहे."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· प्रिय भक्ताची लक्षणे</span></div>
+<div class="explanation-block">
+  <p>
+    कृष्ण "प्रिय भक्त कोण?" याचे उत्तर देताना पूजा, व्रत, उपवास सांगत नाही — तो <strong class="peach-text">स्वभावाची लक्षणे</strong> सांगतो. भक्ती बाह्य कर्मकांडात नाही — ती जगण्याच्या रीतीत आहे.
+  </p>
+  <div class="guna-grid">
+    <span class="guna-badge">अद्वेष्टा — द्वेष नाही</span>
+    <span class="guna-badge">मैत्र — सर्वांशी मैत्री</span>
+    <span class="guna-badge">करुण — करुणामय</span>
+    <span class="guna-badge">निर्मम — ममत्व नाही</span>
+    <span class="guna-badge">निरहंकार — अहंकार नाही</span>
+    <span class="guna-badge">समदुःखसुख — समभाव</span>
+    <span class="guna-badge">क्षमी — क्षमाशील</span>
+    <span class="guna-badge">संतुष्ट — समाधानी</span>
+  </div>
+  <p>
+    सर्वात पहिले लक्षण — <strong class="rose-text">अद्वेष्टा.</strong> कुणाचाही द्वेष न करणे. हे सर्वात कठीण — कारण द्वेष सहज येतो. पण खरा भक्त कुणाला शत्रू मानत नाही. कारण त्याला सगळ्यांत ईश्वरच दिसतो.
+  </p>
+</div>
+<div class="pull-quote">सगळ्यांत ईश्वर दिसला, तर द्वेष कुणाचा करणार?<br><strong class="rose-text">अद्वेष — हीच भक्तीची पहिली खूण.</strong></div>
+<div class="section-heading"><span class="label-deva">संत-दर्शन</span><span class="label-small">· "वैष्णव जन तो"</span></div>
+<div class="relevance-block">
+  <span class="example-tag">संत · गुजरात · १५ वे शतक</span>
+  <div class="example-name">नरसी मेहता</div>
+  <div class="example-sub">"वैष्णव जन तो तेणे कहिये, जे पीड परायी जाणे रे"</div>
+  <p>
+    नरसी मेहता — गुजरातचे संत. त्यांनी रचलेले एक भजन जगप्रसिद्ध झाले — <strong class="peach-text">"वैष्णव जन तो."</strong> आश्चर्य म्हणजे — हे भजन जवळजवळ शब्दशः गीतेच्या या श्लोकाचेच वर्णन आहे! प्रिय भक्ताची सगळी लक्षणे त्यात आहेत.
+  </p>
+  <hr class="inner-divider">
+  <div class="pada-box">
+    "वैष्णव जन तो तेणे कहिये,<br>
+    जे पीड परायी जाणे रे ।<br>
+    पर दुःखे उपकार करे तोये,<br>
+    मन अभिमान न आणे रे ।"
+  </div>
+  <p>
+    "खरा वैष्णव तोच — जो दुसऱ्याचे दुःख जाणतो, परदुःखात मदत करतो, आणि तरीही मनात अभिमान आणत नाही." हे म्हणजे गीतेचे <span class="key-term">करुण, मैत्र, निरहंकार</span> — जसेच्या तसे.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    नरसी मेहतांचे स्वतःचे जीवनही असेच होते. ते जातिभेद मानत नसत, सर्वांना समान वागवत, गरिबांत राहत. <strong class="rose-text">त्यांनी कधी कुणाचा द्वेष केला नाही</strong> — समाजाने त्यांना त्रास दिला तरीही. हेच "अद्वेष्टा सर्वभूतानां."
+  </p>
+  <hr class="inner-divider">
+  <p>
+    महात्मा गांधींना हे भजन इतके प्रिय होते की ते त्यांच्या प्रार्थनेचा भाग बनले. कारण ते भक्ताच्या आदर्श स्वभावाचे — गीतेच्या प्रिय भक्ताचे — परिपूर्ण चित्र आहे. <strong class="peach-text">भक्ती म्हणजे दुसऱ्याचे दुःख जाणणे आणि अभिमानरहित सेवा करणे.</strong>
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    द्वेष न करी कुणाचा ।<br>
+    मैत्र करुण सर्वांशी ।<br>
+    अहंकार ममता नाही ।<br>
+    सुख-दुःख समान ।।<br><br>
+    ऐसा जो भक्त माझा ।<br>
+    संतुष्ट सदा राही ।<br>
+    तो मज प्रिय असे ।<br>
+    अत्यंत ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — प्रिय भक्त बाह्य कर्मांनी नव्हे, अंतरंगाच्या गुणांनी ओळखला जातो. अद्वेष, करुणा, अभिमानरहितता — हीच खरी भक्तीची खूण. नरसी मेहतांचे "वैष्णव जन" हेच सांगते. भक्ती म्हणजे चांगला माणूस होणे.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"माझ्या मनात कुणाबद्दल द्वेष आहे का? मी दुसऱ्याचे दुःख खरोखर जाणतो का?"<br><br>भक्तीची पहिली परीक्षा — अद्वेष आणि करुणा.</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,168,124,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-peach);">🌱 आजचा संकल्प</span>
+  <p>आज एका व्यक्तीचे दुःख खऱ्या मनाने जाणा —<br><strong class="peach-text">आणि अभिमान न आणता मदत करा. "पर दुःखे उपकार करे."</strong><br><br>हीच नरसी मेहतांची, हीच गीतेची भक्ती.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>हे श्लोक (१२.१३-२०) गीतेतील <span class="key-term">प्रिय भक्ताच्या लक्षणांची</span> सुप्रसिद्ध मालिका आहे. इथे भक्तीची व्याख्या बदलते — ती कर्मकांड नसून <span class="key-term">चारित्र्य</span> आहे. देवाला प्रिय होण्यासाठी विशेष पूजा नको, चांगला माणूस हवा.</p>
+  <p>नरसी मेहतांचे "वैष्णव जन" हे या श्लोकांचे लोकभाषेतील रूपांतर मानता येईल. पीडापरायी जाणणे (करुणा), अभिमान न आणणे (निरहंकार), समदृष्टी — सगळे तिथे आहे. म्हणूनच ते भजन शतकानुशतके जिवंत राहिले.</p>
+  <p>सर्वात पहिले लक्षण "अद्वेष्टा" असणे लक्षणीय. <strong class="rose-text">द्वेषाचा अभाव ही भक्तीची पायाभूत अट.</strong> पुढच्या संकल्पनेत आणखी लक्षणे — संतोष, स्थिरमती — पुरंदरदासांच्या जीवनातून उलगडतील.</p>
+</div>
+<footer class="iks-footer">भगवद्गीता · भक्तियोग · अध्याय १२ · संकल्पना ६/११ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

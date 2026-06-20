@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सार व समारोप — भगवद्गीता अध्याय १२</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --warm-rose:     #D88A6A;
+    --soft-peach:    #E8A87C;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #1A1410;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,168,124,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(232,101,26,0.05) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#1A1410; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--warm-rose); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--warm-rose); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 18px rgba(232,168,124,0.35); }
+  .concept-badge { display: inline-block; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+  .diya-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .diya-hero svg { max-width: 150px; width: 100%; height: auto; filter: drop-shadow(0 0 18px rgba(232,168,124,0.5)); }
+  .diya-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); margin-top: 1rem; }
+  .shloka-block { background: linear-gradient(135deg, #14100A 0%, #241810 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(216,138,106,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--warm-rose); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #1E160E; border-left: 3px solid var(--warm-rose); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .pull-quote { border-left: 4px solid var(--warm-rose); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  /* SAAR */
+  .saar-block { background: linear-gradient(135deg, #100A04 0%, #1C1005 100%); border: 2px solid var(--temple-gold); border-radius: 6px; padding: 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .saar-block::before { content: 'अध्याय १२ — भक्तीची संत-माला'; position: absolute; top: -0.85rem; left: 50%; transform: translateX(-50%); background: #1A1410; color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.75rem; white-space: nowrap; }
+  .saar-row { display: flex; gap: 0.75rem; align-items: flex-start; padding: 0.5rem 0; border-bottom: 1px solid rgba(216,138,106,0.12); }
+  .saar-row:last-child { border-bottom: none; }
+  .saar-dot { width: 0.8rem; height: 0.8rem; border-radius: 50%; flex-shrink: 0; margin-top: 0.5rem; background: var(--warm-rose); }
+  .saar-text { font-family: var(--font-deva); font-size: 0.98rem; line-height: 1.7; color: var(--antique-cream); }
+  .saar-text strong { color: var(--temple-gold); }
+  .saar-text em { color: var(--patina-teal); font-style: normal; }
+  /* MAHAVAKYA */
+  .mahavakya-block { background: linear-gradient(135deg, #1C1408 0%, #2A1E0C 100%); border: 1px solid rgba(232,168,124,0.6); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; text-align: center; }
+  .mahavakya-label { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.75rem; display: block; }
+  .mahavakya-text { font-family: var(--font-deva); font-size: 1.4rem; line-height: 1.9; color: var(--soft-peach); margin-bottom: 0.75rem; }
+  .mahavakya-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); opacity: 0.88; }
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(232,168,124,0.07); border:1px solid rgba(216,138,106,0.3); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.08rem; line-height:1.95; color:var(--soft-peach); text-align:center; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(216,138,106,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #1A1410; color: var(--warm-rose); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(216,138,106,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1E160E; border: 1px solid rgba(216,138,106,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(216,138,106,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #1A1410; color: var(--warm-rose); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E160E; border:1px solid rgba(216,138,106,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--warm-rose); text-decoration:none; }
+  .key-term { color: var(--saffron); } .gold-text { color: var(--temple-gold); } .rose-text { color: var(--warm-rose); } .peach-text { color: var(--soft-peach); }
+  .iks-footer { border-top: 2px solid var(--warm-rose); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .saar-block, .mahavakya-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi, .mahavakya-text { color: #8B5E10 !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १२ · भक्तियोग</div>
+  <div class="concept-title">सार व समारोप</div>
+  <div class="concept-badge">🪷 संकल्पना ११/११ · समाप्त</div>
+  <div class="concept-subtitle">भक्तीचा मार्ग — सर्वांसाठी, सर्व प्रदेशांतून</div>
+</header>
+<div class="diya-hero">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" aria-label="भक्तीचे कमळ">
+    <g transform="translate(80,75)">
+      <ellipse cx="0" cy="0" rx="13" ry="42" fill="#E8C0A0" opacity="0.85"/>
+      <ellipse cx="0" cy="0" rx="13" ry="42" fill="#D88A6A" opacity="0.5" transform="rotate(40)"/>
+      <ellipse cx="0" cy="0" rx="13" ry="42" fill="#D88A6A" opacity="0.5" transform="rotate(-40)"/>
+      <ellipse cx="0" cy="0" rx="12" ry="36" fill="#E8C0A0" opacity="0.65" transform="rotate(75)"/>
+      <ellipse cx="0" cy="0" rx="12" ry="36" fill="#E8C0A0" opacity="0.65" transform="rotate(-75)"/>
+      <circle cx="0" cy="0" r="12" fill="#C8922A"/>
+      <text y="5" text-anchor="middle" font-family="'Tiro Devanagari',serif" font-size="13" fill="#1A1208">ॐ</text>
+    </g>
+  </svg>
+  <p>
+    अध्याय १२ — भक्तियोग — संपतो.<br>
+    एक सोपा, प्रेमळ, सर्वांसाठी खुला मार्ग.<br>
+    <strong class="peach-text">आणि तो भारताच्या प्रत्येक कोपऱ्यातल्या संतांनी जगून दाखवला.</strong>
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#D88A6A" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#D88A6A"/></g>
+  </svg>
+  <span class="shloka-number">अध्याय १२ — मध्यवर्ती संदेश</span>
+  <div class="shloka-deva">
+    मय्यावेश्य मनो ये मां नित्ययुक्ता उपासते ।<br>
+    श्रद्धया परयोपेतास्ते मे युक्ततमा मताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "जे माझ्यात मन स्थापन करून, श्रद्धेने माझी उपासना करतात —<br>
+    <strong class="gold-text">ते माझ्या मते सर्वश्रेष्ठ योगी आहेत."</strong><br>
+    <span style="font-size:0.9rem; opacity:0.8;">— भक्ती हाच सर्वांत सोपा आणि श्रेष्ठ मार्ग</span>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">समारोप</span><span class="label-small">· अध्याय १२ चा सार</span></div>
+<div class="explanation-block">
+  <p>
+    अध्याय १२ चा संदेश सोपा पण गहन आहे — <strong class="peach-text">ईश्वरापर्यंत पोहोचण्याचा सर्वात सोपा मार्ग म्हणजे प्रेम.</strong> ज्ञान कठीण, ध्यान कठीण — पण प्रेम सर्वांना शक्य.
+  </p>
+  <p>
+    आणि प्रिय भक्त कोण? — कर्मकांड करणारा नव्हे, तर <span class="key-term">चांगला माणूस.</span> अद्वेष्टा, करुण, संतुष्ट, समदर्शी, श्रद्धावान. भक्ती म्हणजे देवळात जाणे नव्हे — ती जगण्याची रीत आहे.
+  </p>
+</div>
+<div class="pull-quote">भक्ती म्हणजे विशेष कर्मकांड नव्हे —<br><strong class="rose-text">ती चांगला, प्रेमळ, निर्द्वेष माणूस होणे आहे.</strong></div>
+
+<!-- SAAR — all 11 with saints -->
+<div class="saar-block">
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>१ · सगुण की निर्गुण?</strong> — अर्जुनाचा प्रश्न.</div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>२ · सगुण श्रेष्ठ</strong> — मन माझ्यात स्थापन. <em>मीराबाई (राजस्थान)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>३ · निर्गुण उपासना</strong> — कठीण पण शक्य. <em>कबीर (उत्तर)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>४ · भक्तीचे चार टप्पे</strong> — प्रत्येकाला एक वाट. <em>नामदेव (महाराष्ट्र)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>५ · कर्मसंन्यास</strong> — फळ अर्पण, शांती. <em>जनाबाई (महाराष्ट्र)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>६ · अद्वेष, करुणा</strong> — पीडापरायी जाणणे. <em>नरसी मेहता (गुजरात)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>७ · संतोष, स्थिरमती</strong> — अपेक्षा सोडणे. <em>पुरंदरदास (कर्नाटक)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>८ · मान-अपमान समान</strong> — आधार आत. <em>चोखामेळा + रविदास</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>९ · श्रद्धा, धर्मनिष्ठा</strong> — श्रद्धा हीच संपत्ती. <em>त्यागराज (तमिळनाडू)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>१० · परम प्रिय भक्त</strong> — प्रेमातून ऐक्य. <em>आंडाळ (तमिळनाडू)</em></div></div>
+  <div class="saar-row"><div class="saar-dot"></div><div class="saar-text"><strong>११ · सार व समारोप</strong> — सर्व भारत, एक भक्ती. <em>ज्ञानेश्वर (महाराष्ट्र)</em></div></div>
+</div>
+
+<!-- MAHAVAKYA -->
+<div class="mahavakya-block">
+  <span class="mahavakya-label">अध्याय १२ चे परम सत्य —</span>
+  <div class="mahavakya-text">भक्त्या मामभिजानाति</div>
+  <div class="mahavakya-meaning">
+    फक्त भक्तीनेच मला खऱ्या अर्थाने जाणता येते —<br>
+    प्रेम हाच ईश्वरापर्यंतचा सर्वांत सोपा मार्ग.
+  </div>
+</div>
+
+<!-- SANT DARSHAN — DNYANESHWAR -->
+<div class="section-heading"><span class="label-deva">संत-दर्शन</span><span class="label-small">· समन्वयाची दृष्टी</span></div>
+<div class="relevance-block">
+  <span class="example-tag">संत · आळंदी (महाराष्ट्र) · १३ वे शतक</span>
+  <div class="example-name">संत ज्ञानेश्वर</div>
+  <div class="example-sub">ज्यांची ज्ञानेश्वरी या संपूर्ण प्रवासात सोबत होती</div>
+  <p>
+    या संपूर्ण मालिकेत प्रत्येक संकल्पनेसोबत <strong class="peach-text">ज्ञानेश्वरीची ओवी</strong> होती. म्हणून समारोपाला ज्ञानेश्वरांचेच स्मरण उचित. वयाच्या सोळाव्या वर्षी त्यांनी ज्ञानेश्वरी लिहिली — संस्कृत गीता सामान्य मराठी माणसाच्या हृदयापर्यंत आणली.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    ज्ञानेश्वरांचे वैशिष्ट्य — <span class="key-term">समन्वय.</span> त्यांनी ज्ञान आणि भक्ती, सगुण आणि निर्गुण — सगळे एकत्र गुंफले. वारकरी संप्रदायाचा पाया घातला — जिथे मीरा, कबीर, नामदेव, जनाबाई, चोखोबा अशा सगळ्यांना स्थान मिळाले.
+  </p>
+  <div class="pada-box">
+    "हे विश्वचि माझे घर ।<br>
+    ऐसी मती जयाची स्थिर ।"
+  </div>
+  <p>
+    "हे विश्वच माझे घर" — ही ज्ञानेश्वरांची विशाल दृष्टी. भक्ती कुठल्याही एका पंथाची, प्रदेशाची, जातीची नाही — ती सर्वांची. उत्तरेपासून दक्षिणेपर्यंत, राजकन्येपासून दासीपर्यंत, सावकारापासून अस्पृश्यापर्यंत — <strong class="rose-text">सगळे एकाच भक्तीच्या मार्गावर.</strong>
+  </p>
+  <hr class="inner-divider">
+  <p>
+    ज्ञानेश्वरांनी पसायदान मागितले — <strong class="peach-text">"जो जे वांछील तो ते लाहो"</strong> — सर्वांना त्यांचे इच्छित मिळो. हीच भक्तियोगाची परिणती — स्वतःच्या मुक्तीतून सर्वांच्या कल्याणाची प्रार्थना. भक्ती संपते विश्वकल्याणात.
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· पसायदान</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    जो जे वांछील ।<br>
+    तो ते लाहो ।<br>
+    प्राणिजात ।।<br><br>
+    दुरितांचे तिमिर जावो ।<br>
+    विश्व स्वधर्मसूर्ये पाहो ।<br>
+    जो जे वांछील तो ते लाहो ।<br>
+    प्राणिजात ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानेश्वरांचे पसायदान — भक्तीचे अंतिम फळ. स्वतःसाठी काही न मागता सर्व प्राणिमात्रांच्या कल्याणाची प्रार्थना. भक्ती जेव्हा पूर्ण होते, तेव्हा "मी" विरतो आणि "सर्व" उरते. हीच अध्याय १२ ची परिणती — प्रेमातून विश्वकल्याण.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 अंतिम प्रश्न</span>
+  <p>"या अकरा संकल्पनांपैकी — कोणत्या संताची, कोणत्या लक्षणाची भक्ती<br>माझ्या हृदयाला सर्वात जवळची वाटली?"<br><br>तीच माझ्या भक्तीची सुरुवात.</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,168,124,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-peach);">🌱 अंतिम संकल्प</span>
+  <p>अध्याय १२ चा सार —<br><br><strong class="peach-text">आज एक प्रेमळ, निर्द्वेष कृती करा. कुणाचे दुःख जाणा. फळाची अपेक्षा सोडा.</strong><br><br>हीच भक्ती — देवळाशिवाय, कर्मकांडाशिवाय.<br>🕉️ श्रीकृष्णार्पणमस्तु.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>अध्याय १२ हा गीतेतील सर्वात लहान पण सर्वात प्रेमळ अध्याय. तो <span class="key-term">भक्तियोगाला</span> ज्ञानयोग आणि कर्मयोगाच्या बरोबरीने — किंबहुना सामान्य माणसासाठी श्रेष्ठ — स्थान देतो. कारण भक्तीला विशेष पात्रता, शिक्षण, संन्यास लागत नाही — फक्त प्रेम आणि श्रद्धा लागते.</p>
+  <p>या मालिकेतील संतांची विविधता हेच भक्तीचे सामर्थ्य दाखवते — राजकन्या मीरा, विणकर कबीर, दासी जनाबाई, अस्पृश्य चोखोबा-रविदास, सावकार पुरंदरदास, संगीतकार त्यागराज, कन्या आंडाळ. <strong class="rose-text">वेगवेगळे प्रदेश, जाती, भाषा, परिस्थिती — पण एकच भक्तीचा धागा.</strong> हे भारतीय भक्ती परंपरेचे खरे वैभव.</p>
+  <p>ज्ञानेश्वरांचा समन्वय आणि पसायदान — हे अध्यायाचा योग्य समारोप. भक्ती स्वार्थात सुरू होते ("मला तू हवास") आणि विश्वकल्याणात संपते ("सर्वांचे भले होवो"). <strong class="peach-text">पुढच्या अध्याय १३ मध्ये — क्षेत्र-क्षेत्रज्ञ विभाग — गीता ज्ञानयोगाकडे वळेल. भक्तीने हृदय शुद्ध झाले, आता ज्ञानाने सत्य उलगडेल.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · भक्तियोग · अध्याय १२ · संकल्पना ११/११ · समाप्त · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

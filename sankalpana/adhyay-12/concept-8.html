@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>प्रिय भक्त (३) — भगवद्गीता अध्याय १२</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --warm-rose:     #D88A6A;
+    --soft-peach:    #E8A87C;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background-color: #1A1410;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,168,124,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(216,138,106,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(200,146,42,0.05) 0%, transparent 50%);
+    color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 0 0 4rem;
+  }
+  .site-nav { background:#1A1410; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--warm-rose); }
+  .wrap { padding: 2rem 1.5rem 0; }
+  .iks-header { border-top: 2px solid var(--warm-rose); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(232,168,124,0.3); }
+  .concept-badge { display: inline-block; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+  .diya-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .diya-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(232,168,124,0.5)); }
+  .diya-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #14100A 0%, #241810 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(216,138,106,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--warm-rose); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #1E160E; border-left: 3px solid var(--warm-rose); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .pull-quote { border-left: 4px solid var(--warm-rose); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  /* TWO SAINTS */
+  .saint-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.25rem 0; }
+  .saint-col { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border:1px solid rgba(216,138,106,0.5); border-radius:4px; padding:1.4rem 1.25rem; }
+  .saint-region { font-family:var(--font-deva); font-size:0.78rem; color:var(--patina-teal); display:block; margin-bottom:0.3rem; }
+  .saint-nm { font-family:var(--font-deva); font-size:1.25rem; font-weight:600; color:var(--antique-cream); margin-bottom:0.6rem; display:block; }
+  .saint-col p { font-family:var(--font-deva); font-size:1rem; line-height:1.85; color:var(--antique-cream); margin-bottom:0.7rem; opacity:0.92; }
+  .saint-col p:last-child { margin-bottom:0; }
+  .mini-pada { background:rgba(232,168,124,0.08); border-radius:4px; padding:0.7rem 0.9rem; margin:0.6rem 0; font-family:var(--font-deva); font-size:1rem; line-height:1.8; color:var(--soft-peach); text-align:center; }
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(216,138,106,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #1A1410; color: var(--warm-rose); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(216,138,106,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1E160E; border: 1px solid rgba(216,138,106,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(216,138,106,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #1A1410; color: var(--warm-rose); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E160E; border:1px solid rgba(216,138,106,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--warm-rose); text-decoration:none; }
+  .key-term { color: var(--saffron); } .gold-text { color: var(--temple-gold); } .rose-text { color: var(--warm-rose); } .peach-text { color: var(--soft-peach); }
+  .iks-footer { border-top: 2px solid var(--warm-rose); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .site-nav, .concept-nav { display:none; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block, .saint-col { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १२ · भक्तियोग</div>
+  <div class="concept-title">प्रिय भक्त — लक्षणे (३)</div>
+  <div class="concept-badge">⚖️ संकल्पना ८/११</div>
+  <div class="concept-subtitle">समः शत्रौ च मित्रे च — मान-अपमान समान</div>
+</header>
+<div class="diya-hero">
+  <span class="icon">⚖️</span>
+  <p>
+    प्रिय भक्ताचे सर्वात कठीण लक्षण —<br>
+    <strong class="peach-text">शत्रू-मित्र समान, मान-अपमान समान,<br>थंडी-ऊन, सुख-दुःख समान.</strong><br>
+    बाह्य परिस्थिती बदलली तरी आतून स्थिर.
+  </p>
+</div>
+<div class="shloka-block">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#D88A6A" stroke-width="0.6" fill="none"><circle r="55"/><circle r="100"/><circle r="145"/><circle r="7" fill="#D88A6A"/></g>
+  </svg>
+  <span class="shloka-number">श्लोक १२.१८–१९</span>
+  <div class="shloka-deva">
+    समः शत्रौ च मित्रे च तथा मानापमानयोः ।<br>
+    शीतोष्णसुखदुःखेषु समः सङ्गविवर्जितः ॥<br>
+    तुल्यनिन्दास्तुतिर्मौनी सन्तुष्टो येन केनचित् ।<br>
+    अनिकेतः स्थिरमतिर्भक्तिमान्मे प्रियो नरः ॥
+  </div>
+  <div class="shloka-meaning">
+    "शत्रू-मित्रात समान, मान-अपमानात समान,<br>
+    थंडी-ऊन-सुख-दुःखात समान, आसक्तीरहित,<br>
+    निंदा-स्तुती समान मानणारा, मौनी, मिळेल त्यात संतुष्ट, स्थिरमती —<br>
+    <strong class="gold-text">असा भक्तिमान माणूस मला प्रिय आहे."</strong>
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">विवेचन</span><span class="label-small">· संकल्पनेचा अर्थ</span></div>
+<div class="explanation-block">
+  <p>
+    हे सर्वात कठीण लक्षण आहे. मान मिळाला की आनंद, अपमान झाला की दुःख — हे स्वाभाविक. पण प्रिय भक्त <strong class="peach-text">दोन्हीत समान</strong> राहतो. कारण त्याला बाह्य जगाची मंजुरी नको — त्याचा आधार आत आहे, ईश्वरात आहे.
+  </p>
+  <p>
+    "<span class="key-term">तुल्यनिन्दास्तुतिः</span>" — निंदा आणि स्तुती समान मानणे. कुणी कौतुक करो वा टीका — भक्त डगमगत नाही. "<span class="key-term">अनिकेतः</span>" — कुठल्याही स्थानाची, प्रतिष्ठेची ओढ नाही.
+  </p>
+  <p>
+    हे लक्षण विशेषतः त्यांच्यासाठी मोलाचे — ज्यांना समाजाने अपमानित केले, नाकारले. <strong class="rose-text">बाहेरचा अपमान आत्म्याला स्पर्श करू शकत नाही</strong> — हे ज्यांनी जगून दाखवले, ते खरे भक्त.
+  </p>
+</div>
+<div class="pull-quote">अपमान बाहेरून येतो —<br><strong class="rose-text">पण आत्म्याला स्पर्श करू शकत नाही.</strong></div>
+<div class="section-heading"><span class="label-deva">संत-दर्शन</span><span class="label-small">· दोन प्रदेश, एकच समभाव</span></div>
+<div class="saint-grid">
+  <div class="saint-col">
+    <span class="saint-region">महाराष्ट्र · १४ वे शतक</span>
+    <span class="saint-nm">संत चोखामेळा</span>
+    <p>समाजाने अस्पृश्य मानले — मंदिराबाहेर ठेवले. पण चोखोबांचे विठ्ठलप्रेम अढळ राहिले. मंदिरात प्रवेश नाकारला तरी त्यांनी द्वेष केला नाही — बाहेरूनच विठ्ठलाला आळवले.</p>
+    <div class="mini-pada">"अवघा रंग एक झाला ।<br>रंगि रंगला श्रीरंग ।"</div>
+    <p>विठ्ठलापुढे सगळे भेद मिटले — उच्च-नीच नाही, सगळा एकच रंग. हाच "समः मानापमानयोः."</p>
+  </div>
+  <div class="saint-col">
+    <span class="saint-region">उत्तर भारत · १५ वे शतक</span>
+    <span class="saint-nm">संत रविदास</span>
+    <p>चर्मकार — समाजाने हीन मानले. पण रविदासांनी बाह्य स्थान-मानाला महत्त्व दिले नाही. अंतरंगाची शुद्धता हीच खरी प्रतिष्ठा मानली.</p>
+    <div class="mini-pada">"मन चंगा तो<br>कठौती में गंगा ।"</div>
+    <p>मन शुद्ध असेल तर घरच्या घंगाळातच गंगा. बाह्य मान-अपमान गौण. हाच गीतेचा समभाव.</p>
+  </div>
+</div>
+<div class="relevance-block">
+  <p>
+    दोन संत — दोन प्रदेश — पण एकच संदेश. <strong class="peach-text">समाजाने दोघांनाही अपमानित केले, बहिष्कृत केले.</strong> पण दोघांनीही समाजाचा द्वेष केला नाही, आणि स्वतःचे आत्मभान गमावले नाही.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    चोखोबा म्हणाले — विठ्ठलापुढे सगळे समान, "अवघा रंग एक." रविदास म्हणाले — मन शुद्ध तर गंगा घरीच. <strong class="rose-text">दोघांनी सिद्ध केले — मान-अपमान बाहेरून येतो, पण भक्ताचा आधार आत असतो.</strong> समाज नाकारू शकतो, पण ईश्वर नाकारत नाही.
+  </p>
+  <hr class="inner-divider">
+  <p>
+    रविदासांनी एका आदर्श समाजाची कल्पना मांडली — <span class="key-term">"बेगमपुरा"</span> — जिथे कुणी उच्च-नीच नाही, कुणाला दुःख नाही. हे "समः सर्वेषु" चे सामाजिक रूप. दोन्ही संतांचे जीवन गीतेच्या या कठीण श्लोकाचे जिवंत भाष्य आहे — <strong class="peach-text">खरी प्रतिष्ठा आत्म्यात असते, समाजाच्या मंजुरीत नाही.</strong>
+  </p>
+</div>
+<div class="section-heading"><span class="label-deva">ज्ञानेश्वरी</span><span class="label-small">· ज्ञानदेवांची ओवी</span></div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    शत्रू-मित्र समान ।<br>
+    मान-अपमान एक ।<br>
+    निंदा-स्तुती सारखी ।<br>
+    स्थिर राही ।।<br><br>
+    बाह्य जग बदले ।<br>
+    परी आत न डगमगे ।<br>
+    ऐसा भक्त मज ।<br>
+    प्रिय असे ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सांगतात — खऱ्या भक्ताचा आधार बाहेर नसतो, आत असतो. म्हणून मान-अपमानाने तो हलत नाही. चोखोबा, रविदास यांसारखे — समाजाने नाकारले तरी आतून स्थिर. कारण त्यांना विठ्ठलाची मंजुरी पुरेशी होती. हीच खरी भक्तीची शक्ती.
+  </div>
+</div>
+<div class="section-heading"><span class="label-deva">स्वतःला विचारा</span></div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>"माझा आधार बाहेर आहे — लोकांच्या मान-स्तुतीत?<br>की आत — माझ्या आत्मभानात, ईश्वरात?"<br><br>स्तुतीने हुरळतो का? निंदेने कोलमडतो का?</p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,168,124,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-peach);">🌱 आजचा संकल्प</span>
+  <p>आज एखादी टीका किंवा अपमान आला तर —<br><strong class="peach-text">चोखोबा-रविदासांसारखे शांत राहा. "माझा आधार आत आहे."</strong><br><br>बाह्य मान-अपमान आत्म्याला स्पर्श करू देऊ नका.</p>
+</div>
+<div class="section-heading"><span class="label-deva">विश्लेषण</span><span class="label-small">· तात्विक दृष्टिकोन</span></div>
+<div class="analytical-block">
+  <p>"समः शत्रौ च मित्रे च" — हे लक्षण <span class="key-term">समत्व</span> या गीतेच्या मूळ तत्त्वाचे शिखर आहे. समत्व म्हणजे उदासीनता नाही — ती आंतरिक स्थिरता आहे. बाह्य घटना बदलतात, पण भक्ताचा आत्म-आधार स्थिर राहतो.</p>
+  <p>चोखामेळा आणि रविदास यांची निवड विशेष अर्थपूर्ण — कारण त्यांना समाजाकडून सर्वाधिक अपमान सहन करावा लागला. तरीही त्यांनी द्वेष न करता समभाव राखला. हे गीतेच्या शिकवणीचे सर्वात कठीण आणि सर्वात तेजस्वी प्रकटन — <strong class="rose-text">अपमानाच्या आगीतही प्रेम विझले नाही.</strong></p>
+  <p>भक्ती चळवळीचे एक मोठे योगदान — तिने आध्यात्मिक प्रतिष्ठा जन्म-जातीवरून काढून भक्ती-शुद्धतेवर आणली. चोखोबा, रविदास, नरसी, जनाबाई — सगळ्यांनी हे सिद्ध केले. <strong class="peach-text">पुढच्या संकल्पनेत दक्षिणेकडे — त्यागराजांच्या श्रद्धा-धर्मनिष्ठेकडे — वळू.</strong></p>
+</div>
+<footer class="iks-footer">भगवद्गीता · भक्तियोग · अध्याय १२ · संकल्पना ८/११ · 🕉️ श्रीकृष्णार्पणमस्तु</footer>
+</div>
+</body>
+</html>

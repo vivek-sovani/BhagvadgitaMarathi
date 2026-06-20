@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सगुण भक्तीची श्रेष्ठता — भगवद्गीता अध्याय १२</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --patina-teal:   #4A7C6F;
+    --warm-rose:     #D88A6A;
+    --soft-peach:    #E8A87C;
+    --bhakti-glow:   #E8C0A0;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #1A1410;
+    background-image:
+      radial-gradient(ellipse at 50% 0%, rgba(232,168,124,0.10) 0%, transparent 52%),
+      radial-gradient(ellipse at 30% 55%, rgba(216,138,106,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 90%, rgba(200,146,42,0.05) 0%, transparent 50%);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 0 4rem;
+  }
+
+  .site-nav { background:#1A1410; border-bottom:1px solid var(--temple-gold); padding:0.6rem 1.5rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+  .site-nav a.brand { font-family:var(--font-deva); font-size:1.05rem; color:var(--temple-gold); text-decoration:none; display:flex; align-items:center; gap:0.5rem; }
+  .site-nav nav { display:flex; gap:1.25rem; align-items:center; }
+  .site-nav nav a { font-family:var(--font-deva); font-size:0.9rem; text-decoration:none; }
+  .site-nav nav a.home { color:var(--antique-cream); opacity:0.8; }
+  .site-nav nav a.adhyay { color:var(--warm-rose); }
+
+  .wrap { padding: 2rem 1.5rem 0; }
+
+  .iks-header { border-top: 2px solid var(--warm-rose); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1.25rem 0; margin-bottom: 2rem; }
+  .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); }
+  .concept-title { font-family: var(--font-deva); font-size: 1.85rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.5; text-shadow: 0 0 16px rgba(232,168,124,0.3); }
+  .concept-badge { display: inline-block; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.78rem; padding: 0.2rem 0.75rem; border-radius: 20px; margin-top: 0.4rem; }
+  .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.3rem; }
+
+  .diya-hero { text-align: center; padding: 1rem 1rem 1.5rem; margin-bottom: 1.5rem; }
+  .diya-hero .icon { font-size: 2.2rem; display:block; margin-bottom: 0.6rem; filter: drop-shadow(0 0 14px rgba(232,168,124,0.5)); }
+  .diya-hero p { font-family: var(--font-deva); font-size: 1.12rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .shloka-block { background: linear-gradient(135deg, #14100A 0%, #241810 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; overflow: hidden; }
+  .shloka-block.hero-shloka { border: 2px solid var(--soft-peach); box-shadow: 0 0 36px rgba(232,168,124,0.12) inset; }
+  .shloka-block .glow-bg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: 0.06; pointer-events: none; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--soft-peach); color: var(--deep-vellum); font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; position: relative; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(216,138,106,0.3); padding-top: 1rem; line-height: 1.95; position: relative; }
+
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--warm-rose); }
+  .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+
+  .explanation-block { background-color: #1E160E; border-left: 3px solid var(--warm-rose); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  .pull-quote { border-left: 4px solid var(--warm-rose); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+
+  .relevance-block { background: linear-gradient(135deg, #1A1308 0%, #241A0E 100%); border: 1px solid rgba(216,138,106,0.5); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .example-tag { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 0.35rem; display: block; }
+  .example-name { font-family: var(--font-deva); font-size: 1.4rem; color: var(--antique-cream); font-weight: 600; margin-bottom: 0.1rem; }
+  .example-sub { font-family: var(--font-deva); font-size: 0.9rem; color: var(--warm-rose); margin-bottom: 1.1rem; opacity: 0.95; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .inner-divider { border: none; border-top: 1px solid rgba(216,138,106,0.25); margin: 1rem 0; }
+  .pada-box { background: rgba(232,168,124,0.07); border:1px solid rgba(216,138,106,0.3); border-radius:4px; padding:0.95rem 1.25rem; margin:0.85rem 0; font-family:var(--font-deva); font-size:1.1rem; line-height:1.95; color:var(--soft-peach); text-align:center; }
+
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(216,138,106,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: #1A1410; color: var(--warm-rose); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(216,138,106,0.25); padding-top: 0.9rem; }
+
+  .sankalpana-block { background: #1E160E; border: 1px solid rgba(216,138,106,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1rem; }
+  .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--warm-rose); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+
+  .analytical-block { border: 1px dashed rgba(216,138,106,0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: #1A1410; color: var(--warm-rose); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .concept-nav { display:flex; justify-content:space-between; gap:1rem; margin: 2rem 0 1rem; }
+  .concept-nav a { flex:1; text-align:center; padding:0.85rem 1rem; background:#1E160E; border:1px solid rgba(216,138,106,0.4); border-radius:4px; font-family:var(--font-deva); font-size:0.95rem; color:var(--warm-rose); text-decoration:none; }
+
+  .key-term { color: var(--saffron); }
+  .gold-text { color: var(--temple-gold); }
+  .rose-text { color: var(--warm-rose); }
+  .peach-text { color: var(--soft-peach); }
+
+  .iks-footer { border-top: 2px solid var(--warm-rose); margin-top: 2rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .site-nav, .concept-nav { display:none; }
+    .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block,
+    .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १२ · भक्तियोग</div>
+  <div class="concept-title">सगुण भक्तीची श्रेष्ठता</div>
+  <div class="concept-badge">🙏 संकल्पना २/११</div>
+  <div class="concept-subtitle">मय्यावेश्य मनो ये मां — मन माझ्यात स्थापन कर</div>
+</header>
+
+<!-- HERO -->
+<div class="diya-hero">
+  <span class="icon">🪔</span>
+  <p>
+    अर्जुनाच्या प्रश्नाला कृष्ण स्पष्ट उत्तर देतो —<br>
+    <strong class="peach-text">"जे मन माझ्यात स्थापन करून, श्रद्धेने माझी उपासना करतात —<br>ते माझ्या दृष्टीने श्रेष्ठ योगी आहेत."</strong>
+  </p>
+</div>
+
+<!-- SHLOKA 12.2 -->
+<div class="shloka-block hero-shloka">
+  <svg class="glow-bg" xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true">
+    <g transform="translate(160,160)" stroke="#D88A6A" stroke-width="0.6" fill="none">
+      <circle r="55"/><circle r="100"/><circle r="145"/>
+      <circle r="7" fill="#D88A6A"/>
+    </g>
+  </svg>
+  <span class="shloka-number">श्लोक १२.२</span>
+  <div class="shloka-deva">
+    मय्यावेश्य मनो ये मां नित्ययुक्ता उपासते ।<br>
+    श्रद्धया परयोपेतास्ते मे युक्ततमा मताः ॥
+  </div>
+  <div class="shloka-meaning">
+    "जे माझ्यात मन स्थापन करून, नित्ययुक्त राहून,<br>
+    परम श्रद्धेने माझी उपासना करतात —<br>
+    <strong class="gold-text">ते माझ्या मते सर्वश्रेष्ठ योगी आहेत."</strong>
+  </div>
+</div>
+
+<!-- SHLOKA 12.5 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १२.५</span>
+  <div class="shloka-deva">
+    क्लेशोऽधिकतरस्तेषामव्यक्तासक्तचेतसाम् ।<br>
+    अव्यक्ता हि गतिर्दुःखं देहवद्भिरवाप्यते ॥
+  </div>
+  <div class="shloka-meaning">
+    "अव्यक्तात (निर्गुणात) आसक्त असलेल्यांचे कष्ट अधिक असतात.<br>
+    कारण देहधारी जीवांना अव्यक्ताची प्राप्ती<br>
+    <strong class="gold-text">अत्यंत कठीण व दुःखदायक असते."</strong>
+  </div>
+</div>
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्णाचे उत्तर सर्व सामान्य भक्तांसाठी दिलासादायक आहे. तो म्हणतो — <strong class="peach-text">सगुण भक्ती (मूर्त रूपाची उपासना) श्रेष्ठ आहे.</strong> का? कारण ती सोपी, जवळची आणि स्वाभाविक आहे.
+  </p>
+  <p>
+    निर्गुण उपासना चुकीची नाही — पण ती <span class="key-term">अधिक कठीण</span> आहे. "अव्यक्ता हि गतिर्दुःखं देहवद्भिः" — देह असलेल्या माणसाला निराकाराची उपासना त्रासदायक. आपण रूपात, नात्यात जगतो — मग ईश्वरही रूपात, नात्यात जवळचा वाटतो.
+  </p>
+  <p>
+    हे संपूर्ण <span class="key-term">भक्ती परंपरेचे</span> तात्विक आधार आहे. मीरा, तुकाराम, कबीर — सगळ्यांनी एका रूपाला, एका नावाला धरले. <strong class="rose-text">"मन माझ्यात स्थापन कर" — हाच भक्तीचा सोपा, सुंदर मार्ग.</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  निराकार सत्य आहे — पण कठीण.<br>
+  <strong class="rose-text">साकार रूप जवळचे आहे — आणि म्हणून सोपे.</strong>
+</div>
+
+<!-- MODERN RELEVANCE — MIRABAI -->
+<div class="section-heading">
+  <span class="label-deva">संत-दर्शन</span>
+  <span class="label-small">· सगुण भक्तीचे मूर्तिमंत रूप</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · राजस्थान · १५-१६ वे शतक</span>
+  <div class="example-name">संत मीराबाई</div>
+  <div class="example-sub">"मेरे तो गिरिधर गोपाल, दूसरो न कोई"</div>
+
+  <p>
+    मीराबाई — राजस्थानची राजकन्या, मेवाडची राणी. पण तिचे हृदय एकाच रूपाला वाहिलेले होते — <strong class="peach-text">गिरिधर गोपाळ कृष्ण.</strong> लहानपणी तिला कृष्णाची मूर्ती मिळाली — आणि तिने त्या मूर्तीतच आपला पती, सखा, सर्वस्व पाहिले.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    तिने गायले —
+  </p>
+  <div class="pada-box">
+    "मेरे तो गिरिधर गोपाल,<br>
+    दूसरो न कोई ।"
+  </div>
+  <p>
+    "माझा तर फक्त गिरिधर गोपाळ — दुसरे कुणीही नाही." हीच <span class="key-term">अनन्य सगुण भक्ती.</span> एक रूप, एक नाव, संपूर्ण समर्पण. मीराला निराकार ब्रह्माची गरज नव्हती — तिचा कृष्ण मूर्तीत, गाण्यात, श्वासात जिवंत होता.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    राजघराण्याने विरोध केला, विष पाठवले अशी आख्यायिका आहे — पण मीराची भक्ती अढळ राहिली. ती म्हणायची — कृष्णच माझा आधार. <strong class="rose-text">सगुण रूपावरचे हे निस्सीम प्रेम</strong> — हेच कृष्णाने सांगितलेले "मय्यावेश्य मनः" — मन पूर्णपणे माझ्यात स्थापन करणे.
+  </p>
+
+  <hr class="inner-divider">
+
+  <p>
+    मीराचे जीवन सिद्ध करते — सगुण भक्ती दुर्बलांचा मार्ग नाही. ती सर्वात बलशाली शक्ती आहे. एका रूपावरच्या निखळ प्रेमाने मीरा सर्व बंधनांच्या पलीकडे गेली. <strong class="peach-text">शेवटी आख्यायिका सांगते — ती द्वारकेच्या कृष्णमूर्तीतच विलीन झाली.</strong>
+  </p>
+</div>
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    मज मन अर्पुनी ।<br>
+    श्रद्धेने भजती जे ।<br>
+    ते श्रेष्ठ योगी ।<br>
+    माझ्या मते ।।<br><br>
+    निराकार कठीण ।<br>
+    देहधारी जीवा ।<br>
+    साकार सोपा मार्ग ।<br>
+    भक्तीचा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव सगुण भक्तीचे सौंदर्य उलगडतात. देह असलेल्या माणसाला निराकार पकडणे कठीण — पण रूप, नाव, नाते असलेला ईश्वर जवळचा. मीरेसारखे — एका रूपाला धरून सर्व पार करता येते. हाच सोपा आणि सुंदर मार्ग — आणि म्हणूनच श्रेष्ठ.
+  </div>
+</div>
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p>
+    "माझ्या हृदयात एखादे रूप, एखादे नाव आहे का —<br>ज्यावर मी मीरेसारखे निखळ प्रेम करू शकेन?"<br><br>
+    सगुण भक्ती म्हणजे — एका रूपात संपूर्ण समर्पण.
+  </p>
+</div>
+<div class="sankalpana-block" style="border-color: rgba(232,168,124,0.45); margin-top: -0.5rem;">
+  <span class="q-label" style="color: var(--soft-peach);">🌱 आजचा संकल्प</span>
+  <p>
+    आज एका क्षणी — आपल्या आवडत्या रूपासमोर —<br>
+    <strong class="peach-text">मीरेसारखे म्हणा — "मेरे तो गिरिधर गोपाल."</strong><br><br>
+    मन त्या एका रूपात पूर्णपणे स्थापन करा.
+  </p>
+</div>
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    गीता इथे एक व्यावहारिक निर्णय देते — <span class="key-term">सगुण</span> भक्ती सामान्य साधकासाठी श्रेष्ठ. हे अद्वैताच्या विरुद्ध नाही — दोन्ही एकाच सत्याकडे जातात. पण मार्ग निवडताना माणसाच्या स्वभावाचा विचार आवश्यक. आणि बहुतेक माणसे रूपात, नात्यात जगतात.
+  </p>
+  <p>
+    मीराबाईचे उदाहरण हे सिद्ध करते की सगुण भक्ती ही केवळ "सोपी" नाही — ती परम तीव्र होऊ शकते. मीराचे कृष्णप्रेम इतके अनन्य होते की त्यापुढे राज्य, प्रतिष्ठा, जीवन — सगळे क्षुद्र ठरले.
+  </p>
+  <p>
+    हे संपूर्ण भारतीय भक्ती आंदोलनाचे तत्त्व आहे — उत्तरेत मीरा-कबीर, महाराष्ट्रात वारकरी, दक्षिणेत आळवार-नायनार. सगळ्यांनी सगुण रूपाला धरले. <strong class="rose-text">पुढच्या संकल्पनेत मात्र निर्गुण उपासनेचाही मार्ग दाखवला जाईल — कबीरांच्या रूपात.</strong> कारण गीता कुठलाही मार्ग नाकारत नाही.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · भक्तियोग · अध्याय १२ · संकल्पना २/११ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+</div>
+</body>
+</html>
