@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>जीव — परमाचा अंश — भगवद्गीता अध्याय १५</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना ३ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">जीव — परमाचा अंश</div>
+  <div class="concept-subtitle">ममैवांशो जीवलोके — गुणांत अडकलेला परमाचा कण</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    संसारवृक्ष समजला, असंग शस्त्र समजलं.<br>
+    आता कृष्ण एक अत्यंत हृदयस्पर्शी गोष्ट सांगतो —<br>
+    <strong style="color: var(--temple-gold);">"हा जीव — तू — माझाच अंश आहेस."</strong><br>
+    हे ऐकलं की मन थांबतं. आपण परमाचे अंश — मग गुणांत का अडकतो?
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.७</span>
+  <div class="shloka-deva">
+    ममैवांशो जीवलोके जीवभूतः सनातनः ।<br>
+    मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति ॥
+  </div>
+  <div class="shloka-meaning">
+    "या जगात जीव झालेला सनातन जीव माझाच अंश आहे.<br>
+    तो प्रकृतीत राहिलेल्या मन आणि पाच इंद्रियांना ओढत राहतो."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.८</span>
+  <div class="shloka-deva">
+    शरीरं यदवाप्नोति यच्चाप्युत्क्रामतीश्वरः ।<br>
+    गृहीत्वैतानि संयाति वायुर्गन्धानिवाशयात् ॥
+  </div>
+  <div class="shloka-meaning">
+    "जेव्हा जीव शरीर घेतो आणि जेव्हा सोडतो —<br>
+    तेव्हा तो ही (इंद्रिये) घेऊन जातो,<br>
+    जसा वारा फुलांचा सुगंध घेऊन जातो."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.९–१०</span>
+  <div class="shloka-deva">
+    श्रोत्रं चक्षुः स्पर्शनं च रसनं घ्राणमेव च ।<br>
+    अधिष्ठाय मनश्चायं विषयानुपसेवते ॥<br>
+    उत्क्रामन्तं स्थितं वापि भुञ्जानं वा गुणान्वितम् ।<br>
+    विमूढा नानुपश्यन्ति पश्यन्ति ज्ञानचक्षुषः ॥
+  </div>
+  <div class="shloka-meaning">
+    "कान, डोळे, स्पर्श, रस, गंध — आणि मन — यांचा आश्रय घेऊन तो विषयांचा उपभोग घेतो.<br>
+    जाताना, राहताना, भोगताना, गुणांसहित — मूढ लोक त्याला पाहत नाहीत;<br>
+    ज्ञानचक्षू असलेले मात्र पाहतात."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हे गीतेतलं सर्वांत आश्वासक वचनांपैकी एक — <span class="key-term">"ममैवांशः"</span>, तू माझाच अंश. सोनं आणि सोन्याचा तुकडा — दोन्ही सोनंच. जीव आणि परमात्मा — अंश आणि अंशी.
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>शब्द</th><th>अर्थ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>ममैवांशः</td><td>माझाच अंश — सोन्याचा तुकडाही सोनंच</td></tr>
+      <tr><td>सनातनः</td><td>सनातन — जीव अनादी अनंत; शरीर नाशवंत, जीव नाही</td></tr>
+      <tr><td>कर्षति</td><td>ओढतो — जीव मन-इंद्रियांना गुणांकडे ओढतो; हेच बंधन</td></tr>
+      <tr><td>वायुर्गन्धानिव</td><td>वाऱ्यासारखा — एका देहातून दुसऱ्यात, इंद्रिये घेऊन</td></tr>
+      <tr><td>ज्ञानचक्षुषः</td><td>ज्ञानाचे डोळे असलेलेच जीवाला "पाहतात"</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    किती सुंदर आश्वासन — <strong style="color: var(--temple-gold);">"तू माझाच अंश आहेस"</strong> — पण आत्ता प्रकृतीत अडकलेला. आणि अडकणं म्हणजे काय? — <span class="key-term">विसरणं.</span> "मी परमाचा अंश आहे" हे विसरलो — हेच खरं बंधन.
+  </p>
+  <p>
+    आणि <span class="key-term">"विमूढा नानुपश्यन्ति"</span> — इंद्रियांनी हा जीव दिसत नाही; त्यासाठी ज्ञानचक्षू हवेत. म्हणजे "मी परमाचा अंश" हे केवळ बौद्धिक माहिती नव्हे — ती जाणवण्याची गोष्ट आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  अडकणं म्हणजे विसरणं — "मी परमाचा अंश आहे" हे विसरणं.<br>
+  <strong style="color: var(--temple-gold);">आठवलं — तेव्हा मुक्ती.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· जीवन-प्रसंग आणि एक साक्ष</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · न हिरावता येणारा गाभा</span>
+  <div class="example-name">"मी म्हणजे माझं पद नव्हे" — आणि व्हिक्टर फ्रँकल</div>
+  <div class="example-dates">आजची ओळखीची गल्लत · आणि अत्यंत प्रतिकूल परिस्थितीतला अनुभव</div>
+  <p>
+    आजच्या जगात आपण स्वतःला ओळखतो बाह्य गोष्टींनी — पद, पगार, फॉलोअर्स, यश. नोकरी गेली की वाटतं "मी संपलो"; टीका झाली की वाटतं "माझं अस्तित्वच धोक्यात." <span class="key-term">आपण स्वतःला फांद्यांशी जोडतो — मूळाशी नाही.</span> गीता म्हणते, हे सर्व बदलणारं; तुझा खरा गाभा वेगळा आहे.
+  </p>
+  <hr class="divider">
+  <p>
+    या "हिरावता न येणाऱ्या गाभ्या"चं एक विसाव्या शतकातलं साक्षीदार उदाहरण म्हणजे <strong style="color: var(--temple-gold);">व्हिक्टर फ्रँकल</strong> — एकाग्रता-छावणीतून वाचलेले मानसशास्त्रज्ञ. तिथे माणसाकडून सर्व काही हिरावलं जात होतं — नाव, कपडे, कुटुंब, प्रतिष्ठा, अगदी केसही. सर्व बाह्य ओळख नष्ट केली गेली.
+  </p>
+  <hr class="divider">
+  <p>
+    तरीही फ्रँकल यांचं निरीक्षण होतं — <span class="key-term">एक गोष्ट कुणीही हिरावू शकत नाही : आतल्या प्रतिसादाचं स्वातंत्र्य, माणसाचा अंतरीचा गाभा.</span> सर्व फांद्या तोडल्या गेल्या, तरी "मूळ" शिल्लक राहिलं. हेच गीतेचं "सनातनः अंशः" — जे परिस्थिती हिरावू शकत नाही.
+  </p>
+  <hr class="divider">
+  <p>
+    गीतेचा संदेश यापुढे जातो — तो गाभा केवळ "टिकून राहणारा" नाही, तर <span class="key-term">परमाचा अंश</span> आहे. नोकरी, यश, शरीर — या सगळ्या बदलत्या फांद्या; पण "मी" चा मूळ गाभा परमात्म्याशी जोडलेला, अविनाशी. हे फक्त वाचून कळत नाही — ते शांतपणे आत जाणवावं लागतं. तेच ज्ञानचक्षू उघडणं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    माझाच अंश हा जीव ।<br>
+    सनातन परम सदाशिव ।<br>
+    प्रकृतीत गुंतला जीव ।<br>
+    इंद्रियांनी ।।<br><br>
+    मूढ न पाहती जाणे ।<br>
+    ज्ञानचक्षू जया उघडे ।<br>
+    तोच जाणे खरे सत्य ।<br>
+    जीव परमाचा अंश ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "ज्ञानचक्षू जया उघडे — तोच जाणे" — हे सांगतात. "जीव परमाचा अंश" हे फक्त तत्त्वज्ञान नाही; हा प्रत्यक्ष अनुभव आहे. ज्ञानाचे डोळे उघडले की जीव हा परमाचाच अंश आहे, हे स्पष्ट दिसतं.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "मी परमाचा अंश आहे — हे मला खरोखर जाणवतं का?<br>की फक्त बौद्धिक माहिती आहे?"<br><br>
+    हे जाणवणं — हेच ज्ञानचक्षू उघडणं.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एकदा शांत बसा आणि मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"मी परमात्म्याचा अंश आहे. मी त्याच्यापासून वेगळा नाही."</strong><br>
+    हे एक वाक्य — पण जाणवलं तर जगणं बदलतं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    <span class="key-term">"ममैवांशः"</span> हे विधान भारतीय तत्त्वज्ञानातील अंश-अंशी संबंधाचं हृदय आहे. जीव परमात्म्याहून पूर्ण वेगळाही नाही आणि पूर्ण एकरूपही नाही — तो अंश आहे, जसा ठिणगी अग्नीचा अंश. वेगवेगळ्या वेदान्त-परंपरांनी (विशिष्टाद्वैत, द्वैत, अद्वैत) या एका शब्दाचे वेगवेगळे अर्थ लावले — पण मूळ आश्वासन एकच : जीवाचं उगमस्थान दिव्य आहे.
+  </p>
+  <p>
+    <span class="key-term">"विमूढा नानुपश्यन्ति"</span> हा बारकावा निर्णायक. हे सत्य इंद्रियांच्या किंवा बुद्धीच्या आवाक्यातलं नाही; ते "ज्ञानचक्षूं"नी — अंतर्दृष्टीने — अनुभवायचं. म्हणून गीता नुसती माहिती देत नाही; ती दृष्टी बदलायला सांगते. माहिती आणि अनुभूती यांतला हा फरक संपूर्ण अध्यात्माचा गाभा.
+  </p>
+  <p>
+    आधुनिक संदर्भात याचा अर्थ खोल आहे — आपली ओळख जर बाह्य, बदलत्या गोष्टींवर (पद, यश, मान्यता) उभी असेल, तर ती सतत धोक्यात राहते. पण जर ती अंतरीच्या, न हिरावता येणाऱ्या गाभ्यावर — "मी परमाचा अंश" — उभी असेल, तर कोणतीही परिस्थिती ती हलवू शकत नाही. <strong style="color: var(--temple-gold);">हीच खरी, अढळ आत्म-प्रतिष्ठा</strong> — आणि पुढच्या संकल्पनांमधल्या "परमात्म्याचा प्रकाश" आणि "पुरुषोत्तम" यांकडे नेणारी पायरी.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना ३/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

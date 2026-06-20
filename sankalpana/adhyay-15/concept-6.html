@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>पुरुषोत्तम — उत्तम पुरुष कोण? — भगवद्गीता अध्याय १५</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना ६ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">पुरुषोत्तम — उत्तम पुरुष कोण?</div>
+  <div class="concept-subtitle">यस्मात्क्षरमतीतोऽहम् — क्षर आणि अक्षर दोन्हींपलीकडे</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    क्षर, अक्षर आणि पुरुषोत्तम — तीन तत्त्वे कळली.<br>
+    आता कृष्ण स्वतःच सांगतो — <strong style="color: var(--temple-gold);">"तो पुरुषोत्तम मीच आहे."</strong><br>
+    आणि हे जाणणं म्हणजे काय, त्याचं फळ काय —<br>
+    याचंही उत्तर तो देतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.१८</span>
+  <div class="shloka-deva">
+    यस्मात्क्षरमतीतोऽहमक्षरादपि चोत्तमः ।<br>
+    अतोऽस्मि लोके वेदे च प्रथितः पुरुषोत्तमः ॥
+  </div>
+  <div class="shloka-meaning">
+    "कारण मी क्षरापलीकडे आहे आणि अक्षरापेक्षाही उत्तम आहे —<br>
+    म्हणून लोकात आणि वेदात मी<br>
+    'पुरुषोत्तम' म्हणून प्रसिद्ध आहे."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.१९–२०</span>
+  <div class="shloka-deva">
+    यो मामेवमसम्मूढो जानाति पुरुषोत्तमम् ।<br>
+    स सर्वविद्भजति मां सर्वभावेन भारत ॥<br>
+    इति गुह्यतमं शास्त्रमिदमुक्तं मयानघ ।<br>
+    एतद्बुद्ध्वा बुद्धिमान्स्यात्कृतकृत्यश्च भारत ॥
+  </div>
+  <div class="shloka-meaning">
+    "जो मला असा — मोहरहित होऊन — पुरुषोत्तम म्हणून जाणतो,<br>
+    तो सर्वज्ञ; आणि सर्वभावाने माझी भक्ती करतो.<br>
+    हे अत्यंत गुह्य शास्त्र मी तुला सांगितलं —<br>
+    हे जाणून तू बुद्धिमान आणि कृतकृत्य होशील."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण आता संपूर्ण अध्यायाचं रहस्य उघड करतो — तो स्वतःच पुरुषोत्तम. <span class="key-term">क्षरापलीकडे</span> (नाशवंत सृष्टीच्या पलीकडे) आणि <span class="key-term">अक्षरापेक्षाही उत्तम</span> (केवळ अचल साक्षी नव्हे — सक्रिय, सर्वांना धारण करणारा).
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>शब्द</th><th>अर्थ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>सर्वविद्</td><td>पुरुषोत्तम जाणणारा सर्वज्ञ — मूळ कळलं की सर्व कळतं</td></tr>
+      <tr><td>सर्वभावेन</td><td>सर्व भावाने — फक्त प्रार्थनेत नव्हे, प्रत्येक क्षणी, प्रत्येक कर्मात</td></tr>
+      <tr><td>गुह्यतमम्</td><td>सर्वांत गुह्य — रहस्य उघड आहे, पण शोधणाऱ्यालाच मिळतं</td></tr>
+      <tr><td>कृतकृत्यः</td><td>जे करायचं ते केलं — जीवनाचं सार्थक</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    सर्वांत महत्त्वाचा शब्द — <span class="key-term">"सर्वभावेन भजति"</span>. पुरुषोत्तम जाणला की भजन फक्त मंदिरात राहत नाही; ते <strong style="color: var(--temple-gold);">उठताना, झोपताना, खाताना, काम करताना — सर्वत्र पसरतं.</strong>
+  </p>
+  <p>
+    आणि याचं फळ — <span class="key-term">कृतकृत्यता</span>. "जे करायचं होतं ते झालं" अशी खोल तृप्ती. जगण्याला अर्थ येतो; "मी का जगतो?" या प्रश्नाचं उत्तर मिळतं.
+  </p>
+</div>
+
+<div class="pull-quote">
+  पुरुषोत्तम जाणला की भजन मंदिरापुरतं उरत नाही — ते सर्व जगण्यात पसरतं.<br>
+  <strong style="color: var(--temple-gold);">आणि मग येते कृतकृत्यता — "जे करायचं होतं, ते झालं."</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ओळखीचा क्षण आणि कृतकृत्यता</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · "हे पुरे" वाटण्याचा क्षण</span>
+  <div class="example-name">अर्थाची ओळख — आणि कृतकृत्यतेची तृप्ती</div>
+  <div class="example-dates">रोजच्या धावपळीतला एक थांबा</div>
+  <p>
+    आजच्या जगात आपण सतत "पुढचं काय?" मध्ये जगतो — पुढचं ध्येय, पुढची मिळकत, पुढचं यश. पण कधीतरी एखादा क्षण येतो — मूल झोपलेलं पाहताना, एखादं काम मनापासून पूर्ण केल्यावर, निसर्गात शांत बसल्यावर — जेव्हा अचानक वाटतं, <span class="key-term">"हे पुरे. आत्ता, इथे, सर्व काही पूर्ण आहे."</span>
+  </p>
+  <hr class="divider">
+  <p>
+    तो क्षण म्हणजे <strong style="color: var(--temple-gold);">कृतकृत्यतेची झलक.</strong> त्या क्षणी मागणं थांबतं, धावपळ विरते, आणि एक खोल पूर्णत्व जाणवतं. गीता म्हणते — हा क्षण योगायोग नाही; तिथे पुरुषोत्तमाचा स्पर्श असतो. आपण नकळत मूळाशी जोडलेलो असतो.
+  </p>
+  <hr class="divider">
+  <p>
+    फरक एवढाच — असे क्षण आपल्याला क्वचित, अपघाताने येतात. गीता सांगते की <span class="key-term">"सर्वभावेन"</span> — सर्व भावाने त्या मूळाशी जाणीवपूर्वक जोडलं, तर ती तृप्ती क्षणिक न राहता <span class="key-term">जगण्याची स्थायी पार्श्वभूमी</span> बनते. काम तेच, धावपळ तीच — पण आतून "पुरे" ही भावना सोबत राहते.
+  </p>
+  <hr class="divider">
+  <p>
+    हेच "सर्वभावे भजन" — वेगळा वेळ, वेगळी जागा लागत नाही. <span class="key-term">सकाळी उठताना, जेवताना, कामात, झोपताना</span> — प्रत्येक कृती त्या मूळाला अर्पण. आणि जो असं जगतो, त्याला गीता "सर्वज्ञ" आणि "कृतकृत्य" म्हणते — कारण त्याला जगण्याचा अर्थ सापडला आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    क्षर अक्षर दोन्हींपलीकडे ।<br>
+    पुरुषोत्तम मी उत्तम वरे ।<br>
+    लोक वेदात नाव माझे ।<br>
+    पुरुषोत्तम ।।<br><br>
+    हे गुह्य शास्त्र जाणले ।<br>
+    बुद्धिमान कृतकृत्य जाहले ।<br>
+    जीवन सार्थक झाले ।<br>
+    पुरुषोत्तम-ज्ञाने ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "जीवन सार्थक झाले — पुरुषोत्तम-ज्ञाने" — हे सांगतात. कृतकृत्य म्हणजे जगण्याचं सार्थक; यापेक्षा मोठी तृप्ती नाही. पुरुषोत्तम जाणला की "मी का जगतो?" या प्रश्नाचं उत्तर मिळतं आणि जगण्याला अर्थ येतो.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या जीवनात 'कृतकृत्य' वाटण्याचा क्षण आला आहे का —<br>जेव्हा मला वाटलं, 'हे पुरे'?"<br><br>
+    तो क्षण आठवा. तिथे पुरुषोत्तम होता.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज सर्वभावाने एकदा म्हणा —<br>
+    <strong style="color: var(--saffron);">"कृष्ण — तू क्षरापलीकडे, अक्षरापलीकडे. तू पुरुषोत्तम. मी तुझा."</strong><br>
+    मनापासून म्हटलं की बुद्धिमान आणि कृतकृत्य होण्याचा मार्ग सुरू होतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    श्लोक १५.१८ हा संपूर्ण अध्यायाचा <span class="key-term">कळसबिंदू</span> — इथे "पुरुषोत्तम" या शब्दाची व्युत्पत्तीच दिली आहे : क्षराच्या पलीकडे + अक्षराहून उत्तम = पुरुष-उत्तम. हे केवळ नाव नाही; ती एक तात्त्विक व्याख्या आहे, जी सांख्याच्या द्वैताला ओलांडून गीतेचा सर्वोच्च ईश्वरवाद मांडते.
+  </p>
+  <p>
+    <span class="key-term">"सर्वविद् भजति"</span> या जोडणीत खोल अर्थ आहे — ज्ञान आणि भक्ती इथे एकरूप होतात. जो पुरुषोत्तमाला खऱ्या अर्थाने जाणतो (सर्वविद्), तो आपोआप भक्तीकडे वळतो (भजति). म्हणजे परिपूर्ण ज्ञानाचा नैसर्गिक परिणाम म्हणजे प्रेम — कोरडी माहिती नव्हे.
+  </p>
+  <p>
+    <span class="key-term">"कृतकृत्य"</span> ही संकल्पना विशेष लक्षणीय. बहुतेक मानवी प्रयत्न "अजून काहीतरी मिळवायचं" या भावनेने चालतात — कधीच न संपणारी धाव (हेच तर अध्यायाच्या सुरुवातीचं "उलटं झाड"). पण पुरुषोत्तम-ज्ञानाने येणारी कृतकृत्यता ती धाव संपवते : <strong style="color: var(--temple-gold);">मिळवण्यासारखं आता काही उरलं नाही, कारण मूळच गवसलं.</strong> झाडाच्या फांद्यांपासून सुरू झालेला अध्याय मूळाच्या पूर्ण विश्रांतीत विसावतो.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना ६/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

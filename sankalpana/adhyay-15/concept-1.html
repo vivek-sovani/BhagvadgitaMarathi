@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अश्वत्थ वृक्ष — भगवद्गीता अध्याय १५</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना १ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">अश्वत्थ वृक्ष</div>
+  <div class="concept-subtitle">संसाराचं उलटं झाड — मूळ वर, फांद्या खाली</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    एक गोष्ट हवी म्हणून धडपड; ती मिळाली की लगेच दुसरी इच्छा —<br>
+    <strong style="color: var(--temple-gold);">प्रत्येक पूर्ण झालेली इच्छा दोन नव्या इच्छांना जन्म देते.</strong><br>
+    हे न संपणारं जाळं म्हणजे संसार.<br>
+    कृष्ण त्याला एक विचित्र नाव देतो — उलटं झाड.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.१</span>
+  <div class="shloka-deva">
+    ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम् ।<br>
+    छन्दांसि यस्य पर्णानि यस्तं वेद स वेदवित् ॥
+  </div>
+  <div class="shloka-meaning">
+    "ज्याचं मूळ वर आणि फांद्या खाली आहेत,<br>
+    असा अश्वत्थ (पिंपळ) अव्यय आहे असं म्हणतात.<br>
+    ज्याची पाने वेद आहेत — जो हे जाणतो, तोच खरा वेद जाणणारा."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.२</span>
+  <div class="shloka-deva">
+    अधश्चोर्ध्वं प्रसृतास्तस्य शाखा<br>
+    गुणप्रवृद्धा विषयप्रवालाः ।<br>
+    अधश्च मूलान्यनुसन्ततानि<br>
+    कर्मानुबन्धीनि मनुष्यलोके ॥
+  </div>
+  <div class="shloka-meaning">
+    "त्याच्या फांद्या खाली आणि वर पसरल्या आहेत,<br>
+    गुणांनी वाढलेल्या; विषय (इंद्रियसुखे) हे त्यांचे अंकुर.<br>
+    खाली मनुष्यलोकात — कर्मांनी बांधलेली मुळे पसरली आहेत."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· उलटं झाड का?</span>
+</div>
+<div class="explanation-block">
+  <p>
+    वास्तविक झाडाचं मूळ जमिनीत — खाली, आणि फांद्या वर. पण या संसारवृक्षाचं <span class="key-term">मूळ वर — परमात्म्यात</span>, आणि फांद्या खाली — जड सृष्टी, मनुष्यलोक, सर्व जीव.
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>शब्द</th><th>अर्थ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>अश्वत्थ</td><td>"अ+श्व+स्थ" — उद्या जे राहत नाही, नाशवंत</td></tr>
+      <tr><td>अव्यय</td><td>तरीही अव्यय — कारण मूळ (परमात्मा) अविनाशी</td></tr>
+      <tr><td>गुणप्रवृद्धाः</td><td>सत्त्व-रज-तम यांनी वाढणाऱ्या फांद्या</td></tr>
+      <tr><td>विषयप्रवालाः</td><td>विषय हे अंकुर — नव्या इच्छा, नव्या आसक्त्या</td></tr>
+      <tr><td>कर्मानुबन्धीनि</td><td>कर्मांनी बांधलेली मुळे — कर्म केलं की नवा जन्म</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    <span class="key-term">छन्दांसि पर्णानि</span> — वेद म्हणजे पाने. पाने सुंदर, पण ती गळतात. वेद, शास्त्र हीसुद्धा साधने — साध्य नव्हे; त्यापलीकडे जायचं.
+  </p>
+  <p>
+    हे झाड कुठे संपतं? <strong style="color: var(--temple-gold);">कुठेच नाही — जोपर्यंत कर्मांची मुळे आहेत.</strong> म्हणून कृष्ण सांगतो — हे झाड तोडायला हवं. पण कसं? (ते पुढच्या संकल्पनेत.)
+  </p>
+</div>
+
+<div class="pull-quote">
+  प्रत्येक पूर्ण झालेली इच्छा नव्या इच्छांचे अंकुर फोडते.<br>
+  <strong style="color: var(--temple-gold);">फांद्यांत अडकलो की मूळ — परमात्मा — विसरतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· रोजच्या जगण्यातला अनुभव</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · इच्छांचं न संपणारं झाड</span>
+  <div class="example-name">हवं ते मिळतं — आणि लगेच पुढचं हवं</div>
+  <div class="example-dates">आजचा उपभोग, स्क्रोल आणि महत्त्वाकांक्षेचा सापळा</div>
+  <p>
+    नवा फोन हवा होता — मिळाला. आता नवं मॉडेल आलं. प्रमोशन हवं होतं — मिळालं. आता पुढचं पद खुणावतं. <span class="key-term">प्रत्येक पूर्ण झालेली इच्छा समाधान देत नाही — ती फक्त पुढच्या इच्छेचं दार उघडते.</span> हेच गीतेचं "विषयप्रवालाः" — विषय हे अंकुर, सतत नवे फुटणारे.
+  </p>
+  <hr class="divider">
+  <p>
+    सोशल मीडियावरचं अखंड स्क्रोलिंगही हेच झाड — एक रील संपते, खाली अनंत रीलची फांदी. एक तुलना संपते, दुसरी सुरू. <strong style="color: var(--temple-gold);">झाड वर वाढत नाही; ते आपल्याला खाली, आणखी खाली ओढत नेतं.</strong>
+  </p>
+  <hr class="divider">
+  <p>
+    मानसशास्त्र याला "hedonic treadmill" म्हणतं — मिळवत राहूनही समाधानाची पातळी तीच राहते, कारण इच्छेला अंत नाही. गीतेनं हजारो वर्षांपूर्वीच हे "उलटं झाड" म्हणून ओळखलं — <span class="key-term">फांद्या वाढतच राहतात, कारण कर्मांची मुळे सतत नवे जन्म, नव्या इच्छा रुजवतात.</span>
+  </p>
+  <hr class="divider">
+  <p>
+    फांद्या वाईट नाहीत — कुटुंब, काम, यश हे जीवनाचे भाग. पण त्यांतच पूर्ण अडकलो की <span class="key-term">मूळ विसरतो</span>. गीतेचा मुद्दा एवढाच — फांद्यांत रमताना, अधूनमधून वर पाहा : "हे सगळं ज्यातून आलं, ते मूळ कुठे आहे?"
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    ऊर्ध्वमूल अधःशाखा ।<br>
+    संसारवृक्ष हा विचित्र देखा ।<br>
+    मूळ परमात्मा वर एका ।<br>
+    फांद्या खाली ।।<br><br>
+    वेद म्हणिजे पाने त्याची ।<br>
+    सुंदर पण गळती साची ।<br>
+    पानापलीकडे जा साची ।<br>
+    मूळ गाठा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "पानापलीकडे जा — मूळ गाठा" — हे सांगतात. वेद, शास्त्र, धर्म ही सुंदर पाने; पण ती साधन, साध्य नव्हे. साध्य आहे मूळ — परमात्मा, जो सर्वांचा आधार. पानांच्या सौंदर्यात रमून मूळ विसरू नका.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या जीवनात कुठल्या फांद्या सर्वात जास्त वाढल्या आहेत —<br>कुटुंब, पैसा, प्रतिष्ठा, सुख?"<br><br>
+    फांद्या वाईट नाहीत — पण त्यांत अडकलो की मूळ विसरतो.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक क्षण — या संसारवृक्षाच्या वर पाहा.<br>
+    <strong style="color: var(--saffron);">"माझ्या जीवनाचं मूळ कुठे आहे? — परमात्म्यात."</strong><br>
+    हे एकदा जाणवलं की फांद्यांची आसक्ती कमी होते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    उलट्या झाडाची ही प्रतिमा कठोपनिषदातही येते — <span class="key-term">"ऊर्ध्वमूलोऽवाक्शाख एषोऽश्वत्थः सनातनः."</span> गीता ती उचलून तिला कर्म-गुण-विषय यांच्या चौकटीत बसवते : मूळ (परमात्मा) वर, आणि त्यातून खाली पसरत जाणारी जड सृष्टी.
+  </p>
+  <p>
+    प्रतिमेचा मर्म म्हणजे <span class="key-term">दिशाभूल</span>. आपण फांद्यांकडे — बाह्य जगाकडे — पाहत राहतो आणि तेच वास्तव मानतो. पण झाडाचा आधार फांद्यांत नाही, मुळात आहे. म्हणून जो फक्त फांद्या (विषय, उपभोग) पाहतो, तो आधारापासून तुटतो; जो मूळ ओळखतो, तोच "वेदवित्" — खरा जाणकार.
+  </p>
+  <p>
+    आधुनिक संदर्भात हे उपभोग-संस्कृतीचं अचूक निदान आहे. इच्छा → उपभोग → क्षणिक सुख → नवी इच्छा — हे न संपणारं चक्र म्हणजे फांद्यांचा अखंड विस्तार. गीता ते थांबवायला सांगत नाही उपभोग टाळून, तर <strong style="color: var(--temple-gold);">मूळाचं भान ठेवून</strong>. आणि हे झाड प्रत्यक्ष "तोडण्याचा" उपाय — असंग शस्त्र — ही पुढची संकल्पना.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना १/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

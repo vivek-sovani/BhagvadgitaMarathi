@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>परमात्म्याचा प्रकाश — भगवद्गीता अध्याय १५</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना ४ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">परमात्म्याचा प्रकाश</div>
+  <div class="concept-subtitle">सूर्य-चंद्र-अग्नीपलीकडे — सर्वत्र तोच प्रकाश</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    जीव परमाचा अंश आहे — हे कळलं.<br>
+    आता कृष्ण सांगतो — <strong style="color: var(--temple-gold);">"मी कुठे आहे? मला कसं ओळखायचं?"</strong><br>
+    उत्तर — प्रकाशात. सूर्य, चंद्र, अग्नी —<br>
+    जिथे जिथे प्रकाश दिसतो, तो माझाच.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.१२</span>
+  <div class="shloka-deva">
+    यदादित्यगतं तेजो जगद्भासयतेऽखिलम् ।<br>
+    यच्चन्द्रमसि यच्चाग्नौ तत्तेजो विद्धि मामकम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "सूर्यात जे तेज आहे, जे संपूर्ण जग प्रकाशित करतं;<br>
+    चंद्रात जे तेज आहे, अग्नीत जे तेज आहे —<br>
+    ते सर्व तेज माझंच आहे, असं जाण."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.१३–१४</span>
+  <div class="shloka-deva">
+    गामाविश्य च भूतानि धारयाम्यहमोजसा ।<br>
+    पुष्णामि चौषधीः सर्वाः सोमो भूत्वा रसात्मकः ॥<br>
+    अहं वैश्वानरो भूत्वा प्राणिनां देहमाश्रितः ।<br>
+    प्राणापानसमायुक्तः पचाम्यन्नं चतुर्विधम् ॥
+  </div>
+  <div class="shloka-meaning">
+    "पृथ्वीत शिरून मी ओजाने सर्व भूतांना धारण करतो;<br>
+    रसात्मक चंद्र होऊन सर्व वनस्पतींना पोषतो.<br>
+    वैश्वानर (जठराग्नी) होऊन प्राणिमात्रांच्या देहात राहतो,<br>
+    प्राण-अपानासह चार प्रकारचं अन्न पचवतो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण इथे एक चकित करणारं सत्य सांगतो — <span class="key-term">सूर्य स्वतः प्रकाशाचा स्रोत नाही.</span> सूर्याला, चंद्राला, अग्नीला प्रकाश-तेज कोण देतो? परमात्मा. ती सर्व तेजं एका मूळ तेजाची रूपं.
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>जिथे दिसतं</th><th>ते म्हणजे</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>सूर्याचं तेज</td><td>जग प्रकाशित करणारं — त्याचंच</td></tr>
+      <tr><td>चंद्राचं शीतल</td><td>आनंद, पोषण — त्याचंच</td></tr>
+      <tr><td>अग्नीची उष्णता</td><td>ताप, पावित्र्य — त्याचंच</td></tr>
+      <tr><td>जठराग्नी (वैश्वानर)</td><td>अन्न पचवणारा — तोच</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    हे ऐकलं की जाणवतं — <strong style="color: var(--temple-gold);">सूर्य उगवतो तेव्हा कृष्ण उगवतो. अन्न पचतं तेव्हा कृष्ण पचवतो. श्वास घेतो तेव्हा कृष्णाचा प्राण.</strong>
+  </p>
+  <p>
+    सर्वत्र तोच, प्रत्येक क्षण त्याचाच — हीच <span class="key-term">सर्वव्यापकता</span>. आणि एक सूक्ष्म गोष्ट : प्रकाश सर्व काही दाखवतो, पण प्रकाश स्वतः दिसत नाही. परमात्माही तसाच — सर्व काही उजळवणारा, पण इंद्रियांना न दिसणारा.
+  </p>
+</div>
+
+<div class="pull-quote">
+  सूर्य स्वतः प्रकाशाचा स्रोत नाही — त्यालाही प्रकाश कुणीतरी देतो.<br>
+  <strong style="color: var(--temple-gold);">सर्व प्रकाश ज्याचा, तो स्वतः मात्र डोळ्यांना दिसत नाही.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· अनुभव आणि विस्मय</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-दृष्टी · जो पाहतो, तो स्वतः दिसत नाही</span>
+  <div class="example-name">डोळा स्वतःला पाहू शकत नाही</div>
+  <div class="example-dates">रोजचा अनुभव · आणि "जे जाणतं ते काय?" हा प्रश्न</div>
+  <p>
+    एक साधा अनुभव — डोळा जगातलं सर्व काही पाहतो, पण स्वतःला (आरशाशिवाय) पाहू शकत नाही. प्रकाश सर्व वस्तू उजळवतो, पण रिकाम्या अवकाशात प्रकाश स्वतः दिसत नाही — फक्त ज्यावर तो पडतो, ते दिसतं. <span class="key-term">जे दाखवतं, ते स्वतः मागे राहतं.</span>
+  </p>
+  <hr class="divider">
+  <p>
+    तसंच आपल्या आत — प्रत्येक विचार, भावना, दृश्य आपण "पाहतो." पण ते <strong style="color: var(--temple-gold);">पाहणारं जे जागृत भान आहे, ते काय?</strong> ते आपण कधी थेट पाहू शकत नाही — कारण तेच पाहणारं आहे. गीतेचं "सूर्य-चंद्र-अग्नीपलीकडचं तेज" हे नेमकं हेच — सर्व अनुभव उजळवणारी, पण स्वतः वस्तू न बनणारी जाणीव.
+  </p>
+  <hr class="divider">
+  <p>
+    आधुनिक विज्ञान विश्वातल्या प्रत्येक गोष्टीचं मोजमाप करतं — पण "जाणीव म्हणजे नेमकं काय, ती कुठे आहे" याचं ठाम उत्तर अजून सापडलेलं नाही. <span class="key-term">जे सर्व काही जाणतं, तेच विज्ञानाच्या पकडीबाहेर राहतं</span> — हा विस्मय गीतेच्या या श्लोकाशी सहज जुळतो.
+  </p>
+  <hr class="divider">
+  <p>
+    म्हणून हा श्लोक केवळ माहिती नाही — तो एक <span class="key-term">दृष्टी</span> देतो. सूर्योदय पाहताना, जेवताना, श्वास घेताना — एकदा थांबून जाणवायचं : "हे तेज, हे जीवन, हे भान — सगळं त्याच एका मूळ प्रकाशाचं." विशेष वेळ नको, विशेष जागा नको; प्रत्येक क्षण त्या प्रकाशाची आठवण होऊ शकतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    सूर्याचे तेज माझे ।<br>
+    चंद्राचे शीतल माझे ।<br>
+    अग्नीचे ताप माझे ।<br>
+    सर्व माझे ।।<br><br>
+    हे जाणे जो साधक ।<br>
+    प्रत्येक क्षण होय कृष्णमय ।<br>
+    सर्वत्र दिसे परमात्मा देख ।<br>
+    हाच अनुभव ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "प्रत्येक क्षण होय कृष्णमय" — हे सांगतात. सूर्योदय पाहताना, जेवताना, श्वास घेताना कृष्ण आठवतो — हीच भक्ती. विशेष वेळ नाही, विशेष जागा नाही — प्रत्येक क्षण कृष्णाचा.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "आज सूर्य पाहिला तेव्हा माझ्या मनात काय आलं —<br>कृष्ण आठवला का, की फक्त 'ऊन आलं' एवढंच?"<br><br>
+    प्रत्येक प्रकाशात त्या मूळ तेजाची आठवण — हीच साधना.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज जेवताना एकदा मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"हे अन्न पचवणारा जठराग्नी — तूच आहेस."</strong><br>
+    हा एक भाव — अनुभव झाला, तर उपासना वेगळ्याच पातळीवर जाते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक उपनिषदांतील एका सुप्रसिद्ध सूत्राचा प्रतिध्वनी आहे — <span class="key-term">"न तत्र सूर्यो भाति न चन्द्रतारकम्... तस्य भासा सर्वमिदं विभाति"</span> (तिथे सूर्य प्रकाशत नाही, चंद्र-तारेही नाहीत; त्याच्या प्रकाशाने हे सर्व प्रकाशित होतं). सर्व तेजांमागचं मूळ तेज — हा वेदान्ताचा कणा.
+  </p>
+  <p>
+    तत्त्वज्ञानात हे <span class="key-term">"स्व-प्रकाश"</span> (self-luminous) तत्त्व आहे. इतर सर्व गोष्टी प्रकाशासाठी दुसऱ्यावर अवलंबून — पण मूळ चैतन्य स्वतःच प्रकाशमान; त्याला उजळवायला दुसरं काही लागत नाही. म्हणूनच ते "पाहणारं" आहे, "पाहिलं जाणारं" नाही — द्रष्टा, दृश्य नव्हे.
+  </p>
+  <p>
+    श्लोक १५.१३–१४ मध्ये कृष्ण हे तत्त्व अमूर्ततेकडून दैनंदिन जीवनात आणतो — पृथ्वीची धारणाशक्ती, चंद्राचं पोषण, पोटातला जठराग्नी. म्हणजे परमात्मा दूरचा, अमूर्त नाही; <strong style="color: var(--temple-gold);">तो प्रत्येक श्वासात, प्रत्येक घासात कार्यरत आहे.</strong> ही जाणीव रोजच्या जगण्यालाच उपासना बनवते — आणि पुढच्या संकल्पनेतल्या "क्षर-अक्षर-पुरुषोत्तम" या तीन-स्तरीय रचनेची तयारी करते.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना ४/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

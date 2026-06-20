@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>असंग शस्त्र — भगवद्गीता अध्याय १५</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना २ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">असंग शस्त्र</div>
+  <div class="concept-subtitle">झाड तोडण्याचा उपाय — आसक्तीरहितता हेच शस्त्र</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    संसारवृक्ष समजला. आता खरा प्रश्न —<br>
+    <strong style="color: var(--temple-gold);">"हे उलटं झाड तोडायचं कसं? यातून बाहेर पडायचं कसं?"</strong><br>
+    कृष्ण एका शस्त्राचं नाव घेतो — पण ते तलवार नाही, बंदूक नाही.<br>
+    ते आहे असंग शस्त्र — आसक्ती सोडण्याचं शस्त्र.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.३–४</span>
+  <div class="shloka-deva">
+    न रूपमस्येह तथोपलभ्यते<br>
+    नान्तो न चादिर्न च सम्प्रतिष्ठा ।<br>
+    अश्वत्थमेनं सुविरूढमूल-<br>
+    मसङ्गशस्त्रेण दृढेन छित्त्वा ॥<br>
+    ततः पदं तत्परिमार्गितव्यं<br>
+    यस्मिन्गता न निवर्तन्ति भूयः ।<br>
+    तमेव चाद्यं पुरुषं प्रपद्ये<br>
+    यतः प्रवृत्तिः प्रसृता पुराणी ॥
+  </div>
+  <div class="shloka-meaning">
+    "या झाडाचं इथे खरं स्वरूप दिसत नाही — आदी नाही, अंत नाही, स्थिती नाही.<br>
+    या दृढमूल अश्वत्थाला दृढ असंग-शस्त्राने तोडून —<br>
+    मग ते पद शोधावं, जिथे गेलेले परत येत नाहीत.<br>
+    तोच आदी पुरुष, ज्यापासून हे पुरातन विस्तारलं — त्यालाच शरण जावं."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १५.५</span>
+  <div class="shloka-deva">
+    निर्मानमोहा जितसङ्गदोषा<br>
+    अध्यात्मनित्या विनिवृत्तकामाः ।<br>
+    द्वन्द्वैर्विमुक्ताः सुखदुःखसंज्ञैर्-<br>
+    गच्छन्त्यमूढाः पदमव्ययं तत् ॥
+  </div>
+  <div class="shloka-meaning">
+    "मान-मोह नसलेले, आसक्तीचे दोष जिंकलेले, अध्यात्मात नित्य,<br>
+    इच्छा निवृत्त, सुख-दुःखाच्या द्वंद्वांपासून मुक्त, मोहरहित —<br>
+    असे ते अव्यय पद गाठतात."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    <span class="key-term">न रूपं उपलभ्यते</span> — संसाराचं खरं स्वरूप दिसत नाही; आपण मायेत आहोत. आणि या झाडाशी लढायला तलवार-बंदूक उपयोगाची नाही — एकच शस्त्र चालतं : <span class="key-term">असंग</span>, आसक्तीरहितता.
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>शब्द</th><th>अर्थ</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>असंगशस्त्र</td><td>आसक्ती सोडणं — एकमेव प्रभावी शस्त्र</td></tr>
+      <tr><td>दृढेन</td><td>दृढपणे धरावं — थोडी आसक्ती सोडून पुरत नाही</td></tr>
+      <tr><td>पदं तत्</td><td>ते पद, जिथून परत येणं नाही — मोक्ष</td></tr>
+      <tr><td>आदिपुरुषं प्रपद्ये</td><td>त्या आदी पुरुषाला शरण जाणे</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    श्लोक १५.५ नेमका मार्ग सांगतो — <span class="key-term">मानमोह सोडणं</span> ("मला मान मिळावा" ही ओढ), <span class="key-term">जितसंगदोष</span> (आसक्तीचे दोष जिंकणे), <span class="key-term">अध्यात्मनित्य</span> (आत्म्याविषयी सतत जागृत), आणि <span class="key-term">द्वंद्वमुक्त</span> (सुख-दुःख, मान-अपमानाच्या जोड्यांपलीकडे).
+  </p>
+  <p>
+    महत्त्वाचं — <strong style="color: var(--temple-gold);">आसक्ती सोडणं म्हणजे गोष्टीचा त्याग नव्हे — फक्त बंधन सोडणं.</strong> वस्तू, नाती, काम राहू शकतात; फक्त त्यांची पकड सुटते.
+  </p>
+</div>
+
+<div class="pull-quote">
+  संसाराशी लढायला तलवार नको — फक्त आसक्ती सोडणं पुरे.<br>
+  <strong style="color: var(--temple-gold);">आसक्ती सोडणं म्हणजे त्याग नव्हे — फक्त बंधन सोडणं.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· रोजच्या जगण्यातला अनुभव</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-प्रसंग · सोडण्याची सुटका</span>
+  <div class="example-name">पकड सैल केल्यावरची हलकी जाणीव</div>
+  <div class="example-dates">आजचं मिनिमलिझम, डिक्लटर आणि "रॅट रेस" सोडणं</div>
+  <p>
+    आजच्या जगात याचं एक ओळखीचं रूप म्हणजे <span class="key-term">डिक्लटरिंग</span> — घर आवरताना जेव्हा वर्षानुवर्षे साठवलेल्या, "कधीतरी लागेल" म्हणून धरून ठेवलेल्या वस्तू आपण सोडून देतो, तेव्हा एक विलक्षण हलकेपणा येतो. वस्तू गेल्या, पण मोकळेपणा आला.
+  </p>
+  <hr class="divider">
+  <p>
+    हेच त्या <span class="key-term">असंग शस्त्राचं</span> लहान रूप. जे लोक स्वेच्छेने साधेपणा निवडतात, "रॅट रेस"मधून बाहेर पडतात, किंवा एखादं विषारी नातं-सवय सोडतात — ते सांगतात की <strong style="color: var(--temple-gold);">सोडल्यावर गमावल्यासारखं वाटत नाही; उलट सुटल्यासारखं वाटतं.</strong>
+  </p>
+  <hr class="divider">
+  <p>
+    इथे गीतेचा सूक्ष्म बारकावा महत्त्वाचा — असंग म्हणजे वस्तूंचा द्वेष किंवा संन्यास नव्हे. मिनिमलिझमचा गाभाही तोच : वस्तू वाईट नाहीत, पण <span class="key-term">"माझ्याकडे हे असलंच पाहिजे, नाहीतर मी अपूर्ण"</span> ही पकड बंधन आहे. ती पकड सुटली की वस्तू असो वा नसो — मन मोकळं.
+  </p>
+  <hr class="divider">
+  <p>
+    आणि गीता एक पाऊल पुढे जाते — नुसतं सोडून थांबू नका; <span class="key-term">मूळाशी जोडा</span>. आदी पुरुषाला शरण गेलं की फांद्यांची पकड आपोआप सुटते. म्हणजे केवळ वस्तू कमी करणं नव्हे, तर लक्ष उच्च गोष्टीकडे वळवणं — हेच खरं, टिकाऊ "तोडणं."
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    असंग शस्त्र एकच असे ।<br>
+    आसक्ती सोडता झाड सरसे ।<br>
+    मग ते परमपद दिसे ।<br>
+    जे अव्यय आहे ।।<br><br>
+    आदिपुरुषा शरण जावे ।<br>
+    त्यातच मन बुडवावे ।<br>
+    परत न येणे ते पद पावे ।<br>
+    भक्त जाणती ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "आदिपुरुषा शरण जावे — त्यातच मन बुडवावे" — हे सांगतात. झाड तोडण्यासाठी फांद्यांशी लढायची गरज नाही. आदी पुरुषाला शरण गेलो — मूळाशी जोडलो — की फांद्यांची आसक्ती आपोआप गळून पडते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्यातला मानमोह कुठला —<br>कोणाकडून मान मिळावा असं सतत वाटतं?"<br><br>
+    तो ओळखणं म्हणजे असंग शस्त्र उचलण्याची तयारी.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखाद्या आसक्तीबद्दल मनात म्हणा —<br>
+    <strong style="color: var(--saffron);">"ही फांदी आहे. मला मूळाकडे जायचं आहे."</strong><br>
+    आसक्ती सोडणं म्हणजे त्या गोष्टीचा त्याग नाही — फक्त बंधन सोडणं.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    <span class="key-term">असंग</span> ही संकल्पना संपूर्ण गीतेचा गाभा आहे — कर्मयोगातलं "फलासक्ती सोडा", सांख्यातलं साक्षीभाव, आणि इथलं "झाड तोडणारं शस्त्र" — सर्व एकाच तत्त्वाची रूपे. बंधन वस्तूंमुळे नाही; वस्तूंशी असलेल्या <span class="key-term">पकडीमुळे</span> आहे.
+  </p>
+  <p>
+    "दृढेन" या शब्दावर भर महत्त्वाचा. अधूनमधूनची, सोयीची विरक्ती पुरत नाही — झाडाची मुळे "सुविरूढ" (खोलवर रुजलेली) आहेत, म्हणून शस्त्रही दृढ हवं. हे आधुनिक "हाफ-हार्टेड डिटॉक्स" विरुद्ध खऱ्या, सातत्यपूर्ण बदलाच्या फरकासारखं.
+  </p>
+  <p>
+    सर्वांत महत्त्वाचा बारकावा — गीता नुसतं "सोडा" म्हणून थांबत नाही; ती लगेच <span class="key-term">"आदिपुरुषं प्रपद्ये"</span> जोडते. केवळ नकारात्मक त्याग पोकळी निर्माण करतो; पण ती पोकळी उच्च आधाराने भरली, की विरक्ती टिकते. म्हणून खरी असंगता म्हणजे <strong style="color: var(--temple-gold);">फांद्यांची पकड सोडून मूळाला धरणं</strong> — सोडणं आणि जोडणं, एकाच कृतीचे दोन भाग.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना २/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>अध्याय १५ — सार व समारोप — भगवद्गीता</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background-color: var(--deep-vellum); color: var(--antique-cream); font-family: var(--font-deva); font-size: 18px; line-height: 1.9; max-width: 780px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .iks-header { border-top: 2px solid var(--temple-gold); border-bottom: 1px solid var(--temple-gold); text-align: center; padding: 1rem 0; margin-bottom: 2rem; }
+  .iks-header .chapter-label { font-family: var(--font-deva); font-size: 0.85rem; letter-spacing: 0.05em; color: var(--temple-gold); }
+  .iks-header .concept-title { font-family: var(--font-deva); font-size: 1.75rem; color: var(--temple-gold); margin-top: 0.4rem; line-height: 1.6; }
+  .iks-header .concept-subtitle { font-family: var(--font-deva); font-size: 1rem; color: var(--antique-cream); opacity: 0.75; margin-top: 0.2rem; }
+  .gold-rule { border: none; border-top: 1px solid var(--temple-gold); margin: 1.75rem 0; opacity: 0.5; }
+  .opening-block { text-align: center; padding: 1rem 1rem 0.5rem; margin-bottom: 1.25rem; }
+  .opening-block .promise-deva { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .shloka-block { background: linear-gradient(135deg, #0E0A04 0%, #231608 100%); border: 1px solid var(--temple-gold); border-radius: 4px; padding: 2rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .shloka-number { position: absolute; top: -0.75rem; right: 1rem; background: var(--saffron); color: white; font-family: var(--font-deva); font-size: 0.75rem; padding: 0.2rem 0.65rem; border-radius: 20px; }
+  .shloka-deva { font-family: var(--font-deva); font-size: 1.25rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .shloka-meaning { font-family: var(--font-deva); font-size: 1.05rem; color: var(--antique-cream); text-align: center; border-top: 1px solid rgba(200, 146, 42, 0.3); padding-top: 1rem; line-height: 1.95; }
+  .section-heading { display: flex; align-items: baseline; gap: 0.75rem; margin-bottom: 1rem; }
+  .section-heading .label-deva { font-family: var(--font-deva); font-size: 1.2rem; color: var(--saffron); line-height: 1; }
+  .section-heading .label-small { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); }
+  .explanation-block { background-color: #221507; border-left: 3px solid var(--temple-gold); padding: 1.5rem 1.5rem 1.5rem 1.75rem; border-radius: 0 4px 4px 0; margin-bottom: 1.5rem; }
+  .explanation-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .explanation-block p:last-child { margin-bottom: 0; }
+  .contrast-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0 0.5rem; }
+  .contrast-table th { font-family: var(--font-deva); font-size: 1.05rem; color: var(--temple-gold); border-bottom: 1px solid rgba(200,146,42,0.5); padding: 0.5rem 0.75rem; text-align: left; }
+  .contrast-table td { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.9; color: var(--antique-cream); padding: 0.45rem 0.75rem; border-bottom: 1px solid rgba(200,146,42,0.15); vertical-align: top; }
+  .contrast-table td:first-child { color: var(--saffron); font-weight: 600; white-space: nowrap; }
+  .contrast-table tr:last-child td { border-bottom: none; }
+  .pull-quote { border-left: 4px solid var(--saffron); padding: 0.75rem 1.25rem; margin: 1.5rem 0; font-family: var(--font-deva); font-size: 1.15rem; color: var(--antique-cream); line-height: 1.95; }
+  .relevance-block { background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%); border: 1px solid var(--patina-teal); border-radius: 4px; padding: 1.75rem; margin-bottom: 1.75rem; }
+  .relevance-block .example-tag { font-family: var(--font-deva); font-size: 0.8rem; color: var(--patina-teal); margin-bottom: 0.4rem; display: block; }
+  .relevance-block .example-name { font-family: var(--font-latin); font-size: 1.3rem; font-weight: 600; color: var(--antique-cream); margin-bottom: 0.1rem; }
+  .relevance-block .example-dates { font-family: var(--font-deva); font-size: 0.82rem; color: var(--patina-teal); margin-bottom: 1rem; opacity: 0.85; }
+  .relevance-block p { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); margin-bottom: 0.85rem; }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider { border: none; border-top: 1px solid rgba(74,124,111,0.35); margin: 1.1rem 0; }
+  .jnaneshwari-block { background: linear-gradient(135deg, #1A0E04 0%, #241205 100%); border: 1px solid rgba(200,146,42,0.45); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; position: relative; }
+  .jnaneshwari-block::before { content: 'ज्ञानेश्वरी'; position: absolute; top: -0.75rem; left: 1.25rem; background: var(--deep-vellum); color: var(--temple-gold); font-family: var(--font-deva); font-size: 0.9rem; padding: 0 0.5rem; }
+  .ovi { font-family: var(--font-deva); font-size: 1.15rem; line-height: 2.1; color: var(--temple-gold); text-align: center; margin-bottom: 1rem; }
+  .ovi-vivechan { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); border-top: 1px solid rgba(200,146,42,0.25); padding-top: 0.9rem; }
+  .sankalpana-block { background: #1C1005; border: 1px solid rgba(200,146,42,0.3); border-radius: 4px; padding: 1.5rem 1.75rem; margin-bottom: 1.75rem; }
+  .sankalpana-block .q-label { font-family: var(--font-deva); font-size: 0.85rem; color: var(--saffron); margin-bottom: 0.65rem; display: block; }
+  .sankalpana-block .question { font-family: var(--font-deva); font-size: 1.1rem; line-height: 1.95; color: var(--antique-cream); }
+  .analytical-block { border: 1px dashed rgba(200, 146, 42, 0.4); border-radius: 4px; padding: 1.25rem 1.5rem; position: relative; margin-bottom: 1.75rem; }
+  .analytical-block::before { content: '◈'; position: absolute; top: -0.7rem; left: 1rem; background: var(--deep-vellum); color: var(--temple-gold); padding: 0 0.4rem; font-size: 0.9rem; }
+  .analytical-block p { font-family: var(--font-deva); font-size: 1.05rem; line-height: 1.95; color: var(--antique-cream); opacity: 0.9; margin-bottom: 0.75rem; }
+  .analytical-block p:last-child { margin-bottom: 0; }
+  .key-term { color: var(--saffron); }
+  .iks-footer { border-top: 2px solid var(--temple-gold); margin-top: 3rem; padding-top: 1rem; text-align: center; font-family: var(--font-deva); font-size: 0.85rem; color: var(--temple-gold); opacity: 0.65; }
+  @media print { body { background: white; color: #2C1A0E; } .shloka-block, .explanation-block, .relevance-block, .jnaneshwari-block, .sankalpana-block, .analytical-block { background: #f9f4e8 !important; border-color: #C8922A !important; } .shloka-deva, .ovi { color: #8B5E10 !important; } }
+  html[data-fontsize="large"]  { font-size: 118%; }
+  html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १५ · संकल्पना ७ · पुरुषोत्तमयोग</div>
+  <div class="concept-title">सार व समारोप</div>
+  <div class="concept-subtitle">पुरुषोत्तमयोग — गुह्यतमं ज्ञान</div>
+</header>
+
+<div class="opening-block">
+  <p class="promise-deva">
+    अध्याय १५ — पुरुषोत्तमयोग — गीतेतला एक अत्यंत गहन अध्याय.<br>
+    इथे कृष्ण स्वतःचं खरं स्वरूप सांगतो —<br>
+    <strong style="color: var(--temple-gold);">"मी क्षर नाही, अक्षर नाही — मी पुरुषोत्तम. सर्वांचा आधार."</strong><br>
+    सात संकल्पनांचा हा प्रवास आता एका सूत्रात बांधू.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="shloka-block">
+  <span class="shloka-number">केंद्रश्लोक · १५.७</span>
+  <div class="shloka-deva">
+    ममैवांशो जीवलोके जीवभूतः सनातनः ।<br>
+    मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति ॥
+  </div>
+  <div class="shloka-meaning">
+    "या जगात जीव झालेला सनातन जीव माझाच अंश आहे —<br>
+    तो प्रकृतीतल्या मन व पाच इंद्रियांना ओढत राहतो."
+  </div>
+</div>
+
+<div class="shloka-block">
+  <span class="shloka-number">अंतिम श्लोक · १५.२०</span>
+  <div class="shloka-deva">
+    इति गुह्यतमं शास्त्रमिदमुक्तं मयानघ ।<br>
+    एतद्बुद्ध्वा बुद्धिमान्स्यात्कृतकृत्यश्च भारत ॥
+  </div>
+  <div class="shloka-meaning">
+    "हे अत्यंत गुह्य शास्त्र मी तुला सांगितलं —<br>
+    हे जाणून तू बुद्धिमान आणि कृतकृत्य होशील, हे भारता."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">सारांश</span>
+  <span class="label-small">· सात संकल्पना, एका दृष्टीत</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अध्याय १५ ने एक संपूर्ण प्रवास घडवला — संसाराचं स्वरूप ओळखण्यापासून ते सर्वोच्च तत्त्वाशी जोडण्यापर्यंत. एका दृष्टीत तो असा :
+  </p>
+  <table class="contrast-table">
+    <thead>
+      <tr><th>संकल्पना</th><th>सार</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>१. अश्वत्थ वृक्ष</td><td>संसार म्हणजे उलटं झाड — मूळ परमात्म्यात</td></tr>
+      <tr><td>२. असंग शस्त्र</td><td>आसक्ती सोडणं हेच झाड तोडण्याचं शस्त्र</td></tr>
+      <tr><td>३. जीव परमाचा अंश</td><td>ममैवांशः — विसरला म्हणून बंधन</td></tr>
+      <tr><td>४. परमात्म्याचा प्रकाश</td><td>सूर्य-चंद्र-अग्नी-जठराग्नी — सर्वत्र तोच</td></tr>
+      <tr><td>५. क्षर-अक्षर-पुरुषोत्तम</td><td>लाट, पाणी, समुद्र</td></tr>
+      <tr><td>६. पुरुषोत्तम कोण</td><td>कृष्ण — सर्वज्ञ होणं, सर्वभावे भजणं</td></tr>
+      <tr><td>७. सार</td><td>गुह्यतमं ज्ञान — बुद्धिमान आणि कृतकृत्य</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top: 1rem;">
+    संपूर्ण अध्यायाचा गाभा एका ओळीत — <strong style="color: var(--temple-gold);">"मी संसाराची फांदी नाही, मूळ आहे; क्षर नाही, अक्षर नाही — माझा आधार पुरुषोत्तम आहे."</strong>
+  </p>
+</div>
+
+<div class="pull-quote">
+  फांद्यांपासून सुरुवात, मूळाशी विसावा.<br>
+  <strong style="color: var(--temple-gold);">हेच पुरुषोत्तमयोगाचं अमृत — आणि "कृतकृत्य" ही त्याची तृप्ती.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· संपूर्ण अध्यायाची एकत्र दृष्टी</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">जीवन-दृष्टी · फांदीपासून मूळाकडे</span>
+  <div class="example-name">वर पाहणं — झाडाच्या मुळाकडे</div>
+  <div class="example-dates">रोजच्या धावपळीला दिशा देणारं एक सूत्र</div>
+  <p>
+    संपूर्ण अध्याय एका साध्या हालचालीत बसतो — <span class="key-term">वर पाहणं.</span> आपण आयुष्यभर फांद्यांकडे पाहत राहतो — पुढची इच्छा, पुढचं यश, पुढची तुलना. अध्याय १५ म्हणतो, एकदा मान वर करा आणि विचारा : "हे सगळं ज्यातून येतं, ते मूळ कुठे आहे?"
+  </p>
+  <hr class="divider">
+  <p>
+    आणि मग संपूर्ण प्रवास उलगडतो — झाड ओळखा (१), आसक्तीच्या कुऱ्हाडीने पकड सोडा (२), "मी परमाचा अंश" हे आठवा (३), प्रत्येक प्रकाशात तोच पाहा (४), लाट-पाणी-समुद्र हे तीन स्तर जाणा (५), आणि पुरुषोत्तमाशी सर्वभावाने जोडा (६). <strong style="color: var(--temple-gold);">सातवी संकल्पना म्हणजे या सगळ्याचं फळ — कृतकृत्यता.</strong>
+  </p>
+  <hr class="divider">
+  <p>
+    या अध्यायाची आजच्या जगातली प्रस्तुतता मोठी आहे. आपण अशा काळात जगतो जिथे "अजून हवं" ही फांदी सतत वाढते — अधिक यश, अधिक वस्तू, अधिक मान्यता. पुरुषोत्तमयोग ती धाव नाकारत नाही; तो फक्त <span class="key-term">तिला मूळाचं भान देतो.</span> फांद्यांत जगा, पण मुळाशी जोडलेले राहा.
+  </p>
+  <hr class="divider">
+  <p>
+    हेच या अध्यायाचं चिरंतन सूत्र — काम तेच, नाती तीच, जग तेच; पण आतून एक स्थिर जाणीव : <span class="key-term">"मी फांदी नाही, मूळ आहे. माझा आधार पुरुषोत्तम — तो अव्यय."</span> ही एक जाणीव धावपळीला शांती देते, आणि जगण्याला अर्थ.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· समारोप-ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    संसार उलटे झाड जाण ।<br>
+    असंग शस्त्रे तोड बंधन ।<br>
+    पुरुषोत्तमाशी जोड मन ।<br>
+    हाच मार्ग ।।<br><br>
+    हे गुह्य जाणे जो ।<br>
+    कृतकृत्य होय तो ।<br>
+    सर्वभावे भजे तो ।<br>
+    पुरुषोत्तमा ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे गुह्य जाणे जो — कृतकृत्य होय तो" — सांगतात. कृतकृत्य म्हणजे जगण्याचं सार्थक; यापेक्षा मोठं यश नाही. "सर्वभावे भजे तो पुरुषोत्तमा" — हे संपूर्ण अध्यायाचं फळ : सर्वत्र, सर्व कृतीत कृष्ण.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 अंतिम प्रश्न</span>
+  <p class="question">
+    "अध्याय १५ मध्ये माझ्यासाठी सर्वात महत्त्वाचा बोध कुठला —<br>अश्वत्थ, असंग शस्त्र, ममैवांशः, की क्षर-अक्षर-पुरुषोत्तम?"<br><br>
+    तो एक घ्या. त्यावर आज शांतपणे विचार करा.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 अंतिम संकल्प</span>
+  <p class="question">
+    आज हे एकदा शांतपणे वाचा आणि जाणवू द्या —<br>
+    <strong style="color: var(--saffron);">"मी परमाचा अंश आहे — संसाराची फांदी नाही, मूळ आहे.<br>क्षर नाही, अक्षर नाही — माझा आधार पुरुषोत्तम आहे."</strong><br>
+    हेच अध्याय १५ चं अमृत.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन · अध्याय समारोप</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय १५ ला कृष्ण स्वतः <span class="key-term">"गुह्यतमं शास्त्रम्"</span> — सर्वांत गुह्य शास्त्र — म्हणतो. का? कारण इथे गीतेच्या तत्त्वज्ञानाचा कळस गाठला जातो : केवळ निसर्ग (क्षर) नाही, केवळ आत्मा (अक्षर) नाही, तर त्या दोन्हींना व्यापणारा-ओलांडणारा पुरुषोत्तम — एक सगुण, सक्रिय, प्रेममय ईश्वर.
+  </p>
+  <p>
+    अध्यायाची रचना स्वतःच एक प्रवास आहे — <span class="key-term">निदान → उपाय → ओळख → साधना → फळ.</span> उलट्या झाडाचं निदान, असंग शस्त्राचा उपाय, "ममैवांशः" ही जीवाची खरी ओळख, सर्वभाव-भक्तीची साधना, आणि कृतकृत्यतेचं फळ. हे केवळ सिद्धांत नाही — ही जगण्याची क्रमबद्ध दिशा.
+  </p>
+  <p>
+    अध्यायाचं वर्तुळ सुंदर रीतीने पूर्ण होतं — सुरुवात झाली न संपणाऱ्या धावेने (इच्छांचं झाड), आणि शेवट होतो पूर्ण विश्रांतीत (<span class="key-term">कृतकृत्य</span> — "जे करायचं ते झालं"). आधुनिक माणसाच्या अखंड "अजून हवं" या मनःस्थितीला हे थेट उत्तर आहे. <strong style="color: var(--temple-gold);">फांद्यांची धाव संपते जेव्हा मूळ गवसतं</strong> — आणि तेच पुरुषोत्तमयोगाचं, किंबहुना संपूर्ण गीतेच्या व्यावहारिक शिकवणीचं, अमृत.
+  </p>
+</div>
+
+<footer class="iks-footer">
+  भगवद्गीता · पुरुषोत्तमयोग · अध्याय १५ · संकल्पना ७/७ · पोस्ट मालिका संपूर्ण · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>
