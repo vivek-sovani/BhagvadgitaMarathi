@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>त्रैविद्य — योगक्षेम — भगवद्गीता अध्याय ९</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ९ · संकल्पना ५ · राजविद्याराजगुह्ययोग</div>
+  <div class="concept-title">त्रैविद्य — स्वर्ग — परत</div>
+  <div class="concept-subtitle">सकाम भक्ती विरुद्ध अनन्य भक्ती — आणि योगक्षेम</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    दोन परस्परपूरक सत्ये कृष्ण एकत्र मांडतो —<br>
+    एक — <strong style="color: var(--temple-gold);">"वेद जाणणारे पुण्याने स्वर्गाला जातात — पण पुण्य संपले की परत."</strong><br>
+    दोन — "अनन्य भक्तांचे सर्व मी सांभाळतो."<br>
+    फरक — मागणाऱ्याची भक्ती, की मागण्यापलीकडची भक्ती?
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 9.20-21 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.२०–२१</span>
+  <div class="shloka-deva">
+    त्रैविद्या मां सोमपाः पूतपापा यज्ञैरिष्ट्वा स्वर्गतिं प्रार्थयन्ते ।<br>
+    ते पुण्यमासाद्य सुरेन्द्रलोकमश्नन्ति दिव्यान्दिवि देवभोगान् ॥<br>
+    ते तं भुक्त्वा स्वर्गलोकं विशालं क्षीणे पुण्ये मर्त्यलोकं विशन्ति ।<br>
+    एवं त्रयीधर्ममनुप्रपन्ना गतागतं कामकामा लभन्ते ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "त्रैविद्य, सोमपान करणारे, पापमुक्त — यज्ञाने इंद्रलोकाची प्रार्थना करतात.<br>
+    पुण्याने स्वर्गलोक मिळवून दिव्य भोग भोगतात.<br>
+    पण तो विशाल स्वर्ग भोगून — पुण्य क्षीण झाल्यावर — मर्त्यलोकात येतात.<br>
+    असे कामनेसाठी त्रयीधर्म आचरणारे येण्या-जाण्याचेच फळ मिळवतात."
+  </div>
+</div>
+
+<!-- SHLOKA 9.22 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.२२</span>
+  <div class="shloka-deva">
+    अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते ।<br>
+    तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जे अनन्यभावाने माझा विचार करत माझी उपासना करतात —<br>
+    त्या नित्य युक्तांचा योगक्षेम मी वाहतो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    "क्षीणे पुण्ये मर्त्यलोकं विशन्ति" — पुण्य क्षीण झाल्यावर परत. <span class="key-term">बँक-शिल्लकेसारखे</span> — खर्च झाले की संपते. पण ९.२२ हे वेगळेच आहे.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>सकाम भक्ती</th>
+        <th>अनन्य भक्ती</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>स्वर्ग, भोग मागते</td>
+        <td>फक्त ईश्वर मागते</td>
+      </tr>
+      <tr>
+        <td>पुण्य संपले की परत</td>
+        <td>परत येणे नाही</td>
+      </tr>
+      <tr>
+        <td>गतागत — येणे-जाणे</td>
+        <td>योगक्षेम ईश्वर वाहतो</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    <span class="key-term">"योगक्षेमं वहाम्यहम्"</span> — योग म्हणजे जे नाही ते मिळवणे, क्षेम म्हणजे जे आहे ते टिकवणे. <strong style="color: var(--temple-gold);">अनन्य भक्ताला काळजी नाही — ईश्वर स्वतः त्याचे सर्व सांभाळतो.</strong>
+  </p>
+  <p>
+    हे गीतेतले सर्वांत मोठे आश्वासन मानले जाते. भक्त मागणे सोडतो — आणि ईश्वर सर्व देणे स्वतःकडे घेतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  स्वर्ग क्षणिक — ईश्वर शाश्वत.<br>
+  <strong style="color: var(--temple-gold);">जो काही मागत नाही, त्याचे सर्व ईश्वर स्वतः सांभाळतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — NAMDEV -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · वारकरी परंपरा</span>
+  <div class="example-name">संत नामदेव महाराज</div>
+  <div class="example-dates">इ.स. १२७० – १३५० · पंढरपूर / नरसी</div>
+
+  <p>
+    नामदेव शिंपी कुटुंबातले — सामान्य व्यवसाय, सामान्य जीवन. पण विठ्ठलावरची त्यांची भक्ती <span class="key-term">अनन्य</span> होती — दुसरे काहीच मागण्याची त्यांना गरजच वाटली नाही.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    त्यांनी स्वर्ग मागितला नाही, संपत्ती मागितली नाही, सिद्धी मागितली नाही. त्यांना फक्त <strong style="color: var(--temple-gold);">विठ्ठल</strong> हवा होता. कथा सांगतात की लहानपणीच त्यांनी देवाला नैवेद्य खाण्याचा हट्ट धरला — कारण त्यांच्यासाठी विठ्ठल कल्पना नव्हे, प्रत्यक्ष सोबती होता.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गीतेचा <span class="key-term">"योगक्षेमं वहाम्यहम्"</span> चा अनुभव. जो अनन्य भावाने ईश्वराला धरतो, त्याची काळजी ईश्वरच घेतो. नामदेवांनी मागणे सोडले — आणि भक्तीची परिपूर्णता मिळवली.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    त्यांची कीर्ती महाराष्ट्राबाहेर पंजाबपर्यंत पोहोचली; त्यांचे अभंग आजही गुरु ग्रंथसाहिबात आदराने आहेत. एका सामान्य भक्ताची अनन्य निष्ठा कुठवर पोहोचते — हे नामदेव दाखवतात. <span class="key-term">सकाम मागणे संपते; अनन्य प्रेम अक्षय राहते.</span>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    पुण्याने स्वर्ग मिळे ।<br>
+    पुण्य संपे परत ये ।<br>
+    कामनेचा हा खेळ ।<br>
+    कधी न संपे ।।<br><br>
+    अनन्य भक्त माझे ।<br>
+    त्यांचे सर्व मी करे ।<br>
+    योगक्षेम वाहतो ।<br>
+    हे माझे वचन ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे माझे वचन" — सांगतात. गीतेतले सर्वांत मोठे आश्वासन — "योगक्षेमं वहाम्यहम्". नामदेवांनी हेच जगून दाखवले — काही न मागता, फक्त विठ्ठलाला धरून; आणि बाकी सर्व ईश्वराने सांभाळले.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझी भक्ती — कामनेसाठी की अनन्य?<br>मला स्वर्ग हवा की ईश्वर?"<br><br>
+    स्वर्ग क्षणिक. ईश्वर शाश्वत.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एकदा — सर्व काळजी, सर्व "मला हे मिळवायचे" —<br>
+    <strong style="color: var(--saffron);">"तू सांभाळ. योगक्षेम तुझा."</strong><br>
+    ही शरणागती नाही — हा विश्वास आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक <span class="key-term">सकाम</span> आणि <span class="key-term">निष्काम</span> भक्तीतला मूलभूत भेद दाखवतो. वेदांतील यज्ञ-कर्म फलदायी आहेत — पण ते फळ सीमित, क्षणिक. कारण इच्छेने केलेले कर्म इच्छेच्या मर्यादेतच फळ देते. अनन्य भक्ती मात्र इच्छेच्या पलीकडे जाते.
+  </p>
+  <p>
+    <span class="key-term">"योगक्षेम"</span> ही संकल्पना भारतीय अर्थशास्त्रातही येते — मिळवणे आणि राखणे. गीता ती आध्यात्मिक पातळीवर नेते : जो स्वतःच्या योगक्षेमाची चिंता ईश्वरावर सोपवतो, त्याचे मन निश्चिंत होते आणि तीच निश्चिंतता खोल भक्तीला जागा देते.
+  </p>
+  <p>
+    वारकरी परंपरेतला <span class="key-term">"भाव तोचि देव"</span> हाच आशय पुढे नेतो. नामदेव, जनाबाई, चोखामेळा — यांनी काही मागितले नाही; फक्त विठ्ठलनाम धरले. म्हणूनच गीतेचे हे आश्वासन त्यांच्या जीवनात प्रत्यक्ष दिसते — <strong style="color: var(--temple-gold);">मागणे सुटले की देणे आपोआप येते.</strong>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · राजविद्याराजगुह्ययोग · अध्याय ९ · संकल्पना ५/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

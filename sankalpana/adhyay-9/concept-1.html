@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>राजविद्या-राजगुह्य — भगवद्गीता अध्याय ९</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ९ · संकल्पना १ · राजविद्याराजगुह्ययोग</div>
+  <div class="concept-title">राजविद्या — राजगुह्य</div>
+  <div class="concept-subtitle">सर्वोच्च ज्ञान, परम गुपित — आणि तरीही सोपे</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    अध्याय ९ एका असाधारण घोषणेने सुरू होतो —<br>
+    कृष्ण म्हणतो — <strong style="color: var(--temple-gold);">"हे तुला सांगतो, कारण तू दोष काढत नाहीस."</strong><br>
+    आणि हे ज्ञान काय आहे? — विद्यांचा राजा, गुपितांचे गुपित,<br>
+    प्रत्यक्ष अनुभवाचे — आणि करायला सोपे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 9.1-2 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.१–२</span>
+  <div class="shloka-deva">
+    इदं तु ते गुह्यतमं प्रवक्ष्याम्यनसूयवे ।<br>
+    ज्ञानं विज्ञानसहितं यज्ज्ञात्वा मोक्ष्यसेऽशुभात् ॥<br>
+    राजविद्या राजगुह्यं पवित्रमिदमुत्तमम् ।<br>
+    प्रत्यक्षावगमं धर्म्यं सुसुखं कर्तुमव्ययम् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "तुला — दोष न काढणाऱ्याला — हे परम गुपित ज्ञान सांगतो,<br>
+    ज्ञान-विज्ञानासहित; जे जाणल्यावर अशुभातून मुक्त होशील.<br>
+    राजविद्या, राजगुह्य, परम पवित्र, उत्तम,<br>
+    प्रत्यक्षावगम, धर्म्य, सोपे आणि अव्यय."
+  </div>
+</div>
+
+<!-- SHLOKA 9.3 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.३</span>
+  <div class="shloka-deva">
+    अश्रद्दधानाः पुरुषा धर्मस्यास्य परन्तप ।<br>
+    अप्राप्य मां निवर्तन्ते मृत्युसंसारवर्त्मनि ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "हे परंतप, या धर्मावर श्रद्धा नसणारे —<br>
+    मला न मिळवता मृत्युसंसाराच्या मार्गावर परत येतात."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण या ज्ञानाला सहा विशेषणे लावतो — पण त्यांतले सर्वांत आश्चर्यकारक म्हणजे <span class="key-term">"सुसुखं कर्तुम्"</span> — करायला सोपे.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>विशेषण</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>राजविद्या</td>
+        <td>सर्व विद्यांचा राजा — हे कळले तर बाकी गौण</td>
+      </tr>
+      <tr>
+        <td>राजगुह्य</td>
+        <td>सर्वांत मोठे रहस्य — उघड, तरी न दिसणारे</td>
+      </tr>
+      <tr>
+        <td>प्रत्यक्षावगम</td>
+        <td>प्रत्यक्ष अनुभवाचे — पुस्तकी नव्हे</td>
+      </tr>
+      <tr>
+        <td>सुसुखं कर्तुम्</td>
+        <td>सोपे — कठोर तपाची गरज नाही</td>
+      </tr>
+      <tr>
+        <td>अव्यय</td>
+        <td>कधीच नष्ट न होणारे</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    हे महत्त्वाचे — <strong style="color: var(--temple-gold);">भक्ती सोपी आहे.</strong> अहंकार सोडणे कठीण, पण भक्ती सोपी. रोजचे स्मरण, रोजचे नाम — हीच राजविद्या.
+  </p>
+  <p>
+    अट एकच — <span class="key-term">श्रद्धा.</span> श्रद्धा नसेल तर हे ज्ञान हातून निसटते आणि माणूस पुन्हा त्याच जन्म-मृत्यूच्या फेऱ्यात अडकतो.
+  </p>
+</div>
+
+<div class="pull-quote">
+  जगातले सर्वांत मोठे रहस्य — सर्वांत सोपेही आहे.<br>
+  <strong style="color: var(--temple-gold);">जटिल साधना नको, कठोर तप नको — फक्त प्रामाणिक श्रद्धा.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — TUKARAM -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · वारकरी परंपरा</span>
+  <div class="example-name">संत तुकाराम महाराज</div>
+  <div class="example-dates">इ.स. १६०८ – १६५० · देहू, महाराष्ट्र</div>
+
+  <p>
+    तुकाराम महाराज मोठे पंडित नव्हते, संस्कृताचे शास्त्री नव्हते. ते देहूतील एक सामान्य व्यापारी होते. तरीही त्यांचे अभंग आज गीतेच्या <span class="key-term">राजविद्ये</span>चे जिवंत रूप मानले जातात.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    त्यांचा मार्ग गुंतागुंतीचा नव्हता — फक्त <strong style="color: var(--temple-gold);">विठ्ठलाचे नाम आणि अनन्य श्रद्धा.</strong> "सुसुखं कर्तुम्" — सोपे करायला — हेच त्यांचे जीवन होते. कठोर तप नाही, क्लिष्ट कर्मकांड नाही — फक्त प्रेमळ भक्ती.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    त्यांच्या अभंगांत तत्त्वज्ञान पुस्तकातून नव्हे — <span class="key-term">प्रत्यक्ष अनुभवातून</span> आले. हाच गीतेचा "प्रत्यक्षावगम" — अनुभवाचे ज्ञान. म्हणूनच ते अभंग शतकांनंतरही हृदयाला भिडतात.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    तुकारामांचे जीवन सांगते — परमज्ञान विद्यापीठात बंद नाही. ते सामान्य माणसाच्या <span class="key-term">श्रद्धेत</span> उघडते. राजविद्या ही पंडितांची मक्तेदारी नव्हे — ती प्रामाणिक भक्ताची संपत्ती आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    राजविद्या राजगुह्य ।<br>
+    परम पवित्र उत्तम ।<br>
+    प्रत्यक्ष अनुभवाचे ।<br>
+    सोपे आणि अव्यय ।।<br><br>
+    श्रद्धावान हे मिळवी ।<br>
+    संसारातून मुक्त होई ।<br>
+    अश्रद्ध परत येई ।<br>
+    वारंवार ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "सोपे" यावर भर देतात. रोजची भक्ती, रोजचे स्मरण — हीच राजविद्या. जटिल साधना नाही, कठोर तप नाही — फक्त प्रामाणिक श्रद्धा. तुकारामांचा विठ्ठलनामाचा मार्ग हेच "सोपे" प्रत्यक्षात जगून दाखवतो.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्याकडे ही श्रद्धा आहे का — की हे ज्ञान<br>प्रत्यक्ष अनुभवाचे आहे, केवळ शब्दांचे नाही?"<br><br>
+    श्रद्धा नसेल — तर अभ्यास सुरू करा. अभ्यासातून श्रद्धा येते.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक गोष्ट — या ज्ञानाला प्रत्यक्ष अनुभवाचे करा.<br>
+    <strong style="color: var(--saffron);">फक्त वाचू नका — एक सत्य आज जगण्यात उतरवा.</strong>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    अध्याय ९ ला परंपरेने <span class="key-term">भक्तियोगाचे हृदय</span> मानले आहे. आधीच्या अध्यायांत ज्ञान आणि कर्माचे गहन विवेचन झाले; इथे कृष्ण सांगतो की या सर्वांचे सार एका सोप्या गोष्टीत आहे — अनन्य भक्ती.
+  </p>
+  <p>
+    <span class="key-term">"प्रत्यक्षावगम"</span> हा शब्द लक्षणीय आहे. भारतीय प्रमाणशास्त्रात प्रत्यक्ष — थेट अनुभव — हे सर्वोच्च प्रमाण मानले जाते. गीता म्हणते, हे ज्ञान अनुमानाचे किंवा केवळ शब्दांचे नाही; ते अनुभवातून सिद्ध होणारे आहे.
+  </p>
+  <p>
+    वारकरी परंपरेने हेच तत्त्व जगून दाखवले. ज्ञानदेव, नामदेव, तुकाराम — यांनी संस्कृत वेदांतातील गूढ सत्य <span class="key-term">सामान्य माणसाच्या भाषेत, सामान्य माणसाच्या भक्तीत</span> उतरवले. "सोपी राजविद्या" ही केवळ गीतेची घोषणा नव्हती — ती महाराष्ट्राच्या संतपरंपरेची प्रत्यक्ष कृती ठरली.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · राजविद्याराजगुह्ययोग · अध्याय ९ · संकल्पना १/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

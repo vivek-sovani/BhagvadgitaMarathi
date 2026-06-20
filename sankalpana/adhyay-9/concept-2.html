@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>मी सर्वत्र व्यापलेला — भगवद्गीता अध्याय ९</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ९ · संकल्पना २ · राजविद्याराजगुह्ययोग</div>
+  <div class="concept-title">मी सर्वत्र व्यापलेला</div>
+  <div class="concept-subtitle">पण सर्व माझ्यात नाही — उदासीन ईश्वर</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    हा गीतेतला सर्वांत मोठा विरोधाभास आहे —<br>
+    <strong style="color: var(--temple-gold);">"मी या सर्व जगात व्यापलेलो आहे — अव्यक्त रूपाने."</strong><br>
+    आणि लगेच — "पण सर्व भूते माझ्यात नाहीत."<br>
+    सर्वांत असून, कशानेही न बांधलेला — हे कसे?
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 9.4-5 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.४–५</span>
+  <div class="shloka-deva">
+    मया ततमिदं सर्वं जगदव्यक्तमूर्तिना ।<br>
+    मत्स्थानि सर्वभूतानि न चाहं तेष्ववस्थितः ॥<br>
+    न च मत्स्थानि भूतानि पश्य मे योगमैश्वरम् ।<br>
+    भूतभृन्न च भूतस्थो ममात्मा भूतभावनः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "माझ्या अव्यक्त मूर्तीने हे सर्व जग व्यापलेले आहे.<br>
+    सर्व भूते माझ्यात आहेत — पण मी त्यांच्यात नाही.<br>
+    आणि भूते माझ्यात नाहीत — माझे ऐश्वर्ययोग पाहा.<br>
+    भूतांचा धारणकर्ता, तरी भूतस्थ नाही — माझा आत्मा भूतभावन."
+  </div>
+</div>
+
+<!-- SHLOKA 9.6 + 9.9 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.६ · ९.९</span>
+  <div class="shloka-deva">
+    यथाकाशस्थितो नित्यं वायुः सर्वत्रगो महान् ।<br>
+    तथा सर्वाणि भूतानि मत्स्थानीत्युपधारय ॥<br>
+    न च मां तानि कर्माणि निबध्नन्ति धनञ्जय ।<br>
+    उदासीनवदासीनमसक्तं तेषु कर्मसु ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जसा महान वायू सर्वत्र जाणारा, नित्य आकाशात राहतो —<br>
+    तसेच सर्व भूते माझ्यात राहतात असे समज.<br>
+    हे धनंजया, ती कर्मे मला बांधत नाहीत —<br>
+    मी त्या कर्मांत उदासीनासारखा, आसक्तीशिवाय बसलेलो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    कृष्ण दोन उपमांनी हा विरोधाभास उलगडतो — <span class="key-term">वायू-आकाश</span> आणि <span class="key-term">उदासीनवत्</span>.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>उपमा</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>आकाश-वायू</td>
+        <td>वायू आकाशात राहतो; आकाश वायूने बदलत नाही</td>
+      </tr>
+      <tr>
+        <td>सूर्य</td>
+        <td>सर्वांवर प्रकाश देतो; कशाने मलिन होत नाही</td>
+      </tr>
+      <tr>
+        <td>उदासीनवत्</td>
+        <td>सर्वांत सहभागी, तरी अलिप्त साक्षी</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    <span class="key-term">"उदासीनवत्"</span> — उदासीनासारखा. ईश्वर "करत" नाही — पण त्याच्या उपस्थितीने सर्व होते. <strong style="color: var(--temple-gold);">जसे चुंबक जवळ असल्याने लोखंड हलते — चुंबक स्वतः हलत नाही.</strong>
+  </p>
+  <p>
+    हाच धडा माणसासाठीही — कामात, घरात पूर्ण सहभागी असताना आतून अलिप्त राहणे. हीच अध्याय ९ ची व्यावहारिक शिकवण.
+  </p>
+</div>
+
+<div class="pull-quote">
+  सूर्य सगळ्यावर प्रकाश देतो — पण त्याला कशाचा डाग लागत नाही.<br>
+  <strong style="color: var(--temple-gold);">पूर्ण सहभागी, तरी पूर्ण अलिप्त — हेच उदासीनवत्.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — JANAKA -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">राजर्षी · मिथिला</span>
+  <div class="example-name">राजा जनक</div>
+  <div class="example-dates">उपनिषद-काल · मिथिला (विदेह राज्य)</div>
+
+  <p>
+    जनक हे मिथिलेचे राजे होते — संपूर्ण राज्य, संपत्ती, सत्ता त्यांच्या हाती. तरीही ते <span class="key-term">"विदेह"</span> — देहाशी, पदाशी न बांधलेले — म्हणून ओळखले जातात. राजा असूनही ते आतून मुक्त, अलिप्त साक्षी होते.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    एक प्रसिद्ध कथा सांगते — कुणीतरी जनकांना विचारले, "तुम्ही राजवैभवात राहून मुक्त कसे?" जनकांनी एक तेलाने भरलेला दिवा हातात देऊन त्या व्यक्तीला नगरातून फिरवले — एकही थेंब न सांडता. परतल्यावर म्हटले — <strong style="color: var(--temple-gold);">"मीही असाच जगतो — सर्व कर्मे करत, पण लक्ष एका आत्म्यावर स्थिर."</strong>
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गीतेचा <span class="key-term">"उदासीनवत्"</span> — कर्मांत पूर्ण सहभागी, तरी आतून पूर्ण अलिप्त. जनक राज्य करत होते, पण राज्य त्यांना बांधत नव्हते. जसा आकाशात वायू — सर्वत्र, तरी आकाश अबाधित.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    जनकांचे उदाहरण सांगते — अलिप्तता म्हणजे पलायन नव्हे. संसार सोडण्याची गरज नाही; <span class="key-term">संसारात राहून आतला साक्षी जागवायचा</span> आहे. ईश्वर जसा जगात उदासीनवत्, तसाच मुक्त माणूस जीवनात.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    आकाशात वायू राहे ।<br>
+    आकाश वायूत नाहे ।<br>
+    तैसे मी सर्वांत आहे ।<br>
+    पण बांधला नाही ।।<br><br>
+    उदासीनासारखा ।<br>
+    कर्मात न अडकता ।<br>
+    सर्व होत राहे ।<br>
+    माझ्या योगाने ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "माझ्या योगाने" — सांगतात. ईश्वर "करत" नाही, पण त्याच्या उपस्थितीने सर्व होते. जसे चुंबक जवळ असल्याने लोखंड हलते — चुंबक स्वतः हलत नाही. जनक राजा हेच जगले — सर्व करत, पण कशानेही न हलता.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या जीवनात 'उदासीनवत्' राहणे —<br>अलिप्त साक्षीदार — कुठे शक्य आहे?"<br><br>
+    कामात, घरात — पूर्ण सहभागी असताना — आतून अलिप्त राहणे.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखाद्या तणावपूर्ण परिस्थितीत — एक क्षण थांबा.<br>
+    <strong style="color: var(--saffron);">"मी आकाशासारखा आहे. वायू येतो-जातो. मी बदलत नाही."</strong>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक वेदान्तातील एका सूक्ष्म तत्त्वाकडे नेतो. ईश्वर सर्वांचा <span class="key-term">आधार</span> आहे, पण तो त्यांच्यावर अवलंबून नाही. भूते ईश्वरात आहेत, पण ईश्वर भूतांच्या मर्यादांनी बांधलेला नाही. हे "मत्स्थानि — न चाहं तेषु" हे विधान अद्वैताच्या जवळ जाणारे आहे.
+  </p>
+  <p>
+    जनक हा भारतीय परंपरेत <span class="key-term">कर्मयोगी-ज्ञानी</span> राजाचे आदर्श रूप. गीता स्वतः अध्याय ३ मध्ये त्याचा उल्लेख करते — "जनकादींनी कर्मानेच सिद्धी मिळवली." म्हणून संन्यास न घेताही, राज्यकारभार करतच, मुक्ती शक्य आहे — हे जनक सिद्ध करतात.
+  </p>
+  <p>
+    अध्याय ९ चा हा भाग भक्ती आणि ज्ञान यांना जोडतो. ईश्वर उदासीनवत् आहे — म्हणजे तो पक्षपाती नाही, कशाने बांधलेला नाही. आणि भक्ताने त्याच ईश्वराचे अनुकरण करायचे — <strong style="color: var(--temple-gold);">जगात राहून, जगाने न बदलता.</strong> हीच खरी आंतरिक स्वतंत्रता.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · राजविद्याराजगुह्ययोग · अध्याय ९ · संकल्पना २/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

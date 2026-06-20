@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>समभाव — न मे भक्तः प्रणश्यति — भगवद्गीता अध्याय ९</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय ९ · संकल्पना ७ · राजविद्याराजगुह्ययोग</div>
+  <div class="concept-title">समभाव — न मे भक्तः प्रणश्यति</div>
+  <div class="concept-subtitle">माझा भक्त कधीच नष्ट होत नाही</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    अध्याय ९ चा समारोप गीतेतल्या सर्वांत आश्वासक वचनाने होतो —<br>
+    <strong style="color: var(--temple-gold);">"अत्यंत दुराचारी माणूसही, जर अनन्य भक्तीने माझी उपासना करू लागला —<br>तर त्याला साधूच मानावे."</strong><br>
+    कारण त्याने योग्य निश्चय केला आहे.<br>
+    आणि — "माझा भक्त कधीच नष्ट होत नाही."
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 9.30-31 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.३०–३१</span>
+  <div class="shloka-deva">
+    अपि चेत्सुदुराचारो भजते मामनन्यभाक् ।<br>
+    साधुरेव स मन्तव्यः सम्यग्व्यवसितो हि सः ॥<br>
+    क्षिप्रं भवति धर्मात्मा शश्वच्छान्तिं निगच्छति ।<br>
+    कौन्तेय प्रतिजानीहि न मे भक्तः प्रणश्यति ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "अत्यंत दुराचारी माणूसही जर अनन्य भावाने माझे भजन करतो —<br>
+    तर त्याला साधूच मानावे, कारण त्याचा निश्चय योग्य आहे.<br>
+    तो लवकरच धर्मात्मा होतो, शाश्वत शांती मिळवतो.<br>
+    हे कौंतेया, ठामपणे सांग — माझा भक्त कधीच नष्ट होत नाही."
+  </div>
+</div>
+
+<!-- SHLOKA 9.32-34 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक ९.३२–३४</span>
+  <div class="shloka-deva">
+    मां हि पार्थ व्यपाश्रित्य येऽपि स्युः पापयोनयः ।<br>
+    स्त्रियो वैश्यास्तथा शूद्रास्तेऽपि यान्ति परां गतिम् ॥<br>
+    मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु ।<br>
+    मामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "हे पार्था, माझा आश्रय घेणारे — कोणत्याही जन्माचे असोत —<br>
+    सर्वच परम गतीला जातात; कुणालाही द्वार बंद नाही.<br>
+    माझ्यात मन ठेव, माझा भक्त हो, मला नमस्कार कर —<br>
+    असे जोडल्यावर तू माझ्याकडेच येशील."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा अध्यायाचा कळसाध्याय आहे. कृष्ण सांगतो — भूतकाळ कितीही वाईट असो, <span class="key-term">अनन्य भक्तीचा निश्चय</span> सर्व बदलतो.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>शब्द</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>सुदुराचारः</td>
+        <td>अत्यंत वाईट वर्तन असलेला</td>
+      </tr>
+      <tr>
+        <td>सम्यग्व्यवसितः</td>
+        <td>त्याने योग्य निश्चय केला आहे</td>
+      </tr>
+      <tr>
+        <td>क्षिप्रं धर्मात्मा</td>
+        <td>लवकरच तो धर्मात्मा होतो</td>
+      </tr>
+      <tr>
+        <td>न प्रणश्यति</td>
+        <td>माझा भक्त कधीच नष्ट होत नाही</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    महत्त्वाचा शब्द — <span class="key-term">"व्यवसितः"</span> — निश्चय. भक्ती म्हणजे केवळ भावना नव्हे, तर <strong style="color: var(--temple-gold);">दिशा बदलण्याचा ठाम संकल्प.</strong> एकदा तो झाला, की रूपांतर सुरू होते.
+  </p>
+  <p>
+    आणि कृष्ण द्वार सर्वांसाठी उघडतो — जात, लिंग, जन्म, भूतकाळ — काहीही अडसर नाही. भक्तीच्या मार्गावर <span class="key-term">कुणीही वगळलेला नाही.</span>
+  </p>
+</div>
+
+<div class="pull-quote">
+  भूतकाळ माणसाला बांधत नाही — दिशा ठरवते.<br>
+  <strong style="color: var(--temple-gold);">एकदा प्रामाणिक भक्ती सुरू झाली — पतन थांबते.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — VALMIKI -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">आदिकवी · रामायणकर्ता</span>
+  <div class="example-name">महर्षी वाल्मीकी</div>
+  <div class="example-dates">पुराण-परंपरा · रत्नाकर ते आदिकवी</div>
+
+  <p>
+    परंपरेनुसार वाल्मीकी पूर्वी <span class="key-term">रत्नाकर</span> नावाचा लुटारू होता — वाटसरूंना लुटणे, हिंसा करणे हेच त्याचे जीवन. गीतेच्या भाषेत तो "सुदुराचारः" — अत्यंत दुराचारी.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    एका ऋषीच्या भेटीने त्याच्या मनात निश्चय जागला. त्याला रामनामाचा जप दिला गेला. वर्षानुवर्षे, संपूर्ण एकाग्रतेने त्याने तो जप केला — इतका की त्याच्याभोवती वारूळ (वाल्मीक) तयार झाले. <strong style="color: var(--temple-gold);">त्यातूनच त्याला "वाल्मीकी" हे नाव मिळाले.</strong>
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गीतेचा <span class="key-term">"क्षिप्रं भवति धर्मात्मा"</span> — लुटारू लवकरच धर्मात्मा झाला. पुढे त्याच वाल्मीकींनी रामायण रचले आणि ते <span class="key-term">आदिकवी</span> म्हणून अमर झाले. ज्याचा भूतकाळ अंधाराचा होता, तो प्रकाशाचा स्रोत बनला.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    वाल्मीकींचे जीवन गीतेच्या वचनाची साक्ष आहे — <span class="key-term">"न मे भक्तः प्रणश्यति."</span> भूतकाळ कितीही काळा असो, प्रामाणिक निश्चय आणि अनन्य भक्ती माणसाला पूर्ण बदलू शकते. कुणीही, कधीही, नव्याने सुरुवात करू शकतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    दुराचारी जरी असे ।<br>
+    अनन्य भक्ती करी से ।<br>
+    साधूच तो मानावा ।<br>
+    निश्चय त्याचा खरा ।।<br><br>
+    कोणी असो कुठलाही ।<br>
+    द्वार बंद नाही कुणाही ।<br>
+    माझा भक्त कधीही ।<br>
+    नष्ट न होय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "नष्ट न होय" — यावर भर देतात. एकदा अनन्य भक्ती सुरू केली, की माणूस नाशाला जात नाही. भूतकाळ नव्हे, दिशा महत्त्वाची. वाल्मीकी — रत्नाकर लुटारू ते आदिकवी — हाच या वचनाचा जिवंत पुरावा.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्या भूतकाळातल्या चुका मला अडवतात का —<br>'मी आता बदलू शकत नाही' असे वाटते का?"<br><br>
+    गीता म्हणते — निश्चय करा. द्वार सदैव उघडे आहे.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक नवी सुरुवात करा — भूतकाळ बाजूला ठेवून.<br>
+    <strong style="color: var(--saffron);">"आजपासून माझी दिशा बदलते. मी नष्ट होणार नाही."</strong><br>
+    हाच सम्यग्-व्यवसाय — योग्य निश्चय.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन · अध्याय समारोप</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक भक्तियोगाचे <span class="key-term">क्रांतिकारी स्वरूप</span> दाखवतो. पूर्वकर्माच्या कठोर नियमापुढे गीता भक्तीला ठेवते — आणि सांगते की प्रामाणिक शरणागती भूतकाळाच्या ओझ्याला ओलांडू शकते. हे क्षमेचे आणि रूपांतराचे तत्त्वज्ञान आहे.
+  </p>
+  <p>
+    ९.३२ चा "स्त्रियो वैश्यास्तथा शूद्राः... परां गतिम्" हा श्लोक त्या काळाच्या संदर्भात अत्यंत समावेशक आहे — भक्तीचे द्वार सर्व जाती-वर्गांसाठी, सर्वांसाठी खुले. वारकरी परंपरेने हीच समता उचलून धरली; जनाबाई, चोखामेळा, सावता माळी — सर्व स्तरांतले संत याच आधारावर पूज्य ठरले.
+  </p>
+  <p>
+    अध्याय ९ अशा प्रकारे पूर्ण वर्तुळ साधतो — सुरुवात "राजविद्या, सोपी" अशी झाली, आणि शेवट "कुणीही नष्ट होत नाही" असा. <strong style="color: var(--temple-gold);">सर्वोच्च ज्ञान सर्वांत सोपे आहे, आणि सर्वांसाठी आहे</strong> — हाच या भक्तियोगाच्या हृदयाचा अंतिम संदेश.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · राजविद्याराजगुह्ययोग · अध्याय ९ · संकल्पना ७/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>
