@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>विभूती यादी — भगवद्गीता अध्याय १०</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १० · संकल्पना ५ · विभूतियोग</div>
+  <div class="concept-title">विभूती यादी</div>
+  <div class="concept-subtitle">प्रत्येक श्रेष्ठात माझा अंश</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    आता कृष्ण ती प्रसिद्ध यादी सांगतो —<br>
+    <strong style="color: var(--temple-gold);">"आदित्यांत मी विष्णू, प्रकाशांत मी सूर्य,<br>पर्वतांत मी मेरू, नद्यांत मी गंगा, अक्षरांत मी ओंकार."</strong><br>
+    प्रत्येक वर्गातले जे सर्वश्रेष्ठ —<br>
+    तिथे कृष्णाचा विशेष अंश प्रकट होतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 10.21 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.२१</span>
+  <div class="shloka-deva">
+    आदित्यानामहं विष्णुर्ज्योतिषां रविरंशुमान् ।<br>
+    मरीचिर्मरुतामस्मि नक्षत्राणामहं शशी ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "आदित्यांमध्ये मी विष्णू, प्रकाशमानांमध्ये तेजस्वी सूर्य,<br>
+    मरुतांमध्ये मरीची, आणि नक्षत्रांमध्ये मी चंद्र आहे."
+  </div>
+</div>
+
+<!-- SHLOKA 10.24-25 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.२४–२५</span>
+  <div class="shloka-deva">
+    पुरोधसां च मुख्यं मां विद्धि पार्थ बृहस्पतिम् ।<br>
+    सेनानीनामहं स्कन्दः सरसामस्मि सागरः ॥<br>
+    महर्षीणां भृगुरहं गिरामस्म्येकमक्षरम् ।<br>
+    यज्ञानां जपयज्ञोऽस्मि स्थावराणां हिमालयः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "पुरोहितांमध्ये मुख्य बृहस्पती मला जाण; सेनापतींमध्ये मी स्कंद,<br>
+    जलाशयांमध्ये मी सागर.<br>
+    महर्षींमध्ये मी भृगू, वाणीमध्ये मी एकाक्षर ओंकार;<br>
+    यज्ञांमध्ये मी जपयज्ञ, स्थिरांमध्ये मी हिमालय."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    ही यादी ऐकताना एक सूत्र स्पष्ट होते — <span class="key-term">प्रत्येक वर्गातले जे सर्वोच्च, तिथे कृष्ण.</span> तो प्रत्येक गोष्ट नाही म्हणत; तो "त्या-त्यातले श्रेष्ठ" म्हणतो.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>वर्ग</th>
+        <th>श्रेष्ठ — कृष्णाचा अंश</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>प्रकाश</td>
+        <td>सूर्य</td>
+      </tr>
+      <tr>
+        <td>नक्षत्रे</td>
+        <td>चंद्र</td>
+      </tr>
+      <tr>
+        <td>नद्या</td>
+        <td>गंगा</td>
+      </tr>
+      <tr>
+        <td>पर्वत</td>
+        <td>हिमालय</td>
+      </tr>
+      <tr>
+        <td>वाणी</td>
+        <td>ओंकार</td>
+      </tr>
+      <tr>
+        <td>यज्ञ</td>
+        <td>जपयज्ञ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    याचा अर्थ — जिथे जिथे <span class="key-term">उत्कृष्टता, तेज, भव्यता</span> दिसते, तिथे ईश्वराचा विशेष आविष्कार समजावा. <strong style="color: var(--temple-gold);">श्रेष्ठ गोष्ट पाहिली की ईश्वराचे स्मरण करावे — हेच या यादीचे प्रयोजन.</strong>
+  </p>
+  <p>
+    ही यादी पूजेसाठी नाही — ती दृष्टी देण्यासाठी आहे. सूर्य पाहिला, हिमालय पाहिला, गंगा पाहिली — की मन सहज त्या मूळ तेजाकडे वळावे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  जिथे जिथे श्रेष्ठता, तेज, भव्यता —<br>
+  <strong style="color: var(--temple-gold);">तिथे तिथे त्याचाच विशेष अंश प्रकट होतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — CONSTELLATION -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· श्रेष्ठतेची नक्षत्रमाला</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">रूपक · प्रत्येक क्षेत्रातले शिखर</span>
+  <div class="example-name">शिखरांची नक्षत्रमाला</div>
+  <div class="example-dates">हिमालय · गंगा · सूर्य — आजही तेच तेज</div>
+
+  <p>
+    ही विभूती-यादी एका व्यक्तीची नाही — ती <span class="key-term">शिखरांची नक्षत्रमाला</span> आहे. आजही ती आपल्या भोवती जिवंत आहे : पर्वतांत हिमालय आजही सर्वोच्च, नद्यांत गंगा आजही पवित्रतम, प्रकाशांत सूर्य आजही तेजस्वी.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    गीता म्हणते — या प्रत्येक शिखराकडे पाहताना थांबा. <strong style="color: var(--temple-gold);">हिमालयाची अचलता, गंगेची निरंतरता, सूर्याचे तेज</strong> — हे केवळ निसर्ग नाही; तो त्या मूळ चैतन्याचा आविष्कार आहे. श्रेष्ठता ही ईश्वराकडे बोट दाखवणारी खूण.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हेच सूत्र आजच्या प्रत्येक क्षेत्रालाही लागू होते — विज्ञानातले एखादे शिखर, संगीतातला एखादा स्वर, कलेतली एखादी निर्मिती. जिथे <span class="key-term">अपवादात्मक उत्कृष्टता</span> दिसते, तिथे तो अंश आहे. आणि म्हणूनच ती श्रेष्ठता "माझी" म्हणून मिरवण्याची नव्हे — नम्रपणे ओळखण्याची.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    या यादीचा खरा हेतू स्पर्धा नव्हे, तर <span class="key-term">स्मरण</span> — जे जे भव्य ते पाहिले की मूळ तेजाकडे वळावे. श्रेष्ठ गोष्ट ही एक खिडकी आहे; तिच्यातून दिसणारा प्रकाश एकच — कृष्णाचा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    प्रकाशांत सूर्य मी ।<br>
+    नद्यांत गंगा मी ।<br>
+    पर्वतांत हिमालय ।<br>
+    वाणीत ओंकार ।।<br><br>
+    जे जे श्रेष्ठ दिसे ।<br>
+    तेथे माझा अंश असे ।<br>
+    ते पाहुनी स्मरावे ।<br>
+    मूळ तेज ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "जे जे श्रेष्ठ दिसे, तेथे माझा अंश" — सांगतात. ही यादी पाठ करायची नाही; तिचा भाव जगायचा. कुठलीही भव्य, तेजस्वी गोष्ट दिसली की मन सहज मूळ चैतन्याकडे वळावे — हेच विभूती-यादीचे प्रयोजन.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "एखादी भव्य, सुंदर, तेजस्वी गोष्ट पाहताना —<br>मी फक्त ती गोष्ट पाहतो, की त्यामागचे मूळ तेज?"<br><br>
+    श्रेष्ठता ही ईश्वराकडे बोट दाखवणारी खूण.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखादी सुंदर गोष्ट पाहाल — सूर्योदय, नदी, संगीत —<br>
+    <strong style="color: var(--saffron);">"हे तेज त्याचेच. हा अंश त्याचाच."</strong><br>
+    एक क्षण थांबून मूळाकडे वळा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    ही विभूती-यादी म्हणजे <span class="key-term">सगुण उपासनेचे</span> साधन. निराकार ब्रह्म मनाला पकडता येत नाही; म्हणून गीता ठोस, परिचित शिखरांकडे बोट दाखवते — सूर्य, हिमालय, गंगा. मन या मूर्त रूपांद्वारे हळूहळू अमूर्त मूळाकडे जाते.
+  </p>
+  <p>
+    महत्त्वाचे हे की कृष्ण "प्रत्येक गोष्ट मी" असे म्हणत नाही (ते पुढच्या संकल्पनेत येते); इथे तो <span class="key-term">"त्या-त्या वर्गातले श्रेष्ठ"</span> म्हणतो. कारण उत्कृष्टतेत त्याचे तेज अधिक स्पष्ट प्रकटते — जसे स्वच्छ आरशात प्रतिबिंब अधिक स्पष्ट दिसते.
+  </p>
+  <p>
+    या दृष्टीचा परिणाम म्हणजे <span class="key-term">श्रद्धायुक्त नम्रता.</span> जगातली कोणतीही श्रेष्ठता — निसर्गातली, कलेतली, विज्ञानातली — अहंकाराचे नव्हे तर स्मरणाचे निमित्त बनते. <strong style="color: var(--temple-gold);">श्रेष्ठ ते पाहावे, आणि त्यामागच्या मूळ तेजाला नमावे</strong> — हीच विभूतियोगाची साधना.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · विभूतियोग · अध्याय १० · संकल्पना ५/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>जे विभूतिमत् — माझ्या तेजाचा अंश — भगवद्गीता अध्याय १०</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १० · संकल्पना ६ · विभूतियोग</div>
+  <div class="concept-title">जे विभूतिमत्</div>
+  <div class="concept-subtitle">माझ्या तेजाचा अंश — श्रीमंत, सुंदर, बलवान</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    यादी कितीही लांब असली तरी कृष्ण ती एका सूत्रात बांधतो —<br>
+    <strong style="color: var(--temple-gold);">"जे जे विभूतिमत्, श्रीमंत, तेजस्वी, बलवान —<br>ते सर्व माझ्या तेजाच्या एका अंशातून उत्पन्न झाले."</strong><br>
+    म्हणजे कुठलीही श्रेष्ठ निर्मिती —<br>
+    ती त्या एका अनंत तेजाचा कण आहे.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 10.41 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.४१</span>
+  <div class="shloka-deva">
+    यद्यद्विभूतिमत्सत्त्वं श्रीमदूर्जितमेव वा ।<br>
+    तत्तदेवावगच्छ त्वं मम तेजोंऽशसम्भवम् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जे जे विभूतिमान, श्रीमान किंवा तेजस्वी-बलवान आहे —<br>
+    ते ते सर्व माझ्या तेजाच्या एका अंशातून उत्पन्न झाले,<br>
+    असे तू जाण."
+  </div>
+</div>
+
+<!-- SHLOKA 10.42 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.४२</span>
+  <div class="shloka-deva">
+    अथवा बहुनैतेन किं ज्ञातेन तवार्जुन ।<br>
+    विष्टभ्याहमिदं कृत्स्नमेकांशेन स्थितो जगत् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "किंवा हे अर्जुना, या विस्ताराने तुला काय?<br>
+    मी या संपूर्ण जगाला केवळ माझ्या एका अंशाने<br>
+    धारण करून उभा आहे."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    इतकी लांब यादी सांगितल्यावर कृष्ण एक सर्वसमावेशक नियम देतो — <span class="key-term">"मम तेजोंऽशसम्भवम्"</span> — माझ्या तेजाच्या अंशातून. वेगवेगळी उदाहरणे लक्षात ठेवायची गरज नाही; एक तत्त्व पुरेसे.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>जिथे दिसते</th>
+        <th>ते म्हणजे</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>विभूतिमत्</td>
+        <td>असाधारण सामर्थ्य</td>
+      </tr>
+      <tr>
+        <td>श्रीमत्</td>
+        <td>सौंदर्य, समृद्धी, कांती</td>
+      </tr>
+      <tr>
+        <td>ऊर्जित</td>
+        <td>तेज, बल, ओज</td>
+      </tr>
+      <tr>
+        <td>हे सर्व</td>
+        <td>त्याच्या तेजाचा एक अंश</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    आणि मग ९.४२ — सर्वांत गहन — <span class="key-term">"एकांशेन स्थितो जगत्"</span>. <strong style="color: var(--temple-gold);">संपूर्ण विश्व त्याच्या केवळ एका अंशात उभे आहे.</strong> उरलेला अनंत अजून बाकीच आहे.
+  </p>
+  <p>
+    म्हणजे — जे काही भव्य आपण पाहतो, ते अनंताचा फक्त एक कण. श्रेष्ठता पाहिली की गर्व नव्हे, नम्रता यावी — कारण ती त्याच्या तेजाची उसनी झलक आहे.
+  </p>
+</div>
+
+<div class="pull-quote">
+  जे काही तेजस्वी, सुंदर, सामर्थ्यवान — ते त्याच्या तेजाचा एक कण.<br>
+  <strong style="color: var(--temple-gold);">संपूर्ण विश्व त्याच्या केवळ एका अंशात उभे आहे.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — RAMANUJAN -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">गणितज्ञ · संख्यासिद्धांत</span>
+  <div class="example-name">श्रीनिवास रामानुजन</div>
+  <div class="example-dates">१८८७ – १९२० · इरोड / कुंभकोणम्, तमिळनाडू</div>
+
+  <p>
+    रामानुजन हे जगातले एक अलौकिक गणिती तेज. औपचारिक शिक्षण मर्यादित, साधन नाही — तरी त्यांनी हजारो प्रमेये मांडली, ज्यांतली अनेक आजही गणितज्ञांना थक्क करतात. हे <span class="key-term">"विभूतिमत् सत्त्व"</span> — असाधारण प्रतिभा.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    पण विशेष हे — रामानुजन स्वतः ही प्रतिभा "माझी" मानत नसत. ते म्हणत, <strong style="color: var(--temple-gold);">त्यांची प्रमेये त्यांना देवी नामगिरीच्या प्रेरणेने स्वप्नात सुचत.</strong> "जे समीकरण देवाचा विचार व्यक्त करत नाही, ते मला निरर्थक वाटते" — असे त्यांचे उद्गार प्रसिद्ध आहेत.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    हाच गीतेचा <span class="key-term">"मम तेजोंऽशसम्भवम्"</span> — ते तेज त्याचे, मी केवळ माध्यम. रामानुजनांची प्रतिभा अनंत मूळ तेजाचा एक तेजस्वी कण होती — आणि त्यांनी ते नम्रपणे ओळखले, गर्वाने नव्हे.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    म्हणूनच त्यांची कहाणी विभूतियोगाची साक्ष आहे. कुठलीही असाधारण प्रतिभा — गणित, संगीत, विज्ञान, कला — ही <span class="key-term">उसनी झलक</span> आहे. जो हे जाणतो, त्याची उंची त्याला नम्र करते; जो विसरतो, त्याला गर्व बुडवतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    जे जे तेजस्वी दिसे ।<br>
+    श्रीमंत बलवान असे ।<br>
+    तो माझ्या तेजाचा ।<br>
+    एक अंश ।।<br><br>
+    सर्व विश्व उभे राहे ।<br>
+    माझ्या एका अंशात ।<br>
+    उरले अनंत तेज ।<br>
+    अजून बाकी ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "एका अंशात सर्व विश्व" — यावर भर देतात. आपण जे काही भव्य पाहतो, ते अनंताचा फक्त एक कण. हे जाणले की श्रेष्ठतेचा गर्व राहत नाही — उरते फक्त नम्रता. रामानुजनांनी आपली प्रतिभा देवाची देणगी मानली — हाच तो भाव.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "माझ्यातली किंवा इतरांतली असाधारण प्रतिभा —<br>मी ती 'स्वतःची' मानतो, की उसनी झलक?"<br><br>
+    जो तेज उसने मानतो, तो नम्र राहतो.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एखादे असामान्य कौशल्य, प्रतिभा पाहाल —<br>
+    <strong style="color: var(--saffron);">"हे तेज त्याच्या अंशाचे. उरले अनंत अजून बाकी."</strong><br>
+    श्रेष्ठतेपुढे नम्र व्हा, स्तिमित व्हा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक संपूर्ण विभूती-यादीचा <span class="key-term">सारांश-सूत्र</span> आहे. वेगवेगळी उदाहरणे ही केवळ बोट दाखवणारी; खरे तत्त्व एकच — कोणतीही उत्कृष्टता त्या मूळ तेजाचा आविष्कार. हे लक्षात आले की यादी पाठ करण्याची गरज उरत नाही.
+  </p>
+  <p>
+    <span class="key-term">"एकांशेन स्थितो जगत्"</span> हे विधान फार खोल आहे. ईश्वर विश्वाने "संपत" नाही; संपूर्ण सृष्टी ही त्याच्या एका अंशाची अभिव्यक्ती, उरलेला अनंत अव्यक्तच राहतो. हे पूर्णत्वाचे — जे देऊनही उणे होत नाही अशा अक्षय स्रोताचे — दर्शन आहे.
+  </p>
+  <p>
+    याचा जीवनातला अर्थ म्हणजे <span class="key-term">नम्रता आणि विस्मय.</span> मानवी कर्तृत्वाचे सर्वोच्च शिखरही अनंताचा एक कण ठरते. म्हणून श्रेष्ठता गर्वाचे नव्हे, कृतज्ञतेचे आणि स्मरणाचे कारण बनते. <strong style="color: var(--temple-gold);">तेज ओळखावे, आणि त्याच्या मूळापुढे नतमस्तक व्हावे</strong> — हाच विभूतियोगाचा परिपाक.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · विभूतियोग · अध्याय १० · संकल्पना ६/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

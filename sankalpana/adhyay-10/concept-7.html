@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>एकांशेन स्थितो जगत् — भगवद्गीता अध्याय १०</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १० · संकल्पना ७ · विभूतियोग</div>
+  <div class="concept-title">एकांशेन स्थितो जगत्</div>
+  <div class="concept-subtitle">अध्यायाचे परम सत्य — एका अंशात संपूर्ण विश्व</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    संपूर्ण विभूतियोगाचा सारांश एकाच श्लोकात —<br>
+    <strong style="color: var(--temple-gold);">"मी या संपूर्ण जगाला माझ्या केवळ एका अंशाने धारण करून उभा आहे."</strong><br>
+    हे ऐकून अर्जुनही स्तिमित होतो —<br>
+    "तुझे माहात्म्य ऐकून माझी तृप्ती होत नाही."
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 10.12-13 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.१२–१३ · अर्जुनाची स्तुती</span>
+  <div class="shloka-deva">
+    परं ब्रह्म परं धाम पवित्रं परमं भवान् ।<br>
+    पुरुषं शाश्वतं दिव्यमादिदेवमजं विभुम् ॥<br>
+    आहुस्त्वामृषयः सर्वे देवर्षिर्नारदस्तथा ।<br>
+    असितो देवलो व्यासः स्वयं चैव ब्रवीषि मे ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "तू परम ब्रह्म, परम धाम, परम पवित्र;<br>
+    शाश्वत दिव्य पुरुष, आदिदेव, अजन्मा, विभू.<br>
+    सर्व ऋषी — देवर्षी नारद, असित, देवल, व्यास —<br>
+    तुला तसेच म्हणतात; आणि आता तू स्वतःही मला सांगतोस."
+  </div>
+</div>
+
+<!-- SHLOKA 10.42 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.४२ · अध्यायाचा कळस</span>
+  <div class="shloka-deva">
+    अथवा बहुनैतेन किं ज्ञातेन तवार्जुन ।<br>
+    विष्टभ्याहमिदं कृत्स्नमेकांशेन स्थितो जगत् ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "किंवा हे अर्जुना, या विस्तृत वर्णनाने तुला काय?<br>
+    मी या संपूर्ण जगाला केवळ माझ्या एका अंशाने<br>
+    धारण करून उभा आहे — एवढे जाणणे पुरेसे."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    अध्याय १० ची अखेर दोन गोष्टींनी होते — कृष्णाचे सर्वव्यापी सत्य, आणि ते ऐकून अर्जुनाची <span class="key-term">अतृप्त जिज्ञासा.</span> "ऐकतच राहावे" अशी अवस्था.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>शब्द</th>
+        <th>अर्थ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>एकांश</td>
+        <td>केवळ एक अंश — कण</td>
+      </tr>
+      <tr>
+        <td>कृत्स्नम्</td>
+        <td>संपूर्ण — सर्व काही</td>
+      </tr>
+      <tr>
+        <td>विष्टभ्य</td>
+        <td>धारण करून, आधार देऊन</td>
+      </tr>
+      <tr>
+        <td>स्थितः</td>
+        <td>स्थिरपणे उभा</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    हे अफाट सत्य आहे — <strong style="color: var(--temple-gold);">सूर्य, तारे, आकाशगंगा, संपूर्ण विश्व — हे सर्व त्याच्या फक्त एका अंशात.</strong> उरलेला अनंत अव्यक्तच राहतो.
+  </p>
+  <p>
+    आणि कृष्ण म्हणतो — एवढी मोठी यादी लक्षात ठेवायची गरज नाही. <span class="key-term">हे एक सत्य पुरेसे</span> — सर्वत्र तोच, आणि तरीही तो अनंत. हे जाणले की दृष्टीच बदलते.
+  </p>
+</div>
+
+<div class="pull-quote">
+  संपूर्ण विश्व त्याच्या एका अंशात — उरलेला अनंत अजून बाकी.<br>
+  <strong style="color: var(--temple-gold);">हे एक सत्य कळले, की बाकी सर्व यादी गौण ठरते.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — TWO STRANDS -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· दोन साक्षी — अर्जुनाचा विस्मय आणि वैज्ञानिकाचे दर्शन</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">रूपक · विस्मय आणि एकत्व</span>
+  <div class="example-name">अर्जुनाचा विस्मय · बोसांचे एकत्व-दर्शन</div>
+  <div class="example-dates">गीता-संवाद · आणि आधुनिक विज्ञान</div>
+
+  <p>
+    पहिली साक्ष स्वतः <span class="key-term">अर्जुनाची</span>. कृष्णाचे माहात्म्य ऐकता ऐकता तो म्हणतो — "मला तृप्ती होत नाही, अजून ऐकावेसे वाटते." हाच खरा भक्ताचा भाव — अनंतापुढे थक्क होणे, आणि तरी आणखी जाणण्याची आस.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    दुसरी साक्ष आधुनिक काळातली — <strong style="color: var(--temple-gold);">जगदीशचंद्र बोस</strong> (१८५८–१९३७, बंगाल). त्यांनी प्रयोगांनी दाखवले की वनस्पतीही उद्दीपनांना प्रतिसाद देतात — सजीव आणि निर्जीव यांच्यातली सीमा त्यांना धूसर वाटली. एकच जीवनतत्त्व सर्वत्र पसरलेले — हे त्यांचे दर्शन.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    दोन्ही साक्षी एकाच सत्याकडे बोट दाखवतात — <span class="key-term">"एकांशेन स्थितो जगत्"</span>. विज्ञान जसजसे खोल जाते, तसतसे विश्वामागचे एकत्व अधिकच विस्मयकारक वाटते. अणूपासून आकाशगंगेपर्यंत एकच नियम, एकच सूत्र.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    म्हणूनच हा श्लोक चरित्रापेक्षा <span class="key-term">दृष्टीचा</span> आहे. अर्जुनासारखा विस्मय आणि बोसांसारखे एकत्व-दर्शन — दोन्ही सांगतात की संपूर्ण सृष्टी एका मूळ चैतन्याची अभिव्यक्ती आहे. ते जाणणाऱ्याला विश्व म्हणजे विखुरलेले तुकडे नव्हे — एका अनंताचे एकच रूप दिसते.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    एका अंशात माझ्या ।<br>
+    संपूर्ण विश्व राहे ।<br>
+    उरले अनंत तेज ।<br>
+    अव्यक्त सदा ।।<br><br>
+    हे एक जाणावे ।<br>
+    बाकी यादी गौण ।<br>
+    सर्वत्र तोचि पाहे ।<br>
+    तृप्ती न होय ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "हे एक जाणावे, बाकी यादी गौण" — सांगतात. सर्व विभूती एका सत्याकडे नेतात — सर्वत्र तोच, आणि तरी तो अनंत. आणि हे सत्य जितके जाणावे, तितकी आस वाढते — अर्जुनासारखी अतृप्त, विस्मयाने भरलेली.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "मला विश्व विखुरलेल्या तुकड्यांसारखे दिसते —<br>की एका मूळ चैतन्याचे एकच रूप?"<br><br>
+    एकत्व पाहिले की विस्मय येतो, भेद विरतो.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक क्षण — आकाश, वृक्ष, माणूस पाहताना —<br>
+    <strong style="color: var(--saffron);">"हे सर्व त्याच्या एका अंशात. सर्वत्र तोच एक."</strong><br>
+    या विस्मयात थांबा.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन · अध्याय समारोप</span>
+</div>
+<div class="analytical-block">
+  <p>
+    <span class="key-term">"एकांशेन स्थितो जगत्"</span> हे विधान पूर्णत्वाच्या संकल्पनेकडे नेते. ईश्वर सृष्टीने मर्यादित होत नाही; संपूर्ण विश्व ही त्याच्या एका अंशाची अभिव्यक्ती, आणि उरलेला अनंत अव्यक्त राहतो. ईशावास्य उपनिषदातील "पूर्णस्य पूर्णमादाय पूर्णमेवावशिष्यते" — पूर्णातून पूर्ण घेऊनही पूर्णच उरते — हाच भाव.
+  </p>
+  <p>
+    अध्याय १० चे दोन टोक लक्षणीय आहेत — सुरुवातीला "माझे मूळ कुणाला माहीत नाही" (संकल्पना १), आणि शेवटी "एका अंशात संपूर्ण जग". म्हणजे ईश्वर एकाच वेळी <span class="key-term">अज्ञेय मूळ</span> आणि <span class="key-term">सर्वव्यापी आविष्कार</span> — दोन्ही.
+  </p>
+  <p>
+    या दर्शनाचा परिणाम म्हणजे विस्मय आणि एकात्मता. अर्जुनाची "तृप्ती होत नाही" ही अवस्था आणि विज्ञानाचे एकत्व-शोधन — दोन्ही एकाच विस्मयाची रूपे. विभूतियोग संपतो तो या जाणिवेने : <strong style="color: var(--temple-gold);">सर्वत्र एकच चैतन्य पाहणे — हीच सर्वोच्च दृष्टी, आणि पुढच्या अध्यायातील विश्वरूप-दर्शनाची पूर्वतयारी.</strong>
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · विभूतियोग · अध्याय १० · संकल्पना ७/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

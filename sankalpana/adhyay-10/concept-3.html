@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="mr" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>विभूती-योग जाणणारा — भगवद्गीता अध्याय १०</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari:ital@0;1&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@600&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep-vellum:   #1A1208;
+    --warm-ivory:    #FDF6E3;
+    --temple-gold:   #C8922A;
+    --saffron:       #E8651A;
+    --antique-cream: #F0E6C8;
+    --ink-brown:     #2C1A0E;
+    --patina-teal:   #4A7C6F;
+    --vermilion:     #8B1A1A;
+    --lapis:         #1E3A5F;
+
+    --font-deva:    'Tiro Devanagari', 'Noto Serif Devanagari', serif;
+    --font-latin:   'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --font-display: 'Cinzel', serif;
+    --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--deep-vellum);
+    color: var(--antique-cream);
+    font-family: var(--font-deva);
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  /* === ORNAMENTAL HEADER === */
+  .iks-header {
+    border-top: 2px solid var(--temple-gold);
+    border-bottom: 1px solid var(--temple-gold);
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+  .iks-header .chapter-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    color: var(--temple-gold);
+  }
+  .iks-header .concept-title {
+    font-family: var(--font-deva);
+    font-size: 1.75rem;
+    color: var(--temple-gold);
+    margin-top: 0.4rem;
+    line-height: 1.6;
+  }
+  .iks-header .concept-subtitle {
+    font-family: var(--font-deva);
+    font-size: 1rem;
+    color: var(--antique-cream);
+    opacity: 0.75;
+    margin-top: 0.2rem;
+  }
+
+  /* === GOLD RULE === */
+  .gold-rule {
+    border: none;
+    border-top: 1px solid var(--temple-gold);
+    margin: 1.75rem 0;
+    opacity: 0.5;
+  }
+
+  /* === OPENING === */
+  .opening-block {
+    text-align: center;
+    padding: 1rem 1rem 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .opening-block .promise-deva {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === SHLOKA BLOCK === */
+  .shloka-block {
+    background: linear-gradient(135deg, #0E0A04 0%, #231608 100%);
+    border: 1px solid var(--temple-gold);
+    border-radius: 4px;
+    padding: 2rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .shloka-number {
+    position: absolute;
+    top: -0.75rem;
+    right: 1rem;
+    background: var(--saffron);
+    color: white;
+    font-family: var(--font-deva);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+  }
+  .shloka-deva {
+    font-family: var(--font-deva);
+    font-size: 1.25rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .shloka-iast {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--patina-teal);
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    line-height: 1.9;
+  }
+  .shloka-meaning {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--antique-cream);
+    text-align: center;
+    border-top: 1px solid rgba(200, 146, 42, 0.3);
+    padding-top: 1rem;
+    line-height: 1.95;
+  }
+
+  /* === SECTION HEADING === */
+  .section-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .section-heading .label-deva {
+    font-family: var(--font-deva);
+    font-size: 1.2rem;
+    color: var(--saffron);
+    line-height: 1;
+  }
+  .section-heading .label-small {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+  }
+
+  /* === EXPLANATION BLOCK === */
+  .explanation-block {
+    background-color: #221507;
+    border-left: 3px solid var(--temple-gold);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .explanation-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .explanation-block p:last-child { margin-bottom: 0; }
+
+  /* === CONTRAST TABLE === */
+  .contrast-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.25rem 0 0.5rem;
+  }
+  .contrast-table th {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    color: var(--temple-gold);
+    border-bottom: 1px solid rgba(200,146,42,0.5);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  .contrast-table td {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--antique-cream);
+    padding: 0.45rem 0.75rem;
+    border-bottom: 1px solid rgba(200,146,42,0.15);
+    vertical-align: top;
+  }
+  .contrast-table td:first-child {
+    color: var(--saffron);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .contrast-table tr:last-child td { border-bottom: none; }
+
+  /* === PULL QUOTE === */
+  .pull-quote {
+    border-left: 4px solid var(--saffron);
+    padding: 0.75rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    color: var(--antique-cream);
+    line-height: 1.95;
+  }
+
+  /* === RELEVANCE BLOCK === */
+  .relevance-block {
+    background: linear-gradient(135deg, #0C1420 0%, #0E1A2E 100%);
+    border: 1px solid var(--patina-teal);
+    border-radius: 4px;
+    padding: 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .relevance-block .example-tag {
+    font-family: var(--font-deva);
+    font-size: 0.8rem;
+    color: var(--patina-teal);
+    margin-bottom: 0.4rem;
+    display: block;
+  }
+  .relevance-block .example-name {
+    font-family: var(--font-latin);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--antique-cream);
+    margin-bottom: 0.1rem;
+  }
+  .relevance-block .example-dates {
+    font-family: var(--font-deva);
+    font-size: 0.82rem;
+    color: var(--patina-teal);
+    margin-bottom: 1rem;
+    opacity: 0.85;
+  }
+  .relevance-block p {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    margin-bottom: 0.85rem;
+  }
+  .relevance-block p:last-child { margin-bottom: 0; }
+  .relevance-block .divider {
+    border: none;
+    border-top: 1px solid rgba(74,124,111,0.35);
+    margin: 1.1rem 0;
+  }
+
+  /* === JNANESHWARI BLOCK === */
+  .jnaneshwari-block {
+    background: linear-gradient(135deg, #1A0E04 0%, #241205 100%);
+    border: 1px solid rgba(200,146,42,0.45);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+    position: relative;
+  }
+  .jnaneshwari-block::before {
+    content: 'ज्ञानेश्वरी';
+    position: absolute;
+    top: -0.75rem;
+    left: 1.25rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    font-family: var(--font-deva);
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+  .ovi {
+    font-family: var(--font-deva);
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--temple-gold);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .ovi-vivechan {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    border-top: 1px solid rgba(200,146,42,0.25);
+    padding-top: 0.9rem;
+  }
+
+  /* === SANKALPANA / REFLECTION === */
+  .sankalpana-block {
+    background: #1C1005;
+    border: 1px solid rgba(200,146,42,0.3);
+    border-radius: 4px;
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.75rem;
+  }
+  .sankalpana-block .q-label {
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.65rem;
+    display: block;
+  }
+  .sankalpana-block .question {
+    font-family: var(--font-deva);
+    font-size: 1.1rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+  }
+
+  /* === ANALYTICAL === */
+  .analytical-block {
+    border: 1px dashed rgba(200, 146, 42, 0.4);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    position: relative;
+    margin-bottom: 1.75rem;
+  }
+  .analytical-block::before {
+    content: '◈';
+    position: absolute;
+    top: -0.7rem;
+    left: 1rem;
+    background: var(--deep-vellum);
+    color: var(--temple-gold);
+    padding: 0 0.4rem;
+    font-size: 0.9rem;
+  }
+  .analytical-block p {
+    font-family: var(--font-deva);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    color: var(--antique-cream);
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  .analytical-block p:last-child { margin-bottom: 0; }
+
+  .key-term { color: var(--saffron); }
+
+  /* === FOOTER === */
+  .iks-footer {
+    border-top: 2px solid var(--temple-gold);
+    margin-top: 3rem;
+    padding-top: 1rem;
+    text-align: center;
+    font-family: var(--font-deva);
+    font-size: 0.85rem;
+    color: var(--temple-gold);
+    opacity: 0.65;
+  }
+
+  @media print {
+    body { background: white; color: #2C1A0E; }
+    .shloka-block, .explanation-block, .relevance-block,
+    .jnaneshwari-block, .sankalpana-block, .analytical-block {
+      background: #f9f4e8 !important; border-color: #C8922A !important;
+    }
+    .shloka-deva, .ovi { color: #8B5E10 !important; }
+  }
+
+/* ── Font size scaling (syncs with parent site setting) ── */
+html[data-fontsize="large"]  { font-size: 118%; }
+html[data-fontsize="xlarge"] { font-size: 137%; }
+</style>
+</head>
+<body>
+
+
+<!-- HEADER -->
+<header class="iks-header">
+  <div class="chapter-label">भगवद्गीता · अध्याय १० · संकल्पना ३ · विभूतियोग</div>
+  <div class="concept-title">विभूती-योग जाणणारा</div>
+  <div class="concept-subtitle">मी त्याला बुद्धियोग देतो — आणि अंतरीचा अंधार दूर करतो</div>
+</header>
+
+<!-- OPENING -->
+<div class="opening-block">
+  <p class="promise-deva">
+    जो हे विभूती-तत्त्व खऱ्या भक्तीने जाणतो —<br>
+    त्याला कृष्ण काय देतो?<br>
+    <strong style="color: var(--temple-gold);">"मी त्याला बुद्धियोग देतो — आणि ज्ञानदीप लावून<br>त्याच्या अंतरीचा अंधार स्वतः दूर करतो."</strong><br>
+    भक्त एक पाऊल टाकतो — ईश्वर दहा पावले येतो.
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SHLOKA 10.8 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.८</span>
+  <div class="shloka-deva">
+    अहं सर्वस्य प्रभवो मत्तः सर्वं प्रवर्तते ।<br>
+    इति मत्वा भजन्ते मां बुधा भावसमन्विताः ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "मी सर्वांचा उद्गम; माझ्यापासूनच सर्व काही प्रवर्तते —<br>
+    हे जाणून, भावाने भरलेले ज्ञानी माझे भजन करतात."
+  </div>
+</div>
+
+<!-- SHLOKA 10.10-11 -->
+<div class="shloka-block">
+  <span class="shloka-number">श्लोक १०.१०–११</span>
+  <div class="shloka-deva">
+    तेषां सततयुक्तानां भजतां प्रीतिपूर्वकम् ।<br>
+    ददामि बुद्धियोगं तं येन मामुपयान्ति ते ॥<br>
+    तेषामेवानुकम्पार्थमहमज्ञानजं तमः ।<br>
+    नाशयाम्यात्मभावस्थो ज्ञानदीपेन भास्वता ॥
+  </div>
+
+  <div class="shloka-meaning">
+    "जे सतत युक्त राहून प्रेमपूर्वक माझे भजन करतात —<br>
+    त्यांना मी बुद्धियोग देतो, ज्याने ते माझ्याकडे येतात.<br>
+    केवळ त्यांच्यावरील अनुकंपेने — मी त्यांच्या अंतरात राहून —<br>
+    तेजस्वी ज्ञानदीपाने अज्ञानजन्य अंधार नष्ट करतो."
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VIVECHAN -->
+<div class="section-heading">
+  <span class="label-deva">विवेचन</span>
+  <span class="label-small">· संकल्पनेचा अर्थ</span>
+</div>
+<div class="explanation-block">
+  <p>
+    हा श्लोक भक्ती आणि ज्ञान यांचा सुंदर संगम दाखवतो. भक्त प्रेमाने भजतो — आणि ईश्वर त्याला कोरडे ज्ञान नव्हे, तर <span class="key-term">बुद्धियोग</span> देतो — योग्य विवेक, योग्य दिशा.
+  </p>
+
+  <table class="contrast-table">
+    <thead>
+      <tr>
+        <th>भक्त करतो</th>
+        <th>ईश्वर देतो</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>सतत युक्त राहणे</td>
+        <td>बुद्धियोग — विवेक</td>
+      </tr>
+      <tr>
+        <td>प्रेमपूर्वक भजन</td>
+        <td>स्वतःकडे येण्याचा मार्ग</td>
+      </tr>
+      <tr>
+        <td>अंतरी ईश्वर शोधणे</td>
+        <td>ज्ञानदीपाने अंधार नाश</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top: 1rem;">
+    सर्वांत हृदयस्पर्शी शब्द — <span class="key-term">"अनुकंपार्थम्"</span> — केवळ करुणेने. ईश्वर हे काही मोबदल्यासाठी करत नाही; <strong style="color: var(--temple-gold);">केवळ प्रेमापोटी भक्ताच्या अंतरात स्वतः दिवा लावतो.</strong>
+  </p>
+  <p>
+    आणि तो दिवा बाहेरून येत नाही — <span class="key-term">"आत्मभावस्थः"</span> — तो भक्ताच्या हृदयातच राहून अंधार दूर करतो. गुरू बाहेर आणि आत, दोन्ही.
+  </p>
+</div>
+
+<div class="pull-quote">
+  भक्त प्रेमाने एक पाऊल टाकतो —<br>
+  <strong style="color: var(--temple-gold);">ईश्वर करुणेने अंतरात येऊन ज्ञानाचा दिवा लावतो.</strong>
+</div>
+
+<hr class="gold-rule">
+
+<!-- MODERN RELEVANCE — DNYANESHWAR -->
+<div class="section-heading">
+  <span class="label-deva">आजच्या काळात</span>
+  <span class="label-small">· ऐतिहासिक उदाहरण</span>
+</div>
+<div class="relevance-block">
+  <span class="example-tag">संत · वारकरी परंपरा</span>
+  <div class="example-name">संत ज्ञानेश्वर महाराज</div>
+  <div class="example-dates">इ.स. १२७५ – १२९६ · आपेगाव / आळंदी</div>
+
+  <p>
+    अवघ्या सोळाव्या वर्षी ज्ञानेश्वरांनी गीतेवर <span class="key-term">ज्ञानेश्वरी</span> रचली — संस्कृतातले गूढ तत्त्वज्ञान सामान्य माणसाच्या मराठीत आणले. ही केवळ विद्वत्ता नव्हती; तो प्रेमातून उमललेला बुद्धियोग होता.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    ज्ञानेश्वरीच्या प्रत्येक ओवीत दिसते की लेखक ईश्वराला <span class="key-term">सर्वत्र</span> पाहतो — प्रत्येक रूपात, प्रत्येक भावात त्याचाच अंश. हाच गीतेचा "अहं सर्वस्य प्रभवः" — आणि असे जाणणाऱ्या भक्ताला मिळणारा प्रसाद म्हणजे <strong style="color: var(--temple-gold);">अंतरीचा ज्ञानदीप.</strong>
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    ज्ञानेश्वर म्हणतात — हे ज्ञान त्यांचे नव्हे; ते गुरुकृपेने, आत्मभावातून उमलले. हाच गीतेचा <span class="key-term">"आत्मभावस्थो ज्ञानदीपेन"</span> — ईश्वर अंतरात राहून अंधार दूर करतो. लेखक फक्त माध्यम; प्रकाश त्याचा.
+  </p>
+
+  <hr class="divider">
+
+  <p>
+    ज्ञानेश्वरांचे जीवन हेच सांगते — प्रेमपूर्वक भक्ती आणि सर्वत्र ईश्वरदृष्टी असेल, तर बुद्धियोग आपोआप उमलतो. <span class="key-term">ज्ञान मिळवावे लागत नाही — अंतरीचा दिवा लागला की ते प्रकट होते.</span>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- JNANESHWARI -->
+<div class="section-heading">
+  <span class="label-deva">ज्ञानेश्वरी</span>
+  <span class="label-small">· ज्ञानदेवांची ओवी</span>
+</div>
+<div class="jnaneshwari-block">
+  <div class="ovi">
+    प्रेमे जे मज भजती ।<br>
+    सतत युक्त राहती ।<br>
+    त्यांना बुद्धियोग देती ।<br>
+    मीच स्वतः ।।<br><br>
+    अंतरात राहुनी ।<br>
+    ज्ञानदीप लावुनी ।<br>
+    अज्ञानाचा अंधार ।<br>
+    नाशितो मी ।।
+  </div>
+  <div class="ovi-vivechan">
+    ज्ञानदेव "अंतरात राहुनी ज्ञानदीप लावुनी" — सांगतात. ईश्वर बाहेरून उपदेश देत नाही; तो हृदयातच दिवा लावतो. भक्ताचे काम फक्त प्रेमाने भजणे; बाकी प्रकाश ईश्वर स्वतः आणतो. ज्ञानेश्वरीची प्रत्येक ओवी हीच अनुभूती सांगते.
+  </div>
+</div>
+
+<hr class="gold-rule">
+
+<!-- SELF REFLECTION -->
+<div class="section-heading">
+  <span class="label-deva">स्वतःला विचारा</span>
+</div>
+<div class="sankalpana-block">
+  <span class="q-label">💡 आजचा प्रश्न</span>
+  <p class="question">
+    "मी ज्ञान फक्त बाहेरून — पुस्तकातून — शोधतो का?<br>की अंतरातल्या दिव्याकडेही वळतो?"<br><br>
+    खरा बुद्धियोग प्रेमपूर्वक भक्तीतून उमलतो.
+  </p>
+</div>
+
+<div class="sankalpana-block" style="border-color: rgba(232,101,26,0.4); margin-top: -0.75rem;">
+  <span class="q-label" style="color: var(--temple-gold);">🌱 आजचा संकल्प</span>
+  <p class="question">
+    आज एक निर्णय — फक्त बुद्धीने नव्हे, अंतरीचा कौल घेऊन घ्या.<br>
+    <strong style="color: var(--saffron);">"तू माझ्या अंतरात आहेस — मला योग्य दिशा दाखव."</strong>
+  </p>
+</div>
+
+<hr class="gold-rule">
+
+<!-- VISHLESHAN -->
+<div class="section-heading">
+  <span class="label-deva">विश्लेषण</span>
+  <span class="label-small">· तात्विक दृष्टिकोन</span>
+</div>
+<div class="analytical-block">
+  <p>
+    हा श्लोक <span class="key-term">कृपा</span> या संकल्पनेकडे नेतो. ज्ञान केवळ स्वप्रयत्नाने मिळवायचे असे गीता म्हणत नाही; प्रेमपूर्वक भक्तीला ईश्वराकडून प्रतिसाद मिळतो — हा भक्ती आणि ज्ञान यांचा संगम. म्हणूनच भक्तियोग आणि ज्ञानयोग परस्परविरोधी नाहीत.
+  </p>
+  <p>
+    <span class="key-term">"बुद्धियोग"</span> म्हणजे केवळ माहिती नव्हे — तो विवेक, योग्य निर्णयक्षमता, आणि दिशादर्शन. आणि <span class="key-term">"ज्ञानदीप"</span> ही उपमा महत्त्वाची : अंधार दूर करायला लढावे लागत नाही; फक्त दिवा लावावा लागतो. ज्ञान आले की अज्ञान आपोआप विरते.
+  </p>
+  <p>
+    "आत्मभावस्थः" — ईश्वर अंतरात राहून हे करतो — हे विधान अद्वैताच्या जवळ जाते : गुरू बाहेर असला तरी खरा गुरू आतच आहे. महाराष्ट्राच्या संतपरंपरेने हाच अनुभव जगला — ज्ञानेश्वरांची ज्ञानेश्वरी ही बाह्य पांडित्याची नव्हे, <strong style="color: var(--temple-gold);">अंतरीच्या ज्ञानदीपाची</strong> देणगी मानली जाते.
+  </p>
+</div>
+
+<!-- FOOTER -->
+<footer class="iks-footer">
+  भगवद्गीता · विभूतियोग · अध्याय १० · संकल्पना ३/७ · 🕉️ श्रीकृष्णार्पणमस्तु
+</footer>
+
+<script>
+(function() {
+  var sz = localStorage.getItem('gita-fontsize') || 'normal';
+  document.documentElement.dataset.fontsize = sz;
+})();
+</script>
+</body>
+</html>

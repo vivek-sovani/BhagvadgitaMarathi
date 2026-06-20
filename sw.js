@@ -1,4 +1,4 @@
-const CACHE = 'gita-v20';
+const CACHE = 'gita-v21';
 
 const PRECACHE = [
   './',
