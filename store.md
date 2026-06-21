@@ -12,7 +12,7 @@
 | **Content Rating** | Everyone |
 | **Default Language** | Marathi (mr) |
 | **Website** | https://vivek-sovani.github.io/BhagvadgitaMarathi/ |
-| **Email** | vivek.sovani@kimayainfotech.com |
+| **Email** | vivek.sovani@gmail.com |
 
 ---
 
