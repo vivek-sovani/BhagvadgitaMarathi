@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>बद्दल — गीता-ज्ञानेश्वरी</title>
+<meta name="description" content="गीता-ज्ञानेश्वरी प्रकल्पाबद्दल — उद्देश, प्रेरणा आणि संपर्क." />
+<meta name="theme-color" content="#9c4a10" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+<link rel="manifest" href="manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="apple-touch-icon" href="assets/icons/icon-180.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="css/style.css" />
+<script src="js/share.js"></script>
+<style>
+  .about-hero {
+    background: radial-gradient(ellipse at top left, color-mix(in oklab, var(--saffron) 14%, var(--bg)) 0%, var(--bg) 60%);
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 768px) { .about-hero { padding: 64px 0 56px; } }
+
+  .about-hero .eyebrow-dev { margin-bottom: 18px; }
+  .about-hero h1 {
+    font-family: var(--serif-dev);
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 24px;
+    max-width: 700px;
+  }
+  .about-hero .lede {
+    font-size: clamp(17px, 1.8vw, 20px);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 620px;
+    margin: 0;
+  }
+
+  .about-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+  }
+
+  .about-section {
+    margin-bottom: 64px;
+  }
+  .about-section h2 {
+    font-family: var(--serif-dev);
+    font-size: clamp(24px, 2.8vw, 32px);
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .about-section p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin: 0 0 18px;
+  }
+  .about-section p:last-child { margin-bottom: 0; }
+
+  .highlight-box {
+    background: color-mix(in oklab, var(--saffron) 8%, var(--surface));
+    border: 1px solid color-mix(in oklab, var(--saffron) 30%, var(--rule));
+    border-left: 4px solid var(--saffron-deep);
+    border-radius: 0 16px 16px 0;
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+  .highlight-box p {
+    font-family: var(--serif-dev);
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    font-style: italic;
+  }
+  .highlight-box cite {
+    display: block;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--saffron-deep);
+    margin-top: 12px;
+    font-style: normal;
+  }
+
+  .feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: grid;
+    gap: 14px;
+  }
+  .feature-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .feature-list .icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: linear-gradient(135deg, color-mix(in oklab, var(--saffron) 20%, var(--surface)), color-mix(in oklab, var(--saffron-deep) 14%, var(--surface)));
+    border-radius: 10px;
+    display: grid; place-items: center;
+    font-family: var(--serif-dev);
+    font-size: 20px;
+    color: var(--saffron-deep);
+  }
+  .feature-list .text strong {
+    display: block;
+    font-family: var(--serif-dev);
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .feature-list .text span {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .creator-card {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    padding: 32px;
+    margin-top: 28px;
+  }
+  @media (max-width: 540px) { .creator-card { flex-direction: column; } }
+  .creator-avatar {
+    width: 72px; height: 72px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--saffron-deep), color-mix(in oklab, var(--saffron-deep) 60%, #000));
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--serif-dev);
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+  }
+  .creator-info h3 {
+    font-family: var(--serif-dev);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .creator-info .role {
+    font-size: 14px;
+    color: var(--saffron-deep);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .creator-info p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 40px;
+    font-size: 15px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: border-color .2s, color .2s, background .2s;
+  }
+  .contact-link:hover {
+    border-color: var(--saffron-deep);
+    color: var(--saffron-deep);
+    background: color-mix(in oklab, var(--saffron) 6%, var(--surface));
+  }
+  .contact-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 28px;
+  }
+  @media (max-width: 540px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+  .stat-cell {
+    background: var(--surface);
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .stat-cell .num {
+    font-family: var(--serif-dev);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--saffron-deep);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-cell .label {
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.3;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+    padding: 40px 0 28px;
+  }
+  .foot-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13.5px; color: var(--ink-mute);
+    flex-wrap: wrap; gap: 12px;
+  }
+  .foot-bottom a { color: var(--ink-mute); }
+  .foot-bottom a:hover { color: var(--ink); }
+  .foot-bottom .right { font-family: var(--serif-dev); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="./">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="./">होम</a>
+      <a href="#chapters">अध्याय</a>
+      <a href="./concept">संकल्पना</a>
+      <a href="./about" class="on">बद्दल</a>
+      <a href="./#chapters" class="nav-cta">वाचन सुरू करा</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="./">होम</a>
+      <a href="./#chapters">अध्याय</a>
+      <a href="./concept">संकल्पना</a>
+      <a href="./about" class="on">बद्दल</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="wrap">
+    <div class="eyebrow-dev">प्रकल्पाबद्दल</div>
+    <h1>एक शांत, सुंदर ठिकाण —<br/><em>गीतेसाठी.</em></h1>
+    <p class="lede">भगवद्गीता आणि ज्ञानेश्वरी या दोन महान ग्रंथांची शाश्वत शिकवण, आजच्या व्यस्त जीवनाशी जोडून सांगण्याचा हा एक प्रामाणिक प्रयत्न आहे — सोप्या मराठी भाषेत, सुंदर स्वरूपात.</p>
+  </div>
+</section>
+
+<main class="about-body">
+
+  <!-- WHY -->
+  <div class="about-section">
+    <h2>हा प्रकल्प का सुरू केला?</h2>
+    <p>गीता आणि ज्ञानेश्वरी हे ग्रंथ आपल्या घरोघरी असतात — पण बरेचदा ते कपाटातच राहतात. संस्कृत किंवा जुन्या मराठीतील भाषा समजत नाही, वेळ नाही, किंवा आजच्या जीवनाशी हे ज्ञान कसे जोडायचे हे सांगणारे कुणी नाही — हीच समस्या जाणवली.</p>
+    <p>त्यातूनच हा प्रकल्प जन्माला आला. गीतेतील प्रत्येक अध्याय, प्रत्येक श्लोक — कार्यालयातील ताण, घरातील निर्णय, मनातील द्विधा — या सगळ्याशी थेट जोडून सांगण्याचा प्रयत्न म्हणजे गीता-ज्ञानेश्वरी.</p>
+
+    <div class="highlight-box">
+      <p>योगः कर्मसु कौशलम्</p>
+      <cite>श्रीमद्भगवद्गीता · अध्याय २ · श्लोक ५०</cite>
+    </div>
+
+    <p>कुशलतेने कर्म करणे — हाच योग. हे तत्त्व फक्त तत्त्वज्ञानात नाही, तर रोजच्या जीवनात उतरवायचे आहे — हा या प्रकल्पाचा उद्देश आहे.</p>
+  </div>
+
+  <!-- WHAT -->
+  <div class="about-section">
+    <h2>या अ‍ॅपमध्ये काय आहे?</h2>
+    <p>गीता-ज्ञानेश्वरी म्हणजे फक्त श्लोकांचा संग्रह नाही. हे एक संपूर्ण वाचन अनुभव आहे:</p>
+
+    <ul class="feature-list">
+      <li>
+        <div class="icon">गी</div>
+        <div class="text">
+          <strong>१८ अध्याय — सोप्या भाषेत</strong>
+          <span>प्रत्येक अध्यायाच्या मुख्य संकल्पना, मूळ श्लोक व अर्थासहित — साध्या, आधुनिक मराठीत.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">ज्ञा</div>
+        <div class="text">
+          <strong>ज्ञानेश्वरीच्या ओव्या</strong>
+          <span>संत ज्ञानेश्वरांनी लिहिलेल्या ओव्यांचा आधुनिक अर्थ — गीतेच्या श्लोकांसोबत एकत्र.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">आ</div>
+        <div class="text">
+          <strong>आधुनिक जीवनाशी जोड</strong>
+          <span>कामाचा ताण, नातेसंबंध, निर्णय, मनःशांती — प्रत्येक संकल्पना आजच्या जीवनाशी जोडलेली.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">📲</div>
+        <div class="text">
+          <strong>शेअर करण्यायोग्य इन्फोग्राफिक्स</strong>
+          <span>प्रत्येक संकल्पनेचे सुंदर चित्र — व्हॉट्सअ‍ॅपवर मित्र-परिवारांसोबत शेअर करता येते.</span>
+        </div>
+      </li>
+      <li>
+        <div class="icon">📱</div>
+        <div class="text">
+          <strong>Android अ‍ॅप व PWA</strong>
+          <span>Google Play Store वर उपलब्ध. iPhone वर Safari मधून "Add to Home Screen" करता येते. इंटरनेट नसतानाही काही भाग वाचता येतो.</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="stats-row">
+      <div class="stat-cell"><div class="num">१८</div><div class="label">अध्याय</div></div>
+      <div class="stat-cell"><div class="num">७००</div><div class="label">श्लोक</div></div>
+      <div class="stat-cell"><div class="num">९,०००+</div><div class="label">ओव्या</div></div>
+      <div class="stat-cell"><div class="num">मराठी</div><div class="label">भाषा</div></div>
+    </div>
+  </div>
+
+  <!-- CREATOR -->
+  <div class="about-section">
+    <h2>कोणी बनवले?</h2>
+    <p>हा प्रकल्प एका मराठी माणसाने, मराठी माणसांसाठी, प्रेमाने बनवला आहे.</p>
+
+    <div class="creator-card">
+      <div class="creator-avatar">वि</div>
+      <div class="creator-info">
+        <h3>विवेक सोवनी</h3>
+        <div class="role">निर्माता · Kimaya Infotech</div>
+        <p>गीता-ज्ञानेश्वरी हा माझ्या मनातील एक सुप्त विचार होता — भगवद्गीता आणि ज्ञानेश्वरी यांची शिकवण आजच्या पिढीपर्यंत सोप्या, सुंदर भाषेत पोहोचवायची. हा प्रकल्प त्याच विचाराचे मूर्त स्वरूप आहे.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOURCES -->
+  <div class="about-section">
+    <h2>स्रोत आणि आभार</h2>
+    <p>या प्रकल्पात वापरलेले श्लोक आणि ओव्या सार्वजनिक डोमेनमधील स्रोतांवर आधारित आहेत. भगवद्गीता हे एक सार्वकालिक, सार्वभौमिक ज्ञानभांडार आहे — ते कोणा एकाचे नाही, ते सर्वांचे आहे.</p>
+    <p>संत ज्ञानेश्वरांनी इ.स. १२९० मध्ये ज्ञानेश्वरी लिहून गीतेचे ज्ञान सामान्य जनतेपर्यंत पोहोचवले. आम्ही त्याच परंपरेत हा डिजिटल प्रयत्न करत आहोत.</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="about-section" id="contact">
+    <h2>संपर्क</h2>
+    <p>सूचना, अभिप्राय किंवा सहयोगासाठी संपर्क करा. आपला अभिप्राय या प्रकल्पाला अधिक चांगले बनवण्यास मदत करतो.</p>
+
+    <div class="contact-links">
+      <a href="mailto:vivek.sovani@gmail.com" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        vivek.sovani@gmail.com
+      </a>
+      <a href="https://github.com/vivek-sovani/BhagvadgitaMarathi" target="_blank" rel="noopener" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        GitHub
+      </a>
+      <a href="./privacy" class="contact-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        गोपनीयता धोरण
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <div>
+        <a href="./">🕉️ गीता-ज्ञानेश्वरी</a> &nbsp;·&nbsp;
+        <a href="./about">बद्दल</a> &nbsp;·&nbsp;
+        <a href="./privacy">गोपनीयता धोरण</a> &nbsp;·&nbsp;
+        © २०२६
+      </div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
+</script>
+</body>
+</html>
