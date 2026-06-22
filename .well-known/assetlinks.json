@@ -4,7 +4,8 @@
     "namespace": "android_app",
     "package_name": "io.github.viveksovani.gitamarathi",
     "sha256_cert_fingerprints": [
-      "2A:E4:BC:30:DA:70:B2:08:AE:07:FD:28:B2:7C:E9:95:F8:71:A0:F3:F3:FE:41:85:ED:F7:CF:53:F0:C1:04:54"
+      "2A:E4:BC:30:DA:70:B2:08:AE:07:FD:28:B2:7C:E9:95:F8:71:A0:F3:F3:FE:41:85:ED:F7:CF:53:F0:C1:04:54",
+      "C1:7B:A6:17:4D:79:70:F2:41:5D:75:B8:77:3E:5C:3E:B2:08:BD:71:43:CD:E8:5E:E3:25:49:C1:2C:00:5B:74"
     ]
   }
 }]
