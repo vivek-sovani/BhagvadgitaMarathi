@@ -16,8 +16,9 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # ── Config ────────────────────────────────────────────────────────────────────
-# Adhyay 2 concept 6 is at index 12 → START_DATE set so May 1 2026 = day 12
-START_DATE = date(2026, 4, 19)
+# START_DATE set so 2026-06-29 = index 70 = adhyay 8 concept 3
+# (concepts 1 & 2 of adhyay 8 were sent manually)
+START_DATE = date(2026, 4, 20)
 
 ADHYAY_FILES = [
     'adhyay1-whatsapp-links.md',
@@ -27,6 +28,9 @@ ADHYAY_FILES = [
     'adhyay5-whatsapp-links.md',
     'adhyay6-whatsapp-links.md',
     'adhyay7-whatsapp-links.md',
+    'adhyay8-whatsapp-links.md',
+    'adhyay9-whatsapp-links.md',
+    'adhyay10-whatsapp-links.md',
     'adhyay11-whatsapp-links.md',
 ]
 
