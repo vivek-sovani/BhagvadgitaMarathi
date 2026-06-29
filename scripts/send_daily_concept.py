@@ -32,6 +32,8 @@ ADHYAY_FILES = [
     'adhyay9-whatsapp-links.md',
     'adhyay10-whatsapp-links.md',
     'adhyay11-whatsapp-links.md',
+    'adhyay12-whatsapp-links.md',
+    'adhyay13-whatsapp-links.md',
 ]
 
 SEPARATOR = '━━━━━━━━━━━━━━━━━━━━━━━'
