@@ -418,14 +418,36 @@
   if (adhyay.summary && summaryTextEl) {
     summaryLabelEl.textContent = `अध्याय ${adhyay.number} — ${adhyay.name}`;
     summaryDescEl.textContent  = adhyay.summary;
+
+    // ── Full-adhyay shloka banner (मूळ श्लोक + मराठी अर्थ) ──
+    // Shown only when a shlokas/adhyay-N.html file has been uploaded (adhyay.shlokas flag).
+    const shlokaBanner = document.getElementById('shloka-banner');
+    if (shlokaBanner) {
+      if (adhyay.shlokas) {
+        shlokaBanner.href = `shlokas/adhyay-${adhyay.id}.html`;
+        shlokaBanner.style.display = '';
+      } else {
+        shlokaBanner.style.display = 'none';
+      }
+    }
+
+    // ── संकल्पना card grid ──
     summaryConceptListEl.innerHTML = '';
     adhyay.concepts.forEach(concept => {
       const item = document.createElement('div');
-      item.className = 'summary-concept-item';
+      item.className = 'concept-card';
+      const tag = concept.tagline
+        ? `<span class="cc-tag">${concept.tagline}</span>` : '';
       item.innerHTML = `
-        <span class="sci-num">${toDevNum(concept.id)}.</span>
-        <span class="sci-emoji">${concept.emoji}</span>
-        <span class="sci-name">${concept.name}</span>
+        <span class="cc-num">
+          <span class="cc-emoji">${concept.emoji}</span>
+          <span class="cc-n">${toDevNum(concept.id)}</span>
+        </span>
+        <span class="cc-body">
+          <span class="cc-name">${concept.name}</span>
+          ${tag}
+        </span>
+        <span class="cc-arrow">→</span>
       `;
       item.addEventListener('click', () => selectConcept(concept.id));
       summaryConceptListEl.appendChild(item);
@@ -1113,6 +1135,24 @@
     conceptInfoEmoji.textContent = concept.emoji;
     conceptInfoName.textContent  = concept.name;
     conceptInfoMeta.textContent  = `अध्याय ${adhyay.number} · संकल्पना ${toDevNum(concept.id)}`;
+
+    // Essence line (from concept.tagline) shown above the section-menu cards.
+    // Only as a fallback when there is no curated trigger hook — the trigger
+    // text is the richer hook and would otherwise duplicate the tagline.
+    const conceptEssence = document.getElementById('concept-essence');
+    if (conceptEssence) {
+      const hasTrigger = (typeof GITA_TRIGGERS !== 'undefined')
+        && GITA_TRIGGERS[adhyay.id]
+        && GITA_TRIGGERS[adhyay.id][String(cid)];
+      if (concept.tagline && !hasTrigger) {
+        conceptEssence.textContent = concept.tagline;
+        conceptEssence.style.display = '';
+      } else {
+        conceptEssence.textContent = '';
+        conceptEssence.style.display = 'none';
+      }
+    }
+
     renderConceptText(String(adhyay.id), String(concept.id));
 
     const hasStory = renderStory(String(adhyay.id), String(concept.id));

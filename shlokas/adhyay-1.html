@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय १ : अर्जुनविषादयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:       #C8621A;
+    --saffron-light: #F2A45A;
+    --gold:          #B8860B;
+    --gold-light:    #E8C84A;
+    --cream:         #FDF6E3;
+    --cream-dark:    #F5E9CC;
+    --brown-deep:    #3B1F0A;
+    --brown-mid:     #6B3A1F;
+    --brown-soft:    #A0623A;
+    --green-vedic:   #2D5016;
+    --green-light:   #EEF4E8;
+    --parchment:     #FAF0D7;
+    --ink:           #1A0F00;
+    --rule:          rgba(184,134,11,0.35);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(200,98,26,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(184,134,11,0.08) 0%, transparent 55%);
+    color: var(--ink);
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+
+  /* ── TOP DECORATIVE BAND ── */
+  .top-band {
+    background: linear-gradient(135deg, var(--brown-deep) 0%, var(--saffron) 50%, var(--gold) 100%);
+    height: 6px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(180deg, var(--brown-deep) 0%, #5A2E10 100%);
+    color: var(--cream);
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: "ॐ";
+    position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+    font-size: 14rem; opacity: 0.04;
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    line-height: 1; pointer-events: none;
+  }
+  .header-om {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 2.8rem;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(232,200,74,0.5);
+  }
+  .header-title {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+  }
+  .header-subtitle {
+    font-size: 1.1rem;
+    color: var(--saffron-light);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.4rem;
+  }
+  .header-divider {
+    width: 180px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 0 auto 1.2rem;
+  }
+  .header-meta {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(253,246,227,0.65);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── INTRO BANNER ── */
+  .intro-banner {
+    background: var(--parchment);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: 1.6rem 2rem;
+    text-align: center;
+    font-size: 0.97rem;
+    color: var(--brown-mid);
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    line-height: 1.9;
+  }
+  .intro-banner strong {
+    color: var(--saffron);
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 1.05rem;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 4rem;
+  }
+
+  /* ── SPEAKER SECTIONS ── */
+  .speaker-heading {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.8rem 0 1.2rem;
+  }
+  .speaker-heading .rule { flex: 1; height: 1px; background: var(--rule); }
+  .speaker-heading .label {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    color: var(--brown-soft);
+    white-space: nowrap;
+    text-transform: uppercase;
+    padding: 0.2rem 0.8rem;
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+    background: var(--cream-dark);
+  }
+
+  /* ── SHLOKA CARD ── */
+  .shloka-card {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 12px rgba(59,31,10,0.09);
+    margin-bottom: 1.8rem;
+    overflow: hidden;
+    border: 1px solid rgba(184,134,11,0.2);
+    transition: box-shadow 0.2s;
+  }
+  .shloka-card:hover {
+    box-shadow: 0 4px 22px rgba(200,98,26,0.14);
+  }
+
+  /* Card header bar */
+  .card-header {
+    background: linear-gradient(90deg, var(--brown-deep) 0%, var(--brown-mid) 100%);
+    padding: 0.55rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .shloka-number {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 0.78rem;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .card-header-rule { flex: 1; height: 1px; background: rgba(232,200,74,0.25); }
+  .speaker-tag {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(253,246,227,0.65);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  /* Sanskrit shloka */
+  .sanskrit-block {
+    background: var(--parchment);
+    border-bottom: 1px solid rgba(184,134,11,0.2);
+    padding: 1.2rem 1.5rem 1rem;
+    position: relative;
+  }
+  .sanskrit-block::before {
+    content: "❝";
+    position: absolute; top: 0.5rem; left: 0.9rem;
+    font-size: 1.8rem; color: rgba(184,134,11,0.2);
+    font-family: Georgia, serif; line-height: 1;
+  }
+  .sanskrit-text {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 1.13rem;
+    color: var(--brown-deep);
+    text-align: center;
+    line-height: 2.1;
+    padding: 0 1rem;
+  }
+  .shloka-line { display: block; }
+  .shloka-pause {
+    color: var(--gold);
+    font-size: 1rem;
+    padding: 0 0.4em;
+  }
+
+  /* Marathi meaning */
+  .meaning-block {
+    padding: 1.1rem 1.5rem 1.3rem;
+  }
+  .meaning-label {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    color: var(--saffron);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.45rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .meaning-label::after { content: ""; flex: 1; height: 1px; background: rgba(200,98,26,0.15); }
+  .meaning-text {
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 0.98rem;
+    color: #2A1500;
+    line-height: 2;
+  }
+
+  /* ── CHAPTER CLOSE ── */
+  .chapter-close {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--brown-soft);
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 1rem;
+    letter-spacing: 0.06em;
+    border-top: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+  .chapter-close .big-om {
+    font-size: 3rem;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown-deep);
+    color: rgba(253,246,227,0.5);
+    text-align: center;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.78rem;
+    padding: 1.2rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .header-title { font-size: 1.45rem; }
+    .sanskrit-text { font-size: 1rem; }
+    .meaning-text { font-size: 0.93rem; }
+    .container { padding: 1.5rem 1rem 3rem; }
+  }
+
+  @media print {
+    .shloka-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय १ — अर्जुनविषादयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते ४७ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> कुरुक्षेत्रावर दोन्ही सेना उभ्या राहिल्या असताना, धृतराष्ट्राच्या
+  विनंतीवरून संजय युद्धवृत्तान्त सांगू लागतो. अर्जुनास आपल्याच स्वजनांशी युद्ध करावयाचे आहे
+  हे जाणवताच त्याचे मन शोक व मोहाने ग्रासले जाते — हाच या अध्यायाचा <strong>विषादयोग</strong>.
+</div>
+
+<div class="container">
+
+  <!-- ══════════════ DHRITARASHTRA ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">धृतराष्ट्र उवाच</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">धृतराष्ट्र</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय <span class="shloka-pause">॥ १ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे संजया, धर्मभूमी असलेल्या कुरुक्षेत्रावर एकत्र जमलेले माझे (धार्तराष्ट्र) पुत्र आणि पांडूचे पुत्र — युद्धाच्या अभिलाषेने उत्सुक असलेले हे सर्व — काय करीत आहेत?
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SANJAY ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">सञ्जय उवाच</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">दृष्ट्वा तु पाण्डवानीकं व्यूढं दुर्योधनस्तदा <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">आचार्यमुपसङ्गम्य राजा वचनमब्रवीत् <span class="shloka-pause">॥ २ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        त्या वेळी राजा दुर्योधनाने पांडवांची व्यूहरचनेने उभी केलेली सेना पाहून आचार्य द्रोणांजवळ जाऊन हे वचन उच्चारिले.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ DURYODHANA ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">दुर्योधन उवाच</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">पश्यैतां पाण्डुपुत्राणामाचार्य महतीं चमूम् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">व्यूढां द्रुपदपुत्रेण तव शिष्येण धीमता <span class="shloka-pause">॥ ३ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे आचार्य, आपल्याच शिष्य, सुमतिसंपन्न द्रुपदपुत्र धृष्टद्युम्नाने व्यूहबद्ध केलेली पांडुपुत्रांची ही महाप्रचंड सेना पाहा.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अत्र शूरा महेष्वासा भीमार्जुनसमा युधि <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">युयुधानो विराटश्च द्रुपदश्च महारथः <span class="shloka-pause">॥ ४ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        या सेनेत भीम व अर्जुन यांच्या तोडीचे महाधनुर्धर शूर योद्धे आहेत — युयुधान (सात्यकि), विराट आणि महारथी द्रुपद.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·५</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">धृष्टकेतुश्चेकितानः काशिराजश्च वीर्यवान् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">पुरुजित्कुन्तिभोजश्च शैब्यश्च नरपुङ्गवः <span class="shloka-pause">॥ ५ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        धृष्टकेतु, चेकितान, पराक्रमी काशिराज, पुरुजित्, कुन्तिभोज आणि नरश्रेष्ठ शैब्य हेही या सेनेत आहेत.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·६</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">युधामन्युश्च विक्रान्त उत्तमौजाश्च वीर्यवान् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">सौभद्रो द्रौपदेयाश्च सर्व एव महारथाः <span class="shloka-pause">॥ ६ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        पराक्रमी युधामन्यु, बलशाली उत्तमौजा, सुभद्रापुत्र अभिमन्यु आणि द्रौपदीचे पाचही पुत्र — हे सर्व निश्चितच महारथी आहेत.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·७</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अस्माकं तु विशिष्टा ये तान्निबोध द्विजोत्तम <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">नायका मम सैन्यस्य संज्ञार्थं तान्ब्रवीमि ते <span class="shloka-pause">॥ ७ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे द्विजवर्या, आपल्या (कौरव) पक्षातील जे वीर विशेष उल्लेखनीय आहेत त्यांनाही आपण जाणून घ्यावे. माझ्या सेनेचे जे प्रमुख सेनानी आहेत, त्यांची ओळख मी आपणास करून देतो.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·८</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">भवान्भीष्मश्च कर्णश्च कृपश्च समितिञ्जयः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">अश्वत्थामा विकर्णश्च सौमदत्तिस्तथैव च <span class="shloka-pause">॥ ८ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        स्वयं आपण (द्रोणाचार्य), भीष्म, कर्ण, संग्रामजयी कृपाचार्य, अश्वत्थामा, विकर्ण आणि सोमदत्ताचा पुत्र भूरिश्रवा असे महारथी आपल्या पक्षात आहेत.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·९</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अन्ये च बहवः शूरा मदर्थे त्यक्तजीविताः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">नानाशस्त्रप्रहरणाः सर्वे युद्धविशारदाः <span class="shloka-pause">॥ ९ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        माझ्यासाठी प्राण अर्पण करण्यास सिद्ध असलेले, अनेकविध शस्त्रांनी सुसज्ज असे इतरही अनेक शूरवीर आणि युद्धनिपुण योद्धे आमच्या पक्षात आहेत.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१०</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अपर्याप्तं तदस्माकं बलं भीष्माभिरक्षितम् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">पर्याप्तं त्विदमेतेषां बलं भीमाभिरक्षितम् <span class="shloka-pause">॥ १० ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        भीष्मपितामहांनी रक्षिलेले आपले बल अपार (अजेय) आहे, तर भीमाने रक्षिलेले त्यांचे (पांडवांचे) बल मर्यादित आहे. (अथवा : आपले बल अपुरे आहे आणि त्यांचे पुरेसे — या चिंताग्रस्त भावनेनेही हा अर्थ घेतला जातो.)
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·११</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">दुर्योधन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अयनेषु च सर्वेषु यथाभागमवस्थिताः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">भीष्ममेवाभिरक्षन्तु भवन्तः सर्व एव हि <span class="shloka-pause">॥ ११ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        म्हणून आपण सर्वांनी व्यूहाच्या आपापल्या ठिकाणी उभे राहून सर्व बाजूंनी भीष्मपितामहांचेच विशेषतः रक्षण करावे.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SANJAY – BHISHMA'S CONCH ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">सञ्जय उवाच — शङ्खनाद</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१२</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">तस्य सञ्जनयन्हर्षं कुरुवृद्धः पितामहः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">सिंहनादं विनद्योच्चैः शङ्खं दध्मौ प्रतापवान् <span class="shloka-pause">॥ १२ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        त्याला (दुर्योधनाला) आनंदित करीत कुरुवंशातील ज्येष्ठ, प्रतापशाली पितामह भीष्मांनी सिंहगर्जनेप्रमाणे मोठ्याने शंख फुंकला.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१३</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">ततः शङ्खाश्च भेर्यश्च पणवानकगोमुखाः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">सहसैवाभ्यहन्यन्त स च शब्दस्तुमुलोऽभवत् <span class="shloka-pause">॥ १३ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        त्यानंतर शंख, भेरी, पणव, आनक आणि गोमुख (रणवाद्ये) एकाएकी वाजू लागली आणि त्यामुळे प्रचंड कल्लोळ माजला.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१४</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">ततः श्वेतैर्हयैर्युक्ते महति स्यन्दने स्थितौ <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">माधवः पाण्डवश्चैव दिव्यौ शङ्खौ प्रदध्मतुः <span class="shloka-pause">॥ १४ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        त्यानंतर श्वेत अश्वांनी जुंपलेल्या भव्य रथावर आरूढ असलेल्या माधव श्रीकृष्ण आणि पांडव अर्जुन यांनी आपापले दिव्य शंख फुंकले.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१५</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">पाञ्चजन्यं हृषीकेशो देवदत्तं धनञ्जयः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">पौण्ड्रं दध्मौ महाशङ्खं भीमकर्मा वृकोदरः <span class="shloka-pause">॥ १५ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हृषीकेश श्रीकृष्णांनी 'पाञ्चजन्य', धनंजय अर्जुनाने 'देवदत्त' आणि भयंकर कर्मे करणाऱ्या भीमाने 'पौण्ड्र' नावाचा महाशंख फुंकला.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१६</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अनन्तविजयं राजा कुन्तीपुत्रो युधिष्ठिरः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">नकुलः सहदेवश्च सुघोषमणिपुष्पकौ <span class="shloka-pause">॥ १६ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        राजा कुन्तीपुत्र युधिष्ठिराने 'अनन्तविजय' आणि नकुल व सहदेव यांनी 'सुघोष' व 'मणिपुष्पक' नावाचे शंख वाजविले.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१७–१८</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">काश्यश्च परमेष्वासः शिखण्डी च महारथः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">धृष्टद्युम्नो विराटश्च सात्यकिश्चापराजितः <span class="shloka-pause">॥ १७ ॥</span></span>
+        <span class="shloka-line">द्रुपदो द्रौपदेयाश्च सर्वशः पृथिवीपते <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">सौभद्रश्च महाबाहुः शङ्खान्दध्मुः पृथक्पृथक् <span class="shloka-pause">॥ १८ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे पृथ्वीपते, महाधनुर्धर काशिराज, महारथी शिखंडी, धृष्टद्युम्न, विराट, अपराजित सात्यकि, द्रुपद, द्रौपदीचे पाचही पुत्र आणि महाबाहू सौभद्र (अभिमन्यु) या सर्वांनी वेगवेगळे शंख फुंकले.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·१९</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">स घोषो धार्तराष्ट्राणां हृदयानि व्यदारयत् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">नभश्च पृथिवीं चैव तुमुलो व्यनुनादयन् <span class="shloka-pause">॥ १९ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        आकाश व पृथ्वी यांना दणाणून सोडणाऱ्या त्या प्रचंड घोषाने धार्तराष्ट्रांची (कौरवांची) हृदये विदारून टाकली.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ARJUNA ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">अर्जुन उवाच — विषादाचा आरंभ</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२०</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अथ व्यवस्थितान्दृष्ट्वा धार्तराष्ट्रान्कपिध्वजः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">प्रवृत्ते शस्त्रसम्पाते धनुरुद्यम्य पाण्डवः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">हृषीकेशं तदा वाक्यमिदमाह महीपते <span class="shloka-pause">॥ २० ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे राजन, त्यानंतर शस्त्रसंधान होण्याच्या समयी व्यूहात उभ्या ठाकलेल्या धार्तराष्ट्रांना पाहून, कपिध्वजधारी पांडव अर्जुनाने धनुष्य उचलले आणि हृषीकेश श्रीकृष्णास हे वचन बोलला.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२१–२३</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">सेनयोरुभयोर्मध्ये रथं स्थापय मेऽच्युत <span class="shloka-pause">॥ २१ ॥</span></span>
+        <span class="shloka-line">यावदेतान्निरीक्षेऽहं योद्धुकामानवस्थितान् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">कैर्मया सह योद्धव्यमस्मिन्रणसमुद्यमे <span class="shloka-pause">॥ २२ ॥</span></span>
+        <span class="shloka-line">योत्स्यमानानवेक्षेऽहं य एतेऽत्र समागताः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">धार्तराष्ट्रस्य दुर्बुद्धेर्युद्धे प्रियचिकीर्षवः <span class="shloka-pause">॥ २३ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे अच्युता, दोन्ही सेनांच्या मध्यभागी माझा रथ उभा कर. या युद्धप्रसंगी कोणाकोणाशी मला लढावयाचे आहे हे मला निरखून पाहायचे आहे. दुर्बुद्धी दुर्योधनाचे प्रिय इच्छिणारे जे येथे लढण्यासाठी आले आहेत त्यांना मी पाहतो.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SANJAY – ARJUNA SEES ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">सञ्जय उवाच — अर्जुनाला स्वजन दिसतात</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२४–२५</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">एवमुक्तो हृषीकेशो गुडाकेशेन भारत <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">सेनयोरुभयोर्मध्ये स्थापयित्वा रथोत्तमम् <span class="shloka-pause">॥ २४ ॥</span></span>
+        <span class="shloka-line">भीष्मद्रोणप्रमुखतः सर्वेषां च महीक्षिताम् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">उवाच पार्थ पश्यैतान्समवेतान्कुरूनिति <span class="shloka-pause">॥ २५ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे भरतकुलोत्पन्न धृतराष्ट्रा, गुडाकेश अर्जुनाने असे सांगताच हृषीकेश श्रीकृष्णांनी तो श्रेष्ठ रथ भीष्म, द्रोण आणि सर्व राजांसमोर दोन्ही सेनांच्या मध्यभागी उभा केला आणि म्हणाले — "हे पार्था, येथे एकत्र आलेल्या या सर्व कुरूंना पाहा."
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२६</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">तत्रापश्यत्स्थितान्पार्थः पितृनथ पितामहान् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">आचार्यान्मातुलान्भ्रातृन्पुत्रान्पौत्रान्सखींस्तथा <span class="shloka-pause">॥ २६ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        तेथे पार्थ अर्जुनाला सेनेत उभे असलेले काका, पितामह, आचार्य, मामा, भाऊ, पुत्र, नातू, मित्र दिसले.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२७</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">श्वशुरान्सुहृदश्चैव सेनयोरुभयोरपि <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">तान्समीक्ष्य स कौन्तेयः सर्वान्बन्धूनवस्थितान् <span class="shloka-pause">॥ २७ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        सासरे आणि सुहृद (स्नेही जन) यांनाही दोन्ही सेनांत उभे असलेले पाहताच, त्या कौन्तेयाला (अर्जुनाला) हे सर्व बांधव एकत्र दिसले आणि…
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ ARJUNA'S GRIEF ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">अर्जुन उवाच — विषाद व शोक</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·२८–२९</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">कृपया परयाविष्टो विषीदन्निदमब्रवीत् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">दृष्ट्वेमं स्वजनं कृष्ण युयुत्सुं समुपस्थितम् <span class="shloka-pause">॥ २८ ॥</span></span>
+        <span class="shloka-line">सीदन्ति मम गात्राणि मुखं च परिशुष्यति <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">वेपथुश्च शरीरे मे रोमहर्षश्च जायते <span class="shloka-pause">॥ २९ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        अत्यंत करुणेने भारावून आणि शोकाने व्याकूळ होऊन अर्जुन बोलला — "हे कृष्णा, युद्धाच्या इच्छेने समोर उभे ठाकलेले हे माझे स्वजन पाहून माझ्या गात्रांची शक्ती क्षीण होत आहे, तोंड कोरडे पडत आहे, अंग थरथरत आहे आणि अंगावर रोमांच उभे राहत आहेत."
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३०</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">गाण्डीवं स्रंसते हस्तात्त्वक्चैव परिदह्यते <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">न च शक्नोम्यवस्थातुं भ्रमतीव च मे मनः <span class="shloka-pause">॥ ३० ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हातातून गांडीव धनुष्य निसटत आहे, सर्वांगी दाह होत आहे, स्थिर उभे राहण्याची त्राणही उरत नाही आणि माझे मन गोंधळून गेल्यासारखे भासत आहे.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३१</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">निमित्तानि च पश्यामि विपरीतानि केशव <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">न च श्रेयोऽनुपश्यामि हत्वा स्वजनमाहवे <span class="shloka-pause">॥ ३१ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे केशवा, मला विपरीत शकुन दिसत आहेत. या युद्धात स्वजनांना ठार मारण्यात मला कोणतेही कल्याण दिसत नाही.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३२–३५</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">न काङ्क्षे विजयं कृष्ण न च राज्यं सुखानि च <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">किं नो राज्येन गोविन्द किं भोगैर्जीवितेन वा <span class="shloka-pause">॥ ३२ ॥</span></span>
+        <span class="shloka-line">येषामर्थे काङ्क्षितं नो राज्यं भोगाः सुखानि च <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">त इमेऽवस्थिता युद्धे प्राणांस्त्यक्त्वा धनानि च <span class="shloka-pause">॥ ३३ ॥</span></span>
+        <span class="shloka-line">आचार्याः पितरः पुत्रास्तथैव च पितामहाः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">मातुलाः श्वशुराः पौत्राः श्यालाः सम्बन्धिनस्तथा <span class="shloka-pause">॥ ३४ ॥</span></span>
+        <span class="shloka-line">एतान्न हन्तुमिच्छामि घ्नतोऽपि मधुसूदन <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">अपि त्रैलोक्यराज्यस्य हेतोः किं नु महीकृते <span class="shloka-pause">॥ ३५ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे कृष्णा, मला विजय नको, राज्य नको, सुख नको. हे गोविन्दा, ज्यांच्यासाठी राज्य, भोग आणि सुखे इष्ट वाटत होती तेच हे आचार्य, पितर, पुत्र, पितामह, मामा, सासरे, नातू, मेहुणे, नातेवाईक — हे सर्व प्राण व धन सोडून युद्धास सज्ज उभे आहेत. हे मधुसूदना, हे जरी मला मारत असले तरी मला यांना ठार मारावयाचे नाही — अगदी तिन्ही लोकांचे राज्य मिळण्यासाठी देखील नाही, मग पृथ्वीसाठी तर कुठलाच प्रश्न नाही.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३६</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">निहत्य धार्तराष्ट्रान्नः का प्रीतिः स्याज्जनार्दन <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">पापमेवाश्रयेदस्मान्हत्वैतानाततायिनः <span class="shloka-pause">॥ ३६ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे जनार्दना, या धार्तराष्ट्रांना मारून आम्हाला कोणता आनंद मिळणार? हे आततायी (अत्याचारी) असले तरी यांना ठार मारल्यावर आम्हालाच पापच लागेल.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३७–३८</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">तस्मान्नार्हा वयं हन्तुं धार्तराष्ट्रान्स्वबान्धवान् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">स्वजनं हि कथं हत्वा सुखिनः स्याम माधव <span class="shloka-pause">॥ ३७ ॥</span></span>
+        <span class="shloka-line">यद्यप्येते न पश्यन्ति लोभोपहतचेतसः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">कुलक्षयकृतं दोषं मित्रद्रोहे च पातकम् <span class="shloka-pause">॥ ३८ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        म्हणून हे माधवा, आपल्या स्वबांधवांना — धार्तराष्ट्रांना — मारणे आम्हाला उचित नाही. स्वजनांना ठार मारून आम्ही सुखी कसे होणार? जरी हे लोभाने आंधळे झाल्यामुळे कुलनाशातील दोष व मित्रद्रोहातील पाप पाहत नसले तरी…
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·३९</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">कथं न ज्ञेयमस्माभिः पापादस्मान्निवर्तितुम् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">कुलक्षयकृतं दोषं प्रपश्यद्भिर्जनार्दन <span class="shloka-pause">॥ ३९ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        …तरी हे जनार्दना, कुलनाशाचा दोष स्पष्ट दिसत असताना आम्ही या पापापासून परावृत्त व्हावे हे आम्हाला का कळू नये?
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४०</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">कुलक्षये प्रणश्यन्ति कुलधर्माः सनातनाः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">धर्मे नष्टे कुलं कृत्स्नमधर्मोऽभिभवत्युत <span class="shloka-pause">॥ ४० ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        कुलनाश झाल्यावर सनातन कुलधर्म नष्ट होतात. धर्माचा नाश झाल्यावर संपूर्ण कुलावर अधर्माचाच पगडा बसतो.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४१</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अधर्माभिभवात्कृष्ण प्रदुष्यन्ति कुलस्त्रियः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">स्त्रीषु दुष्टासु वार्ष्णेय जायते वर्णसङ्करः <span class="shloka-pause">॥ ४१ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे कृष्णा, अधर्माचा प्रभाव वाढल्यावर कुळातील स्त्रिया दूषित होतात. हे वार्ष्णेया, स्त्रिया भ्रष्ट झाल्यावर वर्णसंकर उत्पन्न होतो.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४२</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">सङ्करो नरकायैव कुलघ्नानां कुलस्य च <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">पतन्ति पितरो ह्येषां लुप्तपिण्डोदकक्रियाः <span class="shloka-pause">॥ ४२ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हा वर्णसंकर कुलघातक्यांस व त्यांच्या कुळास नरकासच कारण ठरतो. पिंडदान व तर्पणाच्या क्रिया खुंटल्यामुळे त्यांचे पितर खाली पडतात (अधोगतीस जातात).
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४३</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">दोषैरेतैः कुलघ्नानां वर्णसङ्करकारकैः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">उत्साद्यन्ते जातिधर्माः कुलधर्माश्च शाश्वताः <span class="shloka-pause">॥ ४३ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        वर्णसंकरास कारण ठरणाऱ्या या कुलघातक्यांच्या दोषांमुळे शाश्वत जातिधर्म व कुलधर्म नष्ट होतात.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४४</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">उत्सन्नकुलधर्माणां मनुष्याणां जनार्दन <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">नरके नियतं वासो भवतीत्यनुशुश्रुम <span class="shloka-pause">॥ ४४ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        हे जनार्दना, ज्यांचे कुलधर्म नष्ट झाले आहेत अशा माणसांचा नरकातच नियत निवास असतो असे आम्ही ऐकत आलो आहोत.
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४५</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">अहो बत महत्पापं कर्तुं व्यवसिता वयम् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">यद्राज्यसुखलोभेन हन्तुं स्वजनमुद्यताः <span class="shloka-pause">॥ ४५ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        अरेरे! राज्य व सुखाच्या लोभापायी स्वजनांना मारण्यास उद्युक्त होऊन आम्ही हे किती महापाप करण्याचा निश्चय केला आहे!
+      </div>
+    </div>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४६</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">अर्जुन</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">यदि मामप्रतीकारमशस्त्रं शस्त्रपाणयः <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">धार्तराष्ट्रा रणे हन्युस्तन्मे क्षेमतरं भवेत् <span class="shloka-pause">॥ ४६ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        निःशस्त्र व प्रतिकार न करणाऱ्या मला शस्त्रधारी धार्तराष्ट्रांनी रणांगणावर मारले तरी ते माझ्यासाठी अधिक श्रेयस्कर ठरेल.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ SANJAY – CLOSE ══════════════ -->
+  <div class="speaker-heading">
+    <span class="rule"></span>
+    <span class="label">सञ्जय उवाच — अध्याय समाप्ती</span>
+    <span class="rule"></span>
+  </div>
+
+  <div class="shloka-card">
+    <div class="card-header">
+      <span class="shloka-number">श्लोक १·४७</span>
+      <span class="card-header-rule"></span>
+      <span class="speaker-tag">संजय</span>
+    </div>
+    <div class="sanskrit-block">
+      <div class="sanskrit-text">
+        <span class="shloka-line">एवमुक्त्वार्जुनः सङ्ख्ये रथोपस्थ उपाविशत् <span class="shloka-pause">।</span></span>
+        <span class="shloka-line">विसृज्य सशरं चापं शोकसंविग्नमानसः <span class="shloka-pause">॥ ४७ ॥</span></span>
+      </div>
+    </div>
+    <div class="meaning-block">
+      <div class="meaning-label">मराठी अर्थ</div>
+      <div class="meaning-text">
+        असे म्हणून, रणांगणावर शोकाने व्याकुळ झालेल्या मनाच्या अर्जुनाने बाण लावलेले धनुष्य सोडून दिले आणि रथाच्या पाठीमागे बसून राहिला.
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ CHAPTER CLOSE VERSE ══════════════ -->
+  <div class="chapter-close">
+    <span class="big-om">ॐ</span>
+    इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+    श्रीकृष्णार्जुनसंवादे <strong>अर्जुनविषादयोगो</strong> नाम प्रथमोऽध्यायः <span class="shloka-pause">॥ १ ॥</span>
+  </div>
+
+</div>
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय १ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>
