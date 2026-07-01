@@ -521,12 +521,15 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: zoom-in;
 }
+.adhyay-summary-img.tap-zoomed { cursor: zoom-out; }
 .adhyay-summary-img img {
   width: 100%;
   height: auto;
   display: block;
   flex: none;
+  transition: transform 0.25s ease;
 }
 .adhyay-summary-img .img-placeholder {
   flex: 1;
@@ -641,19 +644,21 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 6px;
+  margin: 4px 0 8px;
 }
-/* ── Full-adhyay shloka banner (मूळ श्लोक + मराठी अर्थ) ── */
+/* ── Full-adhyay shloka banner (मूळ श्लोक + मराठी अर्थ) ──
+   Deliberately styled distinctly from .concept-card (tinted background,
+   full saffron border, gradient icon) so it doesn't blend into the संकल्पना
+   grid below it once both collapse to a single column on mobile. */
 .shloka-banner {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: var(--surface);
-  border: 1px solid var(--rule);
-  border-left: 4px solid var(--saffron);
+  background: color-mix(in oklab, var(--saffron) 10%, var(--surface));
+  border: 1.5px solid color-mix(in oklab, var(--saffron) 45%, var(--rule));
   border-radius: 14px;
   padding: 15px 18px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
   cursor: pointer;
   text-decoration: none;
   transition: transform .18s ease, border-color .18s ease;
@@ -661,10 +666,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .shloka-banner:hover { transform: translateY(-2px); border-color: var(--saffron); }
 .shloka-banner-ic {
   width: 50px; height: 50px; flex-shrink: 0;
-  background: var(--bg-2);
+  background: radial-gradient(circle at 32% 28%, var(--saffron-glow), var(--saffron) 60%, var(--saffron-deep));
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.06), 0 3px 10px rgba(156,74,16,.25);
   border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 .shloka-banner-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .shloka-banner-title {
@@ -800,6 +806,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   z-index: 80;
   box-shadow: 0 -2px 16px rgba(0,0,0,0.08);
 }
+
+/* ===== AUTO-HIDE HEADER + BOTTOM NAV ON SCROLL (mobile only) ===== */
+@media (max-width: 767px) {
+  .nav, .bottom-concept-nav { transition: transform 0.28s ease; }
+  .nav.nav-hidden { transform: translateY(-100%); }
+  .bottom-concept-nav.bcn-hidden { transform: translateY(100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav, .bottom-concept-nav { transition: none; }
+}
 .bnav-btn {
   flex: 1;
   display: flex;
@@ -857,7 +873,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
     align-items: stretch;
+    transition: height 0.28s ease;
   }
+  /* Auto-hide feature: when header/bottom-nav are off-screen, reclaim the
+     space they normally reserve so the scroll area actually grows. */
+  body.chrome-hidden .adhyay-body { height: 100svh; }
   .adhyay-main {
     min-width: 100vw;
     width: 100vw;
@@ -897,7 +917,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     overflow-y: visible;
     min-height: unset;
     padding-bottom: 72px; /* clear fixed bottom-concept-nav (54px) + breathing room */
+    transition: padding-bottom 0.28s ease;
   }
+  /* Auto-hide feature: bottom nav is off-screen, so only keep a small
+     breathing-room gap instead of the full 72px reserved for it. */
+  body.chrome-hidden .concept-info-body { padding-bottom: 14px; }
 }
 
 .concept-img-wrap {
@@ -907,7 +931,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   background: var(--surface);
   position: relative;
   min-height: clamp(200px, 30vh, 9999px);
+  cursor: zoom-in;
 }
+.concept-img-wrap.tap-zoomed { cursor: zoom-out; }
 /* Concept nav bar — prev / title / next */
 .concept-nav-bar {
   flex-shrink: 0;
@@ -952,7 +978,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   min-height: 0;
   object-fit: contain;
   object-position: center;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.25s ease;
 }
 .concept-img-wrap .img-placeholder {
   flex: 1;
@@ -1841,11 +1867,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   flex-direction: column;
   gap: 6px;
 }
+.vpdf-page-wrap {
+  overflow: hidden;
+  width: 100%;
+  cursor: zoom-in;
+}
+.vpdf-page-wrap.tap-zoomed { cursor: zoom-out; }
 .vpdf-page {
   display: block;
   width: 100%;
   box-shadow: 0 1px 6px rgba(0,0,0,0.12);
   filter: contrast(1.2) brightness(0.97);
+  transition: transform 0.25s ease;
 }
 .vpdf-loading {
   display: flex;

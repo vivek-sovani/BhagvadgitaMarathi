@@ -50,6 +50,75 @@
   const swipeHintEl    = document.getElementById('pdf-swipe-hint');
   let   panelPdfUrl    = null;   // tracks what's currently rendered
 
+  // ── Auto-hide header + bottom nav on scroll (mobile only) ───────
+  // On mobile, `.adhyay-main` is the actual scrolling container (both the
+  // cover page and the concept-detail view scroll inside it via its own
+  // `overflow-y: auto` — the outer window never scrolls), so the listener
+  // must be attached there rather than to `window`. Declared here (before
+  // goToCoverPage/selectConcept, which call showChrome()) so those functions
+  // don't reference these consts before initialization.
+  const CHROME_MOBILE_MAX = 767;
+  const CHROME_HIDE_THRESHOLD = 64;
+  const navEl = document.querySelector('.nav');
+  const mainScrollEl = document.querySelector('.adhyay-main');
+  let lastScrollY = mainScrollEl ? mainScrollEl.scrollTop : 0;
+  let chromeTicking = false;
+
+  function isMobileWidth() { return window.innerWidth <= CHROME_MOBILE_MAX; }
+
+  function showChrome() {
+    if (navEl) navEl.classList.remove('nav-hidden');
+    if (bnavEl) bnavEl.classList.remove('bcn-hidden');
+    document.body.classList.remove('chrome-hidden');
+  }
+
+  function hideChrome() {
+    if (navEl) navEl.classList.add('nav-hidden');
+    if (bnavEl) bnavEl.classList.add('bcn-hidden');
+    document.body.classList.add('chrome-hidden');
+  }
+
+  function updateChromeVisibility() {
+    const menuOpen = navEl && navEl.classList.contains('menu-open');
+    const y = mainScrollEl ? mainScrollEl.scrollTop : 0;
+    if (!isMobileWidth() || menuOpen) {
+      showChrome();
+      lastScrollY = y;
+      chromeTicking = false;
+      return;
+    }
+    const delta = y - lastScrollY;
+    if (y <= CHROME_HIDE_THRESHOLD) {
+      showChrome();
+    } else if (delta > 4) {
+      hideChrome();
+    } else if (delta < -4) {
+      showChrome();
+    }
+    lastScrollY = y;
+    chromeTicking = false;
+  }
+
+  if (mainScrollEl) {
+    mainScrollEl.addEventListener('scroll', () => {
+      if (!chromeTicking) {
+        requestAnimationFrame(updateChromeVisibility);
+        chromeTicking = true;
+      }
+    }, { passive: true });
+  }
+
+  window.addEventListener('resize', () => {
+    if (!isMobileWidth()) showChrome();
+  });
+
+  // ── Tap-to-zoom on infographic images (attachTapZoom is a hoisted function
+  // declaration defined further down, so it's already callable here; these
+  // consts must exist before selectConcept()/goToCoverPage() reference them
+  // to reset zoom on image change) ──────────────────────────────────
+  const conceptImgZoom = attachTapZoom(document.querySelector('.concept-img-wrap'), () => conceptImg);
+  const summaryImgZoom = attachTapZoom(document.querySelector('.adhyay-summary-img'), () => summaryImg);
+
   // Renders all PDF pages stacked vertically inside the right/swipe panel.
   async function renderPdfVertical(url) {
     if (!pdfPanelEl) return;
@@ -89,7 +158,11 @@
         canvas.style.height = Math.round(vp.height / dpr) + 'px';
         canvas.className = 'vpdf-page';
         await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
-        pdfPanelEl.appendChild(canvas);
+        const pageWrap = document.createElement('div');
+        pageWrap.className = 'vpdf-page-wrap';
+        pageWrap.appendChild(canvas);
+        pdfPanelEl.appendChild(pageWrap);
+        attachTapZoom(pageWrap, () => canvas);
       }
     } catch (err) {
       panelPdfUrl = null;   // allow retry
@@ -343,6 +416,74 @@
     }, { passive: false });
   }
 
+  // In-place tap-to-zoom for infographic images / PDF pages: a tap toggles
+  // between normal size and a fixed zoom level (centered on the tap point);
+  // dragging while zoomed pans; tapping again resets. Uses Pointer Events so
+  // mouse clicks and touch taps share one code path. `containerEl` must clip
+  // overflow (its own CSS should set `overflow: hidden`); `getTargetEl()`
+  // returns the element actually transformed (may change if the container's
+  // content is swapped later, e.g. a new concept image).
+  function attachTapZoom(containerEl, getTargetEl) {
+    if (!containerEl) return { reset() {} };
+    const ZOOM = 2.2;
+    let scale = 1, tx = 0, ty = 0;
+    let dragging = false, moved = false;
+    let startX = 0, startY = 0, tx0 = 0, ty0 = 0;
+
+    function apply() {
+      const el = getTargetEl();
+      if (!el) return;
+      el.style.transformOrigin = '0 0';
+      el.style.transform = scale === 1 ? '' : `translate(${tx}px, ${ty}px) scale(${scale})`;
+      containerEl.classList.toggle('tap-zoomed', scale > 1);
+      containerEl.style.touchAction = scale > 1 ? 'none' : '';
+    }
+
+    function clamp(x, y) {
+      const el = getTargetEl();
+      if (!el) return [0, 0];
+      const minX = containerEl.clientWidth  - el.clientWidth  * scale;
+      const minY = containerEl.clientHeight - el.clientHeight * scale;
+      return [Math.min(0, Math.max(minX, x)), Math.min(0, Math.max(minY, y))];
+    }
+
+    function zoomIn(clientX, clientY) {
+      const el = getTargetEl();
+      if (!el) return;
+      const rect = containerEl.getBoundingClientRect();
+      const localX = clientX - rect.left;
+      const localY = clientY - rect.top;
+      scale = ZOOM;
+      [tx, ty] = clamp(localX - localX * scale, localY - localY * scale);
+      apply();
+    }
+
+    function reset() { scale = 1; tx = 0; ty = 0; apply(); }
+
+    containerEl.addEventListener('pointerdown', e => {
+      if (scale === 1) return;   // plain tap-to-zoom (below) handles the un-zoomed case
+      dragging = true; moved = false;
+      startX = e.clientX; startY = e.clientY; tx0 = tx; ty0 = ty;
+      containerEl.setPointerCapture(e.pointerId);
+    });
+    containerEl.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+      [tx, ty] = clamp(tx0 + dx, ty0 + dy);
+      apply();
+    });
+    containerEl.addEventListener('pointerup', () => { dragging = false; });
+    containerEl.addEventListener('pointercancel', () => { dragging = false; });
+
+    containerEl.addEventListener('click', e => {
+      if (moved) { moved = false; return; }   // was a pan, not a tap
+      if (scale > 1) reset();
+      else zoomIn(e.clientX, e.clientY);
+    });
+
+    return { reset };
+  }
 
   // ── Helpers ───────────────────────────────────────────────────
   function assetPath(file) {
@@ -999,6 +1140,8 @@
     const adhyayBodyEl = document.getElementById('adhyay-body');
     if (adhyayBodyEl) { adhyayBodyEl.scrollLeft = 0; adhyayBodyEl.scrollTop = 0; }
     window.scrollTo(0, 0);
+    if (mainScrollEl) mainScrollEl.scrollTop = 0;
+    showChrome();
     conceptView.classList.remove('visible');
     if (conceptTitleBar) conceptTitleBar.style.display = 'none';
     summarySection.style.display = '';
@@ -1056,6 +1199,8 @@
     const adhyayBodyEl = document.getElementById('adhyay-body');
     if (adhyayBodyEl) { adhyayBodyEl.scrollLeft = 0; adhyayBodyEl.scrollTop = 0; }
     window.scrollTo(0, 0);
+    if (mainScrollEl) mainScrollEl.scrollTop = 0;
+    showChrome();
     if (suchiBtn) suchiBtn.style.display = 'none';
 
     // Update URL without full page reload
@@ -1099,6 +1244,7 @@
     conceptPHEmoji.textContent = concept.emoji;
     conceptImg.style.display = '';
     conceptImg.alt = concept.name;
+    conceptImgZoom.reset();
 
     // Set handlers BEFORE src so cached images still trigger onload
     conceptImg.onload = function () {
