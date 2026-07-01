@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय ३ : कर्मयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:       #C8621A;
+    --saffron-light: #F2A45A;
+    --gold:          #B8860B;
+    --gold-light:    #E8C84A;
+    --cream:         #FDF6E3;
+    --cream-dark:    #F5E9CC;
+    --brown-deep:    #3B1F0A;
+    --brown-mid:     #6B3A1F;
+    --brown-soft:    #A0623A;
+    --parchment:     #FAF0D7;
+    --ink:           #1A0F00;
+    --rule:          rgba(184,134,11,0.35);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(200,98,26,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse at 80% 100%, rgba(184,134,11,0.08) 0%, transparent 55%);
+    color: var(--ink);
+    font-family: 'Noto Serif Devanagari', serif;
+    font-size: 16px;
+    line-height: 1.85;
+    min-height: 100vh;
+  }
+  .top-band {
+    background: linear-gradient(135deg, var(--brown-deep) 0%, var(--saffron) 50%, var(--gold) 100%);
+    height: 6px;
+  }
+  header {
+    background: linear-gradient(180deg, var(--brown-deep) 0%, #5A2E10 100%);
+    color: var(--cream); text-align: center;
+    padding: 3rem 1.5rem 2.5rem; position: relative; overflow: hidden;
+  }
+  header::before {
+    content: "ॐ"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+    font-size: 14rem; opacity: 0.04; font-family: 'Tiro Devanagari Sanskrit', serif;
+    line-height: 1; pointer-events: none;
+  }
+  .header-om {
+    font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 2.8rem;
+    color: var(--gold-light); letter-spacing: 0.1em; display: block;
+    margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(232,200,74,0.5);
+  }
+  .header-title {
+    font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 2rem; font-weight: 700;
+    color: var(--gold-light); letter-spacing: 0.05em; line-height: 1.3; margin-bottom: 0.4rem;
+  }
+  .header-subtitle { font-size: 1.1rem; color: var(--saffron-light); letter-spacing: 0.08em; margin-bottom: 1.4rem; }
+  .header-divider {
+    width: 180px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+    margin: 0 auto 1.2rem;
+  }
+  .header-meta { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.88rem; color: rgba(253,246,227,0.65); letter-spacing: 0.05em; }
+  .intro-banner {
+    background: var(--parchment); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold);
+    padding: 1.6rem 2rem; text-align: center; font-size: 0.97rem; color: var(--brown-mid);
+    font-family: 'Noto Sans Devanagari', sans-serif; line-height: 1.9;
+  }
+  .intro-banner strong { color: var(--saffron); font-family: 'Noto Serif Devanagari', serif; font-size: 1.05rem; }
+  .container { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .speaker-heading { display: flex; align-items: center; gap: 1rem; margin: 2.8rem 0 1.2rem; }
+  .speaker-heading .rule { flex: 1; height: 1px; background: var(--rule); }
+  .speaker-heading .label {
+    font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 0.82rem; letter-spacing: 0.12em;
+    color: var(--brown-soft); white-space: nowrap; padding: 0.2rem 0.8rem;
+    border: 1px solid var(--gold); border-radius: 2px; background: var(--cream-dark);
+  }
+  .shloka-card {
+    background: #fff; border-radius: 6px; box-shadow: 0 2px 12px rgba(59,31,10,0.09);
+    margin-bottom: 1.8rem; overflow: hidden; border: 1px solid rgba(184,134,11,0.2); transition: box-shadow 0.2s;
+  }
+  .shloka-card:hover { box-shadow: 0 4px 22px rgba(200,98,26,0.14); }
+  .card-header {
+    background: linear-gradient(90deg, var(--brown-deep) 0%, var(--brown-mid) 100%);
+    padding: 0.55rem 1.2rem; display: flex; align-items: center; gap: 0.8rem;
+  }
+  .shloka-number { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 0.78rem; color: var(--gold-light); letter-spacing: 0.1em; white-space: nowrap; }
+  .card-header-rule { flex: 1; height: 1px; background: rgba(232,200,74,0.25); }
+  .speaker-tag { font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.72rem; color: rgba(253,246,227,0.65); letter-spacing: 0.08em; white-space: nowrap; }
+  .sanskrit-block { background: var(--parchment); border-bottom: 1px solid rgba(184,134,11,0.2); padding: 1.2rem 1.5rem 1rem; position: relative; }
+  .sanskrit-block::before {
+    content: "❝"; position: absolute; top: 0.5rem; left: 0.9rem;
+    font-size: 1.8rem; color: rgba(184,134,11,0.2); font-family: Georgia, serif; line-height: 1;
+  }
+  .sanskrit-text { font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 1.13rem; color: var(--brown-deep); text-align: center; line-height: 2.1; padding: 0 1rem; }
+  .shloka-line { display: block; }
+  .shloka-pause { color: var(--gold); font-size: 1rem; padding: 0 0.4em; }
+  .meaning-block { padding: 1.1rem 1.5rem 1.3rem; }
+  .meaning-label {
+    font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.7rem; letter-spacing: 0.14em;
+    color: var(--saffron); text-transform: uppercase; font-weight: 500; margin-bottom: 0.45rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .meaning-label::after { content: ""; flex: 1; height: 1px; background: rgba(200,98,26,0.15); }
+  .meaning-text { font-family: 'Noto Serif Devanagari', serif; font-size: 0.98rem; color: #2A1500; line-height: 2; }
+  .chapter-close {
+    text-align: center; padding: 2.5rem 1rem; color: var(--brown-soft);
+    font-family: 'Tiro Devanagari Sanskrit', serif; font-size: 1rem; letter-spacing: 0.06em;
+    border-top: 1px solid var(--rule); margin-top: 1rem;
+  }
+  .chapter-close .big-om { font-size: 3rem; color: var(--gold); display: block; margin-bottom: 0.5rem; }
+  footer {
+    background: var(--brown-deep); color: rgba(253,246,227,0.5); text-align: center;
+    font-family: 'Noto Sans Devanagari', sans-serif; font-size: 0.78rem; padding: 1.2rem; letter-spacing: 0.05em;
+  }
+  @media (max-width: 600px) {
+    .header-title { font-size: 1.45rem; }
+    .sanskrit-text { font-size: 1rem; }
+    .meaning-text { font-size: 0.93rem; }
+    .container { padding: 1.5rem 1rem 3rem; }
+  }
+  @media print {
+    .shloka-card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय ३ — कर्मयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते ४३ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> अर्जुनाच्या मनात एक गोंधळ आहे — ज्ञान श्रेष्ठ की कर्म? या प्रश्नावर
+  श्रीकृष्ण <strong>कर्मयोगाचे</strong> विवेचन करतात. कर्म केल्याशिवाय क्षणभरही राहणे शक्य नाही;
+  कर्म सोडणे नाही, तर <strong>फलाशा सोडून</strong> कर्म करणे हाच योगमार्ग आहे. लोकसंग्रह,
+  यज्ञभावना आणि स्वधर्माचरण — हे या अध्यायाचे केंद्रबिंदू आहेत.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ ARJUNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तत्किं कर्मणि घोरे मां नियोजयसि केशव <span class="shloka-pause">॥ १ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे जनार्दना, जर कर्मापेक्षा बुद्धी (ज्ञान) श्रेष्ठ असे तुला वाटते, तर हे केशवा, मला या भयंकर कर्मात (युद्धात) का गुंतवत आहेस?</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">व्यामिश्रेणेव वाक्येन बुद्धिं मोहयसीव मे <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तदेकं वद निश्चित्य येन श्रेयोऽहमाप्नुयाम् <span class="shloka-pause">॥ २ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">संमिश्र वाचेने माझी बुद्धी मोहात टाकत आहेस असे वाटते. म्हणून एकच निश्चित सांग — ज्याने मला श्रेय प्राप्त होईल.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — कर्मयोगाचे प्रतिपादन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">लोकेऽस्मिन्द्विविधा निष्ठा पुरा प्रोक्ता मयानघ <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ज्ञानयोगेन सांख्यानां कर्मयोगेन योगिनाम् <span class="shloka-pause">॥ ३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे निष्पाप अर्जुना, या जगात पूर्वीच मी दोन प्रकारच्या निष्ठा सांगितल्या आहेत — सांख्यांसाठी ज्ञानयोग आणि योग्यांसाठी कर्मयोग.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न कर्मणामनारम्भान्नैष्कर्म्यं पुरुषोऽश्नुते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न च संन्यसनादेव सिद्धिं समधिगच्छति <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कर्मे न करण्याने पुरुषाला नैष्कर्म्य (कर्मातीत स्थिती) प्राप्त होत नाही, तसेच केवळ संन्यासाने सिद्धी मिळत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कार्यते ह्यवशः कर्म सर्वः प्रकृतिजैर्गुणैः <span class="shloka-pause">॥ ५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कारण कोणीही क्षणभरही कर्म न करता राहू शकत नाही. प्रकृतिजन्य गुणांनी सर्वांना कर्म करण्यास विवश केले जाते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">कर्मेन्द्रियाणि संयम्य य आस्ते मनसा स्मरन् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">इन्द्रियार्थान्विमूढात्मा मिथ्याचारः स उच्यते <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जो कर्मेंद्रिये आवरून बसतो, पण मनाने इंद्रियविषयांचे स्मरण करत राहतो — तो मूढात्मा मिथ्याचारी (ढोंगी) म्हटला जातो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यस्त्विन्द्रियाणि मनसा नियम्यारभतेऽर्जुन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कर्मेन्द्रियैः कर्मयोगमसक्तः स विशिष्यते <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु हे अर्जुना, जो मनाने इंद्रिये आवरून, आसक्तिरहित होऊन कर्मेंद्रियांनी कर्मयोग आचरतो — तो श्रेष्ठ ठरतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">नियतं कुरु कर्म त्वं कर्म ज्यायो ह्यकर्मणः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">शरीरयात्रापि च ते न प्रसिद्ध्येदकर्मणः <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">तू नियत कर्म कर, कारण अकर्मापेक्षा कर्म श्रेष्ठ आहे. कर्म न केल्यास तुझी शरीरनिर्वाहाचीही सिद्धी होणार नाही.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – YADNYA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — यज्ञभावना</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यज्ञार्थात्कर्मणोऽन्यत्र लोकोऽयं कर्मबन्धनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तदर्थं कर्म कौन्तेय मुक्तसङ्गः समाचर <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">यज्ञासाठी केलेल्या कर्माशिवाय इतर कर्माने हे जग बंधनात पडते. म्हणून हे कौन्तेया, आसक्ती सोडून यज्ञासाठी कर्म कर.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सहयज्ञाः प्रजाः सृष्ट्वा पुरोवाच प्रजापतिः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनेन प्रसविष्यध्वमेष वोऽस्त्विष्टकामधुक् <span class="shloka-pause">॥ १० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रजापतीने सृष्टीच्या आरंभी यज्ञासहित प्रजा निर्माण करून सांगितले — "याद्वारे वृद्धिंगत व्हा आणि हा यज्ञ तुमच्या इच्छा पूर्ण करणारा कामधेनू असो."</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·११</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">देवान्भावयतानेन ते देवा भावयन्तु वः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">परस्परं भावयन्तः श्रेयः परमवाप्स्यथ <span class="shloka-pause">॥ ११ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या यज्ञाद्वारे देवांना तृप्त करा आणि ते देव तुम्हाला तृप्त करोत. अशा परस्पर पोषणाने तुम्ही परम कल्याण प्राप्त कराल.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इष्टान्भोगान्हि वो देवा दास्यन्ते यज्ञभाविताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तैर्दत्तानप्रदायैभ्यो यो भुङ्क्ते स्तेन एव सः <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">यज्ञाने तृप्त झालेले देव तुम्हाला इष्ट भोग देतील. त्यांनी दिलेले त्यांना न अर्पण करता जो भोगतो, तो चोरच आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यज्ञशिष्टाशिनः सन्तो मुच्यन्ते सर्वकिल्बिषैः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भुञ्जते ते त्वघं पापा ये पचन्त्यात्मकारणात् <span class="shloka-pause">॥ १३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">यज्ञशेष भोजन करणारे सज्जन सर्व पापांपासून मुक्त होतात; परंतु जे केवळ स्वतःसाठी शिजवतात, ते पापी पाप खातात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१४–१५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अन्नाद्भवन्ति भूतानि पर्जन्यादन्नसम्भवः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यज्ञाद्भवति पर्जन्यो यज्ञः कर्मसमुद्भवः <span class="shloka-pause">॥ १४ ॥</span></span>
+    <span class="shloka-line">कर्म ब्रह्मोद्भवं विद्धि ब्रह्माक्षरसमुद्भवम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तस्मात्सर्वगतं ब्रह्म नित्यं यज्ञे प्रतिष्ठितम् <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अन्नापासून प्राणी उत्पन्न होतात, पर्जन्यापासून अन्न होते, यज्ञापासून पर्जन्य होतो आणि यज्ञ कर्मापासून उत्पन्न होतो. कर्म वेदापासून उद्भवते असे जाण आणि वेद अक्षरब्रह्मापासून उत्पन्न झाले आहेत. म्हणून सर्वगत ब्रह्म नित्य यज्ञात प्रतिष्ठित आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एवं प्रवर्तितं चक्रं नानुवर्तयतीह यः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अघायुरिन्द्रियारामो मोघं पार्थ स जीवति <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, जो या प्रकारे फिरत असलेल्या चक्राला अनुसरत नाही, तो पापमय आयुष्य जगणारा, इंद्रियांत रमणारा पुरुष व्यर्थ जगतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यस्त्वात्मरतिरेव स्यादात्मतृप्तश्च मानवः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">आत्मन्येव च सन्तुष्टस्तस्य कार्यं न विद्यते <span class="shloka-pause">॥ १७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु जो मनुष्य आत्म्यातच रमणारा, आत्म्यानेच तृप्त आणि आत्म्यातच संतुष्ट असतो, त्याला कोणतेही कर्तव्य उरत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">नैव तस्य कृतेनार्थो नाकृतेनेह कश्चन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न चास्य सर्वभूतेषु कश्चिदर्थव्यपाश्रयः <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">त्याला केलेल्या कर्माने काही प्रयोजन नाही, न केलेल्याने काहीच अडत नाही आणि सर्व प्राण्यांत त्याला कोणताही स्वार्थ नाही.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – LOKASANGRAHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — लोकसंग्रह व आदर्श कर्म</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·१९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्मादसक्तः सततं कार्यं कर्म समाचर <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून सतत आसक्तिरहित होऊन कर्तव्यकर्म कर. आसक्तिरहित होऊन कर्म करणारा पुरुष परमाला प्राप्त होतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">कर्मणैव हि संसिद्धिमास्थिता जनकादयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">लोकसंग्रहमेवापि सम्पश्यन्कर्तुमर्हसि <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जनकादी थोर पुरुषांनी कर्मानेच संसिद्धी प्राप्त केली. लोकसंग्रहाचा विचार करूनही तू कर्म करणे उचित आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते <span class="shloka-pause">॥ २१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">श्रेष्ठ पुरुष जे जे आचरण करतो, तेच तेच इतर सामान्य लोक करतात. तो जे प्रमाण घालतो, त्याचेच जग अनुसरण करते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न मे पार्थास्ति कर्तव्यं त्रिषु लोकेषु किञ्चन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नानवाप्तमवाप्तव्यं वर्त एव च कर्मणि <span class="shloka-pause">॥ २२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, तिन्ही लोकांत माझे काहीही कर्तव्य नाही. प्राप्त करावयाचे असे काहीही अप्राप्त नाही — तरीही मी कर्मातच प्रवृत्त असतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यदि ह्यहं न वर्तेयं जातु कर्मण्यतन्द्रितः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मम वर्त्मानुवर्तन्ते मनुष्याः पार्थ सर्वशः <span class="shloka-pause">॥ २३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, जर मी सावधपणे कर्मात प्रवृत्त राहिलो नाहीतर सर्व मनुष्य माझ्याच मार्गाचे अनुसरण करतील.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">उत्सीदेयुरिमे लोका न कुर्यां कर्म चेदहम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">सङ्करस्य च कर्ता स्यामुपहन्यामिमाः प्रजाः <span class="shloka-pause">॥ २४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी कर्म न केल्यास हे सर्व लोक नष्ट होतील, मी वर्णसंकराला कारण ठरेन आणि या प्रजांचा नाश करणारा होईन.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सक्ताः कर्मण्यविद्वांसो यथा कुर्वन्ति भारत <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कुर्याद्विद्वांस्तथासक्तश्चिकीर्षुर्लोकसंग्रहम् <span class="shloka-pause">॥ २५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे भारता, अज्ञानी लोक जसे आसक्तीने कर्म करतात, तसे विद्वानाने लोकसंग्रहाची इच्छा बाळगून आसक्तिरहित होऊन कर्म करावे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न बुद्धिभेदं जनयेदज्ञानां कर्मसङ्गिनाम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">जोषयेत्सर्वकर्माणि विद्वान्युक्तः समाचरन् <span class="shloka-pause">॥ २६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कर्मात आसक्त अज्ञान्यांच्या बुद्धीत गोंधळ निर्माण करू नये; विद्वानाने स्वतः युक्त होऊन सर्व कर्मे करत राहावीत आणि त्यांनाही तसे करण्यास प्रवृत्त करावे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – GUNAS AND AHAMKARA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — गुण, अहंकार व आत्मज्ञान</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">प्रकृतेः क्रियमाणानि गुणैः कर्माणि सर्वशः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अहंकारविमूढात्मा कर्ताहमिति मन्यते <span class="shloka-pause">॥ २७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रकृतीच्या गुणांनी सर्व कर्मे घडवली जात असताना, अहंकाराने मोहित झालेला पुरुष "मी कर्ता आहे" असे मानतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तत्त्ववित्तु महाबाहो गुणकर्मविभागयोः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">गुणा गुणेषु वर्तन्त इति मत्वा न सज्जते <span class="shloka-pause">॥ २८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु हे महाबाहो, गुण व कर्म यांचे तत्त्व जाणणारा विद्वान "गुण गुणांतच वावरतात" असे जाणून आसक्त होत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·२९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">प्रकृतेर्गुणसम्मूढाः सज्जन्ते गुणकर्मसु <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तानकृत्स्नविदो मन्दान्कृत्स्नविन्न विचालयेत् <span class="shloka-pause">॥ २९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रकृतीच्या गुणांनी मोहित झालेले लोक गुणकर्मांत आसक्त होतात. अपूर्ण ज्ञान असलेल्या त्या मंद लोकांना पूर्ण ज्ञानी पुरुषाने विचलित करू नये.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मयि सर्वाणि कर्माणि संन्यस्याध्यात्मचेतसा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">निराशीर्निर्ममो भूत्वा युध्यस्व विगतज्वरः <span class="shloka-pause">॥ ३० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सर्व कर्मे अध्यात्मचेतनेने माझ्यावर अर्पण करून, आशारहित, ममतारहित व संताप सोडून युद्ध कर.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ये मे मतमिदं नित्यमनुतिष्ठन्ति मानवाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">श्रद्धावन्तोऽनसूयन्तो मुच्यन्ते तेऽपि कर्मभिः <span class="shloka-pause">॥ ३१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जे मनुष्य श्रद्धायुक्त व असूयारहित होऊन माझे हे मत नित्य आचरतात, तेही कर्मबंधनातून मुक्त होतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ये त्वेतदभ्यसूयन्तो नानुतिष्ठन्ति मे मतम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">सर्वज्ञानविमूढांस्तान्विद्धि नष्टानचेतसः <span class="shloka-pause">॥ ३२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु जे असूया बाळगून माझ्या मताचे आचरण करत नाहीत, त्यांना सर्व ज्ञानात मोहित, विवेकशून्य व नष्ट झालेले जाण.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सदृशं चेष्टते स्वस्याः प्रकृतेर्ज्ञानवानपि <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रकृतिं यान्ति भूतानि निग्रहः किं करिष्यति <span class="shloka-pause">॥ ३३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">ज्ञानी पुरुषही आपल्या प्रकृतीनुसारच वागतो. सर्व प्राणी प्रकृतीलाच अनुसरतात — बळजबरी काय करणार?</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इन्द्रियस्येन्द्रियस्यार्थे रागद्वेषौ व्यवस्थितौ <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तयोर्न वशमागच्छेत्तौ ह्यस्य परिपन्थिनौ <span class="shloka-pause">॥ ३४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रत्येक इंद्रियाच्या विषयात राग आणि द्वेष हे दोन्ही स्थित आहेत. त्यांच्या वशात जाऊ नकोस, कारण हे दोन्ही त्याचे शत्रू आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स्वधर्मे निधनं श्रेयः परधर्मो भयावहः <span class="shloka-pause">॥ ३५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">उत्तम प्रकारे आचरलेल्या परधर्मापेक्षा गुणहीन स्वधर्म श्रेष्ठ आहे. स्वधर्मात मृत्यू आला तरी श्रेयस्कर आहे, परधर्म भयावह असतो.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — पापाचे मूळ</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३६</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अथ केन प्रयुक्तोऽयं पापं चरति पूरुषः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनिच्छन्नपि वार्ष्णेय बलादिव नियोजितः <span class="shloka-pause">॥ ३६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे वार्ष्णेया, तर मग न इच्छितानाही जणू बळजबरीने प्रेरित झाल्याप्रमाणे हा पुरुष कशाने प्रेरित होऊन पाप आचरतो?</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – KAMA KRODHА ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — काम-क्रोधावर विजय</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">काम एष क्रोध एष रजोगुणसमुद्भवः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">महाशनो महापाप्मा विद्ध्येनमिह वैरिणम् <span class="shloka-pause">॥ ३७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">रजोगुणातून उत्पन्न होणारा हा काम, हा क्रोध — हा महाखादक (अतृप्त) व महापापी आहे — याला येथे शत्रू म्हणून जाण.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">धूमेनाव्रियते वह्निर्यथादर्शो मलेन च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यथोल्बेनावृतो गर्भस्तथा तेनेदमावृतम् <span class="shloka-pause">॥ ३८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जसा अग्नी धुराने, दर्पण धुळीने व गर्भ वारेने आच्छादित होतो, तसे या (कामाने) हे (ज्ञान) आच्छादित झाले आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·३९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आवृतं ज्ञानमेतेन ज्ञानिनो नित्यवैरिणा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कामरूपेण कौन्तेय दुष्पूरेणानलेन च <span class="shloka-pause">॥ ३९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, ज्ञान्याचा हा नित्य शत्रू — कधीही तृप्त न होणाऱ्या अग्नीसमान व काम-रूपाने असणाऱ्या याने ज्ञान आच्छादित केले आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·४०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इन्द्रियाणि मनो बुद्धिरस्याधिष्ठानमुच्यते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एतैर्विमोहयत्येष ज्ञानमावृत्य देहिनम् <span class="shloka-pause">॥ ४० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">इंद्रिये, मन आणि बुद्धी — हे याचे (कामाचे) आश्रयस्थान सांगितले जाते. यांद्वारे हा ज्ञान आच्छादित करून देहधाऱ्याला मोहित करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·४१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्मात्त्वमिन्द्रियाण्यादौ नियम्य भरतर्षभ <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">पाप्मानं प्रजहि ह्येनं ज्ञानविज्ञाननाशनम् <span class="shloka-pause">॥ ४१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून हे भरतश्रेष्ठा, प्रथम इंद्रिये आवरून, ज्ञान व विज्ञान यांचा नाश करणाऱ्या या पापाला (कामाला) नाहीसे कर.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·४२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इन्द्रियाणि पराण्याहुरिन्द्रियेभ्यः परं मनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मनसस्तु परा बुद्धिर्यो बुद्धेः परतस्तु सः <span class="shloka-pause">॥ ४२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">इंद्रिये श्रेष्ठ म्हटली जातात; इंद्रियांपेक्षा मन श्रेष्ठ आहे; मनापेक्षा बुद्धी श्रेष्ठ आहे; आणि बुद्धीपेक्षाही जो श्रेष्ठ तो (आत्मा) आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ३·४३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एवं बुद्धेः परं बुद्ध्वा संस्तभ्यात्मानमात्मना <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">जहि शत्रुं महाबाहो कामरूपं दुरासदम् <span class="shloka-pause">॥ ४३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे महाबाहो, अशा प्रकारे बुद्धीपेक्षा श्रेष्ठ (आत्म्याला) जाणून आत्म्याने आत्म्याला स्थिर करून, काम-रूपाच्या या दुर्जय शत्रूचा नाश कर.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>कर्मयोगो</strong> नाम तृतीयोऽध्यायः <span class="shloka-pause">॥ ३ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय ३ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>
