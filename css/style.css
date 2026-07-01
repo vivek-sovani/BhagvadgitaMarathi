@@ -866,18 +866,32 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 @media (max-width: 767px) {
+  /* `.nav` is normally `position: sticky` (see NAV section below), which
+     still reserves its layout box even when slid off-screen via `transform`
+     — so hiding it that way alone leaves a dead gap, the content area never
+     grows into it. On this page (mobile only) `.nav` is instead taken out of
+     flow entirely (`position: fixed`, see override below), and the reserved
+     space is recreated here as `padding-top` on `.adhyay-body` instead —
+     which collapses to 0 when hidden, so content actually shifts up. */
+  body.adhyay-page .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+  }
+
   /* Mobile: both panels sit side-by-side, user swipes horizontally */
   .adhyay-body {
-    height: calc(100svh - 110px);
+    height: 100svh;
+    padding-top: 110px;
+    box-sizing: border-box;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     overscroll-behavior-x: contain;
     align-items: stretch;
-    transition: height 0.28s ease;
+    transition: padding-top 0.28s ease;
   }
-  /* Auto-hide feature: when header/bottom-nav are off-screen, reclaim the
-     space they normally reserve so the scroll area actually grows. */
-  body.chrome-hidden .adhyay-body { height: 100svh; }
+  /* Auto-hide feature: header is fixed (out of flow, see above) so
+     collapsing this padding actually reclaims the space it leaves behind. */
+  body.chrome-hidden .adhyay-body { padding-top: 0; }
   .adhyay-main {
     min-width: 100vw;
     width: 100vw;
