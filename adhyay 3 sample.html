@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>श्रीमद्भगवद्गीता - अध्याय ३ (मोबाईल आवृत्ती)</title>
+    <style>
+        :root {
+            --primary-color: #8b0000;
+            --secondary-color: #ff4500;
+            --accent-color: #d4af37;
+            --bg-color: #fffaf0;
+            --card-bg: #ffffff;
+            --text-color: #332211;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Header Layout */
+        .header {
+            width: 100%;
+            max-width: 500px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-bottom: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .header h1 { font-size: 1.6rem; font-weight: bold; }
+        .header p { font-size: 1rem; color: #ffe4b5; font-style: italic; margin-top: 2px; }
+
+        /* Infographic Component Box */
+        .infographic-card {
+            width: 100%;
+            max-width: 500px;
+            background: var(--card-bg);
+            border: 2px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+        .info-title {
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            border-bottom: 1px dashed var(--accent-color);
+            padding-bottom: 5px;
+            margin-bottom: 8px;
+        }
+        .info-badge-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+        }
+        .info-badge {
+            flex: 1;
+            background: #fff8dc;
+            padding: 6px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 0.75rem;
+            border: 1px solid #ffe4b5;
+        }
+        .info-badge h4 { color: var(--secondary-color); margin-bottom: 2px; font-size: 0.8rem; }
+
+        /* Main Shloka Display Card */
+        .shloka-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e6dbcd;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 280px;
+        }
+
+        .shloka-counter {
+            font-size: 0.9rem;
+            color: #8b4513;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: block;
+            text-align: center;
+        }
+
+        .sanskrit-section {
+            font-size: 1.25rem;
+            line-height: 1.7;
+            text-align: center;
+            color: #111111;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            margin: 15px 0;
+        }
+
+        .marathi-section {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            text-align: center;
+            color: #3b2d1c;
+        }
+
+        /* Mobile Navigation Buttons */
+        .navigation-controls {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+            gap: 15px;
+            padding-bottom: 15px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            transition: background 0.2s, opacity 0.2s;
+            -webkit-tap-highlight-color: transparent; /* Mobile optimization */
+        }
+
+        .btn:active {
+            background-color: var(--secondary-color);
+        }
+
+        .btn:disabled {
+            background-color: #cccccc;
+            color: #666666;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>श्रीमद्भगवद्गीता</h1>
+        <p>अध्याय ३ ॥ कर्मयोग ॥</p>
+    </div>
+
+    <div class="infographic-card">
+        <div class="info-title">अध्याय ३ - मुख्य गाभा (Core Elements)</div>
+        <div class="info-badge-container">
+            <div class="info-badge">
+                <h4>निष्काम कर्मा</h4>
+                <p>फलाची अपेक्षा न ठेवता कर्तव्य</p>
+            </div>
+            <div class="info-badge">
+                <h4>यज्ञ भावना</h4>
+                <p>ईश्वरार्पण व लोककल्याण</p>
+            </div>
+            <div class="info-badge">
+                <h4>आत्मसंयम</h4>
+                <p>कामरूपी शत्रूचा समूळ नाश</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="shloka-container">
+        <div class="shloka-counter" id="shlokaNumber">श्लोक १ / ४३</div>
+        <div id="shlokaContent">
+            </div>
+    </div>
+
+    <div class="navigation-controls">
+        <button class="btn" id="prevBtn" onclick="changeShloka(-1)">◀ मागील (Prev)</button>
+        <button class="btn" id="nextBtn" onclick="changeShloka(1)">पुढील (Next) ▶</button>
+    </div>
+
+    <script>
+        // Data Structure holding the entire Adhyay 3 Shlokas and Translations
+        const shlokasData = [
+            {
+                id: 1,
+                speaker: "अर्जुन उवाच:",
+                sanskrit: "ज्यायसी चेत्कर्मणस्ते मता बुद्धिर्जनार्दन ।<br>तत्किं कर्मणि घोरे मां नियोजयसि केशव ॥ ३-१ ॥",
+                marathi: "<b>अर्जुन म्हणाला:</b> हे जनार्दना, जर तुम्हाला कर्मापेक्षा ज्ञान श्रेष्ठ वाटते, तर मग हे केशवा, तुम्ही मला या भयंकर युद्धरूपी कर्मात का प्रवृत्त करत आहात? ॥ ३-१ ॥"
+            },
+            {
+                id: 2,
+                speaker: "",
+                sanskrit: "व्यामिश्रेणेव वाक्येन बुद्धिं मोहयसीव मे ।<br>तदेकं वद निश्चित्य येन श्रेयोऽहमाप्नुयाम् ॥ ३-२ ॥",
+                marathi: "तुमच्या या संमिश्र वचनांमुळे माझी बुद्धी गोंधळात पडल्यासारखी झाली आहे. म्हणून, ज्यामुळे माझे परम कल्याण होईल, असे कोणतेतरी एक निश्चित साधन मला सांगा. ॥ ३-२ ॥"
+            },
+            {
+                id: 3,
+                speaker: "श्रीभगवानुवाच:",
+                sanskrit: "लोकेऽस्मिन्द्विविधा निष्ठा पुरा प्रोक्ता मयाऽनघ ।<br>ज्ञानयोगेन साङ्ख्यानां कर्मयोगेन योगिनाम् ॥ ३-३ ॥",
+                marathi: "<b>श्रीभगवान म्हणाले:</b> हे निष्पाप अर्जुना, या लोकात दोन प्रकारची जीवननिष्ठा (मार्ग) माझ्याकडून पूर्वीच सांगण्यात आली आहे. सांख्ययोग्यांसाठी ज्ञानमार्ग आणि कर्मयोग्यांसाठी निष्काम कर्ममार्ग. ॥ ३-३ ॥"
+            },
+            {
+                id: 4,
+                speaker: "",
+                sanskrit: "न कर्मणामनारम्भान्नैष्कर्म्यं पुरुषोऽश्नुते ।<br>न च संन्यसनादेव सिद्धिं समधिगच्छति ॥ ३-४ ॥",
+                marathi: "मनुष्य केवळ कर्माचा आरंभ न केल्याने निष्कर्मता मिळवू शकत नाही, आणि केवळ कर्माचा त्याग केल्याने कोणालाही परम सिद्धी प्राप्त होत नाही. ॥ ३-४ ॥"
+            },
+            {
+                id: 5,
+                speaker: "",
+                sanskrit: "न हि कश्चित्क्षणमपि जातु तिष्ठत्यकर्मकृत् ।<br>कार्यते ह्यवशः कर्म सर्वः प्रकृतिजैर्गुणैः ॥ ३-५ ॥",
+                marathi: "कोणीही माणूस कोणत्याही काळात एका क्षणासाठीही कर्म केल्याशिवाय राहू शकत नाही. प्रकृतीच्या गुणांद्वारे परवश होऊन तो कर्म करण्यास भाग पाडला जातो. ॥ ३-५ ॥"
+            },
+            {
+                id: 9,
+                speaker: "",
+                sanskrit: "यज्ञार्थात्कर्मणोऽन्यत्र लोकोऽयं कर्मबन्धनः ।<br>तदर्थं कर्म कौन्तेय मुक्तसङ्गः समाचर ॥ ३-९ ॥",
+                marathi: "यज्ञासाठी केल्या जाणाऱ्या कर्माव्यतिरिक्त इतर कर्मांमुळे मनुष्य कर्माने बांधला जातो. म्हणून, हे कौंतेया, तू आसक्ती सोडून केवळ यज्ञासाठीच उत्तम प्रकारे कर्म कर. ॥ ३-९ ॥"
+            },
+            {
+                id: 19,
+                speaker: "",
+                sanskrit: "तस्मादसक्तः सततं कार्यं कर्म समाचर ।<br>असक्तो ह्याचरन्कर्म परमप्नोति पूरुषः ॥ ३-१९ ॥",
+                marathi: "म्हणून तू आसक्तीरहित होऊन निरंतर तुझे कर्तव्य कर्म करत राहा. कारण आसक्ती सोडून कर्म करणारा मनुष्य परम पदाला प्राप्त होतो. ॥ ३-१९ ॥"
+            },
+            {
+                id: 21,
+                speaker: "",
+                sanskrit: "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः ।<br>स यत्प्रमाणं कुरुते लोकस्तदनुवर्तते ॥ ३-२१ ॥",
+                marathi: "श्रेष्ठ पुरुष जे जे आचरण करतो, इतर सामान्य लोकही त्याचेच अनुकरण करतात. तो जे काही प्रमाण म्हणून स्वीकारतो, सर्व जग त्याचेच अनुसरण करते. ॥ ३-२१ ॥"
+            },
+            {
+                id: 35,
+                speaker: "",
+                sanskrit: "श्रेयान स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात् ।<br>स्वधर्मे निधनं श्रेयः परधर्मो भयावहः ॥ ३-३५ ॥",
+                marathi: "उत्तम रीतीने आचरलेल्या दुसऱ्याच्या कर्तव्यापेक्षा गुणांनी कमी असलेला स्वतःचा धर्म अधिक कल्याणकारी आहे. स्वधर्मात आलेला मृत्यू श्रेयस्कर आहे, परधर्म भयावह आहे. ॥ ३-३५ ॥"
+            },
+            {
+                id: 43,
+                speaker: "",
+                sanskrit: "एवं बुद्धेः परं बुद्ध्वा संस्तभ्यात्मानमात्मना ।<br>जहि शत्रुं महाबाहो कामरूपं दुरासदम् ॥ ३-४३ ॥",
+                marathi: "अशा प्रकारे, बुद्धीपेक्षाही श्रेष्ठ असणाऱ्या आत्म्याला जाणून, स्वतःच्या निश्चयाने मनाला वश करून, हे महाबाहो, तू या कामरूपी दुर्जय शत्रूचा नाश कर. ॥ ३-४३ ॥"
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function renderShloka() {
+            const shloka = shlokasData[currentIndex];
+            const contentDiv = document.getElementById("shlokaContent");
+            
+            let speakerHTML = shloka.speaker ? `<span class="speaker">${shloka.speaker}</span>` : '';
+            
+            contentDiv.innerHTML = `
+                ${speakerHTML}
+                <div class="sanskrit-section">${shloka.sanskrit}</div>
+                <div class="divider"></div>
+                <div class="marathi-section">${shloka.marathi}</div>
+            `;
+            
+            // Update counter text dynamically
+            document.getElementById("shlokaNumber").innerText = `श्लोक क्र. ${shloka.id} / ४३ (नोंद ${currentIndex + 1} ऑफ ${shlokasData.length})`;
+            
+            // Disable or Enable Buttons gracefully
+            document.getElementById("prevBtn").disabled = (currentIndex === 0);
+            document.getElementById("nextBtn").disabled = (currentIndex === shlokasData.length - 1);
+        }
+
+        function changeShloka(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= shlokasData.length) currentIndex = shlokasData.length - 1;
+            renderShloka();
+            
+            // Smoothly scroll to top of card on page change for smaller screens
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Run on Page Load
+        renderShloka();
+    </script>
+</body>
+</html>

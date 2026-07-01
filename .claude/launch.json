@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "gita",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8081"],
+      "runtimeExecutable": "/opt/homebrew/bin/node",
+      "runtimeArgs": ["-e", "process.chdir('/Users/viveksovani/Desktop/BhagvadgitaMarathi'); const http=require('http'),fs=require('fs'),path=require('path'); const root=process.cwd(); const MIME={html:'text/html',js:'application/javascript',css:'text/css',png:'image/png',jpg:'image/jpeg',jpeg:'image/jpeg',svg:'image/svg+xml',json:'application/json',ico:'image/x-icon',webp:'image/webp',gif:'image/gif',pdf:'application/pdf',md:'text/markdown',mp3:'audio/mpeg',mp4:'video/mp4',woff2:'font/woff2',woff:'font/woff'}; http.createServer((req,res)=>{let u=decodeURIComponent(req.url.split('?')[0]); let fp=path.join(root,u); try{if(fs.statSync(fp).isDirectory())fp=path.join(fp,'index.html');}catch(e){} fs.readFile(fp,(err,data)=>{if(err){res.writeHead(404);return res.end('not found '+u);} const ext=path.extname(fp).slice(1).toLowerCase(); res.writeHead(200,{'Content-Type':(MIME[ext]||'application/octet-stream')+(ext==='html'||ext==='js'||ext==='css'||ext==='json'||ext==='md'?'; charset=utf-8':'')});res.end(data);});}).listen(8081,()=>console.log('listening on 8081'));"],
       "port": 8081
     }
   ]
