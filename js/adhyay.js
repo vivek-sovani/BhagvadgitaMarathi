@@ -1277,6 +1277,14 @@
 
     currentConceptId = cid;
 
+    // Remember this as the last-read concept so the home page can offer
+    // a "पुढे वाचा" (continue reading) shortcut to the next concept.
+    try {
+      localStorage.setItem('gita-last-read', JSON.stringify({
+        adhyayId: adhyay.id, conceptId: cid, ts: Date.now()
+      }));
+    } catch (e) { /* localStorage unavailable — ignore */ }
+
     // Concept info panel
     conceptInfoEmoji.textContent = concept.emoji;
     conceptInfoName.textContent  = concept.name;

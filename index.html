@@ -246,6 +246,155 @@
     display: flex; justify-content: space-between; align-items: end;
     margin-bottom: 48px; gap: 32px; flex-wrap: wrap;
   }
+  /* ── Continue-reading (पुढे वाचा) card ── */
+  .resume-wrap { display: none; margin-bottom: 34px; }
+  .resume-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #9c4a10 0%, #c76a1f 100%);
+    border-radius: 20px;
+    padding: 26px 30px;
+    color: #fff;
+    box-shadow: 0 14px 34px rgba(156,74,16,.28);
+  }
+  .rc-edit-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    margin-top: 12px;
+    background: none; border: none; padding: 4px 2px;
+    font-family: var(--serif-dev); font-size: 13.5px;
+    color: var(--ink-soft); opacity: .75;
+    cursor: pointer;
+    transition: opacity .15s ease, color .15s ease;
+  }
+  .rc-edit-link:hover { opacity: 1; color: var(--saffron-deep); }
+  .resume-card .rc-emoji {
+    font-size: 44px; line-height: 1; flex-shrink: 0;
+  }
+  .resume-card .rc-body { flex: 1; min-width: 0; }
+  .resume-card .rc-eyebrow {
+    font-family: var(--serif-dev);
+    font-size: 13px; letter-spacing: .06em;
+    text-transform: uppercase;
+    opacity: .82; margin: 0 0 6px;
+  }
+  .resume-card .rc-title {
+    font-family: var(--serif-dev);
+    font-size: 21px; font-weight: 600; line-height: 1.35;
+    margin: 0 0 4px;
+  }
+  .resume-card .rc-meta { font-size: 14px; opacity: .8; margin: 0; }
+  .resume-card .rc-btn {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; color: #9c4a10;
+    font-family: var(--serif-dev); font-weight: 600; font-size: 16px;
+    text-decoration: none;
+    padding: 13px 24px; border-radius: 999px;
+    overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease;
+    animation: rc-pulse 2.6s ease-in-out infinite;
+  }
+  .resume-card .rc-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,.18);
+    animation-play-state: paused;
+  }
+  /* Shimmer sweep across the button on hover */
+  .resume-card .rc-btn::before {
+    content: '';
+    position: absolute; top: 0; left: -60%;
+    width: 40%; height: 100%;
+    background: linear-gradient(115deg, transparent, rgba(156,74,16,.16), transparent);
+    transform: skewX(-20deg);
+    transition: left .55s ease;
+  }
+  .resume-card .rc-btn:hover::before { left: 130%; }
+  /* Arrow nudges forward in a slow loop to cue "keep going" */
+  .resume-card .rc-btn svg { animation: rc-arrow 1.6s ease-in-out infinite; }
+  .resume-card .rc-btn:hover svg { animation: rc-arrow-hover .6s ease-in-out infinite; }
+  @keyframes rc-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,255,255,.55); }
+    50%      { box-shadow: 0 0 0 9px rgba(255,255,255,0); }
+  }
+  @keyframes rc-arrow {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(4px); }
+  }
+  @keyframes rc-arrow-hover {
+    0%, 100% { transform: translateX(0); }
+    50%      { transform: translateX(6px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .resume-card .rc-btn,
+    .resume-card .rc-btn svg,
+    .resume-card .rc-btn:hover svg {
+      animation: none;
+    }
+    .resume-card .rc-btn::before { transition: none; }
+  }
+  @media (max-width: 600px) {
+    .resume-card { flex-direction: column; align-items: flex-start; gap: 16px; padding: 22px; text-align: left; }
+    .resume-card .rc-btn { align-self: stretch; justify-content: center; }
+  }
+
+  /* ── Reading-progress editor modal ── */
+  .pm-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(31,24,18,.55);
+    backdrop-filter: blur(3px);
+    align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .pm-overlay.open { display: flex; }
+  .pm-card {
+    width: 100%; max-width: 420px;
+    background: var(--surface, #fff);
+    border-radius: 20px;
+    padding: 28px 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  }
+  .pm-title {
+    font-family: var(--serif-dev);
+    font-size: 20px; font-weight: 600;
+    margin: 0 0 8px; color: var(--ink);
+  }
+  .pm-sub {
+    font-size: 14px; color: var(--ink-soft);
+    margin: 0 0 20px; line-height: 1.5;
+  }
+  .pm-label {
+    display: block; font-size: 13px; font-weight: 600;
+    color: var(--ink-soft); margin: 0 0 6px;
+  }
+  .pm-select {
+    width: 100%; padding: 12px 14px; margin-bottom: 16px;
+    border-radius: 10px; border: 1px solid var(--rule);
+    background: var(--bg); color: var(--ink);
+    font-family: var(--sans-dev, inherit); font-size: 15px;
+  }
+  .pm-actions {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 10px;
+    margin-top: 8px;
+  }
+  .pm-spacer { flex: 1; min-width: 0; }
+  .pm-btn {
+    padding: 11px 18px; border-radius: 999px; border: none;
+    font-family: var(--serif-dev); font-weight: 600; font-size: 14.5px;
+    cursor: pointer; transition: transform .15s ease, background .15s ease;
+  }
+  .pm-btn-ghost { background: transparent; color: var(--ink-soft); }
+  .pm-btn-ghost:hover { color: var(--ink); }
+  .pm-btn-primary { background: var(--saffron-deep, #9c4a10); color: #fff; }
+  .pm-btn-primary:hover { transform: translateY(-1px); }
+  @media (max-width: 480px) {
+    .pm-actions { flex-direction: column-reverse; align-items: stretch; }
+    .pm-spacer { display: none; }
+    .pm-btn { width: 100%; text-align: center; }
+  }
+
   .chapters-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -576,6 +725,24 @@
       </div>
       <p style="font-family:var(--serif-dev);font-size:18px;color:var(--ink-soft);max-width:380px;margin:0;line-height:1.55;">अर्जुनाच्या शंकेपासून पूर्ण समर्पणापर्यंत — गीतेची संपूर्ण रचना.</p>
     </div>
+    <div class="resume-wrap" id="resume-wrap">
+      <a class="resume-card" id="resume-card" href="#">
+        <span class="rc-emoji" id="rc-emoji">📖</span>
+        <div class="rc-body">
+          <p class="rc-eyebrow" id="rc-eyebrow">पुढे वाचा</p>
+          <p class="rc-title" id="rc-title"></p>
+          <p class="rc-meta" id="rc-meta"></p>
+        </div>
+        <span class="rc-btn">
+          सुरू करा
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+      </a>
+      <button type="button" class="rc-edit-link" id="rc-edit-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:14px;height:14px"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        प्रगती बदला — दुसरा अध्याय/संकल्पना निवडा
+      </button>
+    </div>
     <div class="chapters-grid" id="chapters-grid"></div>
   </div>
 </section>
@@ -656,6 +823,24 @@
     </div>
   </div>
 </footer>
+
+<!-- Reading-progress editor modal -->
+<div class="pm-overlay" id="pm-overlay" aria-hidden="true">
+  <div class="pm-card" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+    <h3 class="pm-title" id="pm-title">वाचन प्रगती सेट करा</h3>
+    <p class="pm-sub">तुम्ही पुढे जिथून वाचणार आहात तो अध्याय आणि संकल्पना निवडा.</p>
+    <label class="pm-label" for="pm-adhyay-select">अध्याय</label>
+    <select class="pm-select" id="pm-adhyay-select"></select>
+    <label class="pm-label" for="pm-concept-select">संकल्पना</label>
+    <select class="pm-select" id="pm-concept-select"></select>
+    <div class="pm-actions">
+      <button type="button" class="pm-btn pm-btn-ghost" id="pm-reset-btn">सुरुवातीपासून सुरू करा</button>
+      <div class="pm-spacer"></div>
+      <button type="button" class="pm-btn pm-btn-ghost" id="pm-cancel-btn">रद्द करा</button>
+      <button type="button" class="pm-btn pm-btn-primary" id="pm-save-btn">जतन करा</button>
+    </div>
+  </div>
+</div>
 
 <script src="js/data.js"></script>
 <script src="js/triggers.js"></script>
