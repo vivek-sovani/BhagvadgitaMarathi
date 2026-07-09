@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय ९ : राजविद्याराजगुह्ययोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:#C8621A;--saffron-light:#F2A45A;--gold:#B8860B;--gold-light:#E8C84A;
+    --cream:#FDF6E3;--cream-dark:#F5E9CC;--brown-deep:#3B1F0A;--brown-mid:#6B3A1F;
+    --brown-soft:#A0623A;--parchment:#FAF0D7;--ink:#1A0F00;--rule:rgba(184,134,11,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background-color:var(--cream);background-image:radial-gradient(ellipse at 20% 0%,rgba(200,98,26,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(184,134,11,.08) 0%,transparent 55%);color:var(--ink);font-family:'Noto Serif Devanagari',serif;font-size:16px;line-height:1.85;min-height:100vh}
+  .top-band{background:linear-gradient(135deg,var(--brown-deep) 0%,var(--saffron) 50%,var(--gold) 100%);height:6px}
+  header{background:linear-gradient(180deg,var(--brown-deep) 0%,#5A2E10 100%);color:var(--cream);text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+  header::before{content:"ॐ";position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:14rem;opacity:.04;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1;pointer-events:none}
+  .header-om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.8rem;color:var(--gold-light);letter-spacing:.1em;display:block;margin-bottom:.5rem;text-shadow:0 0 20px rgba(232,200,74,.5)}
+  .header-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;line-height:1.3;margin-bottom:.4rem}
+  .header-subtitle{font-size:1.1rem;color:var(--saffron-light);letter-spacing:.08em;margin-bottom:1.4rem}
+  .header-divider{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent);margin:0 auto 1.2rem}
+  .header-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:.88rem;color:rgba(253,246,227,.65);letter-spacing:.05em}
+  .intro-banner{background:var(--parchment);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.6rem 2rem;text-align:center;font-size:.97rem;color:var(--brown-mid);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.9}
+  .intro-banner strong{color:var(--saffron);font-family:'Noto Serif Devanagari',serif;font-size:1.05rem}
+  .container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .speaker-heading{display:flex;align-items:center;gap:1rem;margin:2.8rem 0 1.2rem}
+  .speaker-heading .rule{flex:1;height:1px;background:var(--rule)}
+  .speaker-heading .label{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.82rem;letter-spacing:.12em;color:var(--brown-soft);white-space:nowrap;padding:.2rem .8rem;border:1px solid var(--gold);border-radius:2px;background:var(--cream-dark)}
+  .shloka-card{background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(59,31,10,.09);margin-bottom:1.8rem;overflow:hidden;border:1px solid rgba(184,134,11,.2);transition:box-shadow .2s}
+  .shloka-card:hover{box-shadow:0 4px 22px rgba(200,98,26,.14)}
+  .card-header{background:linear-gradient(90deg,var(--brown-deep) 0%,var(--brown-mid) 100%);padding:.55rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .shloka-number{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.1em;white-space:nowrap}
+  .card-header-rule{flex:1;height:1px;background:rgba(232,200,74,.25)}
+  .speaker-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:.72rem;color:rgba(253,246,227,.65);letter-spacing:.08em;white-space:nowrap}
+  .sanskrit-block{background:var(--parchment);border-bottom:1px solid rgba(184,134,11,.2);padding:1.2rem 1.5rem 1rem;position:relative}
+  .sanskrit-block::before{content:"❝";position:absolute;top:.5rem;left:.9rem;font-size:1.8rem;color:rgba(184,134,11,.2);font-family:Georgia,serif;line-height:1}
+  .sanskrit-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.13rem;color:var(--brown-deep);text-align:center;line-height:2.1;padding:0 1rem}
+  .shloka-line{display:block}
+  .shloka-pause{color:var(--gold);font-size:1rem;padding:0 .4em}
+  .meaning-block{padding:1.1rem 1.5rem 1.3rem}
+  .meaning-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:.7rem;letter-spacing:.14em;color:var(--saffron);text-transform:uppercase;font-weight:500;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .meaning-label::after{content:"";flex:1;height:1px;background:rgba(200,98,26,.15)}
+  .meaning-text{font-family:'Noto Serif Devanagari',serif;font-size:.98rem;color:#2A1500;line-height:2}
+  .chapter-close{text-align:center;padding:2.5rem 1rem;color:var(--brown-soft);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;letter-spacing:.06em;border-top:1px solid var(--rule);margin-top:1rem}
+  .chapter-close .big-om{font-size:3rem;color:var(--gold);display:block;margin-bottom:.5rem}
+  footer{background:var(--brown-deep);color:rgba(253,246,227,.5);text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:.78rem;padding:1.2rem;letter-spacing:.05em}
+  @media(max-width:600px){.header-title{font-size:1.45rem}.sanskrit-text{font-size:1rem}.meaning-text{font-size:.93rem}.container{padding:1.5rem 1rem 3rem}}
+  @media print{.shloka-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:white}}
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय ९ — राजविद्याराजगुह्ययोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते ३४ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> विद्यांची राणी व रहस्यांचे रहस्य — असा हा
+  <strong>राजविद्याराजगुह्ययोग</strong>. सर्व जग माझ्यात आहे पण मी त्यात नाही —
+  हे ईश्वरी योगाचे गूढ श्रीकृष्ण येथे उलगडतात. <strong>अनन्य चिंतन करणाऱ्या भक्तांचा
+  योगक्षेम मी चालवतो</strong> (श्लोक २२) हे प्रसिद्ध अभिवचन आणि
+  <strong>पत्रं पुष्पं फलं तोयम्</strong> — भक्तीने अर्पण केलेले मी स्वीकारतो —
+  हे उदार आश्वासन याच अध्यायात आहे.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ KRISHNA – RAJAVIDYA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — राजविद्येचा महिमा</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इदं तु ते गुह्यतमं प्रवक्ष्याम्यनसूयवे <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ज्ञानं विज्ञानसहितं यज्ज्ञात्वा मोक्ष्यसेऽशुभात् <span class="shloka-pause">॥ १ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">असूयारहित अशा तुला मी हे अत्यंत गुह्य ज्ञान विज्ञानासहित सांगतो — जे जाणल्याने तू अशुभातून मुक्त होशील.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">राजविद्या राजगुह्यं पवित्रमिदमुत्तमम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रत्यक्षावगमं धर्म्यं सुसुखं कर्तुमव्ययम् <span class="shloka-pause">॥ २ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">ही राजविद्या आहे, राजगुह्य आहे, परम पवित्र व उत्तम आहे; प्रत्यक्ष अनुभवास येणारी, धर्मयुक्त, आचरण्यास अत्यंत सुलभ आणि अव्यय आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अश्रद्दधानाः पुरुषा धर्मस्यास्य परन्तप <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अप्राप्य मां निवर्तन्ते मृत्युसंसारवर्त्मनि <span class="shloka-pause">॥ ३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे परंतपा, या धर्मावर श्रद्धा नसलेले पुरुष मला न प्राप्त होता मृत्युरूप संसाराच्या मार्गात परत फिरत राहतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ISHWARI YOGA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — ईश्वरी योगाचे गूढ</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मया ततमिदं सर्वं जगदव्यक्तमूर्तिना <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मत्स्थानि सर्वभूतानि न चाहं तेष्ववस्थितः <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अव्यक्त स्वरूपाच्या माझ्याकडून हे सारे जग व्यापलेले आहे. सर्व जीव माझ्यात स्थित आहेत, परंतु मी त्यांच्यात स्थित नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न च मत्स्थानि भूतानि पश्य मे योगमैश्वरम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भूतभृन्न च भूतस्थो ममात्मा भूतभावनः <span class="shloka-pause">॥ ५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आणि वस्तुतः जीवही माझ्यात स्थित नाहीत — माझा हा ईश्वरी योग पाहा! सर्व जीवांचे धारण-पोषण करणारा माझा आत्मा त्या जीवांत स्थित नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यथाकाशस्थितो नित्यं वायुः सर्वत्रगो महान् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तथा सर्वाणि भूतानि मत्स्थानीत्युपधारय <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जसा सर्वत्र संचार करणारा महान वायू नित्य आकाशात स्थित असतो, तसे सर्व जीव माझ्यात स्थित आहेत असे जाण.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सर्वभूतानि कौन्तेय प्रकृतिं यान्ति मामिकाम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कल्पक्षये पुनस्तानि कल्पादौ विसृजाम्यहम् <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, कल्पाच्या अंती सर्व जीव माझ्या प्रकृतीत विलीन होतात आणि कल्पाच्या आरंभी मी त्यांना पुन्हा निर्माण करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">प्रकृतिं स्वामवष्टभ्य विसृजामि पुनः पुनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भूतग्राममिमं कृत्स्नमवशं प्रकृतेर्वशात् <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपल्या प्रकृतीचा आधार घेऊन, प्रकृतीच्या अधीन असलेल्या या संपूर्ण जीवसमूहाला मी पुनःपुन्हा निर्माण करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न च मां तानि कर्माणि निबध्नन्ति धनञ्जय <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">उदासीनवदासीनमसक्तं तेषु कर्मसु <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे धनंजया, ती कर्मे मला बद्ध करत नाहीत; कारण मी त्या कर्मांत अनासक्त व उदासीनाप्रमाणे असतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मयाध्यक्षेण प्रकृतिः सूयते सचराचरम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">हेतुनानेन कौन्तेय जगद्विपरिवर्तते <span class="shloka-pause">॥ १० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">माझ्या अध्यक्षतेखाली प्रकृती हे चराचर जग निर्माण करते. हे कौन्तेया, याच कारणाने जग फिरत राहते.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – MUDHA V MAHATMA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — मूढ व महात्मे</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·११</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अवजानन्ति मां मूढा मानुषीं तनुमाश्रितम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">परं भावमजानन्तो मम भूतमहेश्वरम् <span class="shloka-pause">॥ ११ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी सर्व जीवांचा महेश्वर आहे हा माझा परम भाव न जाणणारे मूढ लोक, मनुष्यदेह धारण केलेल्या माझी अवहेलना करतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मोघाशा मोघकर्माणो मोघज्ञाना विचेतसः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">राक्षसीमासुरीं चैव प्रकृतिं मोहिनीं श्रिताः <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">व्यर्थ आशा, व्यर्थ कर्मे, व्यर्थ ज्ञान असलेले ते विवेकशून्य लोक मोहात पाडणाऱ्या राक्षसी व आसुरी प्रकृतीचा आश्रय घेतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">महात्मानस्तु मां पार्थ दैवीं प्रकृतिमाश्रिताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भजन्त्यनन्यमनसो ज्ञात्वा भूतादिमव्ययम् <span class="shloka-pause">॥ १३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु हे पार्था, दैवी प्रकृतीचा आश्रय घेतलेले महात्मे मला सर्व जीवांचा आदि व अव्यय जाणून अनन्य मनाने भजतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सततं कीर्तयन्तो मां यतन्तश्च दृढव्रताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नमस्यन्तश्च मां भक्त्या नित्ययुक्ता उपासते <span class="shloka-pause">॥ १४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सतत माझे कीर्तन करणारे, दृढव्रताने प्रयत्नशील, भक्तीने मला नमन करणारे ते नित्ययुक्त होऊन माझी उपासना करतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ज्ञानयज्ञेन चाप्यन्ये यजन्तो मामुपासते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एकत्वेन पृथक्त्वेन बहुधा विश्वतोमुखम् <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">इतर काही जण ज्ञानयज्ञाने यजन करत माझी उपासना करतात — कोणी एकत्वभावाने, कोणी पृथक्त्वभावाने, तर कोणी विश्वतोमुख अशा मला अनेक प्रकारे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – VISHWARUPA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — सर्व काही मीच</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अहं क्रतुरहं यज्ञः स्वधाहमहमौषधम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मन्त्रोऽहमहमेवाज्यमहमग्निरहं हुतम् <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी क्रतू आहे, मी यज्ञ आहे, मी स्वधा आहे, मी औषध आहे, मी मंत्र आहे, मीच आज्य (तूप) आहे, मी अग्नी आहे आणि मीच हवन आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पिताहमस्य जगतो माता धाता पितामहः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">वेद्यं पवित्रमोंकार ऋक्साम यजुरेव च <span class="shloka-pause">॥ १७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या जगाचा पिता मी आहे, माता मी, धाता मी, पितामह मी; जाणण्यायोग्य, पवित्र, ओंकार, ऋग्वेद, सामवेद व यजुर्वेदही मीच आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">गतिर्भर्ता प्रभुः साक्षी निवासः शरणं सुहृत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रभवः प्रलयः स्थानं निधानं बीजमव्ययम् <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">गती, भर्ता, प्रभू, साक्षी, निवास, शरण, सुहृद, उत्पत्ती, प्रलय, स्थान, निधान आणि अव्यय बीज — हे सर्व मीच आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·१९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तपाम्यहमहं वर्षं निगृह्णाम्युत्सृजामि च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अमृतं चैव मृत्युश्च सदसच्चाहमर्जुन <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे अर्जुना, मी ताप देतो (सूर्यरूपाने), मी पाऊस रोखतो व पाडतो; अमृतही मीच आणि मृत्यूही मीच; सत् व असत् — दोन्ही मीच आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – KAMYA V NISHKAMA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — सकाम उपासक व अनन्य भक्त</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">त्रैविद्या मां सोमपाः पूतपापा यज्ञैरिष्ट्वा स्वर्गतिं प्रार्थयन्ते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ते पुण्यमासाद्य सुरेन्द्रलोकमश्नन्ति दिव्यान्दिवि देवभोगान् <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">तीन वेद जाणणारे, सोमपान करणारे, पापमुक्त झालेले लोक यज्ञांनी माझे पूजन करून स्वर्गप्राप्तीची प्रार्थना करतात. ते पुण्यरूप इंद्रलोक प्राप्त करून स्वर्गात दिव्य देवभोग भोगतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ते तं भुक्त्वा स्वर्गलोकं विशालं क्षीणे पुण्ये मर्त्यलोकं विशन्ति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एवं त्रयीधर्ममनुप्रपन्ना गतागतं कामकामा लभन्ते <span class="shloka-pause">॥ २१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">ते त्या विशाल स्वर्गलोकाचा उपभोग घेऊन पुण्य क्षीण झाल्यावर मर्त्यलोकात परततात. अशा प्रकारे वेदोक्त सकाम कर्मांचा आश्रय घेतलेले भोगेच्छू येणे-जाणेच प्राप्त करतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् <span class="shloka-pause">॥ २२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जे अनन्य भावाने माझे चिंतन करत माझी उपासना करतात, त्या नित्ययुक्त भक्तांचा योगक्षेम मी स्वतः चालवतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">येऽप्यन्यदेवता भक्ता यजन्ते श्रद्धयान्विताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेऽपि मामेव कौन्तेय यजन्त्यविधिपूर्वकम् <span class="shloka-pause">॥ २३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, जे इतर देवतांचे भक्त श्रद्धेने त्यांचे पूजन करतात, तेही माझेच पूजन करतात — परंतु अविधिपूर्वक.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अहं हि सर्वयज्ञानां भोक्ता च प्रभुरेव च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न तु मामभिजानन्ति तत्त्वेनातश्च्यवन्ति ते <span class="shloka-pause">॥ २४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कारण सर्व यज्ञांचा भोक्ता व प्रभू मीच आहे; परंतु ते मला तत्त्वतः जाणत नाहीत, म्हणून ते (पुनर्जन्मात) पडतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यान्ति देवव्रता देवान्पितॄन्यान्ति पितृव्रताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भूतानि यान्ति भूतेज्या यान्ति मद्याजिनोऽपि माम् <span class="shloka-pause">॥ २५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">देवतांचे व्रत करणारे देवतांना जातात, पितरांचे व्रत करणारे पितरांना जातात, भूतगणांची पूजा करणारे भूतगणांना जातात आणि माझे पूजन करणारे मलाच प्राप्त होतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – PATRAM PUSHPAM ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — भक्तीचा स्वीकार</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पत्रं पुष्पं फलं तोयं यो मे भक्त्या प्रयच्छति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तदहं भक्त्युपहृतमश्नामि प्रयतात्मनः <span class="shloka-pause">॥ २६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जो मला भक्तीने पान, फूल, फळ किंवा पाणी अर्पण करतो, त्या शुद्धचित्त भक्ताने भक्तिभावाने अर्पण केलेले ते मी स्वीकारतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यत्करोषि यदश्नासि यज्जुहोषि ददासि यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम् <span class="shloka-pause">॥ २७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, जे तू करतोस, जे खातोस, जे हवन करतोस, जे दान देतोस आणि जे तप करतोस — ते सर्व मला अर्पण कर.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">शुभाशुभफलैरेवं मोक्ष्यसे कर्मबन्धनैः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">संन्यासयोगयुक्तात्मा विमुक्तो मामुपैष्यसि <span class="shloka-pause">॥ २८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">असे केल्याने शुभ-अशुभ फळे देणाऱ्या कर्मबंधनांतून तू मुक्त होशील आणि संन्यासयोगाने युक्त होऊन विमुक्त होत्साता मलाच प्राप्त होशील.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·२९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">समोऽहं सर्वभूतेषु न मे द्वेष्योऽस्ति न प्रियः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ये भजन्ति तु मां भक्त्या मयि ते तेषु चाप्यहम् <span class="shloka-pause">॥ २९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी सर्व जीवांत समान आहे — मला कोणी द्वेष्य नाही, कोणी प्रिय नाही; परंतु जे मला भक्तीने भजतात ते माझ्यात आहेत आणि मीही त्यांच्यात आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – BHAKTICHA MAHIMA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — भक्तीचा उद्धारक महिमा</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अपि चेत्सुदुराचारो भजते मामनन्यभाक् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">साधुरेव स मन्तव्यः सम्यग्व्यवसितो हि सः <span class="shloka-pause">॥ ३० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अत्यंत दुराचारी माणूसही जर अनन्य भावाने मला भजू लागला, तर त्याला साधूच मानावे — कारण त्याने योग्य निश्चय केला आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">क्षिप्रं भवति धर्मात्मा शश्वच्छान्तिं निगच्छति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कौन्तेय प्रतिजानीहि न मे भक्तः प्रणश्यति <span class="shloka-pause">॥ ३१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">तो त्वरित धर्मात्मा होतो आणि शाश्वत शांती प्राप्त करतो. हे कौन्तेया, निश्चयपूर्वक जाण — माझा भक्त कधीही नष्ट होत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मां हि पार्थ व्यपाश्रित्य येऽपि स्युः पापयोनयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स्त्रियो वैश्यास्तथा शूद्रास्तेऽपि यान्ति परां गतिम् <span class="shloka-pause">॥ ३२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, माझा आश्रय घेतल्यावर स्त्रिया, वैश्य, शूद्र किंवा पापयोनीत जन्मलेले — हे सर्वही परम गतीला प्राप्त होतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">किं पुनर्ब्राह्मणाः पुण्या भक्ता राजर्षयस्तथा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनित्यमसुखं लोकमिमं प्राप्य भजस्व माम् <span class="shloka-pause">॥ ३३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मग पुण्यवान ब्राह्मण व राजर्षी भक्तांबद्दल काय सांगावे? म्हणून या अनित्य व सुखरहित लोकात आल्यावर तू माझे भजन कर.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ९·३४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मन्मना भव मद्भक्तो मद्याजी मां नमस्कुरु <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मामेवैष्यसि युक्त्वैवमात्मानं मत्परायणः <span class="shloka-pause">॥ ३४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">माझ्यात मन ठेव, माझा भक्त हो, माझे पूजन कर, मला नमस्कार कर. अशा प्रकारे मत्परायण होऊन आत्म्याला माझ्यात युक्त केल्यावर तू मलाच प्राप्त होशील.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>राजविद्याराजगुह्ययोगो</strong> नाम नवमोऽध्यायः <span class="shloka-pause">॥ ९ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय ९ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय ११ : विश्वरूपदर्शनयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:#C8621A;--saffron-light:#F2A45A;--gold:#B8860B;--gold-light:#E8C84A;
+    --cream:#FDF6E3;--cream-dark:#F5E9CC;--brown-deep:#3B1F0A;--brown-mid:#6B3A1F;
+    --brown-soft:#A0623A;--parchment:#FAF0D7;--ink:#1A0F00;--rule:rgba(184,134,11,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background-color:var(--cream);background-image:radial-gradient(ellipse at 20% 0%,rgba(200,98,26,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(184,134,11,.08) 0%,transparent 55%);color:var(--ink);font-family:'Noto Serif Devanagari',serif;font-size:16px;line-height:1.85;min-height:100vh}
+  .top-band{background:linear-gradient(135deg,var(--brown-deep) 0%,var(--saffron) 50%,var(--gold) 100%);height:6px}
+  header{background:linear-gradient(180deg,var(--brown-deep) 0%,#5A2E10 100%);color:var(--cream);text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+  header::before{content:"ॐ";position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:14rem;opacity:.04;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1;pointer-events:none}
+  .header-om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.8rem;color:var(--gold-light);letter-spacing:.1em;display:block;margin-bottom:.5rem;text-shadow:0 0 20px rgba(232,200,74,.5)}
+  .header-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;line-height:1.3;margin-bottom:.4rem}
+  .header-subtitle{font-size:1.1rem;color:var(--saffron-light);letter-spacing:.08em;margin-bottom:1.4rem}
+  .header-divider{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent);margin:0 auto 1.2rem}
+  .header-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:.88rem;color:rgba(253,246,227,.65);letter-spacing:.05em}
+  .intro-banner{background:var(--parchment);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.6rem 2rem;text-align:center;font-size:.97rem;color:var(--brown-mid);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.9}
+  .intro-banner strong{color:var(--saffron);font-family:'Noto Serif Devanagari',serif;font-size:1.05rem}
+  .container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .speaker-heading{display:flex;align-items:center;gap:1rem;margin:2.8rem 0 1.2rem}
+  .speaker-heading .rule{flex:1;height:1px;background:var(--rule)}
+  .speaker-heading .label{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.82rem;letter-spacing:.12em;color:var(--brown-soft);white-space:nowrap;padding:.2rem .8rem;border:1px solid var(--gold);border-radius:2px;background:var(--cream-dark)}
+  .shloka-card{background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(59,31,10,.09);margin-bottom:1.8rem;overflow:hidden;border:1px solid rgba(184,134,11,.2);transition:box-shadow .2s}
+  .shloka-card:hover{box-shadow:0 4px 22px rgba(200,98,26,.14)}
+  .card-header{background:linear-gradient(90deg,var(--brown-deep) 0%,var(--brown-mid) 100%);padding:.55rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .shloka-number{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.1em;white-space:nowrap}
+  .card-header-rule{flex:1;height:1px;background:rgba(232,200,74,.25)}
+  .speaker-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:.72rem;color:rgba(253,246,227,.65);letter-spacing:.08em;white-space:nowrap}
+  .sanskrit-block{background:var(--parchment);border-bottom:1px solid rgba(184,134,11,.2);padding:1.2rem 1.5rem 1rem;position:relative}
+  .sanskrit-block::before{content:"❝";position:absolute;top:.5rem;left:.9rem;font-size:1.8rem;color:rgba(184,134,11,.2);font-family:Georgia,serif;line-height:1}
+  .sanskrit-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.13rem;color:var(--brown-deep);text-align:center;line-height:2.1;padding:0 1rem}
+  .shloka-line{display:block}
+  .shloka-pause{color:var(--gold);font-size:1rem;padding:0 .4em}
+  .meaning-block{padding:1.1rem 1.5rem 1.3rem}
+  .meaning-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:.7rem;letter-spacing:.14em;color:var(--saffron);text-transform:uppercase;font-weight:500;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .meaning-label::after{content:"";flex:1;height:1px;background:rgba(200,98,26,.15)}
+  .meaning-text{font-family:'Noto Serif Devanagari',serif;font-size:.98rem;color:#2A1500;line-height:2}
+  .chapter-close{text-align:center;padding:2.5rem 1rem;color:var(--brown-soft);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;letter-spacing:.06em;border-top:1px solid var(--rule);margin-top:1rem}
+  .chapter-close .big-om{font-size:3rem;color:var(--gold);display:block;margin-bottom:.5rem}
+  footer{background:var(--brown-deep);color:rgba(253,246,227,.5);text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:.78rem;padding:1.2rem;letter-spacing:.05em}
+  @media(max-width:600px){.header-title{font-size:1.45rem}.sanskrit-text{font-size:1rem}.meaning-text{font-size:.93rem}.container{padding:1.5rem 1rem 3rem}}
+  @media print{.shloka-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:white}}
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय ११ — विश्वरूपदर्शनयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते ५५ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> अर्जुनाच्या विनंतीवरून श्रीकृष्ण आपले भयचकित करणारे
+  <strong>विश्वरूप</strong> प्रकट करतात — अनंत मुखे, अनंत नेत्रे, सर्व दिशांना पसरलेले तेज.
+  युद्धभूमीवरील सर्व वीर या विराट रूपाच्या मुखांत नष्ट होताना पाहून अर्जुन भयभीत होतो
+  आणि क्षमा मागतो. अंती श्रीकृष्ण पुन्हा आपले सौम्य <strong>चतुर्भुज</strong> व नंतर
+  <strong>मनुष्यरूप</strong> धारण करतात.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ ARJUNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — विश्वरूप पाहण्याची विनंती</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१–२</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मदनुग्रहाय परमं गुह्यमध्यात्मसंज्ञितम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यत्त्वयोक्तं वचस्तेन मोहोऽयं विगतो मम <span class="shloka-pause">॥ १ ॥</span></span>
+    <span class="shloka-line">भवाप्यययौ हि भूतानां श्रुतौ विस्तरशो मया <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">त्वत्तः कमलपत्राक्ष माहात्म्यमपि चाव्ययम् <span class="shloka-pause">॥ २ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">माझ्यावरील अनुग्रहासाठी आपण जे परम गुह्य अध्यात्मविषयक वचन सांगितले, त्याने माझा हा मोह नष्ट झाला. हे कमलपत्राक्षा, जीवांची उत्पत्ती व लय आणि आपले अव्यय माहात्म्यही मी आपल्याकडून विस्ताराने ऐकले.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एवमेतद्यथात्थ त्वमात्मानं परमेश्वर <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">द्रष्टुमिच्छामि ते रूपमैश्वरं पुरुषोत्तम <span class="shloka-pause">॥ ३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे परमेश्वरा, आपण स्वतःविषयी जे सांगितले ते असेच आहे. हे पुरुषोत्तमा, तरीही मला आपले ऐश्वर्यरूप प्रत्यक्ष पाहायची इच्छा आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मन्यसे यदि तच्छक्यं मया द्रष्टुमिति प्रभो <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">योगेश्वर ततो मे त्वं दर्शयात्मानमव्ययम् <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे प्रभो, ते मला पाहणे शक्य आहे असे आपणास वाटत असेल, तर हे योगेश्वरा, आपले अव्यय स्वरूप मला दाखवा.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — विश्वरूप प्रकटीकरण</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पश्य मे पार्थ रूपाणि शतशोऽथ सहस्रशः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नानाविधानि दिव्यानि नानावर्णाकृतीनि च <span class="shloka-pause">॥ ५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, माझी शेकडो-हजारो प्रकारची, नानाविध, दिव्य आणि विविध वर्ण व आकृतींची रूपे पाहा.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पश्यादित्यान्वसून्रुद्रानश्विनौ मरुतस्तथा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">बहून्यदृष्टपूर्वाणि पश्याश्चर्याणि भारत <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे भारता, आदित्य, वसू, रुद्र, दोन्ही अश्विनीकुमार आणि मरुतगण अवलोकन कर; यापूर्वी न पाहिलेली अनेक आश्चर्ये निरख.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इहैकस्थं जगत्कृत्स्नं पश्याद्य सचराचरम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मम देहे गुडाकेश यच्चान्यद्द्रष्टुमिच्छसि <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे गुडाकेशा, चराचर संपूर्ण जग येथे एकत्र माझ्या देहात आज निरख, आणि याशिवाय जे काही तू पाहू इच्छितोस तेही अवलोक.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न तु मां शक्यसे द्रष्टुमनेनैव स्वचक्षुषा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दिव्यं दददामि ते चक्षुः पश्य मे योगमैश्वरम् <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु या तुझ्या सामान्य नेत्रांनी तू मला पाहू शकणार नाहीस. मी तुला दिव्य दृष्टी देतो — माझा ऐश्वरी योग अवलोक.</div></div>
+</div>
+
+<!-- ══════════════ SANJAY ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">सञ्जय उवाच — विश्वरूपाचे वर्णन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·९</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एवमुक्त्वा ततो राजन्महायोगेश्वरो हरिः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दर्शयामास पार्थाय परमं रूपमैश्वरम् <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे राजन, असे बोलून महायोगेश्वर श्रीहरींनी पार्थाला आपले परम ऐश्वर्यरूप दाखविले.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१०–११</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अनेकवक्त्रनयनमनेकाद्भुतदर्शनम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनेकदिव्याभरणं दिव्यानेकोद्यतायुधम् <span class="shloka-pause">॥ १० ॥</span></span>
+    <span class="shloka-line">दिव्यमाल्याम्बरधरं दिव्यगन्धानुलेपनम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">सर्वाश्चर्यमयं देवमनन्तं विश्वतोमुखम् <span class="shloka-pause">॥ ११ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अनेक मुखे व नेत्र असलेले, अनेक अद्भुत दृश्ये दाखविणारे, अनेक दिव्य आभरणांनी सजलेले, अनेक दिव्य शस्त्रे उभारलेले, दिव्य माळा व वस्त्रे धारण केलेले, दिव्य गंधाने लेपित, सर्वाश्चर्यमय, अनंत आणि सर्व दिशांना मुख असलेले असे ते देवस्वरूप (अर्जुनाने पाहिले).</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१२</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दिवि सूर्यसहस्रस्य भवेद्युगपदुत्थिता <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यदि भाः सदृशी सा स्याद्भासस्तस्य महात्मनः <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आकाशात एकाच वेळी हजारो सूर्य उगवले तर जे तेज निर्माण होईल, तेच त्या महात्म्याच्या तेजाशी काहीसे तुलनीय असेल.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१३</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तत्रैकस्थं जगत्कृत्स्नं प्रविभक्तमनेकधा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अपश्यद्देवदेवस्य शरीरे पाण्डवस्तदा <span class="shloka-pause">॥ १३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">त्या वेळी पांडव अर्जुनाने त्या देवाधिदेवाच्या शरीरात एकत्र असलेले, अनेक प्रकारे विभागलेले संपूर्ण जग पाहिले.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA – VISHWARUP DARSHAN ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — विश्वरूपाचे स्तवन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१४</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ततः स विस्मयाविष्टो हृष्टरोमा धनञ्जयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रणम्य शिरसा देवं कृताञ्जलिरभाषत <span class="shloka-pause">॥ १४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">त्यानंतर विस्मयाने व्याप्त, ज्याचे रोमांच उभे राहिले आहेत असा धनंजय त्या देवाला मस्तकाने प्रणाम करून, हात जोडून बोलला.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१५</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पश्यामि देवांस्तव देव देहे सर्वांस्तथा भूतविशेषसङ्घान् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ब्रह्माणमीशं कमलासनस्थमृषींश्च सर्वानुरगांश्च दिव्यान् <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे देवा, आपल्या देहात मी सर्व देवांना, विविध प्राणिसमूहांना, कमलासनस्थ ब्रह्मदेवाला, शंकराला, सर्व ऋषींना आणि दिव्य नागांना पाहतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१६</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">बहुबाहूदरवक्त्रनेत्रं पश्यामि त्वां सर्वतोनन्तरूपम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नान्तं न मध्यं न पुनस्तवादिं पश्यामि विश्वेश्वर विश्वरूप <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे विश्वेश्वरा, हे विश्वरूपा, अनेक बाहू, उदरे, मुखे व नेत्र असलेल्या आणि सर्व दिशांना अनंतरूप असलेल्या आपणास मी पाहतो. आपला अंत, मध्य किंवा आदी मला दिसत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१७</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">किरीटिनं गदिनं चक्रिणं च तेजोराशिं सर्वतो दीप्तिमन्तम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">पश्यामि त्वां दुर्निरीक्ष्यं समन्ताद्दीप्तानलार्कद्युतिमप्रमेयम् <span class="shloka-pause">॥ १७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">किरीट, गदा व चक्र धारण केलेल्या, सर्व बाजूंनी तेजोराशीने दीप्तिमान असलेल्या, प्रज्वलित अग्नी व सूर्याच्या तेजासमान दुर्निरीक्ष्य व अप्रमेय आपणास मी सर्वत्र पाहतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१८</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">त्वमक्षरं परमं वेदितव्यं त्वमस्य विश्वस्य परं निधानम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">त्वमव्ययः शाश्वतधर्मगोप्ता सनातनस्त्वं पुरुषो मतो मे <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपण जाणण्यायोग्य परम अक्षर आहात, या विश्वाचे परम निधान आहात, आपण अव्यय व शाश्वत धर्माचे रक्षक आहात. आपण सनातन पुरुष आहात असे मला वाटते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·१९</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अनादिमध्यान्तमनन्तवीर्यमनन्तबाहुं शशिसूर्यनेत्रम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">पश्यामि त्वां दीप्तहुताशवक्त्रं स्वतेजसा विश्वमिदं तपन्तम् <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आदी, मध्य व अंत नसलेल्या, अनंत सामर्थ्याच्या, अनंत बाहूंच्या, चंद्र-सूर्यरूपी नेत्रांच्या, प्रज्वलित अग्नीसमान मुखाच्या आणि स्वतःच्या तेजाने या विश्वाला तपवणाऱ्या आपणास मी पाहतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२०</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">द्यावापृथिव्योरिदमन्तरं हि व्याप्तं त्वयैकेन दिशश्च सर्वाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दृष्ट्वाद्भुतं रूपमुग्रं तवेदं लोकत्रयं प्रव्यथितं महात्मन् <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे स्वर्ग व पृथ्वी यांच्यामधील अवकाश आणि सर्व दिशा एकट्या आपणच व्यापल्या आहेत. हे महात्मन, आपले हे अद्भुत व उग्र रूप पाहून तिन्ही लोक व्यथित झाले आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२१</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अमी हि त्वां सुरसङ्घा विशन्ति केचिद्भीताः प्राञ्जलयो गृणन्ति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स्वस्तीत्युक्त्वा महर्षिसिद्धसङ्घाः स्तुवन्ति त्वां स्तुतिभिः पुष्कलाभिः <span class="shloka-pause">॥ २१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे देवसंघ आपल्यात प्रवेश करत आहेत, काही भयभीत होऊन हात जोडून स्तवन करत आहेत आणि महर्षी-सिद्धसंघ "स्वस्ति" म्हणून विपुल स्तुतींनी आपली स्तुती करत आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२२</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">रुद्रादित्या वसवो ये च साध्याविश्वेऽश्विनौ मरुतश्चोष्मपाश्च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">गन्धर्वयक्षासुरसिद्धसङ्घा वीक्षन्ते त्वां विस्मिताश्चैव सर्वे <span class="shloka-pause">॥ २२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">रुद्र, आदित्य, वसू, साध्य, विश्वेदेव, अश्विनीकुमार, मरुत, पितर, गंधर्व, यक्ष, असुर व सिद्धसंघ — हे सर्व विस्मित होऊन आपल्याकडे पाहत आहेत.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA – BHAYA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — भयचकित अर्जुन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२३</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">रूपं महत्ते बहुवक्त्रनेत्रं महाबाहो बहुबाहूरुपादम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">बहूदरं बहुदंष्ट्राकरालं दृष्ट्वा लोकाः प्रव्यथितास्तथाहम् <span class="shloka-pause">॥ २३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे महाबाहो, अनेक मुखे व नेत्र, अनेक बाहू, मांड्या व पाय, अनेक उदरे आणि अनेक भयंकर दाढांनी युक्त आपले हे महाकाय रूप पाहून सर्व लोक व्यथित झाले आहेत आणि तसाच मीही व्यथित झालो आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२४</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">नभःस्पृशं दीप्तमनेकवर्णं व्यात्ताननं दीप्तविशालनेत्रम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दृष्ट्वा हि त्वां प्रव्यथितान्तरात्मा धृतिं न विन्दामि शमं च विष्णो <span class="shloka-pause">॥ २४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आकाशाला स्पर्श करणारे, प्रकाशमान, अनेक वर्णांचे, उघड्या मुखाचे व प्रज्वलित विशाल नेत्रांचे आपले रूप पाहून, हे विष्णू, माझा अंतरात्मा व्यथित झाला आहे आणि मला धीर व शांती लाभत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२५</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दंष्ट्राकरालानि च ते मुखानि दृष्ट्वैव कालानलसन्निभानि <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दिशो न जाने न लभे च शर्म प्रसीद देवेश जगन्निवास <span class="shloka-pause">॥ २५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपली भयंकर दाढांनी युक्त, प्रलयाग्नीसमान मुखे पाहून मला दिशांचेही भान राहत नाही आणि मला शांतीही मिळत नाही. हे देवेशा, हे जगन्निवासा, प्रसन्न व्हा.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२६–२७</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अमी च त्वां धृतराष्ट्रस्य पुत्राः सर्वे सहैवावनिपालसङ्घैः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भीष्मो द्रोणः सूतपुत्रस्तथासौ सहास्मदीयैरपि योधमुख्यैः <span class="shloka-pause">॥ २६ ॥</span></span>
+    <span class="shloka-line">वक्त्राणि ते त्वरमाणा विशन्ति दंष्ट्राकरालानि भयानकानि <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">केचिद्विलग्ना दशनान्तरेषु सन्दृश्यन्ते चूर्णितैरुत्तमाङ्गैः <span class="shloka-pause">॥ २७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे धृतराष्ट्राचे सर्व पुत्र, अन्य राजसंघांसह, भीष्म, द्रोण, कर्ण आणि आमच्याही प्रमुख योद्ध्यांसह — हे सर्व त्वरेने आपल्या भयानक व दंष्ट्रायुक्त मुखांत प्रवेश करत आहेत. काहींची मस्तके दातांच्या मध्ये चिरडलेली अडकलेली दिसत आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·२८–२९</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यथा नदीनां बहवोऽम्बुवेगाः समुद्रमेवाभिमुखा द्रवन्ति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तथा तवामी नरलोकवीरा विशन्ति वक्त्राण्यभिविज्वलन्ति <span class="shloka-pause">॥ २८ ॥</span></span>
+    <span class="shloka-line">यथा प्रदीप्तं ज्वलनं पतङ्गा विशन्ति नाशाय समृद्धवेगाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तथैव नाशाय विशन्ति लोकास्तवापि वक्त्राणि समृद्धवेगाः <span class="shloka-pause">॥ २९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जशा अनेक नद्यांच्या जलधारा समुद्राकडेच वाहत जातात, तसे हे नरलोकातील वीर प्रज्वलित आपल्या मुखांत प्रवेश करत आहेत. जसे पतंग नाशासाठी वेगाने प्रदीप्त अग्नीत झेप घेतात, तसेच हे लोकही नाशासाठी वेगाने आपल्या मुखांत प्रवेश करत आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३०</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">लेलिह्यसे ग्रसमानः समन्ताल्लोकान्समग्रान्वदनैर्ज्वलद्भिः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेजोभिरापूर्य जगत्समग्रं भासस्तवोग्राः प्रतपन्ति विष्णो <span class="shloka-pause">॥ ३० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपल्या प्रज्वलित मुखांनी सर्व बाजूंच्या सर्व लोकांना ग्रासून आपण जिभल्या चाटत आहात. हे विष्णू, आपल्या उग्र तेजांनी संपूर्ण जग भरून तापत आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३१</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आख्याहि मे को भवानुग्ररूपो नमोऽस्तु ते देववर प्रसीद <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">विज्ञातुमिच्छामि भवन्तमाद्यं न हि प्रजानामि तव प्रवृत्तिम् <span class="shloka-pause">॥ ३१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे उग्ररूपा, आपण कोण आहात हे मला सांगा. हे देववरा, आपणास नमस्कार असो, प्रसन्न व्हा. आद्य अशा आपणास जाणण्याची माझी इच्छा आहे, कारण आपली प्रवृत्ती मला समजत नाही.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – SVARUPA NIRUPAN ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — स्वरूपाचे निरूपण</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">कालोऽस्मि लोकक्षयकृत्प्रवृद्धो लोकान्समाहर्तुमिह प्रवृत्तः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ऋतेऽपि त्वां न भविष्यन्ति सर्वे येऽवस्थिताः प्रत्यनीकेषु योधाः <span class="shloka-pause">॥ ३२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी लोकांचा क्षय करणारा वृद्धिंगत काळ आहे, येथे लोकांचा संहार करण्यास प्रवृत्त झालेला आहे. तुझ्याशिवायही या प्रतिपक्षात उभे असलेले सर्व योद्धे नष्ट होणारच आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्मात्त्वमुत्तिष्ठ यशो लभस्व जित्वा शत्रून्भुङ्क्ष्व राज्यं समृद्धम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मयैवैते निहताः पूर्वमेव निमित्तमात्रं भव सव्यसाचिन् <span class="shloka-pause">॥ ३३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून तू उठ, यश प्राप्त कर, शत्रूंना जिंकून समृद्ध राज्याचा उपभोग घे. हे सव्यसाची, हे सर्व मीच पूर्वीच मारलेले आहेत — तू केवळ निमित्तमात्र हो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">द्रोणं च भीष्मं च जयद्रथं च कर्णं तथान्यानपि योधवीरान् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मया हतांस्त्वं जहि मा व्यथिष्ठा युध्यस्व जेतासि रणे सपत्नान् <span class="shloka-pause">॥ ३४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">द्रोण, भीष्म, जयद्रथ, कर्ण आणि इतरही योद्धावीर हे मी आधीच मारलेले आहेत — तू त्यांना मार. व्यथित होऊ नकोस, युद्ध कर; तू रणांगणात शत्रूंना जिंकशीलच.</div></div>
+</div>
+
+<!-- ══════════════ SANJAY ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">सञ्जय उवाच</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३५</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एतच्छ्रुत्वा वचनं केशवस्य कृताञ्जलिर्वेपमानः किरीटी <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नमस्कृत्वा भूय एवाह कृष्णं सगद्गदं भीतभीतः प्रणम्य <span class="shloka-pause">॥ ३५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">केशवाचे हे वचन ऐकून, हात जोडून, कंपित होत असलेला किरीटधारी अर्जुन पुन्हा नमस्कार करून, अत्यंत भयभीत होऊन, गद्गद वाणीने श्रीकृष्णास बोलला.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA – KSHAMA PRARTHANA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — क्षमायाचना व स्तुती</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३६</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">स्थाने हृषीकेश तवप्रकीर्त्या जगत्प्रहृष्यत्यनुरज्यते च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">रक्षांसि भीतानि दिशो द्रवन्ति सर्वे नमस्यन्ति च सिद्धसङ्घाः <span class="shloka-pause">॥ ३६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे हृषीकेशा, आपल्या कीर्तनाने जग हर्षित व अनुरक्त होते हे योग्यच आहे. भयभीत राक्षस दिशांना पळून जात आहेत आणि सर्व सिद्धसंघ आपणास नमस्कार करत आहेत.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३७</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">कस्माच्च ते न नमेरन्महात्मन्गरीयसे ब्रह्मणोऽप्यादिकर्त्रे <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनन्त देवेश जगन्निवास त्वमक्षरं सदसत्तत्परं यत् <span class="shloka-pause">॥ ३७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे महात्मन, ब्रह्मदेवाहूनही श्रेष्ठ अशा आद्यकर्त्या आपणास हे का नमस्कार करणार नाहीत? हे अनंता, देवेशा, जगन्निवासा, आपण अक्षर आहात, सत्-असत् आहात आणि त्याहूनही परे जे आहे तेही आपणच आहात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३८</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">त्वमादिदेवः पुरुषः पुराणस्त्वमस्य विश्वस्य परं निधानम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">वेत्तासि वेद्यं च परं च धाम त्वया ततं विश्वमनन्तरूप <span class="shloka-pause">॥ ३८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपण आदिदेव, पुराणपुरुष आहात, या विश्वाचे परम निधान आहात. आपणच जाणणारा व जाणण्यायोग्य आहात, आणि परम धामही आहात. हे अनंतरूपा, आपणच हे संपूर्ण विश्व व्यापले आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·३९</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">वायुर्यमोऽग्निर्वरुणः शशाङ्कः प्रजापतिस्त्वं प्रपितामहश्च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">नमो नमस्तेऽस्तु सहस्रकृत्वः पुनश्च भूयोपि नमो नमस्ते <span class="shloka-pause">॥ ३९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपण वायू, यम, अग्नी, वरुण, चंद्र, प्रजापती आणि प्रपितामहही आहात. आपणास सहस्रवार नमस्कार असो, आणि पुनःपुन्हा नमस्कार असो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४०</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">नमः पुरस्तादथ पृष्ठतस्ते नमोस्तु ते सर्वत एव सर्व <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अनन्तवीर्यामितविक्रमस्त्वं सर्वं समाप्नोषि ततोसि सर्वः <span class="shloka-pause">॥ ४० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे सर्वस्वरूप, आपणास पुढून, मागून व सर्व बाजूंनी नमस्कार असो. अनंत सामर्थ्य व अमित पराक्रमाचे आपण सर्व काही व्यापून आहात, म्हणून आपणच सर्वस्वरूप आहात.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA – KSHAMA YACHANA SAKHYA BHAVE ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — सख्यभावातील अपराधाबद्दल क्षमायाचना</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४१–४२</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सखेति मत्वा प्रसभं यदुक्तं हे कृष्ण हे यादव हे सखेति <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अजानता महिमानं तवेदं मया प्रमादात्प्रणयेन वापि <span class="shloka-pause">॥ ४१ ॥</span></span>
+    <span class="shloka-line">यच्चावहासार्थमसत्कृतोसि विहारशय्यासनभोजनेषु <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एकोथवाप्यच्युत तत्समक्षं तत्क्षामये त्वामहमप्रमेयम् <span class="shloka-pause">॥ ४२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपणास सखा मानून जे मी अविचाराने "हे कृष्णा, हे यादवा, हे सख्या" असे संबोधले, ते आपला हा महिमा न जाणता, प्रमादाने किंवा प्रेमभावाने बोललो. आणि हे अच्युता, विहार, शय्या, आसन व भोजन यांत विनोदार्थ किंवा एकांतात अथवा इतरांसमक्ष जो अनादर केला, त्याबद्दल हे अप्रमेय आपणास मी क्षमा मागतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४३</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">पितासि लोकस्य चराचरस्य त्वमस्य पूज्यश्च गुरुर्गरीयान् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न त्वत्समोस्त्यभ्यधिकः कुतोन्यो लोकत्रयेप्यप्रतिमप्रभाव <span class="shloka-pause">॥ ४३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आपण या चराचर जगाचे पिता आहात, पूज्य व गुरूंहूनही श्रेष्ठ आहात. हे अप्रतिम प्रभावी, तिन्ही लोकांत आपल्यासमान किंवा आपल्याहून श्रेष्ठ असा कोणी नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४४</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्मात्प्रणम्य प्रणिधाय कायं प्रसादये त्वामहमीशमीड्यम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">पितेव पुत्रस्य सखेव सख्युः प्रियः प्रियायार्हसि देव सोढुम् <span class="shloka-pause">॥ ४४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून हे स्तुत्य ईशा, शरीर लोटांगणात घालून, नमस्कार करून मी आपणास प्रसन्न करण्याची विनवणी करतो. हे देवा, पित्याने पुत्राचा, सख्याने सख्याचा, प्रियकराने प्रियेचा अपराध सहन करावा तसे आपण माझा अपराध सहन करावा.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४५</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अदृष्टपूर्वं हृषितोस्मि दृष्ट्वा भयेन च प्रव्यथितं मनो मे <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तदेव मे दर्शय देव रूपं प्रसीद देवेश जगन्निवास <span class="shloka-pause">॥ ४५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">यापूर्वी न पाहिलेले हे रूप पाहून मी हर्षित झालो आहे, पण भयानेही माझे मन व्यथित झाले आहे. हे देवा, आपले पूर्वीचे (सौम्य) रूपच मला दाखवा. हे देवेशा, हे जगन्निवासा, प्रसन्न व्हा.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४६</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">किरीटिनं गदिनं चक्रहस्तमिच्छामि त्वां द्रष्टुमहं तथैव <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेनैव रूपेण चतुर्भुजेन सहस्रबाहो भव विश्वमूर्ते <span class="shloka-pause">॥ ४६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">किरीट, गदा व हातात चक्र धारण केलेल्या त्याच स्वरूपात मी आपणास पाहू इच्छितो. हे सहस्रबाहो, हे विश्वमूर्ते, आपण त्याच चतुर्भुज रूपात प्रकट व्हा.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – SAUMYA RUP ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — विश्वरूप महिमा व सौम्य रूपाचे आश्वासन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मया प्रसन्नेन तवार्जुनेदं रूपं परं दर्शितमात्मयोगात् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेजोमयं विश्वमनन्तमाद्यं यन्मे त्वदन्येन न दृष्टपूर्वम् <span class="shloka-pause">॥ ४७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे अर्जुना, प्रसन्न होऊन मी माझ्याच योगसामर्थ्याने तुला हे तेजोमय, अनंत, आद्य असे परम विश्वरूप दाखविले — जे तुझ्याशिवाय यापूर्वी कोणी पाहिलेले नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न वेदयज्ञाध्ययनैर्न दानै र्न च क्रियाभिर्न तपोभिरुग्रैः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एवंरूपः शक्य अहं नृलोके द्रष्टुं त्वदन्येन कुरुप्रवीर <span class="shloka-pause">॥ ४८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कुरुप्रवीरा, वेदाध्ययन, यज्ञ, दान, क्रियाकांड किंवा उग्र तपश्चर्येनेही मनुष्यलोकात तुझ्याशिवाय इतर कोणालाही मी अशा रूपात दिसणे शक्य नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·४९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मा ते व्यथा मा च विमूढभावो दृष्ट्वा रूपं घोरमीदृङ्ममेदम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">व्यपेतभीः प्रीतमनाः पुनस्त्वं तदेव मे रूपमिदं प्रपश्य <span class="shloka-pause">॥ ४९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">माझे हे घोर रूप पाहून तुला व्यथा किंवा मूढभाव नको. भयमुक्त व प्रीतमन होऊन तू पुन्हा माझे तेच पूर्वीचे रूप पाहा.</div></div>
+</div>
+
+<!-- ══════════════ SANJAY – SAUMYA RUP DARSHAN ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">सञ्जय उवाच — सौम्य रूपाचे दर्शन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५०</span><span class="card-header-rule"></span><span class="speaker-tag">संजय</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इत्यर्जुनं वासुदेवस्तथोक्त्वा स्वकं रूपं दर्शयामास भूयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">आश्वासयामास च भीतमेनं भूत्वा पुनः सौम्यवपुर्महात्मा <span class="shloka-pause">॥ ५० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">वासुदेवांनी अर्जुनास असे सांगून पुन्हा आपले (चतुर्भुज) रूप दाखविले आणि त्या महात्म्याने पुन्हा सौम्य (मनुष्य) रूप धारण करून भयभीत झालेल्या अर्जुनाला धीर दिला.</div></div>
+</div>
+
+<!-- ══════════════ ARJUNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच — सौम्य रूप पाहून समाधान</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५१</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दृष्ट्वेदं मानुषं रूपं तव सौम्यं जनार्दन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">इदानीमस्मि संवृत्तः सचेताः प्रकृतिं गतः <span class="shloka-pause">॥ ५१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे जनार्दना, आपले हे सौम्य मानुष रूप पाहून आता मी सचेत झालो आहे आणि माझ्या मूळ स्वस्थ मनःस्थितीत परत आलो आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ANANYA BHAKTI ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — विश्वरूपदर्शनाची दुर्लभता व अनन्य भक्तीचा महिमा</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सुदुर्दर्शमिदं रूपं दृष्टवानसि यन्मम <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">देवा अप्यस्य रूपस्य नित्यं दर्शनकाङ्क्षिणः <span class="shloka-pause">॥ ५२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">माझे जे हे अत्यंत दुर्दर्श रूप तू पाहिले, त्याचे दर्शन देवांनाही नित्य हवे असते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">नाहं वेदैर्न तपसा न दानेन न चेज्यया <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">शक्य एवंविधो द्रष्टुं दृष्टवानसि मां यथा <span class="shloka-pause">॥ ५३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">वेदाध्ययनाने, तपाने, दानाने किंवा यज्ञानेही ज्या स्वरूपात तू मला पाहिले, तसे मला पाहणे शक्य नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">भक्त्या त्वनन्यया शक्य अहमेवंविधोर्जुन <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ज्ञातुं द्रष्टुं च तत्त्वेन प्रवेष्टुं च परन्तप <span class="shloka-pause">॥ ५४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे अर्जुना, हे परंतपा, केवळ अनन्य भक्तीनेच मला अशा स्वरूपात तत्त्वतः जाणणे, पाहणे आणि प्रवेश करणे शक्य आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक ११·५५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मत्कर्मकृन्मत्परमो मद्भक्तः सङ्गवर्जितः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">निर्वैरः सर्वभूतेषु यः स मामेति पाण्डव <span class="shloka-pause">॥ ५५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पांडवा, जो माझ्यासाठी कर्म करतो, मलाच परम मानतो, माझा भक्त आहे, आसक्तिरहित आहे आणि सर्व जीवांबद्दल निर्वैर आहे, तो मलाच प्राप्त होतो.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>विश्वरूपदर्शनयोगो</strong> नाम एकादशोऽध्यायः <span class="shloka-pause">॥ ११ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय ११ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>
