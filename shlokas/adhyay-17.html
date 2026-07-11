@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय १७ : श्रद्धात्रयविभागयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:#C8621A;--saffron-light:#F2A45A;--gold:#B8860B;--gold-light:#E8C84A;
+    --cream:#FDF6E3;--cream-dark:#F5E9CC;--brown-deep:#3B1F0A;--brown-mid:#6B3A1F;
+    --brown-soft:#A0623A;--parchment:#FAF0D7;--ink:#1A0F00;--rule:rgba(184,134,11,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background-color:var(--cream);background-image:radial-gradient(ellipse at 20% 0%,rgba(200,98,26,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(184,134,11,.08) 0%,transparent 55%);color:var(--ink);font-family:'Noto Serif Devanagari',serif;font-size:16px;line-height:1.85;min-height:100vh}
+  .top-band{background:linear-gradient(135deg,var(--brown-deep) 0%,var(--saffron) 50%,var(--gold) 100%);height:6px}
+  header{background:linear-gradient(180deg,var(--brown-deep) 0%,#5A2E10 100%);color:var(--cream);text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+  header::before{content:"ॐ";position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:14rem;opacity:.04;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1;pointer-events:none}
+  .header-om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.8rem;color:var(--gold-light);letter-spacing:.1em;display:block;margin-bottom:.5rem;text-shadow:0 0 20px rgba(232,200,74,.5)}
+  .header-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;line-height:1.3;margin-bottom:.4rem}
+  .header-subtitle{font-size:1.1rem;color:var(--saffron-light);letter-spacing:.08em;margin-bottom:1.4rem}
+  .header-divider{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent);margin:0 auto 1.2rem}
+  .header-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:.88rem;color:rgba(253,246,227,.65);letter-spacing:.05em}
+  .intro-banner{background:var(--parchment);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.6rem 2rem;text-align:center;font-size:.97rem;color:var(--brown-mid);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.9}
+  .intro-banner strong{color:var(--saffron);font-family:'Noto Serif Devanagari',serif;font-size:1.05rem}
+  .container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .speaker-heading{display:flex;align-items:center;gap:1rem;margin:2.8rem 0 1.2rem}
+  .speaker-heading .rule{flex:1;height:1px;background:var(--rule)}
+  .speaker-heading .label{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.82rem;letter-spacing:.12em;color:var(--brown-soft);white-space:nowrap;padding:.2rem .8rem;border:1px solid var(--gold);border-radius:2px;background:var(--cream-dark)}
+  .shloka-card{background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(59,31,10,.09);margin-bottom:1.8rem;overflow:hidden;border:1px solid rgba(184,134,11,.2);transition:box-shadow .2s}
+  .shloka-card:hover{box-shadow:0 4px 22px rgba(200,98,26,.14)}
+  .card-header{background:linear-gradient(90deg,var(--brown-deep) 0%,var(--brown-mid) 100%);padding:.55rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .shloka-number{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.1em;white-space:nowrap}
+  .card-header-rule{flex:1;height:1px;background:rgba(232,200,74,.25)}
+  .speaker-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:.72rem;color:rgba(253,246,227,.65);letter-spacing:.08em;white-space:nowrap}
+  .sanskrit-block{background:var(--parchment);border-bottom:1px solid rgba(184,134,11,.2);padding:1.2rem 1.5rem 1rem;position:relative}
+  .sanskrit-block::before{content:"❝";position:absolute;top:.5rem;left:.9rem;font-size:1.8rem;color:rgba(184,134,11,.2);font-family:Georgia,serif;line-height:1}
+  .sanskrit-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.13rem;color:var(--brown-deep);text-align:center;line-height:2.1;padding:0 1rem}
+  .shloka-line{display:block}
+  .shloka-pause{color:var(--gold);font-size:1rem;padding:0 .4em}
+  .meaning-block{padding:1.1rem 1.5rem 1.3rem}
+  .meaning-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:.7rem;letter-spacing:.14em;color:var(--saffron);text-transform:uppercase;font-weight:500;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .meaning-label::after{content:"";flex:1;height:1px;background:rgba(200,98,26,.15)}
+  .meaning-text{font-family:'Noto Serif Devanagari',serif;font-size:.98rem;color:#2A1500;line-height:2}
+  .chapter-close{text-align:center;padding:2.5rem 1rem;color:var(--brown-soft);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;letter-spacing:.06em;border-top:1px solid var(--rule);margin-top:1rem}
+  .chapter-close .big-om{font-size:3rem;color:var(--gold);display:block;margin-bottom:.5rem}
+  footer{background:var(--brown-deep);color:rgba(253,246,227,.5);text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:.78rem;padding:1.2rem;letter-spacing:.05em}
+  @media(max-width:600px){.header-title{font-size:1.45rem}.sanskrit-text{font-size:1rem}.meaning-text{font-size:.93rem}.container{padding:1.5rem 1rem 3rem}}
+  @media print{.shloka-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:white}}
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय १७ — श्रद्धात्रयविभागयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते २८ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> शास्त्रविधी न जाणताही श्रद्धेने उपासना करणाऱ्यांची
+  स्थिती काय, हा अर्जुनाचा प्रश्न. श्रीकृष्ण सांगतात की <strong>प्रत्येकाची श्रद्धा
+  त्याच्या स्वभावानुसार</strong> सात्त्विक, राजसिक किंवा तामसिक असते. आहार, यज्ञ, तप व
+  दान — या चारही गोष्टींचे त्रिगुणानुसार वर्गीकरण करून, अंती
+  <strong>ॐ तत्सत्</strong> या त्रिविध ब्रह्मनिर्देशाचे महत्त्व सांगितले आहे.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ ARJUNA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">अर्जुन उवाच</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१</span><span class="card-header-rule"></span><span class="speaker-tag">अर्जुन</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ये शास्त्रविधिमुत्सृज्य यजन्ते श्रद्धयान्विताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तेषां निष्ठा तु का कृष्ण सत्त्वमाहो रजस्तमः <span class="shloka-pause">॥ १ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कृष्णा, जे शास्त्रविधीचा त्याग करून श्रद्धायुक्त होऊन पूजा करतात, त्यांची निष्ठा सात्त्विक, राजसिक की तामसिक असते?</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – TRIVIDHA SHRADDHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — त्रिविध श्रद्धेचे मूळ</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">त्रिविधा भवति श्रद्धा देहिनां सा स्वभावजा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">सात्त्विकी राजसी चैव तामसी चेति तां शृणु <span class="shloka-pause">॥ २ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">देहधाऱ्यांची ती श्रद्धा स्वभावजन्य असून तीन प्रकारची असते — सात्त्विक, राजसिक व तामसिक. ती ऐक.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सत्त्वानुरूपा सर्वस्य श्रद्धा भवति भारत <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">श्रद्धामयोऽयं पुरुषो यो यच्छ्रद्धः स एव सः <span class="shloka-pause">॥ ३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे भारता, प्रत्येकाची श्रद्धा त्याच्या अंतःकरणाच्या स्वभावानुसार असते. हा पुरुष श्रद्धामय आहे — ज्याची जशी श्रद्धा, तो तसाच असतो.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – TRIVIDHA POOJA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — त्रिविध पूजा व तप</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यजन्ते सात्त्विका देवान्यक्षरक्षांसि राजसाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रेतान्भूतगणांश्चान्ये यजन्ते तामसा जनाः <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सात्त्विक लोक देवांची पूजा करतात, राजसिक लोक यक्ष-राक्षसांची, तर तामसिक लोक इतर प्रेत व भूतगणांची पूजा करतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·५–६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अशास्त्रविहितं घोरं तप्यन्ते ये तपो जनाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दम्भाहङ्कारसंयुक्ताः कामरागबलान्विताः <span class="shloka-pause">॥ ५ ॥</span></span>
+    <span class="shloka-line">कर्षयन्तः शरीरस्थं भूतग्राममचेतसः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मां चैवान्तःशरीरस्थं तान्विद्ध्यासुरनिश्चयान् <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जे लोक शास्त्रविरहित घोर तप करतात, दंभ व अहंकाराने युक्त, कामना व रागाच्या बलाने प्रेरित असतात; अविवेकी होऊन शरीरातील पंचमहाभूतांना आणि शरीरातच वसलेल्या मलाही कष्ट देणारे — त्यांना आसुरी निश्चयाचे जाण.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – AHARA TRIVIDHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — त्रिविध आहार</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आहारस्त्वपि सर्वस्य त्रिविधो भवति प्रियः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यज्ञस्तपस्तथा दानं तेषां भेदमिमं शृणु <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रत्येकाला प्रिय असणारा आहारही तीन प्रकारचा असतो; तसेच यज्ञ, तप व दानही. त्यांचा हा भेद ऐक.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आयुःसत्त्वबलारोग्यसुखप्रीतिविवर्धनाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">रस्याः स्निग्धाः स्थिरा हृद्या आहाराः सात्त्विकप्रियाः <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आयुष्य, सत्त्व, बल, आरोग्य, सुख व प्रीती वाढवणारे, रसयुक्त, स्निग्ध, स्थिर व हृदयाला प्रिय असणारे आहार — सात्त्विक पुरुषांना प्रिय असतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">कट्वम्ललवणात्युष्णतीक्ष्णरूक्षविदाहिनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">आहारा राजसस्येष्टा दुःखशोकामयप्रदाः <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">तिखट, आंबट, खारट, अती उष्ण, तीक्ष्ण, रूक्ष व दाहक असे आहार राजसिक पुरुषांना प्रिय असतात — ते दुःख, शोक व रोग देणारे असतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यातयामं गतरसं पूति पर्युषितं च यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">उच्छिष्टमपि चामेध्यं भोजनं तामसप्रियम् <span class="shloka-pause">॥ १० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">शिळे, रसहीन, दुर्गंधीयुक्त, कुजलेले, उष्टे आणि अपवित्र असे भोजन तामसिक पुरुषांना प्रिय असते.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – YADNYA TRIVIDHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — त्रिविध यज्ञ</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·११</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अफलाकाङ्क्षिभिर्यज्ञो विधिदृष्टो य इज्यते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यष्टव्यमेवेति मनः समाधाय स सात्त्विकः <span class="shloka-pause">॥ ११ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">फलाची आकांक्षा न बाळगता, विधिपूर्वक, "यज्ञ करणे हे कर्तव्यच आहे" असे मन स्थिर करून केलेला यज्ञ सात्त्विक आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अभिसन्धाय तु फलं दम्भार्थमपि चैव यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">इज्यते भरतश्रेष्ठ तं यज्ञं विद्धि राजसम् <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे भरतश्रेष्ठा, फलाची अपेक्षा ठेवून किंवा केवळ दंभासाठी केलेला यज्ञ राजसिक आहे असे जाण.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">विधिहीनमसृष्टान्नं मन्त्रहीनमदक्षिणम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">श्रद्धाविरहितं यज्ञं तामसं परिचक्षते <span class="shloka-pause">॥ १३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">विधिहीन, अन्नदानरहित, मंत्ररहित, दक्षिणारहित व श्रद्धारहित यज्ञाला तामसिक म्हणतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – TAPA TRIVIDHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — शारीरिक, वाचिक व मानसिक तप</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">देवद्विजगुरुप्राज्ञपूजनं शौचमार्जवम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ब्रह्मचर्यमहिंसा च शारीरं तप उच्यते <span class="shloka-pause">॥ १४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">देव, द्विज, गुरू व प्राज्ञ यांचे पूजन, शुचिता, सरळपणा, ब्रह्मचर्य आणि अहिंसा — याला शारीरिक तप म्हणतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अनुद्वेगकरं वाक्यं सत्यं प्रियहितं च यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स्वाध्यायाभ्यसनं चैव वाङ्मयं तप उच्यते <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">उद्वेग न देणारे, सत्य, प्रिय व हितकर वचन, तसेच स्वाध्यायाचा अभ्यास — याला वाचिक तप म्हणतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मनःप्रसादः सौम्यत्वं मौनमात्मविनिग्रहः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भावसंशुद्धिरित्येतत्तपो मानसमुच्यते <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मनाची प्रसन्नता, सौम्यता, मौन, आत्मसंयम आणि भावशुद्धी — याला मानसिक तप म्हणतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">श्रद्धया परया तप्तं तपस्तत्त्रिविधं नरैः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अफलाकाङ्क्षिभिर्युक्तैः सात्त्विकं परिचक्षते <span class="shloka-pause">॥ १७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परम श्रद्धेने, फलाची आकांक्षा न बाळगता युक्त पुरुषांनी आचरलेले हे त्रिविध तप सात्त्विक म्हटले जाते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सत्कारमानपूजार्थं तपो दम्भेन चैव यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">क्रियते तदिह प्रोक्तं राजसं चलमध्रुवम् <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सत्कार, मान व पूजा मिळावी यासाठी, दंभानेच केलेले तप येथे राजसिक, चंचल व अस्थिर सांगितले आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·१९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">मूढग्राहेणात्मनो यत्पीडया क्रियते तपः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">परस्योत्सादनार्थं वा तत्तामसमुदाहृतम् <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मूढ हट्टाने स्वतःला पीडा देऊन किंवा दुसऱ्याचा नाश करण्यासाठी केलेले तप तामसिक सांगितले आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – DANA TRIVIDHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — त्रिविध दान</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दातव्यमिति यद्दानं दीयतेऽनुपकारिणे <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">देशे काले च पात्रे च तद्दानं सात्त्विकं स्मृतम् <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">"देणे हे कर्तव्य आहे" असे मानून, उपकाराची अपेक्षा न ठेवता, योग्य देश, काळ व पात्रास दिलेले दान सात्त्विक मानले जाते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यत्तु प्रत्युपकारार्थं फलमुद्दिश्य वा पुनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दीयते च परिक्लिष्टं तद्दानं राजसं स्मृतम् <span class="shloka-pause">॥ २१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु प्रत्युपकाराच्या अपेक्षेने किंवा फलाचा उद्देश ठेवून, तसेच त्रासिकपणे दिलेले दान राजसिक मानले जाते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अदेशकाले यद्दानमपात्रेभ्यश्च दीयते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">असत्कृतमवज्ञातं तत्तामसमुदाहृतम् <span class="shloka-pause">॥ २२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अयोग्य देश-काळी, अपात्रांना, अनादराने व तिरस्काराने दिलेले दान तामसिक सांगितले आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – OM TAT SAT ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — ॐ तत् सत् — त्रिविध ब्रह्मनिर्देश</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ॐ तत्सदिति निर्देशो ब्रह्मणस्त्रिविधः स्मृतः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ब्राह्मणास्तेन वेदाश्च यज्ञाश्च विहिताः पुरा <span class="shloka-pause">॥ २३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">'ॐ तत् सत्' असा ब्रह्माचा त्रिविध निर्देश सांगितला जातो. त्याद्वारेच पूर्वी ब्राह्मण, वेद व यज्ञ विहित केले गेले.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्मादोमित्युदाहृत्य यज्ञदानतपःक्रियाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रवर्तन्ते विधानोक्ताः सततं ब्रह्मवादिनाम् <span class="shloka-pause">॥ २४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून ब्रह्मवाद्यांच्या यज्ञ, दान व तप या विधिपूर्वक क्रिया 'ॐ' असे उच्चारून सतत प्रवृत्त होतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तदित्यनभिसन्धाय फलं यज्ञतपःक्रियाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दानक्रियाश्च विविधाः क्रियन्ते मोक्षकाङ्क्षिभिः <span class="shloka-pause">॥ २५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">'तत्' असे उच्चारून, फलाची अपेक्षा न ठेवता, मोक्षाची इच्छा बाळगणाऱ्यांकडून यज्ञ, तप व विविध दानक्रिया केल्या जातात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२६–२७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सद्भावे साधुभावे च सदित्येतत्प्रयुज्यते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रशस्ते कर्मणि तथा सच्छब्दः पार्थ युज्यते <span class="shloka-pause">॥ २६ ॥</span></span>
+    <span class="shloka-line">यज्ञे तपसि दाने च स्थितिः सदिति चोच्यते <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कर्म चैव तदर्थीयं सदित्येवाभिधीयते <span class="shloka-pause">॥ २७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सद्भाव व साधुभाव यांत 'सत्' असा शब्द वापरला जातो. हे पार्था, त्याचप्रमाणे प्रशस्त कर्मातही 'सत्' शब्द वापरला जातो. यज्ञ, तप व दान यांतील स्थिरतेलाही 'सत्' म्हणतात, आणि त्यासाठी केलेले कर्मही 'सत्' असेच म्हटले जाते.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १७·२८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अश्रद्धया हुतं दत्तं तपस्तप्तं कृतं च यत् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">असदित्युच्यते पार्थ न च तत्प्रेत्य नो इह <span class="shloka-pause">॥ २८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, अश्रद्धेने हवन केलेले, दान दिलेले, तप तापलेले किंवा जे काही कर्म केलेले असते, ते 'असत्' म्हटले जाते — त्याचे फळ मृत्यूनंतरही नाही आणि येथेही नाही.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>श्रद्धात्रयविभागयोगो</strong> नाम सप्तदशोऽध्यायः <span class="shloka-pause">॥ १७ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय १७ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>

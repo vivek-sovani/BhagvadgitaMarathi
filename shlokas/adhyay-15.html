@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय १५ : पुरुषोत्तमयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:#C8621A;--saffron-light:#F2A45A;--gold:#B8860B;--gold-light:#E8C84A;
+    --cream:#FDF6E3;--cream-dark:#F5E9CC;--brown-deep:#3B1F0A;--brown-mid:#6B3A1F;
+    --brown-soft:#A0623A;--parchment:#FAF0D7;--ink:#1A0F00;--rule:rgba(184,134,11,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background-color:var(--cream);background-image:radial-gradient(ellipse at 20% 0%,rgba(200,98,26,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(184,134,11,.08) 0%,transparent 55%);color:var(--ink);font-family:'Noto Serif Devanagari',serif;font-size:16px;line-height:1.85;min-height:100vh}
+  .top-band{background:linear-gradient(135deg,var(--brown-deep) 0%,var(--saffron) 50%,var(--gold) 100%);height:6px}
+  header{background:linear-gradient(180deg,var(--brown-deep) 0%,#5A2E10 100%);color:var(--cream);text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+  header::before{content:"ॐ";position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:14rem;opacity:.04;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1;pointer-events:none}
+  .header-om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.8rem;color:var(--gold-light);letter-spacing:.1em;display:block;margin-bottom:.5rem;text-shadow:0 0 20px rgba(232,200,74,.5)}
+  .header-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;line-height:1.3;margin-bottom:.4rem}
+  .header-subtitle{font-size:1.1rem;color:var(--saffron-light);letter-spacing:.08em;margin-bottom:1.4rem}
+  .header-divider{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent);margin:0 auto 1.2rem}
+  .header-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:.88rem;color:rgba(253,246,227,.65);letter-spacing:.05em}
+  .intro-banner{background:var(--parchment);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.6rem 2rem;text-align:center;font-size:.97rem;color:var(--brown-mid);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.9}
+  .intro-banner strong{color:var(--saffron);font-family:'Noto Serif Devanagari',serif;font-size:1.05rem}
+  .container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .speaker-heading{display:flex;align-items:center;gap:1rem;margin:2.8rem 0 1.2rem}
+  .speaker-heading .rule{flex:1;height:1px;background:var(--rule)}
+  .speaker-heading .label{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.82rem;letter-spacing:.12em;color:var(--brown-soft);white-space:nowrap;padding:.2rem .8rem;border:1px solid var(--gold);border-radius:2px;background:var(--cream-dark)}
+  .shloka-card{background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(59,31,10,.09);margin-bottom:1.8rem;overflow:hidden;border:1px solid rgba(184,134,11,.2);transition:box-shadow .2s}
+  .shloka-card:hover{box-shadow:0 4px 22px rgba(200,98,26,.14)}
+  .card-header{background:linear-gradient(90deg,var(--brown-deep) 0%,var(--brown-mid) 100%);padding:.55rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .shloka-number{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.1em;white-space:nowrap}
+  .card-header-rule{flex:1;height:1px;background:rgba(232,200,74,.25)}
+  .speaker-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:.72rem;color:rgba(253,246,227,.65);letter-spacing:.08em;white-space:nowrap}
+  .sanskrit-block{background:var(--parchment);border-bottom:1px solid rgba(184,134,11,.2);padding:1.2rem 1.5rem 1rem;position:relative}
+  .sanskrit-block::before{content:"❝";position:absolute;top:.5rem;left:.9rem;font-size:1.8rem;color:rgba(184,134,11,.2);font-family:Georgia,serif;line-height:1}
+  .sanskrit-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.13rem;color:var(--brown-deep);text-align:center;line-height:2.1;padding:0 1rem}
+  .shloka-line{display:block}
+  .shloka-pause{color:var(--gold);font-size:1rem;padding:0 .4em}
+  .meaning-block{padding:1.1rem 1.5rem 1.3rem}
+  .meaning-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:.7rem;letter-spacing:.14em;color:var(--saffron);text-transform:uppercase;font-weight:500;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .meaning-label::after{content:"";flex:1;height:1px;background:rgba(200,98,26,.15)}
+  .meaning-text{font-family:'Noto Serif Devanagari',serif;font-size:.98rem;color:#2A1500;line-height:2}
+  .chapter-close{text-align:center;padding:2.5rem 1rem;color:var(--brown-soft);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;letter-spacing:.06em;border-top:1px solid var(--rule);margin-top:1rem}
+  .chapter-close .big-om{font-size:3rem;color:var(--gold);display:block;margin-bottom:.5rem}
+  footer{background:var(--brown-deep);color:rgba(253,246,227,.5);text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:.78rem;padding:1.2rem;letter-spacing:.05em}
+  @media(max-width:600px){.header-title{font-size:1.45rem}.sanskrit-text{font-size:1rem}.meaning-text{font-size:.93rem}.container{padding:1.5rem 1rem 3rem}}
+  @media print{.shloka-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:white}}
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय १५ — पुरुषोत्तमयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते २० &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> संसाराचे रूपक <strong>उलट्या अश्वत्थ वृक्षाच्या</strong>
+  प्रतिमेने या अध्यायाची सुरुवात होते — मुळे वर, फांद्या खाली. या संसारवृक्षाचे
+  <strong>असंगशस्त्राने</strong> छेदन करून मोक्षमार्ग गाठावा असा उपदेश आहे. क्षर, अक्षर
+  आणि या दोहोंहून श्रेष्ठ <strong>पुरुषोत्तम</strong> — या तिघांचे विवेचन करून श्रीकृष्ण
+  स्वतःला पुरुषोत्तम म्हणून प्रकट करतात.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ KRISHNA – ASHWATTHA VRIKSHA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — संसाररूपी अश्वत्थ वृक्ष</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ऊर्ध्वमूलमधःशाखमश्वत्थं प्राहुरव्ययम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">छन्दांसि यस्य पर्णानि यस्तं वेद स वेदवित् <span class="shloka-pause">॥ १ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मूळ वर व फांद्या खाली असलेला अव्यय अश्वत्थ वृक्ष असे (या संसाराला) सांगतात, ज्याची पाने वेदछंद आहेत. जो याला जाणतो तो वेदवेत्ता आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अधश्चोर्ध्वं प्रसृतास्तस्य शाखा गुणप्रवृद्धा विषयप्रवालाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अधश्च मूलान्यनुसन्ततानि कर्मानुबन्धीनि मनुष्यलोके <span class="shloka-pause">॥ २ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">त्याच्या फांद्या खाली व वर पसरलेल्या असून गुणांनी वाढलेल्या आहेत, विषय हे त्यांचे कोंब आहेत. मनुष्यलोकात कर्मबंधनास कारणीभूत असलेली त्याची मुळेही खाली विस्तारलेली आहेत.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ASANGA SHASTRA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — असंगशस्त्राने वृक्षछेदन</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·३–४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न रूपमस्येह तथोपलभ्यते नान्तो न चादिर्न च सम्प्रतिष्ठा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अश्वत्थमेनं सुविरूढमूल- मसङ्गशस्त्रेण दृढेन छित्त्वा <span class="shloka-pause">॥ ३ ॥</span></span>
+    <span class="shloka-line">ततः पदं तत्परिमार्गितव्यं यस्मिन्गता न निवर्तन्ति भूयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">तमेव चाद्यं पुरुषं प्रपद्ये यतः प्रवृत्तिः प्रसृता पुराणी <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या (वृक्षा)चे रूप जसे भासते तसे प्रत्यक्षात नाही; याचा अंत, आदी किंवा स्थिती निश्चित नाही. खोलवर रुजलेली मुळे असलेल्या या अश्वत्थाला दृढ असंगशस्त्राने छेदून, त्यानंतर ते पद शोधावे — जेथे गेल्यावर पुन्हा परत यावे लागत नाही. आणि ज्यापासून ही पुरातन प्रवृत्ती विस्तारली, त्याच आद्य पुरुषाला शरण जावे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">निर्मानमोहा जितसङ्गदोषा अध्यात्मनित्या विनिवृत्तकामाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">द्वन्द्वैर्विमुक्ताः सुखदुःखसंज्ञैर्गच्छन्त्यमूढाः पदमव्ययं तत् <span class="shloka-pause">॥ ५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मान व मोह यांपासून मुक्त, आसक्तीचा दोष जिंकलेले, अध्यात्मात नित्य रत, कामनारहित, सुख-दुःखरूपी द्वंद्वांतून मुक्त झालेले अमूढ जन त्या अव्यय पदाला प्राप्त होतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">न तद्भासयते सूर्यो न शशाङ्को न पावकः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यद्गत्वा न निवर्तन्ते तद्धाम परमं मम <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">ज्याला सूर्य, चंद्र किंवा अग्नी प्रकाशित करत नाहीत, आणि जेथे गेल्यावर परत यावे लागत नाही, ते माझे परम धाम आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – JIVATMA SVARUPA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — जीवात्म्याचे स्वरूप</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">ममैवांशो जीवलोके जीवभूतः सनातनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मनःषष्ठानीन्द्रियाणि प्रकृतिस्थानि कर्षति <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या जीवलोकात सनातन जीवरूप हा माझाच अंश आहे, जो प्रकृतीत स्थित मनासहित सहा इंद्रिये आपल्याकडे आकर्षित करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">शरीरं यदवाप्नोति यच्चाप्युत्क्रामतीश्वरः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">गृहीत्वैतानि संयाति वायुर्गन्धानिवाशयात् <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जीवात्मा जे शरीर धारण करतो किंवा जे सोडतो, त्यावेळी ही इंद्रिये घेऊनच जातो — जसा वायू आपल्या स्थानातून गंध वाहून नेतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">श्रोत्रं चक्षुः स्पर्शनं च रसनं घ्राणमेव च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अधिष्ठाय मनश्चायं विषयानुपसेवते <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कान, डोळे, त्वचा, जीभ, नाक आणि मन यांचा आश्रय घेऊन हा जीवात्मा विषयांचा उपभोग घेतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">उत्क्रामन्तं स्थितं वापि भुञ्जानं वा गुणान्वितम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">विमूढा नानुपश्यन्ति पश्यन्ति ज्ञानचक्षुषः <span class="shloka-pause">॥ १० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">देह सोडणाऱ्या, देहात स्थित असलेल्या किंवा गुणांसहित विषयभोग घेणाऱ्या या जीवात्म्याला मूढ लोक पाहू शकत नाहीत; परंतु ज्ञानचक्षू असलेले पाहू शकतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·११</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यतन्तो योगिनश्चैनं पश्यन्त्यात्मन्यवस्थितम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यतन्तोऽप्यकृतात्मानो नैनं पश्यन्त्यचेतसः <span class="shloka-pause">॥ ११ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">प्रयत्नशील योगीजन याला आत्म्यात स्थित असलेले पाहतात; परंतु अशुद्ध अंतःकरणाचे व अविवेकी लोक प्रयत्न करूनही याला पाहू शकत नाहीत.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – VIBHUTI SANKSHIPTA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — सूर्य, चंद्र, अग्नी व वैश्वानराचे तेज</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यदादित्यगतं तेजो जगद्भासयतेऽखिलम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यच्चन्द्रमसि यच्चाग्नौ तत्तेजो विद्धि मामकम् <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">सूर्यात असलेले जे तेज संपूर्ण जगाला प्रकाशित करते, तसेच चंद्रात व अग्नीत असलेले तेज — ते माझेच तेज आहे असे जाण.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">गामाविश्य च भूतानि धारयाम्यहमोजसा <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">पुष्णामि चौषधीः सर्वाः सोमो भूत्वा रसात्मकः <span class="shloka-pause">॥ १३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">पृथ्वीत प्रवेश करून मी आपल्या सामर्थ्याने सर्व प्राण्यांना धारण करतो, आणि रसरूप सोम होऊन सर्व औषधी वनस्पतींचे पोषण करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अहं वैश्वानरो भूत्वा प्राणिनां देहमाश्रितः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्राणापानसमायुक्तः पचाम्यन्नं चतुर्विधम् <span class="shloka-pause">॥ १४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी वैश्वानर (जठराग्नी) होऊन प्राण्यांच्या देहाचा आश्रय घेतो आणि प्राण-अपानांनी युक्त होऊन चार प्रकारचे अन्न पचवितो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">सर्वस्य चाहं हृदि सन्निविष्टो मत्तः स्मृतिर्ज्ञानमपोहनं च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">वेदैश्च सर्वैरहमेव वेद्यो वेदान्तकृद्वेदविदेव चाहम् <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मी सर्वांच्या हृदयात स्थित आहे; माझ्याकडूनच स्मृती, ज्ञान व त्यांचा नाशही (विस्मरण) होतो. सर्व वेदांद्वारे जाणण्यायोग्य मीच आहे; वेदान्ताचा कर्ता व वेद जाणणाराही मीच आहे.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – PURUSHOTTAMA NIRUPAN ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — क्षर, अक्षर व पुरुषोत्तमाचे निरूपण</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">द्वाविमौ पुरुषौ लोके क्षरश्चाक्षर एव च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">क्षरः सर्वाणि भूतानि कूटस्थोऽक्षर उच्यते <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या जगात क्षर व अक्षर असे दोन पुरुष आहेत. सर्व भूते क्षर आहेत आणि कूटस्थ (अपरिवर्तनीय) याला अक्षर म्हणतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">उत्तमः पुरुषस्त्वन्यः परमात्मेत्युदाहृतः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यो लोकत्रयमाविश्य बिभर्त्यव्यय ईश्वरः <span class="shloka-pause">॥ १७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">परंतु उत्तम पुरुष हा यांहून वेगळा असून त्याला परमात्मा असे म्हणतात — जो तिन्ही लोकांत प्रवेश करून त्यांचे धारण करणारा अव्यय ईश्वर आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यस्मात्क्षरमतीतोऽहमक्षरादपि चोत्तमः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अतोऽस्मि लोके वेदे च प्रथितः पुरुषोत्तमः <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">क्षरापेक्षा मी अतीत (श्रेष्ठ) आहे आणि अक्षरापेक्षाही उत्तम आहे, म्हणून लोकांत व वेदांत मी पुरुषोत्तम म्हणून प्रसिद्ध आहे.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·१९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यो मामेवमसम्मूढो जानाति पुरुषोत्तमम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">स सर्वविद्भजति मां सर्वभावेन भारत <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे भारता, जो असंमूढ होऊन मला असा पुरुषोत्तम जाणतो, तो सर्वज्ञ होऊन सर्वभावाने माझे भजन करतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १५·२०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इति गुह्यतमं शास्त्रमिदमुक्तं मयानघ <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">एतद्बुद्ध्वा बुद्धिमान्स्यात्कृतकृत्यश्च भारत <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे निष्पापा, अशा प्रकारे हे अत्यंत गुह्य शास्त्र मी सांगितले. हे भारता, हे जाणून मनुष्य बुद्धिमान व कृतकृत्य होतो.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>पुरुषोत्तमयोगो</strong> नाम पञ्चदशोऽध्यायः <span class="shloka-pause">॥ १५ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय १५ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>

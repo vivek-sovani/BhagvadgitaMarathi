@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>श्रीमद्भगवद्गीता — अध्याय १६ : दैवासुरसम्पद्विभागयोग</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;700&family=Noto+Sans+Devanagari:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron:#C8621A;--saffron-light:#F2A45A;--gold:#B8860B;--gold-light:#E8C84A;
+    --cream:#FDF6E3;--cream-dark:#F5E9CC;--brown-deep:#3B1F0A;--brown-mid:#6B3A1F;
+    --brown-soft:#A0623A;--parchment:#FAF0D7;--ink:#1A0F00;--rule:rgba(184,134,11,0.35);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background-color:var(--cream);background-image:radial-gradient(ellipse at 20% 0%,rgba(200,98,26,.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 100%,rgba(184,134,11,.08) 0%,transparent 55%);color:var(--ink);font-family:'Noto Serif Devanagari',serif;font-size:16px;line-height:1.85;min-height:100vh}
+  .top-band{background:linear-gradient(135deg,var(--brown-deep) 0%,var(--saffron) 50%,var(--gold) 100%);height:6px}
+  header{background:linear-gradient(180deg,var(--brown-deep) 0%,#5A2E10 100%);color:var(--cream);text-align:center;padding:3rem 1.5rem 2.5rem;position:relative;overflow:hidden}
+  header::before{content:"ॐ";position:absolute;top:-10px;left:50%;transform:translateX(-50%);font-size:14rem;opacity:.04;font-family:'Tiro Devanagari Sanskrit',serif;line-height:1;pointer-events:none}
+  .header-om{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2.8rem;color:var(--gold-light);letter-spacing:.1em;display:block;margin-bottom:.5rem;text-shadow:0 0 20px rgba(232,200,74,.5)}
+  .header-title{font-family:'Tiro Devanagari Sanskrit',serif;font-size:2rem;font-weight:700;color:var(--gold-light);letter-spacing:.05em;line-height:1.3;margin-bottom:.4rem}
+  .header-subtitle{font-size:1.1rem;color:var(--saffron-light);letter-spacing:.08em;margin-bottom:1.4rem}
+  .header-divider{width:180px;height:2px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent);margin:0 auto 1.2rem}
+  .header-meta{font-family:'Noto Sans Devanagari',sans-serif;font-size:.88rem;color:rgba(253,246,227,.65);letter-spacing:.05em}
+  .intro-banner{background:var(--parchment);border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);padding:1.6rem 2rem;text-align:center;font-size:.97rem;color:var(--brown-mid);font-family:'Noto Sans Devanagari',sans-serif;line-height:1.9}
+  .intro-banner strong{color:var(--saffron);font-family:'Noto Serif Devanagari',serif;font-size:1.05rem}
+  .container{max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 4rem}
+  .speaker-heading{display:flex;align-items:center;gap:1rem;margin:2.8rem 0 1.2rem}
+  .speaker-heading .rule{flex:1;height:1px;background:var(--rule)}
+  .speaker-heading .label{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.82rem;letter-spacing:.12em;color:var(--brown-soft);white-space:nowrap;padding:.2rem .8rem;border:1px solid var(--gold);border-radius:2px;background:var(--cream-dark)}
+  .shloka-card{background:#fff;border-radius:6px;box-shadow:0 2px 12px rgba(59,31,10,.09);margin-bottom:1.8rem;overflow:hidden;border:1px solid rgba(184,134,11,.2);transition:box-shadow .2s}
+  .shloka-card:hover{box-shadow:0 4px 22px rgba(200,98,26,.14)}
+  .card-header{background:linear-gradient(90deg,var(--brown-deep) 0%,var(--brown-mid) 100%);padding:.55rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+  .shloka-number{font-family:'Tiro Devanagari Sanskrit',serif;font-size:.78rem;color:var(--gold-light);letter-spacing:.1em;white-space:nowrap}
+  .card-header-rule{flex:1;height:1px;background:rgba(232,200,74,.25)}
+  .speaker-tag{font-family:'Noto Sans Devanagari',sans-serif;font-size:.72rem;color:rgba(253,246,227,.65);letter-spacing:.08em;white-space:nowrap}
+  .sanskrit-block{background:var(--parchment);border-bottom:1px solid rgba(184,134,11,.2);padding:1.2rem 1.5rem 1rem;position:relative}
+  .sanskrit-block::before{content:"❝";position:absolute;top:.5rem;left:.9rem;font-size:1.8rem;color:rgba(184,134,11,.2);font-family:Georgia,serif;line-height:1}
+  .sanskrit-text{font-family:'Tiro Devanagari Sanskrit',serif;font-size:1.13rem;color:var(--brown-deep);text-align:center;line-height:2.1;padding:0 1rem}
+  .shloka-line{display:block}
+  .shloka-pause{color:var(--gold);font-size:1rem;padding:0 .4em}
+  .meaning-block{padding:1.1rem 1.5rem 1.3rem}
+  .meaning-label{font-family:'Noto Sans Devanagari',sans-serif;font-size:.7rem;letter-spacing:.14em;color:var(--saffron);text-transform:uppercase;font-weight:500;margin-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
+  .meaning-label::after{content:"";flex:1;height:1px;background:rgba(200,98,26,.15)}
+  .meaning-text{font-family:'Noto Serif Devanagari',serif;font-size:.98rem;color:#2A1500;line-height:2}
+  .chapter-close{text-align:center;padding:2.5rem 1rem;color:var(--brown-soft);font-family:'Tiro Devanagari Sanskrit',serif;font-size:1rem;letter-spacing:.06em;border-top:1px solid var(--rule);margin-top:1rem}
+  .chapter-close .big-om{font-size:3rem;color:var(--gold);display:block;margin-bottom:.5rem}
+  footer{background:var(--brown-deep);color:rgba(253,246,227,.5);text-align:center;font-family:'Noto Sans Devanagari',sans-serif;font-size:.78rem;padding:1.2rem;letter-spacing:.05em}
+  @media(max-width:600px){.header-title{font-size:1.45rem}.sanskrit-text{font-size:1rem}.meaning-text{font-size:.93rem}.container{padding:1.5rem 1rem 3rem}}
+  @media print{.shloka-card{break-inside:avoid;box-shadow:none;border:1px solid #ccc}body{background:white}}
+</style>
+</head>
+<body>
+
+<div class="top-band"></div>
+
+<header>
+  <span class="header-om">ॐ</span>
+  <div class="header-title">श्रीमद्भगवद्गीता</div>
+  <div class="header-subtitle">अध्याय १६ — दैवासुरसम्पद्विभागयोग</div>
+  <div class="header-divider"></div>
+  <div class="header-meta">श्लोक १ ते २४ &nbsp;|&nbsp; मराठी अर्थासहित</div>
+</header>
+
+<div class="intro-banner">
+  <strong>अध्यायपरिचय :</strong> मनुष्याच्या स्वभावात दोन प्रकारच्या संपत्ती असतात —
+  <strong>दैवी संपत्ती</strong> (मोक्षाकडे नेणारी) व <strong>आसुरी संपत्ती</strong> (बंधनाकडे
+  नेणारी). दोन्हींची सविस्तर लक्षणे सांगून, काम-क्रोध-लोभ हे <strong>नरकाचे त्रिविध द्वार</strong>
+  असल्याचे श्रीकृष्ण स्पष्ट करतात. अध्यायाच्या अंती शास्त्राज्ञेनुसारच आचरण करावे असा
+  निर्णायक उपदेश आहे.
+</div>
+
+<div class="container">
+
+<!-- ══════════════ KRISHNA – DAIVI SAMPADA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — दैवी संपत्तीची लक्षणे</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१–३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अभयं सत्त्वसंशुद्धिर्ज्ञानयोगव्यवस्थितिः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दानं दमश्च यज्ञश्च स्वाध्यायस्तप आर्जवम् <span class="shloka-pause">॥ १ ॥</span></span>
+    <span class="shloka-line">अहिंसा सत्यमक्रोधस्त्यागः शान्तिरपैशुनम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दया भूतेष्वलोलुप्त्वं मार्दवं ह्रीरचापलम् <span class="shloka-pause">॥ २ ॥</span></span>
+    <span class="shloka-line">तेजः क्षमा धृतिः शौचमद्रोहो नातिमानिता <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">भवन्ति सम्पदं दैवीमभिजातस्य भारत <span class="shloka-pause">॥ ३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">निर्भयता, अंतःकरणाची शुद्धता, ज्ञानयोगात स्थिरता, दान, इंद्रियदमन, यज्ञ, स्वाध्याय, तप, सरळपणा; अहिंसा, सत्य, अक्रोध, त्याग, शांती, चहाडीचा अभाव, प्राण्यांबद्दल दया, अलोभीपणा, मार्दव (कोमलता), लज्जा, चंचलतेचा अभाव; तेज, क्षमा, धृती, शुचिता, अद्रोह, अभिमानशून्यता — हे गुण, हे भारता, दैवी संपत्ती घेऊन जन्मलेल्या पुरुषात असतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ASURI SAMPADA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — आसुरी संपत्तीची लक्षणे</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दम्भो दर्पोऽभिमानश्च क्रोधः पारुष्यमेव च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अज्ञानं चाभिजातस्य पार्थ सम्पदमासुरीम् <span class="shloka-pause">॥ ४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे पार्था, दंभ, दर्प, अभिमान, क्रोध, कठोरता आणि अज्ञान — हे गुण आसुरी संपत्ती घेऊन जन्मलेल्या पुरुषात असतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">दैवी सम्पद्विमोक्षाय निबन्धायासुरी मता <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मा शुचः सम्पदं दैवीमभिजातोऽसि पाण्डव <span class="shloka-pause">॥ ५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">दैवी संपत्ती मोक्षासाठी आणि आसुरी संपत्ती बंधनासाठी मानली जाते. हे पांडवा, शोक करू नकोस — तू दैवी संपत्ती घेऊनच जन्मला आहेस.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – DVIVIDHA SRISHTI ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — द्विविध सृष्टी</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">द्वौ भूतसर्गौ लोकेऽस्मिन्दैव आसुर एव च <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">दैवो विस्तरशः प्रोक्त आसुरं पार्थ मे शृणु <span class="shloka-pause">॥ ६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">या जगात दैवी व आसुरी असे दोन प्रकारचे प्राणिसर्ग आहेत. दैवी सर्ग विस्ताराने सांगितला; हे पार्था, आता आसुरी सर्गाबद्दल माझ्याकडून ऐक.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·७</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">प्रवृत्तिं च निवृत्तिं च जना न विदुरासुराः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न शौचं नापि चाचारो न सत्यं तेषु विद्यते <span class="shloka-pause">॥ ७ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">आसुरी लोक प्रवृत्ती (काय करावे) व निवृत्ती (काय करू नये) हे जाणत नाहीत. त्यांच्यात शुचिता नाही, सदाचारही नाही, सत्यही नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">असत्यमप्रतिष्ठं ते जगदाहुरनीश्वरम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">अपरस्परसम्भूतं किमन्यत्कामहैतुकम् <span class="shloka-pause">॥ ८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे जग असत्य, अप्रतिष्ठित व ईश्वररहित आहे, ते केवळ स्त्री-पुरुषसंयोगाने उत्पन्न झाले असून याहून वेगळे कामनेशिवाय दुसरे काही कारण नाही, असे ते म्हणतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एतां दृष्टिमवष्टभ्य नष्टात्मानोऽल्पबुद्धयः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रभवन्त्युग्रकर्माणः क्षयाय जगतोऽहिताः <span class="shloka-pause">॥ ९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अशी दृष्टी बाळगून, नष्ट झालेल्या आत्मशक्तीचे व अल्पबुद्धीचे ते उग्रकर्मी लोक जगाच्या अहितासाठी व नाशासाठी प्रवृत्त होतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">काममाश्रित्य दुष्पूरं दम्भमानमदान्विताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मोहाद्गृहीत्वासद्ग्राहान्प्रवर्तन्तेऽशुचिव्रताः <span class="shloka-pause">॥ १० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">कधीही न भरणाऱ्या कामनेचा आश्रय घेऊन, दंभ-मान-मदाने युक्त होऊन, मोहाने असद् (चुकीचे) हट्ट धरून, ते अशुद्ध व्रतांचे लोक प्रवृत्त होतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ASURI MANOVRUTTI ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — आसुरी मनोवृत्तीचे चित्रण</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·११–१२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">चिन्तामपरिमेयां च प्रलयान्तामुपाश्रिताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कामोपभोगपरमा एतावदिति निश्चिताः <span class="shloka-pause">॥ ११ ॥</span></span>
+    <span class="shloka-line">आशापाशशतैर्बद्धाः कामक्रोधपरायणाः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ईहन्ते कामभोगार्थमन्यायेनार्थसञ्चयान् <span class="shloka-pause">॥ १२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">मृत्युपर्यंत टिकणाऱ्या अपरिमित चिंतेचा आश्रय घेऊन, कामोपभोग हेच परम मानून, "एवढेच जीवनाचे सार आहे" असे निश्चित मानणारे; शेकडो आशापाशांनी बद्ध, काम-क्रोधाला परायण असलेले ते कामभोगासाठी अन्यायाने धनसंचय करण्याचा प्रयत्न करतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१३–१५</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">इदमद्य मया लब्धमिमं प्राप्स्ये मनोरथम् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">इदमस्तीदमपि मे भविष्यति पुनर्धनम् <span class="shloka-pause">॥ १३ ॥</span></span>
+    <span class="shloka-line">असौ मया हतः शत्रुर्हनिष्ये चापरानपि <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ईश्वरोऽहमहं भोगी सिद्धोऽहं बलवान्सुखी <span class="shloka-pause">॥ १४ ॥</span></span>
+    <span class="shloka-line">आढ्योऽभिजनवानस्मि कोऽन्योऽस्ति सदृशो मया <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यक्ष्ये दास्यामि मोदिष्य इत्यज्ञानविमोहिताः <span class="shloka-pause">॥ १५ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">"आज मी हे मिळवले, हा मनोरथही मी साध्य करेन; हे माझे आहे आणि हे धनही पुढे माझेच होईल; या शत्रूला मी मारले, इतरांनाही मारेन; मी ईश्वर आहे, मी भोगी आहे, मी सिद्ध, बलवान व सुखी आहे; मी श्रीमंत व उच्चकुलीन आहे, माझ्यासारखा दुसरा कोण आहे? मी यज्ञ करेन, दान देईन, आनंद घेईन" — असे अज्ञानाने मोहित झालेले (म्हणत राहतात).</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१६</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">अनेकचित्तविभ्रान्ता मोहजालसमावृताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">प्रसक्ताः कामभोगेषु पतन्ति नरकेऽशुचौ <span class="shloka-pause">॥ १६ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">अनेक चित्तवृत्तींनी भ्रमित, मोहजाळाने आच्छादित, कामभोगांत आसक्त असे ते अशुचि नरकात पडतात.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१७–१८</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आत्मसम्भाविताः स्तब्धा धनमानमदान्विताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">यजन्ते नामयज्ञैस्ते दम्भेनाविधिपूर्वकम् <span class="shloka-pause">॥ १७ ॥</span></span>
+    <span class="shloka-line">अहङ्कारं बलं दर्पं कामं क्रोधं च संश्रिताः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मामात्मपरदेहेषु प्रद्विषन्तोऽभ्यसूयकाः <span class="shloka-pause">॥ १८ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">स्वतःलाच थोर मानणारे, गर्विष्ठ, धन-मान-मदाने युक्त असे ते केवळ नावापुरतेच, दंभाने व अविधिपूर्वक यज्ञ करतात. अहंकार, बल, दर्प, काम व क्रोध यांचा आश्रय घेतलेले, स्वतःच्या व इतरांच्या देहांत वसलेल्या माझा द्वेष करणारे असूयायुक्त असतात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – ASURI GATI ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — आसुरी जनांची अधोगती</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·१९</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तानहं द्विषतः क्रूरान्संसारेषु नराधमान् <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">क्षिपाम्यजस्रमशुभानासुरीष्वेव योनिषु <span class="shloka-pause">॥ १९ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">द्वेषी, क्रूर, अशुभ अशा त्या नराधमांना मी सतत आसुरी योनींतच संसारचक्रात फेकतो.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·२०</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">आसुरीं योनिमापन्ना मूढा जन्मनि जन्मनि <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">मामप्राप्यैव कौन्तेय ततो यान्त्यधमां गतिम् <span class="shloka-pause">॥ २० ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, आसुरी योनीत जन्मलेले ते मूढ जन्मोजन्मी मला न प्राप्त होताच त्याहून अधिक अधम गतीला जातात.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – TRIVIDHA NARAK DVAR ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — नरकाचे त्रिविध द्वार</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·२१</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">त्रिविधं नरकस्येदं द्वारं नाशनमात्मनः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">कामः क्रोधस्तथा लोभस्तस्मादेतत्त्रयं त्यजेत् <span class="shloka-pause">॥ २१ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">काम, क्रोध व लोभ — हे आत्म्याचा नाश करणारे नरकाचे त्रिविध द्वार आहे. म्हणून या तिघांचा त्याग करावा.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·२२</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">एतैर्विमुक्तः कौन्तेय तमोद्वारैस्त्रिभिर्नरः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">आचरत्यात्मनः श्रेयस्ततो याति परां गतिम् <span class="shloka-pause">॥ २२ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">हे कौन्तेया, या तिन्ही तमोद्वारांतून मुक्त झालेला मनुष्य आत्म्याचे श्रेय आचरतो, आणि त्यामुळे परम गतीला प्राप्त होतो.</div></div>
+</div>
+
+<!-- ══════════════ KRISHNA – SHASTRA PRAMANA ══════════════ -->
+<div class="speaker-heading">
+  <span class="rule"></span><span class="label">श्रीभगवानुवाच — शास्त्राज्ञेचे महत्त्व</span><span class="rule"></span>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·२३</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">यः शास्त्रविधिमुत्सृज्य वर्तते कामकारतः <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">न स सिद्धिमवाप्नोति न सुखं न परां गतिम् <span class="shloka-pause">॥ २३ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">जो शास्त्रविधीचा त्याग करून केवळ स्वेच्छेने वागतो, त्याला सिद्धी, सुख किंवा परम गती प्राप्त होत नाही.</div></div>
+</div>
+
+<div class="shloka-card">
+  <div class="card-header"><span class="shloka-number">श्लोक १६·२४</span><span class="card-header-rule"></span><span class="speaker-tag">श्रीकृष्ण</span></div>
+  <div class="sanskrit-block"><div class="sanskrit-text">
+    <span class="shloka-line">तस्माच्छास्त्रं प्रमाणं ते कार्याकार्यव्यवस्थितौ <span class="shloka-pause">।</span></span>
+    <span class="shloka-line">ज्ञात्वा शास्त्रविधानोक्तं कर्म कर्तुमिहार्हसि <span class="shloka-pause">॥ २४ ॥</span></span>
+  </div></div>
+  <div class="meaning-block"><div class="meaning-label">मराठी अर्थ</div>
+  <div class="meaning-text">म्हणून कार्य व अकार्य ठरवण्यात शास्त्रच तुझे प्रमाण असावे. शास्त्रविधानाने सांगितलेले कर्म जाणून तेच या जगात करणे तुला योग्य आहे.</div></div>
+</div>
+
+<div class="chapter-close">
+  <span class="big-om">ॐ</span>
+  इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे<br>
+  श्रीकृष्णार्जुनसंवादे <strong>दैवासुरसम्पद्विभागयोगो</strong> नाम षोडशोऽध्यायः <span class="shloka-pause">॥ १६ ॥</span>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  श्रीमद्भगवद्गीता — अध्याय १६ · मराठी अर्थ &nbsp;|&nbsp; सर्व हक्क सुरक्षित
+</footer>
+
+</body>
+</html>
