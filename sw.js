@@ -1,4 +1,4 @@
-const CACHE = 'gita-v38';
+const CACHE = 'gita-v39';
 
 const PRECACHE = [
   './',
@@ -15,6 +15,8 @@ const PRECACHE = [
   './js/pdf.worker.min.js',
   './js/share.js',
   './js/pwa-update.js',
+  './js/notify.js',
+  './js/sankalpana-list.js',
   './assets/home-banner-landscape.jpg',
   './assets/home-banner-potrait.jpg',
   './assets/icons/icon-192.png',
@@ -35,6 +37,20 @@ self.addEventListener('activate', e => {
       .then(() => self.clients.claim())
   );
   // controllerchange fires on all tabs — pwa-update.js listens and shows the banner
+});
+
+// Daily sankalpana notification (shown by js/notify.js via showNotification) — open/focus its page on click
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  const url = (e.notification.data && e.notification.data.url) || './';
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(clientList => {
+      for (const client of clientList) {
+        if (client.url === url && 'focus' in client) return client.focus();
+      }
+      return self.clients.openWindow(url);
+    })
+  );
 });
 
 self.addEventListener('fetch', e => {
