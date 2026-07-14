@@ -414,29 +414,14 @@ PRASANG_STYLE_BLOCK = '''
 '''
 
 
-def generate_index_html(items):
-    """prasang/index.html — fallback for the bare directory URL, redirects to the first situation."""
-    first_slug = items[0]['slug'] if items else ''
-    return f'''<!doctype html>
-<html lang="mr">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>प्रसंग · गीता-ज्ञानेश्वरी</title>
-<meta http-equiv="refresh" content="0;url={first_slug}.html" />
-</head>
-<body>
-  <p style="font-family:sans-serif;text-align:center;padding:60px 20px;color:#555;">
-    प्रसंग उघडत आहे… <a href="{first_slug}.html">येथे क्लिक करा</a>
-  </p>
-</body>
-</html>'''
-
-
 def generate_listing_html(items):
-    """prasang.html — the real browsable listing page, linked from the main nav."""
+    """prasang/index.html — the real browsable listing page, linked from the main nav
+    as `./prasang` (root pages) / `../prasang` (subpages). NOTE: this lives INSIDE the
+    prasang/ directory (not a sibling prasang.html at repo root) because a static file
+    server resolves a bare `/prasang` URL to the prasang/ directory's own index first —
+    a sibling `prasang.html` at root would be unreachable via that link."""
     cards = '\n'.join(
-        f'''      <a class="pr-card" href="prasang/{it['slug']}.html">
+        f'''      <a class="pr-card" href="{it['slug']}.html">
         <span class="pr-card-eyebrow">🧭 प्रसंग</span>
         <h3>{it['title']}</h3>
         <p>{situation_teaser(it['situation'])}</p>
@@ -452,14 +437,14 @@ def generate_listing_html(items):
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>प्रसंग · गीता-ज्ञानेश्वरी</title>
 <meta name="theme-color" content="#9c4a10" />
-<link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="css/style.css" />
-<script src="js/share.js" defer></script>
-<script src="js/pwa-update.js" defer></script>
-<script src="js/sankalpana-list.js" defer></script>
-<script src="js/notify.js" defer></script>
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/share.js" defer></script>
+<script src="../js/pwa-update.js" defer></script>
+<script src="../js/sankalpana-list.js" defer></script>
+<script src="../js/notify.js" defer></script>
 <style>
   body {{ background: var(--bg); }}
   .pr-list-hero {{ padding: 48px 0 12px; }}
@@ -483,15 +468,15 @@ def generate_listing_html(items):
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="./">
+    <a class="brand" href="../">
       <span class="brand-mark">ॐ</span>
       <span>गीता-ज्ञानेश्वरी</span>
     </a>
     <nav class="nav-links">
-      <a href="./">होम</a>
-      <a href="./#chapters">अध्याय</a>
-      <a href="./concept">संकल्पना</a>
-      <a href="./prasang" class="on">प्रसंग</a>
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept">संकल्पना</a>
+      <a href="./" class="on">प्रसंग</a>
     </nav>
     <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -499,10 +484,10 @@ def generate_listing_html(items):
   </div>
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
     <div class="wrap">
-      <a href="./">होम</a>
-      <a href="./#chapters">अध्याय</a>
-      <a href="./concept">संकल्पना</a>
-      <a href="./prasang" class="on">प्रसंग</a>
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept">संकल्पना</a>
+      <a href="./" class="on">प्रसंग</a>
     </div>
   </div>
 </header>
@@ -524,7 +509,7 @@ def generate_listing_html(items):
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="./" style="font-size:22px;">
+        <a class="brand" href="../" style="font-size:22px;">
           <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
           <span>गीता-ज्ञानेश्वरी</span>
         </a>
@@ -532,14 +517,14 @@ def generate_listing_html(items):
       </div>
       <div>
         <h5>ग्रंथ</h5>
-        <a href="./#chapters">सर्व अध्याय</a>
-        <a href="./concept">संकल्पना</a>
-        <a href="./prasang">प्रसंग</a>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../concept">संकल्पना</a>
+        <a href="./">प्रसंग</a>
       </div>
       <div>
         <h5>बद्दल</h5>
-        <a href="./about">या प्रकल्पाबद्दल</a>
-        <a href="./privacy">गोपनीयता धोरण</a>
+        <a href="../about">या प्रकल्पाबद्दल</a>
+        <a href="../privacy">गोपनीयता धोरण</a>
       </div>
     </div>
     <div class="foot-bottom">
@@ -618,11 +603,8 @@ def main():
         generated.append({'slug': slug, 'title': data['title'], 'situation': data['situation'], 'data': data})
         print(f"  ✓ prasang/{slug}.html  ({data['title']})")
 
-    (OUTPUT_DIR / 'index.html').write_text(generate_index_html(generated), encoding='utf-8')
-    print(f"\nWrote prasang/index.html (redirect fallback)")
-
-    Path('prasang.html').write_text(generate_listing_html(generated), encoding='utf-8')
-    print(f"Wrote prasang.html (listing page, {len(generated)} entries)")
+    (OUTPUT_DIR / 'index.html').write_text(generate_listing_html(generated), encoding='utf-8')
+    print(f"\nWrote prasang/index.html (listing page, {len(generated)} entries)")
 
     list_js_path = Path('js/prasang-list.js')
     list_js_path.write_text(generate_list_js(generated), encoding='utf-8')
