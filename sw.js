@@ -1,9 +1,10 @@
-const CACHE = 'gita-v39';
+const CACHE = 'gita-v41';
 
 const PRECACHE = [
   './',
   './adhyay',
   './concept',
+  './prasang',
   './css/style.css',
   './js/data.js',
   './js/home.js',
@@ -17,6 +18,7 @@ const PRECACHE = [
   './js/pwa-update.js',
   './js/notify.js',
   './js/sankalpana-list.js',
+  './js/prasang-list.js',
   './assets/home-banner-landscape.jpg',
   './assets/home-banner-potrait.jpg',
   './assets/icons/icon-192.png',

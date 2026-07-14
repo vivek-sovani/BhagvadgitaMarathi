@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>अचानक मिळालेली मोठी रक्कम — प्रसंग · गीता-ज्ञानेश्वरी</title>
+<meta name="theme-color" content="#9c4a10" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="../css/style.css" />
+<script src="../js/share.js" defer></script>
+<script src="../js/pwa-update.js" defer></script>
+<script src="../js/sankalpana-list.js" defer></script>
+<script src="../js/notify.js" defer></script>
+<style>
+
+  body { background: var(--bg); }
+  .pr-hero { padding: 28px 0 64px; }
+  .pr-title {
+    font-family: var(--serif-dev); font-size: clamp(28px, 4vw, 38px);
+    color: var(--ink); margin: 18px 0 22px;
+  }
+
+  .ls-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    padding: 28px 26px 30px;
+    font-family: var(--sans-dev);
+  }
+  .ls-eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--saffron-deep); text-transform: uppercase;
+  }
+  .ls-situation {
+    font-family: var(--serif-dev);
+    font-size: 19px; line-height: 1.65;
+    color: var(--ink); margin: 0 0 22px;
+  }
+  .ls-question {
+    font-family: var(--sans-dev); font-weight: 700; font-size: 15px;
+    color: var(--ink-soft); margin: 0 0 14px;
+  }
+  .ls-options { display: flex; flex-direction: column; gap: 10px; }
+  .ls-opt {
+    display: flex; align-items: flex-start; gap: 12px;
+    width: 100%; text-align: left;
+    background: var(--surface-2);
+    border: 1.5px solid var(--rule);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-family: var(--sans-dev); font-size: 15px; line-height: 1.5;
+    color: var(--ink); cursor: pointer;
+    transition: border-color var(--transition), background var(--transition), transform var(--transition);
+  }
+  .ls-opt:hover:not(:disabled) { border-color: var(--saffron); transform: translateY(-1px); }
+  .ls-opt-label {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--rule-soft); color: var(--ink-soft);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 13px;
+  }
+  .ls-opt:disabled { cursor: default; }
+  .ls-opt.correct {
+    border-color: var(--leaf); background: color-mix(in oklab, var(--leaf) 12%, var(--surface-2));
+  }
+  .ls-opt.correct .ls-opt-label { background: var(--leaf); color: #fff; }
+  .ls-opt.wrong {
+    border-color: #b3453a; background: color-mix(in oklab, #b3453a 10%, var(--surface-2));
+    opacity: 0.85;
+  }
+  .ls-opt.wrong .ls-opt-label { background: #b3453a; color: #fff; }
+  .ls-opt.dim { opacity: 0.55; }
+
+  .ls-result {
+    margin-top: 22px; padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: none;
+    animation: lsFadeIn 0.4s ease;
+  }
+  .ls-result.show { display: block; }
+  @keyframes lsFadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .ls-result-tag {
+    display: inline-block; font-size: 12.5px; font-weight: 700;
+    letter-spacing: 0.04em; color: #fff; background: var(--leaf);
+    border-radius: 999px; padding: 4px 12px; margin-bottom: 12px;
+  }
+  .ls-shloka {
+    font-family: var(--serif-dev); font-style: italic;
+    font-size: 17px; line-height: 1.7; color: var(--saffron-deep);
+    margin: 0 0 6px;
+  }
+  .ls-shloka-ref {
+    font-family: var(--sans-dev); font-size: 12.5px; color: var(--ink-mute);
+    margin: 0 0 16px;
+  }
+  .ls-explain {
+    font-family: var(--sans-dev); font-size: 15px; line-height: 1.75;
+    color: var(--ink-soft); margin: 0 0 12px;
+  }
+  .ls-explain strong { color: var(--ink); }
+  .pr-related {
+    margin-top: 18px; display: flex; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .pr-related-label {
+    font-family: var(--sans-dev); font-size: 13px; font-weight: 600; color: var(--ink-mute);
+  }
+  .pr-tag {
+    font-family: var(--sans-dev); font-size: 13px; font-weight: 600;
+    color: var(--saffron-deep); background: var(--primary-lt);
+    border-radius: 999px; padding: 5px 14px; text-decoration: none;
+  }
+  .pr-tag:hover { background: var(--saffron-glow); color: #fff; }
+  .ls-retry {
+    margin-top: 20px; display: inline-flex; align-items: center; gap: 6px;
+    background: none; border: 1px solid var(--rule); border-radius: 999px;
+    padding: 8px 18px; font-family: var(--sans-dev); font-size: 13.5px;
+    font-weight: 600; color: var(--ink-soft); cursor: pointer;
+  }
+  .ls-retry:hover { border-color: var(--saffron-deep); color: var(--saffron-deep); }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="../">
+      <span class="brand-mark">ॐ</span>
+      <span>गीता-ज्ञानेश्वरी</span>
+    </a>
+    <nav class="nav-links">
+      <a href="../">होम</a>
+      <a href="../adhyay">अध्याय</a>
+      <a href="../concept">संकल्पना</a>
+      <a href="../prasang" class="on">प्रसंग</a>
+    </nav>
+    <button class="menu-btn" id="menu-btn" aria-label="मेनू" aria-expanded="false">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <div class="wrap">
+      <a href="../">होम</a>
+      <a href="../#chapters">अध्याय</a>
+      <a href="../concept">संकल्पना</a>
+      <a href="../prasang" class="on">प्रसंग</a>
+    </div>
+  </div>
+</header>
+
+<section class="pr-hero">
+  <div class="wrap-narrow">
+    <div class="crumb">
+      <a href="../">होम</a>
+      <span class="sep">/</span>
+      <a href="../prasang">प्रसंग</a>
+      <span class="sep">/</span>
+      <span class="now">अचानक मिळालेली मोठी रक्कम</span>
+    </div>
+
+    <div class="ls-card" id="ls-card">
+      <div class="ls-eyebrow">🧭 प्रसंग — जगात आणा</div>
+      <h1 class="pr-title">अचानक मिळालेली मोठी रक्कम</h1>
+
+      <p class="ls-situation">कंपनीकडून मोठा बोनस मिळतो, किंवा वारसाहक्काने अचानक मोठी रक्कम हातात येते. मन एकाच वेळी उत्साहित
+आणि गोंधळलेलं असतं — ही रक्कम कशी वापरायची, याबद्दल वेगवेगळे विचार मनात येतात.</p>
+
+      <p class="ls-question">तुम्ही काय कराल?</p>
+
+      <div class="ls-options" id="ls-options">
+      <button class="ls-opt" data-opt="a">
+        <span class="ls-opt-label">A</span>
+        <span>सगळी रक्कम स्वतःसाठी चैनीच्या, महागड्या वस्तूंवर लगेच खर्च करून टाकायची.</span>
+      </button>
+      <button class="ls-opt" data-opt="b">
+        <span class="ls-opt-label">B</span>
+        <span>एक रुपयाही खर्च न करता पूर्णपणे कुलूपबंद करून ठेवायची, गरजूंना किंवा कुटुंबालाही वाटा न देता.</span>
+      </button>
+      <button class="ls-opt" data-opt="c">
+        <span class="ls-opt-label">C</span>
+        <span>काही भाग खऱ्या गरजांसाठी, काही बचतीसाठी आणि काही गरजूंच्या मदतीसाठी अर्पण करायचा — पैसा हे साधन आहे, ते व्यवस्थित सत्कारणी लावायचं.</span>
+      </button>
+      </div>
+
+      <div class="ls-result" id="ls-result">
+        <span class="ls-result-tag">योग्य उत्तर — C</span>
+        <p class="ls-shloka">"यत्करोषि यदश्नासि यज्जुहोषि ददासि यत्। यत्तपस्यसि कौन्तेय तत्कुरुष्व मदर्पणम्॥"</p>
+        <p class="ls-shloka-ref">— अध्याय ९, श्लोक २७</p>
+      <p class="ls-explain">श्रीकृष्ण सांगतात — जे काही तू करतोस, जे खातोस, जे अर्पण करतोस, जे दान देतोस, जे तप करतोस, ते सर्व मला अर्पण कर. पैसा किंवा संपत्ती हीसुद्धा अशीच एक कृती आहे — ती स्वार्थासाठी वापरायची, की व्यापक हितासाठी अर्पण भावनेने वापरायची, हा खरा प्रश्न आहे.</p>
+      <p class="ls-explain">पर्याय A मध्ये — सगळी रक्कम केवळ चैनीसाठी उधळणं, हे क्षणिक सुखामागे धावणं आहे — <strong>अनासक्तीच्या</strong> विरुद्ध आहे. पर्याय B मध्ये — पूर्णपणे साठवून ठेवणं, कुणालाही वाटा न देणं, हेही योग्य नाही — पैसा वापरातच त्याचा खरा अर्थ आहे.</p>
+      <p class="ls-explain">पर्याय C मध्ये — गरज, बचत आणि दान यांचा समतोल राखत, अर्पणभावाने पैसा वापरणं — हाच खरा <strong>कर्मार्पणाचा</strong> मार्ग आहे. संपत्ती ही मालकी नसून, सत्कारणी लावण्याची जबाबदारी आहे.</p>
+        <div class="pr-related">
+          <span class="pr-related-label">संबंधित संकल्पना:</span>
+        <a class="pr-tag" href="../sankalpana/karmarpan.html">कर्मार्पण</a>
+        <a class="pr-tag" href="../sankalpana/anasakthi.html">अनासक्ती</a>
+        </div>
+        <button class="ls-retry" id="ls-retry">↺ पुन्हा प्रयत्न करा</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="../" style="font-size:22px;">
+          <span class="brand-mark" style="width:34px;height:34px;font-size:18px;">ॐ</span>
+          <span>गीता-ज्ञानेश्वरी</span>
+        </a>
+        <p class="foot-blurb">गीता आणि ज्ञानेश्वरी — आधुनिक जीवनासाठी एका शांत वाचनाच्या स्वरूपात.</p>
+      </div>
+      <div>
+        <h5>ग्रंथ</h5>
+        <a href="../#chapters">सर्व अध्याय</a>
+        <a href="../concept">संकल्पना</a>
+        <a href="../prasang">प्रसंग</a>
+      </div>
+      <div>
+        <h5>बद्दल</h5>
+        <a href="../about">या प्रकल्पाबद्दल</a>
+        <a href="../privacy">गोपनीयता धोरण</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© २०२६ गीता-ज्ञानेश्वरी · प्रेमाने बनवलेले.</div>
+      <div class="right">"योगः कर्मसु कौशलम्" — गीता २.५०</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var CORRECT = 'c';
+    var optionsEl = document.getElementById('ls-options');
+    var resultEl = document.getElementById('ls-result');
+    var retryBtn = document.getElementById('ls-retry');
+
+    function reveal(selected) {
+      var opts = optionsEl.querySelectorAll('.ls-opt');
+      opts.forEach(function (btn) {
+        btn.disabled = true;
+        var opt = btn.getAttribute('data-opt');
+        if (opt === CORRECT) {
+          btn.classList.add('correct');
+        } else if (opt === selected) {
+          btn.classList.add('wrong');
+        } else {
+          btn.classList.add('dim');
+        }
+      });
+      resultEl.classList.add('show');
+      resultEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    optionsEl.addEventListener('click', function (e) {
+      var btn = e.target.closest('.ls-opt');
+      if (!btn || btn.disabled) return;
+      reveal(btn.getAttribute('data-opt'));
+    });
+
+    retryBtn.addEventListener('click', function () {
+      var opts = optionsEl.querySelectorAll('.ls-opt');
+      opts.forEach(function (btn) {
+        btn.disabled = false;
+        btn.classList.remove('correct', 'wrong', 'dim');
+      });
+      resultEl.classList.remove('show');
+    });
+  })();
+</script>
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const nav = menuBtn && menuBtn.closest('.nav');
+  if (menuBtn && nav) {
+    menuBtn.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      menuBtn.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', e => {
+      if (nav.classList.contains('menu-open') && !nav.contains(e.target)) {
+        nav.classList.remove('menu-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

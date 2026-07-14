@@ -795,6 +795,7 @@ def generate_html(data, catalog):
       <a href="../">होम</a>
       <a href="../adhyay">अध्याय</a>
       <a href="../concept" class="on">संकल्पना</a>
+      <a href="../prasang">प्रसंग</a>
       <a href="#">बद्दल</a>
       <a href="#" class="nav-cta">वाचन सुरू</a>
     </nav>
@@ -807,6 +808,7 @@ def generate_html(data, catalog):
       <a href="../">होम</a>
       <a href="../#chapters">अध्याय</a>
       <a href="../concept" class="on">संकल्पना</a>
+      <a href="../prasang">प्रसंग</a>
     </div>
   </div>
 </header>

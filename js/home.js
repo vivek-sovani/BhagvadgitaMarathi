@@ -274,3 +274,84 @@
   );
   if (tvCta) tvCta.innerHTML = tvCtaLinked;
 })();
+
+// ── Random प्रसंग card (home page) ─────────────────────────────────────────────
+(function () {
+  if (typeof PRASANG_LIST === 'undefined' || !PRASANG_LIST.length) return;
+
+  const item = PRASANG_LIST[Math.floor(Math.random() * PRASANG_LIST.length)];
+
+  const phTitle      = document.getElementById('ph-title');
+  const phSituation  = document.getElementById('ph-situation');
+  const phOptions    = document.getElementById('ph-options');
+  const phAnswer     = document.getElementById('ph-answer');
+  const phAnswerTag  = document.getElementById('ph-answer-tag');
+  const phShloka     = document.getElementById('ph-shloka');
+  const phShlokaRef  = document.getElementById('ph-shloka-ref');
+  const phExplain    = document.getElementById('ph-explanation');
+  const phRelated    = document.getElementById('ph-related');
+  const phSolveLink  = document.getElementById('ph-solve-link');
+  const phRetry      = document.getElementById('ph-retry');
+
+  if (phTitle)     phTitle.textContent = item.title;
+  if (phSituation) phSituation.textContent = item.situation;
+
+  const correctLower = (item.correct || '').toLowerCase();
+
+  if (phOptions && item.options) {
+    phOptions.innerHTML = item.options
+      .map(o => `<button type="button" class="ph-opt" data-opt="${o.letter.toLowerCase()}">
+        <span class="ph-opt-label">${o.letter}</span>
+        <span>${o.text}</span>
+      </button>`)
+      .join('');
+
+    phOptions.addEventListener('click', e => {
+      const btn = e.target.closest('.ph-opt');
+      if (!btn || btn.disabled) return;
+      const selected = btn.getAttribute('data-opt');
+      phOptions.querySelectorAll('.ph-opt').forEach(o => {
+        o.disabled = true;
+        const opt = o.getAttribute('data-opt');
+        if (opt === correctLower) o.classList.add('correct');
+        else if (opt === selected) o.classList.add('wrong');
+        else o.classList.add('dim');
+      });
+      if (phAnswer) {
+        phAnswer.classList.add('show');
+        phAnswer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  if (phRetry) {
+    phRetry.addEventListener('click', () => {
+      if (phOptions) {
+        phOptions.querySelectorAll('.ph-opt').forEach(o => {
+          o.disabled = false;
+          o.classList.remove('correct', 'wrong', 'dim');
+        });
+      }
+      if (phAnswer) phAnswer.classList.remove('show');
+    });
+  }
+
+  if (phAnswerTag) phAnswerTag.textContent = `योग्य उत्तर — ${item.correct}`;
+  if (phShloka)    phShloka.textContent = `"${item.shloka}"`;
+  if (phShlokaRef) phShlokaRef.textContent = `— ${item.shlokaRef}`;
+
+  if (phExplain) {
+    phExplain.innerHTML = item.explanation
+      .map(p => `<p class="ph-explain">${p}</p>`)
+      .join('');
+  }
+
+  if (phRelated) {
+    const pills = item.related
+      .map(r => `<a class="ph-tag" href="./sankalpana/${r.slug}.html">${r.title}</a>`)
+      .join('');
+    phRelated.innerHTML = `<span class="ph-related-label">संबंधित संकल्पना:</span>${pills}`;
+  }
+
+  if (phSolveLink) phSolveLink.href = `./prasang/${item.slug}.html`;
+})();

@@ -18,6 +18,7 @@ Marathi Bhagavad Gita PWA deployed on GitHub Pages at `https://vivek-sovani.gith
 | `js/home.js` | Home chapter grid + daily concept picker |
 | `js/share.js` | `window.initShareButton()` — Web Share API + WhatsApp/clipboard fallback |
 | `adhyay.html` | Chapter/concept SPA shell |
+| `build_prasang.py` | Builds `prasang/*.html` + `prasang.html` from `content/prasang/*.md` |
 | `sw.js` | Service worker — cache name `gita-v28` (bump when cached files change) |
 | `manifest.json` | PWA manifest — scope `/BhagvadgitaMarathi/`, lang `mr`, theme `#9c4a10` |
 | `scripts/send_daily_concept.py` | Daily email — run by GitHub Actions at 4:45 AM IST |
@@ -112,6 +113,42 @@ Each `assets/adhyay-N/` folder:
 
 ---
 
+## Prasang ("जगात आणा" — apply the teaching)
+
+Standalone situational-quiz pages, deliberately **separate from adhyay/concept** — a life scenario,
+three response options, and a correct answer explained through specific Gita shlokas. A single
+situation's explanation can cite (and link to) more than one sankalpana concept, since real
+situations rarely map to just one teaching.
+
+- Source: `content/prasang/*.md` — sections `## परिस्थिती` (situation), `## पर्याय` (options,
+  lines starting `A.`/`B.`/`C.`), `## योग्य उत्तर` (correct letter), `## श्लोक` (shloka line +
+  reference line), `## स्पष्टीकरण` (explanation, markdown `**bold**` supported), `## संबंधित
+  संकल्पना` (comma-separated sankalpana slugs — resolved to titles at build time by reading each
+  slug's `content/sankalpana/<slug>.md` H1, and rendered as linked pills to `sankalpana/<slug>.html`).
+- Build: `python3 build_prasang.py` — add the new slug to `SLUGS` in that script first. Generates
+  one `prasang/<slug>.html` per situation, `prasang/index.html` (redirect fallback for the bare
+  directory URL, mirroring `sankalpana/index.html`), and `prasang.html` at the repo root (the real
+  browsable listing page — this is what the nav's "प्रसंग" link points to).
+  Loads `js/notify.js` + `js/sankalpana-list.js` like sankalpana pages, so the notification-settings
+  menu entry appears there too.
+- The interactive quiz card (`.ls-*` CSS classes, click-to-reveal JS) is inlined per generated page
+  — no shared JS file, matching how sankalpana pages inline their own script blocks.
+- Nav link ("प्रसंग", after "संकल्पना") is duplicated across `index.html`, `adhyay.html`,
+  `about.html`, and the sankalpana template in `build_sankalpana.py` — same duplication pattern as
+  the rest of the site's header/footer, so add it in all of those if the nav ever changes again.
+- **Home page card** (`#prasang-home` in `index.html`, rendered by the last IIFE in `js/home.js`):
+  picks one *random* (not day-indexed, unlike the "आजची संकल्पना" card) entry from
+  `js/prasang-list.js` — an auto-generated full-data manifest (situation/correct/shloka/explanation
+  HTML/related concepts, not just `{slug,title}` like `sankalpana-list.js`) — and renders the
+  situation fully revealed (no click-to-answer interaction on the home page, unlike the standalone
+  `prasang/*.html` pages), with a button to solve that exact situation and a button to the listing
+  page. `js/prasang-list.js` is loaded **synchronously** right before `js/home.js` (not `defer`,
+  unlike `sankalpana-list.js`) — home.js's IIFEs run inline at that script tag, before deferred
+  head scripts fire, so a deferred prasang-list.js would still be `undefined` when home.js reads it.
+  There's also a plain "प्रसंग पाहा" pill next to "संकल्पना पाहा" in the hero, linking to `./prasang`.
+
+---
+
 ## Daily Sankalpana Notifications
 
 `js/notify.js` — client-side-only notification engine (no push server; works inside the Android
@@ -159,8 +196,9 @@ adhyay in `js/data.js`, and bump the SW cache.
 - **New WhatsApp post**: Add a block to the appropriate `adhyayN-whatsapp-links.md` using the separator format.
 - **New katha HTML** (combined adhyay): Create `assets/adhyay-N/concept-M-katha.html`, reference via `kathaHtmlUrl` in stories.js.
 - **New full-adhyay shlokas page**: Upload `shlokas/adhyay-N.html`, set `shlokas: true` on that adhyay in `js/data.js`, bump SW cache.
-- **SW cache change**: Bump `gita-v28` → `gita-v29` (or next) in `sw.js`.
+- **SW cache change**: Bump the `CACHE` version (e.g. `gita-v40` → `gita-v41`) in `sw.js`.
 - **New sankalpana concept**: Add markdown to `content/sankalpana/`, add slug to `SLUGS` list in `build_sankalpana.py`, run the build script.
+- **New प्रसंग situation**: Add markdown to `content/prasang/`, add slug to `SLUGS` list in `build_prasang.py`, run `python3 build_prasang.py` (regenerates `prasang/*.html`, `prasang/index.html`, and the root `prasang.html` listing).
 - **OG shim pages**: Run `scripts/generate_adhyay_shims.py` or `generate_missing_shims.py` after adding new concepts.
 
 ---
