@@ -187,7 +187,7 @@ def generate_html(data, slug):
     </div>
 
     <div class="ls-card" id="ls-card">
-      <div class="ls-eyebrow">🧭 प्रसंग — जगात आणा</div>
+      <div class="ls-eyebrow">🧭 प्रसंग</div>
       <h1 class="pr-title">{title}</h1>
 
       <p class="ls-situation">{parse_inline(data['situation'])}</p>
@@ -494,7 +494,7 @@ def generate_listing_html(items):
 
 <section class="pr-list-hero">
   <div class="wrap-narrow">
-    <h1>प्रसंग — जगात आणा.</h1>
+    <h1>प्रसंग — तुम्ही काय कराल?</h1>
     <p>रोजच्या जीवनातला एक प्रसंग, तीन पर्याय — तुम्ही काय कराल? निवडा, आणि गीता काय सांगते ते पाहा.</p>
   </div>
 </section>

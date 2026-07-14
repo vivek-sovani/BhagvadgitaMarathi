@@ -113,7 +113,7 @@ Each `assets/adhyay-N/` folder:
 
 ---
 
-## Prasang ("जगात आणा" — apply the teaching)
+## Prasang ("तुम्ही काय कराल?" — apply the teaching)
 
 Standalone situational-quiz pages, deliberately **separate from adhyay/concept** — a life scenario,
 three response options, and a correct answer explained through specific Gita shlokas. A single
