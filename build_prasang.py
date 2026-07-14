@@ -38,6 +38,16 @@ SLUGS = [
     "kishoravastha-bandkhori",
     "anolakhi-madat",
     "achanak-dhan-prapti",
+    "rasta-krodh",
+    "priyajan-viyog",
+    "naukri-gele",
+    "ninda-mohh",
+    "vilamb-sahansheelata",
+    "abhimaan-ani-mafi",
+    "anyay-ughad-karane",
+    "naveen-shaharatil-ekatepana",
+    "mulancha-pariksha-taan",
+    "madat-magnyacha-sankoch",
 ]
 
 
