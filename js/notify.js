@@ -11,6 +11,14 @@
 // notification there, and this file's own showNotification call is skipped in that
 // context to avoid double notifications. Plain-browser/non-TWA installs are
 // unaffected and keep the original best-effort behavior.
+//
+// bridgeToNative() is ONLY ever called from the Save button's click handler —
+// deliberately not on page load. Chrome requires a genuine trusted user gesture to
+// honor an intent:// navigation; without one it doesn't just no-op, it appears to
+// crash Chrome's own Tab/WebContents teardown path (NullPointerException in
+// Tab.getWebContents(), confirmed via adb dropbox crash logs). An earlier version
+// of this file called bridgeToNative() unconditionally on every DOMContentLoaded
+// to auto-sync existing users, which reproduced that crash on every single app open.
 (function () {
   'use strict';
 
@@ -270,10 +278,6 @@
     injectMenuEntry();
     registerSW();
     maybeNotify();
-    // Keeps the native alarm in sync on every open — covers users who enabled
-    // notifications before this native bridge existed, and reinstalls/updates.
-    var s = loadSettings();
-    bridgeToNative(s.enabled, s.hour, s.minute);
   });
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) maybeNotify();
