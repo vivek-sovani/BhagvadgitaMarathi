@@ -1,0 +1,9 @@
+keystore.properties
+android.keystore
+local.properties
+.gradle/
+build/
+app/build/
+gradle-8.6/
+gradle.zip
+.DS_Store

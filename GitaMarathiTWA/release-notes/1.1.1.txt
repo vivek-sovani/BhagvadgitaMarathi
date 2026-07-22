@@ -1,0 +1,13 @@
+Version 1.1.1 (versionCode 3)
+
+--- mr-IN (Marathi — paste into Play Console "What's new") ---
+या अद्यतनात:
+• दैनंदिन संकल्पना सूचना (नोटिफिकेशन) — वेळ ठरवा, रोज एक नवी संकल्पना मिळवा
+• ॲप सुरक्षितता व सुसंगततेसाठी अंतर्गत सुधारणा
+• लाँचर आयकॉनमधील किरकोळ डिझाइन सुधारणा
+
+--- en-US (English) ---
+This update includes:
+• Daily sankalpana notifications — set a time and get a new concept reminder every day
+• Under-the-hood improvements for security and compatibility
+• Minor launcher icon fix

@@ -1,0 +1,50 @@
+{
+  "packageId": "io.github.viveksovani.gitamarathi",
+  "host": "vivek-sovani.github.io",
+  "name": "गीता-ज्ञानेश्वरी",
+  "launcherName": "गीता-ज्ञानेश्वरी",
+  "display": "standalone",
+  "orientation": "portrait",
+  "themeColor": "#9c4a10",
+  "themeColorDark": "#9c4a10",
+  "navigationColor": "#9c4a10",
+  "navigationColorDark": "#9c4a10",
+  "navigationDividerColor": "#9c4a10",
+  "navigationDividerColorDark": "#9c4a10",
+  "backgroundColor": "#FFF8F0",
+  "enableNotifications": true,
+  "startUrl": "/BhagvadgitaMarathi/",
+  "iconUrl": "https://vivek-sovani.github.io/BhagvadgitaMarathi/assets/icons/icon-512.png",
+  "maskableIconUrl": "https://vivek-sovani.github.io/BhagvadgitaMarathi/assets/icons/icon-maskable-512.png",
+  "monochromeIconUrl": "https://vivek-sovani.github.io/BhagvadgitaMarathi/assets/icons/icon-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./android.keystore",
+    "alias": "gitamarathi"
+  },
+  "appVersionCode": 4,
+  "appVersionName": "1.1.2",
+  "shortcuts": [],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://vivek-sovani.github.io/BhagvadgitaMarathi/manifest.json",
+  "fallbackType": "customtabs",
+  "features": {
+    "locationDelegation": {
+      "enabled": false
+    },
+    "playBilling": {
+      "enabled": false
+    }
+  },
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://vivek-sovani.github.io/BhagvadgitaMarathi/",
+  "minSdkVersion": 24,
+  "fingerprints": [],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": []
+}
