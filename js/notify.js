@@ -1,15 +1,44 @@
 // Daily sankalpana notification engine.
-// Client-side only: no push server. While the app is open (foreground or
-// backgrounded-but-alive), this checks whether it's past the user's chosen
-// time and today's notification hasn't fired yet, then shows one via the
-// service worker. Settings are reachable from the hamburger menu on every
-// page that loads this script.
+// No push server: while the app is open (foreground or backgrounded-but-alive),
+// this checks whether it's past the user's chosen time and today's notification
+// hasn't fired yet, then shows one via the service worker. Settings are reachable
+// from the hamburger menu on every page that loads this script.
+//
+// Inside the installed Android app (TWA), that "only while open" check isn't good
+// enough, so saved settings are also handed off to a native AlarmManager-based
+// scheduler (see GitaMarathiTWA's ScheduleBridgeActivity/DailyAlarmReceiver) via a
+// gitamarathi://schedule deep link — native code then owns actually firing the
+// notification there, and this file's own showNotification call is skipped in that
+// context to avoid double notifications. Plain-browser/non-TWA installs are
+// unaffected and keep the original best-effort behavior.
 (function () {
   'use strict';
 
   var SETTINGS_KEY = 'gita-notify-settings';
   var LAST_KEY = 'gita-notify-last';
   var START_DATE = new Date(2026, 3, 20); // 2026-04-20 — same epoch as the daily email's day index
+
+  function isTWA() {
+    return document.referrer.indexOf('android-app://') === 0;
+  }
+
+  // Hands the enabled/hour/minute choice to the native scheduler inside the TWA.
+  // Fire-and-forget via a hidden iframe so it can't navigate the current page away.
+  function bridgeToNative(enabled, hour, minute) {
+    if (!isTWA()) return;
+    try {
+      var uri = 'intent://schedule?enabled=' + (enabled ? '1' : '0') +
+        '&hour=' + hour + '&minute=' + minute +
+        '#Intent;scheme=gitamarathi;package=io.github.viveksovani.gitamarathi;end';
+      var iframe = document.createElement('iframe');
+      iframe.style.display = 'none';
+      iframe.src = uri;
+      document.body.appendChild(iframe);
+      setTimeout(function () {
+        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+      }, 1000);
+    } catch (e) {}
+  }
 
   function loadSettings() {
     var fallback = { enabled: false, hour: 7, minute: 0 };
@@ -80,6 +109,7 @@
   }
 
   function maybeNotify() {
+    if (isTWA()) return; // native AlarmManager-based scheduler owns delivery here
     if (!('Notification' in window) || Notification.permission !== 'granted') return;
     var settings = loadSettings();
     if (!settings.enabled) return;
@@ -197,6 +227,7 @@
 
       function persist(finalEnabled) {
         saveSettings({ enabled: finalEnabled, hour: hour, minute: minute });
+        bridgeToNative(finalEnabled, hour, minute);
         registerSW();
         statusEl.textContent = finalEnabled ? '✓ जतन झाले — दररोज ' + pad2(hour) + ':' + pad2(minute) + ' नंतर सूचना मिळेल.' : '✓ जतन झाले — सूचना बंद आहे.';
         setTimeout(closeModal, 900);
@@ -241,6 +272,10 @@
     injectMenuEntry();
     registerSW();
     maybeNotify();
+    // Keeps the native alarm in sync on every open — covers users who enabled
+    // notifications before this native bridge existed, and reinstalls/updates.
+    var s = loadSettings();
+    bridgeToNative(s.enabled, s.hour, s.minute);
   });
   document.addEventListener('visibilitychange', function () {
     if (!document.hidden) maybeNotify();
