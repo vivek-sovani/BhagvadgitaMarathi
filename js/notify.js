@@ -23,20 +23,18 @@
   }
 
   // Hands the enabled/hour/minute choice to the native scheduler inside the TWA.
-  // Fire-and-forget via a hidden iframe so it can't navigate the current page away.
+  // Must be a direct top-level navigation (not a hidden iframe) — Chrome blocks
+  // intent:// activation from iframes as an anti-abuse measure. A user gesture
+  // (this only ever runs from the Save button's click handler) is required too.
+  // Chrome intercepts the matching intent:// before any real navigation happens,
+  // so the page itself doesn't actually change.
   function bridgeToNative(enabled, hour, minute) {
     if (!isTWA()) return;
     try {
       var uri = 'intent://schedule?enabled=' + (enabled ? '1' : '0') +
         '&hour=' + hour + '&minute=' + minute +
         '#Intent;scheme=gitamarathi;package=io.github.viveksovani.gitamarathi;end';
-      var iframe = document.createElement('iframe');
-      iframe.style.display = 'none';
-      iframe.src = uri;
-      document.body.appendChild(iframe);
-      setTimeout(function () {
-        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
-      }, 1000);
+      window.location.href = uri;
     } catch (e) {}
   }
 
