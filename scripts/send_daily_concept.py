@@ -16,9 +16,16 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 # ── Config ────────────────────────────────────────────────────────────────────
-# START_DATE set so 2026-06-29 = index 70 = adhyay 8 concept 3
-# (concepts 1 & 2 of adhyay 8 were sent manually)
-START_DATE = date(2026, 4, 20)
+# START_DATE anchors the day-index rotation. Bumped by 1 day on 2026-08-15 (from
+# 2026-04-20) so the next run lands exactly on adhyay 14 concept 1: adhyay 14-18
+# were missing from ADHYAY_FILES, so once the rotation ran past adhyay 13's last
+# concept it wrapped (via `% total`) straight back to adhyay 1 concept 1 instead
+# of continuing into adhyay 14. All of adhyay 14-18's whatsapp-links.md files now
+# exist and are listed below, so the rotation runs the full 1-18 cycle before
+# looping. Whenever a new adhyayN-whatsapp-links.md is added, make sure it's
+# appended to ADHYAY_FILES *before* the rotation reaches the end of the previous
+# file, or the same silent wraparound will recur.
+START_DATE = date(2026, 4, 21)
 
 ADHYAY_FILES = [
     'adhyay1-whatsapp-links.md',
@@ -34,6 +41,11 @@ ADHYAY_FILES = [
     'adhyay11-whatsapp-links.md',
     'adhyay12-whatsapp-links.md',
     'adhyay13-whatsapp-links.md',
+    'adhyay14-whatsapp-links.md',
+    'adhyay15-whatsapp-links.md',
+    'adhyay16-whatsapp-links.md',
+    'adhyay17-whatsapp-links.md',
+    'adhyay18-whatsapp-links.md',
 ]
 
 SEPARATOR = '━━━━━━━━━━━━━━━━━━━━━━━'
