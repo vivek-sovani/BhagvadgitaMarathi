@@ -21,13 +21,14 @@ from email.mime.text import MIMEText
 # concept it wrapped (via `% total`) straight back to adhyay 1 concept 1 instead
 # of continuing into adhyay 14. Fixed on 2026-08-15: the missing post files were
 # added below, and adhyay 14 concept 1 was sent manually that day via
-# workflow_dispatch (GitHub Actions run 31856465800) to resume the series, so
+# workflow_dispatch twice (GitHub Actions runs 31856465800 and, after fixing the
+# concept-shim share-preview image, 31856884715) to resume the series, so
 # START_DATE is set here to line up the *next* scheduled run with adhyay 14
 # concept 2. From there the rotation runs the full 1-18 cycle before looping.
 # Whenever a new adhyayN-whatsapp-links.md is added, make sure it's appended to
 # ADHYAY_FILES *before* the rotation reaches the end of the previous file, or
 # the same silent wraparound will recur.
-START_DATE = date(2026, 4, 21)
+START_DATE = date(2026, 4, 20)
 
 ADHYAY_FILES = [
     'adhyay1-whatsapp-links.md',
