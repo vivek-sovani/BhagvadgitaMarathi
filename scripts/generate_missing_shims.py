@@ -190,10 +190,20 @@ def generate_shims():
             out_dir = os.path.join(project_root, "c", str(aid), str(cid))
             out_file = os.path.join(out_dir, "index.html")
 
-            # Skip if already exists
+            # Skip if already exists and already points at the real concept
+            # image (or no real image exists yet). Regenerate if a shim was
+            # created before its concept image was uploaded — otherwise it's
+            # stuck on the fallback banner forever, since this check only
+            # ever ran once at first-generation time.
             if os.path.isfile(out_file):
-                skipped += 1
-                continue
+                if not has_concept_image(aid, cid):
+                    skipped += 1
+                    continue
+                with open(out_file, encoding="utf-8") as f:
+                    existing = f.read()
+                if FALLBACK_IMAGE not in existing:
+                    skipped += 1
+                    continue
 
             os.makedirs(out_dir, exist_ok=True)
 
