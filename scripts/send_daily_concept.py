@@ -28,7 +28,7 @@ from email.mime.text import MIMEText
 # Whenever a new adhyayN-whatsapp-links.md is added, make sure it's appended to
 # ADHYAY_FILES *before* the rotation reaches the end of the previous file, or
 # the same silent wraparound will recur.
-START_DATE = date(2026, 4, 21)
+START_DATE = date(2026, 4, 20)
 
 ADHYAY_FILES = [
     'adhyay1-whatsapp-links.md',
