@@ -25,7 +25,7 @@ https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/1/?v=2
 _"तत्र सत्त्वं निर्मलत्वात्प्रकाशकमनामयम्, सुखसङ्गेन बध्नाति ज्ञानसङ्गेन चानघ" — सत्त्व निर्मल, प्रकाशक आणि निरोगी असतं, पण तेच सुखाच्या आणि ज्ञानाच्या आसक्तीने बांधतं. सर्वात शुद्ध गुणही बंधनच — हे समजलं तरच खरी साधना सुरू होते._
 
 👉 खाली दिलेली लिंक उघडा:
-https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/2/
+https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/2/?v=2
 
 ━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -38,7 +38,7 @@ https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/2/
 _"रागात्मकं तत् जानीहि तृष्णासङ्गसमुद्भवम्, तन्निबध्नाति कौन्तेय कर्मसङ्गेन देहिनम्" — रजोगुण म्हणजे इच्छांचं इंजिन, तृष्णेतून जन्मलेलं. "एक मिळालं, दुसरं हवं" — मन कधीच शांत नाही. कर्मयोग म्हणजे कर्म करा, पण रजाचा दास होऊ नका._
 
 👉 खाली दिलेली लिंक उघडा:
-https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/3/
+https://vivek-sovani.github.io/BhagvadgitaMarathi/c/14/3/?v=2
 
 ━━━━━━━━━━━━━━━━━━━━━━━
 
