@@ -165,13 +165,41 @@ SHIM_TEMPLATE = """\
 """
 
 
-def has_concept_image(adhyay_id, concept_id):
-    """Check if a real concept image exists in assets/."""
-    path = os.path.join(
-        os.path.dirname(os.path.dirname(__file__)),
-        "assets", f"adhyay-{adhyay_id}", f"concept-{concept_id}.jpg"
-    )
-    return os.path.isfile(path)
+def get_og_image(adhyay_id, concept_id):
+    """
+    Return (relative_og_path, width, height) for a concept's OG share image,
+    generating a resized copy under assets/og/ if one doesn't exist yet.
+
+    The raw assets/adhyay-N/concept-M.jpg infographics are 500-1000KB —
+    WhatsApp's preview fetcher silently fails (or takes a very long time) on
+    images that large, showing no preview image at all. Every other adhyay's
+    shim uses a much smaller (~150-250KB) resized copy in assets/og/ instead,
+    so concept images must always go through this same resize step, never
+    point at the raw infographic directly.
+    """
+    root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    raw_path = os.path.join(root, "assets", f"adhyay-{adhyay_id}", f"concept-{concept_id}.jpg")
+    og_rel   = f"assets/og/adhyay-{adhyay_id}/concept-{concept_id}.jpg"
+    og_path  = os.path.join(root, og_rel)
+
+    if not os.path.isfile(raw_path):
+        return None
+
+    if not os.path.isfile(og_path):
+        from PIL import Image
+        os.makedirs(os.path.dirname(og_path), exist_ok=True)
+        with Image.open(raw_path) as im:
+            w, h = im.size
+            target_w = 540
+            target_h = round(h * target_w / w)
+            im.convert("RGB").resize((target_w, target_h), Image.LANCZOS).save(
+                og_path, "JPEG", quality=85
+            )
+
+    from PIL import Image
+    with Image.open(og_path) as im:
+        w, h = im.size
+    return og_rel, w, h
 
 
 def generate_shims():
@@ -190,18 +218,23 @@ def generate_shims():
             out_dir = os.path.join(project_root, "c", str(aid), str(cid))
             out_file = os.path.join(out_dir, "index.html")
 
-            # Skip if already exists and already points at the real concept
+            og_asset = get_og_image(aid, cid)
+
+            # Skip if already exists and already points at the resized OG
             # image (or no real image exists yet). Regenerate if a shim was
-            # created before its concept image was uploaded — otherwise it's
-            # stuck on the fallback banner forever, since this check only
+            # created before its concept image was uploaded (stuck on the
+            # fallback banner) or before this script resized images under
+            # assets/og/ (stuck pointing at the raw, oversized infographic)
+            # — otherwise either bug persists forever, since this check only
             # ever ran once at first-generation time.
             if os.path.isfile(out_file):
-                if not has_concept_image(aid, cid):
+                if og_asset is None:
                     skipped += 1
                     continue
                 with open(out_file, encoding="utf-8") as f:
                     existing = f.read()
-                if FALLBACK_IMAGE not in existing:
+                og_rel_url = f"{BASE_URL}/{og_asset[0]}"
+                if FALLBACK_IMAGE not in existing and og_rel_url in existing:
                     skipped += 1
                     continue
 
@@ -212,11 +245,13 @@ def generate_shims():
             og_title     = f"{concept['emoji']} {concept['name']} | अध्याय {adhyay['number']} · {adhyay['name']}"
             page_title   = f"{concept['emoji']} {concept['name']}"
 
-            # Use real concept image if available, else fallback banner
-            if has_concept_image(aid, cid):
-                og_image   = f"{BASE_URL}/assets/adhyay-{aid}/concept-{cid}.jpg"
-                og_image_w = "540"
-                og_image_h = "960"
+            # Use the resized OG copy if a real concept image is available
+            # (generating it on the fly if needed), else fallback banner
+            if og_asset:
+                rel_path, w, h = og_asset
+                og_image   = f"{BASE_URL}/{rel_path}"
+                og_image_w = str(w)
+                og_image_h = str(h)
                 twitter_card = "summary"
             else:
                 og_image   = FALLBACK_IMAGE
