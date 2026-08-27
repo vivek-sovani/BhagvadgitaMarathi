@@ -11,7 +11,7 @@ import os
 import re
 import smtplib
 import subprocess
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
@@ -53,6 +53,26 @@ ADHYAY_FILES = [
 
 SEPARATOR = '━━━━━━━━━━━━━━━━━━━━━━━'
 REPO_ROOT  = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IST = timezone(timedelta(hours=5, minutes=30))
+
+
+def rotation_date():
+    """The date to feed into the day_index rotation.
+
+    The scheduled workflow fires at 23:15 UTC = 4:45 AM IST *the next day*,
+    and START_DATE/the rotation were calibrated against the UTC calendar
+    date at that fire time (i.e. IST-date-minus-one). A manual
+    workflow_dispatch run can happen at any time of day, so using the
+    runner's raw `date.today()` (UTC) directly would advance a full day
+    once UTC has rolled past midnight (~5:30 AM IST) — silently sending
+    the *next* concept instead of the one intended for today's IST date.
+    Deriving the date from the current IST calendar day (minus one, to
+    match the scheduled run's convention) keeps a manual trigger in sync
+    with the scheduled email for the same IST day, no matter what time it
+    is run.
+    """
+    today_ist = datetime.now(timezone.utc).astimezone(IST).date()
+    return today_ist - timedelta(days=1)
 
 # ── Devanagari helpers ────────────────────────────────────────────────────────
 _DEVA = '०१२३४५६७८९'
@@ -244,7 +264,7 @@ def main():
         raise RuntimeError('No concept blocks found — check md files.')
 
     total     = len(concepts)
-    today     = date.today()
+    today     = rotation_date()
     day_index = (today - START_DATE).days % total
     day_num   = day_index + 1
     block     = concepts[day_index]
